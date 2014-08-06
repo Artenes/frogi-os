@@ -7,7 +7,6 @@ using FirebirdSql.Data.FirebirdClient;
 
 namespace FROGI_OS.CamadaAcessoDados {
     class TblCategoria {
-
         private string paramCodigo = "@CODIGO";
         private string paramDescricao = "@DESCRICAO";
         private string paramValor = "@VALOR";
