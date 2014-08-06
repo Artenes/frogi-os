@@ -83,5 +83,9 @@ namespace FROGI_OS.InterfaceGrafica
             }
             dialogo.Dispose();
         }
+
+        private void pictureFechar_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

@@ -131,6 +131,7 @@
             this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureFechar.TabIndex = 1;
             this.pictureFechar.TabStop = false;
+            this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
             // 
             // labelPesquisa
             // 
