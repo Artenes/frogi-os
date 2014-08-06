@@ -1,0 +1,598 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FDC871F7-1B66-470F-BC36-B297171D2104}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FROGI_OS</RootNamespace>
+    <AssemblyName>FROGI_OS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FirebirdClient\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BD.cs" />
+    <Compile Include="CamadaAcessoDados\TblOrcamentoItem.cs" />
+    <Compile Include="CamadaAcessoDados\TblFornecedorFisico.cs" />
+    <Compile Include="CamadaAcessoDados\TblCategoria.cs" />
+    <Compile Include="CamadaAcessoDados\TblCompra.cs" />
+    <Compile Include="CamadaAcessoDados\TblEmpresa.cs" />
+    <Compile Include="CamadaAcessoDados\TblFornecedor.cs" />
+    <Compile Include="CamadaAcessoDados\TblFornecedorJuridico.cs" />
+    <Compile Include="CamadaAcessoDados\TblFuncionario.cs" />
+    <Compile Include="CamadaAcessoDados\TblGrupo.cs" />
+    <Compile Include="CamadaAcessoDados\TblItemCompra.cs" />
+    <Compile Include="CamadaAcessoDados\TblMarca.cs" />
+    <Compile Include="CamadaAcessoDados\TblOrcamento.cs" />
+    <Compile Include="CamadaAcessoDados\TblOrcamentoServico.cs" />
+    <Compile Include="CamadaAcessoDados\TblOs.cs" />
+    <Compile Include="CamadaAcessoDados\TblOsItem.cs" />
+    <Compile Include="CamadaAcessoDados\TblOsServico.cs" />
+    <Compile Include="CamadaAcessoDados\TblPermissao.cs" />
+    <Compile Include="CamadaAcessoDados\TblSecao.cs" />
+    <Compile Include="CamadaAcessoDados\TblUsuario.cs" />
+    <Compile Include="CamadaEnlaceDados\GerCliente.cs" />
+    <Compile Include="CamadaEnlaceDados\GerCompra.cs" />
+    <Compile Include="CamadaEnlaceDados\GerFornecedor.cs" />
+    <Compile Include="CamadaEnlaceDados\GerFuncionario.cs" />
+    <Compile Include="CamadaEnlaceDados\GerOs.cs" />
+    <Compile Include="CamadaEnlaceDados\GerOrcamento.cs" />
+    <Compile Include="CamadaEnlaceDados\GerProduto.cs" />
+    <Compile Include="CamadaEnlaceDados\GerServico.cs" />
+    <Compile Include="CamadaEnlaceDados\GerUsuario.cs" />
+    <Compile Include="Conexao.cs" />
+    <Compile Include="dsFROGIOS.cs">
+      <DependentUpon>dsFROGIOS.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dsFROGIOS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFROGIOS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Firebird.cs" />
+    <Compile Include="InterfaceGrafica\formAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formAgendamento.Designer.cs">
+      <DependentUpon>formAgendamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroCliente.Designer.cs">
+      <DependentUpon>formCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroFornecedor.Designer.cs">
+      <DependentUpon>formCadastroFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroGrupo.Designer.cs">
+      <DependentUpon>formCadastroGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroMarca.Designer.cs">
+      <DependentUpon>formCadastroMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroOrcamento.Designer.cs">
+      <DependentUpon>formCadastroOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroOS.Designer.cs">
+      <DependentUpon>formCadastroOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOSBaseCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOSBaseCadastro.Designer.cs">
+      <DependentUpon>formOSBaseCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formDialogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formDialogo.Designer.cs">
+      <DependentUpon>formDialogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formMenuPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formMenuPopUp.Designer.cs">
+      <DependentUpon>formMenuPopUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOSBasePesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOSBasePesquisa.Designer.cs">
+      <DependentUpon>formOSBasePesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPerfil.Designer.cs">
+      <DependentUpon>formPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroSecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroSecao.Designer.cs">
+      <DependentUpon>formCadastroSecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroServico.Designer.cs">
+      <DependentUpon>formCadastroServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastro.Designer.cs">
+      <DependentUpon>formCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisa.Designer.cs">
+      <DependentUpon>formPesquisa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroTipo.Designer.cs">
+      <DependentUpon>formCadastroTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOS.Designer.cs">
+      <DependentUpon>formOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formManutencaoOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formManutencaoOS.Designer.cs">
+      <DependentUpon>formManutencaoOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroProduto.Designer.cs">
+      <DependentUpon>formCadastroProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroFuncionario.Designer.cs">
+      <DependentUpon>formCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaCliente.Designer.cs">
+      <DependentUpon>formPesquisaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaFornecedor.Designer.cs">
+      <DependentUpon>formPesquisaFornecedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaFuncionario.Designer.cs">
+      <DependentUpon>formPesquisaFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaGrupo.Designer.cs">
+      <DependentUpon>formPesquisaGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaMarca.Designer.cs">
+      <DependentUpon>formPesquisaMarca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaOrcamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaOrcamento.Designer.cs">
+      <DependentUpon>formPesquisaOrcamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaProduto.Designer.cs">
+      <DependentUpon>formPesquisaProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaSecao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaSecao.Designer.cs">
+      <DependentUpon>formPesquisaSecao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaServico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaServico.Designer.cs">
+      <DependentUpon>formPesquisaServico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaTipo.Designer.cs">
+      <DependentUpon>formPesquisaTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaUsuario.Designer.cs">
+      <DependentUpon>formPesquisaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPrincipal.Designer.cs">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GerServico.cs" />
+    <Compile Include="InterfaceGrafica\formCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroUsuario.Designer.cs">
+      <DependentUpon>formCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapeamento\MapCliente.cs" />
+    <Compile Include="Mapeamento\MapFornecedor.cs" />
+    <Compile Include="Mapeamento\MapFuncionario.cs" />
+    <Compile Include="Mapeamento\MapGrupo.cs" />
+    <Compile Include="Mapeamento\MapMarca.cs" />
+    <Compile Include="Mapeamento\MapOrcamento.cs" />
+    <Compile Include="Mapeamento\MapProduto.cs" />
+    <Compile Include="Mapeamento\MapSecao.cs" />
+    <Compile Include="Mapeamento\MapServico.cs" />
+    <Compile Include="Mapeamento\MapTipo.cs" />
+    <Compile Include="Mapeamento\MapUsuario.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLSintaxe.cs" />
+    <Compile Include="TablessControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CamadaAcessoDados\TblProduto.cs" />
+    <Compile Include="CamadaAcessoDados\TblServicoTipo.cs" />
+    <Compile Include="CamadaAcessoDados\TblTipo.cs" />
+    <Compile Include="CamadaAcessoDados\TblServico.cs" />
+    <Compile Include="CamadaAcessoDados\TblClienteJuridico.cs" />
+    <Compile Include="CamadaAcessoDados\TblClienteFisico.cs" />
+    <Compile Include="CamadaAcessoDados\TblCliente.cs" />
+    <Compile Include="CamadaAcessoDados\TblUF.cs" />
+    <EmbeddedResource Include="InterfaceGrafica\formAgendamento.resx">
+      <DependentUpon>formAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroCliente.resx">
+      <DependentUpon>formCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroOrcamento.resx">
+      <DependentUpon>formCadastroOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroOS.resx">
+      <DependentUpon>formCadastroOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formOSBaseCadastro.resx">
+      <DependentUpon>formOSBaseCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formDialogo.resx">
+      <DependentUpon>formDialogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroFornecedor.resx">
+      <DependentUpon>formCadastroFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroGrupo.resx">
+      <DependentUpon>formCadastroGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroMarca.resx">
+      <DependentUpon>formCadastroMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formMenuPopUp.resx">
+      <DependentUpon>formMenuPopUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formOSBasePesquisa.resx">
+      <DependentUpon>formOSBasePesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPerfil.resx">
+      <DependentUpon>formPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroSecao.resx">
+      <DependentUpon>formCadastroSecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroServico.resx">
+      <DependentUpon>formCadastroServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastro.resx">
+      <DependentUpon>formCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisa.resx">
+      <DependentUpon>formPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroTipo.resx">
+      <DependentUpon>formCadastroTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formOS.resx">
+      <DependentUpon>formOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formManutencaoOS.resx">
+      <DependentUpon>formManutencaoOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroProduto.resx">
+      <DependentUpon>formCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroFuncionario.resx">
+      <DependentUpon>formCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaCliente.resx">
+      <DependentUpon>formPesquisaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaFornecedor.resx">
+      <DependentUpon>formPesquisaFornecedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaFuncionario.resx">
+      <DependentUpon>formPesquisaFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaGrupo.resx">
+      <DependentUpon>formPesquisaGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaMarca.resx">
+      <DependentUpon>formPesquisaMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaOrcamento.resx">
+      <DependentUpon>formPesquisaOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaProduto.resx">
+      <DependentUpon>formPesquisaProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaSecao.resx">
+      <DependentUpon>formPesquisaSecao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaServico.resx">
+      <DependentUpon>formPesquisaServico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaTipo.resx">
+      <DependentUpon>formPesquisaTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaUsuario.resx">
+      <DependentUpon>formPesquisaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPrincipal.resx">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroUsuario.resx">
+      <DependentUpon>formCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="dsFROGIOS.xsc">
+      <DependentUpon>dsFROGIOS.xsd</DependentUpon>
+    </None>
+    <None Include="dsFROGIOS.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFROGIOS.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsFROGIOS.xss">
+      <DependentUpon>dsFROGIOS.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\img_banner_ajuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ajuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_orcamentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_ordenservico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_ajuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_grupos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_marcas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_produtos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_secoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_servicos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_funcionarios_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_relatorios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_produtos_grande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_opcoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_sobre_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_tipos_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_funcionarios_grande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_usuarios_grande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_sobre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_ajendamentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_agendamentos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_editar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_excluir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_pesquisar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\procurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_fornecedores_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_usuarios_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_agendamentos_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_notas_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_notas_grande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_compra_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banner_opcoes_pequeno.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
