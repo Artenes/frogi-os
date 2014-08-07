@@ -49,7 +49,9 @@ namespace FROGI_OS
         }
 
         private void pictureOrdemServico_Click(object sender, EventArgs e) {
-            new formManutencaoOS().ShowDialog();
+            formPesquisaOS os = new formPesquisaOS();
+            os.ShowDialog();
+            os.Dispose();
         }
 
         private void pictureSecoes_Click(object sender, EventArgs e) {

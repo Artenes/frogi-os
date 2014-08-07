@@ -51,7 +51,7 @@ namespace FROGI_OS.InterfaceGrafica
             this.ActiveControl = comboTipoCliente;
         }
 
-        private void comboCampoPesquisa_SelectedIndexChanged(object sender, EventArgs e) {
+        protected virtual void comboCampoPesquisa_SelectedIndexChanged(object sender, EventArgs e) {
             textValorPesquisa.Enabled = true;
             buttonPesquisar.Enabled = true;
         }

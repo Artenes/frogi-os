@@ -263,6 +263,12 @@
     <Compile Include="InterfaceGrafica\formPesquisaOrcamento.Designer.cs">
       <DependentUpon>formPesquisaOrcamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaOS.Designer.cs">
+      <DependentUpon>formPesquisaOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceGrafica\formPesquisaProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +318,7 @@
     <Compile Include="Mapeamento\MapGrupo.cs" />
     <Compile Include="Mapeamento\MapMarca.cs" />
     <Compile Include="Mapeamento\MapOrcamento.cs" />
+    <Compile Include="Mapeamento\MapOS.cs" />
     <Compile Include="Mapeamento\MapProduto.cs" />
     <Compile Include="Mapeamento\MapSecao.cs" />
     <Compile Include="Mapeamento\MapServico.cs" />
@@ -414,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formPesquisaOrcamento.resx">
       <DependentUpon>formPesquisaOrcamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaOS.resx">
+      <DependentUpon>formPesquisaOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formPesquisaProduto.resx">
       <DependentUpon>formPesquisaProduto.cs</DependentUpon>
