@@ -100,5 +100,11 @@ namespace FROGI_OS
             new formPesquisaOrcamento().ShowDialog();
         }
 
+        private void pictureAgendamentos_Click(object sender, EventArgs e) {
+            formCadastroAgendamento agendamento = new formCadastroAgendamento(true);
+            agendamento.ShowDialog();
+            agendamento.Dispose();
+        }
+
     }
 }

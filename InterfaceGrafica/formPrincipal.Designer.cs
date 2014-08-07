@@ -216,6 +216,7 @@
             this.pictureAgendamentos.Image = global::FROGI_OS.Properties.Resources.banner_agendamentos;
             this.pictureAgendamentos.Name = "pictureAgendamentos";
             this.pictureAgendamentos.TabStop = false;
+            this.pictureAgendamentos.Click += new System.EventHandler(this.pictureAgendamentos_Click);
             // 
             // pictureFuncionarios
             // 

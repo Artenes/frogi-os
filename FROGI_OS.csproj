@@ -101,6 +101,12 @@
     <Compile Include="InterfaceGrafica\formAgendamento.Designer.cs">
       <DependentUpon>formAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroAgendamento.Designer.cs">
+      <DependentUpon>formCadastroAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceGrafica\formCadastroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,12 @@
     <Compile Include="InterfaceGrafica\formCadastroFuncionario.Designer.cs">
       <DependentUpon>formCadastroFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaAgendamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaAgendamento.Designer.cs">
+      <DependentUpon>formPesquisaAgendamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceGrafica\formPesquisaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -312,6 +324,7 @@
     <Compile Include="InterfaceGrafica\formCadastroUsuario.Designer.cs">
       <DependentUpon>formCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mapeamento\MapAgendamento.cs" />
     <Compile Include="Mapeamento\MapCliente.cs" />
     <Compile Include="Mapeamento\MapFornecedor.cs" />
     <Compile Include="Mapeamento\MapFuncionario.cs" />
@@ -340,6 +353,9 @@
     <Compile Include="CamadaAcessoDados\TblUF.cs" />
     <EmbeddedResource Include="InterfaceGrafica\formAgendamento.resx">
       <DependentUpon>formAgendamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroAgendamento.resx">
+      <DependentUpon>formCadastroAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroCliente.resx">
       <DependentUpon>formCadastroCliente.cs</DependentUpon>
@@ -403,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroFuncionario.resx">
       <DependentUpon>formCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaAgendamento.resx">
+      <DependentUpon>formPesquisaAgendamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formPesquisaCliente.resx">
       <DependentUpon>formPesquisaCliente.cs</DependentUpon>

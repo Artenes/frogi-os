@@ -100,6 +100,12 @@ namespace FROGI_OS {
         
         private PESQUISA_ORCAMENTO_JURIDICODataTable tablePESQUISA_ORCAMENTO_JURIDICO;
         
+        private AGENDAMENTODataTable tableAGENDAMENTO;
+        
+        private PESQUISA_AGENDAMENTO_FISICODataTable tablePESQUISA_AGENDAMENTO_FISICO;
+        
+        private PESQUISA_AGENDAMENTO_JURIDICODataTable tablePESQUISA_AGENDAMENTO_JURIDICO;
+        
         private global::System.Data.DataRelation relationCLIENTE_UF_FK;
         
         private global::System.Data.DataRelation relationCLIENTE_FISICO_CLIENTE_FK;
@@ -195,6 +201,8 @@ namespace FROGI_OS {
         private global::System.Data.DataRelation relationFORNECEDOR_JURIDICO_FORN_FK2;
         
         private global::System.Data.DataRelation relationPRODUTO_FORNECEDOR_FK2;
+        
+        private global::System.Data.DataRelation relationFK_AGENDAMENTO_CLIENTE;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -337,6 +345,15 @@ namespace FROGI_OS {
                 }
                 if ((ds.Tables["PESQUISA_ORCAMENTO_JURIDICO"] != null)) {
                     base.Tables.Add(new PESQUISA_ORCAMENTO_JURIDICODataTable(ds.Tables["PESQUISA_ORCAMENTO_JURIDICO"]));
+                }
+                if ((ds.Tables["AGENDAMENTO"] != null)) {
+                    base.Tables.Add(new AGENDAMENTODataTable(ds.Tables["AGENDAMENTO"]));
+                }
+                if ((ds.Tables["PESQUISA_AGENDAMENTO_FISICO"] != null)) {
+                    base.Tables.Add(new PESQUISA_AGENDAMENTO_FISICODataTable(ds.Tables["PESQUISA_AGENDAMENTO_FISICO"]));
+                }
+                if ((ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"] != null)) {
+                    base.Tables.Add(new PESQUISA_AGENDAMENTO_JURIDICODataTable(ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -738,6 +755,36 @@ namespace FROGI_OS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public AGENDAMENTODataTable AGENDAMENTO {
+            get {
+                return this.tableAGENDAMENTO;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PESQUISA_AGENDAMENTO_FISICODataTable PESQUISA_AGENDAMENTO_FISICO {
+            get {
+                return this.tablePESQUISA_AGENDAMENTO_FISICO;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PESQUISA_AGENDAMENTO_JURIDICODataTable PESQUISA_AGENDAMENTO_JURIDICO {
+            get {
+                return this.tablePESQUISA_AGENDAMENTO_JURIDICO;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -916,6 +963,15 @@ namespace FROGI_OS {
                 }
                 if ((ds.Tables["PESQUISA_ORCAMENTO_JURIDICO"] != null)) {
                     base.Tables.Add(new PESQUISA_ORCAMENTO_JURIDICODataTable(ds.Tables["PESQUISA_ORCAMENTO_JURIDICO"]));
+                }
+                if ((ds.Tables["AGENDAMENTO"] != null)) {
+                    base.Tables.Add(new AGENDAMENTODataTable(ds.Tables["AGENDAMENTO"]));
+                }
+                if ((ds.Tables["PESQUISA_AGENDAMENTO_FISICO"] != null)) {
+                    base.Tables.Add(new PESQUISA_AGENDAMENTO_FISICODataTable(ds.Tables["PESQUISA_AGENDAMENTO_FISICO"]));
+                }
+                if ((ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"] != null)) {
+                    base.Tables.Add(new PESQUISA_AGENDAMENTO_JURIDICODataTable(ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1178,6 +1234,24 @@ namespace FROGI_OS {
                     this.tablePESQUISA_ORCAMENTO_JURIDICO.InitVars();
                 }
             }
+            this.tableAGENDAMENTO = ((AGENDAMENTODataTable)(base.Tables["AGENDAMENTO"]));
+            if ((initTable == true)) {
+                if ((this.tableAGENDAMENTO != null)) {
+                    this.tableAGENDAMENTO.InitVars();
+                }
+            }
+            this.tablePESQUISA_AGENDAMENTO_FISICO = ((PESQUISA_AGENDAMENTO_FISICODataTable)(base.Tables["PESQUISA_AGENDAMENTO_FISICO"]));
+            if ((initTable == true)) {
+                if ((this.tablePESQUISA_AGENDAMENTO_FISICO != null)) {
+                    this.tablePESQUISA_AGENDAMENTO_FISICO.InitVars();
+                }
+            }
+            this.tablePESQUISA_AGENDAMENTO_JURIDICO = ((PESQUISA_AGENDAMENTO_JURIDICODataTable)(base.Tables["PESQUISA_AGENDAMENTO_JURIDICO"]));
+            if ((initTable == true)) {
+                if ((this.tablePESQUISA_AGENDAMENTO_JURIDICO != null)) {
+                    this.tablePESQUISA_AGENDAMENTO_JURIDICO.InitVars();
+                }
+            }
             this.relationCLIENTE_UF_FK = this.Relations["CLIENTE_UF_FK"];
             this.relationCLIENTE_FISICO_CLIENTE_FK = this.Relations["CLIENTE_FISICO_CLIENTE_FK"];
             this.relationCLIENTE_JURIDICO_CLIENTE_FK = this.Relations["CLIENTE_JURIDICO_CLIENTE_FK"];
@@ -1226,6 +1300,7 @@ namespace FROGI_OS {
             this.relationFORNECEDOR_FISICO_FORNECEDOR_FK2 = this.Relations["FORNECEDOR_FISICO_FORNECEDOR_FK2"];
             this.relationFORNECEDOR_JURIDICO_FORN_FK2 = this.Relations["FORNECEDOR_JURIDICO_FORN_FK2"];
             this.relationPRODUTO_FORNECEDOR_FK2 = this.Relations["PRODUTO_FORNECEDOR_FK2"];
+            this.relationFK_AGENDAMENTO_CLIENTE = this.Relations["FK_AGENDAMENTO_CLIENTE"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1312,6 +1387,12 @@ namespace FROGI_OS {
             base.Tables.Add(this.tablePESQUISA_ORCAMENTO_FISICO);
             this.tablePESQUISA_ORCAMENTO_JURIDICO = new PESQUISA_ORCAMENTO_JURIDICODataTable();
             base.Tables.Add(this.tablePESQUISA_ORCAMENTO_JURIDICO);
+            this.tableAGENDAMENTO = new AGENDAMENTODataTable();
+            base.Tables.Add(this.tableAGENDAMENTO);
+            this.tablePESQUISA_AGENDAMENTO_FISICO = new PESQUISA_AGENDAMENTO_FISICODataTable();
+            base.Tables.Add(this.tablePESQUISA_AGENDAMENTO_FISICO);
+            this.tablePESQUISA_AGENDAMENTO_JURIDICO = new PESQUISA_AGENDAMENTO_JURIDICODataTable();
+            base.Tables.Add(this.tablePESQUISA_AGENDAMENTO_JURIDICO);
             this.relationCLIENTE_UF_FK = new global::System.Data.DataRelation("CLIENTE_UF_FK", new global::System.Data.DataColumn[] {
                         this.tableUF.UF_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableCLIENTE.CLIENTE_UFColumn}, false);
@@ -1504,6 +1585,10 @@ namespace FROGI_OS {
                         this.tablePESQUISA_FORNECEDOR_JURIDICO.FORNECEDOR_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tablePRODUTO.PRODUTO_FORNECEDORColumn}, false);
             this.Relations.Add(this.relationPRODUTO_FORNECEDOR_FK2);
+            this.relationFK_AGENDAMENTO_CLIENTE = new global::System.Data.DataRelation("FK_AGENDAMENTO_CLIENTE", new global::System.Data.DataColumn[] {
+                        this.tableCLIENTE.CLIENTE_CODIGOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAGENDAMENTO.AGEN_CLIENTEColumn}, false);
+            this.Relations.Add(this.relationFK_AGENDAMENTO_CLIENTE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1736,6 +1821,24 @@ namespace FROGI_OS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeAGENDAMENTO() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePESQUISA_AGENDAMENTO_FISICO() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePESQUISA_AGENDAMENTO_JURIDICO() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1902,6 +2005,15 @@ namespace FROGI_OS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PESQUISA_ORCAMENTO_JURIDICORowChangeEventHandler(object sender, PESQUISA_ORCAMENTO_JURIDICORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void AGENDAMENTORowChangeEventHandler(object sender, AGENDAMENTORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PESQUISA_AGENDAMENTO_FISICORowChangeEventHandler(object sender, PESQUISA_AGENDAMENTO_FISICORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PESQUISA_AGENDAMENTO_JURIDICORowChangeEventHandler(object sender, PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -15631,6 +15743,869 @@ namespace FROGI_OS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class AGENDAMENTODataTable : global::System.Data.TypedTableBase<AGENDAMENTORow> {
+            
+            private global::System.Data.DataColumn columnAGEN_CODIGO;
+            
+            private global::System.Data.DataColumn columnAGEN_CLIENTE;
+            
+            private global::System.Data.DataColumn columnAGEN_DATA;
+            
+            private global::System.Data.DataColumn columnAGEN_DESCRICAO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTODataTable() {
+                this.TableName = "AGENDAMENTO";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal AGENDAMENTODataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected AGENDAMENTODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_CODIGOColumn {
+                get {
+                    return this.columnAGEN_CODIGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_CLIENTEColumn {
+                get {
+                    return this.columnAGEN_CLIENTE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_DATAColumn {
+                get {
+                    return this.columnAGEN_DATA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_DESCRICAOColumn {
+                get {
+                    return this.columnAGEN_DESCRICAO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORow this[int index] {
+                get {
+                    return ((AGENDAMENTORow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AGENDAMENTORowChangeEventHandler AGENDAMENTORowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AGENDAMENTORowChangeEventHandler AGENDAMENTORowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AGENDAMENTORowChangeEventHandler AGENDAMENTORowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AGENDAMENTORowChangeEventHandler AGENDAMENTORowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddAGENDAMENTORow(AGENDAMENTORow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORow AddAGENDAMENTORow(int AGEN_CODIGO, CLIENTERow parentCLIENTERowByFK_AGENDAMENTO_CLIENTE, System.DateTime AGEN_DATA, byte[] AGEN_DESCRICAO) {
+                AGENDAMENTORow rowAGENDAMENTORow = ((AGENDAMENTORow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        AGEN_CODIGO,
+                        null,
+                        AGEN_DATA,
+                        AGEN_DESCRICAO};
+                if ((parentCLIENTERowByFK_AGENDAMENTO_CLIENTE != null)) {
+                    columnValuesArray[1] = parentCLIENTERowByFK_AGENDAMENTO_CLIENTE[0];
+                }
+                rowAGENDAMENTORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAGENDAMENTORow);
+                return rowAGENDAMENTORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORow FindByAGEN_CODIGO(int AGEN_CODIGO) {
+                return ((AGENDAMENTORow)(this.Rows.Find(new object[] {
+                            AGEN_CODIGO})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AGENDAMENTODataTable cln = ((AGENDAMENTODataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AGENDAMENTODataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnAGEN_CODIGO = base.Columns["AGEN_CODIGO"];
+                this.columnAGEN_CLIENTE = base.Columns["AGEN_CLIENTE"];
+                this.columnAGEN_DATA = base.Columns["AGEN_DATA"];
+                this.columnAGEN_DESCRICAO = base.Columns["AGEN_DESCRICAO"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnAGEN_CODIGO = new global::System.Data.DataColumn("AGEN_CODIGO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_CODIGO);
+                this.columnAGEN_CLIENTE = new global::System.Data.DataColumn("AGEN_CLIENTE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_CLIENTE);
+                this.columnAGEN_DATA = new global::System.Data.DataColumn("AGEN_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_DATA);
+                this.columnAGEN_DESCRICAO = new global::System.Data.DataColumn("AGEN_DESCRICAO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_DESCRICAO);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnAGEN_CODIGO}, true));
+                this.columnAGEN_CODIGO.AllowDBNull = false;
+                this.columnAGEN_CODIGO.Unique = true;
+                this.columnAGEN_CLIENTE.AllowDBNull = false;
+                this.columnAGEN_DATA.AllowDBNull = false;
+                this.columnAGEN_DESCRICAO.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORow NewAGENDAMENTORow() {
+                return ((AGENDAMENTORow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AGENDAMENTORow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AGENDAMENTORow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AGENDAMENTORowChanged != null)) {
+                    this.AGENDAMENTORowChanged(this, new AGENDAMENTORowChangeEvent(((AGENDAMENTORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AGENDAMENTORowChanging != null)) {
+                    this.AGENDAMENTORowChanging(this, new AGENDAMENTORowChangeEvent(((AGENDAMENTORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AGENDAMENTORowDeleted != null)) {
+                    this.AGENDAMENTORowDeleted(this, new AGENDAMENTORowChangeEvent(((AGENDAMENTORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AGENDAMENTORowDeleting != null)) {
+                    this.AGENDAMENTORowDeleting(this, new AGENDAMENTORowChangeEvent(((AGENDAMENTORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveAGENDAMENTORow(AGENDAMENTORow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsFROGIOS ds = new dsFROGIOS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AGENDAMENTODataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PESQUISA_AGENDAMENTO_FISICODataTable : global::System.Data.TypedTableBase<PESQUISA_AGENDAMENTO_FISICORow> {
+            
+            private global::System.Data.DataColumn columnAGEN_CODIGO;
+            
+            private global::System.Data.DataColumn columnCLIENTE_FISICO_NOME;
+            
+            private global::System.Data.DataColumn columnAGEN_DATA;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_FISICODataTable() {
+                this.TableName = "PESQUISA_AGENDAMENTO_FISICO";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PESQUISA_AGENDAMENTO_FISICODataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PESQUISA_AGENDAMENTO_FISICODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_CODIGOColumn {
+                get {
+                    return this.columnAGEN_CODIGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CLIENTE_FISICO_NOMEColumn {
+                get {
+                    return this.columnCLIENTE_FISICO_NOME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_DATAColumn {
+                get {
+                    return this.columnAGEN_DATA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_FISICORow this[int index] {
+                get {
+                    return ((PESQUISA_AGENDAMENTO_FISICORow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_FISICORowChangeEventHandler PESQUISA_AGENDAMENTO_FISICORowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_FISICORowChangeEventHandler PESQUISA_AGENDAMENTO_FISICORowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_FISICORowChangeEventHandler PESQUISA_AGENDAMENTO_FISICORowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_FISICORowChangeEventHandler PESQUISA_AGENDAMENTO_FISICORowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPESQUISA_AGENDAMENTO_FISICORow(PESQUISA_AGENDAMENTO_FISICORow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_FISICORow AddPESQUISA_AGENDAMENTO_FISICORow(int AGEN_CODIGO, string CLIENTE_FISICO_NOME, System.DateTime AGEN_DATA) {
+                PESQUISA_AGENDAMENTO_FISICORow rowPESQUISA_AGENDAMENTO_FISICORow = ((PESQUISA_AGENDAMENTO_FISICORow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        AGEN_CODIGO,
+                        CLIENTE_FISICO_NOME,
+                        AGEN_DATA};
+                rowPESQUISA_AGENDAMENTO_FISICORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPESQUISA_AGENDAMENTO_FISICORow);
+                return rowPESQUISA_AGENDAMENTO_FISICORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PESQUISA_AGENDAMENTO_FISICODataTable cln = ((PESQUISA_AGENDAMENTO_FISICODataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PESQUISA_AGENDAMENTO_FISICODataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnAGEN_CODIGO = base.Columns["AGEN_CODIGO"];
+                this.columnCLIENTE_FISICO_NOME = base.Columns["CLIENTE_FISICO_NOME"];
+                this.columnAGEN_DATA = base.Columns["AGEN_DATA"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnAGEN_CODIGO = new global::System.Data.DataColumn("AGEN_CODIGO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_CODIGO);
+                this.columnCLIENTE_FISICO_NOME = new global::System.Data.DataColumn("CLIENTE_FISICO_NOME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCLIENTE_FISICO_NOME);
+                this.columnAGEN_DATA = new global::System.Data.DataColumn("AGEN_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_DATA);
+                this.columnAGEN_CODIGO.AllowDBNull = false;
+                this.columnCLIENTE_FISICO_NOME.MaxLength = 60;
+                this.columnAGEN_DATA.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_FISICORow NewPESQUISA_AGENDAMENTO_FISICORow() {
+                return ((PESQUISA_AGENDAMENTO_FISICORow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PESQUISA_AGENDAMENTO_FISICORow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PESQUISA_AGENDAMENTO_FISICORow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PESQUISA_AGENDAMENTO_FISICORowChanged != null)) {
+                    this.PESQUISA_AGENDAMENTO_FISICORowChanged(this, new PESQUISA_AGENDAMENTO_FISICORowChangeEvent(((PESQUISA_AGENDAMENTO_FISICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PESQUISA_AGENDAMENTO_FISICORowChanging != null)) {
+                    this.PESQUISA_AGENDAMENTO_FISICORowChanging(this, new PESQUISA_AGENDAMENTO_FISICORowChangeEvent(((PESQUISA_AGENDAMENTO_FISICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PESQUISA_AGENDAMENTO_FISICORowDeleted != null)) {
+                    this.PESQUISA_AGENDAMENTO_FISICORowDeleted(this, new PESQUISA_AGENDAMENTO_FISICORowChangeEvent(((PESQUISA_AGENDAMENTO_FISICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PESQUISA_AGENDAMENTO_FISICORowDeleting != null)) {
+                    this.PESQUISA_AGENDAMENTO_FISICORowDeleting(this, new PESQUISA_AGENDAMENTO_FISICORowChangeEvent(((PESQUISA_AGENDAMENTO_FISICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePESQUISA_AGENDAMENTO_FISICORow(PESQUISA_AGENDAMENTO_FISICORow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsFROGIOS ds = new dsFROGIOS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PESQUISA_AGENDAMENTO_FISICODataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PESQUISA_AGENDAMENTO_JURIDICODataTable : global::System.Data.TypedTableBase<PESQUISA_AGENDAMENTO_JURIDICORow> {
+            
+            private global::System.Data.DataColumn columnAGEN_CODIGO;
+            
+            private global::System.Data.DataColumn columnCLIENTE_JURIDICO_FANTASIA;
+            
+            private global::System.Data.DataColumn columnAGEN_DATA;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_JURIDICODataTable() {
+                this.TableName = "PESQUISA_AGENDAMENTO_JURIDICO";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PESQUISA_AGENDAMENTO_JURIDICODataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PESQUISA_AGENDAMENTO_JURIDICODataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_CODIGOColumn {
+                get {
+                    return this.columnAGEN_CODIGO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CLIENTE_JURIDICO_FANTASIAColumn {
+                get {
+                    return this.columnCLIENTE_JURIDICO_FANTASIA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AGEN_DATAColumn {
+                get {
+                    return this.columnAGEN_DATA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_JURIDICORow this[int index] {
+                get {
+                    return ((PESQUISA_AGENDAMENTO_JURIDICORow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_JURIDICORowChangeEventHandler PESQUISA_AGENDAMENTO_JURIDICORowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_JURIDICORowChangeEventHandler PESQUISA_AGENDAMENTO_JURIDICORowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_JURIDICORowChangeEventHandler PESQUISA_AGENDAMENTO_JURIDICORowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_AGENDAMENTO_JURIDICORowChangeEventHandler PESQUISA_AGENDAMENTO_JURIDICORowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPESQUISA_AGENDAMENTO_JURIDICORow(PESQUISA_AGENDAMENTO_JURIDICORow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_JURIDICORow AddPESQUISA_AGENDAMENTO_JURIDICORow(int AGEN_CODIGO, string CLIENTE_JURIDICO_FANTASIA, System.DateTime AGEN_DATA) {
+                PESQUISA_AGENDAMENTO_JURIDICORow rowPESQUISA_AGENDAMENTO_JURIDICORow = ((PESQUISA_AGENDAMENTO_JURIDICORow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        AGEN_CODIGO,
+                        CLIENTE_JURIDICO_FANTASIA,
+                        AGEN_DATA};
+                rowPESQUISA_AGENDAMENTO_JURIDICORow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPESQUISA_AGENDAMENTO_JURIDICORow);
+                return rowPESQUISA_AGENDAMENTO_JURIDICORow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PESQUISA_AGENDAMENTO_JURIDICODataTable cln = ((PESQUISA_AGENDAMENTO_JURIDICODataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PESQUISA_AGENDAMENTO_JURIDICODataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnAGEN_CODIGO = base.Columns["AGEN_CODIGO"];
+                this.columnCLIENTE_JURIDICO_FANTASIA = base.Columns["CLIENTE_JURIDICO_FANTASIA"];
+                this.columnAGEN_DATA = base.Columns["AGEN_DATA"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnAGEN_CODIGO = new global::System.Data.DataColumn("AGEN_CODIGO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_CODIGO);
+                this.columnCLIENTE_JURIDICO_FANTASIA = new global::System.Data.DataColumn("CLIENTE_JURIDICO_FANTASIA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCLIENTE_JURIDICO_FANTASIA);
+                this.columnAGEN_DATA = new global::System.Data.DataColumn("AGEN_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAGEN_DATA);
+                this.columnAGEN_CODIGO.AllowDBNull = false;
+                this.columnCLIENTE_JURIDICO_FANTASIA.AllowDBNull = false;
+                this.columnCLIENTE_JURIDICO_FANTASIA.MaxLength = 60;
+                this.columnAGEN_DATA.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_JURIDICORow NewPESQUISA_AGENDAMENTO_JURIDICORow() {
+                return ((PESQUISA_AGENDAMENTO_JURIDICORow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PESQUISA_AGENDAMENTO_JURIDICORow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PESQUISA_AGENDAMENTO_JURIDICORow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PESQUISA_AGENDAMENTO_JURIDICORowChanged != null)) {
+                    this.PESQUISA_AGENDAMENTO_JURIDICORowChanged(this, new PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent(((PESQUISA_AGENDAMENTO_JURIDICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PESQUISA_AGENDAMENTO_JURIDICORowChanging != null)) {
+                    this.PESQUISA_AGENDAMENTO_JURIDICORowChanging(this, new PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent(((PESQUISA_AGENDAMENTO_JURIDICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PESQUISA_AGENDAMENTO_JURIDICORowDeleted != null)) {
+                    this.PESQUISA_AGENDAMENTO_JURIDICORowDeleted(this, new PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent(((PESQUISA_AGENDAMENTO_JURIDICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PESQUISA_AGENDAMENTO_JURIDICORowDeleting != null)) {
+                    this.PESQUISA_AGENDAMENTO_JURIDICORowDeleting(this, new PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent(((PESQUISA_AGENDAMENTO_JURIDICORow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePESQUISA_AGENDAMENTO_JURIDICORow(PESQUISA_AGENDAMENTO_JURIDICORow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsFROGIOS ds = new dsFROGIOS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PESQUISA_AGENDAMENTO_JURIDICODataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CATEGORIARow : global::System.Data.DataRow {
@@ -15966,6 +16941,17 @@ namespace FROGI_OS {
                 }
                 else {
                     return ((UFRow[])(base.GetChildRows(this.Table.ChildRelations["CLIENTE_UF"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORow[] GetAGENDAMENTORows() {
+                if ((this.Table.ChildRelations["FK_AGENDAMENTO_CLIENTE"] == null)) {
+                    return new AGENDAMENTORow[0];
+                }
+                else {
+                    return ((AGENDAMENTORow[])(base.GetChildRows(this.Table.ChildRelations["FK_AGENDAMENTO_CLIENTE"])));
                 }
             }
         }
@@ -22229,6 +23215,190 @@ namespace FROGI_OS {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AGENDAMENTORow : global::System.Data.DataRow {
+            
+            private AGENDAMENTODataTable tableAGENDAMENTO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal AGENDAMENTORow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAGENDAMENTO = ((AGENDAMENTODataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AGEN_CODIGO {
+                get {
+                    return ((int)(this[this.tableAGENDAMENTO.AGEN_CODIGOColumn]));
+                }
+                set {
+                    this[this.tableAGENDAMENTO.AGEN_CODIGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AGEN_CLIENTE {
+                get {
+                    return ((int)(this[this.tableAGENDAMENTO.AGEN_CLIENTEColumn]));
+                }
+                set {
+                    this[this.tableAGENDAMENTO.AGEN_CLIENTEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime AGEN_DATA {
+                get {
+                    return ((global::System.DateTime)(this[this.tableAGENDAMENTO.AGEN_DATAColumn]));
+                }
+                set {
+                    this[this.tableAGENDAMENTO.AGEN_DATAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] AGEN_DESCRICAO {
+                get {
+                    return ((byte[])(this[this.tableAGENDAMENTO.AGEN_DESCRICAOColumn]));
+                }
+                set {
+                    this[this.tableAGENDAMENTO.AGEN_DESCRICAOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CLIENTERow CLIENTERow {
+                get {
+                    return ((CLIENTERow)(this.GetParentRow(this.Table.ParentRelations["FK_AGENDAMENTO_CLIENTE"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_AGENDAMENTO_CLIENTE"]);
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PESQUISA_AGENDAMENTO_FISICORow : global::System.Data.DataRow {
+            
+            private PESQUISA_AGENDAMENTO_FISICODataTable tablePESQUISA_AGENDAMENTO_FISICO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PESQUISA_AGENDAMENTO_FISICORow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePESQUISA_AGENDAMENTO_FISICO = ((PESQUISA_AGENDAMENTO_FISICODataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AGEN_CODIGO {
+                get {
+                    return ((int)(this[this.tablePESQUISA_AGENDAMENTO_FISICO.AGEN_CODIGOColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_AGENDAMENTO_FISICO.AGEN_CODIGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CLIENTE_FISICO_NOME {
+                get {
+                    try {
+                        return ((string)(this[this.tablePESQUISA_AGENDAMENTO_FISICO.CLIENTE_FISICO_NOMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CLIENTE_FISICO_NOME\' in table \'PESQUISA_AGENDAMENTO_FISICO\'" +
+                                " is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePESQUISA_AGENDAMENTO_FISICO.CLIENTE_FISICO_NOMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime AGEN_DATA {
+                get {
+                    return ((global::System.DateTime)(this[this.tablePESQUISA_AGENDAMENTO_FISICO.AGEN_DATAColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_AGENDAMENTO_FISICO.AGEN_DATAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCLIENTE_FISICO_NOMENull() {
+                return this.IsNull(this.tablePESQUISA_AGENDAMENTO_FISICO.CLIENTE_FISICO_NOMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCLIENTE_FISICO_NOMENull() {
+                this[this.tablePESQUISA_AGENDAMENTO_FISICO.CLIENTE_FISICO_NOMEColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PESQUISA_AGENDAMENTO_JURIDICORow : global::System.Data.DataRow {
+            
+            private PESQUISA_AGENDAMENTO_JURIDICODataTable tablePESQUISA_AGENDAMENTO_JURIDICO;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PESQUISA_AGENDAMENTO_JURIDICORow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePESQUISA_AGENDAMENTO_JURIDICO = ((PESQUISA_AGENDAMENTO_JURIDICODataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int AGEN_CODIGO {
+                get {
+                    return ((int)(this[this.tablePESQUISA_AGENDAMENTO_JURIDICO.AGEN_CODIGOColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_AGENDAMENTO_JURIDICO.AGEN_CODIGOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CLIENTE_JURIDICO_FANTASIA {
+                get {
+                    return ((string)(this[this.tablePESQUISA_AGENDAMENTO_JURIDICO.CLIENTE_JURIDICO_FANTASIAColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_AGENDAMENTO_JURIDICO.CLIENTE_JURIDICO_FANTASIAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime AGEN_DATA {
+                get {
+                    return ((global::System.DateTime)(this[this.tablePESQUISA_AGENDAMENTO_JURIDICO.AGEN_DATAColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_AGENDAMENTO_JURIDICO.AGEN_DATAColumn] = value;
+                }
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -23506,6 +24676,108 @@ namespace FROGI_OS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PESQUISA_ORCAMENTO_JURIDICORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class AGENDAMENTORowChangeEvent : global::System.EventArgs {
+            
+            private AGENDAMENTORow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORowChangeEvent(AGENDAMENTORow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AGENDAMENTORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PESQUISA_AGENDAMENTO_FISICORowChangeEvent : global::System.EventArgs {
+            
+            private PESQUISA_AGENDAMENTO_FISICORow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_FISICORowChangeEvent(PESQUISA_AGENDAMENTO_FISICORow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_FISICORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent : global::System.EventArgs {
+            
+            private PESQUISA_AGENDAMENTO_JURIDICORow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent(PESQUISA_AGENDAMENTO_JURIDICORow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_AGENDAMENTO_JURIDICORow Row {
                 get {
                     return this.eventRow;
                 }
@@ -45729,6 +47001,763 @@ FROM            CLIENTE INNER JOIN
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AGENDAMENTOTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public AGENDAMENTOTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AGENDAMENTO";
+            tableMapping.ColumnMappings.Add("AGEN_CODIGO", "AGEN_CODIGO");
+            tableMapping.ColumnMappings.Add("AGEN_CLIENTE", "AGEN_CLIENTE");
+            tableMapping.ColumnMappings.Add("AGEN_DATA", "AGEN_DATA");
+            tableMapping.ColumnMappings.Add("AGEN_DESCRICAO", "AGEN_DESCRICAO");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"AGENDAMENTO\" WHERE ((\"AGEN_CODIGO\" = @Original_AGEN_CODIGO) AND (\"AG" +
+                "EN_CLIENTE\" = @Original_AGEN_CLIENTE) AND (\"AGEN_DATA\" = @Original_AGEN_DATA))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AGEN_CODIGO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CODIGO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AGEN_CLIENTE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CLIENTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AGEN_DATA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_DATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"AGENDAMENTO\" (\"AGEN_CODIGO\", \"AGEN_CLIENTE\", \"AGEN_DATA\", \"AGEN_DESC" +
+                "RICAO\") VALUES (@AGEN_CODIGO, @AGEN_CLIENTE, @AGEN_DATA, @AGEN_DESCRICAO)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_CODIGO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CODIGO";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_CLIENTE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CLIENTE";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_DATA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_DATA";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_DESCRICAO";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_DESCRICAO";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""AGENDAMENTO"" SET ""AGEN_CODIGO"" = @AGEN_CODIGO, ""AGEN_CLIENTE"" = @AGEN_CLIENTE, ""AGEN_DATA"" = @AGEN_DATA, ""AGEN_DESCRICAO"" = @AGEN_DESCRICAO WHERE ((""AGEN_CODIGO"" = @Original_AGEN_CODIGO) AND (""AGEN_CLIENTE"" = @Original_AGEN_CLIENTE) AND (""AGEN_DATA"" = @Original_AGEN_DATA))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_CODIGO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CODIGO";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_CLIENTE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CLIENTE";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_DATA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_DATA";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@AGEN_DESCRICAO";
+            param.DbType = global::System.Data.DbType.Binary;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_DESCRICAO";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AGEN_CODIGO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CODIGO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AGEN_CLIENTE";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_CLIENTE";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_AGEN_DATA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "AGEN_DATA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::FROGI_OS.Properties.Settings.Default.csBancoDados;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT \"AGEN_CODIGO\", \"AGEN_CLIENTE\", \"AGEN_DATA\", \"AGEN_DESCRICAO\" FROM \"AGENDAM" +
+                "ENTO\"";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsFROGIOS.AGENDAMENTODataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsFROGIOS.AGENDAMENTODataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.AGENDAMENTODataTable dataTable = new dsFROGIOS.AGENDAMENTODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsFROGIOS.AGENDAMENTODataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(dsFROGIOS dataSet) {
+            return this.Adapter.Update(dataSet, "AGENDAMENTO");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_AGEN_CODIGO, int Original_AGEN_CLIENTE, System.DateTime Original_AGEN_DATA) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_AGEN_CODIGO));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_AGEN_CLIENTE));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_AGEN_DATA));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int AGEN_CODIGO, int AGEN_CLIENTE, System.DateTime AGEN_DATA, byte[] AGEN_DESCRICAO) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(AGEN_CODIGO));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AGEN_CLIENTE));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(AGEN_DATA));
+            if ((AGEN_DESCRICAO == null)) {
+                throw new global::System.ArgumentNullException("AGEN_DESCRICAO");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((byte[])(AGEN_DESCRICAO));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int AGEN_CODIGO, int AGEN_CLIENTE, System.DateTime AGEN_DATA, byte[] AGEN_DESCRICAO, int Original_AGEN_CODIGO, int Original_AGEN_CLIENTE, System.DateTime Original_AGEN_DATA) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(AGEN_CODIGO));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(AGEN_CLIENTE));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(AGEN_DATA));
+            if ((AGEN_DESCRICAO == null)) {
+                throw new global::System.ArgumentNullException("AGEN_DESCRICAO");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((byte[])(AGEN_DESCRICAO));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_AGEN_CODIGO));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_AGEN_CLIENTE));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_AGEN_DATA));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int AGEN_CLIENTE, System.DateTime AGEN_DATA, byte[] AGEN_DESCRICAO, int Original_AGEN_CODIGO, int Original_AGEN_CLIENTE, System.DateTime Original_AGEN_DATA) {
+            return this.Update(Original_AGEN_CODIGO, AGEN_CLIENTE, AGEN_DATA, AGEN_DESCRICAO, Original_AGEN_CODIGO, Original_AGEN_CLIENTE, Original_AGEN_DATA);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class taAgendamentoFisico : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public taAgendamentoFisico() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PESQUISA_AGENDAMENTO_FISICO";
+            tableMapping.ColumnMappings.Add("AGEN_CODIGO", "AGEN_CODIGO");
+            tableMapping.ColumnMappings.Add("CLIENTE_FISICO_NOME", "CLIENTE_FISICO_NOME");
+            tableMapping.ColumnMappings.Add("AGEN_DATA", "AGEN_DATA");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::FROGI_OS.Properties.Settings.Default.csBancoDados;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        AGENDAMENTO.AGEN_CODIGO, CLIENTE_FISICO.CLIENTE_FISICO_NOME, AGENDAMENTO.AGEN_DATA
+FROM            AGENDAMENTO INNER JOIN
+                         CLIENTE ON AGENDAMENTO.AGEN_CLIENTE = CLIENTE.CLIENTE_CODIGO INNER JOIN
+                         CLIENTE_FISICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_FISICO.CLIENTE_FISICO_CLIENTE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsFROGIOS.PESQUISA_AGENDAMENTO_FISICODataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsFROGIOS.PESQUISA_AGENDAMENTO_FISICODataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_AGENDAMENTO_FISICODataTable dataTable = new dsFROGIOS.PESQUISA_AGENDAMENTO_FISICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class taAgendamentoJuridico : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public taAgendamentoJuridico() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PESQUISA_AGENDAMENTO_JURIDICO";
+            tableMapping.ColumnMappings.Add("AGEN_CODIGO", "AGEN_CODIGO");
+            tableMapping.ColumnMappings.Add("CLIENTE_JURIDICO_FANTASIA", "CLIENTE_JURIDICO_FANTASIA");
+            tableMapping.ColumnMappings.Add("AGEN_DATA", "AGEN_DATA");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::FROGI_OS.Properties.Settings.Default.csBancoDados;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        AGENDAMENTO.AGEN_CODIGO, CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, AGENDAMENTO.AGEN_DATA
+FROM            AGENDAMENTO INNER JOIN
+                         CLIENTE ON AGENDAMENTO.AGEN_CLIENTE = CLIENTE.CLIENTE_CODIGO INNER JOIN
+                         CLIENTE_JURIDICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_JURIDICO.CLIENTE_JURIDICO_CLIENTE";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable dataTable = new dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -45793,6 +47822,8 @@ FROM            CLIENTE INNER JOIN
         private UFTableAdapter _uFTableAdapter;
         
         private USUARIOTableAdapter _uSUARIOTableAdapter;
+        
+        private AGENDAMENTOTableAdapter _aGENDAMENTOTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -46189,6 +48220,20 @@ FROM            CLIENTE INNER JOIN
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public AGENDAMENTOTableAdapter AGENDAMENTOTableAdapter {
+            get {
+                return this._aGENDAMENTOTableAdapter;
+            }
+            set {
+                this._aGENDAMENTOTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -46314,6 +48359,10 @@ FROM            CLIENTE INNER JOIN
                             && (this._uSUARIOTableAdapter.Connection != null))) {
                     return this._uSUARIOTableAdapter.Connection;
                 }
+                if (((this._aGENDAMENTOTableAdapter != null) 
+                            && (this._aGENDAMENTOTableAdapter.Connection != null))) {
+                    return this._aGENDAMENTOTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -46408,6 +48457,9 @@ FROM            CLIENTE INNER JOIN
                 if ((this._uSUARIOTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._aGENDAMENTOTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -46446,30 +48498,12 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._sECAOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SECAO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._fORNECEDORTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FORNECEDOR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._sECAOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._mARCATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MARCA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mARCATableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._gRUPOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.GRUPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._gRUPOTableAdapter.Update(updatedRows));
+                    result = (result + this._fORNECEDORTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46482,12 +48516,48 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._fORNECEDORTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FORNECEDOR.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._gRUPOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.GRUPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fORNECEDORTableAdapter.Update(updatedRows));
+                    result = (result + this._gRUPOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._mARCATableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MARCA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mARCATableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._sECAOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SECAO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._sECAOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._uSUARIOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.USUARIO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._uSUARIOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tIPOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46497,6 +48567,24 @@ FROM            CLIENTE INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sERVICOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._oSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.OS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._oSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._pRODUTOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pRODUTOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46518,60 +48606,6 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._oSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.OS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._oSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._uSUARIOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.USUARIO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._uSUARIOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pRODUTOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pRODUTOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._oS_SERVICOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.OS_SERVICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._oS_SERVICOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pERMISSAOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PERMISSAO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pERMISSAOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._oS_ITEMTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -46581,66 +48615,12 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._oRCAMENTO_SERVICOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_SERVICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._aGENDAMENTOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AGENDAMENTO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._oRCAMENTO_SERVICOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._fORNECEDOR_JURIDICOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FORNECEDOR_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._fORNECEDOR_JURIDICOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._fORNECEDOR_FISICOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.FORNECEDOR_FISICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._fORNECEDOR_FISICOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._eMPRESATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.EMPRESA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eMPRESATableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._cLIENTE_JURIDICOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CLIENTE_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._cLIENTE_JURIDICOTableAdapter.Update(updatedRows));
+                    result = (result + this._aGENDAMENTOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46653,12 +48633,93 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._cLIENTE_JURIDICOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CLIENTE_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cLIENTE_JURIDICOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._eMPRESATableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.EMPRESA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._eMPRESATableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._fORNECEDOR_FISICOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FORNECEDOR_FISICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fORNECEDOR_FISICOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._fORNECEDOR_JURIDICOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.FORNECEDOR_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fORNECEDOR_JURIDICOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._sERVICO_TIPOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.SERVICO_TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._sERVICO_TIPOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._pERMISSAOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PERMISSAO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._pERMISSAOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._oS_SERVICOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.OS_SERVICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._oS_SERVICOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._oRCAMENTO_SERVICOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_SERVICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._oRCAMENTO_SERVICOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -46696,27 +48757,11 @@ FROM            CLIENTE INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._sECAOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SECAO.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._fORNECEDORTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FORNECEDOR.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._sECAOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._mARCATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MARCA.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mARCATableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._gRUPOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.GRUPO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._gRUPOTableAdapter.Update(addedRows));
+                    result = (result + this._fORNECEDORTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46728,11 +48773,43 @@ FROM            CLIENTE INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._fORNECEDORTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FORNECEDOR.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._gRUPOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.GRUPO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fORNECEDORTableAdapter.Update(addedRows));
+                    result = (result + this._gRUPOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._mARCATableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MARCA.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mARCATableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._sECAOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SECAO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._sECAOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._uSUARIOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.USUARIO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._uSUARIOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tIPOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46741,6 +48818,22 @@ FROM            CLIENTE INNER JOIN
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._sERVICOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._oSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.OS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._oSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._pRODUTOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pRODUTOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46760,54 +48853,6 @@ FROM            CLIENTE INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._oSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.OS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._oSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._uSUARIOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.USUARIO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._uSUARIOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._pRODUTOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pRODUTOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._oS_SERVICOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.OS_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._oS_SERVICOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._pERMISSAOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PERMISSAO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pERMISSAOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._oS_ITEMTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -46816,59 +48861,11 @@ FROM            CLIENTE INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._oRCAMENTO_SERVICOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._aGENDAMENTOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AGENDAMENTO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._oRCAMENTO_SERVICOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._fORNECEDOR_JURIDICOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FORNECEDOR_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._fORNECEDOR_JURIDICOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._fORNECEDOR_FISICOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.FORNECEDOR_FISICO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._fORNECEDOR_FISICOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._eMPRESATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.EMPRESA.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eMPRESATableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._cLIENTE_JURIDICOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CLIENTE_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._cLIENTE_JURIDICOTableAdapter.Update(addedRows));
+                    result = (result + this._aGENDAMENTOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46880,11 +48877,83 @@ FROM            CLIENTE INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._cLIENTE_JURIDICOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CLIENTE_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cLIENTE_JURIDICOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._eMPRESATableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.EMPRESA.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._eMPRESATableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._fORNECEDOR_FISICOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FORNECEDOR_FISICO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fORNECEDOR_FISICOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._fORNECEDOR_JURIDICOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.FORNECEDOR_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fORNECEDOR_JURIDICOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._sERVICO_TIPOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.SERVICO_TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._sERVICO_TIPOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._pERMISSAOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PERMISSAO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._pERMISSAOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._oS_SERVICOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.OS_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._oS_SERVICOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._oRCAMENTO_SERVICOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._oRCAMENTO_SERVICOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -46898,91 +48967,11 @@ FROM            CLIENTE INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(dsFROGIOS dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._sERVICO_TIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SERVICO_TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._sERVICO_TIPOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._cLIENTE_FISICOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CLIENTE_FISICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._cLIENTE_FISICOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._cLIENTE_JURIDICOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CLIENTE_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._cLIENTE_JURIDICOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._eMPRESATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.EMPRESA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eMPRESATableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._fORNECEDOR_FISICOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FORNECEDOR_FISICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._fORNECEDOR_FISICOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._fORNECEDOR_JURIDICOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FORNECEDOR_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._fORNECEDOR_JURIDICOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._oRCAMENTO_SERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._oRCAMENTO_SERVICOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._pERMISSAOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PERMISSAO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pERMISSAOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -46994,35 +48983,91 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._pERMISSAOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PERMISSAO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(deletedRows));
+                    result = (result + this._pERMISSAOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pRODUTOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pRODUTOTableAdapter.Update(deletedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._uSUARIOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.USUARIO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sERVICO_TIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SERVICO_TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._uSUARIOTableAdapter.Update(deletedRows));
+                    result = (result + this._sERVICO_TIPOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._oSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.OS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._oSTableAdapter.Update(deletedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fORNECEDOR_JURIDICOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FORNECEDOR_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fORNECEDOR_JURIDICOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fORNECEDOR_FISICOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FORNECEDOR_FISICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fORNECEDOR_FISICOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._eMPRESATableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.EMPRESA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._eMPRESATableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cLIENTE_JURIDICOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CLIENTE_JURIDICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cLIENTE_JURIDICOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cLIENTE_FISICOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CLIENTE_FISICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cLIENTE_FISICOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aGENDAMENTOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AGENDAMENTO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aGENDAMENTOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._oS_ITEMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -47042,6 +49087,22 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._pRODUTOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PRODUTO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._pRODUTOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._oSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.OS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._oSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._sERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.SERVICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -47050,27 +49111,27 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fORNECEDORTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FORNECEDOR.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fORNECEDORTableAdapter.Update(deletedRows));
+                    result = (result + this._tIPOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fUNCIONARIOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FUNCIONARIO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._uSUARIOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.USUARIO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._fUNCIONARIOTableAdapter.Update(deletedRows));
+                    result = (result + this._uSUARIOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._gRUPOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.GRUPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._sECAOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SECAO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._gRUPOTableAdapter.Update(deletedRows));
+                    result = (result + this._sECAOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -47082,11 +49143,27 @@ FROM            CLIENTE INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._sECAOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SECAO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._gRUPOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.GRUPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._sECAOTableAdapter.Update(deletedRows));
+                    result = (result + this._gRUPOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fUNCIONARIOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FUNCIONARIO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fUNCIONARIOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fORNECEDORTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FORNECEDOR.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fORNECEDORTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -47285,6 +49362,11 @@ FROM            CLIENTE INNER JOIN
             }
             if (((this._uSUARIOTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._uSUARIOTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
+            if (((this._aGENDAMENTOTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._aGENDAMENTOTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -47563,6 +49645,15 @@ FROM            CLIENTE INNER JOIN
                         adaptersWithAcceptChangesDuringUpdate.Add(this._uSUARIOTableAdapter.Adapter);
                     }
                 }
+                if ((this._aGENDAMENTOTableAdapter != null)) {
+                    revertConnections.Add(this._aGENDAMENTOTableAdapter, this._aGENDAMENTOTableAdapter.Connection);
+                    this._aGENDAMENTOTableAdapter.Connection = ((global::FirebirdSql.Data.FirebirdClient.FbConnection)(workConnection));
+                    this._aGENDAMENTOTableAdapter.Transaction = ((global::FirebirdSql.Data.FirebirdClient.FbTransaction)(workTransaction));
+                    if (this._aGENDAMENTOTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._aGENDAMENTOTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._aGENDAMENTOTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -47728,6 +49819,10 @@ FROM            CLIENTE INNER JOIN
                 if ((this._uSUARIOTableAdapter != null)) {
                     this._uSUARIOTableAdapter.Connection = ((global::FirebirdSql.Data.FirebirdClient.FbConnection)(revertConnections[this._uSUARIOTableAdapter]));
                     this._uSUARIOTableAdapter.Transaction = null;
+                }
+                if ((this._aGENDAMENTOTableAdapter != null)) {
+                    this._aGENDAMENTOTableAdapter.Connection = ((global::FirebirdSql.Data.FirebirdClient.FbConnection)(revertConnections[this._aGENDAMENTOTableAdapter]));
+                    this._aGENDAMENTOTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
