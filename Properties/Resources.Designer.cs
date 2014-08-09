@@ -313,6 +313,36 @@ namespace FROGI_OS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DiproLogo {
+            get {
+                object obj = ResourceManager.GetObject("DiproLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FrogiOS_Icone {
+            get {
+                object obj = ResourceManager.GetObject("FrogiOS_Icone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FrogiOS_Logo {
+            get {
+                object obj = ResourceManager.GetObject("FrogiOS_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icone_editar {
             get {
                 object obj = ResourceManager.GetObject("icone_editar", resourceCulture);

@@ -115,18 +115,18 @@
             this.oS_DIAGNOSTICORichTextBox = new System.Windows.Forms.RichTextBox();
             this.tabConclusão = new System.Windows.Forms.TabPage();
             this.panelConclusao = new System.Windows.Forms.Panel();
-            this.buttonConcluirOS = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textTroco = new System.Windows.Forms.TextBox();
-            this.Troco = new System.Windows.Forms.Label();
-            this.textValorPago = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.oS_TOTALTextBox = new System.Windows.Forms.TextBox();
+            this.textValorPago = new System.Windows.Forms.TextBox();
+            this.Troco = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.oS_DESCONTOTextBox = new System.Windows.Forms.TextBox();
             this.oS_ACRESCIMOTextBox = new System.Windows.Forms.TextBox();
-            this.oS_FORMA_PAGAMENTOComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.oS_FORMA_PAGAMENTOComboBox = new System.Windows.Forms.ComboBox();
+            this.buttonConcluirOS = new System.Windows.Forms.Button();
+            this.oS_TOTALTextBox = new System.Windows.Forms.TextBox();
             cLIENTE_FISICO_NOMELabel = new System.Windows.Forms.Label();
             fUNCIONARIO_NOMELabel = new System.Windows.Forms.Label();
             oS_TOTAL_ITEMLabel = new System.Windows.Forms.Label();
@@ -179,9 +179,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.oS_SERVICODataGridView)).BeginInit();
             this.tabConclusão.SuspendLayout();
             this.panelConclusao.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCabecalho
@@ -505,6 +505,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = this.taFisico;
@@ -1047,17 +1048,17 @@
             this.panelConclusao.TabIndex = 0;
             this.panelConclusao.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConclusao_Paint);
             // 
-            // buttonConcluirOS
+            // groupBox5
             // 
-            this.buttonConcluirOS.AutoSize = true;
-            this.buttonConcluirOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonConcluirOS.Font = new System.Drawing.Font("Segoe UI Light", 30F);
-            this.buttonConcluirOS.Location = new System.Drawing.Point(539, 365);
-            this.buttonConcluirOS.Name = "buttonConcluirOS";
-            this.buttonConcluirOS.Size = new System.Drawing.Size(232, 66);
-            this.buttonConcluirOS.TabIndex = 12;
-            this.buttonConcluirOS.Text = "Concluir OS";
-            this.buttonConcluirOS.UseVisualStyleBackColor = true;
+            this.groupBox5.Controls.Add(this.textTroco);
+            this.groupBox5.Controls.Add(this.label2);
+            this.groupBox5.Controls.Add(this.textValorPago);
+            this.groupBox5.Controls.Add(this.Troco);
+            this.groupBox5.Location = new System.Drawing.Point(143, 133);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(232, 207);
+            this.groupBox5.TabIndex = 15;
+            this.groupBox5.TabStop = false;
             // 
             // textTroco
             // 
@@ -1065,22 +1066,6 @@
             this.textTroco.Name = "textTroco";
             this.textTroco.Size = new System.Drawing.Size(191, 33);
             this.textTroco.TabIndex = 11;
-            // 
-            // Troco
-            // 
-            this.Troco.AutoSize = true;
-            this.Troco.Location = new System.Drawing.Point(14, 21);
-            this.Troco.Name = "Troco";
-            this.Troco.Size = new System.Drawing.Size(58, 25);
-            this.Troco.TabIndex = 10;
-            this.Troco.Text = "Troco";
-            // 
-            // textValorPago
-            // 
-            this.textValorPago.Location = new System.Drawing.Point(19, 138);
-            this.textValorPago.Name = "textValorPago";
-            this.textValorPago.Size = new System.Drawing.Size(191, 33);
-            this.textValorPago.TabIndex = 9;
             // 
             // label2
             // 
@@ -1091,14 +1076,34 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Valor pago";
             // 
-            // oS_TOTALTextBox
+            // textValorPago
             // 
-            this.oS_TOTALTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL", true));
-            this.oS_TOTALTextBox.Font = new System.Drawing.Font("Segoe UI Light", 30F);
-            this.oS_TOTALTextBox.Location = new System.Drawing.Point(16, 365);
-            this.oS_TOTALTextBox.Name = "oS_TOTALTextBox";
-            this.oS_TOTALTextBox.Size = new System.Drawing.Size(279, 61);
-            this.oS_TOTALTextBox.TabIndex = 7;
+            this.textValorPago.Location = new System.Drawing.Point(19, 138);
+            this.textValorPago.Name = "textValorPago";
+            this.textValorPago.Size = new System.Drawing.Size(191, 33);
+            this.textValorPago.TabIndex = 9;
+            // 
+            // Troco
+            // 
+            this.Troco.AutoSize = true;
+            this.Troco.Location = new System.Drawing.Point(14, 21);
+            this.Troco.Name = "Troco";
+            this.Troco.Size = new System.Drawing.Size(58, 25);
+            this.Troco.TabIndex = 10;
+            this.Troco.Text = "Troco";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.oS_DESCONTOTextBox);
+            this.groupBox4.Controls.Add(this.oS_ACRESCIMOTextBox);
+            this.groupBox4.Controls.Add(oS_ACRESCIMOLabel);
+            this.groupBox4.Controls.Add(oS_DESCONTOLabel);
+            this.groupBox4.Location = new System.Drawing.Point(397, 133);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(226, 207);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // oS_DESCONTOTextBox
             // 
@@ -1116,15 +1121,6 @@
             this.oS_ACRESCIMOTextBox.Size = new System.Drawing.Size(195, 33);
             this.oS_ACRESCIMOTextBox.TabIndex = 3;
             // 
-            // oS_FORMA_PAGAMENTOComboBox
-            // 
-            this.oS_FORMA_PAGAMENTOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_FORMA_PAGAMENTO", true));
-            this.oS_FORMA_PAGAMENTOComboBox.FormattingEnabled = true;
-            this.oS_FORMA_PAGAMENTOComboBox.Location = new System.Drawing.Point(107, 42);
-            this.oS_FORMA_PAGAMENTOComboBox.Name = "oS_FORMA_PAGAMENTOComboBox";
-            this.oS_FORMA_PAGAMENTOComboBox.Size = new System.Drawing.Size(288, 33);
-            this.oS_FORMA_PAGAMENTOComboBox.TabIndex = 1;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.oS_FORMA_PAGAMENTOComboBox);
@@ -1135,30 +1131,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Forma de pagamento";
             // 
-            // groupBox4
+            // oS_FORMA_PAGAMENTOComboBox
             // 
-            this.groupBox4.Controls.Add(this.oS_DESCONTOTextBox);
-            this.groupBox4.Controls.Add(this.oS_ACRESCIMOTextBox);
-            this.groupBox4.Controls.Add(oS_ACRESCIMOLabel);
-            this.groupBox4.Controls.Add(oS_DESCONTOLabel);
-            this.groupBox4.Location = new System.Drawing.Point(397, 133);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(226, 207);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
+            this.oS_FORMA_PAGAMENTOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_FORMA_PAGAMENTO", true));
+            this.oS_FORMA_PAGAMENTOComboBox.FormattingEnabled = true;
+            this.oS_FORMA_PAGAMENTOComboBox.Location = new System.Drawing.Point(107, 42);
+            this.oS_FORMA_PAGAMENTOComboBox.Name = "oS_FORMA_PAGAMENTOComboBox";
+            this.oS_FORMA_PAGAMENTOComboBox.Size = new System.Drawing.Size(288, 33);
+            this.oS_FORMA_PAGAMENTOComboBox.TabIndex = 1;
             // 
-            // groupBox5
+            // buttonConcluirOS
             // 
-            this.groupBox5.Controls.Add(this.textTroco);
-            this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.textValorPago);
-            this.groupBox5.Controls.Add(this.Troco);
-            this.groupBox5.Location = new System.Drawing.Point(143, 133);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(232, 207);
-            this.groupBox5.TabIndex = 15;
-            this.groupBox5.TabStop = false;
+            this.buttonConcluirOS.AutoSize = true;
+            this.buttonConcluirOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonConcluirOS.Font = new System.Drawing.Font("Segoe UI Light", 30F);
+            this.buttonConcluirOS.Location = new System.Drawing.Point(539, 365);
+            this.buttonConcluirOS.Name = "buttonConcluirOS";
+            this.buttonConcluirOS.Size = new System.Drawing.Size(232, 66);
+            this.buttonConcluirOS.TabIndex = 12;
+            this.buttonConcluirOS.Text = "Concluir OS";
+            this.buttonConcluirOS.UseVisualStyleBackColor = true;
+            // 
+            // oS_TOTALTextBox
+            // 
+            this.oS_TOTALTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL", true));
+            this.oS_TOTALTextBox.Font = new System.Drawing.Font("Segoe UI Light", 30F);
+            this.oS_TOTALTextBox.Location = new System.Drawing.Point(16, 365);
+            this.oS_TOTALTextBox.Name = "oS_TOTALTextBox";
+            this.oS_TOTALTextBox.Size = new System.Drawing.Size(279, 61);
+            this.oS_TOTALTextBox.TabIndex = 7;
             // 
             // formCadastroOS
             // 
@@ -1211,11 +1212,11 @@
             this.tabConclusão.ResumeLayout(false);
             this.panelConclusao.ResumeLayout(false);
             this.panelConclusao.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

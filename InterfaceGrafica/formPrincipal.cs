@@ -106,5 +106,26 @@ namespace FROGI_OS
             agendamento.Dispose();
         }
 
+        private void pictureCompras_Click(object sender, EventArgs e)
+        {
+            formCadastroCompra compra = new formCadastroCompra(true);
+            compra.ShowDialog();
+            compra.Dispose();
+        }
+
+        private void pictureAjuda_Click(object sender, EventArgs e)
+        {
+            formSobre sobre = new formSobre();
+            sobre.ShowDialog();
+            sobre.Dispose();
+        }
+
+        private void pictureNotas_Click(object sender, EventArgs e)
+        {
+            formNotaFiscal nota = new formNotaFiscal();
+            nota.ShowDialog();
+            nota.Dispose();
+        }
+
     }
 }

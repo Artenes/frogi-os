@@ -101,6 +101,12 @@
     <Compile Include="InterfaceGrafica\formAgendamento.Designer.cs">
       <DependentUpon>formAgendamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formAjuda.Designer.cs">
+      <DependentUpon>formAjuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceGrafica\formCadastroAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     </Compile>
     <Compile Include="InterfaceGrafica\formCadastroCliente.Designer.cs">
       <DependentUpon>formCadastroCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroCompra.Designer.cs">
+      <DependentUpon>formCadastroCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceGrafica\formCadastroFornecedor.cs">
       <SubType>Form</SubType>
@@ -142,6 +154,18 @@
     </Compile>
     <Compile Include="InterfaceGrafica\formCadastroOS.Designer.cs">
       <DependentUpon>formCadastroOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formNotaFiscal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formNotaFiscal.Designer.cs">
+      <DependentUpon>formNotaFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOpcoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formOpcoes.Designer.cs">
+      <DependentUpon>formOpcoes.cs</DependentUpon>
     </Compile>
     <Compile Include="InterfaceGrafica\formOSBaseCadastro.cs">
       <SubType>Form</SubType>
@@ -245,6 +269,12 @@
     <Compile Include="InterfaceGrafica\formPesquisaCliente.Designer.cs">
       <DependentUpon>formPesquisaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formPesquisaCompra.Designer.cs">
+      <DependentUpon>formPesquisaCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceGrafica\formPesquisaFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,8 +354,15 @@
     <Compile Include="InterfaceGrafica\formCadastroUsuario.Designer.cs">
       <DependentUpon>formCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formSobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formSobre.Designer.cs">
+      <DependentUpon>formSobre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mapeamento\MapAgendamento.cs" />
     <Compile Include="Mapeamento\MapCliente.cs" />
+    <Compile Include="Mapeamento\MapCompra.cs" />
     <Compile Include="Mapeamento\MapFornecedor.cs" />
     <Compile Include="Mapeamento\MapFuncionario.cs" />
     <Compile Include="Mapeamento\MapGrupo.cs" />
@@ -360,11 +397,17 @@
     <EmbeddedResource Include="InterfaceGrafica\formCadastroCliente.resx">
       <DependentUpon>formCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroCompra.resx">
+      <DependentUpon>formCadastroCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroOrcamento.resx">
       <DependentUpon>formCadastroOrcamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroOS.resx">
       <DependentUpon>formCadastroOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formNotaFiscal.resx">
+      <DependentUpon>formNotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formOSBaseCadastro.resx">
       <DependentUpon>formOSBaseCadastro.cs</DependentUpon>
@@ -426,6 +469,9 @@
     <EmbeddedResource Include="InterfaceGrafica\formPesquisaCliente.resx">
       <DependentUpon>formPesquisaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formPesquisaCompra.resx">
+      <DependentUpon>formPesquisaCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formPesquisaFornecedor.resx">
       <DependentUpon>formPesquisaFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -464,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroUsuario.resx">
       <DependentUpon>formCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formSobre.resx">
+      <DependentUpon>formSobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -615,6 +664,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\banner_opcoes_pequeno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrogiOS_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FrogiOS_Icone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

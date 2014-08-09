@@ -243,6 +243,7 @@
             this.pictureAjuda.Image = global::FROGI_OS.Properties.Resources.banner_ajuda;
             this.pictureAjuda.Name = "pictureAjuda";
             this.pictureAjuda.TabStop = false;
+            this.pictureAjuda.Click += new System.EventHandler(this.pictureAjuda_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -319,6 +320,7 @@
             this.pictureNotas.Image = global::FROGI_OS.Properties.Resources.banner_notas_grande;
             this.pictureNotas.Name = "pictureNotas";
             this.pictureNotas.TabStop = false;
+            this.pictureNotas.Click += new System.EventHandler(this.pictureNotas_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -333,6 +335,7 @@
             this.pictureCompras.Image = global::FROGI_OS.Properties.Resources.banner_compra_pequeno;
             this.pictureCompras.Name = "pictureCompras";
             this.pictureCompras.TabStop = false;
+            this.pictureCompras.Click += new System.EventHandler(this.pictureCompras_Click);
             // 
             // pictureOpcoes
             // 

@@ -106,6 +106,8 @@ namespace FROGI_OS {
         
         private PESQUISA_AGENDAMENTO_JURIDICODataTable tablePESQUISA_AGENDAMENTO_JURIDICO;
         
+        private PESQUISA_PRODUTO_ITEMDataTable tablePESQUISA_PRODUTO_ITEM;
+        
         private global::System.Data.DataRelation relationCLIENTE_UF_FK;
         
         private global::System.Data.DataRelation relationCLIENTE_FISICO_CLIENTE_FK;
@@ -354,6 +356,9 @@ namespace FROGI_OS {
                 }
                 if ((ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"] != null)) {
                     base.Tables.Add(new PESQUISA_AGENDAMENTO_JURIDICODataTable(ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"]));
+                }
+                if ((ds.Tables["PESQUISA_PRODUTO_ITEM"] != null)) {
+                    base.Tables.Add(new PESQUISA_PRODUTO_ITEMDataTable(ds.Tables["PESQUISA_PRODUTO_ITEM"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -785,6 +790,16 @@ namespace FROGI_OS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public PESQUISA_PRODUTO_ITEMDataTable PESQUISA_PRODUTO_ITEM {
+            get {
+                return this.tablePESQUISA_PRODUTO_ITEM;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -972,6 +987,9 @@ namespace FROGI_OS {
                 }
                 if ((ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"] != null)) {
                     base.Tables.Add(new PESQUISA_AGENDAMENTO_JURIDICODataTable(ds.Tables["PESQUISA_AGENDAMENTO_JURIDICO"]));
+                }
+                if ((ds.Tables["PESQUISA_PRODUTO_ITEM"] != null)) {
+                    base.Tables.Add(new PESQUISA_PRODUTO_ITEMDataTable(ds.Tables["PESQUISA_PRODUTO_ITEM"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1252,6 +1270,12 @@ namespace FROGI_OS {
                     this.tablePESQUISA_AGENDAMENTO_JURIDICO.InitVars();
                 }
             }
+            this.tablePESQUISA_PRODUTO_ITEM = ((PESQUISA_PRODUTO_ITEMDataTable)(base.Tables["PESQUISA_PRODUTO_ITEM"]));
+            if ((initTable == true)) {
+                if ((this.tablePESQUISA_PRODUTO_ITEM != null)) {
+                    this.tablePESQUISA_PRODUTO_ITEM.InitVars();
+                }
+            }
             this.relationCLIENTE_UF_FK = this.Relations["CLIENTE_UF_FK"];
             this.relationCLIENTE_FISICO_CLIENTE_FK = this.Relations["CLIENTE_FISICO_CLIENTE_FK"];
             this.relationCLIENTE_JURIDICO_CLIENTE_FK = this.Relations["CLIENTE_JURIDICO_CLIENTE_FK"];
@@ -1393,6 +1417,8 @@ namespace FROGI_OS {
             base.Tables.Add(this.tablePESQUISA_AGENDAMENTO_FISICO);
             this.tablePESQUISA_AGENDAMENTO_JURIDICO = new PESQUISA_AGENDAMENTO_JURIDICODataTable();
             base.Tables.Add(this.tablePESQUISA_AGENDAMENTO_JURIDICO);
+            this.tablePESQUISA_PRODUTO_ITEM = new PESQUISA_PRODUTO_ITEMDataTable();
+            base.Tables.Add(this.tablePESQUISA_PRODUTO_ITEM);
             this.relationCLIENTE_UF_FK = new global::System.Data.DataRelation("CLIENTE_UF_FK", new global::System.Data.DataColumn[] {
                         this.tableUF.UF_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableCLIENTE.CLIENTE_UFColumn}, false);
@@ -1839,6 +1865,12 @@ namespace FROGI_OS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializePESQUISA_PRODUTO_ITEM() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -2014,6 +2046,9 @@ namespace FROGI_OS {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void PESQUISA_AGENDAMENTO_JURIDICORowChangeEventHandler(object sender, PESQUISA_AGENDAMENTO_JURIDICORowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void PESQUISA_PRODUTO_ITEMRowChangeEventHandler(object sender, PESQUISA_PRODUTO_ITEMRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -16606,6 +16641,314 @@ namespace FROGI_OS {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PESQUISA_PRODUTO_ITEMDataTable : global::System.Data.TypedTableBase<PESQUISA_PRODUTO_ITEMRow> {
+            
+            private global::System.Data.DataColumn columnPRODUTO_DESCRICAO;
+            
+            private global::System.Data.DataColumn columnPRODUTO_PRECO_COMPRA;
+            
+            private global::System.Data.DataColumn columnITEM_COMPRA_DESCONTO;
+            
+            private global::System.Data.DataColumn columnITEM_COMPRA_QUANTIDADE;
+            
+            private global::System.Data.DataColumn columnITEM_COMPRA_PRECO_TOTAL;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_PRODUTO_ITEMDataTable() {
+                this.TableName = "PESQUISA_PRODUTO_ITEM";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PESQUISA_PRODUTO_ITEMDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected PESQUISA_PRODUTO_ITEMDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PRODUTO_DESCRICAOColumn {
+                get {
+                    return this.columnPRODUTO_DESCRICAO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PRODUTO_PRECO_COMPRAColumn {
+                get {
+                    return this.columnPRODUTO_PRECO_COMPRA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ITEM_COMPRA_DESCONTOColumn {
+                get {
+                    return this.columnITEM_COMPRA_DESCONTO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ITEM_COMPRA_QUANTIDADEColumn {
+                get {
+                    return this.columnITEM_COMPRA_QUANTIDADE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ITEM_COMPRA_PRECO_TOTALColumn {
+                get {
+                    return this.columnITEM_COMPRA_PRECO_TOTAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_PRODUTO_ITEMRow this[int index] {
+                get {
+                    return ((PESQUISA_PRODUTO_ITEMRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_PRODUTO_ITEMRowChangeEventHandler PESQUISA_PRODUTO_ITEMRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_PRODUTO_ITEMRowChangeEventHandler PESQUISA_PRODUTO_ITEMRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_PRODUTO_ITEMRowChangeEventHandler PESQUISA_PRODUTO_ITEMRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event PESQUISA_PRODUTO_ITEMRowChangeEventHandler PESQUISA_PRODUTO_ITEMRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddPESQUISA_PRODUTO_ITEMRow(PESQUISA_PRODUTO_ITEMRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_PRODUTO_ITEMRow AddPESQUISA_PRODUTO_ITEMRow(string PRODUTO_DESCRICAO, decimal PRODUTO_PRECO_COMPRA, decimal ITEM_COMPRA_DESCONTO, short ITEM_COMPRA_QUANTIDADE, decimal ITEM_COMPRA_PRECO_TOTAL) {
+                PESQUISA_PRODUTO_ITEMRow rowPESQUISA_PRODUTO_ITEMRow = ((PESQUISA_PRODUTO_ITEMRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        PRODUTO_DESCRICAO,
+                        PRODUTO_PRECO_COMPRA,
+                        ITEM_COMPRA_DESCONTO,
+                        ITEM_COMPRA_QUANTIDADE,
+                        ITEM_COMPRA_PRECO_TOTAL};
+                rowPESQUISA_PRODUTO_ITEMRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPESQUISA_PRODUTO_ITEMRow);
+                return rowPESQUISA_PRODUTO_ITEMRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                PESQUISA_PRODUTO_ITEMDataTable cln = ((PESQUISA_PRODUTO_ITEMDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new PESQUISA_PRODUTO_ITEMDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnPRODUTO_DESCRICAO = base.Columns["PRODUTO_DESCRICAO"];
+                this.columnPRODUTO_PRECO_COMPRA = base.Columns["PRODUTO_PRECO_COMPRA"];
+                this.columnITEM_COMPRA_DESCONTO = base.Columns["ITEM_COMPRA_DESCONTO"];
+                this.columnITEM_COMPRA_QUANTIDADE = base.Columns["ITEM_COMPRA_QUANTIDADE"];
+                this.columnITEM_COMPRA_PRECO_TOTAL = base.Columns["ITEM_COMPRA_PRECO_TOTAL"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnPRODUTO_DESCRICAO = new global::System.Data.DataColumn("PRODUTO_DESCRICAO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRODUTO_DESCRICAO);
+                this.columnPRODUTO_PRECO_COMPRA = new global::System.Data.DataColumn("PRODUTO_PRECO_COMPRA", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPRODUTO_PRECO_COMPRA);
+                this.columnITEM_COMPRA_DESCONTO = new global::System.Data.DataColumn("ITEM_COMPRA_DESCONTO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnITEM_COMPRA_DESCONTO);
+                this.columnITEM_COMPRA_QUANTIDADE = new global::System.Data.DataColumn("ITEM_COMPRA_QUANTIDADE", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnITEM_COMPRA_QUANTIDADE);
+                this.columnITEM_COMPRA_PRECO_TOTAL = new global::System.Data.DataColumn("ITEM_COMPRA_PRECO_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnITEM_COMPRA_PRECO_TOTAL);
+                this.columnPRODUTO_DESCRICAO.AllowDBNull = false;
+                this.columnPRODUTO_DESCRICAO.MaxLength = 60;
+                this.columnPRODUTO_PRECO_COMPRA.AllowDBNull = false;
+                this.columnITEM_COMPRA_QUANTIDADE.AllowDBNull = false;
+                this.columnITEM_COMPRA_PRECO_TOTAL.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_PRODUTO_ITEMRow NewPESQUISA_PRODUTO_ITEMRow() {
+                return ((PESQUISA_PRODUTO_ITEMRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new PESQUISA_PRODUTO_ITEMRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(PESQUISA_PRODUTO_ITEMRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.PESQUISA_PRODUTO_ITEMRowChanged != null)) {
+                    this.PESQUISA_PRODUTO_ITEMRowChanged(this, new PESQUISA_PRODUTO_ITEMRowChangeEvent(((PESQUISA_PRODUTO_ITEMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.PESQUISA_PRODUTO_ITEMRowChanging != null)) {
+                    this.PESQUISA_PRODUTO_ITEMRowChanging(this, new PESQUISA_PRODUTO_ITEMRowChangeEvent(((PESQUISA_PRODUTO_ITEMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.PESQUISA_PRODUTO_ITEMRowDeleted != null)) {
+                    this.PESQUISA_PRODUTO_ITEMRowDeleted(this, new PESQUISA_PRODUTO_ITEMRowChangeEvent(((PESQUISA_PRODUTO_ITEMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.PESQUISA_PRODUTO_ITEMRowDeleting != null)) {
+                    this.PESQUISA_PRODUTO_ITEMRowDeleting(this, new PESQUISA_PRODUTO_ITEMRowChangeEvent(((PESQUISA_PRODUTO_ITEMRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemovePESQUISA_PRODUTO_ITEMRow(PESQUISA_PRODUTO_ITEMRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsFROGIOS ds = new dsFROGIOS();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "PESQUISA_PRODUTO_ITEMDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CATEGORIARow : global::System.Data.DataRow {
@@ -23399,6 +23742,94 @@ namespace FROGI_OS {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class PESQUISA_PRODUTO_ITEMRow : global::System.Data.DataRow {
+            
+            private PESQUISA_PRODUTO_ITEMDataTable tablePESQUISA_PRODUTO_ITEM;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal PESQUISA_PRODUTO_ITEMRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablePESQUISA_PRODUTO_ITEM = ((PESQUISA_PRODUTO_ITEMDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PRODUTO_DESCRICAO {
+                get {
+                    return ((string)(this[this.tablePESQUISA_PRODUTO_ITEM.PRODUTO_DESCRICAOColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_PRODUTO_ITEM.PRODUTO_DESCRICAOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal PRODUTO_PRECO_COMPRA {
+                get {
+                    return ((decimal)(this[this.tablePESQUISA_PRODUTO_ITEM.PRODUTO_PRECO_COMPRAColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_PRODUTO_ITEM.PRODUTO_PRECO_COMPRAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ITEM_COMPRA_DESCONTO {
+                get {
+                    try {
+                        return ((decimal)(this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_DESCONTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ITEM_COMPRA_DESCONTO\' in table \'PESQUISA_PRODUTO_ITEM\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_DESCONTOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public short ITEM_COMPRA_QUANTIDADE {
+                get {
+                    return ((short)(this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_QUANTIDADEColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_QUANTIDADEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal ITEM_COMPRA_PRECO_TOTAL {
+                get {
+                    return ((decimal)(this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_PRECO_TOTALColumn]));
+                }
+                set {
+                    this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_PRECO_TOTALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsITEM_COMPRA_DESCONTONull() {
+                return this.IsNull(this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_DESCONTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetITEM_COMPRA_DESCONTONull() {
+                this[this.tablePESQUISA_PRODUTO_ITEM.ITEM_COMPRA_DESCONTOColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -24778,6 +25209,40 @@ namespace FROGI_OS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PESQUISA_AGENDAMENTO_JURIDICORow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class PESQUISA_PRODUTO_ITEMRowChangeEvent : global::System.EventArgs {
+            
+            private PESQUISA_PRODUTO_ITEMRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_PRODUTO_ITEMRowChangeEvent(PESQUISA_PRODUTO_ITEMRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PESQUISA_PRODUTO_ITEMRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -47752,6 +48217,180 @@ FROM            AGENDAMENTO INNER JOIN
         public virtual dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable dataTable = new dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class taPesquisaProdutoItem : global::System.ComponentModel.Component {
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbDataAdapter _adapter;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbConnection _connection;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbTransaction _transaction;
+        
+        private global::FirebirdSql.Data.FirebirdClient.FbCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public taPesquisaProdutoItem() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::FirebirdSql.Data.FirebirdClient.FbDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::FirebirdSql.Data.FirebirdClient.FbCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::FirebirdSql.Data.FirebirdClient.FbTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::FirebirdSql.Data.FirebirdClient.FbCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::FirebirdSql.Data.FirebirdClient.FbDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "PESQUISA_PRODUTO_ITEM";
+            tableMapping.ColumnMappings.Add("PRODUTO_DESCRICAO", "PRODUTO_DESCRICAO");
+            tableMapping.ColumnMappings.Add("PRODUTO_PRECO_COMPRA", "PRODUTO_PRECO_COMPRA");
+            tableMapping.ColumnMappings.Add("ITEM_COMPRA_DESCONTO", "ITEM_COMPRA_DESCONTO");
+            tableMapping.ColumnMappings.Add("ITEM_COMPRA_QUANTIDADE", "ITEM_COMPRA_QUANTIDADE");
+            tableMapping.ColumnMappings.Add("ITEM_COMPRA_PRECO_TOTAL", "ITEM_COMPRA_PRECO_TOTAL");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::FirebirdSql.Data.FirebirdClient.FbConnection();
+            this._connection.ConnectionString = global::FROGI_OS.Properties.Settings.Default.csBancoDados;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        PRODUTO.PRODUTO_DESCRICAO, PRODUTO.PRODUTO_PRECO_COMPRA, ITEM_COMPRA.ITEM_COMPRA_DESCONTO, 
+                         ITEM_COMPRA.ITEM_COMPRA_QUANTIDADE, ITEM_COMPRA.ITEM_COMPRA_PRECO_TOTAL
+FROM            ITEM_COMPRA INNER JOIN
+                         PRODUTO ON ITEM_COMPRA.ITEM_COMPRA_PRODUTO = PRODUTO.PRODUTO_CODIGO";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsFROGIOS.PESQUISA_PRODUTO_ITEMDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsFROGIOS.PESQUISA_PRODUTO_ITEMDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_PRODUTO_ITEMDataTable dataTable = new dsFROGIOS.PESQUISA_PRODUTO_ITEMDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
