@@ -59,13 +59,20 @@ namespace FROGI_OS {
                 dialogo.compor("Quer guardar essas informações que você digitou?", "", formDialogo.TipoExpressao.Pergunta);
                 if (dialogo.ShowDialog() == DialogResult.Yes) {
                     try {
+                        Conexao.abrir();
                         salvaExecutar();
                         dialogo.compor("Pronto! As informações foram guardadas!", "", formDialogo.TipoExpressao.AvisoFeliz);
                         dialogo.ShowDialog();
+                        Conexao.getTransacao.Commit();
                         resetar();
-                    } catch (Exception erro) {
+                    }
+                    catch (Exception erro) {
                         dialogo.compor("Essa não! Temos um problema...", erro.Message, formDialogo.TipoExpressao.AvisoTriste);
                         dialogo.ShowDialog();
+                        Conexao.getTransacao.Rollback();
+                    }
+                    finally {
+                        Conexao.fechar();
                     }
                 }
             }
@@ -132,6 +139,18 @@ namespace FROGI_OS {
                 pesquisarRegistro();
                 return true;
             } else {
+                return false;
+            }
+        }
+
+        protected bool verificarCampo(string valor)
+        {
+            if (valor != null && valor.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
                 return false;
             }
         }
