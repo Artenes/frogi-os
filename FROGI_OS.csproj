@@ -347,7 +347,6 @@
     <Compile Include="InterfaceGrafica\formPrincipal.Designer.cs">
       <DependentUpon>formPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="GerServico.cs" />
     <Compile Include="InterfaceGrafica\formCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

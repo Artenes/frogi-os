@@ -35,6 +35,7 @@ namespace FROGI_OS.CamadaEnlaceDados {
             dsFROGIOS.CLIENTE_FISICORow fisico,
             dsFROGIOS.CLIENTE_JURIDICORow juridico,
             bool eFisico) {
+
                 TblCliente clienteSQL = new TblCliente();
                 clienteSQL.atualizar(cliente);
                 TblClienteFisico fisicoSQL = new TblClienteFisico();

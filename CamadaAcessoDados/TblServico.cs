@@ -44,7 +44,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramDescricao, servico.SERVICO_DESCRICAO);
             comando.Parameters.AddWithValue(paramValor, servico.SERVICO_VALOR);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {

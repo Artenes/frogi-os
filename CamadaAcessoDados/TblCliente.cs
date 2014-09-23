@@ -89,7 +89,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramCep, cliente.CLIENTE_CEP);
             comando.Parameters.AddWithValue(paramDataCadastro, cliente.CLIENTE_DATA_CADASTRO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -114,7 +114,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, cliente.CLIENTE_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
         
     }

@@ -16,7 +16,7 @@ namespace FROGI_OS {
         private formDialogo dialogo;
         private bool pesquisaHabilitado;
 
-        //Este atributo deve ser inicializado pelo contrutor da classe filha
+        //Este atributo deve ser inicializado pelo construtor da classe filha
         protected formPesquisa pesquisa;
 
         public formCadastro() {
@@ -82,13 +82,20 @@ namespace FROGI_OS {
             dialogo.compor("Tem certeza que quer apagar este registro?", "Não vai dar pra recuperar ele depois!", formDialogo.TipoExpressao.Pergunta);
             if (dialogo.ShowDialog() == DialogResult.Yes) {
                 try {
+                    Conexao.abrir();
                     excluiExecutar();
-                    dialogo.compor("Serviço excluido com sucesso", "Vai fazer falta...", formDialogo.TipoExpressao.AvisoTriste);
+                    dialogo.compor("Regitro excluido com sucesso", "Vai fazer falta...", formDialogo.TipoExpressao.AvisoTriste);
                     dialogo.ShowDialog();
+                    Conexao.getTransacao.Commit();
                     resetar();
-                } catch (Exception erro) {
+                }
+                catch (Exception erro) {
                     dialogo.compor("Essa não! Temos um problema...", erro.Message, formDialogo.TipoExpressao.AvisoTriste);
                     dialogo.ShowDialog();
+                    Conexao.getTransacao.Rollback();
+                }
+                finally {
+                    Conexao.fechar();
                 }
             }
         }
@@ -143,14 +150,11 @@ namespace FROGI_OS {
             }
         }
 
-        protected bool verificarCampo(string valor)
+        protected bool valorValido(string valor)
         {
-            if (valor != null && valor.Length > 0)
-            {
+            if (valor != null && valor.Length > 0) {
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }

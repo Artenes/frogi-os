@@ -66,7 +66,7 @@ namespace FROGI_OS {
             comando.Parameters.AddWithValue(paramAtividade, clienteJuridico.CLIENTE_JURIDICO_ATIVIDADE);
             comando.Parameters.AddWithValue(paramNomeContato, clienteJuridico.CLIENTE_JURIDICO_NOME_CONTATO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -91,7 +91,7 @@ namespace FROGI_OS {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCliente, clienteJuridico.CLIENTE_JURIDICO_CLIENTE);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
     }
 }

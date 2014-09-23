@@ -72,6 +72,7 @@
             // panelCabecalho
             // 
             this.panelCabecalho.Controls.Add(this.comboTipo);
+            this.panelCabecalho.Controls.SetChildIndex(this.label1, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.textValorPesquisa, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.buttonPesquisar, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.labelPesquisa, 0);
@@ -115,6 +116,7 @@
             this.tablessPai.SelectedIndex = 0;
             this.tablessPai.Size = new System.Drawing.Size(966, 343);
             this.tablessPai.TabIndex = 4;
+            this.tablessPai.TabStop = false;
             // 
             // tabFisico
             // 
@@ -149,8 +151,11 @@
             this.pESQUISA_CLIENTE_FISICODataGridView.Location = new System.Drawing.Point(3, 3);
             this.pESQUISA_CLIENTE_FISICODataGridView.Name = "pESQUISA_CLIENTE_FISICODataGridView";
             this.pESQUISA_CLIENTE_FISICODataGridView.ReadOnly = true;
+            this.pESQUISA_CLIENTE_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_CLIENTE_FISICODataGridView.Size = new System.Drawing.Size(952, 299);
             this.pESQUISA_CLIENTE_FISICODataGridView.TabIndex = 4;
+            this.pESQUISA_CLIENTE_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_CLIENTE_FISICODataGridView_CellDoubleClick);
+            this.pESQUISA_CLIENTE_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_CLIENTE_FISICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -250,8 +255,11 @@
             this.pESQUISA_CLIENTE_JURIDICODataGridView.Location = new System.Drawing.Point(3, 3);
             this.pESQUISA_CLIENTE_JURIDICODataGridView.Name = "pESQUISA_CLIENTE_JURIDICODataGridView";
             this.pESQUISA_CLIENTE_JURIDICODataGridView.ReadOnly = true;
+            this.pESQUISA_CLIENTE_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_CLIENTE_JURIDICODataGridView.Size = new System.Drawing.Size(952, 299);
             this.pESQUISA_CLIENTE_JURIDICODataGridView.TabIndex = 0;
+            this.pESQUISA_CLIENTE_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_CLIENTE_JURIDICODataGridView_CellDoubleClick);
+            this.pESQUISA_CLIENTE_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_CLIENTE_JURIDICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -320,6 +328,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;

@@ -101,7 +101,7 @@ namespace FROGI_OS {
             comando.Parameters.AddWithValue(paramPai, clienteFisico.CLIENTE_FISICO_PAI);
             comando.Parameters.AddWithValue(paramObservacao, clienteFisico.CLIENTE_FISICO_OBSERVACAO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -126,7 +126,7 @@ namespace FROGI_OS {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCliente, clienteFisico.CLIENTE_FISICO_CLIENTE);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

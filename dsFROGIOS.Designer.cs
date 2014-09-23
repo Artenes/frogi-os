@@ -44138,9 +44138,19 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_SERVICO_TIPO_SERVICO, int Original_SERVICO_TIPO_TIPO) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SERVICO_TIPO_SERVICO));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_SERVICO_TIPO_TIPO));
+        public virtual int Delete(global::System.Nullable<int> Original_SERVICO_TIPO_SERVICO, global::System.Nullable<int> Original_SERVICO_TIPO_TIPO) {
+            if ((Original_SERVICO_TIPO_SERVICO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_SERVICO_TIPO_SERVICO.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SERVICO_TIPO_TIPO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_SERVICO_TIPO_TIPO.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -44161,9 +44171,19 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int SERVICO_TIPO_SERVICO, int SERVICO_TIPO_TIPO) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SERVICO_TIPO_SERVICO));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SERVICO_TIPO_TIPO));
+        public virtual int Insert(global::System.Nullable<int> SERVICO_TIPO_SERVICO, global::System.Nullable<int> SERVICO_TIPO_TIPO) {
+            if ((SERVICO_TIPO_SERVICO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(SERVICO_TIPO_SERVICO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((SERVICO_TIPO_TIPO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(SERVICO_TIPO_TIPO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -44184,11 +44204,31 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int SERVICO_TIPO_SERVICO, int SERVICO_TIPO_TIPO, int Original_SERVICO_TIPO_SERVICO, int Original_SERVICO_TIPO_TIPO) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SERVICO_TIPO_SERVICO));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SERVICO_TIPO_TIPO));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_SERVICO_TIPO_SERVICO));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_SERVICO_TIPO_TIPO));
+        public virtual int Update(global::System.Nullable<int> SERVICO_TIPO_SERVICO, global::System.Nullable<int> SERVICO_TIPO_TIPO, global::System.Nullable<int> Original_SERVICO_TIPO_SERVICO, global::System.Nullable<int> Original_SERVICO_TIPO_TIPO) {
+            if ((SERVICO_TIPO_SERVICO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(SERVICO_TIPO_SERVICO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((SERVICO_TIPO_TIPO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(SERVICO_TIPO_TIPO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SERVICO_TIPO_SERVICO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_SERVICO_TIPO_SERVICO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_SERVICO_TIPO_TIPO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_SERVICO_TIPO_TIPO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -44209,7 +44249,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Original_SERVICO_TIPO_SERVICO, int Original_SERVICO_TIPO_TIPO) {
+        public virtual int Update(global::System.Nullable<int> Original_SERVICO_TIPO_SERVICO, global::System.Nullable<int> Original_SERVICO_TIPO_TIPO) {
             return this.Update(Original_SERVICO_TIPO_SERVICO, Original_SERVICO_TIPO_TIPO, Original_SERVICO_TIPO_SERVICO, Original_SERVICO_TIPO_TIPO);
         }
     }

@@ -14,7 +14,8 @@ namespace FROGI_OS
     public partial class formPesquisa : Form
     {
 
-        private formCadastro cadastro;
+        protected formCadastro cadastro;
+        protected formDialogo dialogo;
 
         public formPesquisa() {
             InitializeComponent();
@@ -31,9 +32,16 @@ namespace FROGI_OS
             else {
                 pictureNovo.Visible = false;
             }
+            dialogo = new formDialogo();
+        }
+
+        protected void exibirMensagemErro (String mensagem) {
+            dialogo.compor("Temos um problema", mensagem, formDialogo.TipoExpressao.AvisoTriste);
+            dialogo.ShowDialog();
         }
 
         protected virtual void pesquisar() {}
+
         protected virtual void resetar() {
             comboCampoPesquisa.SelectedIndex = 0;
             textValorPesquisa.Text = String.Empty;
@@ -69,8 +77,7 @@ namespace FROGI_OS
             novoRegistro();
         }
 
-        private void buttonPesquisar_Click(object sender, EventArgs e)
-        {
+        private void buttonPesquisar_Click(object sender, EventArgs e) {
             pesquisar();
         }
 

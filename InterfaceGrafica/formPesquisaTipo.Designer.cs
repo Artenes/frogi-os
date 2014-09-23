@@ -71,6 +71,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -114,11 +115,14 @@
             this.tIPODataGridView.DataSource = this.bsTipo;
             this.tIPODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tIPODataGridView.Location = new System.Drawing.Point(0, 0);
+            this.tIPODataGridView.MultiSelect = false;
             this.tIPODataGridView.Name = "tIPODataGridView";
             this.tIPODataGridView.ReadOnly = true;
             this.tIPODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tIPODataGridView.Size = new System.Drawing.Size(966, 409);
             this.tIPODataGridView.TabIndex = 3;
+            this.tIPODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tIPODataGridView_CellDoubleClick);
+            this.tIPODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tIPODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 

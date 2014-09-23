@@ -47,14 +47,14 @@ namespace FROGI_OS.CamadaEnlaceDados {
                 dsFROGIOS.SERVICO_TIPORow servicoTipoLinha = servicoTipo.NewSERVICO_TIPORow();
                 servicoTipoLinha.SERVICO_TIPO_SERVICO = servico.SERVICO_CODIGO;
 
-                int linhasDeletadas = deletados.Rows.Count;
+                int linhasDeletadas = (deletados != null) ? deletados.Rows.Count : 0;
                 for (int i = 0; i < linhasDeletadas; i++) {
                     servicoTipoLinha.SERVICO_TIPO_TIPO =
                         (int)deletados.Rows[i][deletados.TIPO_CODIGOColumn, DataRowVersion.Original];
                     servicoTipoSQL.deletar(servicoTipoLinha);
                 }
                 
-                int linhasInseridas = inseridos.Rows.Count;
+                int linhasInseridas = (inseridos != null) ? inseridos.Rows.Count : 0;
                 for (int i = 0; i < linhasInseridas; i++) {
                     servicoTipoLinha.SERVICO_TIPO_TIPO =
                         (int)inseridos.Rows[i][inseridos.TIPO_CODIGOColumn, DataRowVersion.Current];
