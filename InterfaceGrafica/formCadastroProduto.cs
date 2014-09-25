@@ -8,20 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FROGI_OS.InterfaceGrafica;
+using FROGI_OS.CamadaEnlaceDados;
 
 namespace FROGI_OS
 {
-    public partial class formCadastroProduto : formCadastro
-    {
+    public partial class formCadastroProduto : formCadastro {
+
+        private GerProduto produtoSQL;
 
         public formCadastroProduto(bool pesquisaHabilitado) : base(pesquisaHabilitado) {
             InitializeComponent();
             if (pesquisaHabilitado)
                 pesquisa = new formPesquisaProduto(this, false);
+            produtoSQL = new GerProduto();
         }
 
         protected override void salvaExecutar() {
-            base.salvaExecutar();
+            
         }
 
         protected override void editarRegistro() {
@@ -46,9 +49,9 @@ namespace FROGI_OS
             return base.validarCampos();
         }
 
-       public override void visualizarRegistro(int codigo)
+       protected override void visualizarRegistroExecutar(int codigo)
         {
-            base.visualizarRegistro(codigo);
+            base.visualizarRegistroExecutar(codigo);
         }
     }
 }

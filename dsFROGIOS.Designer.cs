@@ -166,8 +166,6 @@ namespace FROGI_OS {
         
         private global::System.Data.DataRelation relationSERVICO_TIPO_SERVICO_FK;
         
-        private global::System.Data.DataRelation relationSERVICO_TIPO_TIPO_FK;
-        
         private global::System.Data.DataRelation relationUSUARIO_CATEGORIA_FK;
         
         private global::System.Data.DataRelation relationCLIENTE_UF;
@@ -1305,7 +1303,6 @@ namespace FROGI_OS {
             this.relationPRODUTO_MARCA_FK = this.Relations["PRODUTO_MARCA_FK"];
             this.relationPRODUTO_SECAO_FK = this.Relations["PRODUTO_SECAO_FK"];
             this.relationSERVICO_TIPO_SERVICO_FK = this.Relations["SERVICO_TIPO_SERVICO_FK"];
-            this.relationSERVICO_TIPO_TIPO_FK = this.Relations["SERVICO_TIPO_TIPO_FK"];
             this.relationUSUARIO_CATEGORIA_FK = this.Relations["USUARIO_CATEGORIA_FK"];
             this.relationCLIENTE_UF = this.Relations["CLIENTE_UF"];
             this.relationCLIENTE_FISICO_CLIENTE_FK1 = this.Relations["CLIENTE_FISICO_CLIENTE_FK1"];
@@ -1535,10 +1532,6 @@ namespace FROGI_OS {
                         this.tableSERVICO.SERVICO_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn}, false);
             this.Relations.Add(this.relationSERVICO_TIPO_SERVICO_FK);
-            this.relationSERVICO_TIPO_TIPO_FK = new global::System.Data.DataRelation("SERVICO_TIPO_TIPO_FK", new global::System.Data.DataColumn[] {
-                        this.tableTIPO.TIPO_CODIGOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn}, false);
-            this.Relations.Add(this.relationSERVICO_TIPO_TIPO_FK);
             this.relationUSUARIO_CATEGORIA_FK = new global::System.Data.DataRelation("USUARIO_CATEGORIA_FK", new global::System.Data.DataColumn[] {
                         this.tableCATEGORIA.CATEGORIA_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableUSUARIO.USUARIO_CATEGORIAColumn}, false);
@@ -11031,28 +11024,17 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SERVICO_TIPORow AddSERVICO_TIPORow(SERVICORow parentSERVICORowBySERVICO_TIPO_SERVICO_FK, TIPORow parentTIPORowBySERVICO_TIPO_TIPO_FK) {
+            public SERVICO_TIPORow AddSERVICO_TIPORow(SERVICORow parentSERVICORowBySERVICO_TIPO_SERVICO_FK, int SERVICO_TIPO_TIPO) {
                 SERVICO_TIPORow rowSERVICO_TIPORow = ((SERVICO_TIPORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null};
+                        SERVICO_TIPO_TIPO};
                 if ((parentSERVICORowBySERVICO_TIPO_SERVICO_FK != null)) {
                     columnValuesArray[0] = parentSERVICORowBySERVICO_TIPO_SERVICO_FK[0];
-                }
-                if ((parentTIPORowBySERVICO_TIPO_TIPO_FK != null)) {
-                    columnValuesArray[1] = parentTIPORowBySERVICO_TIPO_TIPO_FK[0];
                 }
                 rowSERVICO_TIPORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSERVICO_TIPORow);
                 return rowSERVICO_TIPORow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SERVICO_TIPORow FindBySERVICO_TIPO_SERVICOSERVICO_TIPO_TIPO(int SERVICO_TIPO_SERVICO, int SERVICO_TIPO_TIPO) {
-                return ((SERVICO_TIPORow)(this.Rows.Find(new object[] {
-                            SERVICO_TIPO_SERVICO,
-                            SERVICO_TIPO_TIPO})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11083,11 +11065,8 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnSERVICO_TIPO_SERVICO);
                 this.columnSERVICO_TIPO_TIPO = new global::System.Data.DataColumn("SERVICO_TIPO_TIPO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSERVICO_TIPO_TIPO);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnSERVICO_TIPO_SERVICO,
-                                this.columnSERVICO_TIPO_TIPO}, true));
-                this.columnSERVICO_TIPO_SERVICO.AllowDBNull = false;
-                this.columnSERVICO_TIPO_TIPO.AllowDBNull = false;
+                this.columnSERVICO_TIPO_TIPO.AutoIncrementSeed = -1;
+                this.columnSERVICO_TIPO_TIPO.AutoIncrementStep = -1;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21852,7 +21831,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SERVICO_TIPO_SERVICO {
                 get {
-                    return ((int)(this[this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn]));
+                    try {
+                        return ((int)(this[this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SERVICO_TIPO_SERVICO\' in table \'SERVICO_TIPO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn] = value;
@@ -21863,7 +21847,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SERVICO_TIPO_TIPO {
                 get {
-                    return ((int)(this[this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn]));
+                    try {
+                        return ((int)(this[this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SERVICO_TIPO_TIPO\' in table \'SERVICO_TIPO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn] = value;
@@ -21883,13 +21872,26 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TIPORow TIPORow {
-                get {
-                    return ((TIPORow)(this.GetParentRow(this.Table.ParentRelations["SERVICO_TIPO_TIPO_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["SERVICO_TIPO_TIPO_FK"]);
-                }
+            public bool IsSERVICO_TIPO_SERVICONull() {
+                return this.IsNull(this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSERVICO_TIPO_SERVICONull() {
+                this[this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSERVICO_TIPO_TIPONull() {
+                return this.IsNull(this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSERVICO_TIPO_TIPONull() {
+                this[this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21926,17 +21928,6 @@ namespace FROGI_OS {
                 }
                 set {
                     this[this.tableTIPO.TIPO_DESCRICAOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SERVICO_TIPORow[] GetSERVICO_TIPORows() {
-                if ((this.Table.ChildRelations["SERVICO_TIPO_TIPO_FK"] == null)) {
-                    return new SERVICO_TIPORow[0];
-                }
-                else {
-                    return ((SERVICO_TIPORow[])(base.GetChildRows(this.Table.ChildRelations["SERVICO_TIPO_TIPO_FK"])));
                 }
             }
         }
@@ -44244,14 +44235,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 }
             }
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Original_SERVICO_TIPO_SERVICO, global::System.Nullable<int> Original_SERVICO_TIPO_TIPO) {
-            return this.Update(Original_SERVICO_TIPO_SERVICO, Original_SERVICO_TIPO_TIPO, Original_SERVICO_TIPO_SERVICO, Original_SERVICO_TIPO_TIPO);
-        }
     }
     
     /// <summary>
@@ -49231,15 +49214,6 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._sERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.SERVICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -49285,12 +49259,12 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(updatedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49348,12 +49322,12 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(updatedRows));
+                    result = (result + this._tIPOTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49366,12 +49340,12 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(updatedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49390,6 +49364,15 @@ FROM            ITEM_COMPRA INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._oS_SERVICOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._oS_ITEMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49484,14 +49467,6 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._sERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.SERVICO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -49532,11 +49507,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(addedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49588,11 +49563,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(addedRows));
+                    result = (result + this._tIPOTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49604,11 +49579,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(addedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49625,6 +49600,14 @@ FROM            ITEM_COMPRA INNER JOIN
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._oS_SERVICOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._oS_ITEMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49654,6 +49637,14 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._oS_ITEMTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._oS_SERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.OS_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -49670,11 +49661,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(deletedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -49686,11 +49677,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(deletedRows));
+                    result = (result + this._tIPOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -49742,11 +49733,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(deletedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -49787,14 +49778,6 @@ FROM            ITEM_COMPRA INNER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._sERVICOTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FROGI_OS.CamadaAcessoDados;
 
 namespace FROGI_OS.InterfaceGrafica
 {
     public partial class formCadastroGrupo : formCadastro {
+
+        private TblGrupo grupoSQL;
+
         public formCadastroGrupo(bool pesquisaHabilitado) : base (pesquisaHabilitado) {
             InitializeComponent();
             if (pesquisaHabilitado)
                 pesquisa = new formPesquisaGrupo(this, false);
+            grupoSQL = new TblGrupo();
         }
 
         protected override void novoRegistro() {
@@ -23,7 +28,20 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         protected override void salvaExecutar() {
-            base.salvaExecutar();
+            if (dsFROGIOS.GRUPO.Rows.Count == 0) {
+                grupoSQL.inserir(pegarValorCamposGrupo(null));
+            } else {
+                object codigo = ((dsFROGIOS.GRUPORow)dsFROGIOS.GRUPO.Rows[0]).GRUPO_CODIGO;
+                grupoSQL.atualizar(pegarValorCamposGrupo(codigo));
+            }
+        }
+
+        private dsFROGIOS.GRUPORow pegarValorCamposGrupo (object codigo) {
+            dsFROGIOS.GRUPORow grupoRow = dsFROGIOS.GRUPO.NewGRUPORow();
+            if (codigo != null) grupoRow.GRUPO_CODIGO = (int)codigo;
+            grupoRow.GRUPO_DESCRICAO = gRUPO_DESCRICAOTextBox.Text;
+            try { grupoRow.GRUPO_DESCONTO = Convert.ToDecimal(gRUPO_DESCONTOTextBox.Text); } catch (Exception) { grupoRow.GRUPO_DESCONTO = 0; }
+            return grupoRow;
         }
 
         protected override void editarRegistro() {
@@ -32,14 +50,12 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         protected override void excluiExecutar() {
-            base.excluiExecutar();
+            grupoSQL.deletar((dsFROGIOS.GRUPORow)dsFROGIOS.GRUPO.Rows[0]);
         }
 
         protected override void resetar() {
             base.resetar();
-            if (dsFROGIOS != null) {
-                dsFROGIOS.GRUPO.Clear();
-            }
+            if (dsFROGIOS != null) dsFROGIOS.GRUPO.Clear();
         }
 
         protected override void campos(bool estaDisponivel) {
@@ -47,12 +63,21 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         protected override string validarCampos() {
+            string
+                descricao = gRUPO_DESCRICAOTextBox.Text,
+                desconto = gRUPO_DESCONTOTextBox.Text;
+
+            if (!valorValido(descricao)) return "Informe a descrição do grupo";
+            if (!valorValido(desconto)) return "Informe o desconto do grupo";
+
             return base.validarCampos();
         }
 
-        public override void visualizarRegistro(int codigo)
-        {
-            base.visualizarRegistro(codigo);
+        protected override void visualizarRegistroExecutar(int codigo) {
+            string coluna = dsFROGIOS.GRUPO.GRUPO_CODIGOColumn.ColumnName;
+            string valor;
+            try { valor = Convert.ToString(codigo); } catch (Exception) { valor = "-5"; }
+            dsFROGIOS.GRUPO.Load(grupoSQL.selecionar(coluna, valor, true));
         }
     }
 }

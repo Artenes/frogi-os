@@ -49,9 +49,9 @@ namespace FROGI_OS.InterfaceGrafica
             return base.validarCampos();
         }
 
-        public override void visualizarRegistro(int codigo)
+        protected override void visualizarRegistroExecutar(int codigo)
         {
-            base.visualizarRegistro(codigo);
+            base.visualizarRegistroExecutar(codigo);
         }
     }
 }

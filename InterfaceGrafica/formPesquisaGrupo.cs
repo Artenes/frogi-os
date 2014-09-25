@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FROGI_OS.Mapeamento;
+using FROGI_OS.CamadaAcessoDados;
 
 namespace FROGI_OS.InterfaceGrafica
 {
@@ -15,28 +16,49 @@ namespace FROGI_OS.InterfaceGrafica
     {
 
         private MapGrupo map;
-
+        private TblGrupo grupoSQL;
         public formPesquisaGrupo(formCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado)
         {
             InitializeComponent();
             map = new MapGrupo(dsFROGIOS.GRUPO);
             comboCampoPesquisa.Items.Clear();
-            foreach (string coluna in map.Colunas)
-            {
+            foreach (string coluna in map.Colunas){
                 comboCampoPesquisa.Items.Add(coluna);
             }
+            grupoSQL = new TblGrupo();
         }
 
-        protected override void pesquisar()
-        {
-            base.pesquisar();
+        protected override void pesquisaExecutar() {
+            string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
+            string valor = textValorPesquisa.Text;
+            dsFROGIOS.GRUPO.Clear();
+            dsFROGIOS.GRUPO.Load(grupoSQL.selecionar(coluna, valor, false));
         }
 
-        protected override void resetar()
-        {
+        protected override void resetar() {
             base.resetar();
             dsFROGIOS.GRUPO.Clear();
             this.ActiveControl = comboCampoPesquisa;
         }
+
+        private void selecionarGrupo() {
+            int indice = gRUPODataGridView.CurrentRow.Index;
+            int codigo = (int)gRUPODataGridView[0, indice].Value;
+            ((formCadastroGrupo)cadastro).visualizarRegistro(codigo);
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void gRUPODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            selecionarGrupo();
+        }
+
+        private void gRUPODataGridView_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                selecionarGrupo();
+                e.SuppressKeyPress = true;
+            }
+        }
+
     }
 }

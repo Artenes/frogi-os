@@ -14,7 +14,6 @@ namespace FROGI_OS.InterfaceGrafica {
     public partial class formCadastroCliente : formCadastro {
 
         private readonly int FISICO   = 0; //zero é para cliente físico
-        private readonly int JURIDICO = 1; //um é para cliente jurídico
         private GerCliente clienteSQL; //Carrega os comandos SQL com ele
         private TblUF uf; // <---- SQL aqui também
 
@@ -29,6 +28,7 @@ namespace FROGI_OS.InterfaceGrafica {
             
         protected override void novoRegistro() {
             base.novoRegistro();
+            comboTipo.SelectedIndex = FISICO;
             this.ActiveControl = cLIENTE_FISICO_NOMETextBox;
         }
 
@@ -72,9 +72,9 @@ namespace FROGI_OS.InterfaceGrafica {
                 if (mudouTipo) {
                     if (eFisico) {
                         fisicoRow = pegarValorCamposFisico(codigo); //Para inserir pego os valores que foram digitados nos campos
-                        juridicoRow = (dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO[0]; //Para apagar pego a instância que tava no BD
+                        juridicoRow = (dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO.Rows[0]; //Para apagar pego a instância que tava no BD
                     } else {
-                        fisicoRow = (dsFROGIOS.CLIENTE_FISICORow)dsFROGIOS.CLIENTE_FISICO[0];
+                        fisicoRow = (dsFROGIOS.CLIENTE_FISICORow)dsFROGIOS.CLIENTE_FISICO.Rows[0];
                         juridicoRow = pegarValorCamposJuridico(codigo);
                     }
                 } else {
@@ -98,10 +98,11 @@ namespace FROGI_OS.InterfaceGrafica {
             //Essa verificação serve para caso o cliente esteka sendo inserido
             //pela primeira vez, logo nenhum código será fornecido
             if (codigo != null) {
-                clienteRow.CLIENTE_CODIGO = (int)codigo;    
+                clienteRow.CLIENTE_CODIGO = (int)codigo;
+            } else {
+                clienteRow.CLIENTE_DATA_CADASTRO = DateTime.Now;
             }
             clienteRow.CLIENTE_TIPO = comboTipo.SelectedIndex.ToString();
-            clienteRow.CLIENTE_DATA_CADASTRO = DateTime.Now;
             clienteRow.CLIENTE_TELEFONE = eFisico ? cLIENTE_TELEFONEMaskedTextBox.Text : textTelefoneJuridico.Text;
             clienteRow.CLIENTE_CELULAR = eFisico ? cLIENTE_CELULARMaskedTextBox.Text : textCelularJuridico.Text;
             clienteRow.CLIENTE_EMAIL = eFisico ? cLIENTE_EMAILTextBox.Text : textEmailJuridico.Text;
@@ -118,7 +119,6 @@ namespace FROGI_OS.InterfaceGrafica {
         private dsFROGIOS.CLIENTE_FISICORow pegarValorCamposFisico(int codigo) {
 
             dsFROGIOS.CLIENTE_FISICORow fisicoRow = dsFROGIOS.CLIENTE_FISICO.NewCLIENTE_FISICORow();
-            fisicoRow = dsFROGIOS.CLIENTE_FISICO.NewCLIENTE_FISICORow();
 
             fisicoRow.CLIENTE_FISICO_CLIENTE = codigo;
             fisicoRow.CLIENTE_FISICO_NOME = cLIENTE_FISICO_NOMETextBox.Text;
@@ -144,7 +144,6 @@ namespace FROGI_OS.InterfaceGrafica {
         private dsFROGIOS.CLIENTE_JURIDICORow pegarValorCamposJuridico(int codigo) {
 
             dsFROGIOS.CLIENTE_JURIDICORow juridicoRow = dsFROGIOS.CLIENTE_JURIDICO.NewCLIENTE_JURIDICORow();
-            juridicoRow = dsFROGIOS.CLIENTE_JURIDICO.NewCLIENTE_JURIDICORow();
 
             juridicoRow.CLIENTE_JURIDICO_CLIENTE = codigo;
             juridicoRow.CLIENTE_JURIDICO_RAZAO_SOCIAL = cLIENTE_JURIDICO_RAZAO_SOCIALTextBox.Text;

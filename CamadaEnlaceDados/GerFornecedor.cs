@@ -99,7 +99,8 @@ namespace FROGI_OS.CamadaEnlaceDados {
             int codigo, 
             dsFROGIOS.FORNECEDORDataTable fornecedor, 
             dsFROGIOS.FORNECEDOR_FISICODataTable fisico, 
-            dsFROGIOS.FORNECEDOR_JURIDICODataTable juridico) {
+            dsFROGIOS.FORNECEDOR_JURIDICODataTable juridico,
+            dsFROGIOS.UFDataTable uf) {
 
             fornecedor.Clear();
             
@@ -111,6 +112,14 @@ namespace FROGI_OS.CamadaEnlaceDados {
                 true
                 )
             );
+
+            TblUF ufSql = new TblUF();
+            uf.Clear();
+            uf.Load(ufSql.selecionar(
+                uf.UF_CODIGOColumn.ColumnName,
+                Convert.ToString(((dsFROGIOS.FORNECEDORRow)fornecedor.Rows[0]).FORNECEDOR_UF),
+                true
+                ));
 
             if (fisico != null) {
                 fisico.Clear();

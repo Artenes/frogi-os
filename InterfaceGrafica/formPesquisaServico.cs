@@ -28,7 +28,7 @@ namespace FROGI_OS.InterfaceGrafica
             servicoSQL = new TblServico();
         }
 
-        protected override void pesquisar() {
+        protected override void pesquisaExecutar() {
             try {
                 Conexao.abrir();
 

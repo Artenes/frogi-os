@@ -121,6 +121,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -204,7 +205,6 @@
             // tIPODataGridView
             // 
             this.tIPODataGridView.AllowUserToAddRows = false;
-            this.tIPODataGridView.AllowUserToDeleteRows = false;
             this.tIPODataGridView.AutoGenerateColumns = false;
             this.tIPODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tIPODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -215,6 +215,7 @@
             this.tIPODataGridView.Location = new System.Drawing.Point(13, 32);
             this.tIPODataGridView.Name = "tIPODataGridView";
             this.tIPODataGridView.ReadOnly = true;
+            this.tIPODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tIPODataGridView.Size = new System.Drawing.Size(899, 137);
             this.tIPODataGridView.TabIndex = 3;
             // 
@@ -254,12 +255,12 @@
             this.buttonAdicionarTipo.UseVisualStyleBackColor = true;
             this.buttonAdicionarTipo.Click += new System.EventHandler(this.buttonAdicionarTipo_Click);
             // 
-            // formServicoCadastro
+            // formCadastroServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formServicoCadastro";
+            this.Name = "formCadastroServico";
             this.Text = "formServicoCadastro";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

@@ -32,10 +32,10 @@ namespace FROGI_OS.CamadaAcessoDados {
                 + "WHERE MARCA_CODIGO = " + paramCodigo + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
-            comando.Parameters.AddWithValue(paramCodigo, marca);
+            comando.Parameters.AddWithValue(paramCodigo, marca.MARCA_CODIGO);
             comando.Parameters.AddWithValue(paramDescricao, marca.MARCA_DESCRICAO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -60,7 +60,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, marca.MARCA_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

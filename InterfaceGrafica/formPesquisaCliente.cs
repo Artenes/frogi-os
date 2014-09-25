@@ -23,8 +23,7 @@ namespace FROGI_OS.InterfaceGrafica {
             cliente = new GerCliente();
         }
 
-        protected override void pesquisar() {
-            Conexao.abrir();
+        protected override void pesquisaExecutar() {
             bool eFisico = comboTipo.SelectedIndex == FISICO;
             string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
             string valor = textValorPesquisa.Text;
@@ -36,7 +35,6 @@ namespace FROGI_OS.InterfaceGrafica {
                 dsFROGIOS.PESQUISA_CLIENTE_JURIDICO.Clear();
                 dsFROGIOS.PESQUISA_CLIENTE_JURIDICO.Load(cliente.pesquisar(coluna, valor, eFisico));
             }
-            Conexao.fechar();
         }
 
         protected override void resetar() {
@@ -76,8 +74,8 @@ namespace FROGI_OS.InterfaceGrafica {
             int indice = pESQUISA_CLIENTE_FISICODataGridView.CurrentRow.Index;
             int codigo = (int)pESQUISA_CLIENTE_FISICODataGridView[0, indice].Value;
             ((formCadastroCliente)cadastro).visualizarRegistro(codigo, comboTipo.SelectedIndex == FISICO);
-            DialogResult = DialogResult.Yes;
-            Close();
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
         }
 
         private void juridicoSelecionar() {

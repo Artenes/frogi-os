@@ -2,6 +2,10 @@
     
     
     public partial class dsFROGIOS {
+        partial class SERVICO_TIPODataTable
+        {
+        }
+    
         partial class PRODUTO_PESQUISADataTable {
         }
     

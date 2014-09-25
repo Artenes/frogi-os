@@ -24,6 +24,8 @@ namespace FROGI_OS.InterfaceGrafica {
             servicoSQL = new GerServico();
             tipoSQL = new TblTipo();
             dialogo = new formDialogo();
+
+            dsFROGIOS.EnforceConstraints = false;
         }
 
         protected override void novoRegistro() {
@@ -92,7 +94,7 @@ namespace FROGI_OS.InterfaceGrafica {
             return base.validarCampos();
         }
 
-        public override void visualizarRegistro(int codigo) {
+        protected override void visualizarRegistroExecutar(int codigo) {
             servicoSQL.selecionar(codigo, dsFROGIOS.SERVICO, dsFROGIOS.TIPO);
         }
 
@@ -104,9 +106,10 @@ namespace FROGI_OS.InterfaceGrafica {
             try { valor = Convert.ToString(codigo);}catch (Exception) { valor = "-5"; }
             dsFROGIOS.TIPODataTable tipoTabela = new FROGI_OS.dsFROGIOS.TIPODataTable(); //depois criamos um objeto de tabela 
             tipoTabela.Load(tipoSQL.selecionar(coluna, valor, true)); //para usar o método Load que já pega o resultado da query no formato desejado (não sei fazer isso de outra forma XP)
-            dsFROGIOS.EnforceConstraints = false;
-            dsFROGIOS.TIPO.ImportRow((dsFROGIOS.TIPORow)tipoTabela.Rows[0]); //Depois adicionamos a row ao DataSet
-            dsFROGIOS.EnforceConstraints = true;
+            int codigoTipo = ((dsFROGIOS.TIPORow)tipoTabela.Rows[0]).TIPO_CODIGO;
+            if (dsFROGIOS.TIPO.FindByTIPO_CODIGO(codigoTipo) == null) {
+                dsFROGIOS.TIPO.Rows.Add(tipoTabela.Rows[0].ItemArray); //Depois adicionamos a row ao DataSet
+            }
         }
 
         private void buttonAdicionarTipo_Click(object sender, EventArgs e)  {

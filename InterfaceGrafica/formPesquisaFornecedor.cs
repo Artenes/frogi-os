@@ -23,9 +23,9 @@ namespace FROGI_OS.InterfaceGrafica
             map = new MapFornecedor(dsFROGIOS.FORNECEDOR, dsFROGIOS.FORNECEDOR_FISICO, dsFROGIOS.FORNECEDOR_JURIDICO);
         }
 
-        protected override void pesquisar()
+        protected override void pesquisaExecutar()
         {
-            base.pesquisar();
+            base.pesquisaExecutar();
         }
 
         protected override void resetar()

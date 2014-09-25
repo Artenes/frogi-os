@@ -84,14 +84,19 @@ namespace FROGI_OS {
                 try {
                     Conexao.abrir();
                     excluiExecutar();
-                    dialogo.compor("Regitro excluido com sucesso", "Vai fazer falta...", formDialogo.TipoExpressao.AvisoTriste);
-                    dialogo.ShowDialog();
+                    dialogo.compor("Regitro excluido com sucesso", "Vai fazer falta...", formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
                     Conexao.getTransacao.Commit();
                     resetar();
-                }
-                catch (Exception erro) {
-                    dialogo.compor("Essa não! Temos um problema...", erro.Message, formDialogo.TipoExpressao.AvisoTriste);
-                    dialogo.ShowDialog();
+                } catch (Exception erro) {
+                    string mensagemErro;
+                    //Isso quer dizer que um registro não pode ser deletado já que outros dependem dele para fazer sentido
+                    if (erro.Message.Contains("Foreign key references are present for the record")) {
+                        mensagemErro = "Este registro não pode ser deletado porque outros registros dependem dele";
+                    } else {
+                        mensagemErro = erro.Message;
+                    }
+
+                    dialogo.compor("Essa não! Temos um problema...", mensagemErro, formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
                     Conexao.getTransacao.Rollback();
                 }
                 finally {
@@ -176,7 +181,18 @@ namespace FROGI_OS {
 
         protected virtual string validarCampos() {return String.Empty;}
 
-        public virtual void visualizarRegistro(int codigo) { }
+        protected virtual void visualizarRegistroExecutar(int codigo) { }
+
+        public void visualizarRegistro(int codigo) {
+            try {
+                Conexao.abrir();
+                visualizarRegistroExecutar(codigo);
+            } catch (Exception erro){
+                dialogo.compor("Temos um problema", erro.Message, formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
+            } finally {
+                Conexao.fechar();
+            }
+        }
 
         private void pictureFechar_Click(object sender, EventArgs e) {
             this.Close();

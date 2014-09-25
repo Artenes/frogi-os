@@ -3669,7 +3669,7 @@ FROM            ITEM_COMPRA INNER JOIN
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SERVICO_TIPO_SERVICO" msprop:Generator_ColumnVarNameInTable="columnSERVICO_TIPO_SERVICO" msprop:Generator_ColumnPropNameInRow="SERVICO_TIPO_SERVICO" msprop:Generator_ColumnPropNameInTable="SERVICO_TIPO_SERVICOColumn" msprop:Generator_UserColumnName="SERVICO_TIPO_SERVICO" type="xs:int" minOccurs="0" />
-              <xs:element name="SERVICO_TIPO_TIPO" msprop:Generator_ColumnVarNameInTable="columnSERVICO_TIPO_TIPO" msprop:Generator_ColumnPropNameInRow="SERVICO_TIPO_TIPO" msprop:Generator_ColumnPropNameInTable="SERVICO_TIPO_TIPOColumn" msprop:Generator_UserColumnName="SERVICO_TIPO_TIPO" type="xs:int" minOccurs="0" />
+              <xs:element name="SERVICO_TIPO_TIPO" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSERVICO_TIPO_TIPO" msprop:Generator_ColumnPropNameInRow="SERVICO_TIPO_TIPO" msprop:Generator_ColumnPropNameInTable="SERVICO_TIPO_TIPOColumn" msprop:Generator_UserColumnName="SERVICO_TIPO_TIPO" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4331,11 +4331,6 @@ FROM            ITEM_COMPRA INNER JOIN
       <xs:selector xpath=".//mstns:SERVICO" />
       <xs:field xpath="mstns:SERVICO_CODIGO" />
     </xs:unique>
-    <xs:unique name="SERVICO_TIPO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SERVICO_TIPO" />
-      <xs:field xpath="mstns:SERVICO_TIPO_SERVICO" />
-      <xs:field xpath="mstns:SERVICO_TIPO_TIPO" />
-    </xs:unique>
     <xs:unique name="TIPO_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TIPO" />
       <xs:field xpath="mstns:TIPO_CODIGO" />
@@ -4388,7 +4383,6 @@ FROM            ITEM_COMPRA INNER JOIN
       <msdata:Relationship name="PRODUTO_MARCA_FK" msdata:parent="MARCA" msdata:child="PRODUTO" msdata:parentkey="MARCA_CODIGO" msdata:childkey="PRODUTO_MARCA" msprop:Generator_UserChildTable="PRODUTO" msprop:Generator_ChildPropName="GetPRODUTORows" msprop:Generator_UserRelationName="PRODUTO_MARCA_FK" msprop:Generator_ParentPropName="MARCARow" msprop:Generator_RelationVarName="relationPRODUTO_MARCA_FK" msprop:Generator_UserParentTable="MARCA" />
       <msdata:Relationship name="PRODUTO_SECAO_FK" msdata:parent="SECAO" msdata:child="PRODUTO" msdata:parentkey="SECAO_CODIGO" msdata:childkey="PRODUTO_SECAO" msprop:Generator_UserChildTable="PRODUTO" msprop:Generator_ChildPropName="GetPRODUTORows" msprop:Generator_UserRelationName="PRODUTO_SECAO_FK" msprop:Generator_RelationVarName="relationPRODUTO_SECAO_FK" msprop:Generator_UserParentTable="SECAO" msprop:Generator_ParentPropName="SECAORow" />
       <msdata:Relationship name="SERVICO_TIPO_SERVICO_FK" msdata:parent="SERVICO" msdata:child="SERVICO_TIPO" msdata:parentkey="SERVICO_CODIGO" msdata:childkey="SERVICO_TIPO_SERVICO" msprop:Generator_UserChildTable="SERVICO_TIPO" msprop:Generator_ChildPropName="GetSERVICO_TIPORows" msprop:Generator_UserRelationName="SERVICO_TIPO_SERVICO_FK" msprop:Generator_ParentPropName="SERVICORow" msprop:Generator_RelationVarName="relationSERVICO_TIPO_SERVICO_FK" msprop:Generator_UserParentTable="SERVICO" />
-      <msdata:Relationship name="SERVICO_TIPO_TIPO_FK" msdata:parent="TIPO" msdata:child="SERVICO_TIPO" msdata:parentkey="TIPO_CODIGO" msdata:childkey="SERVICO_TIPO_TIPO" msprop:Generator_UserChildTable="SERVICO_TIPO" msprop:Generator_ChildPropName="GetSERVICO_TIPORows" msprop:Generator_UserRelationName="SERVICO_TIPO_TIPO_FK" msprop:Generator_RelationVarName="relationSERVICO_TIPO_TIPO_FK" msprop:Generator_UserParentTable="TIPO" msprop:Generator_ParentPropName="TIPORow" />
       <msdata:Relationship name="USUARIO_CATEGORIA_FK" msdata:parent="CATEGORIA" msdata:child="USUARIO" msdata:parentkey="CATEGORIA_CODIGO" msdata:childkey="USUARIO_CATEGORIA" msprop:Generator_UserChildTable="USUARIO" msprop:Generator_ChildPropName="GetUSUARIORows" msprop:Generator_UserRelationName="USUARIO_CATEGORIA_FK" msprop:Generator_ParentPropName="CATEGORIARow" msprop:Generator_RelationVarName="relationUSUARIO_CATEGORIA_FK" msprop:Generator_UserParentTable="CATEGORIA" />
       <msdata:Relationship name="CLIENTE_UF" msdata:parent="CLIENTE" msdata:child="UF" msdata:parentkey="CLIENTE_CODIGO" msdata:childkey="UF_CODIGO" msprop:Generator_UserChildTable="UF" msprop:Generator_ChildPropName="GetUFRows" msprop:Generator_UserRelationName="CLIENTE_UF" msprop:Generator_ParentPropName="CLIENTERow" msprop:Generator_RelationVarName="relationCLIENTE_UF" msprop:Generator_UserParentTable="CLIENTE" />
       <msdata:Relationship name="CLIENTE_FISICO_CLIENTE_FK1" msdata:parent="PESQUISA_CLIENTE_FISICO" msdata:child="CLIENTE_FISICO" msdata:parentkey="CLIENTE_CODIGO" msdata:childkey="CLIENTE_FISICO_CLIENTE" msprop:Generator_UserChildTable="CLIENTE_FISICO" msprop:Generator_ChildPropName="GetCLIENTE_FISICORows" msprop:Generator_UserRelationName="CLIENTE_FISICO_CLIENTE_FK1" msprop:Generator_ParentPropName="PESQUISA_CLIENTE_FISICORow" msprop:Generator_RelationVarName="relationCLIENTE_FISICO_CLIENTE_FK1" msprop:Generator_UserParentTable="PESQUISA_CLIENTE_FISICO" />

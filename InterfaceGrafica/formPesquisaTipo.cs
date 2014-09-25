@@ -22,22 +22,14 @@ namespace FROGI_OS.InterfaceGrafica {
             foreach (string coluna in map.Colunas) {
                 comboCampoPesquisa.Items.Add(coluna);
             }
-
             tipoSQL = new TblTipo();
         }
 
-        protected override void pesquisar() {
+        protected override void pesquisaExecutar() {
             string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
             string valor = textValorPesquisa.Text;
-            try {
-                Conexao.abrir();
-                dsFROGIOS.TIPO.Clear();
-                dsFROGIOS.TIPO.Load(tipoSQL.selecionar(coluna, valor, false));
-            } catch (Exception erro) {
-                exibirMensagemErro(erro.Message);
-            } finally {
-                Conexao.fechar();
-            }
+            dsFROGIOS.TIPO.Clear();
+            dsFROGIOS.TIPO.Load(tipoSQL.selecionar(coluna, valor, false));
         }
 
         protected override void resetar() {

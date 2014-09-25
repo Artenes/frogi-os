@@ -58,6 +58,7 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
+            System.Windows.Forms.Label fORNECEDOR_OBSERVACOESLabel1;
             this.tablessPai = new FROGI_OS.TablessControl();
             this.tabFisico = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -84,16 +85,16 @@
             this.fORNECEDOR_OBSERVACOESTextBox = new System.Windows.Forms.TextBox();
             this.tabJuridico = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.textTelefoneJuridico = new System.Windows.Forms.MaskedTextBox();
+            this.textEmailJuridico = new System.Windows.Forms.TextBox();
+            this.textCelularJuridico = new System.Windows.Forms.MaskedTextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.comboUfJuridico = new System.Windows.Forms.ComboBox();
+            this.textCepJuridico = new System.Windows.Forms.TextBox();
+            this.textCidadeJuridico = new System.Windows.Forms.TextBox();
+            this.textEnderecoJuridico = new System.Windows.Forms.TextBox();
+            this.textPerimetroJuridico = new System.Windows.Forms.TextBox();
+            this.textBairroJuridico = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.fORNECEDOR_JURIDICO_REPRETextBox = new System.Windows.Forms.TextBox();
@@ -111,6 +112,7 @@
             this.uFTableAdapter = new FROGI_OS.dsFROGIOSTableAdapters.UFTableAdapter();
             this.fORNECEDOR_CODIGOLabel1 = new System.Windows.Forms.Label();
             this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.textObservacoesJuridico = new System.Windows.Forms.TextBox();
             fORNECEDOR_FISICO_NOMELabel = new System.Windows.Forms.Label();
             fORNECEDOR_FISICO_CPFLabel = new System.Windows.Forms.Label();
             fORNECEDOR_FISICO_RGLabel = new System.Windows.Forms.Label();
@@ -140,6 +142,7 @@
             label7 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
+            fORNECEDOR_OBSERVACOESLabel1 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
@@ -719,10 +722,10 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.maskedTextBox1);
-            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.textTelefoneJuridico);
+            this.groupBox6.Controls.Add(this.textEmailJuridico);
             this.groupBox6.Controls.Add(label1);
-            this.groupBox6.Controls.Add(this.maskedTextBox2);
+            this.groupBox6.Controls.Add(this.textCelularJuridico);
             this.groupBox6.Controls.Add(label2);
             this.groupBox6.Controls.Add(label3);
             this.groupBox6.Location = new System.Drawing.Point(1915, 72);
@@ -732,47 +735,47 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Contato";
             // 
-            // maskedTextBox1
+            // textTelefoneJuridico
             // 
-            this.maskedTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_TELEFONE", true));
-            this.maskedTextBox1.Location = new System.Drawing.Point(112, 28);
-            this.maskedTextBox1.Mask = "(##)####-####";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(162, 33);
-            this.maskedTextBox1.TabIndex = 26;
+            this.textTelefoneJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_TELEFONE", true));
+            this.textTelefoneJuridico.Location = new System.Drawing.Point(112, 28);
+            this.textTelefoneJuridico.Mask = "(##)####-####";
+            this.textTelefoneJuridico.Name = "textTelefoneJuridico";
+            this.textTelefoneJuridico.Size = new System.Drawing.Size(162, 33);
+            this.textTelefoneJuridico.TabIndex = 26;
             // 
-            // textBox1
+            // textEmailJuridico
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_EMAIL", true));
-            this.textBox1.Location = new System.Drawing.Point(112, 107);
-            this.textBox1.MaxLength = 60;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(432, 33);
-            this.textBox1.TabIndex = 28;
+            this.textEmailJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_EMAIL", true));
+            this.textEmailJuridico.Location = new System.Drawing.Point(112, 107);
+            this.textEmailJuridico.MaxLength = 60;
+            this.textEmailJuridico.Name = "textEmailJuridico";
+            this.textEmailJuridico.Size = new System.Drawing.Size(432, 33);
+            this.textEmailJuridico.TabIndex = 28;
             // 
-            // maskedTextBox2
+            // textCelularJuridico
             // 
-            this.maskedTextBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CELULAR", true));
-            this.maskedTextBox2.Location = new System.Drawing.Point(112, 67);
-            this.maskedTextBox2.Mask = "(##)####-####";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(162, 33);
-            this.maskedTextBox2.TabIndex = 27;
+            this.textCelularJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CELULAR", true));
+            this.textCelularJuridico.Location = new System.Drawing.Point(112, 67);
+            this.textCelularJuridico.Mask = "(##)####-####";
+            this.textCelularJuridico.Name = "textCelularJuridico";
+            this.textCelularJuridico.Size = new System.Drawing.Size(162, 33);
+            this.textCelularJuridico.TabIndex = 27;
             // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(label4);
-            this.groupBox7.Controls.Add(this.comboBox1);
+            this.groupBox7.Controls.Add(this.comboUfJuridico);
             this.groupBox7.Controls.Add(label5);
-            this.groupBox7.Controls.Add(this.textBox2);
+            this.groupBox7.Controls.Add(this.textCepJuridico);
             this.groupBox7.Controls.Add(label6);
-            this.groupBox7.Controls.Add(this.textBox3);
+            this.groupBox7.Controls.Add(this.textCidadeJuridico);
             this.groupBox7.Controls.Add(label7);
-            this.groupBox7.Controls.Add(this.textBox4);
-            this.groupBox7.Controls.Add(this.textBox5);
+            this.groupBox7.Controls.Add(this.textEnderecoJuridico);
+            this.groupBox7.Controls.Add(this.textPerimetroJuridico);
             this.groupBox7.Controls.Add(label8);
             this.groupBox7.Controls.Add(label9);
-            this.groupBox7.Controls.Add(this.textBox6);
+            this.groupBox7.Controls.Add(this.textBairroJuridico);
             this.groupBox7.Location = new System.Drawing.Point(1237, 17);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(657, 253);
@@ -780,13 +783,13 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Domiciliar";
             // 
-            // comboBox1
+            // comboUfJuridico
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uFBindingSource, "UF_DESCRICAO", true));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboUfJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.uFBindingSource, "UF_DESCRICAO", true));
+            this.comboUfJuridico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboUfJuridico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboUfJuridico.FormattingEnabled = true;
+            this.comboUfJuridico.Items.AddRange(new object[] {
             "AC",
             "AL",
             "AP",
@@ -814,55 +817,55 @@
             "SP",
             "SE",
             "TO"});
-            this.comboBox1.Location = new System.Drawing.Point(516, 195);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 33);
-            this.comboBox1.TabIndex = 25;
+            this.comboUfJuridico.Location = new System.Drawing.Point(516, 195);
+            this.comboUfJuridico.Name = "comboUfJuridico";
+            this.comboUfJuridico.Size = new System.Drawing.Size(121, 33);
+            this.comboUfJuridico.TabIndex = 25;
             // 
-            // textBox2
+            // textCepJuridico
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CEP", true));
-            this.textBox2.Location = new System.Drawing.Point(115, 195);
-            this.textBox2.MaxLength = 9;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 33);
-            this.textBox2.TabIndex = 24;
+            this.textCepJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CEP", true));
+            this.textCepJuridico.Location = new System.Drawing.Point(115, 195);
+            this.textCepJuridico.MaxLength = 9;
+            this.textCepJuridico.Name = "textCepJuridico";
+            this.textCepJuridico.Size = new System.Drawing.Size(188, 33);
+            this.textCepJuridico.TabIndex = 24;
             // 
-            // textBox3
+            // textCidadeJuridico
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CIDADE", true));
-            this.textBox3.Location = new System.Drawing.Point(115, 146);
-            this.textBox3.MaxLength = 60;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(522, 33);
-            this.textBox3.TabIndex = 23;
+            this.textCidadeJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CIDADE", true));
+            this.textCidadeJuridico.Location = new System.Drawing.Point(115, 146);
+            this.textCidadeJuridico.MaxLength = 60;
+            this.textCidadeJuridico.Name = "textCidadeJuridico";
+            this.textCidadeJuridico.Size = new System.Drawing.Size(522, 33);
+            this.textCidadeJuridico.TabIndex = 23;
             // 
-            // textBox4
+            // textEnderecoJuridico
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_ENDERECO", true));
-            this.textBox4.Location = new System.Drawing.Point(115, 26);
-            this.textBox4.MaxLength = 60;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(522, 33);
-            this.textBox4.TabIndex = 20;
+            this.textEnderecoJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_ENDERECO", true));
+            this.textEnderecoJuridico.Location = new System.Drawing.Point(115, 26);
+            this.textEnderecoJuridico.MaxLength = 60;
+            this.textEnderecoJuridico.Name = "textEnderecoJuridico";
+            this.textEnderecoJuridico.Size = new System.Drawing.Size(522, 33);
+            this.textEnderecoJuridico.TabIndex = 20;
             // 
-            // textBox5
+            // textPerimetroJuridico
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_PERIMETRO", true));
-            this.textBox5.Location = new System.Drawing.Point(115, 104);
-            this.textBox5.MaxLength = 120;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(522, 33);
-            this.textBox5.TabIndex = 22;
+            this.textPerimetroJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_PERIMETRO", true));
+            this.textPerimetroJuridico.Location = new System.Drawing.Point(115, 104);
+            this.textPerimetroJuridico.MaxLength = 120;
+            this.textPerimetroJuridico.Name = "textPerimetroJuridico";
+            this.textPerimetroJuridico.Size = new System.Drawing.Size(522, 33);
+            this.textPerimetroJuridico.TabIndex = 22;
             // 
-            // textBox6
+            // textBairroJuridico
             // 
-            this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_BAIRRO", true));
-            this.textBox6.Location = new System.Drawing.Point(115, 65);
-            this.textBox6.MaxLength = 60;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(522, 33);
-            this.textBox6.TabIndex = 21;
+            this.textBairroJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_BAIRRO", true));
+            this.textBairroJuridico.Location = new System.Drawing.Point(115, 65);
+            this.textBairroJuridico.MaxLength = 60;
+            this.textBairroJuridico.Name = "textBairroJuridico";
+            this.textBairroJuridico.Size = new System.Drawing.Size(522, 33);
+            this.textBairroJuridico.TabIndex = 21;
             // 
             // panel2
             // 
@@ -908,6 +911,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(fORNECEDOR_OBSERVACOESLabel1);
+            this.groupBox4.Controls.Add(this.textObservacoesJuridico);
             this.groupBox4.Controls.Add(fORNECEDOR_JURIDICO_RAZ_SOCLabel);
             this.groupBox4.Controls.Add(this.fORNECEDOR_JURIDICO_FANTASIATextBox);
             this.groupBox4.Controls.Add(this.fORNECEDOR_JURIDICO_RAZ_SOCTextBox);
@@ -916,9 +921,9 @@
             this.groupBox4.Controls.Add(this.fORNECEDOR_JURIDICO_IEMaskedTextBox);
             this.groupBox4.Controls.Add(this.fORNECEDOR_JURIDICO_CNPJMaskedTextBox);
             this.groupBox4.Controls.Add(fORNECEDOR_JURIDICO_IELabel);
-            this.groupBox4.Location = new System.Drawing.Point(11, 43);
+            this.groupBox4.Location = new System.Drawing.Point(11, 19);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(641, 198);
+            this.groupBox4.Size = new System.Drawing.Size(643, 248);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empresarial";
@@ -965,6 +970,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -1032,12 +1038,30 @@
             this.comboTipo.TabIndex = 3;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
-            // formFornecedorCadastro
+            // fORNECEDOR_OBSERVACOESLabel1
+            // 
+            fORNECEDOR_OBSERVACOESLabel1.AutoSize = true;
+            fORNECEDOR_OBSERVACOESLabel1.Location = new System.Drawing.Point(16, 194);
+            fORNECEDOR_OBSERVACOESLabel1.Name = "fORNECEDOR_OBSERVACOESLabel1";
+            fORNECEDOR_OBSERVACOESLabel1.Size = new System.Drawing.Size(114, 25);
+            fORNECEDOR_OBSERVACOESLabel1.TabIndex = 16;
+            fORNECEDOR_OBSERVACOESLabel1.Text = "Observações";
+            // 
+            // textObservacoesJuridico
+            // 
+            this.textObservacoesJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_OBSERVACOES", true));
+            this.textObservacoesJuridico.Location = new System.Drawing.Point(176, 191);
+            this.textObservacoesJuridico.MaxLength = 120;
+            this.textObservacoesJuridico.Name = "textObservacoesJuridico";
+            this.textObservacoesJuridico.Size = new System.Drawing.Size(447, 33);
+            this.textObservacoesJuridico.TabIndex = 17;
+            // 
+            // formCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formFornecedorCadastro";
+            this.Name = "formCadastroFornecedor";
             this.Text = "formFornecedorCadastro";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
@@ -1115,16 +1139,17 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox textTelefoneJuridico;
+        private System.Windows.Forms.TextBox textEmailJuridico;
+        private System.Windows.Forms.MaskedTextBox textCelularJuridico;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox comboUfJuridico;
+        private System.Windows.Forms.TextBox textCepJuridico;
+        private System.Windows.Forms.TextBox textCidadeJuridico;
+        private System.Windows.Forms.TextBox textEnderecoJuridico;
+        private System.Windows.Forms.TextBox textPerimetroJuridico;
+        private System.Windows.Forms.TextBox textBairroJuridico;
         private System.Windows.Forms.ComboBox comboTipo;
+        private System.Windows.Forms.TextBox textObservacoesJuridico;
     }
 }

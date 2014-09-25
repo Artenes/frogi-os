@@ -39,7 +39,7 @@ namespace FROGI_OS {
             comando.Parameters.AddWithValue(paramCodigo, tipo.TIPO_CODIGO);
             comando.Parameters.AddWithValue(paramDescricao, tipo.TIPO_DESCRICAO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -64,7 +64,7 @@ namespace FROGI_OS {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, tipo.TIPO_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

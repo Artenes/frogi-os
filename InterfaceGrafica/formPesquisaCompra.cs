@@ -24,8 +24,8 @@ namespace FROGI_OS.InterfaceGrafica
             }
         }
 
-        protected override void pesquisar() {
-            base.pesquisar();
+        protected override void pesquisaExecutar() {
+            base.pesquisaExecutar();
         }
 
         protected override void resetar() {

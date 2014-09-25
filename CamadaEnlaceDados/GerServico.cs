@@ -35,15 +35,33 @@ namespace FROGI_OS.CamadaEnlaceDados {
                 TblServico servicoSQL = new TblServico();
                 servicoSQL.atualizar(servico);
 
-                dsFROGIOS.TIPODataTable deletados =
-                    (dsFROGIOS.TIPODataTable) tipos.GetChanges(DataRowState.Deleted);
-                dsFROGIOS.TIPODataTable inseridos =
-                    (dsFROGIOS.TIPODataTable)tipos.GetChanges(DataRowState.Added);
+                dsFROGIOS.TIPODataTable deletados = new dsFROGIOS.TIPODataTable();
+                dsFROGIOS.TIPODataTable inseridos = new dsFROGIOS.TIPODataTable();
+
+                /*
+                 * Essa foi puta merda. Tava usando um método GetChanges da 
+                 * classe DataTable. Esse método já me retornava um DataTable
+                 * todo arrumadinho já com as linhas novas ou excluidas. Mas
+                 * por problemas de constraint, tive que adotar essa
+                 * pequena solução manual. Funciona assim também :)
+                 */ 
+                //Mas sério XP
+
+                //Aqui pegamos todas as linhas que foram inseridas ou excluidas
+                //o que foi inserido vai ser inserido e o que foi excluido vai ser excluido do BD
+                foreach (dsFROGIOS.TIPORow linha in tipos.Rows) {
+                    if (linha.RowState == DataRowState.Added) {
+                        inseridos.AddTIPORow(linha.TIPO_CODIGO, linha.TIPO_DESCRICAO);
+                    } /*else if (linha.RowState == DataRowState.Deleted) {
+                        deletados.AddTIPORow(linha.TIPO_CODIGO, linha.TIPO_DESCRICAO);
+                    }*/
+                }
+                deletados = (dsFROGIOS.TIPODataTable)tipos.GetChanges(DataRowState.Deleted);
+
 
                 TblServicoTipo servicoTipoSQL = new TblServicoTipo();
 
-                dsFROGIOS.SERVICO_TIPODataTable servicoTipo = 
-                    new dsFROGIOS.SERVICO_TIPODataTable();
+                dsFROGIOS.SERVICO_TIPODataTable servicoTipo =  new dsFROGIOS.SERVICO_TIPODataTable();
                 dsFROGIOS.SERVICO_TIPORow servicoTipoLinha = servicoTipo.NewSERVICO_TIPORow();
                 servicoTipoLinha.SERVICO_TIPO_SERVICO = servico.SERVICO_CODIGO;
 

@@ -22,8 +22,8 @@ namespace FROGI_OS.InterfaceGrafica
             map = new MapAgendamento(dsFROGIOS.CLIENTE_FISICO, dsFROGIOS.CLIENTE_JURIDICO, dsFROGIOS.AGENDAMENTO);
         }
 
-        protected override void pesquisar() {
-            base.pesquisar();
+        protected override void pesquisaExecutar() {
+            base.pesquisaExecutar();
         }
 
         protected override void resetar() {

@@ -1186,7 +1186,7 @@
     <value>50, 100, 50, 50</value>
   </data>
   <data name="flowCentro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1350, 657</value>
+    <value>1292, 657</value>
   </data>
   <data name="flowCentro.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1576,7 +1576,7 @@
     <value>Right</value>
   </data>
   <data name="tableUsuario.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1122, 0</value>
+    <value>1064, 0</value>
   </data>
   <data name="tableUsuario.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
@@ -1645,7 +1645,7 @@
     <value>0, 0, 0, 0</value>
   </data>
   <data name="panelCabecalho.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1350, 73</value>
+    <value>1292, 73</value>
   </data>
   <data name="panelCabecalho.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1672,7 +1672,7 @@
     <value>2</value>
   </data>
   <data name="tablePai.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1350, 730</value>
+    <value>1292, 730</value>
   </data>
   <data name="tablePai.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1699,7 +1699,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1350, 730</value>
+    <value>1292, 730</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>

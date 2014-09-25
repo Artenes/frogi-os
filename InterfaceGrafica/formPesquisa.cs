@@ -40,7 +40,18 @@ namespace FROGI_OS
             dialogo.ShowDialog();
         }
 
-        protected virtual void pesquisar() {}
+        private void pesquisar() {
+            try {
+                Conexao.abrir();
+                pesquisaExecutar();
+            } catch (Exception erro) {
+                dialogo.compor("Temos um problema", erro.Message, formDialogo.TipoExpressao.AvisoTriste);
+            } finally {
+                Conexao.fechar();
+            }
+        }
+
+        protected virtual void pesquisaExecutar() {}
 
         protected virtual void resetar() {
             comboCampoPesquisa.SelectedIndex = 0;

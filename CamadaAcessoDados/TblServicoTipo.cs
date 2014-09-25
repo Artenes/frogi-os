@@ -52,7 +52,7 @@ namespace FROGI_OS {
             comando.Parameters.AddWithValue(paramServico, servicoTipo.SERVICO_TIPO_SERVICO);
             comando.Parameters.AddWithValue(paramTipo, servicoTipo.SERVICO_TIPO_TIPO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
     }
 }

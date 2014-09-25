@@ -39,7 +39,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramCodigo, secao.SECAO_CODIGO);
             comando.Parameters.AddWithValue(paramDescricao, secao.SECAO_DESCRICAO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -64,7 +64,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, secao.SECAO_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

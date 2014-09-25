@@ -50,10 +50,11 @@ namespace FROGI_OS {
             }
         }
 
-        public void compor(string titulo, string mensagem, TipoExpressao expressao) {
+        public formDialogo compor(string titulo, string mensagem, TipoExpressao expressao) {
             setTitulo(titulo);
             setMensagem(mensagem);
             setExpressao(expressao);
+            return this;
         }
 
         public enum TipoExpressao { 
