@@ -164,8 +164,11 @@
             this.pESQUISA_FORNECEDOR_FISICODataGridView.Location = new System.Drawing.Point(3, 3);
             this.pESQUISA_FORNECEDOR_FISICODataGridView.Name = "pESQUISA_FORNECEDOR_FISICODataGridView";
             this.pESQUISA_FORNECEDOR_FISICODataGridView.ReadOnly = true;
+            this.pESQUISA_FORNECEDOR_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_FORNECEDOR_FISICODataGridView.Size = new System.Drawing.Size(952, 299);
             this.pESQUISA_FORNECEDOR_FISICODataGridView.TabIndex = 4;
+            this.pESQUISA_FORNECEDOR_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_FORNECEDOR_FISICODataGridView_CellDoubleClick);
+            this.pESQUISA_FORNECEDOR_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_FORNECEDOR_FISICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -266,8 +269,11 @@
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.Location = new System.Drawing.Point(3, 3);
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.Name = "pESQUISA_FORNECEDOR_JURIDICODataGridView";
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.ReadOnly = true;
+            this.pESQUISA_FORNECEDOR_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.Size = new System.Drawing.Size(952, 299);
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.TabIndex = 5;
+            this.pESQUISA_FORNECEDOR_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_FORNECEDOR_JURIDICODataGridView_CellDoubleClick);
+            this.pESQUISA_FORNECEDOR_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_FORNECEDOR_JURIDICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -336,6 +342,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;

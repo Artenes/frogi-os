@@ -90,7 +90,7 @@ namespace FROGI_OS.InterfaceGrafica {
             }
         }
 
-        private dsFROGIOS.CLIENTERow pegaValorCamposCliente (Object codigo) {
+        private dsFROGIOS.CLIENTERow pegaValorCamposCliente (object codigo) {
 
             bool eFisico = comboTipo.SelectedIndex == FISICO;
             dsFROGIOS.CLIENTERow clienteRow = dsFROGIOS.CLIENTE.NewCLIENTERow();

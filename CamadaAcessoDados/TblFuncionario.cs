@@ -24,7 +24,7 @@ namespace FROGI_OS.CamadaAcessoDados {
         private string paramSalario = "@SALARIO";
         private string paramAdmissao = "@ADMISSAO";
         private string paramSenha = "@SENHA";
-        private string paramCategoria = "@CATEGORIA";
+        //private string paramCategoria = "@CATEGORIA";
         private string paramDataCadastro = "@DATACADASTRO";
         
         private string paramValor = "@VALOR";
@@ -49,7 +49,7 @@ namespace FROGI_OS.CamadaAcessoDados {
                + paramSalario + ", "
                + paramAdmissao + ", "
                + paramSenha + ", "
-               + paramCategoria + ", "
+               //+ paramCategoria + ", "
                + paramDataCadastro + ") "
                + "RETURNING FUNCIONARIO_CODIGO;";
 
@@ -69,7 +69,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramSalario, funcionario.FUNCIONARIO_SALARIO);
             comando.Parameters.AddWithValue(paramAdmissao, funcionario.FUNCIONARIO_ADMISSAO);
             comando.Parameters.AddWithValue(paramSenha, funcionario.FUNCIONARIO_SENHA);
-            comando.Parameters.AddWithValue(paramCategoria, funcionario.FUNCIONARIO_CATEGORIA);
+            //comando.Parameters.AddWithValue(paramCategoria, funcionario.FUNCIONARIO_CATEGORIA);
             comando.Parameters.AddWithValue(paramDataCadastro, funcionario.FUNCIONARIO_DATA_CADASTRO);
             
             return (int)comando.ExecuteScalar();
@@ -94,8 +94,8 @@ namespace FROGI_OS.CamadaAcessoDados {
                 + "FUNCIONARIO_SETOR = " + paramSetor + ", "
                 + "FUNCIONARIO_SALARIO = " + paramSalario + ", "
                 + "FUNCIONARIO_ADMISSAO = " + paramAdmissao + ", "
-                + "FUNCIONARIO_SENHA = " + paramSenha + ", "
-                + "FUNCIONARIO_CATEGORIA = " + paramCategoria + " "
+                + "FUNCIONARIO_SENHA = " + paramSenha + " "
+                //+ "FUNCIONARIO_CATEGORIA = " + paramCategoria + " "
                 + "WHERE FUNCIONARIO = " + paramCodigo + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
@@ -115,10 +115,10 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramSalario, funcionario.FUNCIONARIO_SALARIO);
             comando.Parameters.AddWithValue(paramAdmissao, funcionario.FUNCIONARIO_ADMISSAO);
             comando.Parameters.AddWithValue(paramSenha, funcionario.FUNCIONARIO_SENHA);
-            comando.Parameters.AddWithValue(paramCategoria, funcionario.FUNCIONARIO_CATEGORIA);
+            //comando.Parameters.AddWithValue(paramCategoria, funcionario.FUNCIONARIO_CATEGORIA);
             comando.Parameters.AddWithValue(paramDataCadastro, funcionario.FUNCIONARIO_DATA_CADASTRO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -143,7 +143,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, funcionario.FUNCIONARIO_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

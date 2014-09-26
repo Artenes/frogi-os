@@ -167,7 +167,7 @@ namespace FROGI_OS {
         /**
          * Métodos que precisam ser sobreescritos pela classe filha
          */
-        protected virtual void novoRegistro() {campos(true);controles(false, false, false, true, true);panelCodigo.Visible = false;}
+        protected virtual void novoRegistro() { resetar(); campos(true); controles(false, false, false, true, true); panelCodigo.Visible = false; }
 
         protected virtual void salvaExecutar() {}
 

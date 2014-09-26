@@ -70,7 +70,7 @@ namespace FROGI_OS.InterfaceGrafica {
             this.ActiveControl = comboTipo;
         }
 
-        private void fisicoSelecionar() {
+        private void selecionarFisico() {
             int indice = pESQUISA_CLIENTE_FISICODataGridView.CurrentRow.Index;
             int codigo = (int)pESQUISA_CLIENTE_FISICODataGridView[0, indice].Value;
             ((formCadastroCliente)cadastro).visualizarRegistro(codigo, comboTipo.SelectedIndex == FISICO);
@@ -78,7 +78,7 @@ namespace FROGI_OS.InterfaceGrafica {
             this.Close();
         }
 
-        private void juridicoSelecionar() {
+        private void selecionarJuridico() {
             int indice = pESQUISA_CLIENTE_JURIDICODataGridView.CurrentRow.Index;
             int codigo = (int)pESQUISA_CLIENTE_JURIDICODataGridView[0, indice].Value;
             ((formCadastroCliente)cadastro).visualizarRegistro(codigo, comboTipo.SelectedIndex == FISICO);
@@ -87,24 +87,24 @@ namespace FROGI_OS.InterfaceGrafica {
         }
 
         private void pESQUISA_CLIENTE_FISICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            fisicoSelecionar();
+            selecionarFisico();
         }
 
         private void pESQUISA_CLIENTE_FISICODataGridView_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
-                fisicoSelecionar();
+                selecionarFisico();
                 e.SuppressKeyPress = true;
             }
             
         }
 
         private void pESQUISA_CLIENTE_JURIDICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            juridicoSelecionar();
+            selecionarJuridico();
         }
 
         private void pESQUISA_CLIENTE_JURIDICODataGridView_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
-                juridicoSelecionar();
+                selecionarJuridico();
                 e.SuppressKeyPress = true;
             }
         }
