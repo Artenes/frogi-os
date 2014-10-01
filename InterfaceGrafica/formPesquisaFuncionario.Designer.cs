@@ -72,6 +72,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -124,6 +125,8 @@
             this.fUNCIONARIODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fUNCIONARIODataGridView.Size = new System.Drawing.Size(966, 343);
             this.fUNCIONARIODataGridView.TabIndex = 3;
+            this.fUNCIONARIODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.fUNCIONARIODataGridView_CellDoubleClick);
+            this.fUNCIONARIODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fUNCIONARIODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCabecalho = new System.Windows.Forms.Panel();
             this.pictureFechar = new System.Windows.Forms.PictureBox();
             this.labelCadastro = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.picturePesquisar = new System.Windows.Forms.PictureBox();
             this.pictureNovo = new System.Windows.Forms.PictureBox();
             this.panelCentro = new System.Windows.Forms.Panel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelRodape.SuspendLayout();
@@ -65,6 +67,7 @@
             // pictureFechar
             // 
             this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
             this.pictureFechar.Location = new System.Drawing.Point(906, 12);
             this.pictureFechar.Name = "pictureFechar";
@@ -72,6 +75,7 @@
             this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureFechar.TabIndex = 2;
             this.pictureFechar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureFechar, "Fechar janela [Alt+F4]");
             this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
             // 
             // labelCadastro
@@ -113,6 +117,7 @@
             // pictureEditar
             // 
             this.pictureEditar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureEditar.Image = global::FROGI_OS.Properties.Resources.icone_editar;
             this.pictureEditar.Location = new System.Drawing.Point(688, 8);
             this.pictureEditar.Name = "pictureEditar";
@@ -120,12 +125,14 @@
             this.pictureEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureEditar.TabIndex = 10;
             this.pictureEditar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureEditar, "Editar registro [Ctrl+E]");
             this.pictureEditar.Visible = false;
             this.pictureEditar.Click += new System.EventHandler(this.pictureEditar_Click);
             // 
             // pictureExcluir
             // 
             this.pictureExcluir.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureExcluir.Image = global::FROGI_OS.Properties.Resources.icone_excluir;
             this.pictureExcluir.Location = new System.Drawing.Point(758, 8);
             this.pictureExcluir.Name = "pictureExcluir";
@@ -133,12 +140,14 @@
             this.pictureExcluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureExcluir.TabIndex = 9;
             this.pictureExcluir.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureExcluir, "Excluir registro [Ctrl+D]");
             this.pictureExcluir.Visible = false;
             this.pictureExcluir.Click += new System.EventHandler(this.pictureExcluir_Click);
             // 
             // pictureSalvar
             // 
             this.pictureSalvar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureSalvar.Image = global::FROGI_OS.Properties.Resources.icone_salvar;
             this.pictureSalvar.Location = new System.Drawing.Point(828, 8);
             this.pictureSalvar.Name = "pictureSalvar";
@@ -146,12 +155,14 @@
             this.pictureSalvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureSalvar.TabIndex = 8;
             this.pictureSalvar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureSalvar, "Salvar registro [Ctrl+S]");
             this.pictureSalvar.Visible = false;
             this.pictureSalvar.Click += new System.EventHandler(this.pictureSalvar_Click);
             // 
             // picturePesquisar
             // 
             this.picturePesquisar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.picturePesquisar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picturePesquisar.Image = global::FROGI_OS.Properties.Resources.icone_pesquisar;
             this.picturePesquisar.Location = new System.Drawing.Point(898, 8);
             this.picturePesquisar.Name = "picturePesquisar";
@@ -159,12 +170,14 @@
             this.picturePesquisar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picturePesquisar.TabIndex = 7;
             this.picturePesquisar.TabStop = false;
+            this.toolTip.SetToolTip(this.picturePesquisar, "Pesquisar registro [Ctrl+P]");
             this.picturePesquisar.Visible = false;
             this.picturePesquisar.Click += new System.EventHandler(this.picturePesquisar_Click);
             // 
             // pictureNovo
             // 
             this.pictureNovo.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.pictureNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureNovo.Image = global::FROGI_OS.Properties.Resources.icone_novo;
             this.pictureNovo.Location = new System.Drawing.Point(618, 8);
             this.pictureNovo.Name = "pictureNovo";
@@ -173,6 +186,7 @@
             this.pictureNovo.TabIndex = 6;
             this.pictureNovo.TabStop = false;
             this.pictureNovo.Tag = "&Novo";
+            this.toolTip.SetToolTip(this.pictureNovo, "Novo registro [Ctrl+N]");
             this.pictureNovo.Click += new System.EventHandler(this.pictureNovo_Click);
             // 
             // panelCentro
@@ -226,6 +240,7 @@
         private System.Windows.Forms.PictureBox pictureFechar;
         protected System.Windows.Forms.Panel panelCodigo;
         protected System.Windows.Forms.Panel panelCentro;
+        private System.Windows.Forms.ToolTip toolTip;
 
     }
 }

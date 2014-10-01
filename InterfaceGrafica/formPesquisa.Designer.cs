@@ -109,6 +109,7 @@
             // pictureFechar
             // 
             this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
             this.pictureFechar.Location = new System.Drawing.Point(906, 12);
             this.pictureFechar.Name = "pictureFechar";
@@ -144,6 +145,7 @@
             // pictureNovo
             // 
             this.pictureNovo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureNovo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureNovo.Image = global::FROGI_OS.Properties.Resources.icone_novo;
             this.pictureNovo.Location = new System.Drawing.Point(895, 8);
             this.pictureNovo.Name = "pictureNovo";
