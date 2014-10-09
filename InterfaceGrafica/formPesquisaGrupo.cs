@@ -44,7 +44,13 @@ namespace FROGI_OS.InterfaceGrafica
         private void selecionarGrupo() {
             int indice = gRUPODataGridView.CurrentRow.Index;
             int codigo = (int)gRUPODataGridView[0, indice].Value;
-            ((formCadastroGrupo)cadastro).visualizarRegistro(codigo);
+
+            if (cadastro.GetType() == typeof(formCadastroGrupo)) {
+                ((formCadastroGrupo)cadastro).visualizarRegistro(codigo);        
+            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                ((formCadastroProduto)cadastro).adicionarGrupo(codigo);    
+            }
+
             this.DialogResult = DialogResult.Yes;
             this.Close();
         }

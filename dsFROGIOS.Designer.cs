@@ -124,8 +124,6 @@ namespace FROGI_OS {
         
         private global::System.Data.DataRelation relationFORNECEDOR_JURIDICO_FORN_FK;
         
-        private global::System.Data.DataRelation relationFUNCIONARIO_CATEGORIA_FK;
-        
         private global::System.Data.DataRelation relationITEM_COMPRA_COMPRA_FK;
         
         private global::System.Data.DataRelation relationITEM_COMPRA_PRODUTO_FK;
@@ -203,6 +201,8 @@ namespace FROGI_OS {
         private global::System.Data.DataRelation relationPRODUTO_FORNECEDOR_FK2;
         
         private global::System.Data.DataRelation relationFK_AGENDAMENTO_CLIENTE;
+        
+        private global::System.Data.DataRelation relationSERVICO_TIPO_TIPO_FK;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -1282,7 +1282,6 @@ namespace FROGI_OS {
             this.relationFORNECEDOR_UF_FK = this.Relations["FORNECEDOR_UF_FK"];
             this.relationFORNECEDOR_FISICO_FORNECEDOR_FK = this.Relations["FORNECEDOR_FISICO_FORNECEDOR_FK"];
             this.relationFORNECEDOR_JURIDICO_FORN_FK = this.Relations["FORNECEDOR_JURIDICO_FORN_FK"];
-            this.relationFUNCIONARIO_CATEGORIA_FK = this.Relations["FUNCIONARIO_CATEGORIA_FK"];
             this.relationITEM_COMPRA_COMPRA_FK = this.Relations["ITEM_COMPRA_COMPRA_FK"];
             this.relationITEM_COMPRA_PRODUTO_FK = this.Relations["ITEM_COMPRA_PRODUTO_FK"];
             this.relationORCAMENTO_CLIENTE_FK = this.Relations["ORCAMENTO_CLIENTE_FK"];
@@ -1322,6 +1321,7 @@ namespace FROGI_OS {
             this.relationFORNECEDOR_JURIDICO_FORN_FK2 = this.Relations["FORNECEDOR_JURIDICO_FORN_FK2"];
             this.relationPRODUTO_FORNECEDOR_FK2 = this.Relations["PRODUTO_FORNECEDOR_FK2"];
             this.relationFK_AGENDAMENTO_CLIENTE = this.Relations["FK_AGENDAMENTO_CLIENTE"];
+            this.relationSERVICO_TIPO_TIPO_FK = this.Relations["SERVICO_TIPO_TIPO_FK"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1448,10 +1448,6 @@ namespace FROGI_OS {
                         this.tableFORNECEDOR.FORNECEDOR_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableFORNECEDOR_JURIDICO.FORNECEDOR_JURIDICO_FORNECEDORColumn}, false);
             this.Relations.Add(this.relationFORNECEDOR_JURIDICO_FORN_FK);
-            this.relationFUNCIONARIO_CATEGORIA_FK = new global::System.Data.DataRelation("FUNCIONARIO_CATEGORIA_FK", new global::System.Data.DataColumn[] {
-                        this.tableCATEGORIA.CATEGORIA_CODIGOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFUNCIONARIO.FUNCIONARIO_CATEGORIAColumn}, false);
-            this.Relations.Add(this.relationFUNCIONARIO_CATEGORIA_FK);
             this.relationITEM_COMPRA_COMPRA_FK = new global::System.Data.DataRelation("ITEM_COMPRA_COMPRA_FK", new global::System.Data.DataColumn[] {
                         this.tableCOMPRA.COMPRA_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableITEM_COMPRA.ITEM_COMPRA_COMPRAColumn}, false);
@@ -1608,6 +1604,10 @@ namespace FROGI_OS {
                         this.tableCLIENTE.CLIENTE_CODIGOColumn}, new global::System.Data.DataColumn[] {
                         this.tableAGENDAMENTO.AGEN_CLIENTEColumn}, false);
             this.Relations.Add(this.relationFK_AGENDAMENTO_CLIENTE);
+            this.relationSERVICO_TIPO_TIPO_FK = new global::System.Data.DataRelation("SERVICO_TIPO_TIPO_FK", new global::System.Data.DataColumn[] {
+                        this.tableTIPO.TIPO_CODIGOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSERVICO_TIPO.SERVICO_TIPO_TIPOColumn}, false);
+            this.Relations.Add(this.relationSERVICO_TIPO_TIPO_FK);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5578,8 +5578,6 @@ namespace FROGI_OS {
             
             private global::System.Data.DataColumn columnFUNCIONARIO_SENHA;
             
-            private global::System.Data.DataColumn columnFUNCIONARIO_CATEGORIA;
-            
             private global::System.Data.DataColumn columnFUNCIONARIO_DATA_CADASTRO;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5745,14 +5743,6 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FUNCIONARIO_CATEGORIAColumn {
-                get {
-                    return this.columnFUNCIONARIO_CATEGORIA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn FUNCIONARIO_DATA_CADASTROColumn {
                 get {
                     return this.columnFUNCIONARIO_DATA_CADASTRO;
@@ -5813,7 +5803,6 @@ namespace FROGI_OS {
                         decimal FUNCIONARIO_SALARIO, 
                         System.DateTime FUNCIONARIO_ADMISSAO, 
                         string FUNCIONARIO_SENHA, 
-                        CATEGORIARow parentCATEGORIARowByFUNCIONARIO_CATEGORIA_FK, 
                         System.DateTime FUNCIONARIO_DATA_CADASTRO) {
                 FUNCIONARIORow rowFUNCIONARIORow = ((FUNCIONARIORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -5833,11 +5822,7 @@ namespace FROGI_OS {
                         FUNCIONARIO_SALARIO,
                         FUNCIONARIO_ADMISSAO,
                         FUNCIONARIO_SENHA,
-                        null,
                         FUNCIONARIO_DATA_CADASTRO};
-                if ((parentCATEGORIARowByFUNCIONARIO_CATEGORIA_FK != null)) {
-                    columnValuesArray[16] = parentCATEGORIARowByFUNCIONARIO_CATEGORIA_FK[0];
-                }
                 rowFUNCIONARIORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFUNCIONARIORow);
                 return rowFUNCIONARIORow;
@@ -5883,7 +5868,6 @@ namespace FROGI_OS {
                 this.columnFUNCIONARIO_SALARIO = base.Columns["FUNCIONARIO_SALARIO"];
                 this.columnFUNCIONARIO_ADMISSAO = base.Columns["FUNCIONARIO_ADMISSAO"];
                 this.columnFUNCIONARIO_SENHA = base.Columns["FUNCIONARIO_SENHA"];
-                this.columnFUNCIONARIO_CATEGORIA = base.Columns["FUNCIONARIO_CATEGORIA"];
                 this.columnFUNCIONARIO_DATA_CADASTRO = base.Columns["FUNCIONARIO_DATA_CADASTRO"];
             }
             
@@ -5922,8 +5906,6 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnFUNCIONARIO_ADMISSAO);
                 this.columnFUNCIONARIO_SENHA = new global::System.Data.DataColumn("FUNCIONARIO_SENHA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFUNCIONARIO_SENHA);
-                this.columnFUNCIONARIO_CATEGORIA = new global::System.Data.DataColumn("FUNCIONARIO_CATEGORIA", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFUNCIONARIO_CATEGORIA);
                 this.columnFUNCIONARIO_DATA_CADASTRO = new global::System.Data.DataColumn("FUNCIONARIO_DATA_CADASTRO", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFUNCIONARIO_DATA_CADASTRO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -5935,7 +5917,7 @@ namespace FROGI_OS {
                 this.columnFUNCIONARIO_CPF.MaxLength = 14;
                 this.columnFUNCIONARIO_RG.MaxLength = 10;
                 this.columnFUNCIONARIO_NASCIMENTO.AllowDBNull = false;
-                this.columnFUNCIONARIO_PIS.MaxLength = 12;
+                this.columnFUNCIONARIO_PIS.MaxLength = 15;
                 this.columnFUNCIONARIO_TELEFONE.AllowDBNull = false;
                 this.columnFUNCIONARIO_TELEFONE.MaxLength = 14;
                 this.columnFUNCIONARIO_EMAIL.MaxLength = 60;
@@ -5951,7 +5933,6 @@ namespace FROGI_OS {
                 this.columnFUNCIONARIO_ADMISSAO.AllowDBNull = false;
                 this.columnFUNCIONARIO_SENHA.AllowDBNull = false;
                 this.columnFUNCIONARIO_SENHA.MaxLength = 10;
-                this.columnFUNCIONARIO_CATEGORIA.AllowDBNull = false;
                 this.columnFUNCIONARIO_DATA_CADASTRO.AllowDBNull = false;
             }
             
@@ -10216,27 +10197,15 @@ namespace FROGI_OS {
                 this.columnPRODUTO_DESCRICAO.MaxLength = 60;
                 this.columnPRODUTO_CARACTERISTICA.MaxLength = 60;
                 this.columnPRODUTO_UNIDADE_COMPRA.MaxLength = 3;
-                this.columnPRODUTO_UNIDADE_VENDA.AllowDBNull = false;
                 this.columnPRODUTO_UNIDADE_VENDA.MaxLength = 3;
                 this.columnPRODUTO_NUMERO.MaxLength = 60;
-                this.columnPRODUTO_EAN.AllowDBNull = false;
                 this.columnPRODUTO_EAN.MaxLength = 120;
                 this.columnPRODUTO_NUMERO_SERIE.MaxLength = 60;
-                this.columnPRODUTO_MARCA.AllowDBNull = false;
-                this.columnPRODUTO_GRUPO.AllowDBNull = false;
-                this.columnPRODUTO_SECAO.AllowDBNull = false;
-                this.columnPRODUTO_FORNECEDOR.AllowDBNull = false;
-                this.columnPRODUTO_CFOP.AllowDBNull = false;
                 this.columnPRODUTO_CFOP.MaxLength = 20;
                 this.columnPRODUTO_CSOSN.MaxLength = 60;
                 this.columnPRODUTO_NCM.MaxLength = 60;
-                this.columnPRODUTO_SITUACAO_TRIBUTARIA.AllowDBNull = false;
                 this.columnPRODUTO_SITUACAO_TRIBUTARIA.MaxLength = 60;
                 this.columnPRODUTO_ORIGEM_MERCADORIA.MaxLength = 60;
-                this.columnPRODUTO_ESTOQUE_ATUAL.AllowDBNull = false;
-                this.columnPRODUTO_PRECO_COMPRA.AllowDBNull = false;
-                this.columnPRODUTO_PRECO_CUSTO.AllowDBNull = false;
-                this.columnPRODUTO_PRECO_VENDA.AllowDBNull = false;
                 this.columnPRODUTO_DATA_CADASTRO.AllowDBNull = false;
             }
             
@@ -11024,13 +10993,16 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SERVICO_TIPORow AddSERVICO_TIPORow(SERVICORow parentSERVICORowBySERVICO_TIPO_SERVICO_FK, int SERVICO_TIPO_TIPO) {
+            public SERVICO_TIPORow AddSERVICO_TIPORow(SERVICORow parentSERVICORowBySERVICO_TIPO_SERVICO_FK, TIPORow parentTIPORowBySERVICO_TIPO_TIPO_FK) {
                 SERVICO_TIPORow rowSERVICO_TIPORow = ((SERVICO_TIPORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        SERVICO_TIPO_TIPO};
+                        null};
                 if ((parentSERVICORowBySERVICO_TIPO_SERVICO_FK != null)) {
                     columnValuesArray[0] = parentSERVICORowBySERVICO_TIPO_SERVICO_FK[0];
+                }
+                if ((parentTIPORowBySERVICO_TIPO_TIPO_FK != null)) {
+                    columnValuesArray[1] = parentTIPORowBySERVICO_TIPO_TIPO_FK[0];
                 }
                 rowSERVICO_TIPORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSERVICO_TIPORow);
@@ -15927,7 +15899,7 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnAGEN_CLIENTE);
                 this.columnAGEN_DATA = new global::System.Data.DataColumn("AGEN_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAGEN_DATA);
-                this.columnAGEN_DESCRICAO = new global::System.Data.DataColumn("AGEN_DESCRICAO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnAGEN_DESCRICAO = new global::System.Data.DataColumn("AGEN_DESCRICAO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAGEN_DESCRICAO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnAGEN_CODIGO}, true));
@@ -16960,17 +16932,6 @@ namespace FROGI_OS {
                 }
                 set {
                     this[this.tableCATEGORIA.CATEGORIA_DESCRICAOColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FUNCIONARIORow[] GetFUNCIONARIORows() {
-                if ((this.Table.ChildRelations["FUNCIONARIO_CATEGORIA_FK"] == null)) {
-                    return new FUNCIONARIORow[0];
-                }
-                else {
-                    return ((FUNCIONARIORow[])(base.GetChildRows(this.Table.ChildRelations["FUNCIONARIO_CATEGORIA_FK"])));
                 }
             }
             
@@ -19199,34 +19160,12 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int FUNCIONARIO_CATEGORIA {
-                get {
-                    return ((int)(this[this.tableFUNCIONARIO.FUNCIONARIO_CATEGORIAColumn]));
-                }
-                set {
-                    this[this.tableFUNCIONARIO.FUNCIONARIO_CATEGORIAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime FUNCIONARIO_DATA_CADASTRO {
                 get {
                     return ((global::System.DateTime)(this[this.tableFUNCIONARIO.FUNCIONARIO_DATA_CADASTROColumn]));
                 }
                 set {
                     this[this.tableFUNCIONARIO.FUNCIONARIO_DATA_CADASTROColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CATEGORIARow CATEGORIARow {
-                get {
-                    return ((CATEGORIARow)(this.GetParentRow(this.Table.ParentRelations["FUNCIONARIO_CATEGORIA_FK"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FUNCIONARIO_CATEGORIA_FK"]);
                 }
             }
             
@@ -21197,7 +21136,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PRODUTO_UNIDADE_VENDA {
                 get {
-                    return ((string)(this[this.tablePRODUTO.PRODUTO_UNIDADE_VENDAColumn]));
+                    try {
+                        return ((string)(this[this.tablePRODUTO.PRODUTO_UNIDADE_VENDAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_UNIDADE_VENDA\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_UNIDADE_VENDAColumn] = value;
@@ -21240,7 +21184,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PRODUTO_EAN {
                 get {
-                    return ((string)(this[this.tablePRODUTO.PRODUTO_EANColumn]));
+                    try {
+                        return ((string)(this[this.tablePRODUTO.PRODUTO_EANColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_EAN\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_EANColumn] = value;
@@ -21267,7 +21216,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int PRODUTO_MARCA {
                 get {
-                    return ((int)(this[this.tablePRODUTO.PRODUTO_MARCAColumn]));
+                    try {
+                        return ((int)(this[this.tablePRODUTO.PRODUTO_MARCAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_MARCA\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_MARCAColumn] = value;
@@ -21278,7 +21232,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int PRODUTO_GRUPO {
                 get {
-                    return ((int)(this[this.tablePRODUTO.PRODUTO_GRUPOColumn]));
+                    try {
+                        return ((int)(this[this.tablePRODUTO.PRODUTO_GRUPOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_GRUPO\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_GRUPOColumn] = value;
@@ -21289,7 +21248,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int PRODUTO_SECAO {
                 get {
-                    return ((int)(this[this.tablePRODUTO.PRODUTO_SECAOColumn]));
+                    try {
+                        return ((int)(this[this.tablePRODUTO.PRODUTO_SECAOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_SECAO\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_SECAOColumn] = value;
@@ -21300,7 +21264,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int PRODUTO_FORNECEDOR {
                 get {
-                    return ((int)(this[this.tablePRODUTO.PRODUTO_FORNECEDORColumn]));
+                    try {
+                        return ((int)(this[this.tablePRODUTO.PRODUTO_FORNECEDORColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_FORNECEDOR\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_FORNECEDORColumn] = value;
@@ -21311,7 +21280,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PRODUTO_CFOP {
                 get {
-                    return ((string)(this[this.tablePRODUTO.PRODUTO_CFOPColumn]));
+                    try {
+                        return ((string)(this[this.tablePRODUTO.PRODUTO_CFOPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_CFOP\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_CFOPColumn] = value;
@@ -21354,7 +21328,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string PRODUTO_SITUACAO_TRIBUTARIA {
                 get {
-                    return ((string)(this[this.tablePRODUTO.PRODUTO_SITUACAO_TRIBUTARIAColumn]));
+                    try {
+                        return ((string)(this[this.tablePRODUTO.PRODUTO_SITUACAO_TRIBUTARIAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_SITUACAO_TRIBUTARIA\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_SITUACAO_TRIBUTARIAColumn] = value;
@@ -21413,7 +21392,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public short PRODUTO_ESTOQUE_ATUAL {
                 get {
-                    return ((short)(this[this.tablePRODUTO.PRODUTO_ESTOQUE_ATUALColumn]));
+                    try {
+                        return ((short)(this[this.tablePRODUTO.PRODUTO_ESTOQUE_ATUALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_ESTOQUE_ATUAL\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_ESTOQUE_ATUALColumn] = value;
@@ -21424,7 +21408,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal PRODUTO_PRECO_COMPRA {
                 get {
-                    return ((decimal)(this[this.tablePRODUTO.PRODUTO_PRECO_COMPRAColumn]));
+                    try {
+                        return ((decimal)(this[this.tablePRODUTO.PRODUTO_PRECO_COMPRAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_PRECO_COMPRA\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_PRECO_COMPRAColumn] = value;
@@ -21435,7 +21424,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal PRODUTO_PRECO_CUSTO {
                 get {
-                    return ((decimal)(this[this.tablePRODUTO.PRODUTO_PRECO_CUSTOColumn]));
+                    try {
+                        return ((decimal)(this[this.tablePRODUTO.PRODUTO_PRECO_CUSTOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_PRECO_CUSTO\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_PRECO_CUSTOColumn] = value;
@@ -21446,7 +21440,12 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public decimal PRODUTO_PRECO_VENDA {
                 get {
-                    return ((decimal)(this[this.tablePRODUTO.PRODUTO_PRECO_VENDAColumn]));
+                    try {
+                        return ((decimal)(this[this.tablePRODUTO.PRODUTO_PRECO_VENDAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PRODUTO_PRECO_VENDA\' in table \'PRODUTO\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablePRODUTO.PRODUTO_PRECO_VENDAColumn] = value;
@@ -21556,6 +21555,18 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_UNIDADE_VENDANull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_UNIDADE_VENDAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_UNIDADE_VENDANull() {
+                this[this.tablePRODUTO.PRODUTO_UNIDADE_VENDAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPRODUTO_PESONull() {
                 return this.IsNull(this.tablePRODUTO.PRODUTO_PESOColumn);
             }
@@ -21580,6 +21591,18 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_EANNull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_EANColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_EANNull() {
+                this[this.tablePRODUTO.PRODUTO_EANColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsPRODUTO_NUMERO_SERIENull() {
                 return this.IsNull(this.tablePRODUTO.PRODUTO_NUMERO_SERIEColumn);
             }
@@ -21588,6 +21611,66 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPRODUTO_NUMERO_SERIENull() {
                 this[this.tablePRODUTO.PRODUTO_NUMERO_SERIEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_MARCANull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_MARCAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_MARCANull() {
+                this[this.tablePRODUTO.PRODUTO_MARCAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_GRUPONull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_GRUPOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_GRUPONull() {
+                this[this.tablePRODUTO.PRODUTO_GRUPOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_SECAONull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_SECAOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_SECAONull() {
+                this[this.tablePRODUTO.PRODUTO_SECAOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_FORNECEDORNull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_FORNECEDORColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_FORNECEDORNull() {
+                this[this.tablePRODUTO.PRODUTO_FORNECEDORColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_CFOPNull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_CFOPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_CFOPNull() {
+                this[this.tablePRODUTO.PRODUTO_CFOPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21612,6 +21695,18 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPRODUTO_NCMNull() {
                 this[this.tablePRODUTO.PRODUTO_NCMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_SITUACAO_TRIBUTARIANull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_SITUACAO_TRIBUTARIAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_SITUACAO_TRIBUTARIANull() {
+                this[this.tablePRODUTO.PRODUTO_SITUACAO_TRIBUTARIAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21648,6 +21743,54 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetPRODUTO_ESTOQUE_MAXIMONull() {
                 this[this.tablePRODUTO.PRODUTO_ESTOQUE_MAXIMOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_ESTOQUE_ATUALNull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_ESTOQUE_ATUALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_ESTOQUE_ATUALNull() {
+                this[this.tablePRODUTO.PRODUTO_ESTOQUE_ATUALColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_PRECO_COMPRANull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_PRECO_COMPRAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_PRECO_COMPRANull() {
+                this[this.tablePRODUTO.PRODUTO_PRECO_COMPRAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_PRECO_CUSTONull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_PRECO_CUSTOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_PRECO_CUSTONull() {
+                this[this.tablePRODUTO.PRODUTO_PRECO_CUSTOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPRODUTO_PRECO_VENDANull() {
+                return this.IsNull(this.tablePRODUTO.PRODUTO_PRECO_VENDAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPRODUTO_PRECO_VENDANull() {
+                this[this.tablePRODUTO.PRODUTO_PRECO_VENDAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21872,6 +22015,17 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TIPORow TIPORow {
+                get {
+                    return ((TIPORow)(this.GetParentRow(this.Table.ParentRelations["SERVICO_TIPO_TIPO_FK"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["SERVICO_TIPO_TIPO_FK"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsSERVICO_TIPO_SERVICONull() {
                 return this.IsNull(this.tableSERVICO_TIPO.SERVICO_TIPO_SERVICOColumn);
             }
@@ -21928,6 +22082,17 @@ namespace FROGI_OS {
                 }
                 set {
                     this[this.tableTIPO.TIPO_DESCRICAOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SERVICO_TIPORow[] GetSERVICO_TIPORows() {
+                if ((this.Table.ChildRelations["SERVICO_TIPO_TIPO_FK"] == null)) {
+                    return new SERVICO_TIPORow[0];
+                }
+                else {
+                    return ((SERVICO_TIPORow[])(base.GetChildRows(this.Table.ChildRelations["SERVICO_TIPO_TIPO_FK"])));
                 }
             }
         }
@@ -23597,9 +23762,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] AGEN_DESCRICAO {
+            public string AGEN_DESCRICAO {
                 get {
-                    return ((byte[])(this[this.tableAGENDAMENTO.AGEN_DESCRICAOColumn]));
+                    return ((string)(this[this.tableAGENDAMENTO.AGEN_DESCRICAOColumn]));
                 }
                 set {
                     this[this.tableAGENDAMENTO.AGEN_DESCRICAOColumn] = value;
@@ -33309,12 +33474,11 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             tableMapping.ColumnMappings.Add("FUNCIONARIO_SALARIO", "FUNCIONARIO_SALARIO");
             tableMapping.ColumnMappings.Add("FUNCIONARIO_ADMISSAO", "FUNCIONARIO_ADMISSAO");
             tableMapping.ColumnMappings.Add("FUNCIONARIO_SENHA", "FUNCIONARIO_SENHA");
-            tableMapping.ColumnMappings.Add("FUNCIONARIO_CATEGORIA", "FUNCIONARIO_CATEGORIA");
             tableMapping.ColumnMappings.Add("FUNCIONARIO_DATA_CADASTRO", "FUNCIONARIO_DATA_CADASTRO");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""FUNCIONARIO"" WHERE ((""FUNCIONARIO_CODIGO"" = @Original_FUNCIONARIO_CODIGO) AND (""FUNCIONARIO_NOME"" = @Original_FUNCIONARIO_NOME) AND ((@IsNull_FUNCIONARIO_CPF = 1 AND ""FUNCIONARIO_CPF"" IS NULL) OR (""FUNCIONARIO_CPF"" = @Original_FUNCIONARIO_CPF)) AND ((@IsNull_FUNCIONARIO_RG = 1 AND ""FUNCIONARIO_RG"" IS NULL) OR (""FUNCIONARIO_RG"" = @Original_FUNCIONARIO_RG)) AND (""FUNCIONARIO_NASCIMENTO"" = @Original_FUNCIONARIO_NASCIMENTO) AND ((@IsNull_FUNCIONARIO_PIS = 1 AND ""FUNCIONARIO_PIS"" IS NULL) OR (""FUNCIONARIO_PIS"" = @Original_FUNCIONARIO_PIS)) AND (""FUNCIONARIO_TELEFONE"" = @Original_FUNCIONARIO_TELEFONE) AND ((@IsNull_FUNCIONARIO_EMAIL = 1 AND ""FUNCIONARIO_EMAIL"" IS NULL) OR (""FUNCIONARIO_EMAIL"" = @Original_FUNCIONARIO_EMAIL)) AND (""FUNCIONARIO_ENDERECO"" = @Original_FUNCIONARIO_ENDERECO) AND (""FUNCIONARIO_BAIRRO"" = @Original_FUNCIONARIO_BAIRRO) AND ((@IsNull_FUNCIONARIO_CEP = 1 AND ""FUNCIONARIO_CEP"" IS NULL) OR (""FUNCIONARIO_CEP"" = @Original_FUNCIONARIO_CEP)) AND (""FUNCIONARIO_FUNCAO"" = @Original_FUNCIONARIO_FUNCAO) AND ((@IsNull_FUNCIONARIO_SETOR = 1 AND ""FUNCIONARIO_SETOR"" IS NULL) OR (""FUNCIONARIO_SETOR"" = @Original_FUNCIONARIO_SETOR)) AND (""FUNCIONARIO_SALARIO"" = @Original_FUNCIONARIO_SALARIO) AND (""FUNCIONARIO_ADMISSAO"" = @Original_FUNCIONARIO_ADMISSAO) AND (""FUNCIONARIO_SENHA"" = @Original_FUNCIONARIO_SENHA) AND (""FUNCIONARIO_CATEGORIA"" = @Original_FUNCIONARIO_CATEGORIA) AND (""FUNCIONARIO_DATA_CADASTRO"" = @Original_FUNCIONARIO_DATA_CADASTRO))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""FUNCIONARIO"" WHERE ((""FUNCIONARIO_CODIGO"" = @Original_FUNCIONARIO_CODIGO) AND (""FUNCIONARIO_NOME"" = @Original_FUNCIONARIO_NOME) AND ((@IsNull_FUNCIONARIO_CPF = 1 AND ""FUNCIONARIO_CPF"" IS NULL) OR (""FUNCIONARIO_CPF"" = @Original_FUNCIONARIO_CPF)) AND ((@IsNull_FUNCIONARIO_RG = 1 AND ""FUNCIONARIO_RG"" IS NULL) OR (""FUNCIONARIO_RG"" = @Original_FUNCIONARIO_RG)) AND (""FUNCIONARIO_NASCIMENTO"" = @Original_FUNCIONARIO_NASCIMENTO) AND ((@IsNull_FUNCIONARIO_PIS = 1 AND ""FUNCIONARIO_PIS"" IS NULL) OR (""FUNCIONARIO_PIS"" = @Original_FUNCIONARIO_PIS)) AND (""FUNCIONARIO_TELEFONE"" = @Original_FUNCIONARIO_TELEFONE) AND ((@IsNull_FUNCIONARIO_EMAIL = 1 AND ""FUNCIONARIO_EMAIL"" IS NULL) OR (""FUNCIONARIO_EMAIL"" = @Original_FUNCIONARIO_EMAIL)) AND (""FUNCIONARIO_ENDERECO"" = @Original_FUNCIONARIO_ENDERECO) AND (""FUNCIONARIO_BAIRRO"" = @Original_FUNCIONARIO_BAIRRO) AND ((@IsNull_FUNCIONARIO_CEP = 1 AND ""FUNCIONARIO_CEP"" IS NULL) OR (""FUNCIONARIO_CEP"" = @Original_FUNCIONARIO_CEP)) AND (""FUNCIONARIO_FUNCAO"" = @Original_FUNCIONARIO_FUNCAO) AND ((@IsNull_FUNCIONARIO_SETOR = 1 AND ""FUNCIONARIO_SETOR"" IS NULL) OR (""FUNCIONARIO_SETOR"" = @Original_FUNCIONARIO_SETOR)) AND (""FUNCIONARIO_SALARIO"" = @Original_FUNCIONARIO_SALARIO) AND (""FUNCIONARIO_ADMISSAO"" = @Original_FUNCIONARIO_ADMISSAO) AND (""FUNCIONARIO_SENHA"" = @Original_FUNCIONARIO_SENHA) AND (""FUNCIONARIO_DATA_CADASTRO"" = @Original_FUNCIONARIO_DATA_CADASTRO))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FUNCIONARIO_CODIGO";
@@ -33374,7 +33538,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_FUNCIONARIO_PIS";
             param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 12;
+            param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_PIS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -33382,7 +33546,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FUNCIONARIO_PIS";
-            param.Size = 12;
+            param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_PIS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -33487,14 +33651,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@Original_FUNCIONARIO_CATEGORIA";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 4;
-            param.IsNullable = true;
-            param.SourceColumn = "FUNCIONARIO_CATEGORIA";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FUNCIONARIO_DATA_CADASTRO";
             param.DbType = global::System.Data.DbType.Date;
             param.Size = 4;
@@ -33504,7 +33660,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""FUNCIONARIO"" (""FUNCIONARIO_CODIGO"", ""FUNCIONARIO_NOME"", ""FUNCIONARIO_CPF"", ""FUNCIONARIO_RG"", ""FUNCIONARIO_NASCIMENTO"", ""FUNCIONARIO_PIS"", ""FUNCIONARIO_TELEFONE"", ""FUNCIONARIO_EMAIL"", ""FUNCIONARIO_ENDERECO"", ""FUNCIONARIO_BAIRRO"", ""FUNCIONARIO_CEP"", ""FUNCIONARIO_FUNCAO"", ""FUNCIONARIO_SETOR"", ""FUNCIONARIO_SALARIO"", ""FUNCIONARIO_ADMISSAO"", ""FUNCIONARIO_SENHA"", ""FUNCIONARIO_CATEGORIA"", ""FUNCIONARIO_DATA_CADASTRO"") VALUES (@FUNCIONARIO_CODIGO, @FUNCIONARIO_NOME, @FUNCIONARIO_CPF, @FUNCIONARIO_RG, @FUNCIONARIO_NASCIMENTO, @FUNCIONARIO_PIS, @FUNCIONARIO_TELEFONE, @FUNCIONARIO_EMAIL, @FUNCIONARIO_ENDERECO, @FUNCIONARIO_BAIRRO, @FUNCIONARIO_CEP, @FUNCIONARIO_FUNCAO, @FUNCIONARIO_SETOR, @FUNCIONARIO_SALARIO, @FUNCIONARIO_ADMISSAO, @FUNCIONARIO_SENHA, @FUNCIONARIO_CATEGORIA, @FUNCIONARIO_DATA_CADASTRO)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""FUNCIONARIO"" (""FUNCIONARIO_CODIGO"", ""FUNCIONARIO_NOME"", ""FUNCIONARIO_CPF"", ""FUNCIONARIO_RG"", ""FUNCIONARIO_NASCIMENTO"", ""FUNCIONARIO_PIS"", ""FUNCIONARIO_TELEFONE"", ""FUNCIONARIO_EMAIL"", ""FUNCIONARIO_ENDERECO"", ""FUNCIONARIO_BAIRRO"", ""FUNCIONARIO_CEP"", ""FUNCIONARIO_FUNCAO"", ""FUNCIONARIO_SETOR"", ""FUNCIONARIO_SALARIO"", ""FUNCIONARIO_ADMISSAO"", ""FUNCIONARIO_SENHA"", ""FUNCIONARIO_DATA_CADASTRO"") VALUES (@FUNCIONARIO_CODIGO, @FUNCIONARIO_NOME, @FUNCIONARIO_CPF, @FUNCIONARIO_RG, @FUNCIONARIO_NASCIMENTO, @FUNCIONARIO_PIS, @FUNCIONARIO_TELEFONE, @FUNCIONARIO_EMAIL, @FUNCIONARIO_ENDERECO, @FUNCIONARIO_BAIRRO, @FUNCIONARIO_CEP, @FUNCIONARIO_FUNCAO, @FUNCIONARIO_SETOR, @FUNCIONARIO_SALARIO, @FUNCIONARIO_ADMISSAO, @FUNCIONARIO_SENHA, @FUNCIONARIO_DATA_CADASTRO)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@FUNCIONARIO_CODIGO";
@@ -33540,7 +33696,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@FUNCIONARIO_PIS";
-            param.Size = 12;
+            param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_PIS";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -33607,13 +33763,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceColumn = "FUNCIONARIO_SENHA";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@FUNCIONARIO_CATEGORIA";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 4;
-            param.IsNullable = true;
-            param.SourceColumn = "FUNCIONARIO_CATEGORIA";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@FUNCIONARIO_DATA_CADASTRO";
             param.DbType = global::System.Data.DbType.Date;
             param.Size = 4;
@@ -33631,26 +33780,24 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 "ONARIO_CEP, \"FUNCIONARIO_FUNCAO\" = @FUNCIONARIO_FUNCAO, \"FUNCIONARIO_SETOR\" = @F" +
                 "UNCIONARIO_SETOR, \"FUNCIONARIO_SALARIO\" = @FUNCIONARIO_SALARIO, \"FUNCIONARIO_ADM" +
                 "ISSAO\" = @FUNCIONARIO_ADMISSAO, \"FUNCIONARIO_SENHA\" = @FUNCIONARIO_SENHA, \"FUNCI" +
-                "ONARIO_CATEGORIA\" = @FUNCIONARIO_CATEGORIA, \"FUNCIONARIO_DATA_CADASTRO\" = @FUNCI" +
-                "ONARIO_DATA_CADASTRO WHERE ((\"FUNCIONARIO_CODIGO\" = @Original_FUNCIONARIO_CODIGO" +
-                ") AND (\"FUNCIONARIO_NOME\" = @Original_FUNCIONARIO_NOME) AND ((@IsNull_FUNCIONARI" +
-                "O_CPF = 1 AND \"FUNCIONARIO_CPF\" IS NULL) OR (\"FUNCIONARIO_CPF\" = @Original_FUNCI" +
-                "ONARIO_CPF)) AND ((@IsNull_FUNCIONARIO_RG = 1 AND \"FUNCIONARIO_RG\" IS NULL) OR (" +
-                "\"FUNCIONARIO_RG\" = @Original_FUNCIONARIO_RG)) AND (\"FUNCIONARIO_NASCIMENTO\" = @O" +
-                "riginal_FUNCIONARIO_NASCIMENTO) AND ((@IsNull_FUNCIONARIO_PIS = 1 AND \"FUNCIONAR" +
-                "IO_PIS\" IS NULL) OR (\"FUNCIONARIO_PIS\" = @Original_FUNCIONARIO_PIS)) AND (\"FUNCI" +
-                "ONARIO_TELEFONE\" = @Original_FUNCIONARIO_TELEFONE) AND ((@IsNull_FUNCIONARIO_EMA" +
-                "IL = 1 AND \"FUNCIONARIO_EMAIL\" IS NULL) OR (\"FUNCIONARIO_EMAIL\" = @Original_FUNC" +
-                "IONARIO_EMAIL)) AND (\"FUNCIONARIO_ENDERECO\" = @Original_FUNCIONARIO_ENDERECO) AN" +
-                "D (\"FUNCIONARIO_BAIRRO\" = @Original_FUNCIONARIO_BAIRRO) AND ((@IsNull_FUNCIONARI" +
-                "O_CEP = 1 AND \"FUNCIONARIO_CEP\" IS NULL) OR (\"FUNCIONARIO_CEP\" = @Original_FUNCI" +
-                "ONARIO_CEP)) AND (\"FUNCIONARIO_FUNCAO\" = @Original_FUNCIONARIO_FUNCAO) AND ((@Is" +
-                "Null_FUNCIONARIO_SETOR = 1 AND \"FUNCIONARIO_SETOR\" IS NULL) OR (\"FUNCIONARIO_SET" +
-                "OR\" = @Original_FUNCIONARIO_SETOR)) AND (\"FUNCIONARIO_SALARIO\" = @Original_FUNCI" +
-                "ONARIO_SALARIO) AND (\"FUNCIONARIO_ADMISSAO\" = @Original_FUNCIONARIO_ADMISSAO) AN" +
-                "D (\"FUNCIONARIO_SENHA\" = @Original_FUNCIONARIO_SENHA) AND (\"FUNCIONARIO_CATEGORI" +
-                "A\" = @Original_FUNCIONARIO_CATEGORIA) AND (\"FUNCIONARIO_DATA_CADASTRO\" = @Origin" +
-                "al_FUNCIONARIO_DATA_CADASTRO))";
+                "ONARIO_DATA_CADASTRO\" = @FUNCIONARIO_DATA_CADASTRO WHERE ((\"FUNCIONARIO_CODIGO\" " +
+                "= @Original_FUNCIONARIO_CODIGO) AND (\"FUNCIONARIO_NOME\" = @Original_FUNCIONARIO_" +
+                "NOME) AND ((@IsNull_FUNCIONARIO_CPF = 1 AND \"FUNCIONARIO_CPF\" IS NULL) OR (\"FUNC" +
+                "IONARIO_CPF\" = @Original_FUNCIONARIO_CPF)) AND ((@IsNull_FUNCIONARIO_RG = 1 AND " +
+                "\"FUNCIONARIO_RG\" IS NULL) OR (\"FUNCIONARIO_RG\" = @Original_FUNCIONARIO_RG)) AND " +
+                "(\"FUNCIONARIO_NASCIMENTO\" = @Original_FUNCIONARIO_NASCIMENTO) AND ((@IsNull_FUNC" +
+                "IONARIO_PIS = 1 AND \"FUNCIONARIO_PIS\" IS NULL) OR (\"FUNCIONARIO_PIS\" = @Original" +
+                "_FUNCIONARIO_PIS)) AND (\"FUNCIONARIO_TELEFONE\" = @Original_FUNCIONARIO_TELEFONE)" +
+                " AND ((@IsNull_FUNCIONARIO_EMAIL = 1 AND \"FUNCIONARIO_EMAIL\" IS NULL) OR (\"FUNCI" +
+                "ONARIO_EMAIL\" = @Original_FUNCIONARIO_EMAIL)) AND (\"FUNCIONARIO_ENDERECO\" = @Ori" +
+                "ginal_FUNCIONARIO_ENDERECO) AND (\"FUNCIONARIO_BAIRRO\" = @Original_FUNCIONARIO_BA" +
+                "IRRO) AND ((@IsNull_FUNCIONARIO_CEP = 1 AND \"FUNCIONARIO_CEP\" IS NULL) OR (\"FUNC" +
+                "IONARIO_CEP\" = @Original_FUNCIONARIO_CEP)) AND (\"FUNCIONARIO_FUNCAO\" = @Original" +
+                "_FUNCIONARIO_FUNCAO) AND ((@IsNull_FUNCIONARIO_SETOR = 1 AND \"FUNCIONARIO_SETOR\"" +
+                " IS NULL) OR (\"FUNCIONARIO_SETOR\" = @Original_FUNCIONARIO_SETOR)) AND (\"FUNCIONA" +
+                "RIO_SALARIO\" = @Original_FUNCIONARIO_SALARIO) AND (\"FUNCIONARIO_ADMISSAO\" = @Ori" +
+                "ginal_FUNCIONARIO_ADMISSAO) AND (\"FUNCIONARIO_SENHA\" = @Original_FUNCIONARIO_SEN" +
+                "HA) AND (\"FUNCIONARIO_DATA_CADASTRO\" = @Original_FUNCIONARIO_DATA_CADASTRO))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@FUNCIONARIO_CODIGO";
@@ -33686,7 +33833,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@FUNCIONARIO_PIS";
-            param.Size = 12;
+            param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_PIS";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -33751,13 +33898,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.Size = 10;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_SENHA";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@FUNCIONARIO_CATEGORIA";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 4;
-            param.IsNullable = true;
-            param.SourceColumn = "FUNCIONARIO_CATEGORIA";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@FUNCIONARIO_DATA_CADASTRO";
@@ -33824,7 +33964,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_FUNCIONARIO_PIS";
             param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 12;
+            param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_PIS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -33832,7 +33972,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FUNCIONARIO_PIS";
-            param.Size = 12;
+            param.Size = 15;
             param.IsNullable = true;
             param.SourceColumn = "FUNCIONARIO_PIS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
@@ -33937,14 +34077,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "@Original_FUNCIONARIO_CATEGORIA";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.Size = 4;
-            param.IsNullable = true;
-            param.SourceColumn = "FUNCIONARIO_CATEGORIA";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_FUNCIONARIO_DATA_CADASTRO";
             param.DbType = global::System.Data.DbType.Date;
             param.Size = 4;
@@ -33967,7 +34099,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT ""FUNCIONARIO_CODIGO"", ""FUNCIONARIO_NOME"", ""FUNCIONARIO_CPF"", ""FUNCIONARIO_RG"", ""FUNCIONARIO_NASCIMENTO"", ""FUNCIONARIO_PIS"", ""FUNCIONARIO_TELEFONE"", ""FUNCIONARIO_EMAIL"", ""FUNCIONARIO_ENDERECO"", ""FUNCIONARIO_BAIRRO"", ""FUNCIONARIO_CEP"", ""FUNCIONARIO_FUNCAO"", ""FUNCIONARIO_SETOR"", ""FUNCIONARIO_SALARIO"", ""FUNCIONARIO_ADMISSAO"", ""FUNCIONARIO_SENHA"", ""FUNCIONARIO_CATEGORIA"", ""FUNCIONARIO_DATA_CADASTRO"" FROM ""FUNCIONARIO""";
+            this._commandCollection[0].CommandText = @"SELECT FUNCIONARIO_CODIGO, FUNCIONARIO_NOME, FUNCIONARIO_CPF, FUNCIONARIO_RG, FUNCIONARIO_NASCIMENTO, FUNCIONARIO_PIS, FUNCIONARIO_TELEFONE, FUNCIONARIO_EMAIL, FUNCIONARIO_ENDERECO, FUNCIONARIO_BAIRRO, FUNCIONARIO_CEP, FUNCIONARIO_FUNCAO, FUNCIONARIO_SETOR, FUNCIONARIO_SALARIO, FUNCIONARIO_ADMISSAO, FUNCIONARIO_SENHA, FUNCIONARIO_DATA_CADASTRO FROM FUNCIONARIO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34045,7 +34177,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     decimal Original_FUNCIONARIO_SALARIO, 
                     System.DateTime Original_FUNCIONARIO_ADMISSAO, 
                     string Original_FUNCIONARIO_SENHA, 
-                    int Original_FUNCIONARIO_CATEGORIA, 
                     System.DateTime Original_FUNCIONARIO_DATA_CADASTRO) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_FUNCIONARIO_CODIGO));
             if ((Original_FUNCIONARIO_NOME == null)) {
@@ -34135,8 +34266,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((string)(Original_FUNCIONARIO_SENHA));
             }
-            this.Adapter.DeleteCommand.Parameters[22].Value = ((int)(Original_FUNCIONARIO_CATEGORIA));
-            this.Adapter.DeleteCommand.Parameters[23].Value = ((System.DateTime)(Original_FUNCIONARIO_DATA_CADASTRO));
+            this.Adapter.DeleteCommand.Parameters[22].Value = ((System.DateTime)(Original_FUNCIONARIO_DATA_CADASTRO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34174,7 +34304,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     decimal FUNCIONARIO_SALARIO, 
                     System.DateTime FUNCIONARIO_ADMISSAO, 
                     string FUNCIONARIO_SENHA, 
-                    int FUNCIONARIO_CATEGORIA, 
                     System.DateTime FUNCIONARIO_DATA_CADASTRO) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(FUNCIONARIO_CODIGO));
             if ((FUNCIONARIO_NOME == null)) {
@@ -34252,8 +34381,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(FUNCIONARIO_SENHA));
             }
-            this.Adapter.InsertCommand.Parameters[16].Value = ((int)(FUNCIONARIO_CATEGORIA));
-            this.Adapter.InsertCommand.Parameters[17].Value = ((System.DateTime)(FUNCIONARIO_DATA_CADASTRO));
+            this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(FUNCIONARIO_DATA_CADASTRO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34291,7 +34419,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     decimal FUNCIONARIO_SALARIO, 
                     System.DateTime FUNCIONARIO_ADMISSAO, 
                     string FUNCIONARIO_SENHA, 
-                    int FUNCIONARIO_CATEGORIA, 
                     System.DateTime FUNCIONARIO_DATA_CADASTRO, 
                     int Original_FUNCIONARIO_CODIGO, 
                     string Original_FUNCIONARIO_NOME, 
@@ -34309,7 +34436,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     decimal Original_FUNCIONARIO_SALARIO, 
                     System.DateTime Original_FUNCIONARIO_ADMISSAO, 
                     string Original_FUNCIONARIO_SENHA, 
-                    int Original_FUNCIONARIO_CATEGORIA, 
                     System.DateTime Original_FUNCIONARIO_DATA_CADASTRO) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(FUNCIONARIO_CODIGO));
             if ((FUNCIONARIO_NOME == null)) {
@@ -34387,98 +34513,96 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(FUNCIONARIO_SENHA));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(FUNCIONARIO_CATEGORIA));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(FUNCIONARIO_DATA_CADASTRO));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_FUNCIONARIO_CODIGO));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(FUNCIONARIO_DATA_CADASTRO));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_FUNCIONARIO_CODIGO));
             if ((Original_FUNCIONARIO_NOME == null)) {
                 throw new global::System.ArgumentNullException("Original_FUNCIONARIO_NOME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_FUNCIONARIO_NOME));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_FUNCIONARIO_NOME));
             }
             if ((Original_FUNCIONARIO_CPF == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_FUNCIONARIO_CPF));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_FUNCIONARIO_CPF));
             }
             if ((Original_FUNCIONARIO_RG == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_FUNCIONARIO_RG));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_FUNCIONARIO_RG));
             }
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_FUNCIONARIO_NASCIMENTO));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_FUNCIONARIO_NASCIMENTO));
             if ((Original_FUNCIONARIO_PIS == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_FUNCIONARIO_PIS));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_FUNCIONARIO_PIS));
             }
             if ((Original_FUNCIONARIO_TELEFONE == null)) {
                 throw new global::System.ArgumentNullException("Original_FUNCIONARIO_TELEFONE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_FUNCIONARIO_TELEFONE));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_FUNCIONARIO_TELEFONE));
             }
             if ((Original_FUNCIONARIO_EMAIL == null)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_FUNCIONARIO_EMAIL));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_FUNCIONARIO_EMAIL));
             }
             if ((Original_FUNCIONARIO_ENDERECO == null)) {
                 throw new global::System.ArgumentNullException("Original_FUNCIONARIO_ENDERECO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_FUNCIONARIO_ENDERECO));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_FUNCIONARIO_ENDERECO));
             }
             if ((Original_FUNCIONARIO_BAIRRO == null)) {
                 throw new global::System.ArgumentNullException("Original_FUNCIONARIO_BAIRRO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_FUNCIONARIO_BAIRRO));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_FUNCIONARIO_BAIRRO));
             }
             if ((Original_FUNCIONARIO_CEP == null)) {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_FUNCIONARIO_CEP));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_FUNCIONARIO_CEP));
             }
             if ((Original_FUNCIONARIO_FUNCAO == null)) {
                 throw new global::System.ArgumentNullException("Original_FUNCIONARIO_FUNCAO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((string)(Original_FUNCIONARIO_FUNCAO));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_FUNCIONARIO_FUNCAO));
             }
             if ((Original_FUNCIONARIO_SETOR == null)) {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_FUNCIONARIO_SETOR));
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_FUNCIONARIO_SETOR));
             }
-            this.Adapter.UpdateCommand.Parameters[37].Value = ((decimal)(Original_FUNCIONARIO_SALARIO));
-            this.Adapter.UpdateCommand.Parameters[38].Value = ((System.DateTime)(Original_FUNCIONARIO_ADMISSAO));
+            this.Adapter.UpdateCommand.Parameters[36].Value = ((decimal)(Original_FUNCIONARIO_SALARIO));
+            this.Adapter.UpdateCommand.Parameters[37].Value = ((System.DateTime)(Original_FUNCIONARIO_ADMISSAO));
             if ((Original_FUNCIONARIO_SENHA == null)) {
                 throw new global::System.ArgumentNullException("Original_FUNCIONARIO_SENHA");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_FUNCIONARIO_SENHA));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_FUNCIONARIO_SENHA));
             }
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_FUNCIONARIO_CATEGORIA));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((System.DateTime)(Original_FUNCIONARIO_DATA_CADASTRO));
+            this.Adapter.UpdateCommand.Parameters[39].Value = ((System.DateTime)(Original_FUNCIONARIO_DATA_CADASTRO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34515,7 +34639,6 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     decimal FUNCIONARIO_SALARIO, 
                     System.DateTime FUNCIONARIO_ADMISSAO, 
                     string FUNCIONARIO_SENHA, 
-                    int FUNCIONARIO_CATEGORIA, 
                     System.DateTime FUNCIONARIO_DATA_CADASTRO, 
                     int Original_FUNCIONARIO_CODIGO, 
                     string Original_FUNCIONARIO_NOME, 
@@ -34533,9 +34656,8 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     decimal Original_FUNCIONARIO_SALARIO, 
                     System.DateTime Original_FUNCIONARIO_ADMISSAO, 
                     string Original_FUNCIONARIO_SENHA, 
-                    int Original_FUNCIONARIO_CATEGORIA, 
                     System.DateTime Original_FUNCIONARIO_DATA_CADASTRO) {
-            return this.Update(Original_FUNCIONARIO_CODIGO, FUNCIONARIO_NOME, FUNCIONARIO_CPF, FUNCIONARIO_RG, FUNCIONARIO_NASCIMENTO, FUNCIONARIO_PIS, FUNCIONARIO_TELEFONE, FUNCIONARIO_EMAIL, FUNCIONARIO_ENDERECO, FUNCIONARIO_BAIRRO, FUNCIONARIO_CEP, FUNCIONARIO_FUNCAO, FUNCIONARIO_SETOR, FUNCIONARIO_SALARIO, FUNCIONARIO_ADMISSAO, FUNCIONARIO_SENHA, FUNCIONARIO_CATEGORIA, FUNCIONARIO_DATA_CADASTRO, Original_FUNCIONARIO_CODIGO, Original_FUNCIONARIO_NOME, Original_FUNCIONARIO_CPF, Original_FUNCIONARIO_RG, Original_FUNCIONARIO_NASCIMENTO, Original_FUNCIONARIO_PIS, Original_FUNCIONARIO_TELEFONE, Original_FUNCIONARIO_EMAIL, Original_FUNCIONARIO_ENDERECO, Original_FUNCIONARIO_BAIRRO, Original_FUNCIONARIO_CEP, Original_FUNCIONARIO_FUNCAO, Original_FUNCIONARIO_SETOR, Original_FUNCIONARIO_SALARIO, Original_FUNCIONARIO_ADMISSAO, Original_FUNCIONARIO_SENHA, Original_FUNCIONARIO_CATEGORIA, Original_FUNCIONARIO_DATA_CADASTRO);
+            return this.Update(Original_FUNCIONARIO_CODIGO, FUNCIONARIO_NOME, FUNCIONARIO_CPF, FUNCIONARIO_RG, FUNCIONARIO_NASCIMENTO, FUNCIONARIO_PIS, FUNCIONARIO_TELEFONE, FUNCIONARIO_EMAIL, FUNCIONARIO_ENDERECO, FUNCIONARIO_BAIRRO, FUNCIONARIO_CEP, FUNCIONARIO_FUNCAO, FUNCIONARIO_SETOR, FUNCIONARIO_SALARIO, FUNCIONARIO_ADMISSAO, FUNCIONARIO_SENHA, FUNCIONARIO_DATA_CADASTRO, Original_FUNCIONARIO_CODIGO, Original_FUNCIONARIO_NOME, Original_FUNCIONARIO_CPF, Original_FUNCIONARIO_RG, Original_FUNCIONARIO_NASCIMENTO, Original_FUNCIONARIO_PIS, Original_FUNCIONARIO_TELEFONE, Original_FUNCIONARIO_EMAIL, Original_FUNCIONARIO_ENDERECO, Original_FUNCIONARIO_BAIRRO, Original_FUNCIONARIO_CEP, Original_FUNCIONARIO_FUNCAO, Original_FUNCIONARIO_SETOR, Original_FUNCIONARIO_SALARIO, Original_FUNCIONARIO_ADMISSAO, Original_FUNCIONARIO_SENHA, Original_FUNCIONARIO_DATA_CADASTRO);
         }
     }
     
@@ -42436,10 +42558,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_PRODUTO_NUMERO, 
                     string Original_PRODUTO_EAN, 
                     string Original_PRODUTO_NUMERO_SERIE, 
-                    int Original_PRODUTO_MARCA, 
-                    int Original_PRODUTO_GRUPO, 
-                    int Original_PRODUTO_SECAO, 
-                    int Original_PRODUTO_FORNECEDOR, 
+                    global::System.Nullable<int> Original_PRODUTO_MARCA, 
+                    global::System.Nullable<int> Original_PRODUTO_GRUPO, 
+                    global::System.Nullable<int> Original_PRODUTO_SECAO, 
+                    global::System.Nullable<int> Original_PRODUTO_FORNECEDOR, 
                     string Original_PRODUTO_CFOP, 
                     string Original_PRODUTO_CSOSN, 
                     string Original_PRODUTO_NCM, 
@@ -42447,10 +42569,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_PRODUTO_ORIGEM_MERCADORIA, 
                     global::System.Nullable<short> Original_PRODUTO_ESTOQUE_MINIMO, 
                     global::System.Nullable<short> Original_PRODUTO_ESTOQUE_MAXIMO, 
-                    short Original_PRODUTO_ESTOQUE_ATUAL, 
-                    decimal Original_PRODUTO_PRECO_COMPRA, 
-                    decimal Original_PRODUTO_PRECO_CUSTO, 
-                    decimal Original_PRODUTO_PRECO_VENDA, 
+                    global::System.Nullable<short> Original_PRODUTO_ESTOQUE_ATUAL, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_COMPRA, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_CUSTO, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_VENDA, 
                     System.DateTime Original_PRODUTO_DATA_CADASTRO) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_PRODUTO_CODIGO));
             if ((Original_PRODUTO_DESCRICAO == null)) {
@@ -42476,7 +42598,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_PRODUTO_UNIDADE_COMPRA));
             }
             if ((Original_PRODUTO_UNIDADE_VENDA == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_UNIDADE_VENDA");
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_PRODUTO_UNIDADE_VENDA));
@@ -42498,7 +42620,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_PRODUTO_NUMERO));
             }
             if ((Original_PRODUTO_EAN == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_EAN");
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_PRODUTO_EAN));
@@ -42511,12 +42633,32 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_PRODUTO_NUMERO_SERIE));
             }
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_PRODUTO_MARCA));
-            this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_PRODUTO_GRUPO));
-            this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_PRODUTO_SECAO));
-            this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_PRODUTO_FORNECEDOR));
+            if ((Original_PRODUTO_MARCA.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_PRODUTO_MARCA.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_GRUPO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((int)(Original_PRODUTO_GRUPO.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_SECAO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((int)(Original_PRODUTO_SECAO.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_FORNECEDOR.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((int)(Original_PRODUTO_FORNECEDOR.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
             if ((Original_PRODUTO_CFOP == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_CFOP");
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_PRODUTO_CFOP));
@@ -42538,7 +42680,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_PRODUTO_NCM));
             }
             if ((Original_PRODUTO_SITUACAO_TRIBUTARIA == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_SITUACAO_TRIBUTARIA");
+                this.Adapter.DeleteCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((string)(Original_PRODUTO_SITUACAO_TRIBUTARIA));
@@ -42567,10 +42709,30 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.DeleteCommand.Parameters[28].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[30].Value = ((short)(Original_PRODUTO_ESTOQUE_ATUAL));
-            this.Adapter.DeleteCommand.Parameters[31].Value = ((decimal)(Original_PRODUTO_PRECO_COMPRA));
-            this.Adapter.DeleteCommand.Parameters[32].Value = ((decimal)(Original_PRODUTO_PRECO_CUSTO));
-            this.Adapter.DeleteCommand.Parameters[33].Value = ((decimal)(Original_PRODUTO_PRECO_VENDA));
+            if ((Original_PRODUTO_ESTOQUE_ATUAL.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((short)(Original_PRODUTO_ESTOQUE_ATUAL.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_PRECO_COMPRA.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[31].Value = ((decimal)(Original_PRODUTO_PRECO_COMPRA.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_PRECO_CUSTO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((decimal)(Original_PRODUTO_PRECO_CUSTO.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_PRECO_VENDA.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[33].Value = ((decimal)(Original_PRODUTO_PRECO_VENDA.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
             this.Adapter.DeleteCommand.Parameters[34].Value = ((System.DateTime)(Original_PRODUTO_DATA_CADASTRO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -42602,10 +42764,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string PRODUTO_NUMERO, 
                     string PRODUTO_EAN, 
                     string PRODUTO_NUMERO_SERIE, 
-                    int PRODUTO_MARCA, 
-                    int PRODUTO_GRUPO, 
-                    int PRODUTO_SECAO, 
-                    int PRODUTO_FORNECEDOR, 
+                    global::System.Nullable<int> PRODUTO_MARCA, 
+                    global::System.Nullable<int> PRODUTO_GRUPO, 
+                    global::System.Nullable<int> PRODUTO_SECAO, 
+                    global::System.Nullable<int> PRODUTO_FORNECEDOR, 
                     string PRODUTO_CFOP, 
                     string PRODUTO_CSOSN, 
                     string PRODUTO_NCM, 
@@ -42613,10 +42775,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string PRODUTO_ORIGEM_MERCADORIA, 
                     global::System.Nullable<short> PRODUTO_ESTOQUE_MINIMO, 
                     global::System.Nullable<short> PRODUTO_ESTOQUE_MAXIMO, 
-                    short PRODUTO_ESTOQUE_ATUAL, 
-                    decimal PRODUTO_PRECO_COMPRA, 
-                    decimal PRODUTO_PRECO_CUSTO, 
-                    decimal PRODUTO_PRECO_VENDA, 
+                    global::System.Nullable<short> PRODUTO_ESTOQUE_ATUAL, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_COMPRA, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_CUSTO, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_VENDA, 
                     System.DateTime PRODUTO_DATA_CADASTRO) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(PRODUTO_CODIGO));
             if ((PRODUTO_DESCRICAO == null)) {
@@ -42638,7 +42800,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(PRODUTO_UNIDADE_COMPRA));
             }
             if ((PRODUTO_UNIDADE_VENDA == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_UNIDADE_VENDA");
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = ((string)(PRODUTO_UNIDADE_VENDA));
@@ -42656,7 +42818,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PRODUTO_NUMERO));
             }
             if ((PRODUTO_EAN == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_EAN");
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = ((string)(PRODUTO_EAN));
@@ -42667,12 +42829,32 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(PRODUTO_NUMERO_SERIE));
             }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(PRODUTO_MARCA));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(PRODUTO_GRUPO));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(PRODUTO_SECAO));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(PRODUTO_FORNECEDOR));
+            if ((PRODUTO_MARCA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((int)(PRODUTO_MARCA.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_GRUPO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((int)(PRODUTO_GRUPO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_SECAO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(PRODUTO_SECAO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_FORNECEDOR.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((int)(PRODUTO_FORNECEDOR.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             if ((PRODUTO_CFOP == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_CFOP");
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(PRODUTO_CFOP));
@@ -42690,7 +42872,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.InsertCommand.Parameters[15].Value = ((string)(PRODUTO_NCM));
             }
             if ((PRODUTO_SITUACAO_TRIBUTARIA == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_SITUACAO_TRIBUTARIA");
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = ((string)(PRODUTO_SITUACAO_TRIBUTARIA));
@@ -42713,10 +42895,30 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[20].Value = ((short)(PRODUTO_ESTOQUE_ATUAL));
-            this.Adapter.InsertCommand.Parameters[21].Value = ((decimal)(PRODUTO_PRECO_COMPRA));
-            this.Adapter.InsertCommand.Parameters[22].Value = ((decimal)(PRODUTO_PRECO_CUSTO));
-            this.Adapter.InsertCommand.Parameters[23].Value = ((decimal)(PRODUTO_PRECO_VENDA));
+            if ((PRODUTO_ESTOQUE_ATUAL.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((short)(PRODUTO_ESTOQUE_ATUAL.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_PRECO_COMPRA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((decimal)(PRODUTO_PRECO_COMPRA.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_PRECO_CUSTO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((decimal)(PRODUTO_PRECO_CUSTO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_PRECO_VENDA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((decimal)(PRODUTO_PRECO_VENDA.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
             this.Adapter.InsertCommand.Parameters[24].Value = ((System.DateTime)(PRODUTO_DATA_CADASTRO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -42748,10 +42950,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string PRODUTO_NUMERO, 
                     string PRODUTO_EAN, 
                     string PRODUTO_NUMERO_SERIE, 
-                    int PRODUTO_MARCA, 
-                    int PRODUTO_GRUPO, 
-                    int PRODUTO_SECAO, 
-                    int PRODUTO_FORNECEDOR, 
+                    global::System.Nullable<int> PRODUTO_MARCA, 
+                    global::System.Nullable<int> PRODUTO_GRUPO, 
+                    global::System.Nullable<int> PRODUTO_SECAO, 
+                    global::System.Nullable<int> PRODUTO_FORNECEDOR, 
                     string PRODUTO_CFOP, 
                     string PRODUTO_CSOSN, 
                     string PRODUTO_NCM, 
@@ -42759,10 +42961,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string PRODUTO_ORIGEM_MERCADORIA, 
                     global::System.Nullable<short> PRODUTO_ESTOQUE_MINIMO, 
                     global::System.Nullable<short> PRODUTO_ESTOQUE_MAXIMO, 
-                    short PRODUTO_ESTOQUE_ATUAL, 
-                    decimal PRODUTO_PRECO_COMPRA, 
-                    decimal PRODUTO_PRECO_CUSTO, 
-                    decimal PRODUTO_PRECO_VENDA, 
+                    global::System.Nullable<short> PRODUTO_ESTOQUE_ATUAL, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_COMPRA, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_CUSTO, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_VENDA, 
                     System.DateTime PRODUTO_DATA_CADASTRO, 
                     int Original_PRODUTO_CODIGO, 
                     string Original_PRODUTO_DESCRICAO, 
@@ -42773,10 +42975,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_PRODUTO_NUMERO, 
                     string Original_PRODUTO_EAN, 
                     string Original_PRODUTO_NUMERO_SERIE, 
-                    int Original_PRODUTO_MARCA, 
-                    int Original_PRODUTO_GRUPO, 
-                    int Original_PRODUTO_SECAO, 
-                    int Original_PRODUTO_FORNECEDOR, 
+                    global::System.Nullable<int> Original_PRODUTO_MARCA, 
+                    global::System.Nullable<int> Original_PRODUTO_GRUPO, 
+                    global::System.Nullable<int> Original_PRODUTO_SECAO, 
+                    global::System.Nullable<int> Original_PRODUTO_FORNECEDOR, 
                     string Original_PRODUTO_CFOP, 
                     string Original_PRODUTO_CSOSN, 
                     string Original_PRODUTO_NCM, 
@@ -42784,10 +42986,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_PRODUTO_ORIGEM_MERCADORIA, 
                     global::System.Nullable<short> Original_PRODUTO_ESTOQUE_MINIMO, 
                     global::System.Nullable<short> Original_PRODUTO_ESTOQUE_MAXIMO, 
-                    short Original_PRODUTO_ESTOQUE_ATUAL, 
-                    decimal Original_PRODUTO_PRECO_COMPRA, 
-                    decimal Original_PRODUTO_PRECO_CUSTO, 
-                    decimal Original_PRODUTO_PRECO_VENDA, 
+                    global::System.Nullable<short> Original_PRODUTO_ESTOQUE_ATUAL, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_COMPRA, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_CUSTO, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_VENDA, 
                     System.DateTime Original_PRODUTO_DATA_CADASTRO) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(PRODUTO_CODIGO));
             if ((PRODUTO_DESCRICAO == null)) {
@@ -42809,7 +43011,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(PRODUTO_UNIDADE_COMPRA));
             }
             if ((PRODUTO_UNIDADE_VENDA == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_UNIDADE_VENDA");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(PRODUTO_UNIDADE_VENDA));
@@ -42827,7 +43029,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PRODUTO_NUMERO));
             }
             if ((PRODUTO_EAN == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_EAN");
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(PRODUTO_EAN));
@@ -42838,12 +43040,32 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(PRODUTO_NUMERO_SERIE));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(PRODUTO_MARCA));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(PRODUTO_GRUPO));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(PRODUTO_SECAO));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(PRODUTO_FORNECEDOR));
+            if ((PRODUTO_MARCA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(PRODUTO_MARCA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_GRUPO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(PRODUTO_GRUPO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_SECAO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(PRODUTO_SECAO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_FORNECEDOR.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(PRODUTO_FORNECEDOR.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             if ((PRODUTO_CFOP == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_CFOP");
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(PRODUTO_CFOP));
@@ -42861,7 +43083,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(PRODUTO_NCM));
             }
             if ((PRODUTO_SITUACAO_TRIBUTARIA == null)) {
-                throw new global::System.ArgumentNullException("PRODUTO_SITUACAO_TRIBUTARIA");
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(PRODUTO_SITUACAO_TRIBUTARIA));
@@ -42884,10 +43106,30 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((short)(PRODUTO_ESTOQUE_ATUAL));
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(PRODUTO_PRECO_COMPRA));
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(PRODUTO_PRECO_CUSTO));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(PRODUTO_PRECO_VENDA));
+            if ((PRODUTO_ESTOQUE_ATUAL.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((short)(PRODUTO_ESTOQUE_ATUAL.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_PRECO_COMPRA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(PRODUTO_PRECO_COMPRA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_PRECO_CUSTO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(PRODUTO_PRECO_CUSTO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            if ((PRODUTO_PRECO_VENDA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(PRODUTO_PRECO_VENDA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(PRODUTO_DATA_CADASTRO));
             this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_PRODUTO_CODIGO));
             if ((Original_PRODUTO_DESCRICAO == null)) {
@@ -42913,7 +43155,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_PRODUTO_UNIDADE_COMPRA));
             }
             if ((Original_PRODUTO_UNIDADE_VENDA == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_UNIDADE_VENDA");
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_PRODUTO_UNIDADE_VENDA));
@@ -42935,7 +43177,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_PRODUTO_NUMERO));
             }
             if ((Original_PRODUTO_EAN == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_EAN");
+                this.Adapter.UpdateCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[36].Value = ((string)(Original_PRODUTO_EAN));
@@ -42948,12 +43190,32 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[37].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[38].Value = ((string)(Original_PRODUTO_NUMERO_SERIE));
             }
-            this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_PRODUTO_MARCA));
-            this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_PRODUTO_GRUPO));
-            this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_PRODUTO_SECAO));
-            this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_PRODUTO_FORNECEDOR));
+            if ((Original_PRODUTO_MARCA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((int)(Original_PRODUTO_MARCA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_GRUPO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((int)(Original_PRODUTO_GRUPO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_SECAO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((int)(Original_PRODUTO_SECAO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_FORNECEDOR.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((int)(Original_PRODUTO_FORNECEDOR.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = global::System.DBNull.Value;
+            }
             if ((Original_PRODUTO_CFOP == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_CFOP");
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[43].Value = ((string)(Original_PRODUTO_CFOP));
@@ -42975,7 +43237,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[47].Value = ((string)(Original_PRODUTO_NCM));
             }
             if ((Original_PRODUTO_SITUACAO_TRIBUTARIA == null)) {
-                throw new global::System.ArgumentNullException("Original_PRODUTO_SITUACAO_TRIBUTARIA");
+                this.Adapter.UpdateCommand.Parameters[48].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[48].Value = ((string)(Original_PRODUTO_SITUACAO_TRIBUTARIA));
@@ -43004,10 +43266,30 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[55].Value = ((short)(Original_PRODUTO_ESTOQUE_ATUAL));
-            this.Adapter.UpdateCommand.Parameters[56].Value = ((decimal)(Original_PRODUTO_PRECO_COMPRA));
-            this.Adapter.UpdateCommand.Parameters[57].Value = ((decimal)(Original_PRODUTO_PRECO_CUSTO));
-            this.Adapter.UpdateCommand.Parameters[58].Value = ((decimal)(Original_PRODUTO_PRECO_VENDA));
+            if ((Original_PRODUTO_ESTOQUE_ATUAL.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[55].Value = ((short)(Original_PRODUTO_ESTOQUE_ATUAL.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[55].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_PRECO_COMPRA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((decimal)(Original_PRODUTO_PRECO_COMPRA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_PRECO_CUSTO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[57].Value = ((decimal)(Original_PRODUTO_PRECO_CUSTO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[57].Value = global::System.DBNull.Value;
+            }
+            if ((Original_PRODUTO_PRECO_VENDA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((decimal)(Original_PRODUTO_PRECO_VENDA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[59].Value = ((System.DateTime)(Original_PRODUTO_DATA_CADASTRO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -43038,10 +43320,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string PRODUTO_NUMERO, 
                     string PRODUTO_EAN, 
                     string PRODUTO_NUMERO_SERIE, 
-                    int PRODUTO_MARCA, 
-                    int PRODUTO_GRUPO, 
-                    int PRODUTO_SECAO, 
-                    int PRODUTO_FORNECEDOR, 
+                    global::System.Nullable<int> PRODUTO_MARCA, 
+                    global::System.Nullable<int> PRODUTO_GRUPO, 
+                    global::System.Nullable<int> PRODUTO_SECAO, 
+                    global::System.Nullable<int> PRODUTO_FORNECEDOR, 
                     string PRODUTO_CFOP, 
                     string PRODUTO_CSOSN, 
                     string PRODUTO_NCM, 
@@ -43049,10 +43331,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string PRODUTO_ORIGEM_MERCADORIA, 
                     global::System.Nullable<short> PRODUTO_ESTOQUE_MINIMO, 
                     global::System.Nullable<short> PRODUTO_ESTOQUE_MAXIMO, 
-                    short PRODUTO_ESTOQUE_ATUAL, 
-                    decimal PRODUTO_PRECO_COMPRA, 
-                    decimal PRODUTO_PRECO_CUSTO, 
-                    decimal PRODUTO_PRECO_VENDA, 
+                    global::System.Nullable<short> PRODUTO_ESTOQUE_ATUAL, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_COMPRA, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_CUSTO, 
+                    global::System.Nullable<decimal> PRODUTO_PRECO_VENDA, 
                     System.DateTime PRODUTO_DATA_CADASTRO, 
                     int Original_PRODUTO_CODIGO, 
                     string Original_PRODUTO_DESCRICAO, 
@@ -43063,10 +43345,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_PRODUTO_NUMERO, 
                     string Original_PRODUTO_EAN, 
                     string Original_PRODUTO_NUMERO_SERIE, 
-                    int Original_PRODUTO_MARCA, 
-                    int Original_PRODUTO_GRUPO, 
-                    int Original_PRODUTO_SECAO, 
-                    int Original_PRODUTO_FORNECEDOR, 
+                    global::System.Nullable<int> Original_PRODUTO_MARCA, 
+                    global::System.Nullable<int> Original_PRODUTO_GRUPO, 
+                    global::System.Nullable<int> Original_PRODUTO_SECAO, 
+                    global::System.Nullable<int> Original_PRODUTO_FORNECEDOR, 
                     string Original_PRODUTO_CFOP, 
                     string Original_PRODUTO_CSOSN, 
                     string Original_PRODUTO_NCM, 
@@ -43074,10 +43356,10 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_PRODUTO_ORIGEM_MERCADORIA, 
                     global::System.Nullable<short> Original_PRODUTO_ESTOQUE_MINIMO, 
                     global::System.Nullable<short> Original_PRODUTO_ESTOQUE_MAXIMO, 
-                    short Original_PRODUTO_ESTOQUE_ATUAL, 
-                    decimal Original_PRODUTO_PRECO_COMPRA, 
-                    decimal Original_PRODUTO_PRECO_CUSTO, 
-                    decimal Original_PRODUTO_PRECO_VENDA, 
+                    global::System.Nullable<short> Original_PRODUTO_ESTOQUE_ATUAL, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_COMPRA, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_CUSTO, 
+                    global::System.Nullable<decimal> Original_PRODUTO_PRECO_VENDA, 
                     System.DateTime Original_PRODUTO_DATA_CADASTRO) {
             return this.Update(Original_PRODUTO_CODIGO, PRODUTO_DESCRICAO, PRODUTO_CARACTERISTICA, PRODUTO_UNIDADE_COMPRA, PRODUTO_UNIDADE_VENDA, PRODUTO_PESO, PRODUTO_NUMERO, PRODUTO_EAN, PRODUTO_NUMERO_SERIE, PRODUTO_MARCA, PRODUTO_GRUPO, PRODUTO_SECAO, PRODUTO_FORNECEDOR, PRODUTO_CFOP, PRODUTO_CSOSN, PRODUTO_NCM, PRODUTO_SITUACAO_TRIBUTARIA, PRODUTO_ORIGEM_MERCADORIA, PRODUTO_ESTOQUE_MINIMO, PRODUTO_ESTOQUE_MAXIMO, PRODUTO_ESTOQUE_ATUAL, PRODUTO_PRECO_COMPRA, PRODUTO_PRECO_CUSTO, PRODUTO_PRECO_VENDA, PRODUTO_DATA_CADASTRO, Original_PRODUTO_CODIGO, Original_PRODUTO_DESCRICAO, Original_PRODUTO_CARACTERISTICA, Original_PRODUTO_UNIDADE_COMPRA, Original_PRODUTO_UNIDADE_VENDA, Original_PRODUTO_PESO, Original_PRODUTO_NUMERO, Original_PRODUTO_EAN, Original_PRODUTO_NUMERO_SERIE, Original_PRODUTO_MARCA, Original_PRODUTO_GRUPO, Original_PRODUTO_SECAO, Original_PRODUTO_FORNECEDOR, Original_PRODUTO_CFOP, Original_PRODUTO_CSOSN, Original_PRODUTO_NCM, Original_PRODUTO_SITUACAO_TRIBUTARIA, Original_PRODUTO_ORIGEM_MERCADORIA, Original_PRODUTO_ESTOQUE_MINIMO, Original_PRODUTO_ESTOQUE_MAXIMO, Original_PRODUTO_ESTOQUE_ATUAL, Original_PRODUTO_PRECO_COMPRA, Original_PRODUTO_PRECO_CUSTO, Original_PRODUTO_PRECO_VENDA, Original_PRODUTO_DATA_CADASTRO);
         }
@@ -47671,8 +47953,8 @@ FROM            CLIENTE INNER JOIN
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AGEN_DESCRICAO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 120;
             param.IsNullable = true;
             param.SourceColumn = "AGEN_DESCRICAO";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -47703,8 +47985,8 @@ FROM            CLIENTE INNER JOIN
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@AGEN_DESCRICAO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.DbType = global::System.Data.DbType.String;
+            param.Size = 120;
             param.IsNullable = true;
             param.SourceColumn = "AGEN_DESCRICAO";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -49214,6 +49496,15 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tIPOTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._sERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.SERVICO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -49259,12 +49550,12 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(updatedRows));
+                    result = (result + this._oS_ITEMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49322,12 +49613,12 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(updatedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49340,12 +49631,12 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(updatedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49364,15 +49655,6 @@ FROM            ITEM_COMPRA INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._oS_SERVICOTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -49467,6 +49749,14 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tIPOTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._sERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.SERVICO.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -49507,11 +49797,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(addedRows));
+                    result = (result + this._oS_ITEMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49563,11 +49853,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(addedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49579,11 +49869,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(addedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49600,14 +49890,6 @@ FROM            ITEM_COMPRA INNER JOIN
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._oS_SERVICOTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -49637,14 +49919,6 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._oS_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._oS_ITEMTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._oS_SERVICOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.OS_SERVICO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -49661,11 +49935,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._iTEM_COMPRATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._iTEM_COMPRATableAdapter.Update(deletedRows));
+                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -49677,11 +49951,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tIPOTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._iTEM_COMPRATableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ITEM_COMPRA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tIPOTableAdapter.Update(deletedRows));
+                    result = (result + this._iTEM_COMPRATableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -49733,11 +50007,11 @@ FROM            ITEM_COMPRA INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._oRCAMENTO_ITEMTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ORCAMENTO_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._oS_ITEMTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.OS_ITEM.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._oRCAMENTO_ITEMTableAdapter.Update(deletedRows));
+                    result = (result + this._oS_ITEMTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -49778,6 +50052,14 @@ FROM            ITEM_COMPRA INNER JOIN
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._sERVICOTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._tIPOTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TIPO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tIPOTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

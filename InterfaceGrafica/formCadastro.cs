@@ -30,6 +30,11 @@ namespace FROGI_OS {
             resetar();
         }
 
+        protected void exibirMensagemErro(String mensagem) {
+            dialogo.compor("Temos um problema", mensagem, formDialogo.TipoExpressao.AvisoTriste);
+            dialogo.ShowDialog();
+        }
+
         private void pesquisarRegistro() {
 
             if (pesquisa == null) {

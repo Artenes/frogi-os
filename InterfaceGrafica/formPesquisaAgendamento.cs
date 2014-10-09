@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FROGI_OS.Mapeamento;
+using FROGI_OS.CamadaEnlaceDados;
 
 namespace FROGI_OS.InterfaceGrafica
 {
@@ -16,14 +17,30 @@ namespace FROGI_OS.InterfaceGrafica
 
         private const int FISICO = 0;
         private MapAgendamento map;
+        private GerAgendamento agendamentoSQL;
 
         public formPesquisaAgendamento(formCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado) {
             InitializeComponent();
             map = new MapAgendamento(dsFROGIOS.CLIENTE_FISICO, dsFROGIOS.CLIENTE_JURIDICO, dsFROGIOS.AGENDAMENTO);
+            agendamentoSQL = new GerAgendamento();
+        }
+
+        private bool eFisico() {
+            return comboTipo.SelectedIndex == FISICO;
         }
 
         protected override void pesquisaExecutar() {
-            base.pesquisaExecutar();
+            string
+                coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString()),
+                valor = textValorPesquisa.Text;
+
+            if (eFisico()) {
+                dsFROGIOS.PESQUISA_AGENDAMENTO_FISICO.Clear();
+                dsFROGIOS.PESQUISA_AGENDAMENTO_FISICO.Load(agendamentoSQL.pesquisar(coluna, valor, eFisico()));
+            } else {
+                dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICO.Clear();
+                dsFROGIOS.PESQUISA_AGENDAMENTO_JURIDICO.Load(agendamentoSQL.pesquisar(coluna, valor, eFisico()));
+            } 
         }
 
         protected override void resetar() {
@@ -59,5 +76,46 @@ namespace FROGI_OS.InterfaceGrafica
             }
             this.ActiveControl = comboTipo;
         }
+
+        private void selecionarFisico() {
+            int indice = pESQUISA_AGENDAMENTO_FISICODataGridView.CurrentRow.Index;
+            int codigo = (int)pESQUISA_AGENDAMENTO_FISICODataGridView[0, indice].Value;
+            ((formCadastroAgendamento)cadastro).visualizarRegistro(codigo);
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void selecionarJuridico() {
+            int indice = pESQUISA_AGENDAMENTO_JURIDICODataGridView.CurrentRow.Index;
+            int codigo = (int)pESQUISA_AGENDAMENTO_JURIDICODataGridView[0, indice].Value;
+            ((formCadastroAgendamento)cadastro).visualizarRegistro(codigo);
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+        }
+
+        private void pESQUISA_AGENDAMENTO_FISICODataGridView_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                selecionarFisico();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void pESQUISA_AGENDAMENTO_FISICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            selecionarFisico();
+        }
+
+        private void pESQUISA_AGENDAMENTO_JURIDICODataGridView_KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                selecionarJuridico();
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void pESQUISA_AGENDAMENTO_JURIDICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            selecionarJuridico();
+        }
+
+
+        
     }
 }

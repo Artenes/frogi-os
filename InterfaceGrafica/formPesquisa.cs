@@ -45,7 +45,7 @@ namespace FROGI_OS
                 Conexao.abrir();
                 pesquisaExecutar();
             } catch (Exception erro) {
-                dialogo.compor("Temos um problema", erro.Message, formDialogo.TipoExpressao.AvisoTriste);
+                exibirMensagemErro(erro.Message);
             } finally {
                 Conexao.fechar();
             }

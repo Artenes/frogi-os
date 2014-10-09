@@ -22,6 +22,7 @@ namespace FROGI_OS
             if (pesquisaHabilitado)
                 pesquisa = new formPesquisaProduto(this, false);
             produtoSQL = new GerProduto();
+            dsFROGIOS.EnforceConstraints = false;
         }
 
         protected override void salvaExecutar() {
@@ -37,7 +38,12 @@ namespace FROGI_OS
 
             dsFROGIOS.PRODUTORow produtoRow = dsFROGIOS.PRODUTO.NewPRODUTORow();
 
-            if (codigo != null) produtoRow.PRODUTO_CODIGO = (int)codigo; else produtoRow.PRODUTO_DATA_CADASTRO = DateTime.Now;
+            if (codigo != null) {
+                produtoRow.PRODUTO_CODIGO = (int)codigo;
+                produtoRow.PRODUTO_DATA_CADASTRO = ((dsFROGIOS.PRODUTORow)dsFROGIOS.PRODUTO.Rows[0]).PRODUTO_DATA_CADASTRO;
+            } else {
+                produtoRow.PRODUTO_DATA_CADASTRO = DateTime.Now;
+            }
             produtoRow.PRODUTO_DESCRICAO = pRODUTO_DESCRICAOTextBox.Text;
             produtoRow.PRODUTO_CARACTERISTICA = pRODUTO_CARACTERISTICATextBox.Text;
             produtoRow.PRODUTO_UNIDADE_COMPRA = pRODUTO_UNIDADE_COMPRATextBox.Text;
@@ -91,6 +97,8 @@ namespace FROGI_OS
         }
 
         protected override string validarCampos() {
+            string descricao = pRODUTO_DESCRICAOTextBox.Text;
+            if (!valorValido(descricao)) return "Informe uma descrição para o produto";
             return base.validarCampos();
         }
 
@@ -108,32 +116,58 @@ namespace FROGI_OS
        }
 
        public void adicionarMarca(int codigo) {
-           TblMarca marcaSQL = new TblMarca();
-           string coluna = dsFROGIOS.MARCA.MARCA_CODIGOColumn.ColumnName;
-           string valor; try {valor = Convert.ToString(codigo);} catch (Exception) {valor = "-5";}
-           dsFROGIOS.MARCA.Clear();
-           dsFROGIOS.MARCA.Load(marcaSQL.selecionar(coluna, valor, true));
+           try {
+               Conexao.abrir();
+               TblMarca marcaSQL = new TblMarca();
+               string coluna = dsFROGIOS.MARCA.MARCA_CODIGOColumn.ColumnName;
+               string valor; try { valor = Convert.ToString(codigo); } catch (Exception) { valor = "-5"; }
+               dsFROGIOS.MARCA.Clear();
+               dsFROGIOS.MARCA.Load(marcaSQL.selecionar(coluna, valor, true));
+           } catch (Exception erro) {
+               exibirMensagemErro(erro.Message);
+           } finally {
+               Conexao.fechar();
+           }
        }
 
        public void adicionarGrupo(int codigo) {
-           TblGrupo grupoSQL = new TblGrupo();
-           string coluna = dsFROGIOS.GRUPO.GRUPO_CODIGOColumn.ColumnName;
-           string valor; try { valor = Convert.ToString(codigo); } catch (Exception) { valor = "-5"; }
-           dsFROGIOS.GRUPO.Clear();
-           dsFROGIOS.GRUPO.Load(grupoSQL.selecionar(coluna, valor, true));
+           try {
+               Conexao.abrir();
+               TblGrupo grupoSQL = new TblGrupo();
+               string coluna = dsFROGIOS.GRUPO.GRUPO_CODIGOColumn.ColumnName;
+               string valor; try { valor = Convert.ToString(codigo); } catch (Exception) { valor = "-5"; }
+               dsFROGIOS.GRUPO.Clear();
+               dsFROGIOS.GRUPO.Load(grupoSQL.selecionar(coluna, valor, true));
+           } catch (Exception erro) {
+               exibirMensagemErro(erro.Message);
+           } finally {
+               Conexao.fechar();
+           }
        }
 
        public void adicionarSecao(int codigo) {
-           TblSecao secaoSQL = new TblSecao();
-           string coluna = dsFROGIOS.SECAO.SECAO_CODIGOColumn.ColumnName;
-           string valor; try { valor = Convert.ToString(codigo); } catch (Exception) { valor = "-5"; }
-           dsFROGIOS.SECAO.Clear();
-           dsFROGIOS.SECAO.Load(secaoSQL.selecionar(coluna, valor, true));
+           try {
+               Conexao.abrir();
+               TblSecao secaoSQL = new TblSecao();
+               string coluna = dsFROGIOS.SECAO.SECAO_CODIGOColumn.ColumnName;
+               string valor; try { valor = Convert.ToString(codigo); } catch (Exception) { valor = "-5"; }
+               dsFROGIOS.SECAO.Clear();
+               dsFROGIOS.SECAO.Load(secaoSQL.selecionar(coluna, valor, true));
+           } catch (Exception erro) {
+               exibirMensagemErro(erro.Message);
+           } finally {
+               Conexao.fechar();
+           }
        }
 
-       public void adicionarFornecedor(int codigo) {
+       public void adicionarFornecedor(int codigo, bool eFisico) {
            GerFornecedor fornecedorSQL = new GerFornecedor();
-           fornecedorSQL.selecionar(codigo, dsFROGIOS.FORNECEDOR, dsFROGIOS.FORNECEDOR_FISICO, dsFROGIOS.FORNECEDOR_JURIDICO, dsFROGIOS.UF);
+           if (eFisico) {
+               fornecedorSQL.selecionar(codigo, dsFROGIOS.FORNECEDOR, dsFROGIOS.FORNECEDOR_FISICO, null, dsFROGIOS.UF);
+           } else {
+               fornecedorSQL.selecionar(codigo, dsFROGIOS.FORNECEDOR, null, dsFROGIOS.FORNECEDOR_JURIDICO, dsFROGIOS.UF);
+           }
+
            if (dsFROGIOS.FORNECEDOR_FISICO.Rows.Count > 0) {
                fORNECEDOR_FISICO_NOMETextBox.Visible = true;
                fORNECEDOR_JURIDICO_FANTASIATextBox.Visible = false;
@@ -144,6 +178,39 @@ namespace FROGI_OS
                fORNECEDOR_JURIDICO_FANTASIATextBox.Visible = true;
            }
        }
+
+       private void mARCA_DESCRICAOTextBox_DoubleClick(object sender, EventArgs e) {
+           formPesquisaMarca marca = new formPesquisaMarca(this, false);
+           marca.ShowDialog();
+           marca.Dispose();
+       }
+
+       private void sECAO_DESCRICAOTextBox_DoubleClick(object sender, EventArgs e) {
+           formPesquisaSecao secao = new formPesquisaSecao(this, false);
+           secao.ShowDialog();
+           secao.Dispose();
+       }
+
+       private void gRUPO_DESCRICAOTextBox_DoubleClick(object sender, EventArgs e) {
+           formPesquisaGrupo grupo = new formPesquisaGrupo(this, false);
+           grupo.ShowDialog();
+           grupo.Dispose();
+       }
+
+       private void fORNECEDOR_FISICO_NOMETextBox_DoubleClick(object sender, EventArgs e) {
+           formPesquisaFornecedor fornecedor = new formPesquisaFornecedor(this, false);
+           fornecedor.ShowDialog();
+           fornecedor.Dispose();
+       }
+
+       private void fORNECEDOR_JURIDICO_FANTASIATextBox_DoubleClick(object sender, EventArgs e) {
+           formPesquisaFornecedor fornecedor = new formPesquisaFornecedor(this, false);
+           fornecedor.ShowDialog();
+           fornecedor.Dispose();
+       }
+
+
+
 
     }
 }

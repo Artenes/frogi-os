@@ -71,8 +71,7 @@ namespace FROGI_OS.CamadaAcessoDados {
                 + "CLIENTE_PERIMETRO = " + paramPerimetro + ", "
                 + "CLIENTE_CIDADE = " + paramCidade + ", "
                 + "CLIENTE_UF = " + paramUf + ", "
-                + "CLIENTE_CEP = " + paramCep + ", "
-                + "CLIENTE_DATA_CADASTRO = " + paramDataCadastro + " "
+                + "CLIENTE_CEP = " + paramCep + " "
                 + "WHERE CLIENTE_CODIGO = " + paramCodigo + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
@@ -87,8 +86,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramCidade, cliente.CLIENTE_CIDADE);
             comando.Parameters.AddWithValue(paramUf, cliente.CLIENTE_UF);
             comando.Parameters.AddWithValue(paramCep, cliente.CLIENTE_CEP);
-            comando.Parameters.AddWithValue(paramDataCadastro, cliente.CLIENTE_DATA_CADASTRO);
-
+            
             return comando.ExecuteNonQuery();
         }
 

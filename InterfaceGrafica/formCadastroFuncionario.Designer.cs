@@ -90,6 +90,7 @@
             fUNCIONARIO_ADMISSAOLabel = new System.Windows.Forms.Label();
             fUNCIONARIO_SENHALabel = new System.Windows.Forms.Label();
             fUNCIONARIO_DATA_CADASTROLabel = new System.Windows.Forms.Label();
+            this.panelCabecalho.SuspendLayout();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -115,7 +116,6 @@
             // 
             // panelCentro
             // 
-            this.panelCentro.AutoScroll = true;
             this.panelCentro.Controls.Add(this.panel1);
             this.panelCentro.Controls.Add(this.groupBox5);
             this.panelCentro.Controls.Add(this.groupBox4);
@@ -294,6 +294,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -347,7 +348,7 @@
             // 
             this.fUNCIONARIO_CPFMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_CPF", true));
             this.fUNCIONARIO_CPFMaskedTextBox.Location = new System.Drawing.Point(89, 34);
-            this.fUNCIONARIO_CPFMaskedTextBox.Mask = "###.###.###.-##";
+            this.fUNCIONARIO_CPFMaskedTextBox.Mask = "###.###.###-##";
             this.fUNCIONARIO_CPFMaskedTextBox.Name = "fUNCIONARIO_CPFMaskedTextBox";
             this.fUNCIONARIO_CPFMaskedTextBox.Size = new System.Drawing.Size(200, 33);
             this.fUNCIONARIO_CPFMaskedTextBox.TabIndex = 5;
@@ -400,7 +401,7 @@
             // 
             this.fUNCIONARIO_ENDERECOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_ENDERECO", true));
             this.fUNCIONARIO_ENDERECOTextBox.Location = new System.Drawing.Point(132, 41);
-            this.fUNCIONARIO_ENDERECOTextBox.MaxLength = 60;
+            this.fUNCIONARIO_ENDERECOTextBox.MaxLength = 120;
             this.fUNCIONARIO_ENDERECOTextBox.Name = "fUNCIONARIO_ENDERECOTextBox";
             this.fUNCIONARIO_ENDERECOTextBox.Size = new System.Drawing.Size(417, 33);
             this.fUNCIONARIO_ENDERECOTextBox.TabIndex = 17;
@@ -560,14 +561,16 @@
             this.panel1.Size = new System.Drawing.Size(61, 100);
             this.panel1.TabIndex = 37;
             // 
-            // formFuncionario
+            // formCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formFuncionario";
+            this.Name = "formCadastroFuncionario";
+            this.panelCabecalho.ResumeLayout(false);
+            this.panelCabecalho.PerformLayout();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);

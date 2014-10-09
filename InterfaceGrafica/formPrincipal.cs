@@ -15,15 +15,21 @@ namespace FROGI_OS
     {
         public formPrincipal() {
             InitializeComponent();
-            this.ActiveControl = pictureClientes;
         }
 
         private void buttonSair_Click(object sender, EventArgs e) {
             Close();
         }
 
-        private void pictureClientes_Click(object sender, EventArgs e)
-        {
+        private void formPrincipal_Load(object sender, EventArgs e) {
+            formLogin login = new formLogin();
+            login.ShowDialog(this);
+            labelData.Text = DateTime.Now.ToShortDateString();
+            this.ActiveControl = pictureClientes;
+        }
+
+        private void pictureClientes_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroCliente(true).ShowDialog();
         }
 
@@ -38,53 +44,89 @@ namespace FROGI_OS
             menu.ShowDialog(this);
         }
 
-        private void pictureMarcas_Click(object sender, EventArgs e)
-        {
+        private void pictureMarcas_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroMarca(true).ShowDialog();
         }
 
-        private void pictureFuncionarios_Click(object sender, EventArgs e)
-        {
+        private void pictureFuncionarios_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroFuncionario(true).ShowDialog();
         }
 
         private void pictureOrdemServico_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             formPesquisaOS os = new formPesquisaOS();
             os.ShowDialog();
             os.Dispose();
         }
 
         private void pictureSecoes_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroSecao(true).ShowDialog();
         }
 
         private void pictureServicos_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroServico(true).ShowDialog();
         }
 
         private void pictureProdutos_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroProduto(true).ShowDialog();
         }
 
         private void pictureGrupos_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroGrupo(true).ShowDialog();
         }
 
         private void pictureTipos_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroTipo(true).ShowDialog();
         }
 
         private void pictureFornecedores_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroFornecedor(true).ShowDialog();
         }
 
         private void pictureUsuarios_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
             new formCadastroUsuario(true).ShowDialog();
         }
 
-        private void formPrincipal_Load(object sender, EventArgs e) {
-            formLogin login = new formLogin();
-            login.ShowDialog(this);
+        private void pictureOrcamentos_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            new formPesquisaOrcamento().ShowDialog();
+        }
+
+        private void pictureAgendamentos_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            formCadastroAgendamento agendamento = new formCadastroAgendamento(true);
+            agendamento.ShowDialog();
+            agendamento.Dispose();
+        }
+
+        private void pictureCompras_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            formCadastroCompra compra = new formCadastroCompra(true);
+            compra.ShowDialog();
+            compra.Dispose();
+        }
+
+        private void pictureAjuda_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            formSobre sobre = new formSobre();
+            sobre.ShowDialog();
+            sobre.Dispose();
+        }
+
+        private void pictureNotas_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            formNotaFiscal nota = new formNotaFiscal();
+            nota.ShowDialog();
+            nota.Dispose();
         }
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e) {
@@ -96,36 +138,11 @@ namespace FROGI_OS
             dialogo.Dispose();
         }
 
-        private void pictureOrcamentos_Click(object sender, EventArgs e) {
-            new formPesquisaOrcamento().ShowDialog();
+        private void hora_Tick(object sender, EventArgs e) {
+            labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void pictureAgendamentos_Click(object sender, EventArgs e) {
-            formCadastroAgendamento agendamento = new formCadastroAgendamento(true);
-            agendamento.ShowDialog();
-            agendamento.Dispose();
-        }
-
-        private void pictureCompras_Click(object sender, EventArgs e)
-        {
-            formCadastroCompra compra = new formCadastroCompra(true);
-            compra.ShowDialog();
-            compra.Dispose();
-        }
-
-        private void pictureAjuda_Click(object sender, EventArgs e)
-        {
-            formSobre sobre = new formSobre();
-            sobre.ShowDialog();
-            sobre.Dispose();
-        }
-
-        private void pictureNotas_Click(object sender, EventArgs e)
-        {
-            formNotaFiscal nota = new formNotaFiscal();
-            nota.ShowDialog();
-            nota.Dispose();
-        }
+        
 
     }
 }

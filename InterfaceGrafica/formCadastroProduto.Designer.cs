@@ -55,6 +55,8 @@
             System.Windows.Forms.Label sECAO_DESCRICAOLabel;
             System.Windows.Forms.Label fORNECEDOR_JURIDICO_FANTASIALabel;
             this.pRODUTO_CODIGOLabel1 = new System.Windows.Forms.Label();
+            this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.pRODUTO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.pRODUTO_CARACTERISTICATextBox = new System.Windows.Forms.TextBox();
             this.pRODUTO_UNIDADE_COMPRATextBox = new System.Windows.Forms.TextBox();
@@ -76,10 +78,15 @@
             this.pRODUTO_PRECO_VENDATextBox = new System.Windows.Forms.TextBox();
             this.pRODUTO_DATA_CADASTROLabel1 = new System.Windows.Forms.Label();
             this.mARCA_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
+            this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
             this.gRUPO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
+            this.bsGrupo = new System.Windows.Forms.BindingSource(this.components);
             this.sECAO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
+            this.bsSecao = new System.Windows.Forms.BindingSource(this.components);
             this.fORNECEDOR_FISICO_NOMETextBox = new System.Windows.Forms.TextBox();
+            this.bsFisico = new System.Windows.Forms.BindingSource(this.components);
             this.fORNECEDOR_JURIDICO_FANTASIATextBox = new System.Windows.Forms.TextBox();
+            this.bsJuridico = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -88,13 +95,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
-            this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
-            this.bsGrupo = new System.Windows.Forms.BindingSource(this.components);
-            this.bsSecao = new System.Windows.Forms.BindingSource(this.components);
-            this.bsFisico = new System.Windows.Forms.BindingSource(this.components);
-            this.bsJuridico = new System.Windows.Forms.BindingSource(this.components);
             this.taProduto = new FROGI_OS.dsFROGIOSTableAdapters.PRODUTOTableAdapter();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.taFisico = new FROGI_OS.dsFROGIOSTableAdapters.FORNECEDOR_FISICOTableAdapter();
@@ -128,15 +128,9 @@
             sECAO_DESCRICAOLabel = new System.Windows.Forms.Label();
             fORNECEDOR_JURIDICO_FANTASIALabel = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).BeginInit();
@@ -144,6 +138,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsSecao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFisico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsJuridico)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCadastro
@@ -409,6 +410,16 @@
             this.pRODUTO_CODIGOLabel1.TabIndex = 1;
             this.pRODUTO_CODIGOLabel1.Text = "código";
             // 
+            // bsProduto
+            // 
+            this.bsProduto.DataMember = "PRODUTO";
+            this.bsProduto.DataSource = this.dsFROGIOS;
+            // 
+            // dsFROGIOS
+            // 
+            this.dsFROGIOS.DataSetName = "dsFROGIOS";
+            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // pRODUTO_DESCRICAOTextBox
             // 
             this.pRODUTO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_DESCRICAO", true));
@@ -598,6 +609,12 @@
             this.mARCA_DESCRICAOTextBox.Name = "mARCA_DESCRICAOTextBox";
             this.mARCA_DESCRICAOTextBox.Size = new System.Drawing.Size(452, 33);
             this.mARCA_DESCRICAOTextBox.TabIndex = 10;
+            this.mARCA_DESCRICAOTextBox.DoubleClick += new System.EventHandler(this.mARCA_DESCRICAOTextBox_DoubleClick);
+            // 
+            // bsMarca
+            // 
+            this.bsMarca.DataMember = "MARCA";
+            this.bsMarca.DataSource = this.dsFROGIOS;
             // 
             // gRUPO_DESCRICAOTextBox
             // 
@@ -607,6 +624,12 @@
             this.gRUPO_DESCRICAOTextBox.Name = "gRUPO_DESCRICAOTextBox";
             this.gRUPO_DESCRICAOTextBox.Size = new System.Drawing.Size(452, 33);
             this.gRUPO_DESCRICAOTextBox.TabIndex = 12;
+            this.gRUPO_DESCRICAOTextBox.DoubleClick += new System.EventHandler(this.gRUPO_DESCRICAOTextBox_DoubleClick);
+            // 
+            // bsGrupo
+            // 
+            this.bsGrupo.DataMember = "GRUPO";
+            this.bsGrupo.DataSource = this.dsFROGIOS;
             // 
             // sECAO_DESCRICAOTextBox
             // 
@@ -616,6 +639,12 @@
             this.sECAO_DESCRICAOTextBox.Name = "sECAO_DESCRICAOTextBox";
             this.sECAO_DESCRICAOTextBox.Size = new System.Drawing.Size(452, 33);
             this.sECAO_DESCRICAOTextBox.TabIndex = 11;
+            this.sECAO_DESCRICAOTextBox.DoubleClick += new System.EventHandler(this.sECAO_DESCRICAOTextBox_DoubleClick);
+            // 
+            // bsSecao
+            // 
+            this.bsSecao.DataMember = "SECAO";
+            this.bsSecao.DataSource = this.dsFROGIOS;
             // 
             // fORNECEDOR_FISICO_NOMETextBox
             // 
@@ -625,6 +654,12 @@
             this.fORNECEDOR_FISICO_NOMETextBox.Name = "fORNECEDOR_FISICO_NOMETextBox";
             this.fORNECEDOR_FISICO_NOMETextBox.Size = new System.Drawing.Size(452, 33);
             this.fORNECEDOR_FISICO_NOMETextBox.TabIndex = 13;
+            this.fORNECEDOR_FISICO_NOMETextBox.DoubleClick += new System.EventHandler(this.fORNECEDOR_FISICO_NOMETextBox_DoubleClick);
+            // 
+            // bsFisico
+            // 
+            this.bsFisico.DataMember = "FORNECEDOR_FISICO";
+            this.bsFisico.DataSource = this.dsFROGIOS;
             // 
             // fORNECEDOR_JURIDICO_FANTASIATextBox
             // 
@@ -634,6 +669,12 @@
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.Name = "fORNECEDOR_JURIDICO_FANTASIATextBox";
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.Size = new System.Drawing.Size(452, 33);
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.TabIndex = 51;
+            this.fORNECEDOR_JURIDICO_FANTASIATextBox.DoubleClick += new System.EventHandler(this.fORNECEDOR_JURIDICO_FANTASIATextBox_DoubleClick);
+            // 
+            // bsJuridico
+            // 
+            this.bsJuridico.DataMember = "FORNECEDOR_JURIDICO";
+            this.bsJuridico.DataSource = this.dsFROGIOS;
             // 
             // groupBox1
             // 
@@ -641,7 +682,7 @@
             this.groupBox1.Controls.Add(this.pRODUTO_CARACTERISTICATextBox);
             this.groupBox1.Controls.Add(pRODUTO_CARACTERISTICALabel);
             this.groupBox1.Controls.Add(this.pRODUTO_DESCRICAOTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(705, 14);
+            this.groupBox1.Location = new System.Drawing.Point(26, 18);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(814, 138);
             this.groupBox1.TabIndex = 0;
@@ -654,7 +695,7 @@
             this.groupBox2.Controls.Add(this.pRODUTO_UNIDADE_VENDATextBox);
             this.groupBox2.Controls.Add(pRODUTO_UNIDADE_VENDALabel);
             this.groupBox2.Controls.Add(pRODUTO_UNIDADE_COMPRALabel);
-            this.groupBox2.Location = new System.Drawing.Point(716, 183);
+            this.groupBox2.Location = new System.Drawing.Point(26, 183);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(233, 111);
             this.groupBox2.TabIndex = 2;
@@ -671,7 +712,7 @@
             this.groupBox3.Controls.Add(this.pRODUTO_NUMEROTextBox);
             this.groupBox3.Controls.Add(pRODUTO_NUMEROLabel);
             this.groupBox3.Controls.Add(pRODUTO_PESOLabel);
-            this.groupBox3.Location = new System.Drawing.Point(2204, 64);
+            this.groupBox3.Location = new System.Drawing.Point(1525, 65);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(565, 223);
             this.groupBox3.TabIndex = 14;
@@ -690,7 +731,7 @@
             this.groupBox4.Controls.Add(this.pRODUTO_CSOSNTextBox);
             this.groupBox4.Controls.Add(pRODUTO_CSOSNLabel);
             this.groupBox4.Controls.Add(this.pRODUTO_CFOPTextBox);
-            this.groupBox4.Location = new System.Drawing.Point(2796, 54);
+            this.groupBox4.Location = new System.Drawing.Point(2138, 58);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(526, 237);
             this.groupBox4.TabIndex = 18;
@@ -705,9 +746,9 @@
             this.groupBox5.Controls.Add(this.pRODUTO_ESTOQUE_MAXIMOTextBox);
             this.groupBox5.Controls.Add(pRODUTO_ESTOQUE_MAXIMOLabel);
             this.groupBox5.Controls.Add(this.pRODUTO_ESTOQUE_MINIMOTextBox);
-            this.groupBox5.Location = new System.Drawing.Point(982, 158);
+            this.groupBox5.Location = new System.Drawing.Point(288, 162);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(229, 154);
+            this.groupBox5.Size = new System.Drawing.Size(229, 158);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Estoque";
@@ -720,7 +761,7 @@
             this.groupBox6.Controls.Add(this.pRODUTO_PRECO_CUSTOTextBox);
             this.groupBox6.Controls.Add(pRODUTO_PRECO_CUSTOLabel);
             this.groupBox6.Controls.Add(this.pRODUTO_PRECO_COMPRATextBox);
-            this.groupBox6.Location = new System.Drawing.Point(1235, 161);
+            this.groupBox6.Location = new System.Drawing.Point(556, 162);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(284, 151);
             this.groupBox6.TabIndex = 7;
@@ -729,9 +770,9 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(3352, 83);
+            this.panel1.Location = new System.Drawing.Point(2678, 91);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(65, 177);
+            this.panel1.Size = new System.Drawing.Size(17, 177);
             this.panel1.TabIndex = 58;
             // 
             // groupBox7
@@ -745,47 +786,12 @@
             this.groupBox7.Controls.Add(this.fORNECEDOR_FISICO_NOMETextBox);
             this.groupBox7.Controls.Add(this.fORNECEDOR_JURIDICO_FANTASIATextBox);
             this.groupBox7.Controls.Add(fORNECEDOR_JURIDICO_FANTASIALabel);
-            this.groupBox7.Location = new System.Drawing.Point(1550, 36);
+            this.groupBox7.Location = new System.Drawing.Point(866, 40);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(619, 263);
             this.groupBox7.TabIndex = 10;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Organização";
-            // 
-            // bsProduto
-            // 
-            this.bsProduto.DataMember = "PRODUTO";
-            this.bsProduto.DataSource = this.dsFROGIOS;
-            // 
-            // dsFROGIOS
-            // 
-            this.dsFROGIOS.DataSetName = "dsFROGIOS";
-            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsMarca
-            // 
-            this.bsMarca.DataMember = "MARCA";
-            this.bsMarca.DataSource = this.dsFROGIOS;
-            // 
-            // bsGrupo
-            // 
-            this.bsGrupo.DataMember = "GRUPO";
-            this.bsGrupo.DataSource = this.dsFROGIOS;
-            // 
-            // bsSecao
-            // 
-            this.bsSecao.DataMember = "SECAO";
-            this.bsSecao.DataSource = this.dsFROGIOS;
-            // 
-            // bsFisico
-            // 
-            this.bsFisico.DataMember = "FORNECEDOR_FISICO";
-            this.bsFisico.DataSource = this.dsFROGIOS;
-            // 
-            // bsJuridico
-            // 
-            this.bsJuridico.DataMember = "FORNECEDOR_JURIDICO";
-            this.bsJuridico.DataSource = this.dsFROGIOS;
             // 
             // taProduto
             // 
@@ -854,9 +860,17 @@
             this.Name = "formCadastroProduto";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsGrupo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSecao)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFisico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsJuridico)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -871,13 +885,6 @@
             this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMarca)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsGrupo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSecao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsFisico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsJuridico)).EndInit();
             this.ResumeLayout(false);
 
         }

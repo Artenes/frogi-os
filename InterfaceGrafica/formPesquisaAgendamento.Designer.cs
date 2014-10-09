@@ -136,6 +136,8 @@
             this.pESQUISA_AGENDAMENTO_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_AGENDAMENTO_FISICODataGridView.Size = new System.Drawing.Size(952, 299);
             this.pESQUISA_AGENDAMENTO_FISICODataGridView.TabIndex = 4;
+            this.pESQUISA_AGENDAMENTO_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_AGENDAMENTO_FISICODataGridView_CellDoubleClick);
+            this.pESQUISA_AGENDAMENTO_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_AGENDAMENTO_FISICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -199,6 +201,8 @@
             this.pESQUISA_AGENDAMENTO_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_AGENDAMENTO_JURIDICODataGridView.Size = new System.Drawing.Size(952, 299);
             this.pESQUISA_AGENDAMENTO_JURIDICODataGridView.TabIndex = 5;
+            this.pESQUISA_AGENDAMENTO_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_AGENDAMENTO_JURIDICODataGridView_CellDoubleClick);
+            this.pESQUISA_AGENDAMENTO_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_AGENDAMENTO_JURIDICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn4
             // 

@@ -45,7 +45,11 @@ namespace FROGI_OS.InterfaceGrafica
         private void selecionarSecao() {
             int indice = sECAODataGridView.CurrentRow.Index;
             int codigo = (int)sECAODataGridView[0, indice].Value;
-            ((formCadastroSecao)cadastro).visualizarRegistro(codigo);
+            if (cadastro.GetType() == typeof(formCadastroSecao)) {
+                ((formCadastroSecao)cadastro).visualizarRegistro(codigo);
+            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                ((formCadastroProduto)cadastro).adicionarSecao(codigo);   
+            }
             this.DialogResult = DialogResult.Yes;
             Close();
         }

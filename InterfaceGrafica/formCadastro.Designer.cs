@@ -237,7 +237,7 @@
         private System.Windows.Forms.PictureBox pictureSalvar;
         private System.Windows.Forms.PictureBox picturePesquisar;
         private System.Windows.Forms.PictureBox pictureNovo;
-        private System.Windows.Forms.PictureBox pictureFechar;
+        protected System.Windows.Forms.PictureBox pictureFechar;
         protected System.Windows.Forms.Panel panelCodigo;
         protected System.Windows.Forms.Panel panelCentro;
         private System.Windows.Forms.ToolTip toolTip;

@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD.cs" />
+    <Compile Include="CamadaAcessoDados\TblAgendamento.cs" />
     <Compile Include="CamadaAcessoDados\TblOrcamentoItem.cs" />
     <Compile Include="CamadaAcessoDados\TblFornecedorFisico.cs" />
     <Compile Include="CamadaAcessoDados\TblCategoria.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="CamadaAcessoDados\TblPermissao.cs" />
     <Compile Include="CamadaAcessoDados\TblSecao.cs" />
     <Compile Include="CamadaAcessoDados\TblUsuario.cs" />
+    <Compile Include="CamadaEnlaceDados\GerAgendamento.cs" />
     <Compile Include="CamadaEnlaceDados\GerCliente.cs" />
     <Compile Include="CamadaEnlaceDados\GerCompra.cs" />
     <Compile Include="CamadaEnlaceDados\GerFornecedor.cs" />
@@ -95,12 +97,6 @@
       <DependentUpon>dsFROGIOS.xsd</DependentUpon>
     </Compile>
     <Compile Include="Firebird.cs" />
-    <Compile Include="InterfaceGrafica\formAgendamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InterfaceGrafica\formAgendamento.Designer.cs">
-      <DependentUpon>formAgendamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="InterfaceGrafica\formAjuda.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,9 +383,6 @@
     <Compile Include="CamadaAcessoDados\TblClienteFisico.cs" />
     <Compile Include="CamadaAcessoDados\TblCliente.cs" />
     <Compile Include="CamadaAcessoDados\TblUF.cs" />
-    <EmbeddedResource Include="InterfaceGrafica\formAgendamento.resx">
-      <DependentUpon>formAgendamento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroAgendamento.resx">
       <DependentUpon>formCadastroAgendamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -528,8 +521,8 @@
     </None>
     <None Include="dsFROGIOS.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsFROGIOS.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>dsFROGIOS1.Designer.cs</LastGenOutput>
     </None>
     <None Include="dsFROGIOS.xss">
       <DependentUpon>dsFROGIOS.xsd</DependentUpon>

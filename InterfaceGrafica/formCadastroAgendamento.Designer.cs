@@ -43,15 +43,16 @@
             this.textCliente = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textTelefone = new System.Windows.Forms.MaskedTextBox();
             this.textCelular = new System.Windows.Forms.MaskedTextBox();
+            this.textTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             aGEN_CODIGOLabel = new System.Windows.Forms.Label();
             aGEN_DATALabel = new System.Windows.Forms.Label();
             aGEN_DESCRICAOLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -183,6 +184,7 @@
             // 
             this.aGEN_DESCRICAORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsAgendamento, "AGEN_DESCRICAO", true));
             this.aGEN_DESCRICAORichTextBox.Location = new System.Drawing.Point(109, 150);
+            this.aGEN_DESCRICAORichTextBox.MaxLength = 120;
             this.aGEN_DESCRICAORichTextBox.Name = "aGEN_DESCRICAORichTextBox";
             this.aGEN_DESCRICAORichTextBox.Size = new System.Drawing.Size(546, 149);
             this.aGEN_DESCRICAORichTextBox.TabIndex = 2;
@@ -194,6 +196,7 @@
             this.textCliente.Name = "textCliente";
             this.textCliente.Size = new System.Drawing.Size(546, 33);
             this.textCliente.TabIndex = 0;
+            this.textCliente.DoubleClick += new System.EventHandler(this.textCliente_DoubleClick);
             // 
             // groupBox1
             // 
@@ -222,23 +225,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Contato";
             // 
-            // label2
+            // textCelular
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 35);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Telefone";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Celular";
+            this.textCelular.Enabled = false;
+            this.textCelular.Location = new System.Drawing.Point(11, 134);
+            this.textCelular.Mask = "(##)####-####";
+            this.textCelular.Name = "textCelular";
+            this.textCelular.Size = new System.Drawing.Size(133, 33);
+            this.textCelular.TabIndex = 3;
             // 
             // textTelefone
             // 
@@ -249,14 +243,23 @@
             this.textTelefone.Size = new System.Drawing.Size(133, 33);
             this.textTelefone.TabIndex = 2;
             // 
-            // textCelular
+            // label3
             // 
-            this.textCelular.Enabled = false;
-            this.textCelular.Location = new System.Drawing.Point(11, 134);
-            this.textCelular.Mask = "(##)####-####";
-            this.textCelular.Name = "textCelular";
-            this.textCelular.Size = new System.Drawing.Size(133, 33);
-            this.textCelular.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 106);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Celular";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Telefone";
             // 
             // formCadastroAgendamento
             // 
@@ -267,6 +270,7 @@
             this.Text = "formCadastroAgendamento";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);

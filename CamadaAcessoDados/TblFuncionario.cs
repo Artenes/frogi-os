@@ -95,8 +95,7 @@ namespace FROGI_OS.CamadaAcessoDados {
                 + "FUNCIONARIO_SALARIO = " + paramSalario + ", "
                 + "FUNCIONARIO_ADMISSAO = " + paramAdmissao + ", "
                 + "FUNCIONARIO_SENHA = " + paramSenha + " "
-                //+ "FUNCIONARIO_CATEGORIA = " + paramCategoria + " "
-                + "WHERE FUNCIONARIO = " + paramCodigo + ";";
+                + "WHERE FUNCIONARIO_CODIGO = " + paramCodigo + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, funcionario.FUNCIONARIO_CODIGO);
@@ -115,9 +114,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramSalario, funcionario.FUNCIONARIO_SALARIO);
             comando.Parameters.AddWithValue(paramAdmissao, funcionario.FUNCIONARIO_ADMISSAO);
             comando.Parameters.AddWithValue(paramSenha, funcionario.FUNCIONARIO_SENHA);
-            //comando.Parameters.AddWithValue(paramCategoria, funcionario.FUNCIONARIO_CATEGORIA);
-            comando.Parameters.AddWithValue(paramDataCadastro, funcionario.FUNCIONARIO_DATA_CADASTRO);
-
+            
             return comando.ExecuteNonQuery();
         }
 
@@ -126,7 +123,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             string precisao = comPrecisao ? " = " : " CONTAINING ";
             string sql =
                 "SELECT * "
-                + "FROM FUNCIONARIOS "
+                + "FROM FUNCIONARIO "
                 + "WHERE " + coluna + precisao + paramValor + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);

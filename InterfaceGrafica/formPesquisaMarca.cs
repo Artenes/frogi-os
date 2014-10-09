@@ -42,7 +42,13 @@ namespace FROGI_OS.InterfaceGrafica {
         private void selecionarMarca() {
             int indice = mARCADataGridView.CurrentRow.Index;
             int codigo = (int)mARCADataGridView[0, indice].Value;
-            ((formCadastroMarca)cadastro).visualizarRegistro(codigo);
+
+            if (cadastro.GetType() == typeof(formCadastroMarca)) {
+                ((formCadastroMarca)cadastro).visualizarRegistro(codigo);    
+            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                ((formCadastroProduto)cadastro).adicionarMarca(codigo);
+            }
+
             this.DialogResult = DialogResult.Yes;
             this.Close();
         }

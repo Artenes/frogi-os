@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPrincipal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablePai = new System.Windows.Forms.TableLayoutPanel();
             this.flowCentro = new System.Windows.Forms.FlowLayoutPanel();
             this.tableBanners01 = new System.Windows.Forms.TableLayoutPanel();
@@ -76,6 +77,7 @@
             this.pictureUsuarioFoto = new System.Windows.Forms.PictureBox();
             this.labelUsuarioNome = new System.Windows.Forms.Label();
             this.labelFrogiOs = new System.Windows.Forms.Label();
+            this.hora = new System.Windows.Forms.Timer(this.components);
             this.tablePai.SuspendLayout();
             this.flowCentro.SuspendLayout();
             this.tableBanners01.SuspendLayout();
@@ -371,27 +373,27 @@
             this.dgvAgendamentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAgendamentos.BackgroundColor = System.Drawing.Color.White;
             this.dgvAgendamentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAgendamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Light", 20F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAgendamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvAgendamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgendamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaCliente,
             this.colunaEntrega,
             this.colunaTelefone});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAgendamentos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAgendamentos.DefaultCellStyle = dataGridViewCellStyle6;
             resources.ApplyResources(this.dgvAgendamentos, "dgvAgendamentos");
             this.dgvAgendamentos.Name = "dgvAgendamentos";
             this.dgvAgendamentos.ReadOnly = true;
@@ -480,6 +482,12 @@
             resources.ApplyResources(this.labelFrogiOs, "labelFrogiOs");
             this.labelFrogiOs.ForeColor = System.Drawing.Color.White;
             this.labelFrogiOs.Name = "labelFrogiOs";
+            // 
+            // hora
+            // 
+            this.hora.Enabled = true;
+            this.hora.Interval = 1;
+            this.hora.Tick += new System.EventHandler(this.hora_Tick);
             // 
             // formPrincipal
             // 
@@ -582,6 +590,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureCompras;
         private System.Windows.Forms.PictureBox pictureOpcoes;
+        private System.Windows.Forms.Timer hora;
 
 
     }

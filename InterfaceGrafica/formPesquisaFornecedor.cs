@@ -90,7 +90,11 @@ namespace FROGI_OS.InterfaceGrafica {
         private void selecionarFisico() {
             int indice = pESQUISA_FORNECEDOR_FISICODataGridView.CurrentRow.Index;
             int codigo = (int)pESQUISA_FORNECEDOR_FISICODataGridView[0, indice].Value;
-            ((formCadastroFornecedor)cadastro).visualizarRegistro(codigo, eFisico());
+            if (cadastro.GetType() == typeof(formCadastroFornecedor)) {
+                ((formCadastroFornecedor)cadastro).visualizarRegistro(codigo, eFisico());        
+            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                ((formCadastroProduto)cadastro).adicionarFornecedor(codigo, true);
+            }
             this.DialogResult = DialogResult.Yes;
             this.Close();
         }
@@ -98,7 +102,11 @@ namespace FROGI_OS.InterfaceGrafica {
         private void selecionarJuridico() {
             int indice = pESQUISA_FORNECEDOR_JURIDICODataGridView.CurrentRow.Index;
             int codigo = (int)pESQUISA_FORNECEDOR_JURIDICODataGridView[0, indice].Value;
-            ((formCadastroFornecedor)cadastro).visualizarRegistro(codigo, eFisico());
+            if (cadastro.GetType() == typeof(formCadastroFornecedor)) {
+                ((formCadastroFornecedor)cadastro).visualizarRegistro(codigo, eFisico());
+            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                ((formCadastroProduto)cadastro).adicionarFornecedor(codigo, false);
+            }
             this.DialogResult = DialogResult.Yes;
             this.Close();
         }

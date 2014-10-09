@@ -76,10 +76,31 @@ namespace FROGI_OS {
             comando.Parameters.AddWithValue(paramNumero, produto.PRODUTO_NUMERO);
             comando.Parameters.AddWithValue(paramEan, produto.PRODUTO_EAN);
             comando.Parameters.AddWithValue(paramNumeroSerie, produto.PRODUTO_NUMERO_SERIE);
-            comando.Parameters.AddWithValue(paramMarca, produto.PRODUTO_MARCA);
-            comando.Parameters.AddWithValue(paramGrupo, produto.PRODUTO_GRUPO);
-            comando.Parameters.AddWithValue(paramSecao, produto.PRODUTO_SECAO);
-            comando.Parameters.AddWithValue(paramFornecedor, produto.PRODUTO_FORNECEDOR);
+
+            try {
+                comando.Parameters.AddWithValue(paramMarca, produto.PRODUTO_MARCA);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramMarca, null);
+            }
+
+            try {
+                comando.Parameters.AddWithValue(paramGrupo, produto.PRODUTO_GRUPO);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramGrupo, null);
+            }
+
+            try {
+                comando.Parameters.AddWithValue(paramSecao, produto.PRODUTO_SECAO);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramSecao, null);
+            }
+
+            try {
+                comando.Parameters.AddWithValue(paramFornecedor, produto.PRODUTO_FORNECEDOR);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramFornecedor, null);
+            }
+
             comando.Parameters.AddWithValue(paramCfop, produto.PRODUTO_CFOP);
             comando.Parameters.AddWithValue(paramCsosn, produto.PRODUTO_CSOSN);
             comando.Parameters.AddWithValue(paramNcm, produto.PRODUTO_NCM);
@@ -137,10 +158,29 @@ namespace FROGI_OS {
             comando.Parameters.AddWithValue(paramNumero, produto.PRODUTO_NUMERO);
             comando.Parameters.AddWithValue(paramEan, produto.PRODUTO_EAN);
             comando.Parameters.AddWithValue(paramNumeroSerie, produto.PRODUTO_NUMERO_SERIE);
-            comando.Parameters.AddWithValue(paramMarca, produto.PRODUTO_MARCA);
-            comando.Parameters.AddWithValue(paramGrupo, produto.PRODUTO_GRUPO);
-            comando.Parameters.AddWithValue(paramSecao, produto.PRODUTO_SECAO);
-            comando.Parameters.AddWithValue(paramFornecedor, produto.PRODUTO_FORNECEDOR);
+            try {
+                comando.Parameters.AddWithValue(paramMarca, produto.PRODUTO_MARCA);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramMarca, null);
+            }
+
+            try {
+                comando.Parameters.AddWithValue(paramGrupo, produto.PRODUTO_GRUPO);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramGrupo, null);
+            }
+
+            try {
+                comando.Parameters.AddWithValue(paramSecao, produto.PRODUTO_SECAO);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramSecao, null);
+            }
+
+            try {
+                comando.Parameters.AddWithValue(paramFornecedor, produto.PRODUTO_FORNECEDOR);
+            } catch (Exception) {
+                comando.Parameters.AddWithValue(paramFornecedor, null);
+            }
             comando.Parameters.AddWithValue(paramCfop, produto.PRODUTO_CFOP);
             comando.Parameters.AddWithValue(paramCsosn, produto.PRODUTO_CSOSN);
             comando.Parameters.AddWithValue(paramNcm, produto.PRODUTO_NCM);

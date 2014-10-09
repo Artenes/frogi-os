@@ -36,14 +36,14 @@ namespace FROGI_OS.CamadaEnlaceDados {
                 )
             );
 
-            dsFROGIOS.FUNCIONARIORow funcionarioLinha = (dsFROGIOS.FUNCIONARIORow) funcionario.Rows[0];
+            /*dsFROGIOS.FUNCIONARIORow funcionarioLinha = (dsFROGIOS.FUNCIONARIORow) funcionario.Rows[0];
             categoria.Load(
                 categoriaSQL.selecionar(
                 categoria.CATEGORIA_CODIGOColumn.ColumnName,
                 funcionarioLinha.FUNCIONARIO_CATEGORIA.ToString(),
                 true
                 )    
-            );
+            );*/
         }
 
         public void deletar(dsFROGIOS.FUNCIONARIORow funcionario) {

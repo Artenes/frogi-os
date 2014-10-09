@@ -23,6 +23,10 @@ namespace FROGI_OS.InterfaceGrafica {
             cliente = new GerCliente();
         }
 
+        private bool eFisico() {
+            return comboTipo.SelectedIndex == FISICO;
+        }
+
         protected override void pesquisaExecutar() {
             bool eFisico = comboTipo.SelectedIndex == FISICO;
             string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
@@ -70,41 +74,34 @@ namespace FROGI_OS.InterfaceGrafica {
             this.ActiveControl = comboTipo;
         }
 
-        private void selecionarFisico() {
-            int indice = pESQUISA_CLIENTE_FISICODataGridView.CurrentRow.Index;
-            int codigo = (int)pESQUISA_CLIENTE_FISICODataGridView[0, indice].Value;
-            ((formCadastroCliente)cadastro).visualizarRegistro(codigo, comboTipo.SelectedIndex == FISICO);
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
-        }
+        private void selecionarCliente () {
+            int indice, codigo;
+            if (eFisico()) {
+                indice = pESQUISA_CLIENTE_FISICODataGridView.CurrentRow.Index;
+                codigo = (int)pESQUISA_CLIENTE_FISICODataGridView[0, indice].Value;
+            } else {
+                indice = pESQUISA_CLIENTE_JURIDICODataGridView.CurrentRow.Index;
+                codigo = (int)pESQUISA_CLIENTE_JURIDICODataGridView[0, indice].Value;
+            }
 
-        private void selecionarJuridico() {
-            int indice = pESQUISA_CLIENTE_JURIDICODataGridView.CurrentRow.Index;
-            int codigo = (int)pESQUISA_CLIENTE_JURIDICODataGridView[0, indice].Value;
-            ((formCadastroCliente)cadastro).visualizarRegistro(codigo, comboTipo.SelectedIndex == FISICO);
-            DialogResult = DialogResult.Yes;
-            Close();
-        }
-
-        private void pESQUISA_CLIENTE_FISICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            selecionarFisico();
-        }
-
-        private void pESQUISA_CLIENTE_FISICODataGridView_KeyDown(object sender, KeyEventArgs e) {
-            if (e.KeyCode == Keys.Enter) {
-                selecionarFisico();
-                e.SuppressKeyPress = true;
+            if (cadastro.GetType() == typeof(formCadastroCliente)) {
+                ((formCadastroCliente)cadastro).visualizarRegistro(codigo, eFisico());
+            } else if (cadastro.GetType() == typeof(formCadastroAgendamento)) {
+                ((formCadastroAgendamento)cadastro).adicionarCliente(codigo, eFisico());
             }
             
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
+
         }
 
-        private void pESQUISA_CLIENTE_JURIDICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
-            selecionarJuridico();
+        private void _CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            selecionarCliente();
         }
 
-        private void pESQUISA_CLIENTE_JURIDICODataGridView_KeyDown(object sender, KeyEventArgs e) {
+        private void _KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
-                selecionarJuridico();
+                selecionarCliente();
                 e.SuppressKeyPress = true;
             }
         }

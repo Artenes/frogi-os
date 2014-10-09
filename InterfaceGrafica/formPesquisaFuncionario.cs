@@ -29,6 +29,7 @@ namespace FROGI_OS.InterfaceGrafica {
         protected override void pesquisaExecutar() {
             string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
             string valor = textValorPesquisa.Text;
+            dsFROGIOS.FUNCIONARIO.Clear();
             dsFROGIOS.FUNCIONARIO.Load(funcionarioSQL.selecionar(coluna, valor, false));
         }
 

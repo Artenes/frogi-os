@@ -33,18 +33,19 @@
             this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
             this.taPesquisaProduto = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaProduto();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
-            this.pESQUISA_PRODUTODataGridView = new System.Windows.Forms.DataGridView();
+            this.pRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pRODUTOTableAdapter = new FROGI_OS.dsFROGIOSTableAdapters.PRODUTOTableAdapter();
+            this.pRODUTODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCabecalho.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTODataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // labelPesquisa
@@ -54,7 +55,7 @@
             // 
             // panelCentral
             // 
-            this.panelCentral.Controls.Add(this.pESQUISA_PRODUTODataGridView);
+            this.panelCentral.Controls.Add(this.pRODUTODataGridView);
             this.panelCentral.Size = new System.Drawing.Size(966, 348);
             // 
             // dsFROGIOS
@@ -73,6 +74,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -104,28 +106,37 @@
             this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOTableAdapter = null;
             // 
-            // pESQUISA_PRODUTODataGridView
+            // pRODUTOBindingSource
             // 
-            this.pESQUISA_PRODUTODataGridView.AllowUserToAddRows = false;
-            this.pESQUISA_PRODUTODataGridView.AllowUserToDeleteRows = false;
-            this.pESQUISA_PRODUTODataGridView.AutoGenerateColumns = false;
-            this.pESQUISA_PRODUTODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.pESQUISA_PRODUTODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pESQUISA_PRODUTODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pRODUTOBindingSource.DataMember = "PRODUTO";
+            this.pRODUTOBindingSource.DataSource = this.dsFROGIOS;
+            // 
+            // pRODUTOTableAdapter
+            // 
+            this.pRODUTOTableAdapter.ClearBeforeFill = true;
+            // 
+            // pRODUTODataGridView
+            // 
+            this.pRODUTODataGridView.AllowUserToAddRows = false;
+            this.pRODUTODataGridView.AllowUserToDeleteRows = false;
+            this.pRODUTODataGridView.AutoGenerateColumns = false;
+            this.pRODUTODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.pRODUTODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pRODUTODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.pESQUISA_PRODUTODataGridView.DataSource = this.bsProduto;
-            this.pESQUISA_PRODUTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pESQUISA_PRODUTODataGridView.Location = new System.Drawing.Point(0, 0);
-            this.pESQUISA_PRODUTODataGridView.Name = "pESQUISA_PRODUTODataGridView";
-            this.pESQUISA_PRODUTODataGridView.ReadOnly = true;
-            this.pESQUISA_PRODUTODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pESQUISA_PRODUTODataGridView.Size = new System.Drawing.Size(966, 348);
-            this.pESQUISA_PRODUTODataGridView.TabIndex = 3;
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn24});
+            this.pRODUTODataGridView.DataSource = this.pRODUTOBindingSource;
+            this.pRODUTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pRODUTODataGridView.Location = new System.Drawing.Point(0, 0);
+            this.pRODUTODataGridView.Name = "pRODUTODataGridView";
+            this.pRODUTODataGridView.ReadOnly = true;
+            this.pRODUTODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.pRODUTODataGridView.Size = new System.Drawing.Size(966, 348);
+            this.pRODUTODataGridView.TabIndex = 0;
+            this.pRODUTODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pRODUTODataGridView_CellDoubleClick);
+            this.pRODUTODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pRODUTODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -141,33 +152,19 @@
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // dataGridViewTextBoxColumn21
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "MARCA_DESCRICAO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "PRODUTO_ESTOQUE_ATUAL";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Estoque";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // dataGridViewTextBoxColumn24
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PRODUTO_UNIDADE_VENDA";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Unidade";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "PRODUTO_PRECO_VENDA";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Preço";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "PRODUTO_ESTOQUE_ATUAL";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Estoque";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "PRODUTO_PRECO_VENDA";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Preço";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
             // 
             // formPesquisaProduto
             // 
@@ -181,7 +178,8 @@
             this.panelCentral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pRODUTODataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,12 +191,12 @@
         private System.Windows.Forms.BindingSource bsProduto;
         private dsFROGIOSTableAdapters.taPesquisaProduto taPesquisaProduto;
         private dsFROGIOSTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView pESQUISA_PRODUTODataGridView;
+        private System.Windows.Forms.BindingSource pRODUTOBindingSource;
+        private dsFROGIOSTableAdapters.PRODUTOTableAdapter pRODUTOTableAdapter;
+        private System.Windows.Forms.DataGridView pRODUTODataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
     }
 }

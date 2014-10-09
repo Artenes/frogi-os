@@ -11,15 +11,15 @@ namespace FROGI_OS.Mapeamento
 
         private const string codigo = "Código";
         private const string descricao = "Descrição";
-        private const string marca = "Marca";
-        private const string unidade = "Unidade";
+        //private const string marca = "Marca";
+        //private const string unidade = "Unidade";
         private const string preco = "Preço";
         private const string estoque = "Estoque";
 
         private readonly string colunaCodigo;
         private readonly string colunaDescricao;
-        private readonly string colunaMarca;
-        private readonly string colunaUnidade;
+        //private readonly string colunaMarca;
+        //private readonly string colunaUnidade;
         private readonly string colunaPreco;
         private readonly string colunaEstoque;
 
@@ -31,16 +31,16 @@ namespace FROGI_OS.Mapeamento
 
             colunaCodigo = produto.PRODUTO_CODIGOColumn.ColumnName;
             colunaDescricao = produto.PRODUTO_DESCRICAOColumn.ColumnName;
-            colunaMarca = produtoMarca.MARCA_DESCRICAOColumn.ColumnName;
-            colunaUnidade = produto.PRODUTO_UNIDADE_VENDAColumn.ColumnName;
+            //colunaMarca = produtoMarca.MARCA_DESCRICAOColumn.ColumnName;
+            //colunaUnidade = produto.PRODUTO_UNIDADE_VENDAColumn.ColumnName;
             colunaPreco = produto.PRODUTO_ESTOQUE_ATUALColumn.ColumnName;
             colunaEstoque = produto.PRODUTO_ESTOQUE_ATUALColumn.ColumnName;
 
             colunas = new string[]{
                 codigo,
                 descricao,
-                marca,
-                unidade,
+                //marca,
+                //unidade,
                 preco,
                 estoque
             };
@@ -53,10 +53,10 @@ namespace FROGI_OS.Mapeamento
                     return colunaCodigo;
                 case descricao:
                     return colunaDescricao;
-                case marca:
-                    return colunaMarca;
-                case unidade:
-                    return colunaUnidade;
+                //case marca:
+                  //  return colunaMarca;
+                //case unidade:
+                  //  return colunaUnidade;
                 case preco:
                     return colunaPreco;
                 case estoque:
