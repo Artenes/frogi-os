@@ -77,23 +77,23 @@ namespace FROGI_OS.CamadaEnlaceDados
             }
 
             for (int i = 0; i < qtdItensInseridos; i++) {
-                item.ORCAMENTO_ITEM_DESCONTO = (decimal) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCONTOColumn, DataRowVersion.Current];
+                item.ORCAMENTO_ITEM_DESCONTO = (double) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCONTOColumn, DataRowVersion.Current];
                 item.ORCAMENTO_ITEM_DESCRICAO = (string) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCRICAOColumn, DataRowVersion.Current];
                 item.ORCAMENTO_ITEM_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                 item.ORCAMENTO_ITEM_PRODUTO = (int)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_PRODUTOColumn, DataRowVersion.Current];
                 item.ORCAMENTO_ITEM_QUANTIDADE = (short)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_TOTAL = (decimal)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_TOTALColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_VALOR = (decimal)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_VALORColumn, DataRowVersion.Current];
+                item.ORCAMENTO_ITEM_TOTAL = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_TOTALColumn, DataRowVersion.Current];
+                item.ORCAMENTO_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_VALORColumn, DataRowVersion.Current];
                 orcamentoItemSQL.inserir(item);
             }
 
             for (int i = 0; i < qtdServicosInseridos; i++) {
-                servico.ORCAMENTO_SERVICO_DESCONTO = (decimal)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCONTOColumn, DataRowVersion.Current];
+                servico.ORCAMENTO_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCONTOColumn, DataRowVersion.Current];
                 servico.ORCAMENTO_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
                 servico.ORCAMENTO_SERVICO_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                 servico.ORCAMENTO_SERVICO_SERVICO = (int)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_SERVICOColumn, DataRowVersion.Current];
-                servico.ORCAMENTO_SERVICO_TOTAL = (decimal)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
-                servico.ORCAMENTO_SERVICO_VALOR = (decimal)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_VALORColumn, DataRowVersion.Current];
+                servico.ORCAMENTO_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
+                servico.ORCAMENTO_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_VALORColumn, DataRowVersion.Current];
                 orcamentoServicoSQL.inserir(servico);
             }
         }

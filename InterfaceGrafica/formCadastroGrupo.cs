@@ -40,7 +40,7 @@ namespace FROGI_OS.InterfaceGrafica
             dsFROGIOS.GRUPORow grupoRow = dsFROGIOS.GRUPO.NewGRUPORow();
             if (codigo != null) grupoRow.GRUPO_CODIGO = (int)codigo;
             grupoRow.GRUPO_DESCRICAO = gRUPO_DESCRICAOTextBox.Text;
-            try { grupoRow.GRUPO_DESCONTO = Convert.ToDecimal(gRUPO_DESCONTOTextBox.Text); } catch (Exception) { grupoRow.GRUPO_DESCONTO = 0; }
+            try { grupoRow.GRUPO_DESCONTO = Convert.ToDouble(gRUPO_DESCONTOTextBox.Text); } catch (Exception) { grupoRow.GRUPO_DESCONTO = 0; }
             return grupoRow;
         }
 

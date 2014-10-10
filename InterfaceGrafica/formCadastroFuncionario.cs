@@ -51,7 +51,7 @@ namespace FROGI_OS {
             funcionarioRow.FUNCIONARIO_CEP = fUNCIONARIO_CEPTextBox.Text;
             funcionarioRow.FUNCIONARIO_FUNCAO = fUNCIONARIO_FUNCAOTextBox.Text;
             funcionarioRow.FUNCIONARIO_SETOR = fUNCIONARIO_SETORTextBox.Text;
-            try { funcionarioRow.FUNCIONARIO_SALARIO = Convert.ToDecimal(fUNCIONARIO_SALARIOTextBox.Text); } catch (Exception) { funcionarioRow.FUNCIONARIO_SALARIO = 0; }
+            try { funcionarioRow.FUNCIONARIO_SALARIO = Convert.ToDouble(fUNCIONARIO_SALARIOTextBox.Text); } catch (Exception) { funcionarioRow.FUNCIONARIO_SALARIO = 0; }
             funcionarioRow.FUNCIONARIO_ADMISSAO = fUNCIONARIO_ADMISSAODateTimePicker.Value;
             funcionarioRow.FUNCIONARIO_SENHA = fUNCIONARIO_SENHATextBox.Text;
             return funcionarioRow;

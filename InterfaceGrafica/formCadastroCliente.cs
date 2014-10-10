@@ -128,11 +128,11 @@ namespace FROGI_OS.InterfaceGrafica {
             fisicoRow.CLIENTE_FISICO_SEXO = cLIENTE_FISICO_SEXOComboBox.Text;
             fisicoRow.CLIENTE_FISICO_ESTADO_CIVIL = cLIENTE_FISICO_ESTADO_CIVILTextBox.Text;
             fisicoRow.CLIENTE_FISICO_PROFISSAO = cLIENTE_FISICO_PROFISSAOTextBox.Text;
-            try { fisicoRow.CLIENTE_FISICO_SALARIO = Convert.ToDecimal(cLIENTE_FISICO_SALARIOMaskedTextBox.Text); }
+            try { fisicoRow.CLIENTE_FISICO_SALARIO = Convert.ToDouble(cLIENTE_FISICO_SALARIOMaskedTextBox.Text); }
             catch (Exception) { fisicoRow.CLIENTE_FISICO_SALARIO = 0; }
-            try { fisicoRow.CLIENTE_FISICO_LIMITE = Convert.ToDecimal(cLIENTE_FISICO_LIMITETextBox.Text); }
+            try { fisicoRow.CLIENTE_FISICO_LIMITE = Convert.ToDouble(cLIENTE_FISICO_LIMITETextBox.Text); }
             catch (Exception) { fisicoRow.CLIENTE_FISICO_LIMITE = 0; }
-            try { fisicoRow.CLIENTE_FISICO_LIMITE_ATUAL = Convert.ToDecimal(cLIENTE_FISICO_LIMITE_ATUALTextBox.Text); }
+            try { fisicoRow.CLIENTE_FISICO_LIMITE_ATUAL = Convert.ToDouble(cLIENTE_FISICO_LIMITE_ATUALTextBox.Text); }
             catch (Exception) { fisicoRow.CLIENTE_FISICO_LIMITE_ATUAL = 0; }
             fisicoRow.CLIENTE_FISICO_MAE = cLIENTE_FISICO_MAETextBox.Text;
             fisicoRow.CLIENTE_FISICO_PAI = cLIENTE_FISICO_PAITextBox.Text;

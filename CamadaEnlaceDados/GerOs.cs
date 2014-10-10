@@ -77,23 +77,23 @@ namespace FROGI_OS.CamadaEnlaceDados
             }
 
             for (int i = 0; i < qtdItensInseridos; i++) {
-                item.OS_ITEM_DESCONTO = (decimal) itensInseridos.Rows[i][itensInseridos.OS_ITEM_DESCONTOColumn, DataRowVersion.Current];
+                item.OS_ITEM_DESCONTO = (double) itensInseridos.Rows[i][itensInseridos.OS_ITEM_DESCONTOColumn, DataRowVersion.Current];
                 item.OS_ITEM_DESCRICAO = (string) itensInseridos.Rows[i][itensInseridos.OS_ITEM_DESCRICAOColumn, DataRowVersion.Current];
                 item.OS_ITEM_OS = os.OS_CODIGO;
                 item.OS_ITEM_PRODUTO = (int)itensInseridos.Rows[i][itensInseridos.OS_ITEM_PRODUTOColumn, DataRowVersion.Current];
                 item.OS_ITEM_QUANTIDADE = (short)itensInseridos.Rows[i][itensInseridos.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
-                item.OS_ITEM_TOTAL = (decimal)itensInseridos.Rows[i][itensInseridos.OS_ITEM_TOTALColumn, DataRowVersion.Current];
-                item.OS_ITEM_VALOR = (decimal)itensInseridos.Rows[i][itensInseridos.OS_ITEM_VALORColumn, DataRowVersion.Current];
+                item.OS_ITEM_TOTAL = (double)itensInseridos.Rows[i][itensInseridos.OS_ITEM_TOTALColumn, DataRowVersion.Current];
+                item.OS_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.OS_ITEM_VALORColumn, DataRowVersion.Current];
                 sqlOsItem.inserir(item);
             }
 
             for (int i = 0; i < qtdServicosInseridos; i++) {
-                servico.OS_SERVICO_DESCONTO = (decimal)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCONTOColumn, DataRowVersion.Current];
+                servico.OS_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCONTOColumn, DataRowVersion.Current];
                 servico.OS_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
                 servico.OS_SERVICO_OS = os.OS_CODIGO;
                 servico.OS_SERVICO_SERVICO = (int)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_SERVICOColumn, DataRowVersion.Current];
-                servico.OS_SERVICO_TOTAL = (decimal)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_TOTALColumn, DataRowVersion.Current];
-                servico.OS_SERVICO_VALOR = (decimal)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_VALORColumn, DataRowVersion.Current];
+                servico.OS_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_TOTALColumn, DataRowVersion.Current];
+                servico.OS_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_VALORColumn, DataRowVersion.Current];
                 sqlOsServico.inserir(servico);
             }
         }

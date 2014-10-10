@@ -50,7 +50,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 servicoRow.SERVICO_CODIGO = (int) codigo;
 
             servicoRow.SERVICO_DESCRICAO = sERVICO_DESCRICAOTextBox.Text;
-            try  {servicoRow.SERVICO_VALOR = Convert.ToDecimal(sERVICO_VALORTextBox.Text);} catch (Exception){servicoRow.SERVICO_VALOR = 0;} //Conversão de string para deciaml, se der pau o valor que vai pro BD é ZERO ~ que nem minha tolerância
+            try  {servicoRow.SERVICO_VALOR = Convert.ToDouble(sERVICO_VALORTextBox.Text);} catch (Exception){servicoRow.SERVICO_VALOR = 0;} //Conversão de string para deciaml, se der pau o valor que vai pro BD é ZERO ~ que nem minha tolerância
 
             return servicoRow;
         }
