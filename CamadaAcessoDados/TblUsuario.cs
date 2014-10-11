@@ -23,14 +23,18 @@ namespace FROGI_OS.CamadaAcessoDados {
                + "VALUES (NULL, "
                + paramNome + ", "
                + paramSenha + ", "
-               + paramCategoria + ", "
+               + "NULL, "
                + paramDataCadastro + ") "
                + "RETURNING USUARIO_CODIGO;";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramNome, ususario.USUARIO_NOME);
             comando.Parameters.AddWithValue(paramSenha, ususario.USUARIO_SENHA);
-            comando.Parameters.AddWithValue(paramCategoria, ususario.USUARIO_CATEGORIA);
+            //try {
+            //    comando.Parameters.AddWithValue(paramCategoria, ususario.USUARIO_CATEGORIA);
+            //} catch (Exception) {
+            //    comando.Parameters.AddWithValue(paramCategoria, null);
+            //}
             comando.Parameters.AddWithValue(paramDataCadastro, ususario.USUARIO_DATA_CADASTRO);
 
             return (int)comando.ExecuteScalar();
@@ -51,10 +55,10 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramCodigo, usuario.USUARIO_CODIGO);
             comando.Parameters.AddWithValue(paramNome, usuario.USUARIO_NOME);
             comando.Parameters.AddWithValue(paramSenha, usuario.USUARIO_SENHA);
-            comando.Parameters.AddWithValue(paramCategoria, usuario.USUARIO_CATEGORIA);
+            comando.Parameters.AddWithValue(paramCategoria, null);
             comando.Parameters.AddWithValue(paramDataCadastro, usuario.USUARIO_DATA_CADASTRO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -79,7 +83,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, usuario.USUARIO_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

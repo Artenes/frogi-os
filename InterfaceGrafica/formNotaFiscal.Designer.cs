@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCabecalho = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonSelecionarDiretorio = new System.Windows.Forms.Button();
             this.pictureFechar = new System.Windows.Forms.PictureBox();
+            this.buttonSelecionarDiretorio = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.treePastas = new System.Windows.Forms.TreeView();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.textDiretorio = new System.Windows.Forms.TextBox();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.SuspendLayout();
@@ -40,6 +43,7 @@
             // panelCabecalho
             // 
             this.panelCabecalho.BackColor = System.Drawing.Color.Black;
+            this.panelCabecalho.Controls.Add(this.textDiretorio);
             this.panelCabecalho.Controls.Add(this.pictureFechar);
             this.panelCabecalho.Controls.Add(this.buttonSelecionarDiretorio);
             this.panelCabecalho.Controls.Add(this.label1);
@@ -49,6 +53,33 @@
             this.panelCabecalho.Name = "panelCabecalho";
             this.panelCabecalho.Size = new System.Drawing.Size(800, 107);
             this.panelCabecalho.TabIndex = 0;
+            // 
+            // pictureFechar
+            // 
+            this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFechar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
+            this.pictureFechar.Location = new System.Drawing.Point(740, 12);
+            this.pictureFechar.Name = "pictureFechar";
+            this.pictureFechar.Size = new System.Drawing.Size(48, 48);
+            this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureFechar.TabIndex = 2;
+            this.pictureFechar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureFechar, "Fechar janela [Alt+F4]");
+            this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
+            // 
+            // buttonSelecionarDiretorio
+            // 
+            this.buttonSelecionarDiretorio.AutoSize = true;
+            this.buttonSelecionarDiretorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSelecionarDiretorio.ForeColor = System.Drawing.Color.White;
+            this.buttonSelecionarDiretorio.Location = new System.Drawing.Point(247, 23);
+            this.buttonSelecionarDiretorio.Name = "buttonSelecionarDiretorio";
+            this.buttonSelecionarDiretorio.Size = new System.Drawing.Size(179, 37);
+            this.buttonSelecionarDiretorio.TabIndex = 1;
+            this.buttonSelecionarDiretorio.Text = "Selecionar diretório";
+            this.buttonSelecionarDiretorio.UseVisualStyleBackColor = true;
+            this.buttonSelecionarDiretorio.Click += new System.EventHandler(this.buttonSelecionarDiretorio_Click);
             // 
             // label1
             // 
@@ -61,30 +92,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Notas fiscais";
             // 
-            // buttonSelecionarDiretorio
-            // 
-            this.buttonSelecionarDiretorio.AutoSize = true;
-            this.buttonSelecionarDiretorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSelecionarDiretorio.ForeColor = System.Drawing.Color.White;
-            this.buttonSelecionarDiretorio.Location = new System.Drawing.Point(394, 45);
-            this.buttonSelecionarDiretorio.Name = "buttonSelecionarDiretorio";
-            this.buttonSelecionarDiretorio.Size = new System.Drawing.Size(179, 37);
-            this.buttonSelecionarDiretorio.TabIndex = 1;
-            this.buttonSelecionarDiretorio.Text = "Selecionar diretório";
-            this.buttonSelecionarDiretorio.UseVisualStyleBackColor = true;
-            // 
-            // pictureFechar
-            // 
-            this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
-            this.pictureFechar.Location = new System.Drawing.Point(740, 12);
-            this.pictureFechar.Name = "pictureFechar";
-            this.pictureFechar.Size = new System.Drawing.Size(48, 48);
-            this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureFechar.TabIndex = 2;
-            this.pictureFechar.TabStop = false;
-            this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
-            // 
             // treePastas
             // 
             this.treePastas.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -92,6 +99,14 @@
             this.treePastas.Name = "treePastas";
             this.treePastas.Size = new System.Drawing.Size(800, 493);
             this.treePastas.TabIndex = 1;
+            // 
+            // textDiretorio
+            // 
+            this.textDiretorio.Enabled = false;
+            this.textDiretorio.Location = new System.Drawing.Point(247, 67);
+            this.textDiretorio.Name = "textDiretorio";
+            this.textDiretorio.Size = new System.Drawing.Size(488, 33);
+            this.textDiretorio.TabIndex = 3;
             // 
             // formNotaFiscal
             // 
@@ -121,5 +136,7 @@
         private System.Windows.Forms.PictureBox pictureFechar;
         private System.Windows.Forms.Button buttonSelecionarDiretorio;
         private System.Windows.Forms.TreeView treePastas;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.TextBox textDiretorio;
     }
 }

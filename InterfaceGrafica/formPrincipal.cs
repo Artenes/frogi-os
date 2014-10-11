@@ -22,10 +22,10 @@ namespace FROGI_OS
         }
 
         private void formPrincipal_Load(object sender, EventArgs e) {
-            formLogin login = new formLogin();
-            login.ShowDialog(this);
             labelData.Text = DateTime.Now.ToShortDateString();
             this.ActiveControl = pictureClientes;
+            formLogin login = new formLogin();
+            login.ShowDialog(this);
         }
 
         private void pictureClientes_Click(object sender, EventArgs e) {
@@ -140,6 +140,13 @@ namespace FROGI_OS
 
         private void hora_Tick(object sender, EventArgs e) {
             labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void pictureOpcoes_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            formDialogo dialogo = new formDialogo("Seção não disponível no momento","", formDialogo.TipoExpressao.AvisoTriste);
+            dialogo.ShowDialog();
+            dialogo.Dispose();
         }
 
         

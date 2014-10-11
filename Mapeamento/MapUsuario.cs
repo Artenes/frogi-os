@@ -29,8 +29,8 @@ namespace FROGI_OS.Mapeamento
 
             colunas = new string[] { 
                 codigo,
-                nome,
-                categoria
+                nome
+                //categoria
             };
         
         }

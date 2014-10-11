@@ -59,7 +59,7 @@ namespace FROGI_OS.InterfaceGrafica
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
             } catch (Exception erro) {
-                exibirMensagemErro(erro.Message);
+                //exibirMensagemErro(erro.Message);
             } finally {
                 Conexao.fechar();
             }

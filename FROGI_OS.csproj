@@ -522,7 +522,7 @@
     <None Include="dsFROGIOS.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>dsFROGIOS1.Designer.cs</LastGenOutput>
+      <LastGenOutput>dsFROGIOS.Designer.cs</LastGenOutput>
     </None>
     <None Include="dsFROGIOS.xss">
       <DependentUpon>dsFROGIOS.xsd</DependentUpon>

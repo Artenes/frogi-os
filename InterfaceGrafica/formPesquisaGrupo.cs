@@ -42,17 +42,21 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         private void selecionarGrupo() {
-            int indice = gRUPODataGridView.CurrentRow.Index;
-            int codigo = (int)gRUPODataGridView[0, indice].Value;
+            try {
+                int indice = gRUPODataGridView.CurrentRow.Index;
+                int codigo = (int)gRUPODataGridView[0, indice].Value;
 
-            if (cadastro.GetType() == typeof(formCadastroGrupo)) {
-                ((formCadastroGrupo)cadastro).visualizarRegistro(codigo);        
-            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
-                ((formCadastroProduto)cadastro).adicionarGrupo(codigo);    
+                if (cadastro.GetType() == typeof(formCadastroGrupo)) {
+                    ((formCadastroGrupo)cadastro).visualizarRegistro(codigo);
+                } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                    ((formCadastroProduto)cadastro).adicionarGrupo(codigo);
+                }
+
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboCampoPesquisa;
             }
-
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
         }
 
         private void gRUPODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {

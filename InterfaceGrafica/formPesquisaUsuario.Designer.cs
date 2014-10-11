@@ -36,7 +36,6 @@
             this.uSUARIODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCabecalho.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -70,6 +69,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -109,8 +109,7 @@
             this.uSUARIODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uSUARIODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn2});
             this.uSUARIODataGridView.DataSource = this.bsUsuario;
             this.uSUARIODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uSUARIODataGridView.Location = new System.Drawing.Point(0, 0);
@@ -119,6 +118,8 @@
             this.uSUARIODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.uSUARIODataGridView.Size = new System.Drawing.Size(966, 358);
             this.uSUARIODataGridView.TabIndex = 3;
+            this.uSUARIODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uSUARIODataGridView_CellDoubleClick);
+            this.uSUARIODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uSUARIODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -133,13 +134,6 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "USUARIO_CATEGORIA";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Categoria";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // formPesquisaUsuario
             // 
@@ -168,6 +162,5 @@
         private System.Windows.Forms.DataGridView uSUARIODataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }

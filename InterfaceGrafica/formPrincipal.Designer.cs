@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPrincipal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablePai = new System.Windows.Forms.TableLayoutPanel();
             this.flowCentro = new System.Windows.Forms.FlowLayoutPanel();
             this.tableBanners01 = new System.Windows.Forms.TableLayoutPanel();
@@ -147,6 +147,7 @@
             // 
             // pictureOrcamentos
             // 
+            this.pictureOrcamentos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureOrcamentos.Image = global::FROGI_OS.Properties.Resources.banner_orcamentos;
             resources.ApplyResources(this.pictureOrcamentos, "pictureOrcamentos");
             this.pictureOrcamentos.Name = "pictureOrcamentos";
@@ -155,6 +156,7 @@
             // 
             // pictureOrdemServico
             // 
+            this.pictureOrdemServico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureOrdemServico.Image = global::FROGI_OS.Properties.Resources.banner_ordenservico;
             resources.ApplyResources(this.pictureOrdemServico, "pictureOrdemServico");
             this.pictureOrdemServico.Name = "pictureOrdemServico";
@@ -183,6 +185,7 @@
             // 
             // pictureClientes
             // 
+            this.pictureClientes.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureClientes, "pictureClientes");
             this.pictureClientes.Image = global::FROGI_OS.Properties.Resources.banner_clientes;
             this.pictureClientes.Name = "pictureClientes";
@@ -191,6 +194,7 @@
             // 
             // pictureRelatorios
             // 
+            this.pictureRelatorios.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureRelatorios, "pictureRelatorios");
             this.pictureRelatorios.Image = global::FROGI_OS.Properties.Resources.banner_relatorios;
             this.pictureRelatorios.Name = "pictureRelatorios";
@@ -198,6 +202,7 @@
             // 
             // pictureServicos
             // 
+            this.pictureServicos.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureServicos, "pictureServicos");
             this.pictureServicos.Image = global::FROGI_OS.Properties.Resources.banner_servicos;
             this.pictureServicos.Name = "pictureServicos";
@@ -206,6 +211,7 @@
             // 
             // pictureProdutos
             // 
+            this.pictureProdutos.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureProdutos, "pictureProdutos");
             this.pictureProdutos.Image = global::FROGI_OS.Properties.Resources.banner_produtos_grande;
             this.pictureProdutos.Name = "pictureProdutos";
@@ -214,6 +220,7 @@
             // 
             // pictureAgendamentos
             // 
+            this.pictureAgendamentos.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureAgendamentos, "pictureAgendamentos");
             this.pictureAgendamentos.Image = global::FROGI_OS.Properties.Resources.banner_agendamentos;
             this.pictureAgendamentos.Name = "pictureAgendamentos";
@@ -222,6 +229,7 @@
             // 
             // pictureFuncionarios
             // 
+            this.pictureFuncionarios.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureFuncionarios, "pictureFuncionarios");
             this.pictureFuncionarios.Image = global::FROGI_OS.Properties.Resources.banner_funcionarios_grande;
             this.pictureFuncionarios.Name = "pictureFuncionarios";
@@ -241,6 +249,7 @@
             // 
             // pictureAjuda
             // 
+            this.pictureAjuda.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureAjuda, "pictureAjuda");
             this.pictureAjuda.Image = global::FROGI_OS.Properties.Resources.banner_ajuda;
             this.pictureAjuda.Name = "pictureAjuda";
@@ -256,6 +265,7 @@
             // 
             // pictureUsuarios
             // 
+            this.pictureUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureUsuarios, "pictureUsuarios");
             this.pictureUsuarios.Image = global::FROGI_OS.Properties.Resources.banner_usuarios_pequeno;
             this.pictureUsuarios.Name = "pictureUsuarios";
@@ -264,6 +274,7 @@
             // 
             // pictureFornecedores
             // 
+            this.pictureFornecedores.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureFornecedores, "pictureFornecedores");
             this.pictureFornecedores.Image = global::FROGI_OS.Properties.Resources.banner_fornecedores_pequeno;
             this.pictureFornecedores.Name = "pictureFornecedores";
@@ -279,6 +290,7 @@
             // 
             // pictureSecoes
             // 
+            this.pictureSecoes.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureSecoes, "pictureSecoes");
             this.pictureSecoes.Image = global::FROGI_OS.Properties.Resources.banner_secoes;
             this.pictureSecoes.Name = "pictureSecoes";
@@ -287,6 +299,7 @@
             // 
             // pictureGrupos
             // 
+            this.pictureGrupos.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureGrupos, "pictureGrupos");
             this.pictureGrupos.Image = global::FROGI_OS.Properties.Resources.banner_grupos;
             this.pictureGrupos.Name = "pictureGrupos";
@@ -302,6 +315,7 @@
             // 
             // pictureMarcas
             // 
+            this.pictureMarcas.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureMarcas, "pictureMarcas");
             this.pictureMarcas.Image = global::FROGI_OS.Properties.Resources.banner_marcas;
             this.pictureMarcas.Name = "pictureMarcas";
@@ -310,6 +324,7 @@
             // 
             // pictureTipos
             // 
+            this.pictureTipos.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureTipos, "pictureTipos");
             this.pictureTipos.Image = global::FROGI_OS.Properties.Resources.banner_tipos_pequeno;
             this.pictureTipos.Name = "pictureTipos";
@@ -318,6 +333,7 @@
             // 
             // pictureNotas
             // 
+            this.pictureNotas.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureNotas, "pictureNotas");
             this.pictureNotas.Image = global::FROGI_OS.Properties.Resources.banner_notas_grande;
             this.pictureNotas.Name = "pictureNotas";
@@ -333,6 +349,7 @@
             // 
             // pictureCompras
             // 
+            this.pictureCompras.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureCompras, "pictureCompras");
             this.pictureCompras.Image = global::FROGI_OS.Properties.Resources.banner_compra_pequeno;
             this.pictureCompras.Name = "pictureCompras";
@@ -341,10 +358,12 @@
             // 
             // pictureOpcoes
             // 
+            this.pictureOpcoes.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pictureOpcoes, "pictureOpcoes");
             this.pictureOpcoes.Image = global::FROGI_OS.Properties.Resources.banner_opcoes_pequeno;
             this.pictureOpcoes.Name = "pictureOpcoes";
             this.pictureOpcoes.TabStop = false;
+            this.pictureOpcoes.Click += new System.EventHandler(this.pictureOpcoes_Click);
             // 
             // tableBanners02
             // 
@@ -373,27 +392,27 @@
             this.dgvAgendamentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAgendamentos.BackgroundColor = System.Drawing.Color.White;
             this.dgvAgendamentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Light", 20F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAgendamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAgendamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAgendamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAgendamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colunaCliente,
             this.colunaEntrega,
             this.colunaTelefone});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAgendamentos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 14F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAgendamentos.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.dgvAgendamentos, "dgvAgendamentos");
             this.dgvAgendamentos.Name = "dgvAgendamentos";
             this.dgvAgendamentos.ReadOnly = true;
@@ -573,7 +592,6 @@
         private System.Windows.Forms.PictureBox pictureProdutos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureAjuda;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureUsuarios;
@@ -591,6 +609,7 @@
         private System.Windows.Forms.PictureBox pictureCompras;
         private System.Windows.Forms.PictureBox pictureOpcoes;
         private System.Windows.Forms.Timer hora;
+        private System.Windows.Forms.Panel panel1;
 
 
     }

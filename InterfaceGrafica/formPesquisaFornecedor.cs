@@ -81,7 +81,7 @@ namespace FROGI_OS.InterfaceGrafica {
                     selecionarJuridico();
                 }
             } catch (Exception erro) {
-                dialogo.compor("Temos um problema", erro.Message, formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
+                //dialogo.compor("Temos um problema", erro.Message, formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
             } finally {
                 Conexao.fechar();
             }

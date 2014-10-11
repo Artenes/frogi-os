@@ -40,11 +40,15 @@ namespace FROGI_OS.InterfaceGrafica {
         }
 
         private void selecionarFuncionario() {
-            int indice = fUNCIONARIODataGridView.CurrentRow.Index;
-            int codigo = (int)fUNCIONARIODataGridView[0, indice].Value;
-            ((formCadastroFuncionario)cadastro).visualizarRegistro(codigo);
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+            try {
+                int indice = fUNCIONARIODataGridView.CurrentRow.Index;
+                int codigo = (int)fUNCIONARIODataGridView[0, indice].Value;
+                ((formCadastroFuncionario)cadastro).visualizarRegistro(codigo);
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboCampoPesquisa;
+            }
         }
 
         private void fUNCIONARIODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {

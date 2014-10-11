@@ -75,23 +75,27 @@ namespace FROGI_OS.InterfaceGrafica {
         }
 
         private void selecionarCliente () {
-            int indice, codigo;
-            if (eFisico()) {
-                indice = pESQUISA_CLIENTE_FISICODataGridView.CurrentRow.Index;
-                codigo = (int)pESQUISA_CLIENTE_FISICODataGridView[0, indice].Value;
-            } else {
-                indice = pESQUISA_CLIENTE_JURIDICODataGridView.CurrentRow.Index;
-                codigo = (int)pESQUISA_CLIENTE_JURIDICODataGridView[0, indice].Value;
-            }
+            try {
+                int indice, codigo;
+                if (eFisico()) {
+                    indice = pESQUISA_CLIENTE_FISICODataGridView.CurrentRow.Index;
+                    codigo = (int)pESQUISA_CLIENTE_FISICODataGridView[0, indice].Value;
+                } else {
+                    indice = pESQUISA_CLIENTE_JURIDICODataGridView.CurrentRow.Index;
+                    codigo = (int)pESQUISA_CLIENTE_JURIDICODataGridView[0, indice].Value;
+                }
 
-            if (cadastro.GetType() == typeof(formCadastroCliente)) {
-                ((formCadastroCliente)cadastro).visualizarRegistro(codigo, eFisico());
-            } else if (cadastro.GetType() == typeof(formCadastroAgendamento)) {
-                ((formCadastroAgendamento)cadastro).adicionarCliente(codigo, eFisico());
+                if (cadastro.GetType() == typeof(formCadastroCliente)) {
+                    ((formCadastroCliente)cadastro).visualizarRegistro(codigo, eFisico());
+                } else if (cadastro.GetType() == typeof(formCadastroAgendamento)) {
+                    ((formCadastroAgendamento)cadastro).adicionarCliente(codigo, eFisico());
+                }
+
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboTipo;
             }
-            
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
 
         }
 

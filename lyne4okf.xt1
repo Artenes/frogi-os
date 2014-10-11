@@ -2965,7 +2965,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CLIENTE_FISICORow AddCLIENTE_FISICORow(CLIENTERow parentCLIENTERowByCLIENTE_FISICO_CLIENTE_FK, string CLIENTE_FISICO_CPF, string CLIENTE_FISICO_RG, System.DateTime CLIENTE_FISICO_NASCIMENTO, string CLIENTE_FISICO_SEXO, string CLIENTE_FISICO_ESTADO_CIVIL, string CLIENTE_FISICO_PROFISSAO, double CLIENTE_FISICO_SALARIO, double CLIENTE_FISICO_LIMITE, double CLIENTE_FISICO_LIMITE_ATUAL, string CLIENTE_FISICO_MAE, string CLIENTE_FISICO_PAI, string CLIENTE_FISICO_OBSERVACAO, string CLIENTE_FISICO_NOME) {
+            public CLIENTE_FISICORow AddCLIENTE_FISICORow(CLIENTERow parentCLIENTERowByCLIENTE_FISICO_CLIENTE_FK, string CLIENTE_FISICO_CPF, string CLIENTE_FISICO_RG, System.DateTime CLIENTE_FISICO_NASCIMENTO, string CLIENTE_FISICO_SEXO, string CLIENTE_FISICO_ESTADO_CIVIL, string CLIENTE_FISICO_PROFISSAO, decimal CLIENTE_FISICO_SALARIO, decimal CLIENTE_FISICO_LIMITE, decimal CLIENTE_FISICO_LIMITE_ATUAL, string CLIENTE_FISICO_MAE, string CLIENTE_FISICO_PAI, string CLIENTE_FISICO_OBSERVACAO, string CLIENTE_FISICO_NOME) {
                 CLIENTE_FISICORow rowCLIENTE_FISICORow = ((CLIENTE_FISICORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5800,7 +5800,7 @@ namespace FROGI_OS {
                         string FUNCIONARIO_CEP, 
                         string FUNCIONARIO_FUNCAO, 
                         string FUNCIONARIO_SETOR, 
-                        double FUNCIONARIO_SALARIO, 
+                        decimal FUNCIONARIO_SALARIO, 
                         System.DateTime FUNCIONARIO_ADMISSAO, 
                         string FUNCIONARIO_SENHA, 
                         System.DateTime FUNCIONARIO_DATA_CADASTRO) {
@@ -6167,7 +6167,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public GRUPORow AddGRUPORow(int GRUPO_CODIGO, string GRUPO_DESCRICAO, double GRUPO_DESCONTO) {
+            public GRUPORow AddGRUPORow(int GRUPO_CODIGO, string GRUPO_DESCRICAO, decimal GRUPO_DESCONTO) {
                 GRUPORow rowGRUPORow = ((GRUPORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GRUPO_CODIGO,
@@ -7587,7 +7587,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ORCAMENTO_ITEMRow AddORCAMENTO_ITEMRow(int ORCAMENTO_ITEM_CODIGO, ORCAMENTORow parentORCAMENTORowByORCAMENTO_ITEM_ORCAMENTO_FK, PRODUTORow parentPRODUTORowByORCAMENTO_ITEM_PRODUTO_FK, double ORCAMENTO_ITEM_VALOR, string ORCAMENTO_ITEM_DESCRICAO, double ORCAMENTO_ITEM_DESCONTO, short ORCAMENTO_ITEM_QUANTIDADE, double ORCAMENTO_ITEM_TOTAL) {
+            public ORCAMENTO_ITEMRow AddORCAMENTO_ITEMRow(int ORCAMENTO_ITEM_CODIGO, ORCAMENTORow parentORCAMENTORowByORCAMENTO_ITEM_ORCAMENTO_FK, PRODUTORow parentPRODUTORowByORCAMENTO_ITEM_PRODUTO_FK, decimal ORCAMENTO_ITEM_VALOR, string ORCAMENTO_ITEM_DESCRICAO, decimal ORCAMENTO_ITEM_DESCONTO, short ORCAMENTO_ITEM_QUANTIDADE, decimal ORCAMENTO_ITEM_TOTAL) {
                 ORCAMENTO_ITEMRow rowORCAMENTO_ITEMRow = ((ORCAMENTO_ITEMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ORCAMENTO_ITEM_CODIGO,
@@ -7955,7 +7955,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ORCAMENTO_SERVICORow AddORCAMENTO_SERVICORow(int ORCAMENTO_SERVICO_CODIGO, ORCAMENTORow parentORCAMENTORowByORCAMENTO_SERVICO_ORCAMENTO_FK, SERVICORow parentSERVICORowByORCAMENTO_SERVICO_SERVICO_FK, double ORCAMENTO_SERVICO_VALOR, string ORCAMENTO_SERVICO_DESCRICAO, double ORCAMENTO_SERVICO_DESCONTO, double ORCAMENTO_SERVICO_ACRESCIMO, double ORCAMENTO_SERVICO_TOTAL) {
+            public ORCAMENTO_SERVICORow AddORCAMENTO_SERVICORow(int ORCAMENTO_SERVICO_CODIGO, ORCAMENTORow parentORCAMENTORowByORCAMENTO_SERVICO_ORCAMENTO_FK, SERVICORow parentSERVICORowByORCAMENTO_SERVICO_SERVICO_FK, decimal ORCAMENTO_SERVICO_VALOR, string ORCAMENTO_SERVICO_DESCRICAO, decimal ORCAMENTO_SERVICO_DESCONTO, decimal ORCAMENTO_SERVICO_ACRESCIMO, decimal ORCAMENTO_SERVICO_TOTAL) {
                 ORCAMENTO_SERVICORow rowORCAMENTO_SERVICORow = ((ORCAMENTO_SERVICORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ORCAMENTO_SERVICO_CODIGO,
@@ -8020,15 +8020,15 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_ORCAMENTO);
                 this.columnORCAMENTO_SERVICO_SERVICO = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_SERVICO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_SERVICO);
-                this.columnORCAMENTO_SERVICO_VALOR = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_VALOR", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_SERVICO_VALOR = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_VALOR", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_VALOR);
                 this.columnORCAMENTO_SERVICO_DESCRICAO = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_DESCRICAO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_DESCRICAO);
-                this.columnORCAMENTO_SERVICO_DESCONTO = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_DESCONTO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_SERVICO_DESCONTO = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_DESCONTO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_DESCONTO);
-                this.columnORCAMENTO_SERVICO_ACRESCIMO = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_ACRESCIMO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_SERVICO_ACRESCIMO = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_ACRESCIMO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_ACRESCIMO);
-                this.columnORCAMENTO_SERVICO_TOTAL = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_TOTAL", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_SERVICO_TOTAL = new global::System.Data.DataColumn("ORCAMENTO_SERVICO_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_SERVICO_TOTAL);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnORCAMENTO_SERVICO_CODIGO}, true));
@@ -8404,12 +8404,12 @@ namespace FROGI_OS {
                         int OS_CODIGO, 
                         CLIENTERow parentCLIENTERowByOS_CLIENTE_FK, 
                         FUNCIONARIORow parentFUNCIONARIORowByOS_FUNCIONARIO_FK, 
-                        double OS_TOTAL_ITEM, 
-                        double OS_TOTAL_SERVICO, 
-                        double OS_DESCONTO, 
-                        double OS_ACRESCIMO, 
+                        decimal OS_TOTAL_ITEM, 
+                        decimal OS_TOTAL_SERVICO, 
+                        decimal OS_DESCONTO, 
+                        decimal OS_ACRESCIMO, 
                         string OS_FORMA_PAGAMENTO, 
-                        double OS_TOTAL, 
+                        decimal OS_TOTAL, 
                         System.DateTime OS_DATA, 
                         string OS_PRODUTO, 
                         byte[] OS_DEFEITO, 
@@ -8497,17 +8497,17 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnOS_CLIENTE);
                 this.columnOS_FUNCIONARIO = new global::System.Data.DataColumn("OS_FUNCIONARIO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_FUNCIONARIO);
-                this.columnOS_TOTAL_ITEM = new global::System.Data.DataColumn("OS_TOTAL_ITEM", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_TOTAL_ITEM = new global::System.Data.DataColumn("OS_TOTAL_ITEM", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_TOTAL_ITEM);
-                this.columnOS_TOTAL_SERVICO = new global::System.Data.DataColumn("OS_TOTAL_SERVICO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_TOTAL_SERVICO = new global::System.Data.DataColumn("OS_TOTAL_SERVICO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_TOTAL_SERVICO);
-                this.columnOS_DESCONTO = new global::System.Data.DataColumn("OS_DESCONTO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_DESCONTO = new global::System.Data.DataColumn("OS_DESCONTO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_DESCONTO);
-                this.columnOS_ACRESCIMO = new global::System.Data.DataColumn("OS_ACRESCIMO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_ACRESCIMO = new global::System.Data.DataColumn("OS_ACRESCIMO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_ACRESCIMO);
                 this.columnOS_FORMA_PAGAMENTO = new global::System.Data.DataColumn("OS_FORMA_PAGAMENTO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_FORMA_PAGAMENTO);
-                this.columnOS_TOTAL = new global::System.Data.DataColumn("OS_TOTAL", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_TOTAL = new global::System.Data.DataColumn("OS_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_TOTAL);
                 this.columnOS_DATA = new global::System.Data.DataColumn("OS_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_DATA);
@@ -8819,7 +8819,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public OS_ITEMRow AddOS_ITEMRow(int OS_ITEM_CODIGO, OSRow parentOSRowByOS_ITEM_OS_FK, PRODUTORow parentPRODUTORowByOS_ITEM_PRODUTO_FK, string OS_ITEM_DESCRICAO, double OS_ITEM_VALOR, double OS_ITEM_DESCONTO, short OS_ITEM_QUANTIDADE, double OS_ITEM_TOTAL) {
+            public OS_ITEMRow AddOS_ITEMRow(int OS_ITEM_CODIGO, OSRow parentOSRowByOS_ITEM_OS_FK, PRODUTORow parentPRODUTORowByOS_ITEM_PRODUTO_FK, string OS_ITEM_DESCRICAO, decimal OS_ITEM_VALOR, decimal OS_ITEM_DESCONTO, short OS_ITEM_QUANTIDADE, decimal OS_ITEM_TOTAL) {
                 OS_ITEMRow rowOS_ITEMRow = ((OS_ITEMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OS_ITEM_CODIGO,
@@ -9187,7 +9187,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public OS_SERVICORow AddOS_SERVICORow(int OS_SERVICO_CODIGO, OSRow parentOSRowByOS_SERVICO_OS_FK, SERVICORow parentSERVICORowByOS_SERVICO_SERVICO_FK, double OS_SERVICO_VALOR, string OS_SERVICO_DESCRICAO, double OS_SERVICO_DESCONTO, double OS_SERVICO_ACRESCIMO, double OS_SERVICO_TOTAL) {
+            public OS_SERVICORow AddOS_SERVICORow(int OS_SERVICO_CODIGO, OSRow parentOSRowByOS_SERVICO_OS_FK, SERVICORow parentSERVICORowByOS_SERVICO_SERVICO_FK, decimal OS_SERVICO_VALOR, string OS_SERVICO_DESCRICAO, decimal OS_SERVICO_DESCONTO, decimal OS_SERVICO_ACRESCIMO, decimal OS_SERVICO_TOTAL) {
                 OS_SERVICORow rowOS_SERVICORow = ((OS_SERVICORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OS_SERVICO_CODIGO,
@@ -9252,15 +9252,15 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnOS_SERVICO_OS);
                 this.columnOS_SERVICO_SERVICO = new global::System.Data.DataColumn("OS_SERVICO_SERVICO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_SERVICO_SERVICO);
-                this.columnOS_SERVICO_VALOR = new global::System.Data.DataColumn("OS_SERVICO_VALOR", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_SERVICO_VALOR = new global::System.Data.DataColumn("OS_SERVICO_VALOR", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_SERVICO_VALOR);
                 this.columnOS_SERVICO_DESCRICAO = new global::System.Data.DataColumn("OS_SERVICO_DESCRICAO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_SERVICO_DESCRICAO);
-                this.columnOS_SERVICO_DESCONTO = new global::System.Data.DataColumn("OS_SERVICO_DESCONTO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_SERVICO_DESCONTO = new global::System.Data.DataColumn("OS_SERVICO_DESCONTO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_SERVICO_DESCONTO);
-                this.columnOS_SERVICO_ACRESCIMO = new global::System.Data.DataColumn("OS_SERVICO_ACRESCIMO", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_SERVICO_ACRESCIMO = new global::System.Data.DataColumn("OS_SERVICO_ACRESCIMO", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_SERVICO_ACRESCIMO);
-                this.columnOS_SERVICO_TOTAL = new global::System.Data.DataColumn("OS_SERVICO_TOTAL", typeof(double), null, global::System.Data.MappingType.Element);
+                this.columnOS_SERVICO_TOTAL = new global::System.Data.DataColumn("OS_SERVICO_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_SERVICO_TOTAL);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOS_SERVICO_CODIGO}, true));
@@ -10021,7 +10021,7 @@ namespace FROGI_OS {
                         string PRODUTO_CARACTERISTICA, 
                         string PRODUTO_UNIDADE_COMPRA, 
                         string PRODUTO_UNIDADE_VENDA, 
-                        double PRODUTO_PESO, 
+                        decimal PRODUTO_PESO, 
                         string PRODUTO_NUMERO, 
                         string PRODUTO_EAN, 
                         string PRODUTO_NUMERO_SERIE, 
@@ -10037,9 +10037,9 @@ namespace FROGI_OS {
                         short PRODUTO_ESTOQUE_MINIMO, 
                         short PRODUTO_ESTOQUE_MAXIMO, 
                         short PRODUTO_ESTOQUE_ATUAL, 
-                        double PRODUTO_PRECO_COMPRA, 
-                        double PRODUTO_PRECO_CUSTO, 
-                        double PRODUTO_PRECO_VENDA, 
+                        decimal PRODUTO_PRECO_COMPRA, 
+                        decimal PRODUTO_PRECO_CUSTO, 
+                        decimal PRODUTO_PRECO_VENDA, 
                         System.DateTime PRODUTO_DATA_CADASTRO) {
                 PRODUTORow rowPRODUTORow = ((PRODUTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
@@ -10714,7 +10714,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SERVICORow AddSERVICORow(int SERVICO_CODIGO, string SERVICO_DESCRICAO, double SERVICO_VALOR) {
+            public SERVICORow AddSERVICORow(int SERVICO_CODIGO, string SERVICO_DESCRICAO, decimal SERVICO_VALOR) {
                 SERVICORow rowSERVICORow = ((SERVICORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SERVICO_CODIGO,
@@ -17364,10 +17364,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double CLIENTE_FISICO_LIMITE {
+            public decimal CLIENTE_FISICO_LIMITE {
                 get {
                     try {
-                        return ((double)(this[this.tableCLIENTE_FISICO.CLIENTE_FISICO_LIMITEColumn]));
+                        return ((decimal)(this[this.tableCLIENTE_FISICO.CLIENTE_FISICO_LIMITEColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CLIENTE_FISICO_LIMITE\' in table \'CLIENTE_FISICO\' is DBNull." +
@@ -17381,10 +17381,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double CLIENTE_FISICO_LIMITE_ATUAL {
+            public decimal CLIENTE_FISICO_LIMITE_ATUAL {
                 get {
                     try {
-                        return ((double)(this[this.tableCLIENTE_FISICO.CLIENTE_FISICO_LIMITE_ATUALColumn]));
+                        return ((decimal)(this[this.tableCLIENTE_FISICO.CLIENTE_FISICO_LIMITE_ATUALColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'CLIENTE_FISICO_LIMITE_ATUAL\' in table \'CLIENTE_FISICO\' is D" +
@@ -20082,9 +20082,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ORCAMENTO_SERVICO_VALOR {
+            public decimal ORCAMENTO_SERVICO_VALOR {
                 get {
-                    return ((double)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_VALORColumn]));
+                    return ((decimal)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_VALORColumn]));
                 }
                 set {
                     this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_VALORColumn] = value;
@@ -20110,10 +20110,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ORCAMENTO_SERVICO_DESCONTO {
+            public decimal ORCAMENTO_SERVICO_DESCONTO {
                 get {
                     try {
-                        return ((double)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_DESCONTOColumn]));
+                        return ((decimal)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_DESCONTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_SERVICO_DESCONTO\' in table \'ORCAMENTO_SERVICO\' is" +
@@ -20127,10 +20127,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ORCAMENTO_SERVICO_ACRESCIMO {
+            public decimal ORCAMENTO_SERVICO_ACRESCIMO {
                 get {
                     try {
-                        return ((double)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_ACRESCIMOColumn]));
+                        return ((decimal)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_ACRESCIMOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_SERVICO_ACRESCIMO\' in table \'ORCAMENTO_SERVICO\' i" +
@@ -20144,10 +20144,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double ORCAMENTO_SERVICO_TOTAL {
+            public decimal ORCAMENTO_SERVICO_TOTAL {
                 get {
                     try {
-                        return ((double)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_TOTALColumn]));
+                        return ((decimal)(this[this.tableORCAMENTO_SERVICO.ORCAMENTO_SERVICO_TOTALColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_SERVICO_TOTAL\' in table \'ORCAMENTO_SERVICO\' is DB" +
@@ -20291,9 +20291,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_TOTAL_ITEM {
+            public decimal OS_TOTAL_ITEM {
                 get {
-                    return ((double)(this[this.tableOS.OS_TOTAL_ITEMColumn]));
+                    return ((decimal)(this[this.tableOS.OS_TOTAL_ITEMColumn]));
                 }
                 set {
                     this[this.tableOS.OS_TOTAL_ITEMColumn] = value;
@@ -20302,9 +20302,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_TOTAL_SERVICO {
+            public decimal OS_TOTAL_SERVICO {
                 get {
-                    return ((double)(this[this.tableOS.OS_TOTAL_SERVICOColumn]));
+                    return ((decimal)(this[this.tableOS.OS_TOTAL_SERVICOColumn]));
                 }
                 set {
                     this[this.tableOS.OS_TOTAL_SERVICOColumn] = value;
@@ -20313,10 +20313,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_DESCONTO {
+            public decimal OS_DESCONTO {
                 get {
                     try {
-                        return ((double)(this[this.tableOS.OS_DESCONTOColumn]));
+                        return ((decimal)(this[this.tableOS.OS_DESCONTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_DESCONTO\' in table \'OS\' is DBNull.", e);
@@ -20329,10 +20329,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_ACRESCIMO {
+            public decimal OS_ACRESCIMO {
                 get {
                     try {
-                        return ((double)(this[this.tableOS.OS_ACRESCIMOColumn]));
+                        return ((decimal)(this[this.tableOS.OS_ACRESCIMOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_ACRESCIMO\' in table \'OS\' is DBNull.", e);
@@ -20361,9 +20361,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_TOTAL {
+            public decimal OS_TOTAL {
                 get {
-                    return ((double)(this[this.tableOS.OS_TOTALColumn]));
+                    return ((decimal)(this[this.tableOS.OS_TOTALColumn]));
                 }
                 set {
                     this[this.tableOS.OS_TOTALColumn] = value;
@@ -20865,9 +20865,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_SERVICO_VALOR {
+            public decimal OS_SERVICO_VALOR {
                 get {
-                    return ((double)(this[this.tableOS_SERVICO.OS_SERVICO_VALORColumn]));
+                    return ((decimal)(this[this.tableOS_SERVICO.OS_SERVICO_VALORColumn]));
                 }
                 set {
                     this[this.tableOS_SERVICO.OS_SERVICO_VALORColumn] = value;
@@ -20908,10 +20908,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_SERVICO_ACRESCIMO {
+            public decimal OS_SERVICO_ACRESCIMO {
                 get {
                     try {
-                        return ((double)(this[this.tableOS_SERVICO.OS_SERVICO_ACRESCIMOColumn]));
+                        return ((decimal)(this[this.tableOS_SERVICO.OS_SERVICO_ACRESCIMOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_SERVICO_ACRESCIMO\' in table \'OS_SERVICO\' is DBNull.", e);
@@ -20924,9 +20924,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double OS_SERVICO_TOTAL {
+            public decimal OS_SERVICO_TOTAL {
                 get {
-                    return ((double)(this[this.tableOS_SERVICO.OS_SERVICO_TOTALColumn]));
+                    return ((decimal)(this[this.tableOS_SERVICO.OS_SERVICO_TOTALColumn]));
                 }
                 set {
                     this[this.tableOS_SERVICO.OS_SERVICO_TOTALColumn] = value;

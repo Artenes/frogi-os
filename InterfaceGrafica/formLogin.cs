@@ -14,9 +14,11 @@ namespace FROGI_OS.InterfaceGrafica
 
         private string login = "Admin";
         private string password = "masterkey";
+        private bool loginValidado;
 
         public formLogin() {
             InitializeComponent();
+            loginValidado = false;
         }
 
         private void formLogin_Load(object sender, EventArgs e) {
@@ -30,22 +32,17 @@ namespace FROGI_OS.InterfaceGrafica
             string nome = textNome.Text;
             string senha = textSenha.Text;
 
-            if (nome == login)
-            {
-                if (senha == password)
-                {
+            if (nome == login) {
+                if (senha == password) {
+                    loginValidado = true;
                     this.Dispose();
-                }
-                else
-                {
+                } else {
                     textSenha.Text = "";
                     this.ActiveControl = textSenha;
                     labelStatus.Text = "Senha inválida";
                     labelStatus.Visible = true;
                 }
-            }
-            else
-            {
+            } else {
                 textNome.Text = "";
                 this.ActiveControl = textNome;
                 labelStatus.Text = "Nome inválido";
@@ -58,7 +55,9 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         private void formLogin_FormClosing(object sender, FormClosingEventArgs e) {
-            
+            if (!loginValidado && this.Owner != null) {
+                this.Owner.Dispose();
+            }
         }
 
         private void pictureFechar_Click(object sender, EventArgs e) {
@@ -70,9 +69,7 @@ namespace FROGI_OS.InterfaceGrafica
             if (keyData == Keys.Enter) {
                 validarLogin();
                 return true;
-            }
-            else
-            {
+            }  else {
                 return false;
             }
         }

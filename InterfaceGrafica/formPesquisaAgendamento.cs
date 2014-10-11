@@ -78,19 +78,27 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         private void selecionarFisico() {
-            int indice = pESQUISA_AGENDAMENTO_FISICODataGridView.CurrentRow.Index;
-            int codigo = (int)pESQUISA_AGENDAMENTO_FISICODataGridView[0, indice].Value;
-            ((formCadastroAgendamento)cadastro).visualizarRegistro(codigo);
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+            try {
+                int indice = pESQUISA_AGENDAMENTO_FISICODataGridView.CurrentRow.Index;
+                int codigo = (int)pESQUISA_AGENDAMENTO_FISICODataGridView[0, indice].Value;
+                ((formCadastroAgendamento)cadastro).visualizarRegistro(codigo);
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboTipo;
+            }
         }
 
         private void selecionarJuridico() {
-            int indice = pESQUISA_AGENDAMENTO_JURIDICODataGridView.CurrentRow.Index;
-            int codigo = (int)pESQUISA_AGENDAMENTO_JURIDICODataGridView[0, indice].Value;
-            ((formCadastroAgendamento)cadastro).visualizarRegistro(codigo);
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+            try {
+                int indice = pESQUISA_AGENDAMENTO_JURIDICODataGridView.CurrentRow.Index;
+                int codigo = (int)pESQUISA_AGENDAMENTO_JURIDICODataGridView[0, indice].Value;
+                ((formCadastroAgendamento)cadastro).visualizarRegistro(codigo);
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboTipo;
+            }
         }
 
         private void pESQUISA_AGENDAMENTO_FISICODataGridView_KeyDown(object sender, KeyEventArgs e) {

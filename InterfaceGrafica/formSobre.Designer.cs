@@ -66,10 +66,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(185, 343);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(439, 90);
+            this.label1.Size = new System.Drawing.Size(439, 180);
             this.label1.TabIndex = 2;
             this.label1.Text = "Frogi - Sistema Integrado de Gestão Empresarial\r\nMódulo de Ordem de Serviço (OS)\r" +
-    "\nVersão Beta";
+    "\nVersão Beta\r\nFones:\r\n(93) 98119-8067\r\n(93) 99105-9802";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureFechar

@@ -45,11 +45,15 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         private void selecionarProduto() {
-            int indice = pRODUTODataGridView.CurrentRow.Index;
-            int codigo = (int)pRODUTODataGridView[0, indice].Value;
-            ((formCadastroProduto)cadastro).visualizarRegistro(codigo);
-            this.DialogResult = DialogResult.Yes;
-            this.Close();
+            try {
+                int indice = pRODUTODataGridView.CurrentRow.Index;
+                int codigo = (int)pRODUTODataGridView[0, indice].Value;
+                ((formCadastroProduto)cadastro).visualizarRegistro(codigo);
+                this.DialogResult = DialogResult.Yes;
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboCampoPesquisa;
+            }
         }
 
         private void pRODUTODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {

@@ -43,15 +43,19 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         private void selecionarSecao() {
-            int indice = sECAODataGridView.CurrentRow.Index;
-            int codigo = (int)sECAODataGridView[0, indice].Value;
-            if (cadastro.GetType() == typeof(formCadastroSecao)) {
-                ((formCadastroSecao)cadastro).visualizarRegistro(codigo);
-            } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
-                ((formCadastroProduto)cadastro).adicionarSecao(codigo);   
+            try {
+                int indice = sECAODataGridView.CurrentRow.Index;
+                int codigo = (int)sECAODataGridView[0, indice].Value;
+                if (cadastro.GetType() == typeof(formCadastroSecao)) {
+                    ((formCadastroSecao)cadastro).visualizarRegistro(codigo);
+                } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
+                    ((formCadastroProduto)cadastro).adicionarSecao(codigo);
+                }
+                this.DialogResult = DialogResult.Yes;
+                Close();
+            } catch (Exception) {
+                this.ActiveControl = comboCampoPesquisa;
             }
-            this.DialogResult = DialogResult.Yes;
-            Close();
         }
 
         private void sECAODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {

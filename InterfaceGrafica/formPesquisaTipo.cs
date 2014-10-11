@@ -40,31 +40,34 @@ namespace FROGI_OS.InterfaceGrafica {
 
         private void selecionarTipo() {
 
-            int indice = tIPODataGridView.CurrentRow.Index; //Aqui pegamos a linha selecionada
-            int codigo = (int)tIPODataGridView[0, indice].Value; //e Aqui pegamos o código da linha selecionada
-             //Firulas :T
-            if (cadastro.GetType() == typeof(formCadastroServico)) { //Se o cadastro for lá dos serviços
-                try {
-                    Conexao.abrir();
-                    ((formCadastroServico)cadastro).adicionarTipo(codigo); //Bora é adicionar o tipo à lista de tipos do serviço
-                } catch (Exception erro) {
-                    exibirMensagemErro(erro.Message);
-                } finally {
-                    Conexao.fechar();
+            try {
+                int indice = tIPODataGridView.CurrentRow.Index; //Aqui pegamos a linha selecionada
+                int codigo = (int)tIPODataGridView[0, indice].Value; //e Aqui pegamos o código da linha selecionada
+                //Firulas :T
+                if (cadastro.GetType() == typeof(formCadastroServico)) { //Se o cadastro for lá dos serviços
+                    try {
+                        Conexao.abrir();
+                        ((formCadastroServico)cadastro).adicionarTipo(codigo); //Bora é adicionar o tipo à lista de tipos do serviço
+                    } catch (Exception erro) {
+                        exibirMensagemErro(erro.Message);
+                    } finally {
+                        Conexao.fechar();
+                    }
+                } else if (cadastro.GetType() == typeof(formCadastroTipo)) {
+                    try {
+                        Conexao.abrir();
+                        ((formCadastroTipo)cadastro).visualizarRegistro(codigo);
+                        this.DialogResult = DialogResult.Yes; //Aqui precisa do dialog result pois tamo usando o método lá do cadastro de tipo
+                    } catch (Exception erro) {
+                        exibirMensagemErro(erro.Message);
+                    } finally {
+                        Conexao.fechar();
+                    }
                 }
+                this.Close();
+            } catch (Exception) {
+                this.ActiveControl = comboCampoPesquisa;
             }
-            else if (cadastro.GetType() == typeof(formCadastroTipo)) {
-                try {
-                    Conexao.abrir();
-                    ((formCadastroTipo)cadastro).visualizarRegistro(codigo);
-                    this.DialogResult = DialogResult.Yes; //Aqui precisa do dialog result pois tamo usando o método lá do cadastro de tipo
-                } catch (Exception erro) {
-                    exibirMensagemErro(erro.Message);
-                } finally {
-                    Conexao.fechar();
-                }
-            }
-            this.Close();
         }
 
         private void tIPODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
