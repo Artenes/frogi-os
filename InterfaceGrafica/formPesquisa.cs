@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FirebirdSql.Data.FirebirdClient;
+using FROGI_OS.InterfaceGrafica;
 
 namespace FROGI_OS
 {
@@ -16,20 +17,29 @@ namespace FROGI_OS
 
         protected formCadastro cadastro;
         protected formDialogo dialogo;
+        protected formOSBaseCadastro cadastroOS;
 
         public formPesquisa() {
             InitializeComponent();
         }
 
-        public formPesquisa(formCadastro cadastro, bool novoHabilitado)
-        {
+        public formPesquisa(formCadastro cadastro, bool novoHabilitado) {
             InitializeComponent();
             this.cadastro = cadastro;
-            if (novoHabilitado)
-            {
+            if (novoHabilitado){
                 pictureNovo.Visible = true;
+            } else {
+                pictureNovo.Visible = false;
             }
-            else {
+            dialogo = new formDialogo();
+        }
+
+        public formPesquisa(formOSBaseCadastro cadastro, bool novoHabilitado) {
+            InitializeComponent();
+            this.cadastroOS = cadastro;
+            if (novoHabilitado) {
+                pictureNovo.Visible = true;
+            } else {
                 pictureNovo.Visible = false;
             }
             dialogo = new formDialogo();

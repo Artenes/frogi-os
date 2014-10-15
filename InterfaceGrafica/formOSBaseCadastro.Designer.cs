@@ -42,6 +42,10 @@
             this.panelServicos = new System.Windows.Forms.Panel();
             this.tabDiagnostico = new System.Windows.Forms.TabPage();
             this.panelDiagnostico = new System.Windows.Forms.Panel();
+            this.panelRodape = new System.Windows.Forms.Panel();
+            this.pictureEditar = new System.Windows.Forms.PictureBox();
+            this.pictureExcluir = new System.Windows.Forms.PictureBox();
+            this.pictureSalvar = new System.Windows.Forms.PictureBox();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.tabPai.SuspendLayout();
@@ -50,6 +54,10 @@
             this.tabPecas.SuspendLayout();
             this.tabServicos.SuspendLayout();
             this.tabDiagnostico.SuspendLayout();
+            this.panelRodape.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExcluir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSalvar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelCabecalho
@@ -78,6 +86,7 @@
             // pictureFechar
             // 
             this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFechar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
             this.pictureFechar.Location = new System.Drawing.Point(730, 12);
             this.pictureFechar.Name = "pictureFechar";
@@ -100,7 +109,7 @@
             this.tabPai.Location = new System.Drawing.Point(0, 100);
             this.tabPai.Name = "tabPai";
             this.tabPai.SelectedIndex = 0;
-            this.tabPai.Size = new System.Drawing.Size(800, 500);
+            this.tabPai.Size = new System.Drawing.Size(800, 421);
             this.tabPai.TabIndex = 1;
             // 
             // tabGeral
@@ -110,7 +119,7 @@
             this.tabGeral.Location = new System.Drawing.Point(4, 37);
             this.tabGeral.Name = "tabGeral";
             this.tabGeral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeral.Size = new System.Drawing.Size(792, 459);
+            this.tabGeral.Size = new System.Drawing.Size(792, 380);
             this.tabGeral.TabIndex = 4;
             this.tabGeral.Text = "Geral";
             // 
@@ -120,7 +129,7 @@
             this.panelGeral.Location = new System.Drawing.Point(3, 3);
             this.panelGeral.Margin = new System.Windows.Forms.Padding(0);
             this.panelGeral.Name = "panelGeral";
-            this.panelGeral.Size = new System.Drawing.Size(786, 453);
+            this.panelGeral.Size = new System.Drawing.Size(786, 374);
             this.panelGeral.TabIndex = 0;
             // 
             // tabInfoItem
@@ -130,7 +139,7 @@
             this.tabInfoItem.Location = new System.Drawing.Point(4, 37);
             this.tabInfoItem.Name = "tabInfoItem";
             this.tabInfoItem.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInfoItem.Size = new System.Drawing.Size(792, 459);
+            this.tabInfoItem.Size = new System.Drawing.Size(792, 380);
             this.tabInfoItem.TabIndex = 0;
             this.tabInfoItem.Text = "Informações do item";
             // 
@@ -140,7 +149,7 @@
             this.panelInfoItem.Location = new System.Drawing.Point(3, 3);
             this.panelInfoItem.Margin = new System.Windows.Forms.Padding(0);
             this.panelInfoItem.Name = "panelInfoItem";
-            this.panelInfoItem.Size = new System.Drawing.Size(786, 453);
+            this.panelInfoItem.Size = new System.Drawing.Size(786, 374);
             this.panelInfoItem.TabIndex = 0;
             // 
             // tabPecas
@@ -150,7 +159,7 @@
             this.tabPecas.Location = new System.Drawing.Point(4, 37);
             this.tabPecas.Name = "tabPecas";
             this.tabPecas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPecas.Size = new System.Drawing.Size(792, 459);
+            this.tabPecas.Size = new System.Drawing.Size(792, 380);
             this.tabPecas.TabIndex = 1;
             this.tabPecas.Text = "Peças";
             // 
@@ -160,7 +169,7 @@
             this.panelPecas.Location = new System.Drawing.Point(3, 3);
             this.panelPecas.Margin = new System.Windows.Forms.Padding(0);
             this.panelPecas.Name = "panelPecas";
-            this.panelPecas.Size = new System.Drawing.Size(786, 453);
+            this.panelPecas.Size = new System.Drawing.Size(786, 374);
             this.panelPecas.TabIndex = 0;
             // 
             // tabServicos
@@ -170,7 +179,7 @@
             this.tabServicos.Location = new System.Drawing.Point(4, 37);
             this.tabServicos.Name = "tabServicos";
             this.tabServicos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabServicos.Size = new System.Drawing.Size(792, 459);
+            this.tabServicos.Size = new System.Drawing.Size(792, 380);
             this.tabServicos.TabIndex = 2;
             this.tabServicos.Text = "Serviços";
             // 
@@ -180,7 +189,7 @@
             this.panelServicos.Location = new System.Drawing.Point(3, 3);
             this.panelServicos.Margin = new System.Windows.Forms.Padding(0);
             this.panelServicos.Name = "panelServicos";
-            this.panelServicos.Size = new System.Drawing.Size(786, 453);
+            this.panelServicos.Size = new System.Drawing.Size(786, 374);
             this.panelServicos.TabIndex = 0;
             // 
             // tabDiagnostico
@@ -190,7 +199,7 @@
             this.tabDiagnostico.Location = new System.Drawing.Point(4, 37);
             this.tabDiagnostico.Name = "tabDiagnostico";
             this.tabDiagnostico.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiagnostico.Size = new System.Drawing.Size(792, 459);
+            this.tabDiagnostico.Size = new System.Drawing.Size(792, 380);
             this.tabDiagnostico.TabIndex = 3;
             this.tabDiagnostico.Text = "Diagnóstico";
             // 
@@ -200,10 +209,62 @@
             this.panelDiagnostico.Location = new System.Drawing.Point(3, 3);
             this.panelDiagnostico.Margin = new System.Windows.Forms.Padding(0);
             this.panelDiagnostico.Name = "panelDiagnostico";
-            this.panelDiagnostico.Size = new System.Drawing.Size(786, 453);
+            this.panelDiagnostico.Size = new System.Drawing.Size(786, 374);
             this.panelDiagnostico.TabIndex = 0;
             // 
-            // formOSBase
+            // panelRodape
+            // 
+            this.panelRodape.BackColor = System.Drawing.Color.Black;
+            this.panelRodape.Controls.Add(this.pictureEditar);
+            this.panelRodape.Controls.Add(this.pictureExcluir);
+            this.panelRodape.Controls.Add(this.pictureSalvar);
+            this.panelRodape.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelRodape.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelRodape.Location = new System.Drawing.Point(0, 521);
+            this.panelRodape.Name = "panelRodape";
+            this.panelRodape.Size = new System.Drawing.Size(800, 79);
+            this.panelRodape.TabIndex = 2;
+            // 
+            // pictureEditar
+            // 
+            this.pictureEditar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureEditar.Image = global::FROGI_OS.Properties.Resources.icone_editar;
+            this.pictureEditar.Location = new System.Drawing.Point(584, 6);
+            this.pictureEditar.Name = "pictureEditar";
+            this.pictureEditar.Size = new System.Drawing.Size(64, 64);
+            this.pictureEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureEditar.TabIndex = 13;
+            this.pictureEditar.TabStop = false;
+            this.pictureEditar.Click += new System.EventHandler(this.pictureEditar_Click);
+            // 
+            // pictureExcluir
+            // 
+            this.pictureExcluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureExcluir.Image = global::FROGI_OS.Properties.Resources.icone_excluir;
+            this.pictureExcluir.Location = new System.Drawing.Point(654, 6);
+            this.pictureExcluir.Name = "pictureExcluir";
+            this.pictureExcluir.Size = new System.Drawing.Size(64, 64);
+            this.pictureExcluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureExcluir.TabIndex = 12;
+            this.pictureExcluir.TabStop = false;
+            this.pictureExcluir.Click += new System.EventHandler(this.pictureExcluir_Click);
+            // 
+            // pictureSalvar
+            // 
+            this.pictureSalvar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureSalvar.Image = global::FROGI_OS.Properties.Resources.icone_salvar;
+            this.pictureSalvar.Location = new System.Drawing.Point(724, 6);
+            this.pictureSalvar.Name = "pictureSalvar";
+            this.pictureSalvar.Size = new System.Drawing.Size(64, 64);
+            this.pictureSalvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureSalvar.TabIndex = 11;
+            this.pictureSalvar.TabStop = false;
+            this.pictureSalvar.Click += new System.EventHandler(this.pictureSalvar_Click);
+            // 
+            // formOSBaseCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,8 +272,9 @@
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.tabPai);
             this.Controls.Add(this.panelCabecalho);
+            this.Controls.Add(this.panelRodape);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formOSBase";
+            this.Name = "formOSBaseCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formCadastroOrcamento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formOSBase_FormClosing);
@@ -225,6 +287,10 @@
             this.tabPecas.ResumeLayout(false);
             this.tabServicos.ResumeLayout(false);
             this.tabDiagnostico.ResumeLayout(false);
+            this.panelRodape.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureExcluir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureSalvar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +311,9 @@
         protected System.Windows.Forms.Panel panelPecas;
         protected System.Windows.Forms.Panel panelServicos;
         protected System.Windows.Forms.Panel panelDiagnostico;
+        protected System.Windows.Forms.Panel panelRodape;
+        private System.Windows.Forms.PictureBox pictureEditar;
+        private System.Windows.Forms.PictureBox pictureExcluir;
+        private System.Windows.Forms.PictureBox pictureSalvar;
     }
 }

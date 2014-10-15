@@ -196,7 +196,7 @@
             // 
             this.tabPai.Controls.Add(this.tabConclusão);
             this.tabPai.Location = new System.Drawing.Point(0, 104);
-            this.tabPai.Size = new System.Drawing.Size(800, 496);
+            this.tabPai.Size = new System.Drawing.Size(800, 417);
             this.tabPai.Controls.SetChildIndex(this.tabConclusão, 0);
             this.tabPai.Controls.SetChildIndex(this.tabDiagnostico, 0);
             this.tabPai.Controls.SetChildIndex(this.tabServicos, 0);
@@ -206,23 +206,23 @@
             // 
             // tabInfoItem
             // 
-            this.tabInfoItem.Size = new System.Drawing.Size(792, 455);
+            this.tabInfoItem.Size = new System.Drawing.Size(792, 376);
             // 
             // tabPecas
             // 
-            this.tabPecas.Size = new System.Drawing.Size(792, 455);
+            this.tabPecas.Size = new System.Drawing.Size(792, 376);
             // 
             // tabServicos
             // 
-            this.tabServicos.Size = new System.Drawing.Size(792, 455);
+            this.tabServicos.Size = new System.Drawing.Size(792, 376);
             // 
             // tabDiagnostico
             // 
-            this.tabDiagnostico.Size = new System.Drawing.Size(792, 455);
+            this.tabDiagnostico.Size = new System.Drawing.Size(792, 376);
             // 
             // tabGeral
             // 
-            this.tabGeral.Size = new System.Drawing.Size(792, 455);
+            this.tabGeral.Size = new System.Drawing.Size(792, 376);
             // 
             // labelBase
             // 
@@ -235,7 +235,7 @@
             this.panelGeral.Controls.Add(this.groupBox2);
             this.panelGeral.Controls.Add(this.groupTotais);
             this.panelGeral.Controls.Add(this.groupBox1);
-            this.panelGeral.Size = new System.Drawing.Size(786, 449);
+            this.panelGeral.Size = new System.Drawing.Size(786, 370);
             // 
             // panelInfoItem
             // 
@@ -248,7 +248,7 @@
             this.panelInfoItem.Controls.Add(this.oS_DEFEITORichTextBox);
             this.panelInfoItem.Controls.Add(oS_PRODUTOLabel);
             this.panelInfoItem.Controls.Add(this.oS_PRODUTOTextBox);
-            this.panelInfoItem.Size = new System.Drawing.Size(786, 449);
+            this.panelInfoItem.Size = new System.Drawing.Size(786, 370);
             // 
             // panelPecas
             // 
@@ -257,7 +257,7 @@
             this.panelPecas.Controls.Add(this.oS_ITEMDataGridView);
             this.panelPecas.Controls.Add(this.buttonPesquisarProduto);
             this.panelPecas.Controls.Add(this.groupProduto);
-            this.panelPecas.Size = new System.Drawing.Size(786, 449);
+            this.panelPecas.Size = new System.Drawing.Size(786, 370);
             // 
             // panelServicos
             // 
@@ -266,13 +266,13 @@
             this.panelServicos.Controls.Add(this.buttonPesquisarServico);
             this.panelServicos.Controls.Add(this.oS_SERVICODataGridView);
             this.panelServicos.Controls.Add(this.groupServico);
-            this.panelServicos.Size = new System.Drawing.Size(786, 449);
+            this.panelServicos.Size = new System.Drawing.Size(786, 370);
             // 
             // panelDiagnostico
             // 
             this.panelDiagnostico.Controls.Add(oS_DIAGNOSTICOLabel);
             this.panelDiagnostico.Controls.Add(this.oS_DIAGNOSTICORichTextBox);
-            this.panelDiagnostico.Size = new System.Drawing.Size(786, 449);
+            this.panelDiagnostico.Size = new System.Drawing.Size(786, 370);
             // 
             // cLIENTE_FISICO_NOMELabel
             // 
@@ -791,7 +791,7 @@
             this.buttonPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPesquisarProduto.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarProduto.Name = "buttonPesquisarProduto";
-            this.buttonPesquisarProduto.Size = new System.Drawing.Size(786, 37);
+            this.buttonPesquisarProduto.Size = new System.Drawing.Size(777, 37);
             this.buttonPesquisarProduto.TabIndex = 1;
             this.buttonPesquisarProduto.Text = "Pesquisar Produto";
             this.buttonPesquisarProduto.UseVisualStyleBackColor = true;
@@ -810,11 +810,11 @@
             this.dataGridViewTextBoxColumn8});
             this.oS_ITEMDataGridView.DataSource = this.bsOsItem;
             this.oS_ITEMDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.oS_ITEMDataGridView.Location = new System.Drawing.Point(0, 229);
+            this.oS_ITEMDataGridView.Location = new System.Drawing.Point(0, 211);
             this.oS_ITEMDataGridView.Name = "oS_ITEMDataGridView";
             this.oS_ITEMDataGridView.ReadOnly = true;
             this.oS_ITEMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.oS_ITEMDataGridView.Size = new System.Drawing.Size(786, 220);
+            this.oS_ITEMDataGridView.Size = new System.Drawing.Size(777, 220);
             this.oS_ITEMDataGridView.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn4
@@ -857,9 +857,9 @@
             this.buttonLancarProduto.AutoSize = true;
             this.buttonLancarProduto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonLancarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLancarProduto.Location = new System.Drawing.Point(0, 192);
+            this.buttonLancarProduto.Location = new System.Drawing.Point(0, 174);
             this.buttonLancarProduto.Name = "buttonLancarProduto";
-            this.buttonLancarProduto.Size = new System.Drawing.Size(786, 37);
+            this.buttonLancarProduto.Size = new System.Drawing.Size(777, 37);
             this.buttonLancarProduto.TabIndex = 3;
             this.buttonLancarProduto.Text = "Lançar produto";
             this.buttonLancarProduto.UseVisualStyleBackColor = true;
@@ -945,11 +945,11 @@
             this.dataGridViewTextBoxColumn13});
             this.oS_SERVICODataGridView.DataSource = this.bsOsServico;
             this.oS_SERVICODataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.oS_SERVICODataGridView.Location = new System.Drawing.Point(0, 229);
+            this.oS_SERVICODataGridView.Location = new System.Drawing.Point(0, 217);
             this.oS_SERVICODataGridView.Name = "oS_SERVICODataGridView";
             this.oS_SERVICODataGridView.ReadOnly = true;
             this.oS_SERVICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.oS_SERVICODataGridView.Size = new System.Drawing.Size(786, 220);
+            this.oS_SERVICODataGridView.Size = new System.Drawing.Size(771, 220);
             this.oS_SERVICODataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn10
@@ -994,7 +994,7 @@
             this.buttonPesquisarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPesquisarServico.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarServico.Name = "buttonPesquisarServico";
-            this.buttonPesquisarServico.Size = new System.Drawing.Size(786, 37);
+            this.buttonPesquisarServico.Size = new System.Drawing.Size(771, 37);
             this.buttonPesquisarServico.TabIndex = 2;
             this.buttonPesquisarServico.Text = "Pesquisar Serviço";
             this.buttonPesquisarServico.UseVisualStyleBackColor = true;
@@ -1004,9 +1004,9 @@
             this.buttonLancarServico.AutoSize = true;
             this.buttonLancarServico.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonLancarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLancarServico.Location = new System.Drawing.Point(0, 192);
+            this.buttonLancarServico.Location = new System.Drawing.Point(0, 180);
             this.buttonLancarServico.Name = "buttonLancarServico";
-            this.buttonLancarServico.Size = new System.Drawing.Size(786, 37);
+            this.buttonLancarServico.Size = new System.Drawing.Size(771, 37);
             this.buttonLancarServico.TabIndex = 3;
             this.buttonLancarServico.Text = "Lançar Serviço";
             this.buttonLancarServico.UseVisualStyleBackColor = true;
@@ -1015,7 +1015,7 @@
             // 
             this.oS_DIAGNOSTICORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_DIAGNOSTICO", true));
             this.oS_DIAGNOSTICORichTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.oS_DIAGNOSTICORichTextBox.Location = new System.Drawing.Point(0, 38);
+            this.oS_DIAGNOSTICORichTextBox.Location = new System.Drawing.Point(0, -41);
             this.oS_DIAGNOSTICORichTextBox.Name = "oS_DIAGNOSTICORichTextBox";
             this.oS_DIAGNOSTICORichTextBox.Size = new System.Drawing.Size(786, 411);
             this.oS_DIAGNOSTICORichTextBox.TabIndex = 1;
@@ -1028,7 +1028,7 @@
             this.tabConclusão.Location = new System.Drawing.Point(4, 37);
             this.tabConclusão.Name = "tabConclusão";
             this.tabConclusão.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConclusão.Size = new System.Drawing.Size(792, 455);
+            this.tabConclusão.Size = new System.Drawing.Size(792, 376);
             this.tabConclusão.TabIndex = 5;
             this.tabConclusão.Text = "Conclusão";
             // 
@@ -1044,7 +1044,7 @@
             this.panelConclusao.Location = new System.Drawing.Point(3, 3);
             this.panelConclusao.Margin = new System.Windows.Forms.Padding(0);
             this.panelConclusao.Name = "panelConclusao";
-            this.panelConclusao.Size = new System.Drawing.Size(786, 449);
+            this.panelConclusao.Size = new System.Drawing.Size(786, 370);
             this.panelConclusao.TabIndex = 0;
             this.panelConclusao.Paint += new System.Windows.Forms.PaintEventHandler(this.panelConclusao_Paint);
             // 

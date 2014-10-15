@@ -23,6 +23,12 @@ namespace FROGI_OS.InterfaceGrafica {
             cliente = new GerCliente();
         }
 
+        public formPesquisaCliente(formOSBaseCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado) {
+            InitializeComponent();
+            map = new MapCliente(dsFROGIOS.CLIENTE, dsFROGIOS.CLIENTE_FISICO, dsFROGIOS.CLIENTE_JURIDICO);
+            cliente = new GerCliente();
+        }
+
         private bool eFisico() {
             return comboTipo.SelectedIndex == FISICO;
         }
@@ -85,16 +91,28 @@ namespace FROGI_OS.InterfaceGrafica {
                     codigo = (int)pESQUISA_CLIENTE_JURIDICODataGridView[0, indice].Value;
                 }
 
-                if (cadastro.GetType() == typeof(formCadastroCliente)) {
-                    ((formCadastroCliente)cadastro).visualizarRegistro(codigo, eFisico());
-                } else if (cadastro.GetType() == typeof(formCadastroAgendamento)) {
-                    ((formCadastroAgendamento)cadastro).adicionarCliente(codigo, eFisico());
+                if (cadastro != null) {
+                    if (cadastro.GetType() == typeof(formCadastroCliente)) {
+                        ((formCadastroCliente)cadastro).visualizarRegistro(codigo, eFisico());
+                    } else if (cadastro.GetType() == typeof(formCadastroAgendamento)) {
+                        ((formCadastroAgendamento)cadastro).adicionarCliente(codigo, eFisico());
+                    }
+                } else if (cadastroOS != null) {
+                    try {
+                        Conexao.abrir();
+                        ((formCadastroOrcamento)cadastroOS).selecionarCliente(codigo, eFisico());
+                    } catch (Exception erro) {
+                        exibirMensagemErro(erro.Message);
+                    } finally {
+                        Conexao.fechar();
+                    }                    
                 }
-
+                
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
-            } catch (Exception) {
+            } catch (Exception erro) {
                 this.ActiveControl = comboTipo;
+                exibirMensagemErro(erro.Message);
             }
 
         }

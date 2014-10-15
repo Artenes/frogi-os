@@ -42,7 +42,7 @@ namespace FROGI_OS.InterfaceGrafica
 
         protected override void novoRegistro() {
             base.novoRegistro();
-            formCadastroOrcamento orcamento = new formCadastroOrcamento();
+            formCadastroOrcamento orcamento = new formCadastroOrcamento(true);
             orcamento.ShowDialog();
             orcamento.Dispose();
             resetar();

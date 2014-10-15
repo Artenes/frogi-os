@@ -7193,7 +7193,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ORCAMENTORow AddORCAMENTORow(int ORCAMENTO_CODIGO, CLIENTERow parentCLIENTERowByORCAMENTO_CLIENTE_FK, FUNCIONARIORow parentFUNCIONARIORowByORCAMENTO_FUNCIONARIO_FK, decimal ORCAMENTO_TOTAL_ITEM, decimal ORCAMENTO_TOTAL_SERVICO, decimal ORCAMENTO_DESCONTO, decimal ORCAMENTO_ACRESCIMO, string ORCAMENTO_OBSERVACAO, decimal ORCAMENTO_TOTAL, System.DateTime ORCAMENTO_DATA, string ORCAMENTO_PRODUTO, byte[] ORCAMENTO_DEFEITO, byte[] ORCAMENTO_AVULSOS, byte[] ORCAMENTO_DIAGNOSTICO) {
+            public ORCAMENTORow AddORCAMENTORow(int ORCAMENTO_CODIGO, CLIENTERow parentCLIENTERowByORCAMENTO_CLIENTE_FK, FUNCIONARIORow parentFUNCIONARIORowByORCAMENTO_FUNCIONARIO_FK, double ORCAMENTO_TOTAL_ITEM, double ORCAMENTO_TOTAL_SERVICO, double ORCAMENTO_DESCONTO, double ORCAMENTO_ACRESCIMO, string ORCAMENTO_OBSERVACAO, double ORCAMENTO_TOTAL, System.DateTime ORCAMENTO_DATA, string ORCAMENTO_PRODUTO, byte[] ORCAMENTO_DEFEITO, byte[] ORCAMENTO_AVULSOS, byte[] ORCAMENTO_DIAGNOSTICO) {
                 ORCAMENTORow rowORCAMENTORow = ((ORCAMENTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ORCAMENTO_CODIGO,
@@ -7270,17 +7270,17 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnORCAMENTO_CLIENTE);
                 this.columnORCAMENTO_FUNCIONARIO = new global::System.Data.DataColumn("ORCAMENTO_FUNCIONARIO", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_FUNCIONARIO);
-                this.columnORCAMENTO_TOTAL_ITEM = new global::System.Data.DataColumn("ORCAMENTO_TOTAL_ITEM", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_TOTAL_ITEM = new global::System.Data.DataColumn("ORCAMENTO_TOTAL_ITEM", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_TOTAL_ITEM);
-                this.columnORCAMENTO_TOTAL_SERVICO = new global::System.Data.DataColumn("ORCAMENTO_TOTAL_SERVICO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_TOTAL_SERVICO = new global::System.Data.DataColumn("ORCAMENTO_TOTAL_SERVICO", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_TOTAL_SERVICO);
-                this.columnORCAMENTO_DESCONTO = new global::System.Data.DataColumn("ORCAMENTO_DESCONTO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_DESCONTO = new global::System.Data.DataColumn("ORCAMENTO_DESCONTO", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_DESCONTO);
-                this.columnORCAMENTO_ACRESCIMO = new global::System.Data.DataColumn("ORCAMENTO_ACRESCIMO", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_ACRESCIMO = new global::System.Data.DataColumn("ORCAMENTO_ACRESCIMO", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_ACRESCIMO);
                 this.columnORCAMENTO_OBSERVACAO = new global::System.Data.DataColumn("ORCAMENTO_OBSERVACAO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_OBSERVACAO);
-                this.columnORCAMENTO_TOTAL = new global::System.Data.DataColumn("ORCAMENTO_TOTAL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_TOTAL = new global::System.Data.DataColumn("ORCAMENTO_TOTAL", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_TOTAL);
                 this.columnORCAMENTO_DATA = new global::System.Data.DataColumn("ORCAMENTO_DATA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_DATA);
@@ -19561,9 +19561,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ORCAMENTO_TOTAL_ITEM {
+            public double ORCAMENTO_TOTAL_ITEM {
                 get {
-                    return ((decimal)(this[this.tableORCAMENTO.ORCAMENTO_TOTAL_ITEMColumn]));
+                    return ((double)(this[this.tableORCAMENTO.ORCAMENTO_TOTAL_ITEMColumn]));
                 }
                 set {
                     this[this.tableORCAMENTO.ORCAMENTO_TOTAL_ITEMColumn] = value;
@@ -19572,9 +19572,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ORCAMENTO_TOTAL_SERVICO {
+            public double ORCAMENTO_TOTAL_SERVICO {
                 get {
-                    return ((decimal)(this[this.tableORCAMENTO.ORCAMENTO_TOTAL_SERVICOColumn]));
+                    return ((double)(this[this.tableORCAMENTO.ORCAMENTO_TOTAL_SERVICOColumn]));
                 }
                 set {
                     this[this.tableORCAMENTO.ORCAMENTO_TOTAL_SERVICOColumn] = value;
@@ -19583,10 +19583,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ORCAMENTO_DESCONTO {
+            public double ORCAMENTO_DESCONTO {
                 get {
                     try {
-                        return ((decimal)(this[this.tableORCAMENTO.ORCAMENTO_DESCONTOColumn]));
+                        return ((double)(this[this.tableORCAMENTO.ORCAMENTO_DESCONTOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_DESCONTO\' in table \'ORCAMENTO\' is DBNull.", e);
@@ -19599,10 +19599,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ORCAMENTO_ACRESCIMO {
+            public double ORCAMENTO_ACRESCIMO {
                 get {
                     try {
-                        return ((decimal)(this[this.tableORCAMENTO.ORCAMENTO_ACRESCIMOColumn]));
+                        return ((double)(this[this.tableORCAMENTO.ORCAMENTO_ACRESCIMOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_ACRESCIMO\' in table \'ORCAMENTO\' is DBNull.", e);
@@ -19631,9 +19631,9 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public decimal ORCAMENTO_TOTAL {
+            public double ORCAMENTO_TOTAL {
                 get {
-                    return ((decimal)(this[this.tableORCAMENTO.ORCAMENTO_TOTALColumn]));
+                    return ((double)(this[this.tableORCAMENTO.ORCAMENTO_TOTALColumn]));
                 }
                 set {
                     this[this.tableORCAMENTO.ORCAMENTO_TOTALColumn] = value;

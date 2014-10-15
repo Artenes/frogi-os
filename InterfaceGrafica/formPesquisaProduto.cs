@@ -18,13 +18,21 @@ namespace FROGI_OS.InterfaceGrafica
         private MapProduto map;
         private TblProduto produtoSQL;
 
-        public formPesquisaProduto(formCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado)
-        {
+        public formPesquisaProduto(formCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado) {
             InitializeComponent();
             map = new MapProduto(dsFROGIOS.PRODUTO, dsFROGIOS.MARCA);
             comboCampoPesquisa.Items.Clear();
-            foreach (string coluna in map.Colunas)
-            {
+            foreach (string coluna in map.Colunas) {
+                comboCampoPesquisa.Items.Add(coluna);
+            }
+            produtoSQL = new TblProduto();
+        }
+
+        public formPesquisaProduto(formOSBaseCadastro cadastro, bool novoHabilitado) : base(cadastro, novoHabilitado) {
+            InitializeComponent();
+            map = new MapProduto(dsFROGIOS.PRODUTO, dsFROGIOS.MARCA);
+            comboCampoPesquisa.Items.Clear();
+            foreach (string coluna in map.Colunas) {
                 comboCampoPesquisa.Items.Add(coluna);
             }
             produtoSQL = new TblProduto();
@@ -48,7 +56,18 @@ namespace FROGI_OS.InterfaceGrafica
             try {
                 int indice = pRODUTODataGridView.CurrentRow.Index;
                 int codigo = (int)pRODUTODataGridView[0, indice].Value;
-                ((formCadastroProduto)cadastro).visualizarRegistro(codigo);
+                if (cadastro != null) {
+                    ((formCadastroProduto)cadastro).visualizarRegistro(codigo);    
+                } else  if (cadastroOS != null) {
+                    try {
+                        Conexao.abrir();
+                        ((formCadastroOrcamento)cadastroOS).selecionarProduto(codigo);
+                    } catch (Exception erro) {
+                        exibirMensagemErro(erro.Message);
+                    } finally {
+                        Conexao.fechar();
+                    }
+                }
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
             } catch (Exception) {

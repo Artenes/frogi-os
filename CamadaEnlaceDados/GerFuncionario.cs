@@ -24,10 +24,10 @@ namespace FROGI_OS.CamadaEnlaceDados {
             dsFROGIOS.CATEGORIADataTable categoria) {
 
             funcionario.Clear();
-            categoria.Clear();
+            //categoria.Clear();
 
             TblFuncionario funcionarioSQL = new TblFuncionario();
-            TblCategoria categoriaSQL = new TblCategoria();
+            //TblCategoria categoriaSQL = new TblCategoria();
             funcionario.Load(
                 funcionarioSQL.selecionar(
                 funcionario.FUNCIONARIO_CODIGOColumn.ColumnName,

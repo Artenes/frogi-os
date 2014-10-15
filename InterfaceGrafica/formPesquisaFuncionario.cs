@@ -26,6 +26,16 @@ namespace FROGI_OS.InterfaceGrafica {
             funcionarioSQL = new TblFuncionario();
         }
 
+        public formPesquisaFuncionario(formOSBaseCadastro cadastro, bool novoHabilitado) : base(cadastro, novoHabilitado) {
+            InitializeComponent();
+            map = new MapFuncionario(dsFROGIOS.FUNCIONARIO);
+            comboCampoPesquisa.Items.Clear();
+            foreach (string coluna in map.Colunas) {
+                comboCampoPesquisa.Items.Add(coluna);
+            }
+            funcionarioSQL = new TblFuncionario();
+        }
+
         protected override void pesquisaExecutar() {
             string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
             string valor = textValorPesquisa.Text;
@@ -43,7 +53,18 @@ namespace FROGI_OS.InterfaceGrafica {
             try {
                 int indice = fUNCIONARIODataGridView.CurrentRow.Index;
                 int codigo = (int)fUNCIONARIODataGridView[0, indice].Value;
-                ((formCadastroFuncionario)cadastro).visualizarRegistro(codigo);
+                if (cadastro != null) {
+                    ((formCadastroFuncionario)cadastro).visualizarRegistro(codigo);
+                } else if (cadastroOS != null) {
+                    try {
+                        Conexao.abrir();
+                        ((formCadastroOrcamento)cadastroOS).selecionarFuncionario(codigo);
+                    } catch (Exception erro) {
+                        exibirMensagemErro(erro.Message);
+                    } finally {
+                        Conexao.fechar();
+                    }
+                }
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
             } catch (Exception) {
