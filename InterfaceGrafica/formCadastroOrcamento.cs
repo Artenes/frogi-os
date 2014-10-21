@@ -14,6 +14,7 @@ namespace FROGI_OS.InterfaceGrafica {
 
         private GerOrcamento orcamentoSQL;
         private dsFROGIOS.ORCAMENTO_ITEMRow itemAtual;
+        private dsFROGIOS.ORCAMENTO_SERVICORow servicoAtual;
 
         public formCadastroOrcamento(bool eNovo) : base (eNovo) {
             InitializeComponent();
@@ -115,6 +116,12 @@ namespace FROGI_OS.InterfaceGrafica {
             produto = null;
         }
 
+        public void selecionarServico(int codigo) {
+            GerServico servico = new GerServico();
+            servico.selecionar(codigo, dsFROGIOS.SERVICO, dsFROGIOS.TIPO);
+            servico = null;
+        }
+
         private void labelCliente_Click(object sender, EventArgs e) {
             formPesquisaCliente cliente = new formPesquisaCliente(this, false);
             cliente.ShowDialog();
@@ -185,6 +192,9 @@ namespace FROGI_OS.InterfaceGrafica {
                     dsFROGIOS.ORCAMENTO_ITEM.Rows.Add(item.ItemArray);
                 }
                 itemAtual = null;
+                dsFROGIOS.PRODUTO.Clear();
+                textPecaDesconto.Text = null;
+                textPecaQuantidade.Text = null;
             }
         }
 
@@ -200,6 +210,96 @@ namespace FROGI_OS.InterfaceGrafica {
             textPecaDesconto.Text = itemAtual.ORCAMENTO_ITEM_DESCONTO.ToString("0.00");
             textPecaQuantidade.Text = itemAtual.ORCAMENTO_ITEM_QUANTIDADE.ToString();
         }
+
+        private void buttonPesquisarServico_Click(object sender, EventArgs e) {
+            formPesquisaServico servico = new formPesquisaServico(this, false);
+            servico.ShowDialog();
+            servico.Dispose();
+
+        }
+
+        private void buttonLancarServico_Click(object sender, EventArgs e) {
+            if (dsFROGIOS.SERVICO.Rows.Count != 0) {
+                dsFROGIOS.ORCAMENTO_SERVICORow servicoItem = (servicoAtual != null) ? servicoAtual : dsFROGIOS.ORCAMENTO_SERVICO.NewORCAMENTO_SERVICORow();
+                dsFROGIOS.SERVICORow servico = (dsFROGIOS.SERVICORow)dsFROGIOS.SERVICO.Rows[0];
+
+                servicoItem.ORCAMENTO_SERVICO_SERVICO = servico.SERVICO_CODIGO;
+                servicoItem.ORCAMENTO_SERVICO_VALOR = servico.SERVICO_VALOR;
+                servicoItem.ORCAMENTO_SERVICO_DESCRICAO = servico.SERVICO_DESCRICAO;
+                servicoItem.ORCAMENTO_SERVICO_DESCONTO = converterParaDouble(textServicoEDesconto.Text);
+                servicoItem.ORCAMENTO_SERVICO_ACRESCIMO = converterParaDouble(textServicoAcrescimo.Text);
+
+                //calculo do total
+                double
+                    valor = servicoItem.ORCAMENTO_SERVICO_VALOR,
+                    desconto = servicoItem.ORCAMENTO_SERVICO_DESCONTO,
+                    acrescimo = servicoItem.ORCAMENTO_SERVICO_ACRESCIMO,
+                    total;
+
+                if (desconto != 0 && desconto < valor) {
+                    total = valor - desconto;
+                } else {
+                    total = valor + acrescimo;
+                }
+
+                servicoItem.ORCAMENTO_SERVICO_TOTAL = total;
+
+                if (servicoAtual == null) {
+                    dsFROGIOS.ORCAMENTO_SERVICO.Rows.Add(servicoItem.ItemArray);
+                }
+                servicoAtual = null;
+                dsFROGIOS.SERVICO.Clear();
+                textServicoAcrescimo.Text = null;
+                textServicoEDesconto.Text = null;
+            }
+        }
+
+        private void oRCAMENTO_SERVICODataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e) {
+            int indice = oRCAMENTO_SERVICODataGridView.CurrentRow.Index;
+            servicoAtual = (dsFROGIOS.ORCAMENTO_SERVICORow)dsFROGIOS.ORCAMENTO_SERVICO.Rows[indice];
+            dsFROGIOS.SERVICO.Clear();
+            dsFROGIOS.SERVICORow servico = dsFROGIOS.SERVICO.NewSERVICORow();
+            servico.SERVICO_CODIGO = servicoAtual.ORCAMENTO_SERVICO_SERVICO;
+            servico.SERVICO_VALOR = servicoAtual.ORCAMENTO_SERVICO_VALOR;
+            servico.SERVICO_DESCRICAO = servicoAtual.ORCAMENTO_SERVICO_DESCRICAO;
+            dsFROGIOS.SERVICO.AddSERVICORow(servico);
+            textServicoEDesconto.Text = servicoAtual.ORCAMENTO_SERVICO_DESCONTO.ToString("0.00");
+            textServicoAcrescimo.Text = servicoAtual.ORCAMENTO_SERVICO_ACRESCIMO.ToString("0.00");
+        }
+
+        private void tabPai_SelectedIndexChanged(object sender, EventArgs e) {
+            if (((TabControl)sender).SelectedTab == tabGeral) {
+
+                double
+                    totalPecasBruto = 0,
+                    totalServicosBruto = 0,
+                    totalPecasLiquido = 0,
+                    totalServicosLiquido = 0,
+                    totalBruto,
+                    totalLiquido;
+
+                foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in dsFROGIOS.ORCAMENTO_ITEM.Rows) {
+                    totalPecasBruto += (item.ORCAMENTO_ITEM_VALOR * item.ORCAMENTO_ITEM_QUANTIDADE);
+                    totalPecasLiquido += item.ORCAMENTO_ITEM_TOTAL;
+                }
+
+                foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in dsFROGIOS.ORCAMENTO_SERVICO.Rows) {
+                    totalServicosBruto += servico.ORCAMENTO_SERVICO_VALOR;
+                    totalServicosLiquido += servico.ORCAMENTO_SERVICO_TOTAL;
+                }
+
+                totalBruto = totalPecasBruto + totalServicosBruto;
+                totalLiquido = totalPecasLiquido + totalServicosLiquido;
+
+                oRCAMENTO_TOTAL_ITEMTextBox.Text = totalPecasLiquido.ToString("0.00");
+                oRCAMENTO_TOTAL_SERVICOTextBox.Text = totalServicosLiquido.ToString("0.00");
+                textTotalBruto.Text = totalBruto.ToString("0.00");
+                oRCAMENTO_TOTALLabel1.Text = "R$" + totalLiquido.ToString("0.00");
+
+            }
+        }
+
+            
 
        
        

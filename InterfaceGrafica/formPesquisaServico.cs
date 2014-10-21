@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FROGI_OS.Mapeamento;
 using FROGI_OS.CamadaAcessoDados;
 
+
 namespace FROGI_OS.InterfaceGrafica
 {
     public partial class formPesquisaServico : formPesquisa {
@@ -17,14 +18,22 @@ namespace FROGI_OS.InterfaceGrafica
         private MapServico map;
         private TblServico servicoSQL;
 
-        public formPesquisaServico(formCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado)
-        {
+        public formPesquisaServico(formCadastro cadastro, bool novoHabilitado) : base (cadastro, novoHabilitado) {
             InitializeComponent();
             map = new MapServico(dsFROGIOS.SERVICO);
             comboCampoPesquisa.Items.Clear();
             foreach (string coluna in map.Colunas) {   
                 comboCampoPesquisa.Items.Add(coluna);
             }
+            servicoSQL = new TblServico();
+        }
+
+        public formPesquisaServico(formOSBaseCadastro cadastro, bool novoHabilitado) : base(cadastro, novoHabilitado) {
+            InitializeComponent();
+            map = new MapServico(dsFROGIOS.SERVICO);
+            comboCampoPesquisa.Items.Clear();
+            foreach (string coluna in map.Colunas)
+                comboCampoPesquisa.Items.Add(coluna);
             servicoSQL = new TblServico();
         }
 
@@ -55,7 +64,11 @@ namespace FROGI_OS.InterfaceGrafica
                 Conexao.abrir();
                 int indice = sERVICODataGridView.CurrentRow.Index;
                 int codigo = (int)sERVICODataGridView[0, indice].Value;
-                ((formCadastroServico)cadastro).visualizarRegistro(codigo);
+                if (cadastro != null) {
+                    ((formCadastroServico)cadastro).visualizarRegistro(codigo);
+                } else  if (cadastroOS != null) {
+                    ((formCadastroOrcamento)cadastroOS).selecionarServico(codigo);
+                }
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
             } catch (Exception erro) {

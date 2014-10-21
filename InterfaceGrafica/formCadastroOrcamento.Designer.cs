@@ -180,6 +180,7 @@
             // 
             this.tabPai.Location = new System.Drawing.Point(0, 92);
             this.tabPai.Size = new System.Drawing.Size(800, 429);
+            this.tabPai.SelectedIndexChanged += new System.EventHandler(this.tabPai_SelectedIndexChanged);
             // 
             // tabInfoItem
             // 
@@ -509,7 +510,7 @@
             this.groupBox4.Controls.Add(label9);
             this.groupBox4.Location = new System.Drawing.Point(11, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(577, 190);
+            this.groupBox4.Size = new System.Drawing.Size(390, 190);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pessoal";
@@ -798,6 +799,7 @@
             // sERVICO_VALORTextBox
             // 
             this.sERVICO_VALORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sERVICOBindingSource, "SERVICO_VALOR", true));
+            this.sERVICO_VALORTextBox.Enabled = false;
             this.sERVICO_VALORTextBox.Location = new System.Drawing.Point(74, 78);
             this.sERVICO_VALORTextBox.Name = "sERVICO_VALORTextBox";
             this.sERVICO_VALORTextBox.Size = new System.Drawing.Size(157, 33);
@@ -811,6 +813,7 @@
             // sERVICO_DESCRICAOTextBox
             // 
             this.sERVICO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sERVICOBindingSource, "SERVICO_DESCRICAO", true));
+            this.sERVICO_DESCRICAOTextBox.Enabled = false;
             this.sERVICO_DESCRICAOTextBox.Location = new System.Drawing.Point(112, 29);
             this.sERVICO_DESCRICAOTextBox.Name = "sERVICO_DESCRICAOTextBox";
             this.sERVICO_DESCRICAOTextBox.Size = new System.Drawing.Size(598, 33);
@@ -827,6 +830,7 @@
             this.buttonPesquisarServico.TabIndex = 1;
             this.buttonPesquisarServico.Text = "Pesquisar serviço";
             this.buttonPesquisarServico.UseVisualStyleBackColor = true;
+            this.buttonPesquisarServico.Click += new System.EventHandler(this.buttonPesquisarServico_Click);
             // 
             // buttonLancarServico
             // 
@@ -839,6 +843,7 @@
             this.buttonLancarServico.TabIndex = 3;
             this.buttonLancarServico.Text = "Lançar Serviço";
             this.buttonLancarServico.UseVisualStyleBackColor = true;
+            this.buttonLancarServico.Click += new System.EventHandler(this.buttonLancarServico_Click);
             // 
             // oRCAMENTO_SERVICODataGridView
             // 
@@ -860,6 +865,7 @@
             this.oRCAMENTO_SERVICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.oRCAMENTO_SERVICODataGridView.Size = new System.Drawing.Size(786, 152);
             this.oRCAMENTO_SERVICODataGridView.TabIndex = 2;
+            this.oRCAMENTO_SERVICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oRCAMENTO_SERVICODataGridView_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn10
             // 
