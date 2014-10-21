@@ -69,6 +69,10 @@
             this.labelPesquisa.Size = new System.Drawing.Size(145, 37);
             this.labelPesquisa.Text = "Orçamento";
             // 
+            // comboTipoCliente
+            // 
+            this.comboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.comboTipoCliente_SelectedIndexChanged);
+            // 
             // buttonNovoRegistro
             // 
             this.buttonNovoRegistro.Text = "Novo orçamento";
@@ -98,6 +102,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -151,6 +156,8 @@
             this.pESQUISA_ORCAMENTO_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_ORCAMENTO_FISICODataGridView.Size = new System.Drawing.Size(770, 347);
             this.pESQUISA_ORCAMENTO_FISICODataGridView.TabIndex = 4;
+            this.pESQUISA_ORCAMENTO_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
+            this.pESQUISA_ORCAMENTO_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -225,6 +232,8 @@
             this.pESQUISA_ORCAMENTO_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_ORCAMENTO_JURIDICODataGridView.Size = new System.Drawing.Size(770, 347);
             this.pESQUISA_ORCAMENTO_JURIDICODataGridView.TabIndex = 5;
+            this.pESQUISA_ORCAMENTO_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
+            this.pESQUISA_ORCAMENTO_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
             // 
             // dataGridViewTextBoxColumn7
             // 

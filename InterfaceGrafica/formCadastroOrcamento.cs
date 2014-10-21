@@ -29,6 +29,9 @@ namespace FROGI_OS.InterfaceGrafica {
                 oRCAMENTO_ACRESCIMOTextBox.Text = "0,0";
                 oRCAMENTO_DATALabel1.Text = DateTime.Now.ToShortDateString();
                 campos(true);
+            } else {
+                oRCAMENTO_TOTALLabel1.Text = "R$" + oRCAMENTO_TOTALLabel1.Text;
+                calcularTotais();
             }
         }
 
@@ -56,11 +59,11 @@ namespace FROGI_OS.InterfaceGrafica {
             orcamentoRow.ORCAMENTO_DESCONTO = converterParaDouble(oRCAMENTO_DESCONTOTextBox.Text);
             orcamentoRow.ORCAMENTO_ACRESCIMO = converterParaDouble(oRCAMENTO_ACRESCIMOTextBox.Text);
             orcamentoRow.ORCAMENTO_OBSERVACAO = oRCAMENTO_OBSERVACAORichTextBox.Text;
-            orcamentoRow.ORCAMENTO_TOTAL = converterParaDouble(oRCAMENTO_TOTALLabel1.Text);
+            orcamentoRow.ORCAMENTO_TOTAL = converterParaDouble(oRCAMENTO_TOTALLabel1.Text.Substring(2));
             orcamentoRow.ORCAMENTO_PRODUTO = pRODUTO_DESCRICAOTextBox.Text;
-            //orcamentoRow.ORCAMENTO_DEFEITO = oRCAMENTO_DEFEITORichTextBox.Text;
-            //orcamentoRow.ORCAMENTO_AVULSOS = oRCAMENTO_AVULSOSRichTextBox.Text;
-            //orcamentoRow.ORCAMENTO_DIAGNOSTICO = oRCAMENTO_DIAGNOSTICORichTextBox.Text;
+            orcamentoRow.ORCAMENTO_DEFEITO = oRCAMENTO_DEFEITORichTextBox.Text;
+            orcamentoRow.ORCAMENTO_AVULSOS = oRCAMENTO_AVULSOSRichTextBox.Text;
+            orcamentoRow.ORCAMENTO_DIAGNOSTICO = oRCAMENTO_DIAGNOSTICORichTextBox.Text;
             return orcamentoRow;
         }
 
@@ -139,6 +142,8 @@ namespace FROGI_OS.InterfaceGrafica {
             formPesquisaProduto produto = new formPesquisaProduto(this, false);
             produto.ShowDialog();
             produto.Dispose();
+            textPecaDesconto.Text = "0,00";
+            textPecaQuantidade.Text = "1";
         }
 
         /**
@@ -215,6 +220,8 @@ namespace FROGI_OS.InterfaceGrafica {
             formPesquisaServico servico = new formPesquisaServico(this, false);
             servico.ShowDialog();
             servico.Dispose();
+            textServicoAcrescimo.Text = "0,00";
+            textServicoDesconto.Text = "0,00";
 
         }
 
@@ -226,7 +233,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 servicoItem.ORCAMENTO_SERVICO_SERVICO = servico.SERVICO_CODIGO;
                 servicoItem.ORCAMENTO_SERVICO_VALOR = servico.SERVICO_VALOR;
                 servicoItem.ORCAMENTO_SERVICO_DESCRICAO = servico.SERVICO_DESCRICAO;
-                servicoItem.ORCAMENTO_SERVICO_DESCONTO = converterParaDouble(textServicoEDesconto.Text);
+                servicoItem.ORCAMENTO_SERVICO_DESCONTO = converterParaDouble(textServicoDesconto.Text);
                 servicoItem.ORCAMENTO_SERVICO_ACRESCIMO = converterParaDouble(textServicoAcrescimo.Text);
 
                 //calculo do total
@@ -250,7 +257,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 servicoAtual = null;
                 dsFROGIOS.SERVICO.Clear();
                 textServicoAcrescimo.Text = null;
-                textServicoEDesconto.Text = null;
+                textServicoDesconto.Text = null;
             }
         }
 
@@ -263,14 +270,12 @@ namespace FROGI_OS.InterfaceGrafica {
             servico.SERVICO_VALOR = servicoAtual.ORCAMENTO_SERVICO_VALOR;
             servico.SERVICO_DESCRICAO = servicoAtual.ORCAMENTO_SERVICO_DESCRICAO;
             dsFROGIOS.SERVICO.AddSERVICORow(servico);
-            textServicoEDesconto.Text = servicoAtual.ORCAMENTO_SERVICO_DESCONTO.ToString("0.00");
+            textServicoDesconto.Text = servicoAtual.ORCAMENTO_SERVICO_DESCONTO.ToString("0.00");
             textServicoAcrescimo.Text = servicoAtual.ORCAMENTO_SERVICO_ACRESCIMO.ToString("0.00");
         }
 
-        private void tabPai_SelectedIndexChanged(object sender, EventArgs e) {
-            if (((TabControl)sender).SelectedTab == tabGeral) {
-
-                double
+        private void calcularTotais() {
+            double
                     totalPecasBruto = 0,
                     totalServicosBruto = 0,
                     totalPecasLiquido = 0,
@@ -278,32 +283,54 @@ namespace FROGI_OS.InterfaceGrafica {
                     totalBruto,
                     totalLiquido;
 
-                foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in dsFROGIOS.ORCAMENTO_ITEM.Rows) {
-                    totalPecasBruto += (item.ORCAMENTO_ITEM_VALOR * item.ORCAMENTO_ITEM_QUANTIDADE);
-                    totalPecasLiquido += item.ORCAMENTO_ITEM_TOTAL;
+            bool aplica = true;
+
+            foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in dsFROGIOS.ORCAMENTO_ITEM.Rows) {
+                totalPecasBruto += (item.ORCAMENTO_ITEM_VALOR * item.ORCAMENTO_ITEM_QUANTIDADE);
+                totalPecasLiquido += item.ORCAMENTO_ITEM_TOTAL;
+                if (item.ORCAMENTO_ITEM_DESCONTO != 0) {
+                    aplica = false;
                 }
+            }
 
-                foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in dsFROGIOS.ORCAMENTO_SERVICO.Rows) {
-                    totalServicosBruto += servico.ORCAMENTO_SERVICO_VALOR;
-                    totalServicosLiquido += servico.ORCAMENTO_SERVICO_TOTAL;
+            foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in dsFROGIOS.ORCAMENTO_SERVICO.Rows) {
+                totalServicosBruto += servico.ORCAMENTO_SERVICO_VALOR;
+                totalServicosLiquido += servico.ORCAMENTO_SERVICO_TOTAL;
+                if (servico.ORCAMENTO_SERVICO_DESCONTO != 0 || servico.ORCAMENTO_SERVICO_ACRESCIMO != 0) {
+                    aplica = false;
                 }
+            }
 
-                totalBruto = totalPecasBruto + totalServicosBruto;
-                totalLiquido = totalPecasLiquido + totalServicosLiquido;
+            totalBruto = totalPecasBruto + totalServicosBruto;
+            totalLiquido = totalPecasLiquido + totalServicosLiquido;
 
-                oRCAMENTO_TOTAL_ITEMTextBox.Text = totalPecasLiquido.ToString("0.00");
-                oRCAMENTO_TOTAL_SERVICOTextBox.Text = totalServicosLiquido.ToString("0.00");
-                textTotalBruto.Text = totalBruto.ToString("0.00");
-                oRCAMENTO_TOTALLabel1.Text = "R$" + totalLiquido.ToString("0.00");
+            oRCAMENTO_TOTAL_ITEMTextBox.Text = totalPecasLiquido.ToString("0.00");
+            oRCAMENTO_TOTAL_SERVICOTextBox.Text = totalServicosLiquido.ToString("0.00");
+            textTotalBruto.Text = totalBruto.ToString("0.00");
+            oRCAMENTO_TOTALLabel1.Text = "R$" + totalLiquido.ToString("0.00");
 
+            if (aplica) {
+                panelDesconto_Acrescimo.Visible = true;
+            } else {
+                panelDesconto_Acrescimo.Visible = false;
+                oRCAMENTO_DESCONTOTextBox.Text = "0,00";
+                oRCAMENTO_ACRESCIMOTextBox.Text = "0,00";
             }
         }
 
-            
+        private void tabPai_SelectedIndexChanged(object sender, EventArgs e) {
+            if (((TabControl)sender).SelectedTab == tabGeral) {
+                calcularTotais();
+            }
+        }
 
-       
-       
-        
-        
+        private void textServicoDesconto_TextChanged(object sender, EventArgs e) {
+            textServicoAcrescimo.Text = null;
+        }
+
+        private void textServicoAcrescimo_TextChanged(object sender, EventArgs e) {
+            textServicoDesconto.Text = null;
+        }
+
     }
 }

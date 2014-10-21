@@ -10,11 +10,19 @@ using System.Windows.Forms;
 
 namespace FROGI_OS.InterfaceGrafica
 {
-    public partial class formOSBasePesquisa : Form
-    {
+    public partial class formOSBasePesquisa : Form {
+
+        private formDialogo dialogo;
+
         public formOSBasePesquisa() {
             InitializeComponent();
             resetar();
+            dialogo = new formDialogo();
+        }
+
+        protected void exibirMensagemErro(String mensagem) {
+            dialogo.compor("Temos um problema", mensagem, formDialogo.TipoExpressao.AvisoTriste);
+            dialogo.ShowDialog();
         }
 
         protected virtual void preencherCampoPesquisa(bool eFisico) { }

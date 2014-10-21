@@ -7193,7 +7193,7 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ORCAMENTORow AddORCAMENTORow(int ORCAMENTO_CODIGO, CLIENTERow parentCLIENTERowByORCAMENTO_CLIENTE_FK, FUNCIONARIORow parentFUNCIONARIORowByORCAMENTO_FUNCIONARIO_FK, double ORCAMENTO_TOTAL_ITEM, double ORCAMENTO_TOTAL_SERVICO, double ORCAMENTO_DESCONTO, double ORCAMENTO_ACRESCIMO, string ORCAMENTO_OBSERVACAO, double ORCAMENTO_TOTAL, System.DateTime ORCAMENTO_DATA, string ORCAMENTO_PRODUTO, byte[] ORCAMENTO_DEFEITO, byte[] ORCAMENTO_AVULSOS, byte[] ORCAMENTO_DIAGNOSTICO) {
+            public ORCAMENTORow AddORCAMENTORow(int ORCAMENTO_CODIGO, CLIENTERow parentCLIENTERowByORCAMENTO_CLIENTE_FK, FUNCIONARIORow parentFUNCIONARIORowByORCAMENTO_FUNCIONARIO_FK, double ORCAMENTO_TOTAL_ITEM, double ORCAMENTO_TOTAL_SERVICO, double ORCAMENTO_DESCONTO, double ORCAMENTO_ACRESCIMO, string ORCAMENTO_OBSERVACAO, double ORCAMENTO_TOTAL, System.DateTime ORCAMENTO_DATA, string ORCAMENTO_PRODUTO, string ORCAMENTO_DEFEITO, string ORCAMENTO_AVULSOS, string ORCAMENTO_DIAGNOSTICO) {
                 ORCAMENTORow rowORCAMENTORow = ((ORCAMENTORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ORCAMENTO_CODIGO,
@@ -7286,11 +7286,11 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnORCAMENTO_DATA);
                 this.columnORCAMENTO_PRODUTO = new global::System.Data.DataColumn("ORCAMENTO_PRODUTO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_PRODUTO);
-                this.columnORCAMENTO_DEFEITO = new global::System.Data.DataColumn("ORCAMENTO_DEFEITO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_DEFEITO = new global::System.Data.DataColumn("ORCAMENTO_DEFEITO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_DEFEITO);
-                this.columnORCAMENTO_AVULSOS = new global::System.Data.DataColumn("ORCAMENTO_AVULSOS", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_AVULSOS = new global::System.Data.DataColumn("ORCAMENTO_AVULSOS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_AVULSOS);
-                this.columnORCAMENTO_DIAGNOSTICO = new global::System.Data.DataColumn("ORCAMENTO_DIAGNOSTICO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnORCAMENTO_DIAGNOSTICO = new global::System.Data.DataColumn("ORCAMENTO_DIAGNOSTICO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnORCAMENTO_DIAGNOSTICO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnORCAMENTO_CODIGO}, true));
@@ -19669,10 +19669,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] ORCAMENTO_DEFEITO {
+            public string ORCAMENTO_DEFEITO {
                 get {
                     try {
-                        return ((byte[])(this[this.tableORCAMENTO.ORCAMENTO_DEFEITOColumn]));
+                        return ((string)(this[this.tableORCAMENTO.ORCAMENTO_DEFEITOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_DEFEITO\' in table \'ORCAMENTO\' is DBNull.", e);
@@ -19685,10 +19685,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] ORCAMENTO_AVULSOS {
+            public string ORCAMENTO_AVULSOS {
                 get {
                     try {
-                        return ((byte[])(this[this.tableORCAMENTO.ORCAMENTO_AVULSOSColumn]));
+                        return ((string)(this[this.tableORCAMENTO.ORCAMENTO_AVULSOSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_AVULSOS\' in table \'ORCAMENTO\' is DBNull.", e);
@@ -19701,10 +19701,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] ORCAMENTO_DIAGNOSTICO {
+            public string ORCAMENTO_DIAGNOSTICO {
                 get {
                     try {
-                        return ((byte[])(this[this.tableORCAMENTO.ORCAMENTO_DIAGNOSTICOColumn]));
+                        return ((string)(this[this.tableORCAMENTO.ORCAMENTO_DIAGNOSTICOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'ORCAMENTO_DIAGNOSTICO\' in table \'ORCAMENTO\' is DBNull.", e);
@@ -37542,8 +37542,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ORCAMENTO_ITEM_CODIGO, int Original_ORCAMENTO_ITEM_ORCAMENTO, int Original_ORCAMENTO_ITEM_PRODUTO, decimal Original_ORCAMENTO_ITEM_VALOR, string Original_ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> Original_ORCAMENTO_ITEM_DESCONTO, short Original_ORCAMENTO_ITEM_QUANTIDADE, decimal Original_ORCAMENTO_ITEM_TOTAL) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ORCAMENTO_ITEM_CODIGO));
+        public virtual int Delete(global::System.Nullable<int> Original_ORCAMENTO_ITEM_CODIGO, int Original_ORCAMENTO_ITEM_ORCAMENTO, int Original_ORCAMENTO_ITEM_PRODUTO, decimal Original_ORCAMENTO_ITEM_VALOR, string Original_ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> Original_ORCAMENTO_ITEM_DESCONTO, short Original_ORCAMENTO_ITEM_QUANTIDADE, decimal Original_ORCAMENTO_ITEM_TOTAL) {
+            if ((Original_ORCAMENTO_ITEM_CODIGO.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ORCAMENTO_ITEM_CODIGO.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ORCAMENTO_ITEM_ORCAMENTO));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_ORCAMENTO_ITEM_PRODUTO));
             this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_ORCAMENTO_ITEM_VALOR));
@@ -37585,8 +37590,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ORCAMENTO_ITEM_CODIGO, int ORCAMENTO_ITEM_ORCAMENTO, int ORCAMENTO_ITEM_PRODUTO, decimal ORCAMENTO_ITEM_VALOR, string ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> ORCAMENTO_ITEM_DESCONTO, short ORCAMENTO_ITEM_QUANTIDADE, decimal ORCAMENTO_ITEM_TOTAL) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ORCAMENTO_ITEM_CODIGO));
+        public virtual int Insert(global::System.Nullable<int> ORCAMENTO_ITEM_CODIGO, int ORCAMENTO_ITEM_ORCAMENTO, int ORCAMENTO_ITEM_PRODUTO, decimal ORCAMENTO_ITEM_VALOR, string ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> ORCAMENTO_ITEM_DESCONTO, short ORCAMENTO_ITEM_QUANTIDADE, decimal ORCAMENTO_ITEM_TOTAL) {
+            if ((ORCAMENTO_ITEM_CODIGO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ORCAMENTO_ITEM_CODIGO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(ORCAMENTO_ITEM_ORCAMENTO));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ORCAMENTO_ITEM_PRODUTO));
             this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(ORCAMENTO_ITEM_VALOR));
@@ -37625,7 +37635,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int ORCAMENTO_ITEM_CODIGO, 
+                    global::System.Nullable<int> ORCAMENTO_ITEM_CODIGO, 
                     int ORCAMENTO_ITEM_ORCAMENTO, 
                     int ORCAMENTO_ITEM_PRODUTO, 
                     decimal ORCAMENTO_ITEM_VALOR, 
@@ -37633,7 +37643,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     global::System.Nullable<decimal> ORCAMENTO_ITEM_DESCONTO, 
                     short ORCAMENTO_ITEM_QUANTIDADE, 
                     decimal ORCAMENTO_ITEM_TOTAL, 
-                    int Original_ORCAMENTO_ITEM_CODIGO, 
+                    global::System.Nullable<int> Original_ORCAMENTO_ITEM_CODIGO, 
                     int Original_ORCAMENTO_ITEM_ORCAMENTO, 
                     int Original_ORCAMENTO_ITEM_PRODUTO, 
                     decimal Original_ORCAMENTO_ITEM_VALOR, 
@@ -37641,7 +37651,12 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     global::System.Nullable<decimal> Original_ORCAMENTO_ITEM_DESCONTO, 
                     short Original_ORCAMENTO_ITEM_QUANTIDADE, 
                     decimal Original_ORCAMENTO_ITEM_TOTAL) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ORCAMENTO_ITEM_CODIGO));
+            if ((ORCAMENTO_ITEM_CODIGO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ORCAMENTO_ITEM_CODIGO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ORCAMENTO_ITEM_ORCAMENTO));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ORCAMENTO_ITEM_PRODUTO));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(ORCAMENTO_ITEM_VALOR));
@@ -37659,7 +37674,12 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             }
             this.Adapter.UpdateCommand.Parameters[6].Value = ((short)(ORCAMENTO_ITEM_QUANTIDADE));
             this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(ORCAMENTO_ITEM_TOTAL));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ORCAMENTO_ITEM_CODIGO));
+            if ((Original_ORCAMENTO_ITEM_CODIGO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ORCAMENTO_ITEM_CODIGO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ORCAMENTO_ITEM_ORCAMENTO));
             this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_ORCAMENTO_ITEM_PRODUTO));
             this.Adapter.UpdateCommand.Parameters[11].Value = ((decimal)(Original_ORCAMENTO_ITEM_VALOR));
@@ -37701,7 +37721,7 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ORCAMENTO_ITEM_ORCAMENTO, int ORCAMENTO_ITEM_PRODUTO, decimal ORCAMENTO_ITEM_VALOR, string ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> ORCAMENTO_ITEM_DESCONTO, short ORCAMENTO_ITEM_QUANTIDADE, decimal ORCAMENTO_ITEM_TOTAL, int Original_ORCAMENTO_ITEM_CODIGO, int Original_ORCAMENTO_ITEM_ORCAMENTO, int Original_ORCAMENTO_ITEM_PRODUTO, decimal Original_ORCAMENTO_ITEM_VALOR, string Original_ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> Original_ORCAMENTO_ITEM_DESCONTO, short Original_ORCAMENTO_ITEM_QUANTIDADE, decimal Original_ORCAMENTO_ITEM_TOTAL) {
+        public virtual int Update(int ORCAMENTO_ITEM_ORCAMENTO, int ORCAMENTO_ITEM_PRODUTO, decimal ORCAMENTO_ITEM_VALOR, string ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> ORCAMENTO_ITEM_DESCONTO, short ORCAMENTO_ITEM_QUANTIDADE, decimal ORCAMENTO_ITEM_TOTAL, global::System.Nullable<int> Original_ORCAMENTO_ITEM_CODIGO, int Original_ORCAMENTO_ITEM_ORCAMENTO, int Original_ORCAMENTO_ITEM_PRODUTO, decimal Original_ORCAMENTO_ITEM_VALOR, string Original_ORCAMENTO_ITEM_DESCRICAO, global::System.Nullable<decimal> Original_ORCAMENTO_ITEM_DESCONTO, short Original_ORCAMENTO_ITEM_QUANTIDADE, decimal Original_ORCAMENTO_ITEM_TOTAL) {
             return this.Update(Original_ORCAMENTO_ITEM_CODIGO, ORCAMENTO_ITEM_ORCAMENTO, ORCAMENTO_ITEM_PRODUTO, ORCAMENTO_ITEM_VALOR, ORCAMENTO_ITEM_DESCRICAO, ORCAMENTO_ITEM_DESCONTO, ORCAMENTO_ITEM_QUANTIDADE, ORCAMENTO_ITEM_TOTAL, Original_ORCAMENTO_ITEM_CODIGO, Original_ORCAMENTO_ITEM_ORCAMENTO, Original_ORCAMENTO_ITEM_PRODUTO, Original_ORCAMENTO_ITEM_VALOR, Original_ORCAMENTO_ITEM_DESCRICAO, Original_ORCAMENTO_ITEM_DESCONTO, Original_ORCAMENTO_ITEM_QUANTIDADE, Original_ORCAMENTO_ITEM_TOTAL);
         }
     }

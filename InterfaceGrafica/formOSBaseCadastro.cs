@@ -12,7 +12,8 @@ namespace FROGI_OS.InterfaceGrafica {
     public partial class formOSBaseCadastro : Form {
 
         private formDialogo dialogo;
-        
+        private bool ignorar = false;
+
         public formOSBaseCadastro() {
             InitializeComponent();
             dialogo = new formDialogo();
@@ -76,6 +77,7 @@ namespace FROGI_OS.InterfaceGrafica {
                     }
                 }
             }
+            ignorar = true;
         }
 
         public void deletar() {
@@ -154,9 +156,12 @@ namespace FROGI_OS.InterfaceGrafica {
         }
 
         private void formOSBase_FormClosing(object sender, FormClosingEventArgs e) {
-            formDialogo dialogo = new formDialogo("Tem certeza que quer sair?", "Alterações não salvas serão perdidas!", formDialogo.TipoExpressao.Pergunta);
-            if (dialogo.ShowDialog() == DialogResult.No)
-                e.Cancel = true;
+            if (!ignorar) {
+                formDialogo dialogo = new formDialogo("Tem certeza que quer sair?", "Alterações não salvas serão perdidas!", formDialogo.TipoExpressao.Pergunta);
+                if (dialogo.ShowDialog() == DialogResult.No)
+                    e.Cancel = true;
+            }
+            ignorar = false;
         }
 
         private void pictureEditar_Click(object sender, EventArgs e) {

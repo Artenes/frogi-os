@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FROGI_OS.CamadaAcessoDados;
 using System.Data;
+using FirebirdSql.Data.FirebirdClient;
 
 namespace FROGI_OS.CamadaEnlaceDados
 {
@@ -13,6 +14,7 @@ namespace FROGI_OS.CamadaEnlaceDados
         private TblOrcamento orcamentoSQL;
         private TblOrcamentoItem orcamentoItemSQL;
         private TblOrcamentoServico orcamentoServicoSQL;
+        private string paramValor = "@VALOR";
 
         public GerOrcamento() {
             orcamentoSQL = new TblOrcamento();
@@ -46,18 +48,27 @@ namespace FROGI_OS.CamadaEnlaceDados
         {
             orcamentoSQL.atualizar(orcamento);
 
-            dsFROGIOS.ORCAMENTO_ITEMDataTable itensDeletados =
-                (dsFROGIOS.ORCAMENTO_ITEMDataTable)itens.GetChanges(DataRowState.Deleted);
-            dsFROGIOS.ORCAMENTO_ITEMDataTable itensInseridos =
-                (dsFROGIOS.ORCAMENTO_ITEMDataTable)itens.GetChanges(DataRowState.Added);
+            dsFROGIOS.ORCAMENTO_ITEMDataTable itensDeletados = new dsFROGIOS.ORCAMENTO_ITEMDataTable();
+            dsFROGIOS.ORCAMENTO_ITEMDataTable itensInseridos = new dsFROGIOS.ORCAMENTO_ITEMDataTable();
+            dsFROGIOS.ORCAMENTO_SERVICODataTable servicosDeletados = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
+            dsFROGIOS.ORCAMENTO_SERVICODataTable servicosInseridos = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
 
-            dsFROGIOS.ORCAMENTO_SERVICODataTable servicosDeletados =
-                (dsFROGIOS.ORCAMENTO_SERVICODataTable)itens.GetChanges(DataRowState.Deleted);
-            dsFROGIOS.ORCAMENTO_SERVICODataTable servicosInseridos =
-                (dsFROGIOS.ORCAMENTO_SERVICODataTable)itens.GetChanges(DataRowState.Added);
+            foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in itens) {
+                if (item.RowState == DataRowState.Added) {
+                    itensInseridos.ImportRow(item);
+                }
+            }
+            itensDeletados = (dsFROGIOS.ORCAMENTO_ITEMDataTable)itens.GetChanges(DataRowState.Deleted);
 
-            dsFROGIOS.ORCAMENTO_ITEMRow item = itens.NewORCAMENTO_ITEMRow();
-            dsFROGIOS.ORCAMENTO_SERVICORow servico = servicos.NewORCAMENTO_SERVICORow();
+            foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in servicos) {
+                if (servico.RowState == DataRowState.Added) {
+                    servicosInseridos.AddORCAMENTO_SERVICORow(servico);
+                }
+            }
+            servicosDeletados = (dsFROGIOS.ORCAMENTO_SERVICODataTable)servicos.GetChanges(DataRowState.Deleted);
+
+            dsFROGIOS.ORCAMENTO_ITEMRow itemTmp = itens.NewORCAMENTO_ITEMRow();
+            dsFROGIOS.ORCAMENTO_SERVICORow servicoTmp = servicos.NewORCAMENTO_SERVICORow();
 
             int qtdItensDeletados = itensDeletados.Rows.Count;
             int qtdItensInseridos = itensInseridos.Rows.Count;
@@ -65,36 +76,36 @@ namespace FROGI_OS.CamadaEnlaceDados
             int qtdServicosInseridos = servicosInseridos.Rows.Count;
 
             for (int i = 0; i < qtdItensDeletados; i++) {
-                item.ORCAMENTO_ITEM_CODIGO =
+                itemTmp.ORCAMENTO_ITEM_CODIGO =
                     (int)itensDeletados.Rows[i][itensDeletados.ORCAMENTO_ITEM_CODIGOColumn, DataRowVersion.Original];
-                orcamentoItemSQL.deletar(item);
+                orcamentoItemSQL.deletar(itemTmp);
             }
 
             for (int i = 0; i < qtdServicosDeletados; i++) {
-                servico.ORCAMENTO_SERVICO_CODIGO =
+                servicoTmp.ORCAMENTO_SERVICO_CODIGO =
                     (int)servicosDeletados.Rows[i][servicosDeletados.ORCAMENTO_SERVICO_CODIGOColumn, DataRowVersion.Original];
-                orcamentoServicoSQL.deletar(servico);
+                orcamentoServicoSQL.deletar(servicoTmp);
             }
 
             for (int i = 0; i < qtdItensInseridos; i++) {
-                item.ORCAMENTO_ITEM_DESCONTO = (double) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCONTOColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_DESCRICAO = (string) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCRICAOColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
-                item.ORCAMENTO_ITEM_PRODUTO = (int)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_PRODUTOColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_QUANTIDADE = (short)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_TOTAL = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_TOTALColumn, DataRowVersion.Current];
-                item.ORCAMENTO_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_VALORColumn, DataRowVersion.Current];
-                orcamentoItemSQL.inserir(item);
+                itemTmp.ORCAMENTO_ITEM_DESCONTO = (double) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCONTOColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_DESCRICAO = (string) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCRICAOColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
+                itemTmp.ORCAMENTO_ITEM_PRODUTO = (int)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_PRODUTOColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_QUANTIDADE = (short)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_TOTAL = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_TOTALColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_VALORColumn, DataRowVersion.Current];
+                orcamentoItemSQL.inserir(itemTmp);
             }
 
             for (int i = 0; i < qtdServicosInseridos; i++) {
-                servico.ORCAMENTO_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCONTOColumn, DataRowVersion.Current];
-                servico.ORCAMENTO_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
-                servico.ORCAMENTO_SERVICO_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
-                servico.ORCAMENTO_SERVICO_SERVICO = (int)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_SERVICOColumn, DataRowVersion.Current];
-                servico.ORCAMENTO_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
-                servico.ORCAMENTO_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_VALORColumn, DataRowVersion.Current];
-                orcamentoServicoSQL.inserir(servico);
+                servicoTmp.ORCAMENTO_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCONTOColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
+                servicoTmp.ORCAMENTO_SERVICO_SERVICO = (int)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_SERVICOColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_VALORColumn, DataRowVersion.Current];
+                orcamentoServicoSQL.inserir(servicoTmp);
             }
         }
 
@@ -179,6 +190,47 @@ namespace FROGI_OS.CamadaEnlaceDados
                     )
                 );
         }
+
+        public FbDataReader pesquisar(string coluna, string valor, bool eFisico) {
+            FbCommand comando = null;
+
+            string sqlFisico = 
+                "SELECT "
+                + "ORCAMENTO_CODIGO, "
+                + "CLIENTE_FISICO_NOME, "
+                + "CLIENTE_TELEFONE, " 
+                + "CLIENTE_CELULAR, "
+                + "FUNCIONARIO_NOME, "
+                + "ORCAMENTO_DATA "
+                + "FROM "
+                + "CLIENTE INNER JOIN "
+                + "CLIENTE_FISICO ON CLIENTE_CODIGO = CLIENTE_FISICO_CLIENTE INNER JOIN "
+                + "ORCAMENTO ON CLIENTE_CODIGO = ORCAMENTO_CLIENTE INNER JOIN "
+                + "FUNCIONARIO ON ORCAMENTO_FUNCIONARIO = FUNCIONARIO_CODIGO "
+                + "WHERE " + coluna + " CONTAINING " + paramValor + ";";
+
+
+            string sqlJuridico =
+                "SELECT "
+                + "ORCAMENTO_CODIGO, "
+                + "CLIENTE_JURIDICO_FANTASIA, "
+                + "CLIENTE_TELEFONE, "
+                + "CLIENTE_CELULAR, "
+                + "FUNCIONARIO_NOME, "
+                + "ORCAMENTO_DATA "
+                + "FROM "
+                + "CLIENTE INNER JOIN "
+                + "CLIENTE_JURIDICO ON CLIENTE_CODIGO = CLIENTE_JURIDICO_CLIENTE INNER JOIN "
+                + "ORCAMENTO ON CLIENTE_CODIGO = ORCAMENTO_CLIENTE INNER JOIN "
+                + "FUNCIONARIO ON ORCAMENTO_FUNCIONARIO = FUNCIONARIO_CODIGO;"
+                + "WHERE " + coluna + " CONTAINING " + paramValor + ";";
+
+            comando = new FbCommand((eFisico ? sqlFisico : sqlJuridico), Conexao.getConexao, Conexao.getTransacao);
+            comando.Parameters.AddWithValue(paramValor, valor);
+
+            return comando.ExecuteReader();
+        }
+
         public void deletar(dsFROGIOS.ORCAMENTORow orcamento) {
             orcamentoSQL.deletar(orcamento);
             //Deleta só o orcamento

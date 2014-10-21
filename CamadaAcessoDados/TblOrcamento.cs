@@ -18,6 +18,10 @@ namespace FROGI_OS.CamadaAcessoDados {
         private string paramObservacao = "@OBSERVACAO";
         private string paramTotal = "@TOTAL";
         private string paramData = "@DATA";
+        private string paramProduto = "@PRODUTO";
+        private string paramDiagnostico = "@Diagnostico";
+        private string paramAvulsos = "@Avulsos";
+        private string paramDefeito = "@Defeito";
 
         private string paramValor = "@VALOR";
 
@@ -34,7 +38,11 @@ namespace FROGI_OS.CamadaAcessoDados {
                + paramAcrescimo + ", "
                + paramObservacao + ", "
                + paramTotal + ", "
-               + paramData + ") "
+               + paramData + ", "
+               + paramProduto + ", "
+               + paramDiagnostico + ", "
+               + paramAvulsos + ", "
+               + paramDefeito + ") "
                + "RETURNING ORCAMENTO_CODIGO;";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
@@ -47,6 +55,11 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramObservacao, orcamento.ORCAMENTO_OBSERVACAO);
             comando.Parameters.AddWithValue(paramTotal, orcamento.ORCAMENTO_TOTAL);
             comando.Parameters.AddWithValue(paramData, orcamento.ORCAMENTO_DATA);
+            comando.Parameters.AddWithValue(paramProduto, orcamento.ORCAMENTO_PRODUTO);
+            comando.Parameters.AddWithValue(paramDiagnostico, orcamento.ORCAMENTO_DIAGNOSTICO);
+            comando.Parameters.AddWithValue(paramAvulsos, orcamento.ORCAMENTO_AVULSOS);
+            comando.Parameters.AddWithValue(paramDefeito, orcamento.ORCAMENTO_DEFEITO);
+
             return (int)comando.ExecuteScalar();
         }
 
@@ -63,7 +76,11 @@ namespace FROGI_OS.CamadaAcessoDados {
                 + "ORCAMENTO_ACRESCIMO = " + paramAcrescimo + ", "
                 + "ORCAMENTO_OBSERVACAO = " + paramObservacao + ", "
                 + "ORCAMENTO_TOTAL = " + paramTotal + ", "
-                + "ORCAMENTO_DATA = " + paramData + " "
+                + "ORCAMENTO_DATA = " + paramData + ", "
+                + "ORCAMENTO_PRODUTO = " + paramProduto + ", "
+                + "ORCAMENTO_DIAGNOSTICO = " + paramDiagnostico + ", "
+                + "ORCAMENTO_AVULSOS = " + paramAvulsos + ", "
+                + "ORCAMENTO_DEFEITO = " + paramDefeito + " "
                 + "WHERE ORCAMENTO_CODIGO = " + paramCodigo + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
@@ -77,8 +94,12 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramObservacao, orcamento.ORCAMENTO_OBSERVACAO);
             comando.Parameters.AddWithValue(paramTotal, orcamento.ORCAMENTO_TOTAL);
             comando.Parameters.AddWithValue(paramData, orcamento.ORCAMENTO_DATA);
+            comando.Parameters.AddWithValue(paramProduto, orcamento.ORCAMENTO_PRODUTO);
+            comando.Parameters.AddWithValue(paramDiagnostico, orcamento.ORCAMENTO_DIAGNOSTICO);
+            comando.Parameters.AddWithValue(paramAvulsos, orcamento.ORCAMENTO_AVULSOS);
+            comando.Parameters.AddWithValue(paramDefeito, orcamento.ORCAMENTO_DEFEITO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -103,7 +124,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, orcamento.ORCAMENTO_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }
