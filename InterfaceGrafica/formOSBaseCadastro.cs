@@ -78,6 +78,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 }
             }
             ignorar = true;
+            this.Close();
         }
 
         public void deletar() {

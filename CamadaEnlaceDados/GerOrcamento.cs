@@ -53,16 +53,22 @@ namespace FROGI_OS.CamadaEnlaceDados
             dsFROGIOS.ORCAMENTO_SERVICODataTable servicosDeletados = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
             dsFROGIOS.ORCAMENTO_SERVICODataTable servicosInseridos = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
 
+            int contador = 0;
             foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in itens) {
                 if (item.RowState == DataRowState.Added) {
+                    item.ORCAMENTO_ITEM_CODIGO = contador; contador++;
+                    item.ORCAMENTO_ITEM_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                     itensInseridos.ImportRow(item);
                 }
             }
             itensDeletados = (dsFROGIOS.ORCAMENTO_ITEMDataTable)itens.GetChanges(DataRowState.Deleted);
 
+            contador = 0;
             foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in servicos) {
                 if (servico.RowState == DataRowState.Added) {
-                    servicosInseridos.AddORCAMENTO_SERVICORow(servico);
+                    servico.ORCAMENTO_SERVICO_CODIGO = contador; contador++;
+                    servico.ORCAMENTO_SERVICO_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
+                    servicosInseridos.ImportRow(servico);
                 }
             }
             servicosDeletados = (dsFROGIOS.ORCAMENTO_SERVICODataTable)servicos.GetChanges(DataRowState.Deleted);
@@ -70,41 +76,40 @@ namespace FROGI_OS.CamadaEnlaceDados
             dsFROGIOS.ORCAMENTO_ITEMRow itemTmp = itens.NewORCAMENTO_ITEMRow();
             dsFROGIOS.ORCAMENTO_SERVICORow servicoTmp = servicos.NewORCAMENTO_SERVICORow();
 
-            int qtdItensDeletados = itensDeletados.Rows.Count;
-            int qtdItensInseridos = itensInseridos.Rows.Count;
-            int qtdServicosDeletados = servicosDeletados.Rows.Count;
-            int qtdServicosInseridos = servicosInseridos.Rows.Count;
+            int qtdItensDeletados = itensDeletados != null ? itensDeletados.Rows.Count : 0;
+            int qtdItensInseridos = itensInseridos != null ? itensInseridos.Rows.Count : 0;
+            int qtdServicosDeletados = servicosDeletados != null ? servicosDeletados.Rows.Count : 0;
+            int qtdServicosInseridos = servicosInseridos != null ? servicosInseridos.Rows.Count : 0;
 
             for (int i = 0; i < qtdItensDeletados; i++) {
-                itemTmp.ORCAMENTO_ITEM_CODIGO =
-                    (int)itensDeletados.Rows[i][itensDeletados.ORCAMENTO_ITEM_CODIGOColumn, DataRowVersion.Original];
+                itemTmp.ORCAMENTO_ITEM_CODIGO = (int)itensDeletados.Rows[i][itensDeletados.ORCAMENTO_ITEM_CODIGOColumn, DataRowVersion.Original];
                 orcamentoItemSQL.deletar(itemTmp);
             }
 
             for (int i = 0; i < qtdServicosDeletados; i++) {
-                servicoTmp.ORCAMENTO_SERVICO_CODIGO =
-                    (int)servicosDeletados.Rows[i][servicosDeletados.ORCAMENTO_SERVICO_CODIGOColumn, DataRowVersion.Original];
+                servicoTmp.ORCAMENTO_SERVICO_CODIGO = (int)servicosDeletados.Rows[i][servicosDeletados.ORCAMENTO_SERVICO_CODIGOColumn, DataRowVersion.Original];
                 orcamentoServicoSQL.deletar(servicoTmp);
             }
 
             for (int i = 0; i < qtdItensInseridos; i++) {
-                itemTmp.ORCAMENTO_ITEM_DESCONTO = (double) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCONTOColumn, DataRowVersion.Current];
-                itemTmp.ORCAMENTO_ITEM_DESCRICAO = (string) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCRICAOColumn, DataRowVersion.Current];
                 itemTmp.ORCAMENTO_ITEM_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                 itemTmp.ORCAMENTO_ITEM_PRODUTO = (int)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_PRODUTOColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_VALORColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_DESCRICAO = (string) itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCRICAOColumn, DataRowVersion.Current];
+                itemTmp.ORCAMENTO_ITEM_DESCONTO = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_DESCONTOColumn, DataRowVersion.Current];
                 itemTmp.ORCAMENTO_ITEM_QUANTIDADE = (short)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
                 itemTmp.ORCAMENTO_ITEM_TOTAL = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_TOTALColumn, DataRowVersion.Current];
-                itemTmp.ORCAMENTO_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.ORCAMENTO_ITEM_VALORColumn, DataRowVersion.Current];
                 orcamentoItemSQL.inserir(itemTmp);
             }
 
             for (int i = 0; i < qtdServicosInseridos; i++) {
-                servicoTmp.ORCAMENTO_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCONTOColumn, DataRowVersion.Current];
-                servicoTmp.ORCAMENTO_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
                 servicoTmp.ORCAMENTO_SERVICO_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                 servicoTmp.ORCAMENTO_SERVICO_SERVICO = (int)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_SERVICOColumn, DataRowVersion.Current];
-                servicoTmp.ORCAMENTO_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
                 servicoTmp.ORCAMENTO_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_VALORColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_DESCONTOColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_ACRESCIMO = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_ACRESCIMOColumn, DataRowVersion.Current];
+                servicoTmp.ORCAMENTO_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
                 orcamentoServicoSQL.inserir(servicoTmp);
             }
         }

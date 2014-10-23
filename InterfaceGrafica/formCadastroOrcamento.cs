@@ -29,9 +29,6 @@ namespace FROGI_OS.InterfaceGrafica {
                 oRCAMENTO_ACRESCIMOTextBox.Text = "0,0";
                 oRCAMENTO_DATALabel1.Text = DateTime.Now.ToShortDateString();
                 campos(true);
-            } else {
-                oRCAMENTO_TOTALLabel1.Text = "R$" + oRCAMENTO_TOTALLabel1.Text;
-                calcularTotais();
             }
         }
 
@@ -93,6 +90,15 @@ namespace FROGI_OS.InterfaceGrafica {
 
         public override void selecionar(int codigo) {
             orcamentoSQL.selecionar(codigo,dsFROGIOS.ORCAMENTO, dsFROGIOS.ORCAMENTO_ITEM, dsFROGIOS.ORCAMENTO_SERVICO, dsFROGIOS.CLIENTE, dsFROGIOS.CLIENTE_FISICO, dsFROGIOS.CLIENTE_JURIDICO, dsFROGIOS.FUNCIONARIO);
+            calcularTotais();
+            if (dsFROGIOS.CLIENTE_FISICO.Rows.Count != 0) {
+                labelCliente.Text = ((dsFROGIOS.CLIENTE_FISICORow)dsFROGIOS.CLIENTE_FISICO.Rows[0]).CLIENTE_FISICO_NOME;
+            } else {
+                labelCliente.Text = ((dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO.Rows[0]).CLIENTE_JURIDICO_FANTASIA;
+            }
+            labelFuncionario.Text = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_NOME;
+            //oRCAMENTO_TOTALLabel1.Text = "R$" + oRCAMENTO_TOTALLabel1.Text;
+
         }
 
         public void selecionarCliente(int codigo, bool eFisico) {
@@ -109,7 +115,7 @@ namespace FROGI_OS.InterfaceGrafica {
         public void selecionarFuncionario(int codigo) {
             GerFuncionario funcionario = new GerFuncionario();
             funcionario.selecionar(codigo, dsFROGIOS.FUNCIONARIO, null);
-            fUNCIONARIO_NOMELabel1.Text = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_NOME;
+            labelFuncionario.Text = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_NOME;
             funcionario = null;
         }
 
@@ -286,18 +292,23 @@ namespace FROGI_OS.InterfaceGrafica {
             bool aplica = true;
 
             foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in dsFROGIOS.ORCAMENTO_ITEM.Rows) {
-                totalPecasBruto += (item.ORCAMENTO_ITEM_VALOR * item.ORCAMENTO_ITEM_QUANTIDADE);
-                totalPecasLiquido += item.ORCAMENTO_ITEM_TOTAL;
-                if (item.ORCAMENTO_ITEM_DESCONTO != 0) {
-                    aplica = false;
+                if (item.RowState != DataRowState.Deleted) {
+                    totalPecasBruto += (item.ORCAMENTO_ITEM_VALOR * item.ORCAMENTO_ITEM_QUANTIDADE);
+                    totalPecasLiquido += item.ORCAMENTO_ITEM_TOTAL;
+                    if (item.ORCAMENTO_ITEM_DESCONTO != 0) {
+                        aplica = false;
+                    }    
                 }
+                
             }
 
             foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in dsFROGIOS.ORCAMENTO_SERVICO.Rows) {
-                totalServicosBruto += servico.ORCAMENTO_SERVICO_VALOR;
-                totalServicosLiquido += servico.ORCAMENTO_SERVICO_TOTAL;
-                if (servico.ORCAMENTO_SERVICO_DESCONTO != 0 || servico.ORCAMENTO_SERVICO_ACRESCIMO != 0) {
-                    aplica = false;
+                if (servico.RowState != DataRowState.Deleted) {
+                    totalServicosBruto += servico.ORCAMENTO_SERVICO_VALOR;
+                    totalServicosLiquido += servico.ORCAMENTO_SERVICO_TOTAL;
+                    if (servico.ORCAMENTO_SERVICO_DESCONTO != 0 || servico.ORCAMENTO_SERVICO_ACRESCIMO != 0) {
+                        aplica = false;
+                    }    
                 }
             }
 

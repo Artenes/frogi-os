@@ -51,7 +51,7 @@
             this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.oRCAMENTO_TOTAL_ITEMTextBox = new System.Windows.Forms.TextBox();
-            this.fUNCIONARIO_NOMELabel1 = new System.Windows.Forms.Label();
+            this.labelFuncionario = new System.Windows.Forms.Label();
             this.bsFuncionario = new System.Windows.Forms.BindingSource(this.components);
             this.oRCAMENTO_DATALabel1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -423,7 +423,7 @@
             // 
             // oRCAMENTO_TOTAL_SERVICOTextBox
             // 
-            this.oRCAMENTO_TOTAL_SERVICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL_SERVICO", true));
+            this.oRCAMENTO_TOTAL_SERVICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL_SERVICO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.oRCAMENTO_TOTAL_SERVICOTextBox.Enabled = false;
             this.oRCAMENTO_TOTAL_SERVICOTextBox.Location = new System.Drawing.Point(124, 71);
             this.oRCAMENTO_TOTAL_SERVICOTextBox.Name = "oRCAMENTO_TOTAL_SERVICOTextBox";
@@ -442,24 +442,24 @@
             // 
             // oRCAMENTO_TOTAL_ITEMTextBox
             // 
-            this.oRCAMENTO_TOTAL_ITEMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL_ITEM", true));
+            this.oRCAMENTO_TOTAL_ITEMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL_ITEM", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.oRCAMENTO_TOTAL_ITEMTextBox.Enabled = false;
             this.oRCAMENTO_TOTAL_ITEMTextBox.Location = new System.Drawing.Point(124, 21);
             this.oRCAMENTO_TOTAL_ITEMTextBox.Name = "oRCAMENTO_TOTAL_ITEMTextBox";
             this.oRCAMENTO_TOTAL_ITEMTextBox.Size = new System.Drawing.Size(158, 33);
             this.oRCAMENTO_TOTAL_ITEMTextBox.TabIndex = 14;
             // 
-            // fUNCIONARIO_NOMELabel1
+            // labelFuncionario
             // 
-            this.fUNCIONARIO_NOMELabel1.AutoSize = true;
-            this.fUNCIONARIO_NOMELabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.fUNCIONARIO_NOMELabel1.ForeColor = System.Drawing.Color.Black;
-            this.fUNCIONARIO_NOMELabel1.Location = new System.Drawing.Point(37, 141);
-            this.fUNCIONARIO_NOMELabel1.Name = "fUNCIONARIO_NOMELabel1";
-            this.fUNCIONARIO_NOMELabel1.Size = new System.Drawing.Size(183, 25);
-            this.fUNCIONARIO_NOMELabel1.TabIndex = 6;
-            this.fUNCIONARIO_NOMELabel1.Text = "Clique para pesquisar";
-            this.fUNCIONARIO_NOMELabel1.Click += new System.EventHandler(this.fUNCIONARIO_NOMELabel1_Click);
+            this.labelFuncionario.AutoSize = true;
+            this.labelFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelFuncionario.ForeColor = System.Drawing.Color.Black;
+            this.labelFuncionario.Location = new System.Drawing.Point(37, 141);
+            this.labelFuncionario.Name = "labelFuncionario";
+            this.labelFuncionario.Size = new System.Drawing.Size(183, 25);
+            this.labelFuncionario.TabIndex = 6;
+            this.labelFuncionario.Text = "Clique para pesquisar";
+            this.labelFuncionario.Click += new System.EventHandler(this.fUNCIONARIO_NOMELabel1_Click);
             // 
             // bsFuncionario
             // 
@@ -505,14 +505,14 @@
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.fUNCIONARIO_NOMELabel1);
+            this.groupBox4.Controls.Add(this.labelFuncionario);
             this.groupBox4.Controls.Add(label5);
             this.groupBox4.Controls.Add(this.labelCliente);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(label9);
             this.groupBox4.Location = new System.Drawing.Point(11, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(730, 190);
+            this.groupBox4.Size = new System.Drawing.Size(696, 190);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pessoal";
@@ -1130,7 +1130,7 @@
         private System.Windows.Forms.TextBox textTotalBruto;
         private System.Windows.Forms.TextBox oRCAMENTO_TOTAL_SERVICOTextBox;
         private System.Windows.Forms.TextBox oRCAMENTO_TOTAL_ITEMTextBox;
-        private System.Windows.Forms.Label fUNCIONARIO_NOMELabel1;
+        private System.Windows.Forms.Label labelFuncionario;
         private System.Windows.Forms.Label oRCAMENTO_DATALabel1;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.GroupBox groupData;
