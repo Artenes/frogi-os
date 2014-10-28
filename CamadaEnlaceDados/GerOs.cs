@@ -15,6 +15,8 @@ namespace FROGI_OS.CamadaEnlaceDados
         private TblOsItem sqlOsItem;
         private TblOsServico sqlOsServico;
         private string paramValor = "@VALOR";
+        private string paramEstoque = "@ESTOQUE";
+        private string paramCodigo = "@CODIGO";
         public static string LANCADO = "LANÇADO";
         public static string ABERTO = "ABERTO";
         public static string CONCLUIDO = "CONCLUÍDO";
@@ -33,9 +35,20 @@ namespace FROGI_OS.CamadaEnlaceDados
 
             int codigo = sqlOs.inserir(os);
 
+            TblProduto produtoSQL = new TblProduto();
+            string sql = 
+                "UPDATE PRODUTO "+
+                "SET PRODUTO_ESTOQUE_ATUAL = ((SELECT PRODUTO_ESTOQUE_ATUAL FROM PRODUTO WHERE PRODUTO_CODIGO = "+paramCodigo+")-"+paramEstoque+") "+
+                "WHERE PRODUTO_CODIGO = "+paramCodigo;
+
+            FbCommand comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             foreach (dsFROGIOS.OS_ITEMRow item in itens.Rows) {
                 item.OS_ITEM_OS = codigo;
                 sqlOsItem.inserir(item);
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue(paramCodigo, item.OS_ITEM_PRODUTO);
+                comando.Parameters.AddWithValue(paramEstoque, item.OS_ITEM_QUANTIDADE);
+                comando.ExecuteNonQuery();
             }
 
             foreach (dsFROGIOS.OS_SERVICORow servico in servicos.Rows) {
@@ -56,6 +69,7 @@ namespace FROGI_OS.CamadaEnlaceDados
             dsFROGIOS.OS_ITEMDataTable itensInseridos = new dsFROGIOS.OS_ITEMDataTable();
             dsFROGIOS.OS_SERVICODataTable servicosDeletados = new dsFROGIOS.OS_SERVICODataTable();
             dsFROGIOS.OS_SERVICODataTable servicosInseridos = new dsFROGIOS.OS_SERVICODataTable();
+            dsFROGIOS.OS_ITEMDataTable itensAlterados = new dsFROGIOS.OS_ITEMDataTable();
 
             int contador = 0;
             foreach (dsFROGIOS.OS_ITEMRow item in itens)
@@ -65,6 +79,10 @@ namespace FROGI_OS.CamadaEnlaceDados
                     item.OS_ITEM_CODIGO = contador; contador++;
                     item.OS_ITEM_OS = os.OS_CODIGO;
                     itensInseridos.ImportRow(item);
+                }
+
+                if (item.RowState == DataRowState.Modified) {
+                    itensAlterados.ImportRow(item);
                 }
             }
             itensDeletados = (dsFROGIOS.OS_ITEMDataTable)itens.GetChanges(DataRowState.Deleted);
@@ -86,12 +104,30 @@ namespace FROGI_OS.CamadaEnlaceDados
 
             int qtdItensDeletados = itensDeletados != null ? itensDeletados.Rows.Count : 0;
             int qtdItensInseridos = itensInseridos != null ? itensInseridos.Rows.Count : 0;
+            int qtdItensAlterados = itensAlterados != null ? itensAlterados.Rows.Count : 0;
             int qtdServicosDeletados = servicosDeletados != null ? servicosDeletados.Rows.Count : 0;
             int qtdServicosInseridos = servicosInseridos != null ? servicosInseridos.Rows.Count : 0;
+
+            string sqlRetirar =
+                "UPDATE PRODUTO " +
+                "SET PRODUTO_ESTOQUE_ATUAL = ((SELECT PRODUTO_ESTOQUE_ATUAL FROM PRODUTO WHERE PRODUTO_CODIGO = " + paramCodigo + ")-" + paramEstoque + ") " +
+                "WHERE PRODUTO_CODIGO = " + paramCodigo;
+
+            string sqlAdicionar =
+                "UPDATE PRODUTO " +
+                "SET PRODUTO_ESTOQUE_ATUAL = ((SELECT PRODUTO_ESTOQUE_ATUAL FROM PRODUTO WHERE PRODUTO_CODIGO = " + paramCodigo + ")+" + paramEstoque + ") " +
+                "WHERE PRODUTO_CODIGO = " + paramCodigo;
+
+            FbCommand comando = new FbCommand(sqlAdicionar, Conexao.getConexao, Conexao.getTransacao);
 
             for (int i = 0; i < qtdItensDeletados; i++) {
                 itemTmp.OS_ITEM_CODIGO = (int)itensDeletados.Rows[i][itensDeletados.OS_ITEM_CODIGOColumn, DataRowVersion.Original];
                 sqlOsItem.deletar(itemTmp);
+
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue(paramCodigo, (itensDeletados.Rows[i][itensDeletados.OS_ITEM_PRODUTOColumn, DataRowVersion.Original] as dsFROGIOS.OS_ITEMRow).OS_ITEM_PRODUTO);
+                comando.Parameters.AddWithValue(paramEstoque, (itensDeletados.Rows[i][itensDeletados.OS_ITEM_PRODUTOColumn, DataRowVersion.Original] as dsFROGIOS.OS_ITEMRow).OS_ITEM_QUANTIDADE);
+                comando.ExecuteNonQuery();
             }
 
             for (int i = 0; i < qtdServicosDeletados; i++) {
@@ -108,6 +144,12 @@ namespace FROGI_OS.CamadaEnlaceDados
                 itemTmp.OS_ITEM_TOTAL = (double)itensInseridos.Rows[i][itensInseridos.OS_ITEM_TOTALColumn, DataRowVersion.Current];
                 itemTmp.OS_ITEM_VALOR = (double)itensInseridos.Rows[i][itensInseridos.OS_ITEM_VALORColumn, DataRowVersion.Current];
                 sqlOsItem.inserir(itemTmp);
+
+                comando.CommandText = sqlRetirar;
+                comando.Parameters.Clear();
+                comando.Parameters.AddWithValue(paramCodigo, itemTmp.OS_ITEM_PRODUTO);
+                comando.Parameters.AddWithValue(paramEstoque, itemTmp.OS_ITEM_QUANTIDADE);
+                comando.ExecuteNonQuery();
             }
 
             for (int i = 0; i < qtdServicosInseridos; i++) {
@@ -119,6 +161,37 @@ namespace FROGI_OS.CamadaEnlaceDados
                 servicoTmp.OS_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_VALORColumn, DataRowVersion.Current];
                 sqlOsServico.inserir(servicoTmp);
             }
+
+            TblOsItem osItemSQL = new TblOsItem();
+            for (int i = 0; i < qtdItensAlterados; i++) {
+
+                int quantidadeAtual = (int)itensAlterados.Rows[i][itensAlterados.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
+                int quantidadeOriginal = (int)itensAlterados.Rows[i][itensAlterados.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Original];
+                int codigoProduto = (int)itensAlterados.Rows[i][itensAlterados.OS_ITEM_PRODUTOColumn, DataRowVersion.Current];
+                int diferenca = quantidadeOriginal - quantidadeAtual;
+                dsFROGIOS.OS_ITEMRow item = itensAlterados.Rows[i] as dsFROGIOS.OS_ITEMRow;
+
+                if (diferenca > 0) {
+                    //somar estoque à um produto
+                    comando.CommandText = sqlAdicionar;
+                    comando.Parameters.Clear();
+                    comando.Parameters.AddWithValue(paramCodigo, codigoProduto);
+                    comando.Parameters.AddWithValue(paramEstoque, diferenca);
+                    comando.ExecuteNonQuery();
+                }
+                else if (diferenca < 0)
+                {
+                    // subtrair estoque de um produto
+                    comando.CommandText = sqlRetirar;
+                    comando.Parameters.Clear();
+                    comando.Parameters.AddWithValue(paramCodigo, codigoProduto);
+                    comando.Parameters.AddWithValue(paramEstoque, (diferenca * (-1)));
+                    comando.ExecuteNonQuery();
+                }
+
+                osItemSQL.atualizar(item);
+            }
+
         }
 
         public void selecionar(

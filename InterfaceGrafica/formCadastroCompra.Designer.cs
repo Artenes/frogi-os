@@ -41,44 +41,46 @@
             System.Windows.Forms.Label iTEM_COMPRA_DESCONTOLabel;
             System.Windows.Forms.Label iTEM_COMPRA_QUANTIDADELabel;
             System.Windows.Forms.Label cOMPRA_DATALabel;
+            System.Windows.Forms.Label label1;
             this.tabPai = new System.Windows.Forms.TabControl();
             this.tabGeral = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cOMPRA_NOTA_FISCALTextBox = new System.Windows.Forms.TextBox();
-            this.bsCompra = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.cOMPRA_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
             this.cOMPRA_FUNCIONARIOTextBox = new System.Windows.Forms.TextBox();
             this.tabProduto = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonLancarProduto = new System.Windows.Forms.Button();
             this.buttonPesquisarProduto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pRODUTO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
-            this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
-            this.pRODUTO_PRECO_COMPRATextBox = new System.Windows.Forms.TextBox();
-            this.iTEM_COMPRA_QUANTIDADETextBox = new System.Windows.Forms.TextBox();
-            this.bsItemCompra = new System.Windows.Forms.BindingSource(this.components);
-            this.iTEM_COMPRA_DESCONTOTextBox = new System.Windows.Forms.TextBox();
+            this.textProdutoDescricao = new System.Windows.Forms.TextBox();
+            this.textProdutoPreco = new System.Windows.Forms.TextBox();
+            this.textProdutoQuantidade = new System.Windows.Forms.TextBox();
+            this.textProdutoDesconto = new System.Windows.Forms.TextBox();
             this.pESQUISA_PRODUTO_ITEMDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabConclusao = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textTotalBruto = new System.Windows.Forms.TextBox();
+            this.cOMPRA_DATADateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.cOMPRA_DESCONTOTextBox = new System.Windows.Forms.TextBox();
+            this.cOMPRA_TOTALTextBox = new System.Windows.Forms.TextBox();
+            this.cOMPRA_ACRESCIMOTextBox = new System.Windows.Forms.TextBox();
+            this.cOMPRA_CODIGOLabel1 = new System.Windows.Forms.Label();
+            this.bsCompra = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
+            this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsProdutoItem = new System.Windows.Forms.BindingSource(this.components);
-            this.tabConclusao = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cOMPRA_DATADateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.cOMPRA_DESCONTOTextBox = new System.Windows.Forms.TextBox();
-            this.cOMPRA_TOTALTextBox = new System.Windows.Forms.TextBox();
-            this.cOMPRA_ACRESCIMOTextBox = new System.Windows.Forms.TextBox();
-            this.cOMPRA_CODIGOLabel1 = new System.Windows.Forms.Label();
+            this.bsItemCompra = new System.Windows.Forms.BindingSource(this.components);
             this.taCompra = new FROGI_OS.dsFROGIOSTableAdapters.COMPRATableAdapter();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.taProduto = new FROGI_OS.dsFROGIOSTableAdapters.PRODUTOTableAdapter();
             this.taItemCompra = new FROGI_OS.dsFROGIOSTableAdapters.ITEM_COMPRATableAdapter();
             this.taPesquisaProdutoItem = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaProdutoItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             cOMPRA_NOTA_FISCALLabel = new System.Windows.Forms.Label();
             cOMPRA_FUNCIONARIOLabel = new System.Windows.Forms.Label();
             cOMPRA_FORNECEDORLabel = new System.Windows.Forms.Label();
@@ -91,22 +93,24 @@
             iTEM_COMPRA_DESCONTOLabel = new System.Windows.Forms.Label();
             iTEM_COMPRA_QUANTIDADELabel = new System.Windows.Forms.Label();
             cOMPRA_DATALabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             this.tabPai.SuspendLayout();
             this.tabGeral.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             this.tabProduto.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsItemCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTO_ITEMDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).BeginInit();
             this.tabConclusao.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsItemCompra)).BeginInit();
             this.SuspendLayout();
             // 
             // labelCadastro
@@ -163,7 +167,7 @@
             // cOMPRA_ACRESCIMOLabel
             // 
             cOMPRA_ACRESCIMOLabel.AutoSize = true;
-            cOMPRA_ACRESCIMOLabel.Location = new System.Drawing.Point(16, 95);
+            cOMPRA_ACRESCIMOLabel.Location = new System.Drawing.Point(16, 77);
             cOMPRA_ACRESCIMOLabel.Name = "cOMPRA_ACRESCIMOLabel";
             cOMPRA_ACRESCIMOLabel.Size = new System.Drawing.Size(139, 25);
             cOMPRA_ACRESCIMOLabel.TabIndex = 2;
@@ -172,7 +176,7 @@
             // cOMPRA_TOTALLabel
             // 
             cOMPRA_TOTALLabel.AutoSize = true;
-            cOMPRA_TOTALLabel.Location = new System.Drawing.Point(43, 155);
+            cOMPRA_TOTALLabel.Location = new System.Drawing.Point(43, 160);
             cOMPRA_TOTALLabel.Name = "cOMPRA_TOTALLabel";
             cOMPRA_TOTALLabel.Size = new System.Drawing.Size(112, 25);
             cOMPRA_TOTALLabel.TabIndex = 4;
@@ -233,6 +237,15 @@
             cOMPRA_DATALabel.TabIndex = 6;
             cOMPRA_DATALabel.Text = "Data da compra";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(43, 118);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(101, 25);
+            label1.TabIndex = 14;
+            label1.Text = "Total bruto";
+            // 
             // tabPai
             // 
             this.tabPai.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
@@ -280,16 +293,6 @@
             this.cOMPRA_NOTA_FISCALTextBox.Size = new System.Drawing.Size(264, 33);
             this.cOMPRA_NOTA_FISCALTextBox.TabIndex = 2;
             // 
-            // bsCompra
-            // 
-            this.bsCompra.DataMember = "COMPRA";
-            this.bsCompra.DataSource = this.dsFROGIOS;
-            // 
-            // dsFROGIOS
-            // 
-            this.dsFROGIOS.DataSetName = "dsFROGIOS";
-            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // cOMPRA_FORNECEDORTextBox
             // 
             this.cOMPRA_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_FORNECEDOR", true));
@@ -298,6 +301,7 @@
             this.cOMPRA_FORNECEDORTextBox.Name = "cOMPRA_FORNECEDORTextBox";
             this.cOMPRA_FORNECEDORTextBox.Size = new System.Drawing.Size(381, 33);
             this.cOMPRA_FORNECEDORTextBox.TabIndex = 1;
+            this.cOMPRA_FORNECEDORTextBox.DoubleClick += new System.EventHandler(this.cOMPRA_FORNECEDORTextBox_DoubleClick);
             // 
             // cOMPRA_FUNCIONARIOTextBox
             // 
@@ -307,13 +311,14 @@
             this.cOMPRA_FUNCIONARIOTextBox.Name = "cOMPRA_FUNCIONARIOTextBox";
             this.cOMPRA_FUNCIONARIOTextBox.Size = new System.Drawing.Size(381, 33);
             this.cOMPRA_FUNCIONARIOTextBox.TabIndex = 0;
+            this.cOMPRA_FUNCIONARIOTextBox.DoubleClick += new System.EventHandler(this.cOMPRA_FUNCIONARIOTextBox_DoubleClick);
             // 
             // tabProduto
             // 
             this.tabProduto.AutoScroll = true;
             this.tabProduto.BackColor = System.Drawing.Color.LightBlue;
             this.tabProduto.Controls.Add(this.panel1);
-            this.tabProduto.Controls.Add(this.button1);
+            this.tabProduto.Controls.Add(this.buttonLancarProduto);
             this.tabProduto.Controls.Add(this.buttonPesquisarProduto);
             this.tabProduto.Controls.Add(this.groupBox1);
             this.tabProduto.Controls.Add(this.pESQUISA_PRODUTO_ITEMDataGridView);
@@ -324,16 +329,24 @@
             this.tabProduto.TabIndex = 1;
             this.tabProduto.Text = "Produtos";
             // 
-            // button1
+            // panel1
             // 
-            this.button1.AutoSize = true;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(11, 225);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(898, 37);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Lançar Produto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel1.Location = new System.Drawing.Point(1939, 80);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(12, 100);
+            this.panel1.TabIndex = 10;
+            // 
+            // buttonLancarProduto
+            // 
+            this.buttonLancarProduto.AutoSize = true;
+            this.buttonLancarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLancarProduto.Location = new System.Drawing.Point(11, 225);
+            this.buttonLancarProduto.Name = "buttonLancarProduto";
+            this.buttonLancarProduto.Size = new System.Drawing.Size(898, 37);
+            this.buttonLancarProduto.TabIndex = 8;
+            this.buttonLancarProduto.Text = "Lançar Produto";
+            this.buttonLancarProduto.UseVisualStyleBackColor = true;
+            this.buttonLancarProduto.Click += new System.EventHandler(this.buttonLancarProduto_Click);
             // 
             // buttonPesquisarProduto
             // 
@@ -345,64 +358,53 @@
             this.buttonPesquisarProduto.TabIndex = 3;
             this.buttonPesquisarProduto.Text = "Pesquisar produto";
             this.buttonPesquisarProduto.UseVisualStyleBackColor = true;
+            this.buttonPesquisarProduto.Click += new System.EventHandler(this.buttonPesquisarProduto_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(pRODUTO_DESCRICAOLabel);
-            this.groupBox1.Controls.Add(this.pRODUTO_DESCRICAOTextBox);
+            this.groupBox1.Controls.Add(this.textProdutoDescricao);
             this.groupBox1.Controls.Add(iTEM_COMPRA_QUANTIDADELabel);
-            this.groupBox1.Controls.Add(this.pRODUTO_PRECO_COMPRATextBox);
-            this.groupBox1.Controls.Add(this.iTEM_COMPRA_QUANTIDADETextBox);
+            this.groupBox1.Controls.Add(this.textProdutoPreco);
+            this.groupBox1.Controls.Add(this.textProdutoQuantidade);
             this.groupBox1.Controls.Add(pRODUTO_PRECO_COMPRALabel);
             this.groupBox1.Controls.Add(iTEM_COMPRA_DESCONTOLabel);
-            this.groupBox1.Controls.Add(this.iTEM_COMPRA_DESCONTOTextBox);
+            this.groupBox1.Controls.Add(this.textProdutoDesconto);
             this.groupBox1.Location = new System.Drawing.Point(11, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(898, 135);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // pRODUTO_DESCRICAOTextBox
+            // textProdutoDescricao
             // 
-            this.pRODUTO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_DESCRICAO", true));
-            this.pRODUTO_DESCRICAOTextBox.Location = new System.Drawing.Point(103, 29);
-            this.pRODUTO_DESCRICAOTextBox.Name = "pRODUTO_DESCRICAOTextBox";
-            this.pRODUTO_DESCRICAOTextBox.Size = new System.Drawing.Size(774, 33);
-            this.pRODUTO_DESCRICAOTextBox.TabIndex = 4;
+            this.textProdutoDescricao.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_DESCRICAO", true));
+            this.textProdutoDescricao.Location = new System.Drawing.Point(103, 29);
+            this.textProdutoDescricao.Name = "textProdutoDescricao";
+            this.textProdutoDescricao.Size = new System.Drawing.Size(774, 33);
+            this.textProdutoDescricao.TabIndex = 4;
             // 
-            // bsProduto
+            // textProdutoPreco
             // 
-            this.bsProduto.DataMember = "PRODUTO";
-            this.bsProduto.DataSource = this.dsFROGIOS;
+            this.textProdutoPreco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_COMPRA", true));
+            this.textProdutoPreco.Location = new System.Drawing.Point(391, 86);
+            this.textProdutoPreco.Name = "textProdutoPreco";
+            this.textProdutoPreco.Size = new System.Drawing.Size(186, 33);
+            this.textProdutoPreco.TabIndex = 6;
             // 
-            // pRODUTO_PRECO_COMPRATextBox
+            // textProdutoQuantidade
             // 
-            this.pRODUTO_PRECO_COMPRATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_COMPRA", true));
-            this.pRODUTO_PRECO_COMPRATextBox.Location = new System.Drawing.Point(391, 86);
-            this.pRODUTO_PRECO_COMPRATextBox.Name = "pRODUTO_PRECO_COMPRATextBox";
-            this.pRODUTO_PRECO_COMPRATextBox.Size = new System.Drawing.Size(186, 33);
-            this.pRODUTO_PRECO_COMPRATextBox.TabIndex = 6;
+            this.textProdutoQuantidade.Location = new System.Drawing.Point(777, 89);
+            this.textProdutoQuantidade.Name = "textProdutoQuantidade";
+            this.textProdutoQuantidade.Size = new System.Drawing.Size(100, 33);
+            this.textProdutoQuantidade.TabIndex = 7;
             // 
-            // iTEM_COMPRA_QUANTIDADETextBox
+            // textProdutoDesconto
             // 
-            this.iTEM_COMPRA_QUANTIDADETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsItemCompra, "ITEM_COMPRA_QUANTIDADE", true));
-            this.iTEM_COMPRA_QUANTIDADETextBox.Location = new System.Drawing.Point(777, 89);
-            this.iTEM_COMPRA_QUANTIDADETextBox.Name = "iTEM_COMPRA_QUANTIDADETextBox";
-            this.iTEM_COMPRA_QUANTIDADETextBox.Size = new System.Drawing.Size(100, 33);
-            this.iTEM_COMPRA_QUANTIDADETextBox.TabIndex = 7;
-            // 
-            // bsItemCompra
-            // 
-            this.bsItemCompra.DataMember = "ITEM_COMPRA";
-            this.bsItemCompra.DataSource = this.dsFROGIOS;
-            // 
-            // iTEM_COMPRA_DESCONTOTextBox
-            // 
-            this.iTEM_COMPRA_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsItemCompra, "ITEM_COMPRA_DESCONTO", true));
-            this.iTEM_COMPRA_DESCONTOTextBox.Location = new System.Drawing.Point(116, 86);
-            this.iTEM_COMPRA_DESCONTOTextBox.Name = "iTEM_COMPRA_DESCONTOTextBox";
-            this.iTEM_COMPRA_DESCONTOTextBox.Size = new System.Drawing.Size(100, 33);
-            this.iTEM_COMPRA_DESCONTOTextBox.TabIndex = 5;
+            this.textProdutoDesconto.Location = new System.Drawing.Point(116, 86);
+            this.textProdutoDesconto.Name = "textProdutoDesconto";
+            this.textProdutoDesconto.Size = new System.Drawing.Size(100, 33);
+            this.textProdutoDesconto.TabIndex = 5;
             // 
             // pESQUISA_PRODUTO_ITEMDataGridView
             // 
@@ -423,6 +425,100 @@
             this.pESQUISA_PRODUTO_ITEMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_PRODUTO_ITEMDataGridView.Size = new System.Drawing.Size(952, 239);
             this.pESQUISA_PRODUTO_ITEMDataGridView.TabIndex = 9;
+            // 
+            // tabConclusao
+            // 
+            this.tabConclusao.BackColor = System.Drawing.Color.LightBlue;
+            this.tabConclusao.Controls.Add(this.groupBox2);
+            this.tabConclusao.Location = new System.Drawing.Point(4, 37);
+            this.tabConclusao.Name = "tabConclusao";
+            this.tabConclusao.Padding = new System.Windows.Forms.Padding(3);
+            this.tabConclusao.Size = new System.Drawing.Size(958, 302);
+            this.tabConclusao.TabIndex = 2;
+            this.tabConclusao.Text = "Conclusão";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(label1);
+            this.groupBox2.Controls.Add(this.textTotalBruto);
+            this.groupBox2.Controls.Add(cOMPRA_DATALabel);
+            this.groupBox2.Controls.Add(this.cOMPRA_DATADateTimePicker);
+            this.groupBox2.Controls.Add(cOMPRA_DESCONTOLabel);
+            this.groupBox2.Controls.Add(cOMPRA_TOTALLabel);
+            this.groupBox2.Controls.Add(this.cOMPRA_DESCONTOTextBox);
+            this.groupBox2.Controls.Add(this.cOMPRA_TOTALTextBox);
+            this.groupBox2.Controls.Add(this.cOMPRA_ACRESCIMOTextBox);
+            this.groupBox2.Controls.Add(cOMPRA_ACRESCIMOLabel);
+            this.groupBox2.Location = new System.Drawing.Point(221, 6);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(540, 263);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            // 
+            // textTotalBruto
+            // 
+            this.textTotalBruto.Location = new System.Drawing.Point(161, 118);
+            this.textTotalBruto.Name = "textTotalBruto";
+            this.textTotalBruto.Size = new System.Drawing.Size(150, 33);
+            this.textTotalBruto.TabIndex = 15;
+            // 
+            // cOMPRA_DATADateTimePicker
+            // 
+            this.cOMPRA_DATADateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsCompra, "COMPRA_DATA", true));
+            this.cOMPRA_DATADateTimePicker.Location = new System.Drawing.Point(161, 209);
+            this.cOMPRA_DATADateTimePicker.Name = "cOMPRA_DATADateTimePicker";
+            this.cOMPRA_DATADateTimePicker.Size = new System.Drawing.Size(372, 33);
+            this.cOMPRA_DATADateTimePicker.TabIndex = 13;
+            // 
+            // cOMPRA_DESCONTOTextBox
+            // 
+            this.cOMPRA_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_DESCONTO", true));
+            this.cOMPRA_DESCONTOTextBox.Location = new System.Drawing.Point(161, 31);
+            this.cOMPRA_DESCONTOTextBox.Name = "cOMPRA_DESCONTOTextBox";
+            this.cOMPRA_DESCONTOTextBox.Size = new System.Drawing.Size(150, 33);
+            this.cOMPRA_DESCONTOTextBox.TabIndex = 10;
+            // 
+            // cOMPRA_TOTALTextBox
+            // 
+            this.cOMPRA_TOTALTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_TOTAL", true));
+            this.cOMPRA_TOTALTextBox.Location = new System.Drawing.Point(161, 160);
+            this.cOMPRA_TOTALTextBox.Name = "cOMPRA_TOTALTextBox";
+            this.cOMPRA_TOTALTextBox.Size = new System.Drawing.Size(150, 33);
+            this.cOMPRA_TOTALTextBox.TabIndex = 12;
+            // 
+            // cOMPRA_ACRESCIMOTextBox
+            // 
+            this.cOMPRA_ACRESCIMOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_ACRESCIMO", true));
+            this.cOMPRA_ACRESCIMOTextBox.Location = new System.Drawing.Point(161, 74);
+            this.cOMPRA_ACRESCIMOTextBox.Name = "cOMPRA_ACRESCIMOTextBox";
+            this.cOMPRA_ACRESCIMOTextBox.Size = new System.Drawing.Size(150, 33);
+            this.cOMPRA_ACRESCIMOTextBox.TabIndex = 11;
+            // 
+            // cOMPRA_CODIGOLabel1
+            // 
+            this.cOMPRA_CODIGOLabel1.AutoSize = true;
+            this.cOMPRA_CODIGOLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_CODIGO", true));
+            this.cOMPRA_CODIGOLabel1.ForeColor = System.Drawing.Color.White;
+            this.cOMPRA_CODIGOLabel1.Location = new System.Drawing.Point(103, 18);
+            this.cOMPRA_CODIGOLabel1.Name = "cOMPRA_CODIGOLabel1";
+            this.cOMPRA_CODIGOLabel1.Size = new System.Drawing.Size(68, 25);
+            this.cOMPRA_CODIGOLabel1.TabIndex = 1;
+            this.cOMPRA_CODIGOLabel1.Text = "código";
+            // 
+            // bsCompra
+            // 
+            this.bsCompra.DataMember = "COMPRA";
+            this.bsCompra.DataSource = this.dsFROGIOS;
+            // 
+            // dsFROGIOS
+            // 
+            this.dsFROGIOS.DataSetName = "dsFROGIOS";
+            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsProduto
+            // 
+            this.bsProduto.DataMember = "PRODUTO";
+            this.bsProduto.DataSource = this.dsFROGIOS;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -464,75 +560,10 @@
             this.bsProdutoItem.DataMember = "PESQUISA_PRODUTO_ITEM";
             this.bsProdutoItem.DataSource = this.dsFROGIOS;
             // 
-            // tabConclusao
+            // bsItemCompra
             // 
-            this.tabConclusao.BackColor = System.Drawing.Color.LightBlue;
-            this.tabConclusao.Controls.Add(this.groupBox2);
-            this.tabConclusao.Location = new System.Drawing.Point(4, 37);
-            this.tabConclusao.Name = "tabConclusao";
-            this.tabConclusao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConclusao.Size = new System.Drawing.Size(958, 302);
-            this.tabConclusao.TabIndex = 2;
-            this.tabConclusao.Text = "Conclusão";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(cOMPRA_DATALabel);
-            this.groupBox2.Controls.Add(this.cOMPRA_DATADateTimePicker);
-            this.groupBox2.Controls.Add(cOMPRA_DESCONTOLabel);
-            this.groupBox2.Controls.Add(cOMPRA_TOTALLabel);
-            this.groupBox2.Controls.Add(this.cOMPRA_DESCONTOTextBox);
-            this.groupBox2.Controls.Add(this.cOMPRA_TOTALTextBox);
-            this.groupBox2.Controls.Add(this.cOMPRA_ACRESCIMOTextBox);
-            this.groupBox2.Controls.Add(cOMPRA_ACRESCIMOLabel);
-            this.groupBox2.Location = new System.Drawing.Point(221, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(540, 263);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            // 
-            // cOMPRA_DATADateTimePicker
-            // 
-            this.cOMPRA_DATADateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsCompra, "COMPRA_DATA", true));
-            this.cOMPRA_DATADateTimePicker.Location = new System.Drawing.Point(161, 209);
-            this.cOMPRA_DATADateTimePicker.Name = "cOMPRA_DATADateTimePicker";
-            this.cOMPRA_DATADateTimePicker.Size = new System.Drawing.Size(372, 33);
-            this.cOMPRA_DATADateTimePicker.TabIndex = 13;
-            // 
-            // cOMPRA_DESCONTOTextBox
-            // 
-            this.cOMPRA_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_DESCONTO", true));
-            this.cOMPRA_DESCONTOTextBox.Location = new System.Drawing.Point(161, 31);
-            this.cOMPRA_DESCONTOTextBox.Name = "cOMPRA_DESCONTOTextBox";
-            this.cOMPRA_DESCONTOTextBox.Size = new System.Drawing.Size(150, 33);
-            this.cOMPRA_DESCONTOTextBox.TabIndex = 10;
-            // 
-            // cOMPRA_TOTALTextBox
-            // 
-            this.cOMPRA_TOTALTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_TOTAL", true));
-            this.cOMPRA_TOTALTextBox.Location = new System.Drawing.Point(161, 155);
-            this.cOMPRA_TOTALTextBox.Name = "cOMPRA_TOTALTextBox";
-            this.cOMPRA_TOTALTextBox.Size = new System.Drawing.Size(150, 33);
-            this.cOMPRA_TOTALTextBox.TabIndex = 12;
-            // 
-            // cOMPRA_ACRESCIMOTextBox
-            // 
-            this.cOMPRA_ACRESCIMOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_ACRESCIMO", true));
-            this.cOMPRA_ACRESCIMOTextBox.Location = new System.Drawing.Point(161, 92);
-            this.cOMPRA_ACRESCIMOTextBox.Name = "cOMPRA_ACRESCIMOTextBox";
-            this.cOMPRA_ACRESCIMOTextBox.Size = new System.Drawing.Size(150, 33);
-            this.cOMPRA_ACRESCIMOTextBox.TabIndex = 11;
-            // 
-            // cOMPRA_CODIGOLabel1
-            // 
-            this.cOMPRA_CODIGOLabel1.AutoSize = true;
-            this.cOMPRA_CODIGOLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_CODIGO", true));
-            this.cOMPRA_CODIGOLabel1.ForeColor = System.Drawing.Color.White;
-            this.cOMPRA_CODIGOLabel1.Location = new System.Drawing.Point(103, 18);
-            this.cOMPRA_CODIGOLabel1.Name = "cOMPRA_CODIGOLabel1";
-            this.cOMPRA_CODIGOLabel1.Size = new System.Drawing.Size(68, 25);
-            this.cOMPRA_CODIGOLabel1.TabIndex = 1;
-            this.cOMPRA_CODIGOLabel1.Text = "código";
+            this.bsItemCompra.DataMember = "ITEM_COMPRA";
+            this.bsItemCompra.DataSource = this.dsFROGIOS;
             // 
             // taCompra
             // 
@@ -583,13 +614,6 @@
             // 
             this.taPesquisaProdutoItem.ClearBeforeFill = true;
             // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(1939, 80);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12, 100);
-            this.panel1.TabIndex = 10;
-            // 
             // formCadastroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -599,6 +623,7 @@
             this.Text = "formCadastroCompra";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);
@@ -606,19 +631,19 @@
             this.tabGeral.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             this.tabProduto.ResumeLayout(false);
             this.tabProduto.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsItemCompra)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTO_ITEMDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).EndInit();
             this.tabConclusao.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsItemCompra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -642,16 +667,16 @@
         private System.Windows.Forms.TextBox cOMPRA_DESCONTOTextBox;
         private System.Windows.Forms.BindingSource bsProduto;
         private dsFROGIOSTableAdapters.PRODUTOTableAdapter taProduto;
-        private System.Windows.Forms.TextBox pRODUTO_PRECO_COMPRATextBox;
-        private System.Windows.Forms.TextBox pRODUTO_DESCRICAOTextBox;
+        private System.Windows.Forms.TextBox textProdutoPreco;
+        private System.Windows.Forms.TextBox textProdutoDescricao;
         private System.Windows.Forms.BindingSource bsItemCompra;
         private dsFROGIOSTableAdapters.ITEM_COMPRATableAdapter taItemCompra;
-        private System.Windows.Forms.TextBox iTEM_COMPRA_QUANTIDADETextBox;
-        private System.Windows.Forms.TextBox iTEM_COMPRA_DESCONTOTextBox;
+        private System.Windows.Forms.TextBox textProdutoQuantidade;
+        private System.Windows.Forms.TextBox textProdutoDesconto;
         private System.Windows.Forms.BindingSource bsProdutoItem;
         private dsFROGIOSTableAdapters.taPesquisaProdutoItem taPesquisaProdutoItem;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLancarProduto;
         private System.Windows.Forms.Button buttonPesquisarProduto;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView pESQUISA_PRODUTO_ITEMDataGridView;
@@ -663,5 +688,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker cOMPRA_DATADateTimePicker;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textTotalBruto;
     }
 }

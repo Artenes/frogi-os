@@ -50,6 +50,7 @@
             System.Windows.Forms.Label oS_DESCONTOLabel;
             System.Windows.Forms.Label oS_TOTALLabel;
             System.Windows.Forms.Label oS_DATA_ENTREGALabel;
+            System.Windows.Forms.Label label3;
             this.groupStatus = new System.Windows.Forms.GroupBox();
             this.oS_STATUSComboBox = new System.Windows.Forms.ComboBox();
             this.bsOS = new System.Windows.Forms.BindingSource(this.components);
@@ -67,9 +68,9 @@
             this.taFuncionario = new FROGI_OS.dsFROGIOSTableAdapters.FUNCIONARIOTableAdapter();
             this.groupTotais = new System.Windows.Forms.GroupBox();
             this.textTotalBruto = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.oS_TOTAL_SERVICOTextBox = new System.Windows.Forms.TextBox();
             this.oS_TOTAL_ITEMTextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.oS_DATALabel1 = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
@@ -117,7 +118,6 @@
             this.oS_DATA_ENTREGADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.textTroco = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.textValorPago = new System.Windows.Forms.TextBox();
             this.Troco = new System.Windows.Forms.Label();
             this.groupBoxAcrescimoouDesconto = new System.Windows.Forms.GroupBox();
@@ -127,6 +127,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.oS_FORMA_PAGAMENTOComboBox = new System.Windows.Forms.ComboBox();
             this.textTotal = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             cLIENTE_FISICO_NOMELabel = new System.Windows.Forms.Label();
             fUNCIONARIO_NOMELabel = new System.Windows.Forms.Label();
             oS_TOTAL_ITEMLabel = new System.Windows.Forms.Label();
@@ -148,6 +149,7 @@
             oS_DESCONTOLabel = new System.Windows.Forms.Label();
             oS_TOTALLabel = new System.Windows.Forms.Label();
             oS_DATA_ENTREGALabel = new System.Windows.Forms.Label();
+            label3 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.tabPai.SuspendLayout();
@@ -163,6 +165,7 @@
             this.panelDiagnostico.SuspendLayout();
             this.panelRodape.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).BeginInit();
+            this.panelCodigo.SuspendLayout();
             this.groupStatus.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -230,6 +233,7 @@
             // 
             // labelBase
             // 
+            this.labelBase.Location = new System.Drawing.Point(12, 27);
             this.labelBase.Size = new System.Drawing.Size(380, 62);
             this.labelBase.Text = "Ordem de serviço";
             // 
@@ -470,6 +474,15 @@
             oS_DATA_ENTREGALabel.TabIndex = 15;
             oS_DATA_ENTREGALabel.Text = "Data de entrega";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(26, 163);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(100, 25);
+            label3.TabIndex = 7;
+            label3.Text = "Total Bruto";
+            // 
             // groupStatus
             // 
             this.groupStatus.Controls.Add(this.oS_STATUSComboBox);
@@ -607,8 +620,8 @@
             // 
             // groupTotais
             // 
+            this.groupTotais.Controls.Add(label3);
             this.groupTotais.Controls.Add(this.textTotalBruto);
-            this.groupTotais.Controls.Add(this.label1);
             this.groupTotais.Controls.Add(this.oS_TOTAL_SERVICOTextBox);
             this.groupTotais.Controls.Add(this.oS_TOTAL_ITEMTextBox);
             this.groupTotais.Controls.Add(oS_TOTAL_SERVICOLabel);
@@ -628,15 +641,6 @@
             this.textTotalBruto.Size = new System.Drawing.Size(136, 33);
             this.textTotalBruto.TabIndex = 6;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 25);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Total Bruto";
-            // 
             // oS_TOTAL_SERVICOTextBox
             // 
             this.oS_TOTAL_SERVICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL_SERVICO", true));
@@ -654,6 +658,15 @@
             this.oS_TOTAL_ITEMTextBox.Name = "oS_TOTAL_ITEMTextBox";
             this.oS_TOTAL_ITEMTextBox.Size = new System.Drawing.Size(136, 33);
             this.oS_TOTAL_ITEMTextBox.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 163);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Total Bruto";
             // 
             // groupBox2
             // 
@@ -795,7 +808,7 @@
             this.buttonPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPesquisarProduto.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarProduto.Name = "buttonPesquisarProduto";
-            this.buttonPesquisarProduto.Size = new System.Drawing.Size(769, 37);
+            this.buttonPesquisarProduto.Size = new System.Drawing.Size(786, 37);
             this.buttonPesquisarProduto.TabIndex = 1;
             this.buttonPesquisarProduto.Text = "Pesquisar Produto";
             this.buttonPesquisarProduto.UseVisualStyleBackColor = true;
@@ -815,12 +828,12 @@
             this.dataGridViewTextBoxColumn8});
             this.oS_ITEMDataGridView.DataSource = this.bsOsItem;
             this.oS_ITEMDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.oS_ITEMDataGridView.Location = new System.Drawing.Point(0, 211);
+            this.oS_ITEMDataGridView.Location = new System.Drawing.Point(0, 220);
             this.oS_ITEMDataGridView.Name = "oS_ITEMDataGridView";
             this.oS_ITEMDataGridView.ReadOnly = true;
             this.oS_ITEMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.oS_ITEMDataGridView.Size = new System.Drawing.Size(769, 156);
-            this.oS_ITEMDataGridView.TabIndex = 2;
+            this.oS_ITEMDataGridView.Size = new System.Drawing.Size(786, 134);
+            this.oS_ITEMDataGridView.TabIndex = 0;
             this.oS_ITEMDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oS_ITEMDataGridView_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn4
@@ -863,9 +876,9 @@
             this.buttonLancarProduto.AutoSize = true;
             this.buttonLancarProduto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonLancarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLancarProduto.Location = new System.Drawing.Point(0, 174);
+            this.buttonLancarProduto.Location = new System.Drawing.Point(0, 183);
             this.buttonLancarProduto.Name = "buttonLancarProduto";
-            this.buttonLancarProduto.Size = new System.Drawing.Size(769, 37);
+            this.buttonLancarProduto.Size = new System.Drawing.Size(786, 37);
             this.buttonLancarProduto.TabIndex = 3;
             this.buttonLancarProduto.Text = "Lançar produto";
             this.buttonLancarProduto.UseVisualStyleBackColor = true;
@@ -954,11 +967,11 @@
             this.dataGridViewTextBoxColumn13});
             this.oS_SERVICODataGridView.DataSource = this.bsOsServico;
             this.oS_SERVICODataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.oS_SERVICODataGridView.Location = new System.Drawing.Point(0, 217);
+            this.oS_SERVICODataGridView.Location = new System.Drawing.Point(0, 229);
             this.oS_SERVICODataGridView.Name = "oS_SERVICODataGridView";
             this.oS_SERVICODataGridView.ReadOnly = true;
             this.oS_SERVICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.oS_SERVICODataGridView.Size = new System.Drawing.Size(769, 142);
+            this.oS_SERVICODataGridView.Size = new System.Drawing.Size(786, 125);
             this.oS_SERVICODataGridView.TabIndex = 1;
             this.oS_SERVICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oS_SERVICODataGridView_CellDoubleClick);
             // 
@@ -1004,7 +1017,7 @@
             this.buttonPesquisarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPesquisarServico.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarServico.Name = "buttonPesquisarServico";
-            this.buttonPesquisarServico.Size = new System.Drawing.Size(769, 37);
+            this.buttonPesquisarServico.Size = new System.Drawing.Size(786, 37);
             this.buttonPesquisarServico.TabIndex = 2;
             this.buttonPesquisarServico.Text = "Pesquisar Serviço";
             this.buttonPesquisarServico.UseVisualStyleBackColor = true;
@@ -1015,9 +1028,9 @@
             this.buttonLancarServico.AutoSize = true;
             this.buttonLancarServico.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.buttonLancarServico.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLancarServico.Location = new System.Drawing.Point(0, 180);
+            this.buttonLancarServico.Location = new System.Drawing.Point(0, 192);
             this.buttonLancarServico.Name = "buttonLancarServico";
-            this.buttonLancarServico.Size = new System.Drawing.Size(769, 37);
+            this.buttonLancarServico.Size = new System.Drawing.Size(786, 37);
             this.buttonLancarServico.TabIndex = 3;
             this.buttonLancarServico.Text = "Lançar Serviço";
             this.buttonLancarServico.UseVisualStyleBackColor = true;
@@ -1072,7 +1085,6 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.textTroco);
-            this.groupBox5.Controls.Add(this.label2);
             this.groupBox5.Controls.Add(this.textValorPago);
             this.groupBox5.Controls.Add(this.Troco);
             this.groupBox5.Location = new System.Drawing.Point(16, 133);
@@ -1088,15 +1100,6 @@
             this.textTroco.Name = "textTroco";
             this.textTroco.Size = new System.Drawing.Size(191, 33);
             this.textTroco.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 27);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 25);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Valor pago";
             // 
             // textValorPago
             // 
@@ -1195,6 +1198,15 @@
             this.textTotal.Size = new System.Drawing.Size(279, 61);
             this.textTotal.TabIndex = 7;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 25);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Valor pago";
+            // 
             // formCadastroOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1223,6 +1235,8 @@
             this.panelDiagnostico.PerformLayout();
             this.panelRodape.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).EndInit();
+            this.panelCodigo.ResumeLayout(false);
+            this.panelCodigo.PerformLayout();
             this.groupStatus.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bsOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();

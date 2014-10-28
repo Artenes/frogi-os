@@ -94,6 +94,8 @@ namespace FROGI_OS.InterfaceGrafica {
                 ((formCadastroFornecedor)cadastro).visualizarRegistro(codigo, eFisico());        
             } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
                 ((formCadastroProduto)cadastro).adicionarFornecedor(codigo, true);
+            } else if (cadastro.GetType() == typeof(formCadastroCompra)) {
+                ((formCadastroCompra)cadastro).inserirFornecedor(codigo, true);
             }
             this.DialogResult = DialogResult.Yes;
             this.Close();
@@ -106,6 +108,8 @@ namespace FROGI_OS.InterfaceGrafica {
                 ((formCadastroFornecedor)cadastro).visualizarRegistro(codigo, eFisico());
             } else if (cadastro.GetType() == typeof(formCadastroProduto)) {
                 ((formCadastroProduto)cadastro).adicionarFornecedor(codigo, false);
+            } else if (cadastro.GetType() == typeof(formCadastroCompra)) {
+                ((formCadastroCompra)cadastro).inserirFornecedor(codigo, false);
             }
             this.DialogResult = DialogResult.Yes;
             this.Close();

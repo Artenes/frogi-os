@@ -30,6 +30,26 @@ namespace FROGI_OS {
             resetar();
         }
 
+        protected double converterParaDouble(string valor) {
+            double convertido;
+            try {
+                convertido = Convert.ToDouble(valor);
+            } catch (Exception) {
+                convertido = 0;
+            }
+            return convertido;
+        }
+
+        protected short converterParaShort(string valor) {
+            short convertido;
+            try {
+                convertido = Convert.ToInt16(valor);
+            } catch (Exception) {
+                convertido = 0;
+            }
+            return convertido;
+        } 
+
         protected void exibirMensagemErro(String mensagem) {
             dialogo.compor("Temos um problema", mensagem, formDialogo.TipoExpressao.AvisoTriste);
             dialogo.ShowDialog();

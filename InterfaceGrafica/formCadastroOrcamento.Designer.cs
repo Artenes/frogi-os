@@ -146,6 +146,9 @@
             this.panelPecas.SuspendLayout();
             this.panelServicos.SuspendLayout();
             this.panelDiagnostico.SuspendLayout();
+            this.panelRodape.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).BeginInit();
+            this.panelCodigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrcamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFuncionario)).BeginInit();
@@ -213,11 +216,11 @@
             // panelGeral
             // 
             this.panelGeral.AutoScroll = true;
+            this.panelGeral.Controls.Add(this.groupBox4);
             this.panelGeral.Controls.Add(this.groupBox5);
             this.panelGeral.Controls.Add(this.buttonImprimir);
             this.panelGeral.Controls.Add(this.groupData);
             this.panelGeral.Controls.Add(this.groupBox3);
-            this.panelGeral.Controls.Add(this.groupBox4);
             this.panelGeral.Size = new System.Drawing.Size(786, 382);
             // 
             // panelInfoItem
@@ -503,15 +506,14 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.labelFuncionario);
             this.groupBox4.Controls.Add(label5);
             this.groupBox4.Controls.Add(this.labelCliente);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(label9);
-            this.groupBox4.Location = new System.Drawing.Point(-92, 3);
+            this.groupBox4.Location = new System.Drawing.Point(10, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(736, 190);
+            this.groupBox4.Size = new System.Drawing.Size(741, 190);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pessoal";
@@ -1088,6 +1090,10 @@
             this.panelServicos.PerformLayout();
             this.panelDiagnostico.ResumeLayout(false);
             this.panelDiagnostico.PerformLayout();
+            this.panelRodape.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).EndInit();
+            this.panelCodigo.ResumeLayout(false);
+            this.panelCodigo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsOrcamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFuncionario)).EndInit();

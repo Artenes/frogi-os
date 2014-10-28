@@ -54,7 +54,11 @@ namespace FROGI_OS.InterfaceGrafica {
                 int indice = fUNCIONARIODataGridView.CurrentRow.Index;
                 int codigo = (int)fUNCIONARIODataGridView[0, indice].Value;
                 if (cadastro != null) {
-                    ((formCadastroFuncionario)cadastro).visualizarRegistro(codigo);
+                    if (cadastro.GetType() == typeof(formCadastroFuncionario)) {
+                        ((formCadastroFuncionario)cadastro).visualizarRegistro(codigo);    
+                    } else if (cadastro.GetType() == typeof(formCadastroCompra)) {
+                        ((formCadastroCompra)cadastro).inserirFuncionario(codigo);
+                    } 
                 } else if (cadastroOS != null) {
                     try {
                         Conexao.abrir();

@@ -42,9 +42,23 @@ namespace FROGI_OS.InterfaceGrafica
             TreeNode no = new TreeNode(info.Name);
             foreach (DirectoryInfo diretorio in info.GetDirectories())
                 no.Nodes.Add(criarNo(diretorio));
-            foreach (FileInfo arquivo in info.GetFiles())
-                no.Nodes.Add(new TreeNode(arquivo.Name));
+            foreach (FileInfo arquivo in info.GetFiles()) {
+                TreeNode noAtual = new TreeNode(arquivo.Name);
+                object diretorio = arquivo.DirectoryName;
+                noAtual.Tag = diretorio;
+                no.Nodes.Add(noAtual);
+            }
             return no;
+        }
+
+        private void treePastas_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e) {
+            TreeNode no = (sender as TreeView).SelectedNode;
+            string diretorio = no.Tag + "\\" + no.Text;
+            try {
+                File.Open(diretorio, FileMode.Open);
+            } catch (Exception erro) {
+                MessageBox.Show(erro.Message);
+            }
         }
 
     }

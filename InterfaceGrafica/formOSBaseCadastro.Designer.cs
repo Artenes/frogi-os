@@ -43,6 +43,9 @@
             this.tabDiagnostico = new System.Windows.Forms.TabPage();
             this.panelDiagnostico = new System.Windows.Forms.Panel();
             this.panelRodape = new System.Windows.Forms.Panel();
+            this.panelCodigo = new System.Windows.Forms.Panel();
+            this.labelCodigo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureEditar = new System.Windows.Forms.PictureBox();
             this.pictureExcluir = new System.Windows.Forms.PictureBox();
             this.pictureSalvar = new System.Windows.Forms.PictureBox();
@@ -55,6 +58,7 @@
             this.tabServicos.SuspendLayout();
             this.tabDiagnostico.SuspendLayout();
             this.panelRodape.SuspendLayout();
+            this.panelCodigo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExcluir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSalvar)).BeginInit();
@@ -215,6 +219,7 @@
             // panelRodape
             // 
             this.panelRodape.BackColor = System.Drawing.Color.Black;
+            this.panelRodape.Controls.Add(this.panelCodigo);
             this.panelRodape.Controls.Add(this.pictureEditar);
             this.panelRodape.Controls.Add(this.pictureExcluir);
             this.panelRodape.Controls.Add(this.pictureSalvar);
@@ -224,6 +229,35 @@
             this.panelRodape.Name = "panelRodape";
             this.panelRodape.Size = new System.Drawing.Size(800, 79);
             this.panelRodape.TabIndex = 2;
+            // 
+            // panelCodigo
+            // 
+            this.panelCodigo.Controls.Add(this.labelCodigo);
+            this.panelCodigo.Controls.Add(this.label1);
+            this.panelCodigo.Location = new System.Drawing.Point(23, 6);
+            this.panelCodigo.Name = "panelCodigo";
+            this.panelCodigo.Size = new System.Drawing.Size(408, 64);
+            this.panelCodigo.TabIndex = 14;
+            // 
+            // labelCodigo
+            // 
+            this.labelCodigo.AutoSize = true;
+            this.labelCodigo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.labelCodigo.Location = new System.Drawing.Point(102, 0);
+            this.labelCodigo.Name = "labelCodigo";
+            this.labelCodigo.Size = new System.Drawing.Size(72, 25);
+            this.labelCodigo.TabIndex = 2;
+            this.labelCodigo.Text = "Codigo";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Código";
             // 
             // pictureEditar
             // 
@@ -288,6 +322,8 @@
             this.tabServicos.ResumeLayout(false);
             this.tabDiagnostico.ResumeLayout(false);
             this.panelRodape.ResumeLayout(false);
+            this.panelCodigo.ResumeLayout(false);
+            this.panelCodigo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEditar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureExcluir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSalvar)).EndInit();
@@ -315,5 +351,8 @@
         protected System.Windows.Forms.PictureBox pictureEditar;
         private System.Windows.Forms.PictureBox pictureExcluir;
         private System.Windows.Forms.PictureBox pictureSalvar;
+        protected System.Windows.Forms.Panel panelCodigo;
+        protected System.Windows.Forms.Label labelCodigo;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -110,9 +110,12 @@ namespace FROGI_OS
 
         private void pictureCompras_Click(object sender, EventArgs e) {
             this.ActiveControl = (Control)sender;
-            formCadastroCompra compra = new formCadastroCompra(true);
+            formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
+            dialogo.ShowDialog();
+            dialogo.Dispose();
+            /*formCadastroCompra compra = new formCadastroCompra(true);
             compra.ShowDialog();
-            compra.Dispose();
+            compra.Dispose();*/
         }
 
         private void pictureAjuda_Click(object sender, EventArgs e) {
@@ -144,12 +147,23 @@ namespace FROGI_OS
 
         private void pictureOpcoes_Click(object sender, EventArgs e) {
             this.ActiveControl = (Control)sender;
-            formDialogo dialogo = new formDialogo("Seção não disponível no momento","", formDialogo.TipoExpressao.AvisoTriste);
+            formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
             dialogo.ShowDialog();
             dialogo.Dispose();
         }
 
-        
+        private void dateDataServico_ValueChanged(object sender, EventArgs e) {
+            DateTime data = (sender as DateTimePicker).Value;
+            taAFAZER_FISICO.FillByDate(dsFROGIOS.AFAZER_FISICO, data);
+            taAFAZER_JURIDICO.FillByDate(dsFROGIOS.AFAZER_JURIDICO, data);
+        }
+
+        private void pictureRelatorios_Click(object sender, EventArgs e) {
+            this.ActiveControl = (Control)sender;
+            formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
+            dialogo.ShowDialog();
+            dialogo.Dispose();
+        }
 
     }
 }

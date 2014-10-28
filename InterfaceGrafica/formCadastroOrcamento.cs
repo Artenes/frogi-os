@@ -31,6 +31,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 oRCAMENTO_DATALabel1.Text = DateTime.Now.ToShortDateString();
                 campos(true);
                 buttonLancarOS.Visible = false;
+                panelCodigo.Visible = false;
             }
             else {
                 buttonLancarOS.Visible = true;
@@ -104,6 +105,7 @@ namespace FROGI_OS.InterfaceGrafica {
             }
             labelFuncionario.Text = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_NOME;
             calcularTotais();
+            labelCodigo.Text = (dsFROGIOS.ORCAMENTO.Rows[0] as dsFROGIOS.ORCAMENTORow).ORCAMENTO_CODIGO.ToString();
         }
 
         public void selecionarCliente(int codigo, bool eFisico) {

@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelCabecalho = new System.Windows.Forms.Panel();
+            this.textDiretorio = new System.Windows.Forms.TextBox();
             this.pictureFechar = new System.Windows.Forms.PictureBox();
             this.buttonSelecionarDiretorio = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.treePastas = new System.Windows.Forms.TreeView();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.textDiretorio = new System.Windows.Forms.TextBox();
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,14 @@
             this.panelCabecalho.Name = "panelCabecalho";
             this.panelCabecalho.Size = new System.Drawing.Size(800, 107);
             this.panelCabecalho.TabIndex = 0;
+            // 
+            // textDiretorio
+            // 
+            this.textDiretorio.Enabled = false;
+            this.textDiretorio.Location = new System.Drawing.Point(247, 67);
+            this.textDiretorio.Name = "textDiretorio";
+            this.textDiretorio.Size = new System.Drawing.Size(488, 33);
+            this.textDiretorio.TabIndex = 3;
             // 
             // pictureFechar
             // 
@@ -99,14 +107,7 @@
             this.treePastas.Name = "treePastas";
             this.treePastas.Size = new System.Drawing.Size(800, 493);
             this.treePastas.TabIndex = 1;
-            // 
-            // textDiretorio
-            // 
-            this.textDiretorio.Enabled = false;
-            this.textDiretorio.Location = new System.Drawing.Point(247, 67);
-            this.textDiretorio.Name = "textDiretorio";
-            this.textDiretorio.Size = new System.Drawing.Size(488, 33);
-            this.textDiretorio.TabIndex = 3;
+            this.treePastas.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treePastas_NodeMouseDoubleClick);
             // 
             // formNotaFiscal
             // 

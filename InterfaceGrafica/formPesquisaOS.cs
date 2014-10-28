@@ -82,6 +82,11 @@ namespace FROGI_OS.InterfaceGrafica
             os.ShowDialog();
             os.Dispose();
             resetar();
+            Conexao.abrir();
+            comboTipoCliente.SelectedIndex = 0;
+            comboCampoPesquisa.SelectedIndex = 0;
+            pesquisar();
+            Conexao.fechar();
         }
 
         protected override void resetar() {

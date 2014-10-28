@@ -33,6 +33,7 @@ namespace FROGI_OS.InterfaceGrafica
                 oS_ACRESCIMOTextBox.Text = "0,0";
                 oS_DATALabel1.Text = DateTime.Now.ToShortDateString();
                 campos(true);
+                panelCodigo.Visible = false;
             }
         }
 
@@ -129,6 +130,7 @@ namespace FROGI_OS.InterfaceGrafica
             calcularTotais();
             this.ActiveControl = labelCliente;
             this.oS_STATUSComboBox.Enabled = false;
+            this.labelCodigo.Text = (dsFROGIOS.OS.Rows[0] as dsFROGIOS.OSRow).OS_CODIGO.ToString();
         }
 
         public void selecionarCliente(int codigo, bool eFisico)
@@ -231,6 +233,7 @@ namespace FROGI_OS.InterfaceGrafica
                 {
                     dsFROGIOS.OS_ITEM.Rows.Add(item.ItemArray);
                 }
+                
                 itemAtual = null;
                 dsFROGIOS.PRODUTO.Clear();
                 textPecaDesconto.Text = null;
@@ -296,6 +299,7 @@ namespace FROGI_OS.InterfaceGrafica
                 {
                     dsFROGIOS.OS_SERVICO.Rows.Add(servicoItem.ItemArray);
                 }
+                
                 servicoAtual = null;
                 dsFROGIOS.SERVICO.Clear();
                 textServicoAcrescimo.Text = null;

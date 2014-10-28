@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPrincipal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tablePai = new System.Windows.Forms.TableLayoutPanel();
             this.flowCentro = new System.Windows.Forms.FlowLayoutPanel();
             this.tableBanners01 = new System.Windows.Forms.TableLayoutPanel();
@@ -63,10 +61,19 @@
             this.pictureOpcoes = new System.Windows.Forms.PictureBox();
             this.tableBanners02 = new System.Windows.Forms.TableLayoutPanel();
             this.panelPesquisa = new System.Windows.Forms.Panel();
-            this.dgvAgendamentos = new System.Windows.Forms.DataGridView();
-            this.colunaCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaTelefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aFAZER_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aFAZER_JURIDICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
+            this.aFAZER_FISICODataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aFAZER_FISICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelPesquisaBabecalho = new System.Windows.Forms.Panel();
             this.dateDataServico = new System.Windows.Forms.DateTimePicker();
             this.labelServicoFazer = new System.Windows.Forms.Label();
@@ -78,6 +85,9 @@
             this.labelUsuarioNome = new System.Windows.Forms.Label();
             this.labelFrogiOs = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Timer(this.components);
+            this.taAFAZER_FISICO = new FROGI_OS.dsFROGIOSTableAdapters.taAFAZER();
+            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
+            this.taAFAZER_JURIDICO = new FROGI_OS.dsFROGIOSTableAdapters.taAFAZER_JURIDICO();
             this.tablePai.SuspendLayout();
             this.flowCentro.SuspendLayout();
             this.tableBanners01.SuspendLayout();
@@ -107,7 +117,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureOpcoes)).BeginInit();
             this.tableBanners02.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamentos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).BeginInit();
             this.panelPesquisaBabecalho.SuspendLayout();
             this.panelCabecalho.SuspendLayout();
             this.tableUsuario.SuspendLayout();
@@ -199,6 +213,7 @@
             this.pictureRelatorios.Image = global::FROGI_OS.Properties.Resources.banner_relatorios;
             this.pictureRelatorios.Name = "pictureRelatorios";
             this.pictureRelatorios.TabStop = false;
+            this.pictureRelatorios.Click += new System.EventHandler(this.pictureRelatorios_Click);
             // 
             // pictureServicos
             // 
@@ -373,67 +388,119 @@
             // 
             // panelPesquisa
             // 
+            resources.ApplyResources(this.panelPesquisa, "panelPesquisa");
             this.panelPesquisa.BackColor = System.Drawing.Color.LightBlue;
             this.tableBanners02.SetColumnSpan(this.panelPesquisa, 3);
-            this.panelPesquisa.Controls.Add(this.dgvAgendamentos);
+            this.panelPesquisa.Controls.Add(this.aFAZER_JURIDICODataGridView);
+            this.panelPesquisa.Controls.Add(this.aFAZER_FISICODataGridView);
             this.panelPesquisa.Controls.Add(this.panelPesquisaBabecalho);
-            resources.ApplyResources(this.panelPesquisa, "panelPesquisa");
             this.panelPesquisa.Name = "panelPesquisa";
             this.tableBanners02.SetRowSpan(this.panelPesquisa, 3);
             // 
-            // dgvAgendamentos
+            // aFAZER_JURIDICODataGridView
             // 
-            this.dgvAgendamentos.AllowUserToAddRows = false;
-            this.dgvAgendamentos.AllowUserToDeleteRows = false;
-            this.dgvAgendamentos.AllowUserToOrderColumns = true;
-            this.dgvAgendamentos.AllowUserToResizeColumns = false;
-            this.dgvAgendamentos.AllowUserToResizeRows = false;
-            this.dgvAgendamentos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvAgendamentos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvAgendamentos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvAgendamentos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAgendamentos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAgendamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgendamentos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colunaCliente,
-            this.colunaEntrega,
-            this.colunaTelefone});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Light", 14F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAgendamentos.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.dgvAgendamentos, "dgvAgendamentos");
-            this.dgvAgendamentos.Name = "dgvAgendamentos";
-            this.dgvAgendamentos.ReadOnly = true;
+            this.aFAZER_JURIDICODataGridView.AllowUserToAddRows = false;
+            this.aFAZER_JURIDICODataGridView.AllowUserToDeleteRows = false;
+            this.aFAZER_JURIDICODataGridView.AutoGenerateColumns = false;
+            this.aFAZER_JURIDICODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aFAZER_JURIDICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.aFAZER_JURIDICODataGridView.DataSource = this.aFAZER_JURIDICOBindingSource;
+            resources.ApplyResources(this.aFAZER_JURIDICODataGridView, "aFAZER_JURIDICODataGridView");
+            this.aFAZER_JURIDICODataGridView.Name = "aFAZER_JURIDICODataGridView";
+            this.aFAZER_JURIDICODataGridView.ReadOnly = true;
+            this.aFAZER_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
-            // colunaCliente
+            // dataGridViewTextBoxColumn5
             // 
-            resources.ApplyResources(this.colunaCliente, "colunaCliente");
-            this.colunaCliente.Name = "colunaCliente";
-            this.colunaCliente.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CLIENTE_JURIDICO_FANTASIA";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // colunaEntrega
+            // dataGridViewTextBoxColumn8
             // 
-            resources.ApplyResources(this.colunaEntrega, "colunaEntrega");
-            this.colunaEntrega.Name = "colunaEntrega";
-            this.colunaEntrega.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "OS_DATA_ENTREGA";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
-            // colunaTelefone
+            // dataGridViewTextBoxColumn6
             // 
-            resources.ApplyResources(this.colunaTelefone, "colunaTelefone");
-            this.colunaTelefone.Name = "colunaTelefone";
-            this.colunaTelefone.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CLIENTE_TELEFONE";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CLIENTE_CELULAR";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // aFAZER_JURIDICOBindingSource
+            // 
+            this.aFAZER_JURIDICOBindingSource.DataMember = "AFAZER_JURIDICO";
+            this.aFAZER_JURIDICOBindingSource.DataSource = this.dsFROGIOS;
+            // 
+            // dsFROGIOS
+            // 
+            this.dsFROGIOS.DataSetName = "dsFROGIOS";
+            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aFAZER_FISICODataGridView
+            // 
+            this.aFAZER_FISICODataGridView.AllowUserToAddRows = false;
+            this.aFAZER_FISICODataGridView.AllowUserToDeleteRows = false;
+            this.aFAZER_FISICODataGridView.AutoGenerateColumns = false;
+            this.aFAZER_FISICODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aFAZER_FISICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4});
+            this.aFAZER_FISICODataGridView.DataSource = this.aFAZER_FISICOBindingSource;
+            resources.ApplyResources(this.aFAZER_FISICODataGridView, "aFAZER_FISICODataGridView");
+            this.aFAZER_FISICODataGridView.Name = "aFAZER_FISICODataGridView";
+            this.aFAZER_FISICODataGridView.ReadOnly = true;
+            this.aFAZER_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CLIENTE_FISICO_NOME";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OS_DATA_ENTREGA";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CLIENTE_TELEFONE";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CLIENTE_CELULAR";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // aFAZER_FISICOBindingSource
+            // 
+            this.aFAZER_FISICOBindingSource.DataMember = "AFAZER_FISICO";
+            this.aFAZER_FISICOBindingSource.DataSource = this.dsFROGIOS;
             // 
             // panelPesquisaBabecalho
             // 
@@ -448,6 +515,7 @@
             resources.ApplyResources(this.dateDataServico, "dateDataServico");
             this.dateDataServico.CalendarMonthBackground = System.Drawing.Color.LightBlue;
             this.dateDataServico.Name = "dateDataServico";
+            this.dateDataServico.ValueChanged += new System.EventHandler(this.dateDataServico_ValueChanged);
             // 
             // labelServicoFazer
             // 
@@ -508,6 +576,48 @@
             this.hora.Interval = 1;
             this.hora.Tick += new System.EventHandler(this.hora_Tick);
             // 
+            // taAFAZER_FISICO
+            // 
+            this.taAFAZER_FISICO.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CATEGORIATableAdapter = null;
+            this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
+            this.tableAdapterManager.CLIENTE_JURIDICOTableAdapter = null;
+            this.tableAdapterManager.CLIENTETableAdapter = null;
+            this.tableAdapterManager.COMPRATableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.EMPRESATableAdapter = null;
+            this.tableAdapterManager.FORNECEDOR_FISICOTableAdapter = null;
+            this.tableAdapterManager.FORNECEDOR_JURIDICOTableAdapter = null;
+            this.tableAdapterManager.FORNECEDORTableAdapter = null;
+            this.tableAdapterManager.FUNCIONARIOTableAdapter = null;
+            this.tableAdapterManager.GRUPOTableAdapter = null;
+            this.tableAdapterManager.ITEM_COMPRATableAdapter = null;
+            this.tableAdapterManager.MARCATableAdapter = null;
+            this.tableAdapterManager.ORCAMENTO_ITEMTableAdapter = null;
+            this.tableAdapterManager.ORCAMENTO_SERVICOTableAdapter = null;
+            this.tableAdapterManager.ORCAMENTOTableAdapter = null;
+            this.tableAdapterManager.OS_ITEMTableAdapter = null;
+            this.tableAdapterManager.OS_SERVICOTableAdapter = null;
+            this.tableAdapterManager.OSTableAdapter = null;
+            this.tableAdapterManager.PERMISSAOTableAdapter = null;
+            this.tableAdapterManager.PRODUTOTableAdapter = null;
+            this.tableAdapterManager.SECAOTableAdapter = null;
+            this.tableAdapterManager.SERVICO_TIPOTableAdapter = null;
+            this.tableAdapterManager.SERVICOTableAdapter = null;
+            this.tableAdapterManager.TIPOTableAdapter = null;
+            this.tableAdapterManager.UFTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOTableAdapter = null;
+            // 
+            // taAFAZER_JURIDICO
+            // 
+            this.taAFAZER_JURIDICO.ClearBeforeFill = true;
+            // 
             // formPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -550,7 +660,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureOpcoes)).EndInit();
             this.tableBanners02.ResumeLayout(false);
             this.panelPesquisa.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAgendamentos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).EndInit();
             this.panelPesquisaBabecalho.ResumeLayout(false);
             this.panelPesquisaBabecalho.PerformLayout();
             this.panelCabecalho.ResumeLayout(false);
@@ -579,10 +693,6 @@
         private System.Windows.Forms.Label labelData;
         private System.Windows.Forms.Label labelHora;
         private System.Windows.Forms.Panel panelPesquisa;
-        private System.Windows.Forms.DataGridView dgvAgendamentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaEntrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colunaTelefone;
         private System.Windows.Forms.Panel panelPesquisaBabecalho;
         private System.Windows.Forms.DateTimePicker dateDataServico;
         private System.Windows.Forms.Label labelServicoFazer;
@@ -610,6 +720,22 @@
         private System.Windows.Forms.PictureBox pictureOpcoes;
         private System.Windows.Forms.Timer hora;
         private System.Windows.Forms.Panel panel1;
+        private dsFROGIOS dsFROGIOS;
+        private System.Windows.Forms.BindingSource aFAZER_FISICOBindingSource;
+        private dsFROGIOSTableAdapters.taAFAZER taAFAZER_FISICO;
+        private dsFROGIOSTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView aFAZER_FISICODataGridView;
+        private System.Windows.Forms.BindingSource aFAZER_JURIDICOBindingSource;
+        private dsFROGIOSTableAdapters.taAFAZER_JURIDICO taAFAZER_JURIDICO;
+        private System.Windows.Forms.DataGridView aFAZER_JURIDICODataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
 
 
     }

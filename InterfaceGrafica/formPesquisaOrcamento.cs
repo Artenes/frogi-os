@@ -69,6 +69,11 @@ namespace FROGI_OS.InterfaceGrafica {
             orcamento.ShowDialog();
             orcamento.Dispose();
             resetar();
+            Conexao.abrir();
+            comboTipoCliente.SelectedIndex = 0;
+            comboCampoPesquisa.SelectedIndex = 0;
+            pesquisar();
+            Conexao.fechar();
         }
 
         protected override void resetar() {
@@ -114,18 +119,28 @@ namespace FROGI_OS.InterfaceGrafica {
                     indice = pESQUISA_ORCAMENTO_JURIDICODataGridView.CurrentRow.Index;
                     codigo = (int)pESQUISA_ORCAMENTO_JURIDICODataGridView.CurrentRow.Index;
                 }
+
                 Conexao.abrir();
                 formCadastroOrcamento orcamento = new formCadastroOrcamento(false);
                 orcamento.selecionar(codigo);
+                Conexao.fechar();
+
                 orcamento.ShowDialog();
                 orcamento.Dispose();
+
+                Conexao.abrir();
+                comboTipoCliente.SelectedIndex = 0;
+                comboCampoPesquisa.SelectedIndex = 0;
+                pesquisar();
+                Conexao.fechar();
+
             } catch (NullReferenceException) {
                 this.ActiveControl = textValorPesquisa;
+                Conexao.fechar();
             } catch (FbException erro) {
                 exibirMensagemErro(erro.Message);
-            } finally {
                 Conexao.fechar();
-            }
+            } 
             
         }
 
