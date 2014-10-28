@@ -67,7 +67,14 @@ namespace FROGI_OS.InterfaceGrafica
                 if (cadastro != null) {
                     ((formCadastroServico)cadastro).visualizarRegistro(codigo);
                 } else  if (cadastroOS != null) {
-                    ((formCadastroOrcamento)cadastroOS).selecionarServico(codigo);
+                    if (cadastroOS.GetType() == typeof(formCadastroOrcamento))
+                    {
+                        ((formCadastroOrcamento)cadastroOS).selecionarServico(codigo);
+                    }
+                    else {
+                        ((formCadastroOS)cadastroOS).selecionarServico(codigo);
+                    }
+                    
                 }
                 this.DialogResult = DialogResult.Yes;
                 this.Close();

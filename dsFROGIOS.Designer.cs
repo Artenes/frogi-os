@@ -8202,6 +8202,8 @@ namespace FROGI_OS {
             
             private global::System.Data.DataColumn columnOS_OBSERVACAO;
             
+            private global::System.Data.DataColumn columnOS_DATA_ENTREGA;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public OSDataTable() {
@@ -8365,6 +8367,14 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OS_DATA_ENTREGAColumn {
+                get {
+                    return this.columnOS_DATA_ENTREGA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -8412,11 +8422,12 @@ namespace FROGI_OS {
                         double OS_TOTAL, 
                         System.DateTime OS_DATA, 
                         string OS_PRODUTO, 
-                        byte[] OS_DEFEITO, 
-                        byte[] OS_AVULSOS, 
-                        byte[] OS_DIAGNOSTICO, 
+                        string OS_DEFEITO, 
+                        string OS_AVULSOS, 
+                        string OS_DIAGNOSTICO, 
                         string OS_STATUS, 
-                        byte[] OS_OBSERVACAO) {
+                        string OS_OBSERVACAO, 
+                        System.DateTime OS_DATA_ENTREGA) {
                 OSRow rowOSRow = ((OSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         OS_CODIGO,
@@ -8434,7 +8445,8 @@ namespace FROGI_OS {
                         OS_AVULSOS,
                         OS_DIAGNOSTICO,
                         OS_STATUS,
-                        OS_OBSERVACAO};
+                        OS_OBSERVACAO,
+                        OS_DATA_ENTREGA};
                 if ((parentCLIENTERowByOS_CLIENTE_FK != null)) {
                     columnValuesArray[1] = parentCLIENTERowByOS_CLIENTE_FK[0];
                 }
@@ -8486,6 +8498,7 @@ namespace FROGI_OS {
                 this.columnOS_DIAGNOSTICO = base.Columns["OS_DIAGNOSTICO"];
                 this.columnOS_STATUS = base.Columns["OS_STATUS"];
                 this.columnOS_OBSERVACAO = base.Columns["OS_OBSERVACAO"];
+                this.columnOS_DATA_ENTREGA = base.Columns["OS_DATA_ENTREGA"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8513,16 +8526,18 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnOS_DATA);
                 this.columnOS_PRODUTO = new global::System.Data.DataColumn("OS_PRODUTO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_PRODUTO);
-                this.columnOS_DEFEITO = new global::System.Data.DataColumn("OS_DEFEITO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnOS_DEFEITO = new global::System.Data.DataColumn("OS_DEFEITO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_DEFEITO);
-                this.columnOS_AVULSOS = new global::System.Data.DataColumn("OS_AVULSOS", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnOS_AVULSOS = new global::System.Data.DataColumn("OS_AVULSOS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_AVULSOS);
-                this.columnOS_DIAGNOSTICO = new global::System.Data.DataColumn("OS_DIAGNOSTICO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnOS_DIAGNOSTICO = new global::System.Data.DataColumn("OS_DIAGNOSTICO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_DIAGNOSTICO);
                 this.columnOS_STATUS = new global::System.Data.DataColumn("OS_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_STATUS);
-                this.columnOS_OBSERVACAO = new global::System.Data.DataColumn("OS_OBSERVACAO", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnOS_OBSERVACAO = new global::System.Data.DataColumn("OS_OBSERVACAO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_OBSERVACAO);
+                this.columnOS_DATA_ENTREGA = new global::System.Data.DataColumn("OS_DATA_ENTREGA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOS_DATA_ENTREGA);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnOS_CODIGO}, true));
                 this.columnOS_CODIGO.AllowDBNull = false;
@@ -8535,7 +8550,11 @@ namespace FROGI_OS {
                 this.columnOS_TOTAL.AllowDBNull = false;
                 this.columnOS_DATA.AllowDBNull = false;
                 this.columnOS_PRODUTO.MaxLength = 120;
+                this.columnOS_DEFEITO.MaxLength = 200;
+                this.columnOS_AVULSOS.MaxLength = 200;
+                this.columnOS_DIAGNOSTICO.MaxLength = 200;
                 this.columnOS_STATUS.MaxLength = 14;
+                this.columnOS_OBSERVACAO.MaxLength = 200;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20399,10 +20418,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] OS_DEFEITO {
+            public string OS_DEFEITO {
                 get {
                     try {
-                        return ((byte[])(this[this.tableOS.OS_DEFEITOColumn]));
+                        return ((string)(this[this.tableOS.OS_DEFEITOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_DEFEITO\' in table \'OS\' is DBNull.", e);
@@ -20415,10 +20434,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] OS_AVULSOS {
+            public string OS_AVULSOS {
                 get {
                     try {
-                        return ((byte[])(this[this.tableOS.OS_AVULSOSColumn]));
+                        return ((string)(this[this.tableOS.OS_AVULSOSColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_AVULSOS\' in table \'OS\' is DBNull.", e);
@@ -20431,10 +20450,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] OS_DIAGNOSTICO {
+            public string OS_DIAGNOSTICO {
                 get {
                     try {
-                        return ((byte[])(this[this.tableOS.OS_DIAGNOSTICOColumn]));
+                        return ((string)(this[this.tableOS.OS_DIAGNOSTICOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_DIAGNOSTICO\' in table \'OS\' is DBNull.", e);
@@ -20463,10 +20482,10 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] OS_OBSERVACAO {
+            public string OS_OBSERVACAO {
                 get {
                     try {
-                        return ((byte[])(this[this.tableOS.OS_OBSERVACAOColumn]));
+                        return ((string)(this[this.tableOS.OS_OBSERVACAOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'OS_OBSERVACAO\' in table \'OS\' is DBNull.", e);
@@ -20474,6 +20493,22 @@ namespace FROGI_OS {
                 }
                 set {
                     this[this.tableOS.OS_OBSERVACAOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime OS_DATA_ENTREGA {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableOS.OS_DATA_ENTREGAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OS_DATA_ENTREGA\' in table \'OS\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableOS.OS_DATA_ENTREGAColumn] = value;
                 }
             }
             
@@ -20627,6 +20662,18 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOS_OBSERVACAONull() {
                 this[this.tableOS.OS_OBSERVACAOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOS_DATA_ENTREGANull() {
+                return this.IsNull(this.tableOS.OS_DATA_ENTREGAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOS_DATA_ENTREGANull() {
+                this[this.tableOS.OS_DATA_ENTREGAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38661,10 +38708,11 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             tableMapping.ColumnMappings.Add("OS_DIAGNOSTICO", "OS_DIAGNOSTICO");
             tableMapping.ColumnMappings.Add("OS_STATUS", "OS_STATUS");
             tableMapping.ColumnMappings.Add("OS_OBSERVACAO", "OS_OBSERVACAO");
+            tableMapping.ColumnMappings.Add("OS_DATA_ENTREGA", "OS_DATA_ENTREGA");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""OS"" WHERE ((""OS_CODIGO"" = @Original_OS_CODIGO) AND (""OS_CLIENTE"" = @Original_OS_CLIENTE) AND (""OS_FUNCIONARIO"" = @Original_OS_FUNCIONARIO) AND (""OS_TOTAL_ITEM"" = @Original_OS_TOTAL_ITEM) AND (""OS_TOTAL_SERVICO"" = @Original_OS_TOTAL_SERVICO) AND ((@IsNull_OS_DESCONTO = 1 AND ""OS_DESCONTO"" IS NULL) OR (""OS_DESCONTO"" = @Original_OS_DESCONTO)) AND ((@IsNull_OS_ACRESCIMO = 1 AND ""OS_ACRESCIMO"" IS NULL) OR (""OS_ACRESCIMO"" = @Original_OS_ACRESCIMO)) AND ((@IsNull_OS_FORMA_PAGAMENTO = 1 AND ""OS_FORMA_PAGAMENTO"" IS NULL) OR (""OS_FORMA_PAGAMENTO"" = @Original_OS_FORMA_PAGAMENTO)) AND (""OS_TOTAL"" = @Original_OS_TOTAL) AND (""OS_DATA"" = @Original_OS_DATA) AND ((@IsNull_OS_PRODUTO = 1 AND ""OS_PRODUTO"" IS NULL) OR (""OS_PRODUTO"" = @Original_OS_PRODUTO)) AND ((@IsNull_OS_STATUS = 1 AND ""OS_STATUS"" IS NULL) OR (""OS_STATUS"" = @Original_OS_STATUS)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""OS"" WHERE ((""OS_CODIGO"" = @Original_OS_CODIGO) AND (""OS_CLIENTE"" = @Original_OS_CLIENTE) AND (""OS_FUNCIONARIO"" = @Original_OS_FUNCIONARIO) AND (""OS_TOTAL_ITEM"" = @Original_OS_TOTAL_ITEM) AND (""OS_TOTAL_SERVICO"" = @Original_OS_TOTAL_SERVICO) AND ((@IsNull_OS_DESCONTO = 1 AND ""OS_DESCONTO"" IS NULL) OR (""OS_DESCONTO"" = @Original_OS_DESCONTO)) AND ((@IsNull_OS_ACRESCIMO = 1 AND ""OS_ACRESCIMO"" IS NULL) OR (""OS_ACRESCIMO"" = @Original_OS_ACRESCIMO)) AND ((@IsNull_OS_FORMA_PAGAMENTO = 1 AND ""OS_FORMA_PAGAMENTO"" IS NULL) OR (""OS_FORMA_PAGAMENTO"" = @Original_OS_FORMA_PAGAMENTO)) AND (""OS_TOTAL"" = @Original_OS_TOTAL) AND (""OS_DATA"" = @Original_OS_DATA) AND ((@IsNull_OS_AVULSOS = 1 AND ""OS_AVULSOS"" IS NULL) OR (""OS_AVULSOS"" = @Original_OS_AVULSOS)) AND ((@IsNull_OS_DEFEITO = 1 AND ""OS_DEFEITO"" IS NULL) OR (""OS_DEFEITO"" = @Original_OS_DEFEITO)) AND ((@IsNull_OS_DIAGNOSTICO = 1 AND ""OS_DIAGNOSTICO"" IS NULL) OR (""OS_DIAGNOSTICO"" = @Original_OS_DIAGNOSTICO)) AND ((@IsNull_OS_PRODUTO = 1 AND ""OS_PRODUTO"" IS NULL) OR (""OS_PRODUTO"" = @Original_OS_PRODUTO)) AND ((@IsNull_OS_STATUS = 1 AND ""OS_STATUS"" IS NULL) OR (""OS_STATUS"" = @Original_OS_STATUS)) AND ((@IsNull_OS_OBSERVACAO = 1 AND ""OS_OBSERVACAO"" IS NULL) OR (""OS_OBSERVACAO"" = @Original_OS_OBSERVACAO)) AND ((@IsNull_OS_DATA_ENTREGA = 1 AND ""OS_DATA_ENTREGA"" IS NULL) OR (""OS_DATA_ENTREGA"" = @Original_OS_DATA_ENTREGA)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_OS_CODIGO";
@@ -38773,6 +38821,54 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_AVULSOS";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_AVULSOS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_AVULSOS";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_AVULSOS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_DEFEITO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DEFEITO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_DEFEITO";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DEFEITO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_DIAGNOSTICO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DIAGNOSTICO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_DIAGNOSTICO";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DIAGNOSTICO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_OS_PRODUTO";
             param.DbType = global::System.Data.DbType.Int32;
             param.Size = 120;
@@ -38804,9 +38900,42 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceColumn = "OS_STATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_OBSERVACAO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_OBSERVACAO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_OBSERVACAO";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_OBSERVACAO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_DATA_ENTREGA";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA_ENTREGA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_DATA_ENTREGA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA_ENTREGA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""OS"" (""OS_CODIGO"", ""OS_CLIENTE"", ""OS_FUNCIONARIO"", ""OS_TOTAL_ITEM"", ""OS_TOTAL_SERVICO"", ""OS_DESCONTO"", ""OS_ACRESCIMO"", ""OS_FORMA_PAGAMENTO"", ""OS_TOTAL"", ""OS_DATA"", ""OS_AVULSOS"", ""OS_DEFEITO"", ""OS_DIAGNOSTICO"", ""OS_PRODUTO"", ""OS_STATUS"", ""OS_OBSERVACAO"") VALUES (@OS_CODIGO, @OS_CLIENTE, @OS_FUNCIONARIO, @OS_TOTAL_ITEM, @OS_TOTAL_SERVICO, @OS_DESCONTO, @OS_ACRESCIMO, @OS_FORMA_PAGAMENTO, @OS_TOTAL, @OS_DATA, @OS_AVULSOS, @OS_DEFEITO, @OS_DIAGNOSTICO, @OS_PRODUTO, @OS_STATUS, @OS_OBSERVACAO)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO ""OS"" (""OS_CODIGO"", ""OS_CLIENTE"", ""OS_FUNCIONARIO"", ""OS_TOTAL_ITEM"", ""OS_TOTAL_SERVICO"", ""OS_DESCONTO"", ""OS_ACRESCIMO"", ""OS_FORMA_PAGAMENTO"", ""OS_TOTAL"", ""OS_DATA"", ""OS_AVULSOS"", ""OS_DEFEITO"", ""OS_DIAGNOSTICO"", ""OS_PRODUTO"", ""OS_STATUS"", ""OS_OBSERVACAO"", ""OS_DATA_ENTREGA"") VALUES (@OS_CODIGO, @OS_CLIENTE, @OS_FUNCIONARIO, @OS_TOTAL_ITEM, @OS_TOTAL_SERVICO, @OS_DESCONTO, @OS_ACRESCIMO, @OS_FORMA_PAGAMENTO, @OS_TOTAL, @OS_DATA, @OS_AVULSOS, @OS_DEFEITO, @OS_DIAGNOSTICO, @OS_PRODUTO, @OS_STATUS, @OS_OBSERVACAO, @OS_DATA_ENTREGA)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_CODIGO";
@@ -38879,22 +39008,19 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_AVULSOS";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_AVULSOS";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_DEFEITO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_DEFEITO";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_DIAGNOSTICO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_DIAGNOSTICO";
             this._adapter.InsertCommand.Parameters.Add(param);
@@ -38912,14 +39038,43 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_OBSERVACAO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_OBSERVACAO";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@OS_DATA_ENTREGA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA_ENTREGA";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""OS"" SET ""OS_CODIGO"" = @OS_CODIGO, ""OS_CLIENTE"" = @OS_CLIENTE, ""OS_FUNCIONARIO"" = @OS_FUNCIONARIO, ""OS_TOTAL_ITEM"" = @OS_TOTAL_ITEM, ""OS_TOTAL_SERVICO"" = @OS_TOTAL_SERVICO, ""OS_DESCONTO"" = @OS_DESCONTO, ""OS_ACRESCIMO"" = @OS_ACRESCIMO, ""OS_FORMA_PAGAMENTO"" = @OS_FORMA_PAGAMENTO, ""OS_TOTAL"" = @OS_TOTAL, ""OS_DATA"" = @OS_DATA, ""OS_AVULSOS"" = @OS_AVULSOS, ""OS_DEFEITO"" = @OS_DEFEITO, ""OS_DIAGNOSTICO"" = @OS_DIAGNOSTICO, ""OS_PRODUTO"" = @OS_PRODUTO, ""OS_STATUS"" = @OS_STATUS, ""OS_OBSERVACAO"" = @OS_OBSERVACAO WHERE ((""OS_CODIGO"" = @Original_OS_CODIGO) AND (""OS_CLIENTE"" = @Original_OS_CLIENTE) AND (""OS_FUNCIONARIO"" = @Original_OS_FUNCIONARIO) AND (""OS_TOTAL_ITEM"" = @Original_OS_TOTAL_ITEM) AND (""OS_TOTAL_SERVICO"" = @Original_OS_TOTAL_SERVICO) AND ((@IsNull_OS_DESCONTO = 1 AND ""OS_DESCONTO"" IS NULL) OR (""OS_DESCONTO"" = @Original_OS_DESCONTO)) AND ((@IsNull_OS_ACRESCIMO = 1 AND ""OS_ACRESCIMO"" IS NULL) OR (""OS_ACRESCIMO"" = @Original_OS_ACRESCIMO)) AND ((@IsNull_OS_FORMA_PAGAMENTO = 1 AND ""OS_FORMA_PAGAMENTO"" IS NULL) OR (""OS_FORMA_PAGAMENTO"" = @Original_OS_FORMA_PAGAMENTO)) AND (""OS_TOTAL"" = @Original_OS_TOTAL) AND (""OS_DATA"" = @Original_OS_DATA) AND ((@IsNull_OS_PRODUTO = 1 AND ""OS_PRODUTO"" IS NULL) OR (""OS_PRODUTO"" = @Original_OS_PRODUTO)) AND ((@IsNull_OS_STATUS = 1 AND ""OS_STATUS"" IS NULL) OR (""OS_STATUS"" = @Original_OS_STATUS)))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE \"OS\" SET \"OS_CODIGO\" = @OS_CODIGO, \"OS_CLIENTE\" = @OS_CLIENTE, \"OS_FUNCION" +
+                "ARIO\" = @OS_FUNCIONARIO, \"OS_TOTAL_ITEM\" = @OS_TOTAL_ITEM, \"OS_TOTAL_SERVICO\" = " +
+                "@OS_TOTAL_SERVICO, \"OS_DESCONTO\" = @OS_DESCONTO, \"OS_ACRESCIMO\" = @OS_ACRESCIMO," +
+                " \"OS_FORMA_PAGAMENTO\" = @OS_FORMA_PAGAMENTO, \"OS_TOTAL\" = @OS_TOTAL, \"OS_DATA\" =" +
+                " @OS_DATA, \"OS_AVULSOS\" = @OS_AVULSOS, \"OS_DEFEITO\" = @OS_DEFEITO, \"OS_DIAGNOSTI" +
+                "CO\" = @OS_DIAGNOSTICO, \"OS_PRODUTO\" = @OS_PRODUTO, \"OS_STATUS\" = @OS_STATUS, \"OS" +
+                "_OBSERVACAO\" = @OS_OBSERVACAO, \"OS_DATA_ENTREGA\" = @OS_DATA_ENTREGA WHERE ((\"OS_" +
+                "CODIGO\" = @Original_OS_CODIGO) AND (\"OS_CLIENTE\" = @Original_OS_CLIENTE) AND (\"O" +
+                "S_FUNCIONARIO\" = @Original_OS_FUNCIONARIO) AND (\"OS_TOTAL_ITEM\" = @Original_OS_T" +
+                "OTAL_ITEM) AND (\"OS_TOTAL_SERVICO\" = @Original_OS_TOTAL_SERVICO) AND ((@IsNull_O" +
+                "S_DESCONTO = 1 AND \"OS_DESCONTO\" IS NULL) OR (\"OS_DESCONTO\" = @Original_OS_DESCO" +
+                "NTO)) AND ((@IsNull_OS_ACRESCIMO = 1 AND \"OS_ACRESCIMO\" IS NULL) OR (\"OS_ACRESCI" +
+                "MO\" = @Original_OS_ACRESCIMO)) AND ((@IsNull_OS_FORMA_PAGAMENTO = 1 AND \"OS_FORM" +
+                "A_PAGAMENTO\" IS NULL) OR (\"OS_FORMA_PAGAMENTO\" = @Original_OS_FORMA_PAGAMENTO)) " +
+                "AND (\"OS_TOTAL\" = @Original_OS_TOTAL) AND (\"OS_DATA\" = @Original_OS_DATA) AND ((" +
+                "@IsNull_OS_AVULSOS = 1 AND \"OS_AVULSOS\" IS NULL) OR (\"OS_AVULSOS\" = @Original_OS" +
+                "_AVULSOS)) AND ((@IsNull_OS_DEFEITO = 1 AND \"OS_DEFEITO\" IS NULL) OR (\"OS_DEFEIT" +
+                "O\" = @Original_OS_DEFEITO)) AND ((@IsNull_OS_DIAGNOSTICO = 1 AND \"OS_DIAGNOSTICO" +
+                "\" IS NULL) OR (\"OS_DIAGNOSTICO\" = @Original_OS_DIAGNOSTICO)) AND ((@IsNull_OS_PR" +
+                "ODUTO = 1 AND \"OS_PRODUTO\" IS NULL) OR (\"OS_PRODUTO\" = @Original_OS_PRODUTO)) AN" +
+                "D ((@IsNull_OS_STATUS = 1 AND \"OS_STATUS\" IS NULL) OR (\"OS_STATUS\" = @Original_O" +
+                "S_STATUS)) AND ((@IsNull_OS_OBSERVACAO = 1 AND \"OS_OBSERVACAO\" IS NULL) OR (\"OS_" +
+                "OBSERVACAO\" = @Original_OS_OBSERVACAO)) AND ((@IsNull_OS_DATA_ENTREGA = 1 AND \"O" +
+                "S_DATA_ENTREGA\" IS NULL) OR (\"OS_DATA_ENTREGA\" = @Original_OS_DATA_ENTREGA)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_CODIGO";
@@ -38992,22 +39147,19 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_AVULSOS";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_AVULSOS";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_DEFEITO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_DEFEITO";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_DIAGNOSTICO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_DIAGNOSTICO";
             this._adapter.UpdateCommand.Parameters.Add(param);
@@ -39025,10 +39177,16 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@OS_OBSERVACAO";
-            param.DbType = global::System.Data.DbType.Binary;
-            param.Size = 2147483647;
+            param.Size = 200;
             param.IsNullable = true;
             param.SourceColumn = "OS_OBSERVACAO";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@OS_DATA_ENTREGA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA_ENTREGA";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@Original_OS_CODIGO";
@@ -39137,6 +39295,54 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_AVULSOS";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_AVULSOS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_AVULSOS";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_AVULSOS";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_DEFEITO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DEFEITO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_DEFEITO";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DEFEITO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_DIAGNOSTICO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DIAGNOSTICO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_DIAGNOSTICO";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DIAGNOSTICO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
             param.ParameterName = "@IsNull_OS_PRODUTO";
             param.DbType = global::System.Data.DbType.Int32;
             param.Size = 120;
@@ -39168,6 +39374,39 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             param.SourceColumn = "OS_STATUS";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_OBSERVACAO";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_OBSERVACAO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_OBSERVACAO";
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_OBSERVACAO";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@IsNull_OS_DATA_ENTREGA";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA_ENTREGA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@Original_OS_DATA_ENTREGA";
+            param.DbType = global::System.Data.DbType.Date;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA_ENTREGA";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -39185,7 +39424,8 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT OS_CODIGO, OS_CLIENTE, OS_FUNCIONARIO, OS_TOTAL_ITEM, OS_TOTAL_SERVICO, OS" +
                 "_DESCONTO, OS_ACRESCIMO, OS_FORMA_PAGAMENTO, OS_TOTAL, OS_DATA, OS_AVULSOS, OS_D" +
-                "EFEITO, OS_DIAGNOSTICO, OS_PRODUTO, OS_STATUS, OS_OBSERVACAO FROM OS";
+                "EFEITO, OS_DIAGNOSTICO, OS_PRODUTO, OS_STATUS, OS_OBSERVACAO, OS_DATA_ENTREGA FR" +
+                "OM OS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -39246,7 +39486,24 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_OS_CODIGO, int Original_OS_CLIENTE, int Original_OS_FUNCIONARIO, decimal Original_OS_TOTAL_ITEM, decimal Original_OS_TOTAL_SERVICO, global::System.Nullable<decimal> Original_OS_DESCONTO, global::System.Nullable<decimal> Original_OS_ACRESCIMO, string Original_OS_FORMA_PAGAMENTO, decimal Original_OS_TOTAL, System.DateTime Original_OS_DATA, string Original_OS_PRODUTO, string Original_OS_STATUS) {
+        public virtual int Delete(
+                    int Original_OS_CODIGO, 
+                    int Original_OS_CLIENTE, 
+                    int Original_OS_FUNCIONARIO, 
+                    decimal Original_OS_TOTAL_ITEM, 
+                    decimal Original_OS_TOTAL_SERVICO, 
+                    global::System.Nullable<decimal> Original_OS_DESCONTO, 
+                    global::System.Nullable<decimal> Original_OS_ACRESCIMO, 
+                    string Original_OS_FORMA_PAGAMENTO, 
+                    decimal Original_OS_TOTAL, 
+                    System.DateTime Original_OS_DATA, 
+                    string Original_OS_AVULSOS, 
+                    string Original_OS_DEFEITO, 
+                    string Original_OS_DIAGNOSTICO, 
+                    string Original_OS_PRODUTO, 
+                    string Original_OS_STATUS, 
+                    string Original_OS_OBSERVACAO, 
+                    global::System.Nullable<global::System.DateTime> Original_OS_DATA_ENTREGA) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OS_CODIGO));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_OS_CLIENTE));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_OS_FUNCIONARIO));
@@ -39278,21 +39535,61 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
             }
             this.Adapter.DeleteCommand.Parameters[11].Value = ((decimal)(Original_OS_TOTAL));
             this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_OS_DATA));
-            if ((Original_OS_PRODUTO == null)) {
+            if ((Original_OS_AVULSOS == null)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_OS_PRODUTO));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_OS_AVULSOS));
             }
-            if ((Original_OS_STATUS == null)) {
+            if ((Original_OS_DEFEITO == null)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_OS_STATUS));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_OS_DEFEITO));
+            }
+            if ((Original_OS_DIAGNOSTICO == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_OS_DIAGNOSTICO));
+            }
+            if ((Original_OS_PRODUTO == null)) {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((string)(Original_OS_PRODUTO));
+            }
+            if ((Original_OS_STATUS == null)) {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_OS_STATUS));
+            }
+            if ((Original_OS_OBSERVACAO == null)) {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((string)(Original_OS_OBSERVACAO));
+            }
+            if ((Original_OS_DATA_ENTREGA.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((System.DateTime)(Original_OS_DATA_ENTREGA.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -39325,12 +39622,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string OS_FORMA_PAGAMENTO, 
                     decimal OS_TOTAL, 
                     System.DateTime OS_DATA, 
-                    byte[] OS_AVULSOS, 
-                    byte[] OS_DEFEITO, 
-                    byte[] OS_DIAGNOSTICO, 
+                    string OS_AVULSOS, 
+                    string OS_DEFEITO, 
+                    string OS_DIAGNOSTICO, 
                     string OS_PRODUTO, 
                     string OS_STATUS, 
-                    byte[] OS_OBSERVACAO) {
+                    string OS_OBSERVACAO, 
+                    global::System.Nullable<global::System.DateTime> OS_DATA_ENTREGA) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(OS_CODIGO));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(OS_CLIENTE));
             this.Adapter.InsertCommand.Parameters[2].Value = ((int)(OS_FUNCIONARIO));
@@ -39360,19 +39658,19 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((byte[])(OS_AVULSOS));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(OS_AVULSOS));
             }
             if ((OS_DEFEITO == null)) {
                 this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((byte[])(OS_DEFEITO));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(OS_DEFEITO));
             }
             if ((OS_DIAGNOSTICO == null)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((byte[])(OS_DIAGNOSTICO));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(OS_DIAGNOSTICO));
             }
             if ((OS_PRODUTO == null)) {
                 this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -39390,7 +39688,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((byte[])(OS_OBSERVACAO));
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(OS_OBSERVACAO));
+            }
+            if ((OS_DATA_ENTREGA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((System.DateTime)(OS_DATA_ENTREGA.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -39423,12 +39727,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string OS_FORMA_PAGAMENTO, 
                     decimal OS_TOTAL, 
                     System.DateTime OS_DATA, 
-                    byte[] OS_AVULSOS, 
-                    byte[] OS_DEFEITO, 
-                    byte[] OS_DIAGNOSTICO, 
+                    string OS_AVULSOS, 
+                    string OS_DEFEITO, 
+                    string OS_DIAGNOSTICO, 
                     string OS_PRODUTO, 
                     string OS_STATUS, 
-                    byte[] OS_OBSERVACAO, 
+                    string OS_OBSERVACAO, 
+                    global::System.Nullable<global::System.DateTime> OS_DATA_ENTREGA, 
                     int Original_OS_CODIGO, 
                     int Original_OS_CLIENTE, 
                     int Original_OS_FUNCIONARIO, 
@@ -39439,8 +39744,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_OS_FORMA_PAGAMENTO, 
                     decimal Original_OS_TOTAL, 
                     System.DateTime Original_OS_DATA, 
+                    string Original_OS_AVULSOS, 
+                    string Original_OS_DEFEITO, 
+                    string Original_OS_DIAGNOSTICO, 
                     string Original_OS_PRODUTO, 
-                    string Original_OS_STATUS) {
+                    string Original_OS_STATUS, 
+                    string Original_OS_OBSERVACAO, 
+                    global::System.Nullable<global::System.DateTime> Original_OS_DATA_ENTREGA) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(OS_CODIGO));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(OS_CLIENTE));
             this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(OS_FUNCIONARIO));
@@ -39470,19 +39780,19 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((byte[])(OS_AVULSOS));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(OS_AVULSOS));
             }
             if ((OS_DEFEITO == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((byte[])(OS_DEFEITO));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(OS_DEFEITO));
             }
             if ((OS_DIAGNOSTICO == null)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((byte[])(OS_DIAGNOSTICO));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(OS_DIAGNOSTICO));
             }
             if ((OS_PRODUTO == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
@@ -39500,54 +39810,100 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((byte[])(OS_OBSERVACAO));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(OS_OBSERVACAO));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_OS_CODIGO));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_OS_CLIENTE));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_OS_FUNCIONARIO));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_OS_TOTAL_ITEM));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_OS_TOTAL_SERVICO));
-            if ((Original_OS_DESCONTO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((decimal)(Original_OS_DESCONTO.Value));
+            if ((OS_DATA_ENTREGA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(OS_DATA_ENTREGA.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_OS_CODIGO));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_OS_CLIENTE));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_OS_FUNCIONARIO));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((decimal)(Original_OS_TOTAL_ITEM));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_OS_TOTAL_SERVICO));
+            if ((Original_OS_DESCONTO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_OS_DESCONTO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_OS_ACRESCIMO.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((decimal)(Original_OS_ACRESCIMO.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((decimal)(Original_OS_ACRESCIMO.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_OS_FORMA_PAGAMENTO == null)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_OS_FORMA_PAGAMENTO));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_OS_FORMA_PAGAMENTO));
             }
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_OS_TOTAL));
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_OS_DATA));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((decimal)(Original_OS_TOTAL));
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_OS_DATA));
+            if ((Original_OS_AVULSOS == null)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_OS_AVULSOS));
+            }
+            if ((Original_OS_DEFEITO == null)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[33].Value = ((string)(Original_OS_DEFEITO));
+            }
+            if ((Original_OS_DIAGNOSTICO == null)) {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[35].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[34].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[35].Value = ((string)(Original_OS_DIAGNOSTICO));
+            }
             if ((Original_OS_PRODUTO == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[37].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_OS_PRODUTO));
+                this.Adapter.UpdateCommand.Parameters[36].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[37].Value = ((string)(Original_OS_PRODUTO));
             }
             if ((Original_OS_STATUS == null)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[39].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((string)(Original_OS_STATUS));
+                this.Adapter.UpdateCommand.Parameters[38].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[39].Value = ((string)(Original_OS_STATUS));
+            }
+            if ((Original_OS_OBSERVACAO == null)) {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[41].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[40].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[41].Value = ((string)(Original_OS_OBSERVACAO));
+            }
+            if ((Original_OS_DATA_ENTREGA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[43].Value = ((System.DateTime)(Original_OS_DATA_ENTREGA.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[42].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[43].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -39579,12 +39935,13 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string OS_FORMA_PAGAMENTO, 
                     decimal OS_TOTAL, 
                     System.DateTime OS_DATA, 
-                    byte[] OS_AVULSOS, 
-                    byte[] OS_DEFEITO, 
-                    byte[] OS_DIAGNOSTICO, 
+                    string OS_AVULSOS, 
+                    string OS_DEFEITO, 
+                    string OS_DIAGNOSTICO, 
                     string OS_PRODUTO, 
                     string OS_STATUS, 
-                    byte[] OS_OBSERVACAO, 
+                    string OS_OBSERVACAO, 
+                    global::System.Nullable<global::System.DateTime> OS_DATA_ENTREGA, 
                     int Original_OS_CODIGO, 
                     int Original_OS_CLIENTE, 
                     int Original_OS_FUNCIONARIO, 
@@ -39595,9 +39952,14 @@ VALUES        (@COMPRA_CODIGO, @COMPRA_NOTA_FISCAL, @COMPRA_FUNCIONARIO, @COMPRA
                     string Original_OS_FORMA_PAGAMENTO, 
                     decimal Original_OS_TOTAL, 
                     System.DateTime Original_OS_DATA, 
+                    string Original_OS_AVULSOS, 
+                    string Original_OS_DEFEITO, 
+                    string Original_OS_DIAGNOSTICO, 
                     string Original_OS_PRODUTO, 
-                    string Original_OS_STATUS) {
-            return this.Update(Original_OS_CODIGO, OS_CLIENTE, OS_FUNCIONARIO, OS_TOTAL_ITEM, OS_TOTAL_SERVICO, OS_DESCONTO, OS_ACRESCIMO, OS_FORMA_PAGAMENTO, OS_TOTAL, OS_DATA, OS_AVULSOS, OS_DEFEITO, OS_DIAGNOSTICO, OS_PRODUTO, OS_STATUS, OS_OBSERVACAO, Original_OS_CODIGO, Original_OS_CLIENTE, Original_OS_FUNCIONARIO, Original_OS_TOTAL_ITEM, Original_OS_TOTAL_SERVICO, Original_OS_DESCONTO, Original_OS_ACRESCIMO, Original_OS_FORMA_PAGAMENTO, Original_OS_TOTAL, Original_OS_DATA, Original_OS_PRODUTO, Original_OS_STATUS);
+                    string Original_OS_STATUS, 
+                    string Original_OS_OBSERVACAO, 
+                    global::System.Nullable<global::System.DateTime> Original_OS_DATA_ENTREGA) {
+            return this.Update(Original_OS_CODIGO, OS_CLIENTE, OS_FUNCIONARIO, OS_TOTAL_ITEM, OS_TOTAL_SERVICO, OS_DESCONTO, OS_ACRESCIMO, OS_FORMA_PAGAMENTO, OS_TOTAL, OS_DATA, OS_AVULSOS, OS_DEFEITO, OS_DIAGNOSTICO, OS_PRODUTO, OS_STATUS, OS_OBSERVACAO, OS_DATA_ENTREGA, Original_OS_CODIGO, Original_OS_CLIENTE, Original_OS_FUNCIONARIO, Original_OS_TOTAL_ITEM, Original_OS_TOTAL_SERVICO, Original_OS_DESCONTO, Original_OS_ACRESCIMO, Original_OS_FORMA_PAGAMENTO, Original_OS_TOTAL, Original_OS_DATA, Original_OS_AVULSOS, Original_OS_DEFEITO, Original_OS_DIAGNOSTICO, Original_OS_PRODUTO, Original_OS_STATUS, Original_OS_OBSERVACAO, Original_OS_DATA_ENTREGA);
         }
     }
     

@@ -100,7 +100,7 @@
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRCAMENTO_SERVICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRCAMENTO_DIAGNOSTICORichTextBox = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonLancarOS = new System.Windows.Forms.Button();
             this.taFisico = new FROGI_OS.dsFROGIOSTableAdapters.CLIENTE_FISICOTableAdapter();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.taJuridico = new FROGI_OS.dsFROGIOSTableAdapters.CLIENTE_JURIDICOTableAdapter();
@@ -115,7 +115,7 @@
             this.buttonAplicar = new System.Windows.Forms.Button();
             this.oRCAMENTO_DESCONTOTextBox = new System.Windows.Forms.TextBox();
             this.oRCAMENTO_ACRESCIMOTextBox = new System.Windows.Forms.TextBox();
-            this.oRCAMENTO_TOTALLabel1 = new System.Windows.Forms.Label();
+            this.labelTotalLiquido = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -168,10 +168,10 @@
             // 
             // panelCabecalho
             // 
-            this.panelCabecalho.Controls.Add(this.button1);
+            this.panelCabecalho.Controls.Add(this.buttonLancarOS);
             this.panelCabecalho.Size = new System.Drawing.Size(800, 92);
             this.panelCabecalho.Controls.SetChildIndex(this.labelBase, 0);
-            this.panelCabecalho.Controls.SetChildIndex(this.button1, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.buttonLancarOS, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.pictureFechar, 0);
             // 
             // pictureFechar
@@ -456,10 +456,10 @@
             this.labelFuncionario.ForeColor = System.Drawing.Color.Black;
             this.labelFuncionario.Location = new System.Drawing.Point(37, 141);
             this.labelFuncionario.Name = "labelFuncionario";
-            this.labelFuncionario.Size = new System.Drawing.Size(183, 25);
+            this.labelFuncionario.Size = new System.Drawing.Size(233, 25);
             this.labelFuncionario.TabIndex = 6;
-            this.labelFuncionario.Text = "Clique para pesquisar";
-            this.labelFuncionario.Click += new System.EventHandler(this.fUNCIONARIO_NOMELabel1_Click);
+            this.labelFuncionario.Text = "Duplo clique para pesquisar";
+            this.labelFuncionario.DoubleClick += new System.EventHandler(this.fUNCIONARIO_NOMELabel1_Click);
             // 
             // bsFuncionario
             // 
@@ -503,16 +503,15 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox4.Controls.Add(this.labelFuncionario);
             this.groupBox4.Controls.Add(label5);
             this.groupBox4.Controls.Add(this.labelCliente);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(label9);
-            this.groupBox4.Location = new System.Drawing.Point(11, 3);
+            this.groupBox4.Location = new System.Drawing.Point(-92, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(696, 190);
+            this.groupBox4.Size = new System.Drawing.Size(736, 190);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Pessoal";
@@ -524,10 +523,10 @@
             this.labelCliente.ForeColor = System.Drawing.Color.Black;
             this.labelCliente.Location = new System.Drawing.Point(31, 64);
             this.labelCliente.Name = "labelCliente";
-            this.labelCliente.Size = new System.Drawing.Size(183, 25);
+            this.labelCliente.Size = new System.Drawing.Size(233, 25);
             this.labelCliente.TabIndex = 4;
-            this.labelCliente.Text = "Clique para pesquisar";
-            this.labelCliente.Click += new System.EventHandler(this.labelCliente_Click);
+            this.labelCliente.Text = "Duplo clique para pesquisar";
+            this.labelCliente.DoubleClick += new System.EventHandler(this.labelCliente_Click);
             // 
             // label7
             // 
@@ -921,19 +920,20 @@
             this.oRCAMENTO_DIAGNOSTICORichTextBox.TabIndex = 1;
             this.oRCAMENTO_DIAGNOSTICORichTextBox.Text = "";
             // 
-            // button1
+            // buttonLancarOS
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.AutoSize = true;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Light", 20F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(531, 14);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(143, 49);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Lançar OS";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLancarOS.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.buttonLancarOS.AutoSize = true;
+            this.buttonLancarOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLancarOS.Font = new System.Drawing.Font("Segoe UI Light", 20F);
+            this.buttonLancarOS.ForeColor = System.Drawing.Color.White;
+            this.buttonLancarOS.Location = new System.Drawing.Point(531, 14);
+            this.buttonLancarOS.Name = "buttonLancarOS";
+            this.buttonLancarOS.Size = new System.Drawing.Size(143, 49);
+            this.buttonLancarOS.TabIndex = 2;
+            this.buttonLancarOS.Text = "Lançar OS";
+            this.buttonLancarOS.UseVisualStyleBackColor = true;
+            this.buttonLancarOS.Click += new System.EventHandler(this.buttonLancarOS_Click);
             // 
             // taFisico
             // 
@@ -1003,7 +1003,7 @@
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.panelDesconto_Acrescimo);
-            this.groupBox5.Controls.Add(this.oRCAMENTO_TOTALLabel1);
+            this.groupBox5.Controls.Add(this.labelTotalLiquido);
             this.groupBox5.Location = new System.Drawing.Point(11, 375);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(747, 120);
@@ -1037,30 +1037,32 @@
             // 
             // oRCAMENTO_DESCONTOTextBox
             // 
-            this.oRCAMENTO_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_DESCONTO", true));
+            this.oRCAMENTO_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_DESCONTO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.oRCAMENTO_DESCONTOTextBox.Location = new System.Drawing.Point(109, 5);
             this.oRCAMENTO_DESCONTOTextBox.Name = "oRCAMENTO_DESCONTOTextBox";
             this.oRCAMENTO_DESCONTOTextBox.Size = new System.Drawing.Size(183, 33);
             this.oRCAMENTO_DESCONTOTextBox.TabIndex = 2;
+            this.oRCAMENTO_DESCONTOTextBox.TextChanged += new System.EventHandler(this.oRCAMENTO_DESCONTOTextBox_TextChanged);
             // 
             // oRCAMENTO_ACRESCIMOTextBox
             // 
-            this.oRCAMENTO_ACRESCIMOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_ACRESCIMO", true));
+            this.oRCAMENTO_ACRESCIMOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_ACRESCIMO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.oRCAMENTO_ACRESCIMOTextBox.Location = new System.Drawing.Point(109, 58);
             this.oRCAMENTO_ACRESCIMOTextBox.Name = "oRCAMENTO_ACRESCIMOTextBox";
             this.oRCAMENTO_ACRESCIMOTextBox.Size = new System.Drawing.Size(183, 33);
             this.oRCAMENTO_ACRESCIMOTextBox.TabIndex = 4;
+            this.oRCAMENTO_ACRESCIMOTextBox.TextChanged += new System.EventHandler(this.oRCAMENTO_ACRESCIMOTextBox_TextChanged);
             // 
-            // oRCAMENTO_TOTALLabel1
+            // labelTotalLiquido
             // 
-            this.oRCAMENTO_TOTALLabel1.AutoSize = true;
-            this.oRCAMENTO_TOTALLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL", true));
-            this.oRCAMENTO_TOTALLabel1.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.oRCAMENTO_TOTALLabel1.Location = new System.Drawing.Point(15, 42);
-            this.oRCAMENTO_TOTALLabel1.Name = "oRCAMENTO_TOTALLabel1";
-            this.oRCAMENTO_TOTALLabel1.Size = new System.Drawing.Size(46, 37);
-            this.oRCAMENTO_TOTALLabel1.TabIndex = 1;
-            this.oRCAMENTO_TOTALLabel1.Text = "R$";
+            this.labelTotalLiquido.AutoSize = true;
+            this.labelTotalLiquido.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL", true));
+            this.labelTotalLiquido.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalLiquido.Location = new System.Drawing.Point(15, 42);
+            this.labelTotalLiquido.Name = "labelTotalLiquido";
+            this.labelTotalLiquido.Size = new System.Drawing.Size(46, 37);
+            this.labelTotalLiquido.TabIndex = 1;
+            this.labelTotalLiquido.Text = "R$";
             // 
             // formCadastroOrcamento
             // 
@@ -1175,12 +1177,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.RichTextBox oRCAMENTO_DIAGNOSTICORichTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonLancarOS;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button buttonAplicar;
         private System.Windows.Forms.TextBox oRCAMENTO_ACRESCIMOTextBox;
         private System.Windows.Forms.TextBox oRCAMENTO_DESCONTOTextBox;
-        private System.Windows.Forms.Label oRCAMENTO_TOTALLabel1;
+        private System.Windows.Forms.Label labelTotalLiquido;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMVALORDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn;

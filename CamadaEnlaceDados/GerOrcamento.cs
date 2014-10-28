@@ -227,7 +227,7 @@ namespace FROGI_OS.CamadaEnlaceDados
                 + "CLIENTE INNER JOIN "
                 + "CLIENTE_JURIDICO ON CLIENTE_CODIGO = CLIENTE_JURIDICO_CLIENTE INNER JOIN "
                 + "ORCAMENTO ON CLIENTE_CODIGO = ORCAMENTO_CLIENTE INNER JOIN "
-                + "FUNCIONARIO ON ORCAMENTO_FUNCIONARIO = FUNCIONARIO_CODIGO;"
+                + "FUNCIONARIO ON ORCAMENTO_FUNCIONARIO = FUNCIONARIO_CODIGO "
                 + "WHERE " + coluna + " CONTAINING " + paramValor + ";";
 
             comando = new FbCommand((eFisico ? sqlFisico : sqlJuridico), Conexao.getConexao, Conexao.getTransacao);
@@ -240,6 +240,11 @@ namespace FROGI_OS.CamadaEnlaceDados
             orcamentoSQL.deletar(orcamento);
             //Deleta só o orcamento
             //FK é CASACE DELETE
+        }
+
+        public void gerarOrdemServico(dsFROGIOS.ORCAMENTORow orcamento, dsFROGIOS.ORCAMENTO_ITEMDataTable itens, dsFROGIOS.ORCAMENTO_SERVICODataTable servicos) {
+            GerOs os = new GerOs();
+
         }
 
     }

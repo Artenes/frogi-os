@@ -12,7 +12,7 @@ namespace FROGI_OS.InterfaceGrafica {
     public partial class formOSBaseCadastro : Form {
 
         private formDialogo dialogo;
-        private bool ignorar = false;
+        protected bool ignorar = false;
 
         public formOSBaseCadastro() {
             InitializeComponent();
@@ -69,6 +69,8 @@ namespace FROGI_OS.InterfaceGrafica {
                         dialogo.compor("Pronto! As informações foram guardadas!", "", formDialogo.TipoExpressao.AvisoFeliz).ShowDialog();
                         Conexao.getTransacao.Commit();
                         resetar();
+                        ignorar = true;
+                        this.Close();
                     } catch (Exception erro) {
                         dialogo.compor("Essa não! Temos um problema...", erro.Message, formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
                         Conexao.getTransacao.Rollback();
@@ -77,8 +79,6 @@ namespace FROGI_OS.InterfaceGrafica {
                     }
                 }
             }
-            ignorar = true;
-            this.Close();
         }
 
         public void deletar() {
@@ -90,6 +90,8 @@ namespace FROGI_OS.InterfaceGrafica {
                     dialogo.compor("Regitro excluido com sucesso", "Vai fazer falta...", formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
                     Conexao.getTransacao.Commit();
                     resetar();
+                    ignorar = true;
+                    this.Close();
                 } catch (Exception erro) {
                     string mensagemErro;
                     //Isso quer dizer que um registro não pode ser deletado já que outros dependem dele para fazer sentido

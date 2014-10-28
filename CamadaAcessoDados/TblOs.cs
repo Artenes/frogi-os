@@ -18,6 +18,13 @@ namespace FROGI_OS.CamadaAcessoDados {
         private string paramFormaPagamento = "@FORMAPAGAMENTO";
         private string paramTotal = "@TOTAL";
         private string paramData = "@DATA";
+        private string paramProduto = "@PRODUTO";
+        private string paramDiagnostico = "@DIAGNOSTICO";
+        private string paramAvulsos = "@AVULSOS";
+        private string paramDefeito = "@DEFEITO";
+        private string paramDataEntrega = "@DATAENTREGA";
+        private string paramStatus = "@STATUS";
+        private string paramObservacao = "@OBSERVACAO";
 
         private string paramValor = "@VALOR";
 
@@ -34,7 +41,14 @@ namespace FROGI_OS.CamadaAcessoDados {
                + paramAcrescimo + ", "
                + paramFormaPagamento + ", "
                + paramTotal + ", "
-               + paramData + ") "
+               + paramData + ", "
+               + paramProduto + ", "
+               + paramDefeito + ", "
+               + paramAvulsos + ", "
+               + paramDiagnostico + ", "
+               + paramStatus + ", "
+               + paramObservacao + ", "
+               + paramDataEntrega + ") "
                + "RETURNING OS_CODIGO;";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
@@ -47,6 +61,13 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramFormaPagamento, os.OS_FORMA_PAGAMENTO);
             comando.Parameters.AddWithValue(paramTotal, os.OS_TOTAL);
             comando.Parameters.AddWithValue(paramData, os.OS_DATA);
+            comando.Parameters.AddWithValue(paramProduto, os.OS_PRODUTO);
+            comando.Parameters.AddWithValue(paramDefeito, os.OS_DEFEITO);
+            comando.Parameters.AddWithValue(paramAvulsos, os.OS_AVULSOS);
+            comando.Parameters.AddWithValue(paramDiagnostico, os.OS_DIAGNOSTICO);
+            comando.Parameters.AddWithValue(paramStatus, os.OS_STATUS);
+            comando.Parameters.AddWithValue(paramObservacao, os.OS_OBSERVACAO);
+            comando.Parameters.AddWithValue(paramDataEntrega, os.OS_DATA_ENTREGA);
             
             return (int)comando.ExecuteScalar();
         }
@@ -64,7 +85,14 @@ namespace FROGI_OS.CamadaAcessoDados {
                 + "OS_ACRESCIMO = " + paramAcrescimo + ", "
                 + "OS_FORMA_PAGAMENTO = " + paramFormaPagamento + ", "
                 + "OS_TOTAL = " + paramTotal + ", "
-                + "OS_DATA = " + paramData + " "
+                + "OS_DATA = " + paramData + ", "
+                + "OS_PRODUTO = " + paramProduto + ", "
+                + "OS_DEFEITO = " + paramDefeito + ", "
+                + "OS_AVULSOS = " + paramAvulsos + ", "
+                + "OS_DIAGNOSTICO = " + paramDiagnostico + ", "
+                + "OS_STATUS = " + paramStatus + ", "
+                + "OS_OBSERVACAO = " + paramObservacao + ", "
+                + "OS_DATA_ENTREGA = " + paramDataEntrega + " "
                 + "WHERE OS_CODIGO = " + paramCodigo + ";";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
@@ -78,8 +106,15 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramFormaPagamento, os.OS_FORMA_PAGAMENTO);
             comando.Parameters.AddWithValue(paramTotal, os.OS_TOTAL);
             comando.Parameters.AddWithValue(paramData, os.OS_DATA);
-            
-            return (int)comando.ExecuteScalar();
+            comando.Parameters.AddWithValue(paramProduto, os.OS_PRODUTO);
+            comando.Parameters.AddWithValue(paramDefeito, os.OS_DEFEITO);
+            comando.Parameters.AddWithValue(paramAvulsos, os.OS_AVULSOS);
+            comando.Parameters.AddWithValue(paramDiagnostico, os.OS_DIAGNOSTICO);
+            comando.Parameters.AddWithValue(paramStatus, os.OS_STATUS);
+            comando.Parameters.AddWithValue(paramObservacao, os.OS_OBSERVACAO);
+            comando.Parameters.AddWithValue(paramDataEntrega, os.OS_DATA_ENTREGA);
+
+            return comando.ExecuteNonQuery();
         }
 
         public FbDataReader selecionar(string coluna, string valor, bool comPrecisao) {
@@ -104,7 +139,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramCodigo, os.OS_CODIGO);
 
-            return (int)comando.ExecuteScalar();
+            return comando.ExecuteNonQuery();
         }
 
     }

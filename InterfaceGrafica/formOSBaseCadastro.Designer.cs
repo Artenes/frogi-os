@@ -312,7 +312,7 @@
         protected System.Windows.Forms.Panel panelServicos;
         protected System.Windows.Forms.Panel panelDiagnostico;
         protected System.Windows.Forms.Panel panelRodape;
-        private System.Windows.Forms.PictureBox pictureEditar;
+        protected System.Windows.Forms.PictureBox pictureEditar;
         private System.Windows.Forms.PictureBox pictureExcluir;
         private System.Windows.Forms.PictureBox pictureSalvar;
     }

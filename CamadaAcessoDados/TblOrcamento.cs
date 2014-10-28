@@ -19,9 +19,9 @@ namespace FROGI_OS.CamadaAcessoDados {
         private string paramTotal = "@TOTAL";
         private string paramData = "@DATA";
         private string paramProduto = "@PRODUTO";
-        private string paramDiagnostico = "@Diagnostico";
-        private string paramAvulsos = "@Avulsos";
-        private string paramDefeito = "@Defeito";
+        private string paramDiagnostico = "@DIAGNOSTICO";
+        private string paramAvulsos = "@AVULSOS";
+        private string paramDefeito = "@DEFEITO";
 
         private string paramValor = "@VALOR";
 

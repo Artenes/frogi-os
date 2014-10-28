@@ -20,15 +20,20 @@ namespace FROGI_OS.InterfaceGrafica {
             InitializeComponent();
             orcamentoSQL = new GerOrcamento();
             dsFROGIOS.EnforceConstraints = false;
-            if (eNovo) {
+            if (eNovo)
+            {
                 oRCAMENTO_TOTAL_ITEMTextBox.Text = "0,0";
                 oRCAMENTO_TOTAL_SERVICOTextBox.Text = "0,0";
                 textTotalBruto.Text = "0,0";
-                oRCAMENTO_TOTALLabel1.Text = "R$0,0";
+                labelTotalLiquido.Text = "R$0,0";
                 oRCAMENTO_DESCONTOTextBox.Text = "0,0";
                 oRCAMENTO_ACRESCIMOTextBox.Text = "0,0";
                 oRCAMENTO_DATALabel1.Text = DateTime.Now.ToShortDateString();
                 campos(true);
+                buttonLancarOS.Visible = false;
+            }
+            else {
+                buttonLancarOS.Visible = true;
             }
         }
 
@@ -56,8 +61,8 @@ namespace FROGI_OS.InterfaceGrafica {
             orcamentoRow.ORCAMENTO_DESCONTO = converterParaDouble(oRCAMENTO_DESCONTOTextBox.Text);
             orcamentoRow.ORCAMENTO_ACRESCIMO = converterParaDouble(oRCAMENTO_ACRESCIMOTextBox.Text);
             orcamentoRow.ORCAMENTO_OBSERVACAO = oRCAMENTO_OBSERVACAORichTextBox.Text;
-            orcamentoRow.ORCAMENTO_TOTAL = converterParaDouble(oRCAMENTO_TOTALLabel1.Text.Substring(2));
-            orcamentoRow.ORCAMENTO_PRODUTO = pRODUTO_DESCRICAOTextBox.Text;
+            orcamentoRow.ORCAMENTO_TOTAL = converterParaDouble(labelTotalLiquido.Text.Substring(2));
+            orcamentoRow.ORCAMENTO_PRODUTO = oRCAMENTO_PRODUTOTextBox.Text;
             orcamentoRow.ORCAMENTO_DEFEITO = oRCAMENTO_DEFEITORichTextBox.Text;
             orcamentoRow.ORCAMENTO_AVULSOS = oRCAMENTO_AVULSOSRichTextBox.Text;
             orcamentoRow.ORCAMENTO_DIAGNOSTICO = oRCAMENTO_DIAGNOSTICORichTextBox.Text;
@@ -67,6 +72,8 @@ namespace FROGI_OS.InterfaceGrafica {
         protected override void editar() {
             base.editar();
             tabPai.SelectedTab = tabGeral;
+            labelTotalLiquido.Text = "R$" + labelTotalLiquido.Text;
+            buttonLancarOS.Visible = false;
         }
 
         protected override void excluirExecutar() {
@@ -90,15 +97,13 @@ namespace FROGI_OS.InterfaceGrafica {
 
         public override void selecionar(int codigo) {
             orcamentoSQL.selecionar(codigo,dsFROGIOS.ORCAMENTO, dsFROGIOS.ORCAMENTO_ITEM, dsFROGIOS.ORCAMENTO_SERVICO, dsFROGIOS.CLIENTE, dsFROGIOS.CLIENTE_FISICO, dsFROGIOS.CLIENTE_JURIDICO, dsFROGIOS.FUNCIONARIO);
-            calcularTotais();
             if (dsFROGIOS.CLIENTE_FISICO.Rows.Count != 0) {
                 labelCliente.Text = ((dsFROGIOS.CLIENTE_FISICORow)dsFROGIOS.CLIENTE_FISICO.Rows[0]).CLIENTE_FISICO_NOME;
             } else {
                 labelCliente.Text = ((dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO.Rows[0]).CLIENTE_JURIDICO_FANTASIA;
             }
             labelFuncionario.Text = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_NOME;
-            //oRCAMENTO_TOTALLabel1.Text = "R$" + oRCAMENTO_TOTALLabel1.Text;
-
+            calcularTotais();
         }
 
         public void selecionarCliente(int codigo, bool eFisico) {
@@ -156,22 +161,7 @@ namespace FROGI_OS.InterfaceGrafica {
          * Calculo de acréscimo e desconto sobre o valor bruto do orçamento
          */ 
         private void buttonAplicar_Click(object sender, EventArgs e) {
-            
-            double
-                totalBruto = converterParaDouble(textTotalBruto.Text),
-                acrescimo = converterParaDouble(oRCAMENTO_ACRESCIMOTextBox.Text),
-                desconto = converterParaDouble(oRCAMENTO_DESCONTOTextBox.Text);
-
-            try {
-                if (acrescimo != 0 && acrescimo > 0) {
-                    oRCAMENTO_TOTALLabel1.Text = "R$" + (totalBruto + acrescimo).ToString("0.00");
-                } else if (desconto != 0 && desconto > 0 && desconto < totalBruto) {
-                    oRCAMENTO_TOTALLabel1.Text = "R$" + (totalBruto - desconto).ToString("0.00");
-                }                    
-            } catch (Exception erro) {
-                exibirMensagemErro(erro.Message);
-            }
-
+            aplicarDescontoAcrescimo();
         }
 
         private void buttonLancarProduto_Click(object sender, EventArgs e) {
@@ -228,7 +218,6 @@ namespace FROGI_OS.InterfaceGrafica {
             servico.Dispose();
             textServicoAcrescimo.Text = "0,00";
             textServicoDesconto.Text = "0,00";
-
         }
 
         private void buttonLancarServico_Click(object sender, EventArgs e) {
@@ -280,6 +269,29 @@ namespace FROGI_OS.InterfaceGrafica {
             textServicoAcrescimo.Text = servicoAtual.ORCAMENTO_SERVICO_ACRESCIMO.ToString("0.00");
         }
 
+        private void aplicarDescontoAcrescimo() {
+
+            double
+               totalBruto = converterParaDouble(textTotalBruto.Text),
+               acrescimo = converterParaDouble(oRCAMENTO_ACRESCIMOTextBox.Text),
+               desconto = converterParaDouble(oRCAMENTO_DESCONTOTextBox.Text);
+
+            try {
+                if (acrescimo != 0 && acrescimo > 0) {
+                    labelTotalLiquido.Text = "R$" + (totalBruto + acrescimo).ToString("0.00");
+                }
+                else if (desconto != 0 && desconto > 0 && desconto < totalBruto)
+                {
+                    labelTotalLiquido.Text = "R$" + (totalBruto - desconto).ToString("0.00");
+                }
+                else {
+                    labelTotalLiquido.Text = "R$" +  totalBruto.ToString("0.00");
+                }
+            } catch (Exception erro) {
+                exibirMensagemErro(erro.Message);
+            }
+        }
+
         private void calcularTotais() {
             double
                     totalPecasBruto = 0,
@@ -318,10 +330,11 @@ namespace FROGI_OS.InterfaceGrafica {
             oRCAMENTO_TOTAL_ITEMTextBox.Text = totalPecasLiquido.ToString("0.00");
             oRCAMENTO_TOTAL_SERVICOTextBox.Text = totalServicosLiquido.ToString("0.00");
             textTotalBruto.Text = totalBruto.ToString("0.00");
-            oRCAMENTO_TOTALLabel1.Text = "R$" + totalLiquido.ToString("0.00");
+            labelTotalLiquido.Text = "R$" + totalLiquido.ToString("0.00");
 
             if (aplica) {
                 panelDesconto_Acrescimo.Visible = true;
+                aplicarDescontoAcrescimo();
             } else {
                 panelDesconto_Acrescimo.Visible = false;
                 oRCAMENTO_DESCONTOTextBox.Text = "0,00";
@@ -336,11 +349,116 @@ namespace FROGI_OS.InterfaceGrafica {
         }
 
         private void textServicoDesconto_TextChanged(object sender, EventArgs e) {
-            textServicoAcrescimo.Text = null;
+            if (textServicoDesconto.Focused) {
+                textServicoAcrescimo.Text = "0,00";    
+            }
+            
         }
 
         private void textServicoAcrescimo_TextChanged(object sender, EventArgs e) {
-            textServicoDesconto.Text = null;
+            if (textServicoAcrescimo.Focused) {
+                textServicoDesconto.Text = "0,00";    
+            }
+        }
+
+        private void oRCAMENTO_DESCONTOTextBox_TextChanged(object sender, EventArgs e) {
+            TextBox text = (TextBox)sender;
+            if (text.Focused) {
+                oRCAMENTO_ACRESCIMOTextBox.Text = "0,00";
+            }
+        }
+
+        private void oRCAMENTO_ACRESCIMOTextBox_TextChanged(object sender, EventArgs e) {
+            TextBox text = (TextBox)sender;
+            if (text.Focused) {
+                oRCAMENTO_DESCONTOTextBox.Text = "0,00";
+            }
+        }
+
+        private void buttonLancarOS_Click(object sender, EventArgs e) {
+            using (formDialogo dialogo = new formDialogo()) {
+                string valido = validarCampos();
+                if (valido != "") {
+                    dialogo.compor(valido, "", formDialogo.TipoExpressao.AvisoTriste).ShowDialog();
+                } else {
+                    if (dialogo.compor("Deseja abrir uma nova ordem de serviço?", null, formDialogo.TipoExpressao.Pergunta).ShowDialog() == DialogResult.Yes) {
+                        try {
+                            Conexao.abrir();
+                            criarNovaOS();
+                            Conexao.getTransacao.Commit();
+                            dialogo.compor("Ordem de serviço criada!", "Agora vá na seção de OS para ver mais informações", formDialogo.TipoExpressao.AvisoFeliz).ShowDialog();
+                        } catch (Exception erro) {
+                            Conexao.getTransacao.Rollback();
+                            exibirMensagemErro(erro.Message);
+                        } finally {
+                            Conexao.fechar();
+                        }
+                        this.ignorar = true; //Impede que a caixa de dialogo de confirmação de saida seja exibida
+                        this.Close();
+                    }
+                }
+            }
+        }
+
+        private void criarNovaOS() {
+            
+            dsFROGIOS.OSRow os = dsFROGIOS.OS.NewOSRow();
+            dsFROGIOS.ORCAMENTORow orcamento = dsFROGIOS.ORCAMENTO.Rows[0] as dsFROGIOS.ORCAMENTORow;
+
+            //Inicialização dos valores da os com base nos valores do orcamento
+            os.OS_CODIGO = 0;
+            os.OS_CLIENTE = orcamento.ORCAMENTO_CLIENTE;
+            os.OS_FUNCIONARIO = orcamento.ORCAMENTO_FUNCIONARIO;
+            os.OS_TOTAL_ITEM = orcamento.ORCAMENTO_TOTAL_ITEM;
+            os.OS_TOTAL_SERVICO = orcamento.ORCAMENTO_TOTAL_SERVICO;
+            os.OS_DESCONTO = orcamento.ORCAMENTO_DESCONTO;
+            os.OS_ACRESCIMO = orcamento.ORCAMENTO_ACRESCIMO;
+            os.OS_TOTAL = orcamento.ORCAMENTO_TOTAL;
+            os.OS_DATA = DateTime.Now;
+            os.OS_FORMA_PAGAMENTO = String.Empty;
+            os.OS_PRODUTO = orcamento.ORCAMENTO_PRODUTO;
+            os.OS_DEFEITO = orcamento.ORCAMENTO_DEFEITO;
+            os.OS_AVULSOS = orcamento.ORCAMENTO_AVULSOS;
+            os.OS_DIAGNOSTICO = orcamento.ORCAMENTO_DIAGNOSTICO;
+            os.OS_OBSERVACAO = orcamento.ORCAMENTO_OBSERVACAO;
+            os.OS_STATUS = "Lançado";
+            os.OS_DATA_ENTREGA = DateTime.Now;
+
+            
+            int contador = 0;
+            //inicialização dos valores dos itens da os com base nos item do orcamento
+            foreach (dsFROGIOS.ORCAMENTO_ITEMRow itemOrcamento in dsFROGIOS.ORCAMENTO_ITEM.Rows) {
+                dsFROGIOS.OS_ITEMRow itemOs = dsFROGIOS.OS_ITEM.NewOS_ITEMRow();
+                itemOs.OS_ITEM_CODIGO = contador;
+                itemOs.OS_ITEM_OS = 0;
+                itemOs.OS_ITEM_PRODUTO = itemOrcamento.ORCAMENTO_ITEM_PRODUTO;
+                itemOs.OS_ITEM_DESCRICAO = itemOrcamento.ORCAMENTO_ITEM_DESCRICAO;
+                itemOs.OS_ITEM_VALOR = itemOrcamento.ORCAMENTO_ITEM_VALOR;
+                itemOs.OS_ITEM_DESCONTO = itemOrcamento.ORCAMENTO_ITEM_DESCONTO;
+                itemOs.OS_ITEM_QUANTIDADE = itemOrcamento.ORCAMENTO_ITEM_QUANTIDADE;
+                itemOs.OS_ITEM_TOTAL = itemOrcamento.ORCAMENTO_ITEM_TOTAL;
+                contador++;
+                dsFROGIOS.OS_ITEM.AddOS_ITEMRow(itemOs);
+            }
+
+            //inicialização dos valores dos serviços da os com base nos serviços do orcamento
+            foreach (dsFROGIOS.ORCAMENTO_SERVICORow servicoOrcamento in dsFROGIOS.ORCAMENTO_SERVICO.Rows) {
+                dsFROGIOS.OS_SERVICORow servicoOs = dsFROGIOS.OS_SERVICO.NewOS_SERVICORow();
+                servicoOs.OS_SERVICO_CODIGO = contador;
+                servicoOs.OS_SERVICO_OS = 0;
+                servicoOs.OS_SERVICO_SERVICO = servicoOrcamento.ORCAMENTO_SERVICO_SERVICO;
+                servicoOs.OS_SERVICO_VALOR = servicoOrcamento.ORCAMENTO_SERVICO_VALOR;
+                servicoOs.OS_SERVICO_DESCRICAO = servicoOrcamento.ORCAMENTO_SERVICO_DESCRICAO;
+                servicoOs.OS_SERVICO_DESCONTO = servicoOrcamento.ORCAMENTO_SERVICO_DESCONTO;
+                servicoOs.OS_SERVICO_ACRESCIMO = servicoOrcamento.ORCAMENTO_SERVICO_ACRESCIMO;
+                servicoOs.OS_SERVICO_TOTAL = servicoOrcamento.ORCAMENTO_SERVICO_TOTAL;
+                contador++;
+                dsFROGIOS.OS_SERVICO.AddOS_SERVICORow(servicoOs);
+            }
+
+            GerOs osSQL = new GerOs();
+            osSQL.inserir(os,dsFROGIOS.OS_ITEM, dsFROGIOS.OS_SERVICO);
+
         }
 
     }

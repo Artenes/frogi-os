@@ -61,7 +61,15 @@ namespace FROGI_OS.InterfaceGrafica
                 } else  if (cadastroOS != null) {
                     try {
                         Conexao.abrir();
-                        ((formCadastroOrcamento)cadastroOS).selecionarProduto(codigo);
+                        if (cadastroOS.GetType() == typeof(formCadastroOrcamento))
+                        {
+                            ((formCadastroOrcamento)cadastroOS).selecionarProduto(codigo);
+                        }
+                        else
+                        {
+                            ((formCadastroOS)cadastroOS).selecionarProduto(codigo);
+                        }
+                        
                     } catch (Exception erro) {
                         exibirMensagemErro(erro.Message);
                     } finally {

@@ -81,6 +81,10 @@
             this.labelPesquisa.Size = new System.Drawing.Size(73, 54);
             this.labelPesquisa.Text = "OS";
             // 
+            // comboTipoCliente
+            // 
+            this.comboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.comboTipoCliente_SelectedIndexChanged);
+            // 
             // buttonNovoRegistro
             // 
             this.buttonNovoRegistro.Text = "Lançar OS";
@@ -104,8 +108,8 @@
             "Todos",
             "Lançado",
             "Aberto",
-            "Em andamento",
-            "Concluido"});
+            "Concluido",
+            "Cancelado"});
             this.comboStatus.Location = new System.Drawing.Point(474, 42);
             this.comboStatus.Name = "comboStatus";
             this.comboStatus.Size = new System.Drawing.Size(117, 33);
@@ -184,6 +188,8 @@
             this.pESQUISA_OS_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_OS_FISICODataGridView.Size = new System.Drawing.Size(770, 347);
             this.pESQUISA_OS_FISICODataGridView.TabIndex = 4;
+            this.pESQUISA_OS_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
+            this.pESQUISA_OS_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -266,6 +272,8 @@
             this.pESQUISA_OS_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_OS_JURIDICODataGridView.Size = new System.Drawing.Size(770, 347);
             this.pESQUISA_OS_JURIDICODataGridView.TabIndex = 5;
+            this.pESQUISA_OS_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
+            this.pESQUISA_OS_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
             // 
             // dataGridViewTextBoxColumn8
             // 
