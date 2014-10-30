@@ -807,36 +807,6 @@
   <data name="tableLayoutPanel1.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pictureMarcas" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pictureTipos" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
-  <data name="pictureNotas.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="pictureNotas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pictureNotas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="pictureNotas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>315, 154</value>
-  </data>
-  <data name="pictureNotas.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="pictureNotas.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;pictureNotas.Name" xml:space="preserve">
-    <value>pictureNotas</value>
-  </data>
-  <data name="&gt;&gt;pictureNotas.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pictureNotas.Parent" xml:space="preserve">
-    <value>tableLayoutPanel2</value>
-  </data>
-  <data name="&gt;&gt;pictureNotas.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="tableLayoutPanel4.ColumnCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
@@ -928,10 +898,187 @@
     <value>tableLayoutPanel2</value>
   </data>
   <data name="&gt;&gt;tableLayoutPanel4.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="tableLayoutPanel4.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
     <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pictureCompras" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="pictureOpcoes" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,50" /&gt;&lt;/TableLayoutSettings&gt;</value>
+  </data>
+  <data name="pictureNotas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="pictureNotas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 96</value>
+  </data>
+  <data name="pictureNotas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 53</value>
+  </data>
+  <data name="pictureNotas.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="pictureNotas.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;pictureNotas.Name" xml:space="preserve">
+    <value>pictureNotas</value>
+  </data>
+  <data name="&gt;&gt;pictureNotas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureNotas.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;pictureNotas.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonAbrirDiretorio.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonAbrirDiretorio.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonAbrirDiretorio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonAbrirDiretorio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 96</value>
+  </data>
+  <data name="buttonAbrirDiretorio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 25</value>
+  </data>
+  <data name="buttonAbrirDiretorio.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="buttonAbrirDiretorio.Text" xml:space="preserve">
+    <value>Abrir pasta</value>
+  </data>
+  <data name="&gt;&gt;buttonAbrirDiretorio.Name" xml:space="preserve">
+    <value>buttonAbrirDiretorio</value>
+  </data>
+  <data name="&gt;&gt;buttonAbrirDiretorio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonAbrirDiretorio.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;buttonAbrirDiretorio.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonMudarDiretorio.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonMudarDiretorio.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="buttonMudarDiretorio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonMudarDiretorio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>234, 25</value>
+  </data>
+  <data name="buttonMudarDiretorio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 25</value>
+  </data>
+  <data name="buttonMudarDiretorio.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="buttonMudarDiretorio.Text" xml:space="preserve">
+    <value>Mudar pasta</value>
+  </data>
+  <data name="&gt;&gt;buttonMudarDiretorio.Name" xml:space="preserve">
+    <value>buttonMudarDiretorio</value>
+  </data>
+  <data name="&gt;&gt;buttonMudarDiretorio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonMudarDiretorio.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;buttonMudarDiretorio.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelDiretorioNotas.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelDiretorioNotas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 15pt</value>
+  </data>
+  <data name="labelDiretorioNotas.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelDiretorioNotas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 25</value>
+  </data>
+  <data name="labelDiretorioNotas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 28</value>
+  </data>
+  <data name="labelDiretorioNotas.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="labelDiretorioNotas.Text" xml:space="preserve">
+    <value>Pasta</value>
+  </data>
+  <data name="&gt;&gt;labelDiretorioNotas.Name" xml:space="preserve">
+    <value>labelDiretorioNotas</value>
+  </data>
+  <data name="&gt;&gt;labelDiretorioNotas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelDiretorioNotas.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;labelDiretorioNotas.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textDiretorioNotas.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textDiretorioNotas.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Light, 15pt</value>
+  </data>
+  <data name="textDiretorioNotas.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 56</value>
+  </data>
+  <data name="textDiretorioNotas.Size" type="System.Drawing.Size, System.Drawing">
+    <value>306, 34</value>
+  </data>
+  <data name="textDiretorioNotas.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textDiretorioNotas.Name" xml:space="preserve">
+    <value>textDiretorioNotas</value>
+  </data>
+  <data name="&gt;&gt;textDiretorioNotas.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textDiretorioNotas.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;textDiretorioNotas.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>315, 154</value>
+  </data>
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
+    <value>tableLayoutPanel2</value>
+  </data>
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>1056, 103</value>
@@ -961,7 +1108,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pictureAjuda" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel3" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel5" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel1" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureNotas" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel4" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="pictureAjuda" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel3" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel5" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel1" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="tableLayoutPanel4" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="panel2" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,33,33333,Percent,33,33333" /&gt;&lt;Rows Styles="Percent,33,33333,Percent,33,33333,Percent,33,33333" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="tableBanners02.ColumnCount" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1755,8 +1902,17 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1292, 730</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
+  </data>
+  <data name="&gt;&gt;hora.Name" xml:space="preserve">
+    <value>hora</value>
+  </data>
+  <data name="&gt;&gt;hora.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn5</value>
@@ -1823,12 +1979,6 @@
   </data>
   <data name="&gt;&gt;aFAZER_FISICOBindingSource.Type" xml:space="preserve">
     <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;hora.Name" xml:space="preserve">
-    <value>hora</value>
-  </data>
-  <data name="&gt;&gt;hora.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;taAFAZER_FISICO.Name" xml:space="preserve">
     <value>taAFAZER_FISICO</value>

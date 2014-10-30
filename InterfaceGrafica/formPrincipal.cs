@@ -24,6 +24,7 @@ namespace FROGI_OS
         private void formPrincipal_Load(object sender, EventArgs e) {
             labelData.Text = DateTime.Now.ToShortDateString();
             this.ActiveControl = pictureClientes;
+            textDiretorioNotas.Text = Properties.Settings.Default.diretorioNotas;
             formLogin login = new formLogin();
             login.ShowDialog(this);
         }
@@ -125,12 +126,7 @@ namespace FROGI_OS
             sobre.Dispose();
         }
 
-        private void pictureNotas_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formNotaFiscal nota = new formNotaFiscal();
-            nota.ShowDialog();
-            nota.Dispose();
-        }
+        
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e) {
             formDialogo dialogo = new formDialogo("Quer fechar o programa?", "Tava tão legal com você por aqui...", formDialogo.TipoExpressao.Pergunta);
@@ -163,6 +159,36 @@ namespace FROGI_OS
             formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
             dialogo.ShowDialog();
             dialogo.Dispose();
+        }
+
+        private void selecionarDiretorio(TextBox textExibir) {
+            FolderBrowserDialog fbd = new FolderBrowserDialog();
+            if (fbd.ShowDialog() == DialogResult.OK) {
+                textExibir.Text = fbd.SelectedPath;
+                Properties.Settings.Default.diretorioNotas = fbd.SelectedPath;
+                Properties.Settings.Default.Save();
+            }
+        }
+
+        private void abrirDiretorio() { 
+            string diretorio = Properties.Settings.Default.diretorioNotas;
+            if (diretorio != String.Empty) {
+                try {
+                    System.Diagnostics.Process.Start(@diretorio);
+                } catch (Exception) {
+                    formDialogo dialogo = new formDialogo("Temos um problema...", "A pasta não existe mais", formDialogo.TipoExpressao.AvisoTriste);
+                    dialogo.ShowDialog();
+                    dialogo.Dispose();
+                }
+            }
+        }
+
+        private void buttonMudarDiretorio_Click(object sender, EventArgs e) {
+            selecionarDiretorio(textDiretorioNotas);
+        }
+
+        private void buttonAbrirDiretorio_Click(object sender, EventArgs e) {
+            abrirDiretorio();
         }
 
     }

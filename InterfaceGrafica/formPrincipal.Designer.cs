@@ -55,25 +55,19 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureMarcas = new System.Windows.Forms.PictureBox();
             this.pictureTipos = new System.Windows.Forms.PictureBox();
-            this.pictureNotas = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureCompras = new System.Windows.Forms.PictureBox();
             this.pictureOpcoes = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureNotas = new System.Windows.Forms.PictureBox();
+            this.buttonAbrirDiretorio = new System.Windows.Forms.Button();
+            this.buttonMudarDiretorio = new System.Windows.Forms.Button();
+            this.labelDiretorioNotas = new System.Windows.Forms.Label();
+            this.textDiretorioNotas = new System.Windows.Forms.TextBox();
             this.tableBanners02 = new System.Windows.Forms.TableLayoutPanel();
             this.panelPesquisa = new System.Windows.Forms.Panel();
             this.aFAZER_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aFAZER_JURIDICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.aFAZER_FISICODataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aFAZER_FISICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelPesquisaBabecalho = new System.Windows.Forms.Panel();
             this.dateDataServico = new System.Windows.Forms.DateTimePicker();
             this.labelServicoFazer = new System.Windows.Forms.Label();
@@ -85,6 +79,17 @@
             this.labelUsuarioNome = new System.Windows.Forms.Label();
             this.labelFrogiOs = new System.Windows.Forms.Label();
             this.hora = new System.Windows.Forms.Timer(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aFAZER_JURIDICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aFAZER_FISICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.taAFAZER_FISICO = new FROGI_OS.dsFROGIOSTableAdapters.taAFAZER();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.taAFAZER_JURIDICO = new FROGI_OS.dsFROGIOSTableAdapters.taAFAZER_JURIDICO();
@@ -111,21 +116,22 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMarcas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNotas)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOpcoes)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNotas)).BeginInit();
             this.tableBanners02.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICODataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICODataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).BeginInit();
             this.panelPesquisaBabecalho.SuspendLayout();
             this.panelCabecalho.SuspendLayout();
             this.tableUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsuarioFoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePai
@@ -258,8 +264,8 @@
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.pictureNotas, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             // 
             // pictureAjuda
@@ -346,15 +352,6 @@
             this.pictureTipos.TabStop = false;
             this.pictureTipos.Click += new System.EventHandler(this.pictureTipos_Click);
             // 
-            // pictureNotas
-            // 
-            this.pictureNotas.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pictureNotas, "pictureNotas");
-            this.pictureNotas.Image = global::FROGI_OS.Properties.Resources.banner_notas_grande;
-            this.pictureNotas.Name = "pictureNotas";
-            this.pictureNotas.TabStop = false;
-            this.pictureNotas.Click += new System.EventHandler(this.pictureNotas_Click);
-            // 
             // tableLayoutPanel4
             // 
             resources.ApplyResources(this.tableLayoutPanel4, "tableLayoutPanel4");
@@ -379,6 +376,49 @@
             this.pictureOpcoes.Name = "pictureOpcoes";
             this.pictureOpcoes.TabStop = false;
             this.pictureOpcoes.Click += new System.EventHandler(this.pictureOpcoes_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(116)))), ((int)(((byte)(220)))));
+            this.panel2.Controls.Add(this.pictureNotas);
+            this.panel2.Controls.Add(this.buttonAbrirDiretorio);
+            this.panel2.Controls.Add(this.buttonMudarDiretorio);
+            this.panel2.Controls.Add(this.labelDiretorioNotas);
+            this.panel2.Controls.Add(this.textDiretorioNotas);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
+            // 
+            // pictureNotas
+            // 
+            this.pictureNotas.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureNotas.Image = global::FROGI_OS.Properties.Resources.banner_notas_grande;
+            resources.ApplyResources(this.pictureNotas, "pictureNotas");
+            this.pictureNotas.Name = "pictureNotas";
+            this.pictureNotas.TabStop = false;
+            // 
+            // buttonAbrirDiretorio
+            // 
+            resources.ApplyResources(this.buttonAbrirDiretorio, "buttonAbrirDiretorio");
+            this.buttonAbrirDiretorio.Name = "buttonAbrirDiretorio";
+            this.buttonAbrirDiretorio.UseVisualStyleBackColor = true;
+            this.buttonAbrirDiretorio.Click += new System.EventHandler(this.buttonAbrirDiretorio_Click);
+            // 
+            // buttonMudarDiretorio
+            // 
+            resources.ApplyResources(this.buttonMudarDiretorio, "buttonMudarDiretorio");
+            this.buttonMudarDiretorio.Name = "buttonMudarDiretorio";
+            this.buttonMudarDiretorio.UseVisualStyleBackColor = true;
+            this.buttonMudarDiretorio.Click += new System.EventHandler(this.buttonMudarDiretorio_Click);
+            // 
+            // labelDiretorioNotas
+            // 
+            resources.ApplyResources(this.labelDiretorioNotas, "labelDiretorioNotas");
+            this.labelDiretorioNotas.Name = "labelDiretorioNotas";
+            // 
+            // textDiretorioNotas
+            // 
+            resources.ApplyResources(this.textDiretorioNotas, "textDiretorioNotas");
+            this.textDiretorioNotas.Name = "textDiretorioNotas";
             // 
             // tableBanners02
             // 
@@ -414,44 +454,6 @@
             this.aFAZER_JURIDICODataGridView.ReadOnly = true;
             this.aFAZER_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CLIENTE_JURIDICO_FANTASIA";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "OS_DATA_ENTREGA";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CLIENTE_TELEFONE";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CLIENTE_CELULAR";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // aFAZER_JURIDICOBindingSource
-            // 
-            this.aFAZER_JURIDICOBindingSource.DataMember = "AFAZER_JURIDICO";
-            this.aFAZER_JURIDICOBindingSource.DataSource = this.dsFROGIOS;
-            // 
-            // dsFROGIOS
-            // 
-            this.dsFROGIOS.DataSetName = "dsFROGIOS";
-            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // aFAZER_FISICODataGridView
             // 
             this.aFAZER_FISICODataGridView.AllowUserToAddRows = false;
@@ -468,39 +470,6 @@
             this.aFAZER_FISICODataGridView.Name = "aFAZER_FISICODataGridView";
             this.aFAZER_FISICODataGridView.ReadOnly = true;
             this.aFAZER_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CLIENTE_FISICO_NOME";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "OS_DATA_ENTREGA";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CLIENTE_TELEFONE";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CLIENTE_CELULAR";
-            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // aFAZER_FISICOBindingSource
-            // 
-            this.aFAZER_FISICOBindingSource.DataMember = "AFAZER_FISICO";
-            this.aFAZER_FISICOBindingSource.DataSource = this.dsFROGIOS;
             // 
             // panelPesquisaBabecalho
             // 
@@ -575,6 +544,77 @@
             this.hora.Enabled = true;
             this.hora.Interval = 1;
             this.hora.Tick += new System.EventHandler(this.hora_Tick);
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CLIENTE_JURIDICO_FANTASIA";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn5, "dataGridViewTextBoxColumn5");
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "OS_DATA_ENTREGA";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn8, "dataGridViewTextBoxColumn8");
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CLIENTE_TELEFONE";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn6, "dataGridViewTextBoxColumn6");
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CLIENTE_CELULAR";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn7, "dataGridViewTextBoxColumn7");
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // aFAZER_JURIDICOBindingSource
+            // 
+            this.aFAZER_JURIDICOBindingSource.DataMember = "AFAZER_JURIDICO";
+            this.aFAZER_JURIDICOBindingSource.DataSource = this.dsFROGIOS;
+            // 
+            // dsFROGIOS
+            // 
+            this.dsFROGIOS.DataSetName = "dsFROGIOS";
+            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CLIENTE_FISICO_NOME";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn1, "dataGridViewTextBoxColumn1");
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OS_DATA_ENTREGA";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn3, "dataGridViewTextBoxColumn3");
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CLIENTE_TELEFONE";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn2, "dataGridViewTextBoxColumn2");
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CLIENTE_CELULAR";
+            resources.ApplyResources(this.dataGridViewTextBoxColumn4, "dataGridViewTextBoxColumn4");
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // aFAZER_FISICOBindingSource
+            // 
+            this.aFAZER_FISICOBindingSource.DataMember = "AFAZER_FISICO";
+            this.aFAZER_FISICOBindingSource.DataSource = this.dsFROGIOS;
             // 
             // taAFAZER_FISICO
             // 
@@ -654,17 +694,16 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureMarcas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTipos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureNotas)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOpcoes)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureNotas)).EndInit();
             this.tableBanners02.ResumeLayout(false);
             this.panelPesquisa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICODataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICODataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).EndInit();
             this.panelPesquisaBabecalho.ResumeLayout(false);
             this.panelPesquisaBabecalho.PerformLayout();
             this.panelCabecalho.ResumeLayout(false);
@@ -672,6 +711,9 @@
             this.tableUsuario.ResumeLayout(false);
             this.tableUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsuarioFoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -714,7 +756,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureMarcas;
         private System.Windows.Forms.PictureBox pictureTipos;
-        private System.Windows.Forms.PictureBox pictureNotas;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.PictureBox pictureCompras;
         private System.Windows.Forms.PictureBox pictureOpcoes;
@@ -736,6 +777,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureNotas;
+        private System.Windows.Forms.Button buttonAbrirDiretorio;
+        private System.Windows.Forms.Button buttonMudarDiretorio;
+        private System.Windows.Forms.Label labelDiretorioNotas;
+        private System.Windows.Forms.TextBox textDiretorioNotas;
 
 
     }
