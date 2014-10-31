@@ -67,29 +67,29 @@
             this.tableBanners02 = new System.Windows.Forms.TableLayoutPanel();
             this.panelPesquisa = new System.Windows.Forms.Panel();
             this.aFAZER_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
-            this.aFAZER_FISICODataGridView = new System.Windows.Forms.DataGridView();
-            this.panelPesquisaBabecalho = new System.Windows.Forms.Panel();
-            this.dateDataServico = new System.Windows.Forms.DateTimePicker();
-            this.labelServicoFazer = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panelCabecalho = new System.Windows.Forms.Panel();
-            this.tableUsuario = new System.Windows.Forms.TableLayoutPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureUsuarioFoto = new System.Windows.Forms.PictureBox();
-            this.labelUsuarioNome = new System.Windows.Forms.Label();
-            this.labelFrogiOs = new System.Windows.Forms.Label();
-            this.hora = new System.Windows.Forms.Timer(this.components);
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aFAZER_JURIDICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
+            this.aFAZER_FISICODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aFAZER_FISICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panelPesquisaBabecalho = new System.Windows.Forms.Panel();
+            this.dateDataServico = new System.Windows.Forms.DateTimePicker();
+            this.labelServicoFazer = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCabecalho = new System.Windows.Forms.Panel();
+            this.tableUsuario = new System.Windows.Forms.TableLayoutPanel();
+            this.labelTipoUsuario = new System.Windows.Forms.Label();
+            this.pictureUsuarioFoto = new System.Windows.Forms.PictureBox();
+            this.labelUsuarioNome = new System.Windows.Forms.Label();
+            this.labelFrogiOs = new System.Windows.Forms.Label();
+            this.hora = new System.Windows.Forms.Timer(this.components);
             this.taAFAZER_FISICO = new FROGI_OS.dsFROGIOSTableAdapters.taAFAZER();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.taAFAZER_JURIDICO = new FROGI_OS.dsFROGIOSTableAdapters.taAFAZER_JURIDICO();
@@ -124,14 +124,14 @@
             this.tableBanners02.SuspendLayout();
             this.panelPesquisa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).BeginInit();
             this.panelPesquisaBabecalho.SuspendLayout();
             this.panelCabecalho.SuspendLayout();
             this.tableUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsuarioFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tablePai
@@ -454,97 +454,6 @@
             this.aFAZER_JURIDICODataGridView.ReadOnly = true;
             this.aFAZER_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
-            // aFAZER_FISICODataGridView
-            // 
-            this.aFAZER_FISICODataGridView.AllowUserToAddRows = false;
-            this.aFAZER_FISICODataGridView.AllowUserToDeleteRows = false;
-            this.aFAZER_FISICODataGridView.AutoGenerateColumns = false;
-            this.aFAZER_FISICODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aFAZER_FISICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn4});
-            this.aFAZER_FISICODataGridView.DataSource = this.aFAZER_FISICOBindingSource;
-            resources.ApplyResources(this.aFAZER_FISICODataGridView, "aFAZER_FISICODataGridView");
-            this.aFAZER_FISICODataGridView.Name = "aFAZER_FISICODataGridView";
-            this.aFAZER_FISICODataGridView.ReadOnly = true;
-            this.aFAZER_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // panelPesquisaBabecalho
-            // 
-            this.panelPesquisaBabecalho.BackColor = System.Drawing.Color.Black;
-            this.panelPesquisaBabecalho.Controls.Add(this.dateDataServico);
-            this.panelPesquisaBabecalho.Controls.Add(this.labelServicoFazer);
-            resources.ApplyResources(this.panelPesquisaBabecalho, "panelPesquisaBabecalho");
-            this.panelPesquisaBabecalho.Name = "panelPesquisaBabecalho";
-            // 
-            // dateDataServico
-            // 
-            resources.ApplyResources(this.dateDataServico, "dateDataServico");
-            this.dateDataServico.CalendarMonthBackground = System.Drawing.Color.LightBlue;
-            this.dateDataServico.Name = "dateDataServico";
-            this.dateDataServico.ValueChanged += new System.EventHandler(this.dateDataServico_ValueChanged);
-            // 
-            // labelServicoFazer
-            // 
-            resources.ApplyResources(this.labelServicoFazer, "labelServicoFazer");
-            this.labelServicoFazer.ForeColor = System.Drawing.Color.White;
-            this.labelServicoFazer.Name = "labelServicoFazer";
-            // 
-            // panel1
-            // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
-            // 
-            // panelCabecalho
-            // 
-            this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
-            this.panelCabecalho.Controls.Add(this.tableUsuario);
-            this.panelCabecalho.Controls.Add(this.labelFrogiOs);
-            resources.ApplyResources(this.panelCabecalho, "panelCabecalho");
-            this.panelCabecalho.Name = "panelCabecalho";
-            // 
-            // tableUsuario
-            // 
-            resources.ApplyResources(this.tableUsuario, "tableUsuario");
-            this.tableUsuario.Controls.Add(this.label1, 0, 1);
-            this.tableUsuario.Controls.Add(this.pictureUsuarioFoto, 0, 0);
-            this.tableUsuario.Controls.Add(this.labelUsuarioNome, 1, 0);
-            this.tableUsuario.Name = "tableUsuario";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
-            // 
-            // pictureUsuarioFoto
-            // 
-            resources.ApplyResources(this.pictureUsuarioFoto, "pictureUsuarioFoto");
-            this.pictureUsuarioFoto.Name = "pictureUsuarioFoto";
-            this.tableUsuario.SetRowSpan(this.pictureUsuarioFoto, 2);
-            this.pictureUsuarioFoto.TabStop = false;
-            this.pictureUsuarioFoto.Click += new System.EventHandler(this.pictureUsuarioFoto_Click);
-            // 
-            // labelUsuarioNome
-            // 
-            resources.ApplyResources(this.labelUsuarioNome, "labelUsuarioNome");
-            this.labelUsuarioNome.ForeColor = System.Drawing.Color.White;
-            this.labelUsuarioNome.Name = "labelUsuarioNome";
-            // 
-            // labelFrogiOs
-            // 
-            resources.ApplyResources(this.labelFrogiOs, "labelFrogiOs");
-            this.labelFrogiOs.ForeColor = System.Drawing.Color.White;
-            this.labelFrogiOs.Name = "labelFrogiOs";
-            // 
-            // hora
-            // 
-            this.hora.Enabled = true;
-            this.hora.Interval = 1;
-            this.hora.Tick += new System.EventHandler(this.hora_Tick);
-            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "CLIENTE_JURIDICO_FANTASIA";
@@ -583,6 +492,23 @@
             this.dsFROGIOS.DataSetName = "dsFROGIOS";
             this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // aFAZER_FISICODataGridView
+            // 
+            this.aFAZER_FISICODataGridView.AllowUserToAddRows = false;
+            this.aFAZER_FISICODataGridView.AllowUserToDeleteRows = false;
+            this.aFAZER_FISICODataGridView.AutoGenerateColumns = false;
+            this.aFAZER_FISICODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aFAZER_FISICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn4});
+            this.aFAZER_FISICODataGridView.DataSource = this.aFAZER_FISICOBindingSource;
+            resources.ApplyResources(this.aFAZER_FISICODataGridView, "aFAZER_FISICODataGridView");
+            this.aFAZER_FISICODataGridView.Name = "aFAZER_FISICODataGridView";
+            this.aFAZER_FISICODataGridView.ReadOnly = true;
+            this.aFAZER_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "CLIENTE_FISICO_NOME";
@@ -615,6 +541,81 @@
             // 
             this.aFAZER_FISICOBindingSource.DataMember = "AFAZER_FISICO";
             this.aFAZER_FISICOBindingSource.DataSource = this.dsFROGIOS;
+            // 
+            // panelPesquisaBabecalho
+            // 
+            this.panelPesquisaBabecalho.BackColor = System.Drawing.Color.Black;
+            this.panelPesquisaBabecalho.Controls.Add(this.dateDataServico);
+            this.panelPesquisaBabecalho.Controls.Add(this.labelServicoFazer);
+            resources.ApplyResources(this.panelPesquisaBabecalho, "panelPesquisaBabecalho");
+            this.panelPesquisaBabecalho.Name = "panelPesquisaBabecalho";
+            // 
+            // dateDataServico
+            // 
+            resources.ApplyResources(this.dateDataServico, "dateDataServico");
+            this.dateDataServico.CalendarMonthBackground = System.Drawing.Color.LightBlue;
+            this.dateDataServico.Name = "dateDataServico";
+            this.dateDataServico.ValueChanged += new System.EventHandler(this.dateDataServico_ValueChanged);
+            // 
+            // labelServicoFazer
+            // 
+            resources.ApplyResources(this.labelServicoFazer, "labelServicoFazer");
+            this.labelServicoFazer.ForeColor = System.Drawing.Color.White;
+            this.labelServicoFazer.Name = "labelServicoFazer";
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // panelCabecalho
+            // 
+            this.panelCabecalho.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(0)))), ((int)(((byte)(29)))));
+            this.panelCabecalho.Controls.Add(this.tableUsuario);
+            this.panelCabecalho.Controls.Add(this.labelFrogiOs);
+            resources.ApplyResources(this.panelCabecalho, "panelCabecalho");
+            this.panelCabecalho.Name = "panelCabecalho";
+            // 
+            // tableUsuario
+            // 
+            resources.ApplyResources(this.tableUsuario, "tableUsuario");
+            this.tableUsuario.Controls.Add(this.labelTipoUsuario, 0, 1);
+            this.tableUsuario.Controls.Add(this.pictureUsuarioFoto, 0, 0);
+            this.tableUsuario.Controls.Add(this.labelUsuarioNome, 1, 0);
+            this.tableUsuario.Name = "tableUsuario";
+            // 
+            // labelTipoUsuario
+            // 
+            resources.ApplyResources(this.labelTipoUsuario, "labelTipoUsuario");
+            this.labelTipoUsuario.ForeColor = System.Drawing.Color.White;
+            this.labelTipoUsuario.Name = "labelTipoUsuario";
+            // 
+            // pictureUsuarioFoto
+            // 
+            this.pictureUsuarioFoto.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pictureUsuarioFoto, "pictureUsuarioFoto");
+            this.pictureUsuarioFoto.Name = "pictureUsuarioFoto";
+            this.tableUsuario.SetRowSpan(this.pictureUsuarioFoto, 2);
+            this.pictureUsuarioFoto.TabStop = false;
+            this.pictureUsuarioFoto.Click += new System.EventHandler(this.pictureUsuarioFoto_Click);
+            // 
+            // labelUsuarioNome
+            // 
+            resources.ApplyResources(this.labelUsuarioNome, "labelUsuarioNome");
+            this.labelUsuarioNome.ForeColor = System.Drawing.Color.White;
+            this.labelUsuarioNome.Name = "labelUsuarioNome";
+            // 
+            // labelFrogiOs
+            // 
+            resources.ApplyResources(this.labelFrogiOs, "labelFrogiOs");
+            this.labelFrogiOs.ForeColor = System.Drawing.Color.White;
+            this.labelFrogiOs.Name = "labelFrogiOs";
+            // 
+            // hora
+            // 
+            this.hora.Enabled = true;
+            this.hora.Interval = 1;
+            this.hora.Tick += new System.EventHandler(this.hora_Tick);
             // 
             // taAFAZER_FISICO
             // 
@@ -703,7 +704,10 @@
             this.tableBanners02.ResumeLayout(false);
             this.panelPesquisa.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).EndInit();
             this.panelPesquisaBabecalho.ResumeLayout(false);
             this.panelPesquisaBabecalho.PerformLayout();
             this.panelCabecalho.ResumeLayout(false);
@@ -711,9 +715,6 @@
             this.tableUsuario.ResumeLayout(false);
             this.tableUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUsuarioFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_JURIDICOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aFAZER_FISICOBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -744,7 +745,7 @@
         private System.Windows.Forms.PictureBox pictureProdutos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.PictureBox pictureAjuda;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTipoUsuario;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.PictureBox pictureUsuarios;
         private System.Windows.Forms.PictureBox pictureFornecedores;

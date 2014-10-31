@@ -23,6 +23,7 @@ namespace FROGI_OS.InterfaceGrafica
                 formLogin login = new formLogin();
                 login.ShowDialog(this.Owner);
                 dialogo.Dispose();
+                this.Close();
             } else {
                 dialogo.Dispose();
                 this.Close();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FROGI_OS.InterfaceGrafica;
+using FirebirdSql.Data.FirebirdClient;
 
 namespace FROGI_OS
 {
@@ -189,6 +190,11 @@ namespace FROGI_OS
 
         private void buttonAbrirDiretorio_Click(object sender, EventArgs e) {
             abrirDiretorio();
+        }
+
+        public void selecionarUsuario (string nome, int tipo) {
+            labelUsuarioNome.Text = nome;
+            labelTipoUsuario.Text = tipo == 0 ? "Administrador" : "Funcionário";
         }
 
     }

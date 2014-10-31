@@ -103,6 +103,12 @@
     <Compile Include="InterfaceGrafica\formAjuda.Designer.cs">
       <DependentUpon>formAjuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InterfaceGrafica\formCadastroAdministrador.Designer.cs">
+      <DependentUpon>formCadastroAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="InterfaceGrafica\formCadastroAgendamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +389,9 @@
     <Compile Include="CamadaAcessoDados\TblClienteFisico.cs" />
     <Compile Include="CamadaAcessoDados\TblCliente.cs" />
     <Compile Include="CamadaAcessoDados\TblUF.cs" />
+    <EmbeddedResource Include="InterfaceGrafica\formCadastroAdministrador.resx">
+      <DependentUpon>formCadastroAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroAgendamento.resx">
       <DependentUpon>formCadastroAgendamento.cs</DependentUpon>
     </EmbeddedResource>
