@@ -44,6 +44,7 @@
             gRUPO_DESCRICAOLabel = new System.Windows.Forms.Label();
             gRUPO_DESCONTOLabel = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -65,6 +66,35 @@
             // 
             this.panelCentro.Controls.Add(this.groupBox1);
             // 
+            // gRUPO_CODIGOLabel
+            // 
+            gRUPO_CODIGOLabel.AutoSize = true;
+            gRUPO_CODIGOLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            gRUPO_CODIGOLabel.Location = new System.Drawing.Point(12, 8);
+            gRUPO_CODIGOLabel.Name = "gRUPO_CODIGOLabel";
+            gRUPO_CODIGOLabel.Size = new System.Drawing.Size(72, 25);
+            gRUPO_CODIGOLabel.TabIndex = 0;
+            gRUPO_CODIGOLabel.Text = "Código";
+            // 
+            // gRUPO_DESCRICAOLabel
+            // 
+            gRUPO_DESCRICAOLabel.AutoSize = true;
+            gRUPO_DESCRICAOLabel.Location = new System.Drawing.Point(15, 42);
+            gRUPO_DESCRICAOLabel.Name = "gRUPO_DESCRICAOLabel";
+            gRUPO_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
+            gRUPO_DESCRICAOLabel.TabIndex = 2;
+            gRUPO_DESCRICAOLabel.Text = "Descrição";
+            // 
+            // gRUPO_DESCONTOLabel
+            // 
+            gRUPO_DESCONTOLabel.AutoSize = true;
+            gRUPO_DESCONTOLabel.Location = new System.Drawing.Point(15, 81);
+            gRUPO_DESCONTOLabel.Name = "gRUPO_DESCONTOLabel";
+            gRUPO_DESCONTOLabel.Size = new System.Drawing.Size(88, 25);
+            gRUPO_DESCONTOLabel.TabIndex = 4;
+            gRUPO_DESCONTOLabel.Text = "Desconto";
+            gRUPO_DESCONTOLabel.Visible = false;
+            // 
             // dsFROGIOS
             // 
             this.dsFROGIOS.DataSetName = "dsFROGIOS";
@@ -81,6 +111,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -111,16 +142,6 @@
             this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOTableAdapter = null;
             // 
-            // gRUPO_CODIGOLabel
-            // 
-            gRUPO_CODIGOLabel.AutoSize = true;
-            gRUPO_CODIGOLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            gRUPO_CODIGOLabel.Location = new System.Drawing.Point(12, 8);
-            gRUPO_CODIGOLabel.Name = "gRUPO_CODIGOLabel";
-            gRUPO_CODIGOLabel.Size = new System.Drawing.Size(72, 25);
-            gRUPO_CODIGOLabel.TabIndex = 0;
-            gRUPO_CODIGOLabel.Text = "Código";
-            // 
             // gRUPO_CODIGOLabel1
             // 
             this.gRUPO_CODIGOLabel1.AutoSize = true;
@@ -132,15 +153,6 @@
             this.gRUPO_CODIGOLabel1.TabIndex = 1;
             this.gRUPO_CODIGOLabel1.Text = "código";
             // 
-            // gRUPO_DESCRICAOLabel
-            // 
-            gRUPO_DESCRICAOLabel.AutoSize = true;
-            gRUPO_DESCRICAOLabel.Location = new System.Drawing.Point(15, 42);
-            gRUPO_DESCRICAOLabel.Name = "gRUPO_DESCRICAOLabel";
-            gRUPO_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
-            gRUPO_DESCRICAOLabel.TabIndex = 2;
-            gRUPO_DESCRICAOLabel.Text = "Descrição";
-            // 
             // gRUPO_DESCRICAOTextBox
             // 
             this.gRUPO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsGrupo, "GRUPO_DESCRICAO", true));
@@ -150,15 +162,6 @@
             this.gRUPO_DESCRICAOTextBox.Size = new System.Drawing.Size(421, 33);
             this.gRUPO_DESCRICAOTextBox.TabIndex = 0;
             // 
-            // gRUPO_DESCONTOLabel
-            // 
-            gRUPO_DESCONTOLabel.AutoSize = true;
-            gRUPO_DESCONTOLabel.Location = new System.Drawing.Point(15, 81);
-            gRUPO_DESCONTOLabel.Name = "gRUPO_DESCONTOLabel";
-            gRUPO_DESCONTOLabel.Size = new System.Drawing.Size(88, 25);
-            gRUPO_DESCONTOLabel.TabIndex = 4;
-            gRUPO_DESCONTOLabel.Text = "Desconto";
-            // 
             // gRUPO_DESCONTOTextBox
             // 
             this.gRUPO_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsGrupo, "GRUPO_DESCONTO", true));
@@ -167,6 +170,8 @@
             this.gRUPO_DESCONTOTextBox.Name = "gRUPO_DESCONTOTextBox";
             this.gRUPO_DESCONTOTextBox.Size = new System.Drawing.Size(214, 33);
             this.gRUPO_DESCONTOTextBox.TabIndex = 1;
+            this.gRUPO_DESCONTOTextBox.Text = "0,00";
+            this.gRUPO_DESCONTOTextBox.Visible = false;
             // 
             // groupBox1
             // 
@@ -176,19 +181,20 @@
             this.groupBox1.Controls.Add(gRUPO_DESCONTOLabel);
             this.groupBox1.Location = new System.Drawing.Point(17, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(563, 134);
+            this.groupBox1.Size = new System.Drawing.Size(563, 87);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // formGrupoCadastro
+            // formCadastroGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formGrupoCadastro";
+            this.Name = "formCadastroGrupo";
             this.Text = "formGrupoCadastro";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);

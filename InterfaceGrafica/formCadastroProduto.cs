@@ -72,8 +72,14 @@ namespace FROGI_OS
             return produtoRow;
         }
 
+        protected override void novoRegistro() {
+            base.novoRegistro();
+            this.ActiveControl = pRODUTO_DESCRICAOTextBox;
+        }
+
         protected override void editarRegistro() {
             base.editarRegistro();
+            this.ActiveControl = pRODUTO_DESCRICAOTextBox;
         }
 
         protected override void excluiExecutar() {
@@ -88,6 +94,12 @@ namespace FROGI_OS
                 dsFROGIOS.GRUPO.Clear();
                 dsFROGIOS.SECAO.Clear();
                 dsFROGIOS.FORNECEDOR.Clear();
+                string texto = "Duplo clique para pesquisar";
+                mARCA_DESCRICAOTextBox.Text = texto;
+                sECAO_DESCRICAOTextBox.Text = texto;
+                gRUPO_DESCRICAOTextBox.Text = texto;
+                fORNECEDOR_FISICO_NOMETextBox.Text = texto;
+                fORNECEDOR_JURIDICO_FANTASIATextBox.Text = texto;
             }
         }
 
@@ -162,6 +174,8 @@ namespace FROGI_OS
 
        public void adicionarFornecedor(int codigo, bool eFisico) {
            GerFornecedor fornecedorSQL = new GerFornecedor();
+           dsFROGIOS.FORNECEDOR_FISICO.Clear();
+           dsFROGIOS.FORNECEDOR_JURIDICO.Clear();
            if (eFisico) {
                fornecedorSQL.selecionar(codigo, dsFROGIOS.FORNECEDOR, dsFROGIOS.FORNECEDOR_FISICO, null, dsFROGIOS.UF);
            } else {
@@ -171,9 +185,7 @@ namespace FROGI_OS
            if (dsFROGIOS.FORNECEDOR_FISICO.Rows.Count > 0) {
                fORNECEDOR_FISICO_NOMETextBox.Visible = true;
                fORNECEDOR_JURIDICO_FANTASIATextBox.Visible = false;
-           }
-
-           if (dsFROGIOS.FORNECEDOR_JURIDICO.Rows.Count > 0) {
+           } else {
                fORNECEDOR_FISICO_NOMETextBox.Visible = false;
                fORNECEDOR_JURIDICO_FANTASIATextBox.Visible = true;
            }

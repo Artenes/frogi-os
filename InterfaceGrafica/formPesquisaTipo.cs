@@ -30,6 +30,11 @@ namespace FROGI_OS.InterfaceGrafica {
             string valor = textValorPesquisa.Text;
             dsFROGIOS.TIPO.Clear();
             dsFROGIOS.TIPO.Load(tipoSQL.selecionar(coluna, valor, false));
+            if (dsFROGIOS.TIPO.Rows.Count > 0) {
+                this.ActiveControl = tIPODataGridView;
+            } else {
+                this.ActiveControl = textValorPesquisa;
+            }
         }
 
         protected override void resetar() {

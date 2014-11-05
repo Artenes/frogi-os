@@ -45,6 +45,10 @@
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.tabJuridico = new System.Windows.Forms.TabPage();
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
+            this.bsFornecedorJuridico = new System.Windows.Forms.BindingSource(this.components);
+            this.taPesquisaFornecedorFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorFisico();
+            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
+            this.taPesquisaFornecedorJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorJuridico();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +57,6 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsFornecedorJuridico = new System.Windows.Forms.BindingSource(this.components);
-            this.taPesquisaFornecedorFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorFisico();
-            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
-            this.taPesquisaFornecedorJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorJuridico();
             this.panelCabecalho.SuspendLayout();
             this.panelCentral.SuspendLayout();
             this.tablessPai.SuspendLayout();
@@ -176,6 +176,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -183,6 +184,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -190,6 +192,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "CPF";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -197,6 +200,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Telefone";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -204,6 +208,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Celular";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -211,6 +216,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Endereço";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -218,6 +224,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Bairro";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -225,6 +232,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Cidade";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // bsFornecedorFisico
             // 
@@ -275,62 +283,6 @@
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_FORNECEDOR_JURIDICODataGridView_CellDoubleClick);
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_FORNECEDOR_JURIDICODataGridView_KeyDown);
             // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "FORNECEDOR_CODIGO";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "FORNECEDOR_JURIDICO_FANTASIA";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Fantasia";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "FORNECEDOR_JURIDICO_CNPJ";
-            this.dataGridViewTextBoxColumn11.HeaderText = "CNPJ";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "FORNECEDOR_TELEFONE";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Telefone";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "FORNECEDOR_CELULAR";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Celular";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "FORNECEDOR_ENDERECO";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Endereço";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "FORNECEDOR_BAIRRO";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Bairro";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "FORNECEDOR_CIDADE";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Cidade";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            // 
             // bsFornecedorJuridico
             // 
             this.bsFornecedorJuridico.DataMember = "PESQUISA_FORNECEDOR_JURIDICO";
@@ -378,6 +330,70 @@
             // 
             this.taPesquisaFornecedorJuridico.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "FORNECEDOR_CODIGO";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "FORNECEDOR_JURIDICO_FANTASIA";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Fantasia";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "FORNECEDOR_JURIDICO_CNPJ";
+            this.dataGridViewTextBoxColumn11.HeaderText = "CNPJ";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "FORNECEDOR_TELEFONE";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Telefone";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "FORNECEDOR_CELULAR";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Celular";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "FORNECEDOR_ENDERECO";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Endereço";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "FORNECEDOR_BAIRRO";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Bairro";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "FORNECEDOR_CIDADE";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Cidade";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // formPesquisaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,6 +428,9 @@
         private dsFROGIOSTableAdapters.taPesquisaFornecedorFisico taPesquisaFornecedorFisico;
         private dsFROGIOSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView pESQUISA_FORNECEDOR_FISICODataGridView;
+        private System.Windows.Forms.BindingSource bsFornecedorJuridico;
+        private dsFROGIOSTableAdapters.taPesquisaFornecedorJuridico taPesquisaFornecedorJuridico;
+        private System.Windows.Forms.DataGridView pESQUISA_FORNECEDOR_JURIDICODataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -420,9 +439,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.BindingSource bsFornecedorJuridico;
-        private dsFROGIOSTableAdapters.taPesquisaFornecedorJuridico taPesquisaFornecedorJuridico;
-        private System.Windows.Forms.DataGridView pESQUISA_FORNECEDOR_JURIDICODataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;

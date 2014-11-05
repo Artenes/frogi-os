@@ -39,7 +39,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCabecalho.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -126,7 +126,7 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn24});
+            this.colunaPreco});
             this.pRODUTODataGridView.DataSource = this.pRODUTOBindingSource;
             this.pRODUTODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pRODUTODataGridView.Location = new System.Drawing.Point(0, 0);
@@ -136,6 +136,7 @@
             this.pRODUTODataGridView.Size = new System.Drawing.Size(966, 348);
             this.pRODUTODataGridView.TabIndex = 0;
             this.pRODUTODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pRODUTODataGridView_CellDoubleClick);
+            this.pRODUTODataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.pRODUTODataGridView_CellFormatting);
             this.pRODUTODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pRODUTODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
@@ -144,6 +145,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -151,6 +153,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn21
             // 
@@ -158,13 +161,15 @@
             this.dataGridViewTextBoxColumn21.HeaderText = "Estoque";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn24
+            // colunaPreco
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "PRODUTO_PRECO_VENDA";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Preço";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.colunaPreco.DataPropertyName = "PRODUTO_PRECO_VENDA";
+            this.colunaPreco.HeaderText = "Preço";
+            this.colunaPreco.Name = "colunaPreco";
+            this.colunaPreco.ReadOnly = true;
+            this.colunaPreco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // formPesquisaProduto
             // 
@@ -197,6 +202,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaPreco;
     }
 }

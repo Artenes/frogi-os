@@ -29,6 +29,11 @@ namespace FROGI_OS.InterfaceGrafica {
             string valor = textValorPesquisa.Text;
             dsFROGIOS.USUARIO.Clear();
             dsFROGIOS.USUARIO.Load(usuarioSQL.selecionar(coluna, valor, false));
+            if (dsFROGIOS.USUARIO.Rows.Count > 0) {
+                this.ActiveControl = uSUARIODataGridView;
+            } else {
+                this.ActiveControl = textValorPesquisa;
+            }
         }
 
         protected override void resetar() {

@@ -55,7 +55,7 @@ namespace FROGI_OS
                 Conexao.abrir();
                 pesquisaExecutar();
             } catch (Exception erro) {
-                exibirMensagemErro(erro.Message);
+                exibirMensagemErro("Nenhum registro encontrado");
             } finally {
                 Conexao.fechar();
             }
@@ -64,7 +64,8 @@ namespace FROGI_OS
         protected virtual void pesquisaExecutar() {}
 
         protected virtual void resetar() {
-            comboCampoPesquisa.SelectedIndex = 0;
+            if (comboCampoPesquisa.Items.Count > 0)
+                comboCampoPesquisa.SelectedIndex = 0;    
             textValorPesquisa.Text = String.Empty;
         }
 
@@ -132,6 +133,9 @@ namespace FROGI_OS
             if (e.KeyCode == Keys.Enter)
             {
                 pesquisar();
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 

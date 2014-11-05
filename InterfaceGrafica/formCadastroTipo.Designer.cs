@@ -30,19 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label tIPO_CODIGOLabel;
-            System.Windows.Forms.Label tIPO_DESCRICAOLabel;
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsTipo = new System.Windows.Forms.BindingSource(this.components);
             this.taTipo = new FROGI_OS.dsFROGIOSTableAdapters.TIPOTableAdapter();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.tIPO_CODIGOLabel1 = new System.Windows.Forms.Label();
             this.tIPO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             tIPO_CODIGOLabel = new System.Windows.Forms.Label();
-            tIPO_DESCRICAOLabel = new System.Windows.Forms.Label();
+            this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTipo)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCadastro
@@ -57,8 +59,7 @@
             // 
             // panelCentro
             // 
-            this.panelCentro.Controls.Add(tIPO_DESCRICAOLabel);
-            this.panelCentro.Controls.Add(this.tIPO_DESCRICAOTextBox);
+            this.panelCentro.Controls.Add(this.groupBox1);
             // 
             // tIPO_CODIGOLabel
             // 
@@ -70,15 +71,6 @@
             tIPO_CODIGOLabel.Size = new System.Drawing.Size(87, 32);
             tIPO_CODIGOLabel.TabIndex = 0;
             tIPO_CODIGOLabel.Text = "Código";
-            // 
-            // tIPO_DESCRICAOLabel
-            // 
-            tIPO_DESCRICAOLabel.AutoSize = true;
-            tIPO_DESCRICAOLabel.Location = new System.Drawing.Point(32, 38);
-            tIPO_DESCRICAOLabel.Name = "tIPO_DESCRICAOLabel";
-            tIPO_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
-            tIPO_DESCRICAOLabel.TabIndex = 2;
-            tIPO_DESCRICAOLabel.Text = "Descrição";
             // 
             // dsFROGIOS
             // 
@@ -96,6 +88,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -141,24 +134,38 @@
             // tIPO_DESCRICAOTextBox
             // 
             this.tIPO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTipo, "TIPO_DESCRICAO", true));
-            this.tIPO_DESCRICAOTextBox.Location = new System.Drawing.Point(37, 77);
+            this.tIPO_DESCRICAOTextBox.Location = new System.Drawing.Point(24, 43);
             this.tIPO_DESCRICAOTextBox.Name = "tIPO_DESCRICAOTextBox";
             this.tIPO_DESCRICAOTextBox.Size = new System.Drawing.Size(413, 33);
             this.tIPO_DESCRICAOTextBox.TabIndex = 3;
             // 
-            // formTipoCadastro
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tIPO_DESCRICAOTextBox);
+            this.groupBox1.Location = new System.Drawing.Point(30, 46);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(479, 100);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Descrição";
+            // 
+            // formCadastroTipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formTipoCadastro";
+            this.Name = "formCadastroTipo";
             this.Text = "formTipoCadastro";
+            this.panelCabecalho.ResumeLayout(false);
+            this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);
-            this.panelCentro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTipo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -171,5 +178,6 @@
         private dsFROGIOSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label tIPO_CODIGOLabel1;
         private System.Windows.Forms.TextBox tIPO_DESCRICAOTextBox;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -53,13 +53,14 @@ namespace FROGI_OS {
             funcionarioRow.FUNCIONARIO_SETOR = fUNCIONARIO_SETORTextBox.Text;
             try { funcionarioRow.FUNCIONARIO_SALARIO = Convert.ToDouble(fUNCIONARIO_SALARIOTextBox.Text); } catch (Exception) { funcionarioRow.FUNCIONARIO_SALARIO = 0; }
             funcionarioRow.FUNCIONARIO_ADMISSAO = fUNCIONARIO_ADMISSAODateTimePicker.Value;
-            funcionarioRow.FUNCIONARIO_SENHA = fUNCIONARIO_SENHATextBox.Text;
+            funcionarioRow.FUNCIONARIO_SENHA = "0";
             return funcionarioRow;
 
         }
 
         protected override void editarRegistro() {
             base.editarRegistro();
+            this.ActiveControl = fUNCIONARIO_NOMETextBox;
         }
 
         protected override void excluiExecutar() {
@@ -82,10 +83,9 @@ namespace FROGI_OS {
                 nome = fUNCIONARIO_NOMETextBox.Text,
                 telefone = fUNCIONARIO_TELEFONEMaskedTextBox.Text,
                 endereco = fUNCIONARIO_ENDERECOTextBox.Text,
-                bairro =fUNCIONARIO_BAIRROTextBox.Text,
+                bairro = fUNCIONARIO_BAIRROTextBox.Text,
                 funcao = fUNCIONARIO_FUNCAOTextBox.Text,
-                salario = fUNCIONARIO_SALARIOTextBox.Text,
-                senha = fUNCIONARIO_SENHATextBox.Text;
+                salario = fUNCIONARIO_SALARIOTextBox.Text;
 
             if (!valorValido(nome)) return "Informe o nome do funcionário";
             if (!valorValido(telefone)) return "Informe o telefone do funcionário";
@@ -93,7 +93,6 @@ namespace FROGI_OS {
             if (!valorValido(bairro)) return "Informe o bairro do funcionário";
             if (!valorValido(funcao)) return "Informe a função do funcionário";
             if (!valorValido(salario)) return "Informe o salário do funcionário";
-            if (!valorValido(senha)) return "Informe a senha do funcionário";
 
             return base.validarCampos();
         }

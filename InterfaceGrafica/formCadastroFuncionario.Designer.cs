@@ -44,7 +44,6 @@
             System.Windows.Forms.Label fUNCIONARIO_SETORLabel;
             System.Windows.Forms.Label fUNCIONARIO_SALARIOLabel;
             System.Windows.Forms.Label fUNCIONARIO_ADMISSAOLabel;
-            System.Windows.Forms.Label fUNCIONARIO_SENHALabel;
             System.Windows.Forms.Label fUNCIONARIO_DATA_CADASTROLabel;
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsFuncionario = new System.Windows.Forms.BindingSource(this.components);
@@ -65,7 +64,6 @@
             this.fUNCIONARIO_SETORTextBox = new System.Windows.Forms.TextBox();
             this.fUNCIONARIO_SALARIOTextBox = new System.Windows.Forms.TextBox();
             this.fUNCIONARIO_ADMISSAODateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.fUNCIONARIO_SENHATextBox = new System.Windows.Forms.TextBox();
             this.fUNCIONARIO_DATA_CADASTROLabel2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -88,9 +86,9 @@
             fUNCIONARIO_SETORLabel = new System.Windows.Forms.Label();
             fUNCIONARIO_SALARIOLabel = new System.Windows.Forms.Label();
             fUNCIONARIO_ADMISSAOLabel = new System.Windows.Forms.Label();
-            fUNCIONARIO_SENHALabel = new System.Windows.Forms.Label();
             fUNCIONARIO_DATA_CADASTROLabel = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -145,7 +143,7 @@
             // fUNCIONARIO_CPFLabel
             // 
             fUNCIONARIO_CPFLabel.AutoSize = true;
-            fUNCIONARIO_CPFLabel.Location = new System.Drawing.Point(6, 34);
+            fUNCIONARIO_CPFLabel.Location = new System.Drawing.Point(6, 105);
             fUNCIONARIO_CPFLabel.Name = "fUNCIONARIO_CPFLabel";
             fUNCIONARIO_CPFLabel.Size = new System.Drawing.Size(43, 25);
             fUNCIONARIO_CPFLabel.TabIndex = 4;
@@ -154,7 +152,7 @@
             // fUNCIONARIO_RGLabel
             // 
             fUNCIONARIO_RGLabel.AutoSize = true;
-            fUNCIONARIO_RGLabel.Location = new System.Drawing.Point(9, 89);
+            fUNCIONARIO_RGLabel.Location = new System.Drawing.Point(9, 160);
             fUNCIONARIO_RGLabel.Name = "fUNCIONARIO_RGLabel";
             fUNCIONARIO_RGLabel.Size = new System.Drawing.Size(36, 25);
             fUNCIONARIO_RGLabel.TabIndex = 6;
@@ -172,7 +170,7 @@
             // fUNCIONARIO_PISLabel
             // 
             fUNCIONARIO_PISLabel.AutoSize = true;
-            fUNCIONARIO_PISLabel.Location = new System.Drawing.Point(10, 144);
+            fUNCIONARIO_PISLabel.Location = new System.Drawing.Point(10, 215);
             fUNCIONARIO_PISLabel.Name = "fUNCIONARIO_PISLabel";
             fUNCIONARIO_PISLabel.Size = new System.Drawing.Size(35, 25);
             fUNCIONARIO_PISLabel.TabIndex = 10;
@@ -199,7 +197,7 @@
             // fUNCIONARIO_ENDERECOLabel
             // 
             fUNCIONARIO_ENDERECOLabel.AutoSize = true;
-            fUNCIONARIO_ENDERECOLabel.Location = new System.Drawing.Point(19, 44);
+            fUNCIONARIO_ENDERECOLabel.Location = new System.Drawing.Point(19, 114);
             fUNCIONARIO_ENDERECOLabel.Name = "fUNCIONARIO_ENDERECOLabel";
             fUNCIONARIO_ENDERECOLabel.Size = new System.Drawing.Size(88, 25);
             fUNCIONARIO_ENDERECOLabel.TabIndex = 16;
@@ -208,7 +206,7 @@
             // fUNCIONARIO_BAIRROLabel
             // 
             fUNCIONARIO_BAIRROLabel.AutoSize = true;
-            fUNCIONARIO_BAIRROLabel.Location = new System.Drawing.Point(19, 83);
+            fUNCIONARIO_BAIRROLabel.Location = new System.Drawing.Point(19, 153);
             fUNCIONARIO_BAIRROLabel.Name = "fUNCIONARIO_BAIRROLabel";
             fUNCIONARIO_BAIRROLabel.Size = new System.Drawing.Size(58, 25);
             fUNCIONARIO_BAIRROLabel.TabIndex = 18;
@@ -217,7 +215,7 @@
             // fUNCIONARIO_CEPLabel
             // 
             fUNCIONARIO_CEPLabel.AutoSize = true;
-            fUNCIONARIO_CEPLabel.Location = new System.Drawing.Point(19, 122);
+            fUNCIONARIO_CEPLabel.Location = new System.Drawing.Point(19, 192);
             fUNCIONARIO_CEPLabel.Name = "fUNCIONARIO_CEPLabel";
             fUNCIONARIO_CEPLabel.Size = new System.Drawing.Size(44, 25);
             fUNCIONARIO_CEPLabel.TabIndex = 20;
@@ -226,7 +224,7 @@
             // fUNCIONARIO_FUNCAOLabel
             // 
             fUNCIONARIO_FUNCAOLabel.AutoSize = true;
-            fUNCIONARIO_FUNCAOLabel.Location = new System.Drawing.Point(19, 41);
+            fUNCIONARIO_FUNCAOLabel.Location = new System.Drawing.Point(20, 62);
             fUNCIONARIO_FUNCAOLabel.Name = "fUNCIONARIO_FUNCAOLabel";
             fUNCIONARIO_FUNCAOLabel.Size = new System.Drawing.Size(69, 25);
             fUNCIONARIO_FUNCAOLabel.TabIndex = 22;
@@ -235,7 +233,7 @@
             // fUNCIONARIO_SETORLabel
             // 
             fUNCIONARIO_SETORLabel.AutoSize = true;
-            fUNCIONARIO_SETORLabel.Location = new System.Drawing.Point(19, 80);
+            fUNCIONARIO_SETORLabel.Location = new System.Drawing.Point(20, 101);
             fUNCIONARIO_SETORLabel.Name = "fUNCIONARIO_SETORLabel";
             fUNCIONARIO_SETORLabel.Size = new System.Drawing.Size(54, 25);
             fUNCIONARIO_SETORLabel.TabIndex = 24;
@@ -244,7 +242,7 @@
             // fUNCIONARIO_SALARIOLabel
             // 
             fUNCIONARIO_SALARIOLabel.AutoSize = true;
-            fUNCIONARIO_SALARIOLabel.Location = new System.Drawing.Point(19, 122);
+            fUNCIONARIO_SALARIOLabel.Location = new System.Drawing.Point(20, 143);
             fUNCIONARIO_SALARIOLabel.Name = "fUNCIONARIO_SALARIOLabel";
             fUNCIONARIO_SALARIOLabel.Size = new System.Drawing.Size(64, 25);
             fUNCIONARIO_SALARIOLabel.TabIndex = 26;
@@ -253,20 +251,11 @@
             // fUNCIONARIO_ADMISSAOLabel
             // 
             fUNCIONARIO_ADMISSAOLabel.AutoSize = true;
-            fUNCIONARIO_ADMISSAOLabel.Location = new System.Drawing.Point(19, 170);
+            fUNCIONARIO_ADMISSAOLabel.Location = new System.Drawing.Point(20, 191);
             fUNCIONARIO_ADMISSAOLabel.Name = "fUNCIONARIO_ADMISSAOLabel";
             fUNCIONARIO_ADMISSAOLabel.Size = new System.Drawing.Size(154, 25);
             fUNCIONARIO_ADMISSAOLabel.TabIndex = 28;
             fUNCIONARIO_ADMISSAOLabel.Text = "Data de admissão";
-            // 
-            // fUNCIONARIO_SENHALabel
-            // 
-            fUNCIONARIO_SENHALabel.AutoSize = true;
-            fUNCIONARIO_SENHALabel.Location = new System.Drawing.Point(19, 257);
-            fUNCIONARIO_SENHALabel.Name = "fUNCIONARIO_SENHALabel";
-            fUNCIONARIO_SENHALabel.Size = new System.Drawing.Size(60, 25);
-            fUNCIONARIO_SENHALabel.TabIndex = 30;
-            fUNCIONARIO_SENHALabel.Text = "Senha";
             // 
             // fUNCIONARIO_DATA_CADASTROLabel
             // 
@@ -342,25 +331,25 @@
             this.fUNCIONARIO_NOMETextBox.MaxLength = 60;
             this.fUNCIONARIO_NOMETextBox.Name = "fUNCIONARIO_NOMETextBox";
             this.fUNCIONARIO_NOMETextBox.Size = new System.Drawing.Size(495, 33);
-            this.fUNCIONARIO_NOMETextBox.TabIndex = 3;
+            this.fUNCIONARIO_NOMETextBox.TabIndex = 0;
             // 
             // fUNCIONARIO_CPFMaskedTextBox
             // 
             this.fUNCIONARIO_CPFMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_CPF", true));
-            this.fUNCIONARIO_CPFMaskedTextBox.Location = new System.Drawing.Point(89, 34);
+            this.fUNCIONARIO_CPFMaskedTextBox.Location = new System.Drawing.Point(89, 105);
             this.fUNCIONARIO_CPFMaskedTextBox.Mask = "###.###.###-##";
             this.fUNCIONARIO_CPFMaskedTextBox.Name = "fUNCIONARIO_CPFMaskedTextBox";
             this.fUNCIONARIO_CPFMaskedTextBox.Size = new System.Drawing.Size(200, 33);
-            this.fUNCIONARIO_CPFMaskedTextBox.TabIndex = 5;
+            this.fUNCIONARIO_CPFMaskedTextBox.TabIndex = 4;
             // 
             // fUNCIONARIO_RGTextBox
             // 
             this.fUNCIONARIO_RGTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_RG", true));
-            this.fUNCIONARIO_RGTextBox.Location = new System.Drawing.Point(89, 86);
+            this.fUNCIONARIO_RGTextBox.Location = new System.Drawing.Point(89, 157);
             this.fUNCIONARIO_RGTextBox.MaxLength = 10;
             this.fUNCIONARIO_RGTextBox.Name = "fUNCIONARIO_RGTextBox";
             this.fUNCIONARIO_RGTextBox.Size = new System.Drawing.Size(200, 33);
-            this.fUNCIONARIO_RGTextBox.TabIndex = 7;
+            this.fUNCIONARIO_RGTextBox.TabIndex = 5;
             // 
             // fUNCIONARIO_NASCIMENTODateTimePicker
             // 
@@ -368,16 +357,16 @@
             this.fUNCIONARIO_NASCIMENTODateTimePicker.Location = new System.Drawing.Point(20, 111);
             this.fUNCIONARIO_NASCIMENTODateTimePicker.Name = "fUNCIONARIO_NASCIMENTODateTimePicker";
             this.fUNCIONARIO_NASCIMENTODateTimePicker.Size = new System.Drawing.Size(558, 33);
-            this.fUNCIONARIO_NASCIMENTODateTimePicker.TabIndex = 9;
+            this.fUNCIONARIO_NASCIMENTODateTimePicker.TabIndex = 1;
             // 
             // fUNCIONARIO_PISMaskedTextBox
             // 
             this.fUNCIONARIO_PISMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_PIS", true));
-            this.fUNCIONARIO_PISMaskedTextBox.Location = new System.Drawing.Point(89, 141);
+            this.fUNCIONARIO_PISMaskedTextBox.Location = new System.Drawing.Point(89, 212);
             this.fUNCIONARIO_PISMaskedTextBox.Mask = "###.#####.##-#";
             this.fUNCIONARIO_PISMaskedTextBox.Name = "fUNCIONARIO_PISMaskedTextBox";
             this.fUNCIONARIO_PISMaskedTextBox.Size = new System.Drawing.Size(200, 33);
-            this.fUNCIONARIO_PISMaskedTextBox.TabIndex = 11;
+            this.fUNCIONARIO_PISMaskedTextBox.TabIndex = 6;
             // 
             // fUNCIONARIO_TELEFONEMaskedTextBox
             // 
@@ -386,7 +375,7 @@
             this.fUNCIONARIO_TELEFONEMaskedTextBox.Mask = "(##)####-####";
             this.fUNCIONARIO_TELEFONEMaskedTextBox.Name = "fUNCIONARIO_TELEFONEMaskedTextBox";
             this.fUNCIONARIO_TELEFONEMaskedTextBox.Size = new System.Drawing.Size(169, 33);
-            this.fUNCIONARIO_TELEFONEMaskedTextBox.TabIndex = 13;
+            this.fUNCIONARIO_TELEFONEMaskedTextBox.TabIndex = 2;
             // 
             // fUNCIONARIO_EMAILTextBox
             // 
@@ -395,79 +384,69 @@
             this.fUNCIONARIO_EMAILTextBox.MaxLength = 60;
             this.fUNCIONARIO_EMAILTextBox.Name = "fUNCIONARIO_EMAILTextBox";
             this.fUNCIONARIO_EMAILTextBox.Size = new System.Drawing.Size(369, 33);
-            this.fUNCIONARIO_EMAILTextBox.TabIndex = 15;
+            this.fUNCIONARIO_EMAILTextBox.TabIndex = 3;
             // 
             // fUNCIONARIO_ENDERECOTextBox
             // 
             this.fUNCIONARIO_ENDERECOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_ENDERECO", true));
-            this.fUNCIONARIO_ENDERECOTextBox.Location = new System.Drawing.Point(132, 41);
+            this.fUNCIONARIO_ENDERECOTextBox.Location = new System.Drawing.Point(132, 111);
             this.fUNCIONARIO_ENDERECOTextBox.MaxLength = 120;
             this.fUNCIONARIO_ENDERECOTextBox.Name = "fUNCIONARIO_ENDERECOTextBox";
             this.fUNCIONARIO_ENDERECOTextBox.Size = new System.Drawing.Size(417, 33);
-            this.fUNCIONARIO_ENDERECOTextBox.TabIndex = 17;
+            this.fUNCIONARIO_ENDERECOTextBox.TabIndex = 7;
             // 
             // fUNCIONARIO_BAIRROTextBox
             // 
             this.fUNCIONARIO_BAIRROTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_BAIRRO", true));
-            this.fUNCIONARIO_BAIRROTextBox.Location = new System.Drawing.Point(132, 80);
+            this.fUNCIONARIO_BAIRROTextBox.Location = new System.Drawing.Point(132, 150);
             this.fUNCIONARIO_BAIRROTextBox.MaxLength = 60;
             this.fUNCIONARIO_BAIRROTextBox.Name = "fUNCIONARIO_BAIRROTextBox";
             this.fUNCIONARIO_BAIRROTextBox.Size = new System.Drawing.Size(417, 33);
-            this.fUNCIONARIO_BAIRROTextBox.TabIndex = 19;
+            this.fUNCIONARIO_BAIRROTextBox.TabIndex = 8;
             // 
             // fUNCIONARIO_CEPTextBox
             // 
             this.fUNCIONARIO_CEPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_CEP", true));
-            this.fUNCIONARIO_CEPTextBox.Location = new System.Drawing.Point(132, 119);
+            this.fUNCIONARIO_CEPTextBox.Location = new System.Drawing.Point(132, 189);
             this.fUNCIONARIO_CEPTextBox.MaxLength = 9;
             this.fUNCIONARIO_CEPTextBox.Name = "fUNCIONARIO_CEPTextBox";
             this.fUNCIONARIO_CEPTextBox.Size = new System.Drawing.Size(245, 33);
-            this.fUNCIONARIO_CEPTextBox.TabIndex = 21;
+            this.fUNCIONARIO_CEPTextBox.TabIndex = 9;
             // 
             // fUNCIONARIO_FUNCAOTextBox
             // 
             this.fUNCIONARIO_FUNCAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_FUNCAO", true));
-            this.fUNCIONARIO_FUNCAOTextBox.Location = new System.Drawing.Point(116, 38);
+            this.fUNCIONARIO_FUNCAOTextBox.Location = new System.Drawing.Point(117, 59);
             this.fUNCIONARIO_FUNCAOTextBox.MaxLength = 60;
             this.fUNCIONARIO_FUNCAOTextBox.Name = "fUNCIONARIO_FUNCAOTextBox";
             this.fUNCIONARIO_FUNCAOTextBox.Size = new System.Drawing.Size(409, 33);
-            this.fUNCIONARIO_FUNCAOTextBox.TabIndex = 23;
+            this.fUNCIONARIO_FUNCAOTextBox.TabIndex = 10;
             // 
             // fUNCIONARIO_SETORTextBox
             // 
             this.fUNCIONARIO_SETORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_SETOR", true));
-            this.fUNCIONARIO_SETORTextBox.Location = new System.Drawing.Point(116, 80);
+            this.fUNCIONARIO_SETORTextBox.Location = new System.Drawing.Point(117, 101);
             this.fUNCIONARIO_SETORTextBox.MaxLength = 60;
             this.fUNCIONARIO_SETORTextBox.Name = "fUNCIONARIO_SETORTextBox";
             this.fUNCIONARIO_SETORTextBox.Size = new System.Drawing.Size(409, 33);
-            this.fUNCIONARIO_SETORTextBox.TabIndex = 25;
+            this.fUNCIONARIO_SETORTextBox.TabIndex = 11;
             // 
             // fUNCIONARIO_SALARIOTextBox
             // 
-            this.fUNCIONARIO_SALARIOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_SALARIO", true));
-            this.fUNCIONARIO_SALARIOTextBox.Location = new System.Drawing.Point(116, 122);
+            this.fUNCIONARIO_SALARIOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_SALARIO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
+            this.fUNCIONARIO_SALARIOTextBox.Location = new System.Drawing.Point(117, 143);
             this.fUNCIONARIO_SALARIOTextBox.MaxLength = 18;
             this.fUNCIONARIO_SALARIOTextBox.Name = "fUNCIONARIO_SALARIOTextBox";
             this.fUNCIONARIO_SALARIOTextBox.Size = new System.Drawing.Size(200, 33);
-            this.fUNCIONARIO_SALARIOTextBox.TabIndex = 27;
+            this.fUNCIONARIO_SALARIOTextBox.TabIndex = 12;
             // 
             // fUNCIONARIO_ADMISSAODateTimePicker
             // 
             this.fUNCIONARIO_ADMISSAODateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsFuncionario, "FUNCIONARIO_ADMISSAO", true));
-            this.fUNCIONARIO_ADMISSAODateTimePicker.Location = new System.Drawing.Point(24, 198);
+            this.fUNCIONARIO_ADMISSAODateTimePicker.Location = new System.Drawing.Point(25, 219);
             this.fUNCIONARIO_ADMISSAODateTimePicker.Name = "fUNCIONARIO_ADMISSAODateTimePicker";
             this.fUNCIONARIO_ADMISSAODateTimePicker.Size = new System.Drawing.Size(501, 33);
-            this.fUNCIONARIO_ADMISSAODateTimePicker.TabIndex = 29;
-            // 
-            // fUNCIONARIO_SENHATextBox
-            // 
-            this.fUNCIONARIO_SENHATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_SENHA", true));
-            this.fUNCIONARIO_SENHATextBox.Location = new System.Drawing.Point(116, 249);
-            this.fUNCIONARIO_SENHATextBox.MaxLength = 10;
-            this.fUNCIONARIO_SENHATextBox.Name = "fUNCIONARIO_SENHATextBox";
-            this.fUNCIONARIO_SENHATextBox.PasswordChar = '*';
-            this.fUNCIONARIO_SENHATextBox.Size = new System.Drawing.Size(200, 33);
-            this.fUNCIONARIO_SENHATextBox.TabIndex = 31;
+            this.fUNCIONARIO_ADMISSAODateTimePicker.TabIndex = 13;
             // 
             // fUNCIONARIO_DATA_CADASTROLabel2
             // 
@@ -488,7 +467,7 @@
             this.groupBox1.Location = new System.Drawing.Point(24, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(603, 177);
-            this.groupBox1.TabIndex = 32;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pessoal";
             // 
@@ -500,10 +479,10 @@
             this.groupBox2.Controls.Add(this.fUNCIONARIO_CPFMaskedTextBox);
             this.groupBox2.Controls.Add(this.fUNCIONARIO_RGTextBox);
             this.groupBox2.Controls.Add(fUNCIONARIO_RGLabel);
-            this.groupBox2.Location = new System.Drawing.Point(649, 72);
+            this.groupBox2.Location = new System.Drawing.Point(649, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(328, 207);
-            this.groupBox2.TabIndex = 33;
+            this.groupBox2.Size = new System.Drawing.Size(328, 305);
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Documentos";
             // 
@@ -513,10 +492,10 @@
             this.groupBox3.Controls.Add(this.fUNCIONARIO_EMAILTextBox);
             this.groupBox3.Controls.Add(fUNCIONARIO_EMAILLabel);
             this.groupBox3.Controls.Add(fUNCIONARIO_TELEFONELabel);
-            this.groupBox3.Location = new System.Drawing.Point(74, 195);
+            this.groupBox3.Location = new System.Drawing.Point(24, 195);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(515, 122);
-            this.groupBox3.TabIndex = 34;
+            this.groupBox3.Size = new System.Drawing.Size(603, 122);
+            this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contato";
             // 
@@ -528,17 +507,15 @@
             this.groupBox4.Controls.Add(this.fUNCIONARIO_BAIRROTextBox);
             this.groupBox4.Controls.Add(fUNCIONARIO_ENDERECOLabel);
             this.groupBox4.Controls.Add(fUNCIONARIO_BAIRROLabel);
-            this.groupBox4.Location = new System.Drawing.Point(1002, 89);
+            this.groupBox4.Location = new System.Drawing.Point(994, 15);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(565, 174);
-            this.groupBox4.TabIndex = 35;
+            this.groupBox4.Size = new System.Drawing.Size(565, 302);
+            this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Domiciliar";
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.fUNCIONARIO_SENHATextBox);
-            this.groupBox5.Controls.Add(fUNCIONARIO_SENHALabel);
             this.groupBox5.Controls.Add(this.fUNCIONARIO_ADMISSAODateTimePicker);
             this.groupBox5.Controls.Add(fUNCIONARIO_ADMISSAOLabel);
             this.groupBox5.Controls.Add(this.fUNCIONARIO_SALARIOTextBox);
@@ -547,10 +524,10 @@
             this.groupBox5.Controls.Add(this.fUNCIONARIO_FUNCAOTextBox);
             this.groupBox5.Controls.Add(this.fUNCIONARIO_SETORTextBox);
             this.groupBox5.Controls.Add(fUNCIONARIO_SETORLabel);
-            this.groupBox5.Location = new System.Drawing.Point(1605, 15);
+            this.groupBox5.Location = new System.Drawing.Point(1583, 15);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(547, 297);
-            this.groupBox5.TabIndex = 36;
+            this.groupBox5.Size = new System.Drawing.Size(547, 302);
+            this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Empresa";
             // 
@@ -571,6 +548,7 @@
             this.Name = "formCadastroFuncionario";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);
@@ -611,7 +589,6 @@
         private System.Windows.Forms.TextBox fUNCIONARIO_SETORTextBox;
         private System.Windows.Forms.TextBox fUNCIONARIO_SALARIOTextBox;
         private System.Windows.Forms.DateTimePicker fUNCIONARIO_ADMISSAODateTimePicker;
-        private System.Windows.Forms.TextBox fUNCIONARIO_SENHATextBox;
         private System.Windows.Forms.Label fUNCIONARIO_DATA_CADASTROLabel2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox4;

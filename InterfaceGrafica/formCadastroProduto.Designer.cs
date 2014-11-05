@@ -440,7 +440,7 @@
             // 
             // pRODUTO_UNIDADE_COMPRATextBox
             // 
-            this.pRODUTO_UNIDADE_COMPRATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_UNIDADE_COMPRA", true));
+            this.pRODUTO_UNIDADE_COMPRATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_UNIDADE_COMPRA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.pRODUTO_UNIDADE_COMPRATextBox.Location = new System.Drawing.Point(102, 32);
             this.pRODUTO_UNIDADE_COMPRATextBox.MaxLength = 3;
             this.pRODUTO_UNIDADE_COMPRATextBox.Name = "pRODUTO_UNIDADE_COMPRATextBox";
@@ -449,7 +449,7 @@
             // 
             // pRODUTO_UNIDADE_VENDATextBox
             // 
-            this.pRODUTO_UNIDADE_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_UNIDADE_VENDA", true));
+            this.pRODUTO_UNIDADE_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_UNIDADE_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.pRODUTO_UNIDADE_VENDATextBox.Location = new System.Drawing.Point(102, 72);
             this.pRODUTO_UNIDADE_VENDATextBox.MaxLength = 3;
             this.pRODUTO_UNIDADE_VENDATextBox.Name = "pRODUTO_UNIDADE_VENDATextBox";
@@ -566,7 +566,7 @@
             // 
             // pRODUTO_PRECO_COMPRATextBox
             // 
-            this.pRODUTO_PRECO_COMPRATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_COMPRA", true));
+            this.pRODUTO_PRECO_COMPRATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_COMPRA", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.pRODUTO_PRECO_COMPRATextBox.Location = new System.Drawing.Point(96, 31);
             this.pRODUTO_PRECO_COMPRATextBox.MaxLength = 16;
             this.pRODUTO_PRECO_COMPRATextBox.Name = "pRODUTO_PRECO_COMPRATextBox";
@@ -575,7 +575,7 @@
             // 
             // pRODUTO_PRECO_CUSTOTextBox
             // 
-            this.pRODUTO_PRECO_CUSTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_CUSTO", true));
+            this.pRODUTO_PRECO_CUSTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_CUSTO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.pRODUTO_PRECO_CUSTOTextBox.Location = new System.Drawing.Point(96, 70);
             this.pRODUTO_PRECO_CUSTOTextBox.MaxLength = 16;
             this.pRODUTO_PRECO_CUSTOTextBox.Name = "pRODUTO_PRECO_CUSTOTextBox";
@@ -584,7 +584,7 @@
             // 
             // pRODUTO_PRECO_VENDATextBox
             // 
-            this.pRODUTO_PRECO_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_VENDA", true));
+            this.pRODUTO_PRECO_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.pRODUTO_PRECO_VENDATextBox.Location = new System.Drawing.Point(96, 109);
             this.pRODUTO_PRECO_VENDATextBox.MaxLength = 16;
             this.pRODUTO_PRECO_VENDATextBox.Name = "pRODUTO_PRECO_VENDATextBox";
@@ -607,6 +607,7 @@
             this.mARCA_DESCRICAOTextBox.Location = new System.Drawing.Point(134, 41);
             this.mARCA_DESCRICAOTextBox.MaxLength = 60;
             this.mARCA_DESCRICAOTextBox.Name = "mARCA_DESCRICAOTextBox";
+            this.mARCA_DESCRICAOTextBox.ReadOnly = true;
             this.mARCA_DESCRICAOTextBox.Size = new System.Drawing.Size(452, 33);
             this.mARCA_DESCRICAOTextBox.TabIndex = 10;
             this.mARCA_DESCRICAOTextBox.DoubleClick += new System.EventHandler(this.mARCA_DESCRICAOTextBox_DoubleClick);
@@ -622,6 +623,7 @@
             this.gRUPO_DESCRICAOTextBox.Location = new System.Drawing.Point(134, 152);
             this.gRUPO_DESCRICAOTextBox.MaxLength = 60;
             this.gRUPO_DESCRICAOTextBox.Name = "gRUPO_DESCRICAOTextBox";
+            this.gRUPO_DESCRICAOTextBox.ReadOnly = true;
             this.gRUPO_DESCRICAOTextBox.Size = new System.Drawing.Size(452, 33);
             this.gRUPO_DESCRICAOTextBox.TabIndex = 12;
             this.gRUPO_DESCRICAOTextBox.DoubleClick += new System.EventHandler(this.gRUPO_DESCRICAOTextBox_DoubleClick);
@@ -637,6 +639,7 @@
             this.sECAO_DESCRICAOTextBox.Location = new System.Drawing.Point(134, 95);
             this.sECAO_DESCRICAOTextBox.MaxLength = 60;
             this.sECAO_DESCRICAOTextBox.Name = "sECAO_DESCRICAOTextBox";
+            this.sECAO_DESCRICAOTextBox.ReadOnly = true;
             this.sECAO_DESCRICAOTextBox.Size = new System.Drawing.Size(452, 33);
             this.sECAO_DESCRICAOTextBox.TabIndex = 11;
             this.sECAO_DESCRICAOTextBox.DoubleClick += new System.EventHandler(this.sECAO_DESCRICAOTextBox_DoubleClick);
@@ -652,6 +655,7 @@
             this.fORNECEDOR_FISICO_NOMETextBox.Location = new System.Drawing.Point(134, 209);
             this.fORNECEDOR_FISICO_NOMETextBox.MaxLength = 60;
             this.fORNECEDOR_FISICO_NOMETextBox.Name = "fORNECEDOR_FISICO_NOMETextBox";
+            this.fORNECEDOR_FISICO_NOMETextBox.ReadOnly = true;
             this.fORNECEDOR_FISICO_NOMETextBox.Size = new System.Drawing.Size(452, 33);
             this.fORNECEDOR_FISICO_NOMETextBox.TabIndex = 13;
             this.fORNECEDOR_FISICO_NOMETextBox.DoubleClick += new System.EventHandler(this.fORNECEDOR_FISICO_NOMETextBox_DoubleClick);
@@ -667,6 +671,7 @@
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.Location = new System.Drawing.Point(134, 209);
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.MaxLength = 60;
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.Name = "fORNECEDOR_JURIDICO_FANTASIATextBox";
+            this.fORNECEDOR_JURIDICO_FANTASIATextBox.ReadOnly = true;
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.Size = new System.Drawing.Size(452, 33);
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.TabIndex = 51;
             this.fORNECEDOR_JURIDICO_FANTASIATextBox.DoubleClick += new System.EventHandler(this.fORNECEDOR_JURIDICO_FANTASIATextBox_DoubleClick);

@@ -11,11 +11,11 @@ namespace FROGI_OS.Mapeamento
 
         private const string codigo = "Código";
         private const string descricao = "Descrição";
-        private const string desconto = "Desconto";
+        //private const string desconto = "Desconto";
 
         private readonly string colunaCodigo;
         private readonly string colunaDescricao;
-        private readonly string colunaDesconto;
+        //private readonly string colunaDesconto;
 
         private readonly string[] colunas;
 
@@ -25,12 +25,11 @@ namespace FROGI_OS.Mapeamento
 
             colunaCodigo = grupo.GRUPO_CODIGOColumn.ColumnName;
             colunaDescricao = grupo.GRUPO_DESCRICAOColumn.ColumnName;
-            colunaDesconto = grupo.GRUPO_DESCONTOColumn.ColumnName;
+            //colunaDesconto = grupo.GRUPO_DESCONTOColumn.ColumnName;
 
             colunas = new string[] { 
                 codigo,
-                descricao,
-                desconto
+                descricao
             };
         }
 
@@ -41,8 +40,6 @@ namespace FROGI_OS.Mapeamento
                     return colunaCodigo;
                 case descricao:
                     return colunaDescricao;
-                case desconto:
-                    return colunaDesconto;
                 default:
                     return null;
             }

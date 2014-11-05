@@ -122,6 +122,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textSenha.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textSenha.Location = new System.Drawing.Point(52, 146);
+            this.textSenha.MaxLength = 10;
             this.textSenha.Name = "textSenha";
             this.textSenha.PasswordChar = '*';
             this.textSenha.Size = new System.Drawing.Size(202, 35);
@@ -135,6 +136,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textNome.Font = new System.Drawing.Font("Segoe UI Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNome.Location = new System.Drawing.Point(52, 75);
+            this.textNome.MaxLength = 60;
             this.textNome.Name = "textNome";
             this.textNome.Size = new System.Drawing.Size(202, 35);
             this.textNome.TabIndex = 1;

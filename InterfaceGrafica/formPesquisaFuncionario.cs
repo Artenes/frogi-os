@@ -41,6 +41,7 @@ namespace FROGI_OS.InterfaceGrafica {
             string valor = textValorPesquisa.Text;
             dsFROGIOS.FUNCIONARIO.Clear();
             dsFROGIOS.FUNCIONARIO.Load(funcionarioSQL.selecionar(coluna, valor, false));
+            this.ActiveControl = dsFROGIOS.FUNCIONARIO.Rows.Count > 0 ? fUNCIONARIODataGridView as Control : textValorPesquisa as Control;
         }
 
         protected override void resetar() {

@@ -87,7 +87,7 @@ namespace FROGI_OS.CamadaEnlaceDados {
             string sqlJuridico =
                 "SELECT "
                 + "AGEN_CODIGO, "
-                + "CLIENTE_JURIDICO_RAZAO_SOCIAL, "
+                + "CLIENTE_JURIDICO_FANTASIA, "
                 + "AGEN_DATA "
                 + "FROM AGENDAMENTO INNER JOIN CLIENTE "
                 + "ON AGEN_CLIENTE = CLIENTE_CODIGO "

@@ -44,8 +44,14 @@ namespace FROGI_OS.InterfaceGrafica
             return tipoRow;
         }
 
+        protected override void novoRegistro() {
+            base.novoRegistro();
+            this.ActiveControl = tIPO_DESCRICAOTextBox;
+        }
+
         protected override void editarRegistro() {
             base.editarRegistro();
+            this.ActiveControl = tIPO_DESCRICAOTextBox;
         }
 
         protected override void excluiExecutar(){

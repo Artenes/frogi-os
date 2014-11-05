@@ -66,7 +66,7 @@ namespace FROGI_OS.InterfaceGrafica
                 dsFROGIOS.CLIENTE.Clear();
                 dsFROGIOS.CLIENTE_FISICO.Clear();
                 dsFROGIOS.CLIENTE_JURIDICO.Clear();
-                textCliente.Text = "";
+                textCliente.Text = "Duplo clique para pesquisar";
                 textTelefone.Text = "";
                 textCelular.Text = "";
             }
@@ -78,7 +78,6 @@ namespace FROGI_OS.InterfaceGrafica
             {
                 textCliente.Enabled = estaDisponivel;    
             }
-            
         }
 
         protected override string validarCampos() {
@@ -97,7 +96,7 @@ namespace FROGI_OS.InterfaceGrafica
                 textTelefone.Text = ((dsFROGIOS.CLIENTERow)dsFROGIOS.CLIENTE.Rows[0]).CLIENTE_TELEFONE;
                 textCelular.Text = ((dsFROGIOS.CLIENTERow)dsFROGIOS.CLIENTE.Rows[0]).CLIENTE_CELULAR;
             } else {
-                textCliente.Text = ((dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_FISICO.Rows[0]).CLIENTE_JURIDICO_FANTASIA;
+                textCliente.Text = ((dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO.Rows[0]).CLIENTE_JURIDICO_FANTASIA;
                 textTelefone.Text = ((dsFROGIOS.CLIENTERow)dsFROGIOS.CLIENTE.Rows[0]).CLIENTE_TELEFONE;
                 textCelular.Text = ((dsFROGIOS.CLIENTERow)dsFROGIOS.CLIENTE.Rows[0]).CLIENTE_CELULAR;
             }

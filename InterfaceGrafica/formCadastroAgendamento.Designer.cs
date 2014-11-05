@@ -192,8 +192,11 @@
             // 
             // textCliente
             // 
+            this.textCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textCliente.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.textCliente.Location = new System.Drawing.Point(109, 40);
             this.textCliente.Name = "textCliente";
+            this.textCliente.ReadOnly = true;
             this.textCliente.Size = new System.Drawing.Size(546, 33);
             this.textCliente.TabIndex = 0;
             this.textCliente.DoubleClick += new System.EventHandler(this.textCliente_DoubleClick);
@@ -227,19 +230,19 @@
             // 
             // textCelular
             // 
-            this.textCelular.Enabled = false;
             this.textCelular.Location = new System.Drawing.Point(11, 134);
             this.textCelular.Mask = "(##)####-####";
             this.textCelular.Name = "textCelular";
+            this.textCelular.ReadOnly = true;
             this.textCelular.Size = new System.Drawing.Size(133, 33);
             this.textCelular.TabIndex = 3;
             // 
             // textTelefone
             // 
-            this.textTelefone.Enabled = false;
             this.textTelefone.Location = new System.Drawing.Point(11, 65);
             this.textTelefone.Mask = "(##)####-####";
             this.textTelefone.Name = "textTelefone";
+            this.textTelefone.ReadOnly = true;
             this.textTelefone.Size = new System.Drawing.Size(133, 33);
             this.textTelefone.TabIndex = 2;
             // 

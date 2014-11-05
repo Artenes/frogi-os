@@ -40,10 +40,12 @@ namespace FROGI_OS.InterfaceGrafica {
             if (eFisico) {
                 dsFROGIOS.PESQUISA_CLIENTE_FISICO.Clear();
                 dsFROGIOS.PESQUISA_CLIENTE_FISICO.Load(cliente.pesquisar(coluna, valor, eFisico));
+                this.ActiveControl = dsFROGIOS.PESQUISA_CLIENTE_FISICO.Rows.Count > 0 ? pESQUISA_CLIENTE_FISICODataGridView as Control : textValorPesquisa as Control;
             }
             else {
                 dsFROGIOS.PESQUISA_CLIENTE_JURIDICO.Clear();
                 dsFROGIOS.PESQUISA_CLIENTE_JURIDICO.Load(cliente.pesquisar(coluna, valor, eFisico));
+                this.ActiveControl = dsFROGIOS.PESQUISA_CLIENTE_JURIDICO.Rows.Count > 0 ? pESQUISA_CLIENTE_JURIDICODataGridView as Control : textValorPesquisa as Control;
             }
         }
 

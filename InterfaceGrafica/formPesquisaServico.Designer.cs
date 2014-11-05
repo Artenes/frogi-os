@@ -36,7 +36,7 @@
             this.sERVICODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCabecalho.SuspendLayout();
             this.panelCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -110,7 +110,7 @@
             this.sERVICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.colunaValor});
             this.sERVICODataGridView.DataSource = this.bsServico;
             this.sERVICODataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sERVICODataGridView.Location = new System.Drawing.Point(0, 0);
@@ -120,6 +120,7 @@
             this.sERVICODataGridView.Size = new System.Drawing.Size(966, 343);
             this.sERVICODataGridView.TabIndex = 3;
             this.sERVICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sERVICODataGridView_CellDoubleClick);
+            this.sERVICODataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.sERVICODataGridView_CellFormatting);
             this.sERVICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sERVICODataGridView_KeyDown);
             // 
             // dataGridViewTextBoxColumn1
@@ -128,6 +129,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -135,13 +137,15 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn3
+            // colunaValor
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SERVICO_VALOR";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Valor";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.colunaValor.DataPropertyName = "SERVICO_VALOR";
+            this.colunaValor.HeaderText = "Valor";
+            this.colunaValor.Name = "colunaValor";
+            this.colunaValor.ReadOnly = true;
+            this.colunaValor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // formPesquisaServico
             // 
@@ -170,6 +174,6 @@
         private System.Windows.Forms.DataGridView sERVICODataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaValor;
     }
 }

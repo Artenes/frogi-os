@@ -46,6 +46,7 @@ namespace FROGI_OS.InterfaceGrafica
 
                 dsFROGIOS.SERVICO.Clear();
                 dsFROGIOS.SERVICO.Load(servicoSQL.selecionar(coluna, valor, false));
+                this.ActiveControl = dsFROGIOS.SERVICO.Rows.Count > 0 ? sERVICODataGridView as Control : textValorPesquisa as Control;
             } catch (Exception erro) {
                 exibirMensagemErro(erro.Message);
             } finally {
@@ -93,6 +94,14 @@ namespace FROGI_OS.InterfaceGrafica
             if (e.KeyCode == Keys.Enter) {
                 selecionarServico();
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void sERVICODataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            DataGridView tabela = sender as DataGridView;
+            if (tabela.Columns[e.ColumnIndex].Name.Equals("colunaValor")) {
+                string valor = ((double)e.Value).ToString("0.00");
+                e.Value = valor;
             }
         }
     }

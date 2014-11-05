@@ -42,7 +42,9 @@ namespace FROGI_OS.InterfaceGrafica
             string 
                 coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString()),
                 valor = textValorPesquisa.Text;
+            dsFROGIOS.PRODUTO.Clear();
             dsFROGIOS.PRODUTO.Load(produtoSQL.selecionar(coluna, valor, false));
+            this.ActiveControl = dsFROGIOS.PRODUTO.Rows.Count > 0 ? pRODUTODataGridView as Control : textValorPesquisa as Control;
         }
 
         protected override void resetar()
@@ -91,6 +93,14 @@ namespace FROGI_OS.InterfaceGrafica
             if (e.KeyCode == Keys.Enter) {
                 selecionarProduto();
                 e.SuppressKeyPress = true;
+            }
+        }
+
+        private void pRODUTODataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            DataGridView tabela = sender as DataGridView;
+            if (tabela.Columns[e.ColumnIndex].Name.Equals("colunaPreco")) {
+                string valor = ((double)e.Value).ToString("0.00");
+                e.Value = valor;
             }
         }
 

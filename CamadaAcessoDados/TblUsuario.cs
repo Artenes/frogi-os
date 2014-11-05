@@ -23,20 +23,21 @@ namespace FROGI_OS.CamadaAcessoDados {
                + "VALUES (NULL, "
                + paramNome + ", "
                + paramSenha + ", "
-               + "NULL, "
+               + paramCategoria + ", "
                + paramDataCadastro + ") "
                + "RETURNING USUARIO_CODIGO;";
 
             comando = new FbCommand(sql, Conexao.getConexao, Conexao.getTransacao);
             comando.Parameters.AddWithValue(paramNome, ususario.USUARIO_NOME);
             comando.Parameters.AddWithValue(paramSenha, ususario.USUARIO_SENHA);
+            comando.Parameters.AddWithValue(paramCategoria, ususario.USUARIO_CATEGORIA);
+            comando.Parameters.AddWithValue(paramDataCadastro, ususario.USUARIO_DATA_CADASTRO);
             //try {
             //    comando.Parameters.AddWithValue(paramCategoria, ususario.USUARIO_CATEGORIA);
             //} catch (Exception) {
             //    comando.Parameters.AddWithValue(paramCategoria, null);
             //}
-            comando.Parameters.AddWithValue(paramDataCadastro, ususario.USUARIO_DATA_CADASTRO);
-
+            
             return (int)comando.ExecuteScalar();
         }
 
@@ -55,7 +56,7 @@ namespace FROGI_OS.CamadaAcessoDados {
             comando.Parameters.AddWithValue(paramCodigo, usuario.USUARIO_CODIGO);
             comando.Parameters.AddWithValue(paramNome, usuario.USUARIO_NOME);
             comando.Parameters.AddWithValue(paramSenha, usuario.USUARIO_SENHA);
-            comando.Parameters.AddWithValue(paramCategoria, null);
+            comando.Parameters.AddWithValue(paramCategoria, usuario.USUARIO_CATEGORIA);
             comando.Parameters.AddWithValue(paramDataCadastro, usuario.USUARIO_DATA_CADASTRO);
 
             return comando.ExecuteNonQuery();

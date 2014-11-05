@@ -42,10 +42,14 @@
             this.uSUARIO_SENHATextBox = new System.Windows.Forms.TextBox();
             this.uSUARIO_DATA_CADASTROLabel1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioAdministrador = new System.Windows.Forms.RadioButton();
+            this.radioFuncionario = new System.Windows.Forms.RadioButton();
             uSUARIO_CODIGOLabel = new System.Windows.Forms.Label();
             uSUARIO_NOMELabel = new System.Windows.Forms.Label();
             uSUARIO_SENHALabel = new System.Windows.Forms.Label();
             uSUARIO_DATA_CADASTROLabel = new System.Windows.Forms.Label();
+            this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -123,6 +127,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -179,6 +184,7 @@
             this.uSUARIO_SENHATextBox.Location = new System.Drawing.Point(89, 70);
             this.uSUARIO_SENHATextBox.MaxLength = 10;
             this.uSUARIO_SENHATextBox.Name = "uSUARIO_SENHATextBox";
+            this.uSUARIO_SENHATextBox.PasswordChar = '*';
             this.uSUARIO_SENHATextBox.Size = new System.Drawing.Size(173, 33);
             this.uSUARIO_SENHATextBox.TabIndex = 1;
             // 
@@ -195,23 +201,50 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioAdministrador);
+            this.groupBox1.Controls.Add(this.radioFuncionario);
             this.groupBox1.Controls.Add(uSUARIO_NOMELabel);
             this.groupBox1.Controls.Add(this.uSUARIO_SENHATextBox);
             this.groupBox1.Controls.Add(this.uSUARIO_NOMETextBox);
             this.groupBox1.Controls.Add(uSUARIO_SENHALabel);
             this.groupBox1.Location = new System.Drawing.Point(31, 89);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(568, 127);
+            this.groupBox1.Size = new System.Drawing.Size(568, 175);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // formUsuarioCadastro
+            // radioAdministrador
+            // 
+            this.radioAdministrador.AutoSize = true;
+            this.radioAdministrador.Location = new System.Drawing.Point(164, 121);
+            this.radioAdministrador.Name = "radioAdministrador";
+            this.radioAdministrador.Size = new System.Drawing.Size(143, 29);
+            this.radioAdministrador.TabIndex = 6;
+            this.radioAdministrador.TabStop = true;
+            this.radioAdministrador.Text = "Administrador";
+            this.radioAdministrador.UseVisualStyleBackColor = true;
+            // 
+            // radioFuncionario
+            // 
+            this.radioFuncionario.AutoSize = true;
+            this.radioFuncionario.Location = new System.Drawing.Point(18, 121);
+            this.radioFuncionario.Name = "radioFuncionario";
+            this.radioFuncionario.Size = new System.Drawing.Size(122, 29);
+            this.radioFuncionario.TabIndex = 5;
+            this.radioFuncionario.TabStop = true;
+            this.radioFuncionario.Text = "Funcionário";
+            this.radioFuncionario.UseVisualStyleBackColor = true;
+            // 
+            // formCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formUsuarioCadastro";
+            this.Name = "formCadastroUsuario";
             this.Text = "formUsuarioCadastro";
+            this.panelCabecalho.ResumeLayout(false);
+            this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);
@@ -234,5 +267,7 @@
         private System.Windows.Forms.TextBox uSUARIO_SENHATextBox;
         private System.Windows.Forms.Label uSUARIO_DATA_CADASTROLabel1;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton radioAdministrador;
+        private System.Windows.Forms.RadioButton radioFuncionario;
     }
 }

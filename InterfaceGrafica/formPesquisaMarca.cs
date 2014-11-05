@@ -31,6 +31,11 @@ namespace FROGI_OS.InterfaceGrafica {
             string valor = textValorPesquisa.Text;
             dsFROGIOS.MARCA.Clear();
             dsFROGIOS.MARCA.Load(marcaSQL.selecionar(coluna, valor, false));
+            if (dsFROGIOS.MARCA.Rows.Count > 0) {
+                this.ActiveControl = mARCADataGridView;
+            } else {
+                this.ActiveControl = textValorPesquisa;
+            }
         }
 
         protected override void resetar() {

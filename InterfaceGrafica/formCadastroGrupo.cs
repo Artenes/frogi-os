@@ -63,6 +63,9 @@ namespace FROGI_OS.InterfaceGrafica
         }
 
         protected override string validarCampos() {
+
+            gRUPO_DESCONTOTextBox.Text = "0,00";
+            
             string
                 descricao = gRUPO_DESCRICAOTextBox.Text,
                 desconto = gRUPO_DESCONTOTextBox.Text;

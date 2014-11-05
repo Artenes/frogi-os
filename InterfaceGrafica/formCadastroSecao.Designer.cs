@@ -40,6 +40,7 @@
             sECAO_CODIGOLabel = new System.Windows.Forms.Label();
             sECAO_DESCRICAOLabel = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -61,6 +62,25 @@
             // 
             this.panelCentro.Controls.Add(this.groupBox1);
             // 
+            // sECAO_CODIGOLabel
+            // 
+            sECAO_CODIGOLabel.AutoSize = true;
+            sECAO_CODIGOLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            sECAO_CODIGOLabel.Location = new System.Drawing.Point(24, 8);
+            sECAO_CODIGOLabel.Name = "sECAO_CODIGOLabel";
+            sECAO_CODIGOLabel.Size = new System.Drawing.Size(72, 25);
+            sECAO_CODIGOLabel.TabIndex = 0;
+            sECAO_CODIGOLabel.Text = "Código";
+            // 
+            // sECAO_DESCRICAOLabel
+            // 
+            sECAO_DESCRICAOLabel.AutoSize = true;
+            sECAO_DESCRICAOLabel.Location = new System.Drawing.Point(19, 29);
+            sECAO_DESCRICAOLabel.Name = "sECAO_DESCRICAOLabel";
+            sECAO_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
+            sECAO_DESCRICAOLabel.TabIndex = 2;
+            sECAO_DESCRICAOLabel.Text = "Descrição";
+            // 
             // dsFROGIOS
             // 
             this.dsFROGIOS.DataSetName = "dsFROGIOS";
@@ -77,6 +97,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -107,16 +128,6 @@
             this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOTableAdapter = null;
             // 
-            // sECAO_CODIGOLabel
-            // 
-            sECAO_CODIGOLabel.AutoSize = true;
-            sECAO_CODIGOLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            sECAO_CODIGOLabel.Location = new System.Drawing.Point(24, 8);
-            sECAO_CODIGOLabel.Name = "sECAO_CODIGOLabel";
-            sECAO_CODIGOLabel.Size = new System.Drawing.Size(72, 25);
-            sECAO_CODIGOLabel.TabIndex = 0;
-            sECAO_CODIGOLabel.Text = "Código";
-            // 
             // sECAO_CODIGOLabel1
             // 
             this.sECAO_CODIGOLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsSecao, "SECAO_CODIGO", true));
@@ -126,15 +137,6 @@
             this.sECAO_CODIGOLabel1.Size = new System.Drawing.Size(100, 23);
             this.sECAO_CODIGOLabel1.TabIndex = 1;
             this.sECAO_CODIGOLabel1.Text = "código";
-            // 
-            // sECAO_DESCRICAOLabel
-            // 
-            sECAO_DESCRICAOLabel.AutoSize = true;
-            sECAO_DESCRICAOLabel.Location = new System.Drawing.Point(19, 29);
-            sECAO_DESCRICAOLabel.Name = "sECAO_DESCRICAOLabel";
-            sECAO_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
-            sECAO_DESCRICAOLabel.TabIndex = 2;
-            sECAO_DESCRICAOLabel.Text = "Descrição";
             // 
             // sECAO_DESCRICAOTextBox
             // 
@@ -154,15 +156,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // formSecaoCadastro
+            // formCadastroSecao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formSecaoCadastro";
+            this.Name = "formCadastroSecao";
             this.Text = "formSecaoCadastro";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);

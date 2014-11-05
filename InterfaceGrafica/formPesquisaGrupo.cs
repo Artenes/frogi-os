@@ -33,6 +33,11 @@ namespace FROGI_OS.InterfaceGrafica
             string valor = textValorPesquisa.Text;
             dsFROGIOS.GRUPO.Clear();
             dsFROGIOS.GRUPO.Load(grupoSQL.selecionar(coluna, valor, false));
+            if (dsFROGIOS.GRUPO.Rows.Count > 0) {
+                this.ActiveControl = gRUPODataGridView;
+            } else {
+                this.ActiveControl = textValorPesquisa;
+            }
         }
 
         protected override void resetar() {

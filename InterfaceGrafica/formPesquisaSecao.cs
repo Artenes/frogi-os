@@ -33,6 +33,11 @@ namespace FROGI_OS.InterfaceGrafica
             string valor = textValorPesquisa.Text;
             dsFROGIOS.SECAO.Clear();
             dsFROGIOS.SECAO.Load(secaoSQL.selecionar(coluna, valor, false));
+            if (dsFROGIOS.SECAO.Rows.Count > 0) {
+                this.ActiveControl = sECAODataGridView;
+            } else {
+                this.ActiveControl = textValorPesquisa;
+            }
         }
 
 

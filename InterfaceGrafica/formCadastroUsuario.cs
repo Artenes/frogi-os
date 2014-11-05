@@ -45,6 +45,7 @@ namespace FROGI_OS.InterfaceGrafica
             }
             usuarioRow.USUARIO_NOME = uSUARIO_NOMETextBox.Text;
             usuarioRow.USUARIO_SENHA = uSUARIO_SENHATextBox.Text;
+            usuarioRow.USUARIO_CATEGORIA = radioAdministrador.Checked ? 0 : 1;
             return usuarioRow;
         }
 
@@ -60,7 +61,9 @@ namespace FROGI_OS.InterfaceGrafica
         protected override void resetar() {
             base.resetar();
             if (dsFROGIOS != null) {
-                dsFROGIOS.USUARIO.Clear();    
+                dsFROGIOS.USUARIO.Clear();
+                radioFuncionario.Checked = false;
+                radioAdministrador.Checked = false;
             }
         }
 
@@ -73,7 +76,8 @@ namespace FROGI_OS.InterfaceGrafica
                 nome = uSUARIO_NOMETextBox.Text,
                 senha = uSUARIO_SENHATextBox.Text;
             if (!valorValido(nome)) return "Informe o nome do usuário";
-            if (!valorValido(nome)) return "Informe uma senha para o usuário";
+            if (!valorValido(senha)) return "Informe uma senha para o usuário";
+            if ((!radioAdministrador.Checked) && (!radioFuncionario.Checked)) return "Informe o tipo de usuário";
             return base.validarCampos();
         }
 
@@ -82,6 +86,11 @@ namespace FROGI_OS.InterfaceGrafica
             string valor;
             try {valor = Convert.ToString(codigo);} catch (Exception) {valor = "-5";}
             dsFROGIOS.USUARIO.Load(usuarioSQL.selecionar(coluna, valor, true));
+            if ((dsFROGIOS.USUARIO.Rows[0] as dsFROGIOS.USUARIORow).USUARIO_CATEGORIA == 0) {
+                radioAdministrador.Checked = true;
+            } else {
+                radioFuncionario.Checked = true;
+            }
         }
     }
 }

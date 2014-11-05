@@ -88,7 +88,7 @@ namespace FROGI_OS.InterfaceGrafica
                                 alterarStatus("Nome inválido", textNome);
                             }
                         } else {
-                            alterarStatus("Senha inválida", textNome);
+                            alterarStatus("Senha inválida", textSenha);
                         }
                     } catch (Exception erro) {
                         formDialogo dialogo = new formDialogo("Temos um problema", erro.Message, formDialogo.TipoExpressao.AvisoTriste);
