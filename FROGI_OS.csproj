@@ -375,6 +375,9 @@
     <Compile Include="Mapeamento\MapServico.cs" />
     <Compile Include="Mapeamento\MapTipo.cs" />
     <Compile Include="Mapeamento\MapUsuario.cs" />
+    <Compile Include="Monetario.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLSintaxe.cs" />

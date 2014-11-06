@@ -35,9 +35,11 @@ namespace FROGI_OS.InterfaceGrafica {
                 if (eFisico()) {
                     dsFROGIOS.PESQUISA_ORCAMENTO_FISICO.Clear();
                     dsFROGIOS.PESQUISA_ORCAMENTO_FISICO.Load(orcamentoSQL.pesquisar(coluna, valor, eFisico()));
+                    this.ActiveControl = (dsFROGIOS.PESQUISA_ORCAMENTO_FISICO.Rows.Count > 0) ? pESQUISA_ORCAMENTO_FISICODataGridView as Control : textValorPesquisa as Control;
                 } else {
                     dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO.Clear();
                     dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO.Load(orcamentoSQL.pesquisar(coluna, valor, eFisico()));
+                    this.ActiveControl = (dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO.Rows.Count > 0) ? pESQUISA_ORCAMENTO_JURIDICODataGridView as Control : textValorPesquisa as Control;
                 }
             } catch (InvalidOperationException erro) {
                 exibirMensagemErro(erro.Message);

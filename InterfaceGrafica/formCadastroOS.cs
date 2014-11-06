@@ -85,6 +85,7 @@ namespace FROGI_OS.InterfaceGrafica
             base.editar();
             tabPai.SelectedTab = tabGeral;
             this.oS_STATUSComboBox.Enabled = true;
+            this.ActiveControl = oS_TOTAL_ITEMTextBox;
         }
 
         protected override void excluirExecutar()
@@ -108,8 +109,8 @@ namespace FROGI_OS.InterfaceGrafica
         protected override string validarCampos()
         {
             
-            if (dsFROGIOS.CLIENTE.Rows.Count == 0) return "Informe o cliente que quer o orçamento";
-            if (dsFROGIOS.FUNCIONARIO.Rows.Count == 0) return "Informe o funcionário responsável pelo orçamento";
+            if (dsFROGIOS.CLIENTE.Rows.Count == 0) return "Informe o cliente para a ordem de serviço";
+            if (dsFROGIOS.FUNCIONARIO.Rows.Count == 0) return "Informe o funcionário responsável pela ordem de serviço";
             if (oS_STATUSComboBox.SelectedItem == null) return "Informe o status da ordem de serviço";
 
             return base.validarCampos();
@@ -199,10 +200,8 @@ namespace FROGI_OS.InterfaceGrafica
             aplicarDescontoAcrescimo();
         }
 
-        private void buttonLancarProduto_Click(object sender, EventArgs e)
-        {
-            if (dsFROGIOS.PRODUTO.Rows.Count != 0)
-            {
+        private void buttonLancarProduto_Click(object sender, EventArgs e) {
+            if (dsFROGIOS.PRODUTO.Rows.Count != 0) {
                 dsFROGIOS.OS_ITEMRow item = (itemAtual != null) ? itemAtual : dsFROGIOS.OS_ITEM.NewOS_ITEMRow();
                 dsFROGIOS.PRODUTORow produto = (dsFROGIOS.PRODUTORow)dsFROGIOS.PRODUTO.Rows[0];
 
@@ -413,7 +412,7 @@ namespace FROGI_OS.InterfaceGrafica
             TabPage abaSelecionada = (sender as TabControl).SelectedTab;
             if (abaSelecionada == tabGeral) {
                 calcularTotais();
-                this.ActiveControl = labelCliente;
+                this.ActiveControl = oS_TOTAL_ITEMTextBox;
             } else if (abaSelecionada == tabInfoItem) {
                 this.ActiveControl = oS_PRODUTOTextBox;
             } else if (abaSelecionada == tabPecas) {
@@ -478,7 +477,21 @@ namespace FROGI_OS.InterfaceGrafica
             this.textTroco.Text = calcularTroco(valorTotal, valorPago).ToString("0.00");
         }
 
-        
+        private void oS_ITEMDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            DataGridView tabela = sender as DataGridView;
+            string nomeColuna = tabela.Columns[e.ColumnIndex].Name;
+            if (nomeColuna == "colunaProdutoValor" || nomeColuna == "colunaProdutoDesconto" || nomeColuna == "colunaProdutoTotal") {
+                e.Value = ((double)e.Value).ToString("0.00");
+            }
+        }
 
+        private void oS_SERVICODataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            DataGridView tabela = sender as DataGridView;
+            string nomeColuna = tabela.Columns[e.ColumnIndex].Name;
+            if (nomeColuna != "colunaServicoDescricao") {
+                e.Value = ((double)e.Value).ToString("0.00");
+            }
+        }
+        
     }
 }

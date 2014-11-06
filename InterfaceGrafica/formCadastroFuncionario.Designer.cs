@@ -62,7 +62,6 @@
             this.fUNCIONARIO_CEPTextBox = new System.Windows.Forms.TextBox();
             this.fUNCIONARIO_FUNCAOTextBox = new System.Windows.Forms.TextBox();
             this.fUNCIONARIO_SETORTextBox = new System.Windows.Forms.TextBox();
-            this.fUNCIONARIO_SALARIOTextBox = new System.Windows.Forms.TextBox();
             this.fUNCIONARIO_ADMISSAODateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.fUNCIONARIO_DATA_CADASTROLabel2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -70,6 +69,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.textSalario = new WindowsFormsApplication2.Monetario();
             this.panel1 = new System.Windows.Forms.Panel();
             fUNCIONARIO_CODIGOLabel = new System.Windows.Forms.Label();
             fUNCIONARIO_NOMELabel = new System.Windows.Forms.Label();
@@ -224,7 +224,7 @@
             // fUNCIONARIO_FUNCAOLabel
             // 
             fUNCIONARIO_FUNCAOLabel.AutoSize = true;
-            fUNCIONARIO_FUNCAOLabel.Location = new System.Drawing.Point(20, 62);
+            fUNCIONARIO_FUNCAOLabel.Location = new System.Drawing.Point(20, 72);
             fUNCIONARIO_FUNCAOLabel.Name = "fUNCIONARIO_FUNCAOLabel";
             fUNCIONARIO_FUNCAOLabel.Size = new System.Drawing.Size(69, 25);
             fUNCIONARIO_FUNCAOLabel.TabIndex = 22;
@@ -233,7 +233,7 @@
             // fUNCIONARIO_SETORLabel
             // 
             fUNCIONARIO_SETORLabel.AutoSize = true;
-            fUNCIONARIO_SETORLabel.Location = new System.Drawing.Point(20, 101);
+            fUNCIONARIO_SETORLabel.Location = new System.Drawing.Point(20, 111);
             fUNCIONARIO_SETORLabel.Name = "fUNCIONARIO_SETORLabel";
             fUNCIONARIO_SETORLabel.Size = new System.Drawing.Size(54, 25);
             fUNCIONARIO_SETORLabel.TabIndex = 24;
@@ -242,7 +242,7 @@
             // fUNCIONARIO_SALARIOLabel
             // 
             fUNCIONARIO_SALARIOLabel.AutoSize = true;
-            fUNCIONARIO_SALARIOLabel.Location = new System.Drawing.Point(20, 143);
+            fUNCIONARIO_SALARIOLabel.Location = new System.Drawing.Point(20, 153);
             fUNCIONARIO_SALARIOLabel.Name = "fUNCIONARIO_SALARIOLabel";
             fUNCIONARIO_SALARIOLabel.Size = new System.Drawing.Size(64, 25);
             fUNCIONARIO_SALARIOLabel.TabIndex = 26;
@@ -251,7 +251,7 @@
             // fUNCIONARIO_ADMISSAOLabel
             // 
             fUNCIONARIO_ADMISSAOLabel.AutoSize = true;
-            fUNCIONARIO_ADMISSAOLabel.Location = new System.Drawing.Point(20, 191);
+            fUNCIONARIO_ADMISSAOLabel.Location = new System.Drawing.Point(20, 197);
             fUNCIONARIO_ADMISSAOLabel.Name = "fUNCIONARIO_ADMISSAOLabel";
             fUNCIONARIO_ADMISSAOLabel.Size = new System.Drawing.Size(154, 25);
             fUNCIONARIO_ADMISSAOLabel.TabIndex = 28;
@@ -416,7 +416,7 @@
             // fUNCIONARIO_FUNCAOTextBox
             // 
             this.fUNCIONARIO_FUNCAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_FUNCAO", true));
-            this.fUNCIONARIO_FUNCAOTextBox.Location = new System.Drawing.Point(117, 59);
+            this.fUNCIONARIO_FUNCAOTextBox.Location = new System.Drawing.Point(117, 69);
             this.fUNCIONARIO_FUNCAOTextBox.MaxLength = 60;
             this.fUNCIONARIO_FUNCAOTextBox.Name = "fUNCIONARIO_FUNCAOTextBox";
             this.fUNCIONARIO_FUNCAOTextBox.Size = new System.Drawing.Size(409, 33);
@@ -425,25 +425,16 @@
             // fUNCIONARIO_SETORTextBox
             // 
             this.fUNCIONARIO_SETORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_SETOR", true));
-            this.fUNCIONARIO_SETORTextBox.Location = new System.Drawing.Point(117, 101);
+            this.fUNCIONARIO_SETORTextBox.Location = new System.Drawing.Point(117, 111);
             this.fUNCIONARIO_SETORTextBox.MaxLength = 60;
             this.fUNCIONARIO_SETORTextBox.Name = "fUNCIONARIO_SETORTextBox";
             this.fUNCIONARIO_SETORTextBox.Size = new System.Drawing.Size(409, 33);
             this.fUNCIONARIO_SETORTextBox.TabIndex = 11;
             // 
-            // fUNCIONARIO_SALARIOTextBox
-            // 
-            this.fUNCIONARIO_SALARIOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_SALARIO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.fUNCIONARIO_SALARIOTextBox.Location = new System.Drawing.Point(117, 143);
-            this.fUNCIONARIO_SALARIOTextBox.MaxLength = 18;
-            this.fUNCIONARIO_SALARIOTextBox.Name = "fUNCIONARIO_SALARIOTextBox";
-            this.fUNCIONARIO_SALARIOTextBox.Size = new System.Drawing.Size(200, 33);
-            this.fUNCIONARIO_SALARIOTextBox.TabIndex = 12;
-            // 
             // fUNCIONARIO_ADMISSAODateTimePicker
             // 
             this.fUNCIONARIO_ADMISSAODateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bsFuncionario, "FUNCIONARIO_ADMISSAO", true));
-            this.fUNCIONARIO_ADMISSAODateTimePicker.Location = new System.Drawing.Point(25, 219);
+            this.fUNCIONARIO_ADMISSAODateTimePicker.Location = new System.Drawing.Point(25, 225);
             this.fUNCIONARIO_ADMISSAODateTimePicker.Name = "fUNCIONARIO_ADMISSAODateTimePicker";
             this.fUNCIONARIO_ADMISSAODateTimePicker.Size = new System.Drawing.Size(501, 33);
             this.fUNCIONARIO_ADMISSAODateTimePicker.TabIndex = 13;
@@ -516,9 +507,9 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.textSalario);
             this.groupBox5.Controls.Add(this.fUNCIONARIO_ADMISSAODateTimePicker);
             this.groupBox5.Controls.Add(fUNCIONARIO_ADMISSAOLabel);
-            this.groupBox5.Controls.Add(this.fUNCIONARIO_SALARIOTextBox);
             this.groupBox5.Controls.Add(fUNCIONARIO_FUNCAOLabel);
             this.groupBox5.Controls.Add(fUNCIONARIO_SALARIOLabel);
             this.groupBox5.Controls.Add(this.fUNCIONARIO_FUNCAOTextBox);
@@ -530,6 +521,17 @@
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Empresa";
+            // 
+            // textSalario
+            // 
+            this.textSalario.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFuncionario, "FUNCIONARIO_SALARIO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textSalario.Location = new System.Drawing.Point(117, 153);
+            this.textSalario.Name = "textSalario";
+            this.textSalario.Size = new System.Drawing.Size(210, 33);
+            this.textSalario.TabIndex = 29;
+            this.textSalario.Text = "R$ 0,00";
+            this.textSalario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textSalario.Valor = 0D;
             // 
             // panel1
             // 
@@ -587,7 +589,6 @@
         private System.Windows.Forms.TextBox fUNCIONARIO_CEPTextBox;
         private System.Windows.Forms.TextBox fUNCIONARIO_FUNCAOTextBox;
         private System.Windows.Forms.TextBox fUNCIONARIO_SETORTextBox;
-        private System.Windows.Forms.TextBox fUNCIONARIO_SALARIOTextBox;
         private System.Windows.Forms.DateTimePicker fUNCIONARIO_ADMISSAODateTimePicker;
         private System.Windows.Forms.Label fUNCIONARIO_DATA_CADASTROLabel2;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -596,6 +597,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
+        private WindowsFormsApplication2.Monetario textSalario;
 
 
     }

@@ -75,6 +75,7 @@ namespace FROGI_OS.InterfaceGrafica {
             tabPai.SelectedTab = tabGeral;
             labelTotalLiquido.Text = "R$" + labelTotalLiquido.Text;
             buttonLancarOS.Visible = false;
+            this.ActiveControl = oRCAMENTO_TOTAL_ITEMTextBox;
         }
 
         protected override void excluirExecutar() {
@@ -281,12 +282,9 @@ namespace FROGI_OS.InterfaceGrafica {
             try {
                 if (acrescimo != 0 && acrescimo > 0) {
                     labelTotalLiquido.Text = "R$" + (totalBruto + acrescimo).ToString("0.00");
-                }
-                else if (desconto != 0 && desconto > 0 && desconto < totalBruto)
-                {
+                } else if (desconto != 0 && desconto > 0 && desconto < totalBruto) {
                     labelTotalLiquido.Text = "R$" + (totalBruto - desconto).ToString("0.00");
-                }
-                else {
+                } else {
                     labelTotalLiquido.Text = "R$" +  totalBruto.ToString("0.00");
                 }
             } catch (Exception erro) {
@@ -347,6 +345,7 @@ namespace FROGI_OS.InterfaceGrafica {
         private void tabPai_SelectedIndexChanged(object sender, EventArgs e) {
             if (((TabControl)sender).SelectedTab == tabGeral) {
                 calcularTotais();
+                this.ActiveControl = oRCAMENTO_TOTAL_ITEMTextBox;
             }
         }
 
@@ -461,6 +460,34 @@ namespace FROGI_OS.InterfaceGrafica {
             GerOs osSQL = new GerOs();
             osSQL.inserir(os,dsFROGIOS.OS_ITEM, dsFROGIOS.OS_SERVICO);
 
+        }
+
+        private void formCadastroOrcamento_Load(object sender, EventArgs e) {
+            this.ActiveControl = oRCAMENTO_TOTAL_ITEMTextBox;
+        }
+
+        private void oRCAMENTO_ITEMDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            DataGridView tabela = sender as DataGridView;
+            string nomeColuna = tabela.Columns[e.ColumnIndex].Name;
+            if (nomeColuna == "colunaProdutoPreco" || nomeColuna == "colunaProdutoDesconto" || nomeColuna == "colunaProdutoTotal") {
+                e.Value = ((double)e.Value).ToString("0.00");
+            } 
+        }
+
+        private void oRCAMENTO_SERVICODataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            DataGridView tabela = sender as DataGridView;
+            string nomeColuna = tabela.Columns[e.ColumnIndex].Name;
+            if (nomeColuna != "colunaServicoDescricao") {
+                e.Value = ((double)e.Value).ToString("0.00");
+            }
+        }
+
+        private void _KeyDown(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.Enter) {
+                aplicarDescontoAcrescimo();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
 
     }

@@ -38,15 +38,22 @@ namespace FROGI_OS.InterfaceGrafica
                 Conexao.abrir();
                 string coluna = map.paraColuna(comboCampoPesquisa.SelectedItem.ToString());
                 string valor = textValorPesquisa.Text;
-                if (eFisico())
-                {
+                if (eFisico()) {
                     dsFROGIOS.PESQUISA_OS_FISICO.Clear();
                     dsFROGIOS.PESQUISA_OS_FISICO.Load(osSQL.pesquisar(coluna, valor, eFisico()));
-                }
-                else
-                {
+                    if (dsFROGIOS.PESQUISA_OS_FISICO.Rows.Count > 0) {
+		                this.ActiveControl = pESQUISA_OS_FISICODataGridView;
+	                } else {
+                        this.ActiveControl = (comboStatus.Visible) ? comboStatus as Control : textValorPesquisa as Control;         
+                    }
+                } else {
                     dsFROGIOS.PESQUISA_OS_JURIDICO.Clear();
                     dsFROGIOS.PESQUISA_OS_JURIDICO.Load(osSQL.pesquisar(coluna, valor, eFisico()));
+                    if (dsFROGIOS.PESQUISA_OS_JURIDICO.Rows.Count > 0) {
+                        this.ActiveControl = pESQUISA_OS_JURIDICODataGridView;
+                    } else {
+                        this.ActiveControl = (comboStatus.Visible) ? comboStatus as Control : textValorPesquisa as Control;
+                    }
                 }
             }
             catch (Exception erro)

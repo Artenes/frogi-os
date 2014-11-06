@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCabecalho = new System.Windows.Forms.Panel();
             this.buttonPesquisar = new System.Windows.Forms.Button();
             this.comboTipoCliente = new System.Windows.Forms.ComboBox();
@@ -42,6 +43,7 @@
             this.tablessPai = new FROGI_OS.TablessControl();
             this.tabFisico = new System.Windows.Forms.TabPage();
             this.tabJuridico = new System.Windows.Forms.TabPage();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelRodape.SuspendLayout();
@@ -132,6 +134,7 @@
             this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureFechar.TabIndex = 1;
             this.pictureFechar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureFechar, "Fechar janela [Alt + F4]");
             this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
             // 
             // labelPesquisa
@@ -158,6 +161,7 @@
             // 
             // buttonNovoRegistro
             // 
+            this.buttonNovoRegistro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNovoRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNovoRegistro.ForeColor = System.Drawing.Color.White;
             this.buttonNovoRegistro.Location = new System.Drawing.Point(197, 6);
@@ -165,6 +169,7 @@
             this.buttonNovoRegistro.Size = new System.Drawing.Size(394, 53);
             this.buttonNovoRegistro.TabIndex = 6;
             this.buttonNovoRegistro.Text = "Novo registro";
+            this.toolTip.SetToolTip(this.buttonNovoRegistro, "Criar novo registro [Ctrl+N]");
             this.buttonNovoRegistro.UseVisualStyleBackColor = true;
             this.buttonNovoRegistro.Click += new System.EventHandler(this.buttonNovoRegistro_Click);
             // 
@@ -249,5 +254,6 @@
         protected TablessControl tablessPai;
         protected System.Windows.Forms.TabPage tabFisico;
         protected System.Windows.Forms.TabPage tabJuridico;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

@@ -1117,15 +1117,18 @@
     <value>True</value>
   </data>
   <data name="dataGridViewTextBoxColumn5.HeaderText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="dataGridViewTextBoxColumn6.HeaderText" xml:space="preserve">
     <value>Empresa</value>
   </data>
   <data name="dataGridViewTextBoxColumn8.HeaderText" xml:space="preserve">
     <value>Entregar</value>
   </data>
-  <data name="dataGridViewTextBoxColumn6.HeaderText" xml:space="preserve">
+  <data name="dataGridViewTextBoxColumn7.HeaderText" xml:space="preserve">
     <value>Telefone</value>
   </data>
-  <data name="dataGridViewTextBoxColumn7.HeaderText" xml:space="preserve">
+  <data name="dataGridViewTextBoxColumn9.HeaderText" xml:space="preserve">
     <value>Celular</value>
   </data>
   <metadata name="aFAZER_JURIDICOBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -1157,6 +1160,12 @@
   </data>
   <data name="&gt;&gt;aFAZER_JURIDICODataGridView.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <metadata name="OS_STATUS.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="OS_STATUS.HeaderText" xml:space="preserve">
+    <value>Status</value>
   </data>
   <data name="dataGridViewTextBoxColumn1.HeaderText" xml:space="preserve">
     <value>Cliente</value>
@@ -1902,32 +1911,17 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1292, 730</value>
   </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Form1</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn5</value>
+  <data name="&gt;&gt;hora.Name" xml:space="preserve">
+    <value>hora</value>
   </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn8</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn6</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
-    <value>dataGridViewTextBoxColumn7</value>
-  </data>
-  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;hora.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;aFAZER_JURIDICOBindingSource.Name" xml:space="preserve">
     <value>aFAZER_JURIDICOBindingSource</value>
@@ -1940,6 +1934,36 @@
   </data>
   <data name="&gt;&gt;dsFROGIOS.Type" xml:space="preserve">
     <value>FROGI_OS.dsFROGIOS, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;aFAZER_FISICOBindingSource.Name" xml:space="preserve">
+    <value>aFAZER_FISICOBindingSource</value>
+  </data>
+  <data name="&gt;&gt;aFAZER_FISICOBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;taAFAZER_FISICO.Name" xml:space="preserve">
+    <value>taAFAZER_FISICO</value>
+  </data>
+  <data name="&gt;&gt;taAFAZER_FISICO.Type" xml:space="preserve">
+    <value>FROGI_OS.dsFROGIOSTableAdapters.taAFAZER, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;tableAdapterManager.Name" xml:space="preserve">
+    <value>tableAdapterManager</value>
+  </data>
+  <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
+    <value>FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;taAFAZER_JURIDICO.Name" xml:space="preserve">
+    <value>taAFAZER_JURIDICO</value>
+  </data>
+  <data name="&gt;&gt;taAFAZER_JURIDICO.Type" xml:space="preserve">
+    <value>FROGI_OS.dsFROGIOSTableAdapters.taAFAZER_JURIDICO, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;OS_STATUS.Name" xml:space="preserve">
+    <value>OS_STATUS</value>
+  </data>
+  <data name="&gt;&gt;OS_STATUS.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dataGridViewTextBoxColumn1.Name" xml:space="preserve">
     <value>dataGridViewTextBoxColumn1</value>
@@ -1965,35 +1989,35 @@
   <data name="&gt;&gt;dataGridViewTextBoxColumn4.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;aFAZER_FISICOBindingSource.Name" xml:space="preserve">
-    <value>aFAZER_FISICOBindingSource</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn5</value>
   </data>
-  <data name="&gt;&gt;aFAZER_FISICOBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;hora.Name" xml:space="preserve">
-    <value>hora</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn6</value>
   </data>
-  <data name="&gt;&gt;hora.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;taAFAZER_FISICO.Name" xml:space="preserve">
-    <value>taAFAZER_FISICO</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn8</value>
   </data>
-  <data name="&gt;&gt;taAFAZER_FISICO.Type" xml:space="preserve">
-    <value>FROGI_OS.dsFROGIOSTableAdapters.taAFAZER, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tableAdapterManager.Name" xml:space="preserve">
-    <value>tableAdapterManager</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn7</value>
   </data>
-  <data name="&gt;&gt;tableAdapterManager.Type" xml:space="preserve">
-    <value>FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;taAFAZER_JURIDICO.Name" xml:space="preserve">
-    <value>taAFAZER_JURIDICO</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Name" xml:space="preserve">
+    <value>dataGridViewTextBoxColumn9</value>
   </data>
-  <data name="&gt;&gt;taAFAZER_JURIDICO.Type" xml:space="preserve">
-    <value>FROGI_OS.dsFROGIOSTableAdapters.taAFAZER_JURIDICO, dsFROGIOS.Designer.cs, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="&gt;&gt;dataGridViewTextBoxColumn9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>formPrincipal</value>

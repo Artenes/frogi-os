@@ -121,7 +121,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 this.Close();
             } catch (Exception erro) {
                 this.ActiveControl = comboTipo;
-                exibirMensagemErro(erro.Message);
+                //exibirMensagemErro(erro.Message);
             }
 
         }

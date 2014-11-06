@@ -39,14 +39,14 @@
             this.taTipo = new FROGI_OS.dsFROGIOSTableAdapters.TIPOTableAdapter();
             this.sERVICO_CODIGOLabel1 = new System.Windows.Forms.Label();
             this.sERVICO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
-            this.sERVICO_VALORTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.bsTipo = new System.Windows.Forms.BindingSource(this.components);
             this.tIPODataGridView = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonAdicionarTipo = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonAdicionarTipo = new System.Windows.Forms.Button();
+            this.textValor = new WindowsFormsApplication2.Monetario();
             sERVICO_CODIGOLabel = new System.Windows.Forms.Label();
             sERVICO_DESCRICAOLabel = new System.Windows.Forms.Label();
             sERVICO_VALORLabel = new System.Windows.Forms.Label();
@@ -177,19 +177,10 @@
             this.sERVICO_DESCRICAOTextBox.Size = new System.Drawing.Size(401, 33);
             this.sERVICO_DESCRICAOTextBox.TabIndex = 0;
             // 
-            // sERVICO_VALORTextBox
-            // 
-            this.sERVICO_VALORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsServico, "SERVICO_VALOR", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.sERVICO_VALORTextBox.Location = new System.Drawing.Point(110, 65);
-            this.sERVICO_VALORTextBox.MaxLength = 18;
-            this.sERVICO_VALORTextBox.Name = "sERVICO_VALORTextBox";
-            this.sERVICO_VALORTextBox.Size = new System.Drawing.Size(235, 33);
-            this.sERVICO_VALORTextBox.TabIndex = 1;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textValor);
             this.groupBox1.Controls.Add(sERVICO_DESCRICAOLabel);
-            this.groupBox1.Controls.Add(this.sERVICO_VALORTextBox);
             this.groupBox1.Controls.Add(this.sERVICO_DESCRICAOTextBox);
             this.groupBox1.Controls.Add(sERVICO_VALORLabel);
             this.groupBox1.Location = new System.Drawing.Point(15, 13);
@@ -220,6 +211,22 @@
             this.tIPODataGridView.Size = new System.Drawing.Size(899, 137);
             this.tIPODataGridView.TabIndex = 3;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "TIPO_CODIGO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TIPO_DESCRICAO";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.tIPODataGridView);
@@ -242,21 +249,15 @@
             this.buttonAdicionarTipo.UseVisualStyleBackColor = true;
             this.buttonAdicionarTipo.Click += new System.EventHandler(this.buttonAdicionarTipo_Click);
             // 
-            // dataGridViewTextBoxColumn1
+            // textValor
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "TIPO_CODIGO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TIPO_DESCRICAO";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.textValor.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsServico, "SERVICO_VALOR", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textValor.Location = new System.Drawing.Point(110, 72);
+            this.textValor.Name = "textValor";
+            this.textValor.Size = new System.Drawing.Size(204, 33);
+            this.textValor.TabIndex = 5;
+            this.textValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textValor.Valor = 0D;
             // 
             // formCadastroServico
             // 
@@ -291,7 +292,6 @@
         private dsFROGIOSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label sERVICO_CODIGOLabel1;
         private System.Windows.Forms.TextBox sERVICO_DESCRICAOTextBox;
-        private System.Windows.Forms.TextBox sERVICO_VALORTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private dsFROGIOSTableAdapters.TIPOTableAdapter taTipo;
         private System.Windows.Forms.BindingSource bsTipo;
@@ -300,5 +300,6 @@
         private System.Windows.Forms.Button buttonAdicionarTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private WindowsFormsApplication2.Monetario textValor;
     }
 }

@@ -73,7 +73,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.oS_DATALabel1 = new System.Windows.Forms.Label();
-            this.buttonImprimir = new System.Windows.Forms.Button();
             this.oS_PRODUTOTextBox = new System.Windows.Forms.TextBox();
             this.oS_DEFEITORichTextBox = new System.Windows.Forms.RichTextBox();
             this.oS_AVULSOSRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -83,29 +82,29 @@
             this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
             this.pRODUTO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.textPecaQuantidade = new System.Windows.Forms.TextBox();
-            this.bsOsItem = new System.Windows.Forms.BindingSource(this.components);
             this.textPecaDesconto = new System.Windows.Forms.TextBox();
+            this.bsOsItem = new System.Windows.Forms.BindingSource(this.components);
             this.taOsItem = new FROGI_OS.dsFROGIOSTableAdapters.OS_ITEMTableAdapter();
             this.taProduto = new FROGI_OS.dsFROGIOSTableAdapters.PRODUTOTableAdapter();
             this.buttonPesquisarProduto = new System.Windows.Forms.Button();
             this.oS_ITEMDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProdutoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProdutoDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProdutoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonLancarProduto = new System.Windows.Forms.Button();
             this.groupServico = new System.Windows.Forms.GroupBox();
             this.textServicoAcrescimo = new System.Windows.Forms.TextBox();
-            this.bsOsServico = new System.Windows.Forms.BindingSource(this.components);
             this.textServicoDesconto = new System.Windows.Forms.TextBox();
             this.sERVICO_VALORTextBox = new System.Windows.Forms.TextBox();
             this.bsServico = new System.Windows.Forms.BindingSource(this.components);
             this.sERVICO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
+            this.bsOsServico = new System.Windows.Forms.BindingSource(this.components);
             this.taServico = new FROGI_OS.dsFROGIOSTableAdapters.SERVICOTableAdapter();
             this.taOsServico = new FROGI_OS.dsFROGIOSTableAdapters.OS_SERVICOTableAdapter();
             this.oS_SERVICODataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaServicoDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +116,7 @@
             this.panelConclusao = new System.Windows.Forms.Panel();
             this.oS_DATA_ENTREGADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.textTroco = new System.Windows.Forms.TextBox();
             this.textValorPago = new System.Windows.Forms.TextBox();
             this.Troco = new System.Windows.Forms.Label();
@@ -180,8 +180,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsOsItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS_ITEMDataGridView)).BeginInit();
             this.groupServico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsOsServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsOsServico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS_SERVICODataGridView)).BeginInit();
             this.tabConclusao.SuspendLayout();
             this.panelConclusao.SuspendLayout();
@@ -240,7 +240,6 @@
             // panelGeral
             // 
             this.panelGeral.AutoScroll = true;
-            this.panelGeral.Controls.Add(this.buttonImprimir);
             this.panelGeral.Controls.Add(this.groupBox2);
             this.panelGeral.Controls.Add(this.groupTotais);
             this.panelGeral.Controls.Add(this.groupBox1);
@@ -635,27 +634,27 @@
             // 
             // textTotalBruto
             // 
-            this.textTotalBruto.Enabled = false;
             this.textTotalBruto.Location = new System.Drawing.Point(141, 160);
             this.textTotalBruto.Name = "textTotalBruto";
+            this.textTotalBruto.ReadOnly = true;
             this.textTotalBruto.Size = new System.Drawing.Size(136, 33);
             this.textTotalBruto.TabIndex = 6;
             // 
             // oS_TOTAL_SERVICOTextBox
             // 
-            this.oS_TOTAL_SERVICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL_SERVICO", true));
-            this.oS_TOTAL_SERVICOTextBox.Enabled = false;
+            this.oS_TOTAL_SERVICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL_SERVICO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.oS_TOTAL_SERVICOTextBox.Location = new System.Drawing.Point(141, 97);
             this.oS_TOTAL_SERVICOTextBox.Name = "oS_TOTAL_SERVICOTextBox";
+            this.oS_TOTAL_SERVICOTextBox.ReadOnly = true;
             this.oS_TOTAL_SERVICOTextBox.Size = new System.Drawing.Size(136, 33);
             this.oS_TOTAL_SERVICOTextBox.TabIndex = 4;
             // 
             // oS_TOTAL_ITEMTextBox
             // 
-            this.oS_TOTAL_ITEMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL_ITEM", true));
-            this.oS_TOTAL_ITEMTextBox.Enabled = false;
+            this.oS_TOTAL_ITEMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL_ITEM", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             this.oS_TOTAL_ITEMTextBox.Location = new System.Drawing.Point(141, 39);
             this.oS_TOTAL_ITEMTextBox.Name = "oS_TOTAL_ITEMTextBox";
+            this.oS_TOTAL_ITEMTextBox.ReadOnly = true;
             this.oS_TOTAL_ITEMTextBox.Size = new System.Drawing.Size(136, 33);
             this.oS_TOTAL_ITEMTextBox.TabIndex = 3;
             // 
@@ -673,7 +672,7 @@
             this.groupBox2.Controls.Add(this.oS_DATALabel1);
             this.groupBox2.Location = new System.Drawing.Point(334, 223);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(409, 82);
+            this.groupBox2.Size = new System.Drawing.Size(409, 207);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data de lançamento";
@@ -682,21 +681,11 @@
             // 
             this.oS_DATALabel1.AutoSize = true;
             this.oS_DATALabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_DATA", true));
-            this.oS_DATALabel1.Location = new System.Drawing.Point(17, 39);
+            this.oS_DATALabel1.Location = new System.Drawing.Point(17, 100);
             this.oS_DATALabel1.Name = "oS_DATALabel1";
             this.oS_DATALabel1.Size = new System.Drawing.Size(49, 25);
             this.oS_DATALabel1.TabIndex = 1;
             this.oS_DATALabel1.Text = "Data";
-            // 
-            // buttonImprimir
-            // 
-            this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImprimir.Location = new System.Drawing.Point(334, 320);
-            this.buttonImprimir.Name = "buttonImprimir";
-            this.buttonImprimir.Size = new System.Drawing.Size(409, 113);
-            this.buttonImprimir.TabIndex = 3;
-            this.buttonImprimir.Text = "Imprimir Ordem de Serviço";
-            this.buttonImprimir.UseVisualStyleBackColor = true;
             // 
             // oS_PRODUTOTextBox
             // 
@@ -755,8 +744,9 @@
             this.pRODUTO_PRECO_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_VENDA", true));
             this.pRODUTO_PRECO_VENDATextBox.Location = new System.Drawing.Point(113, 77);
             this.pRODUTO_PRECO_VENDATextBox.Name = "pRODUTO_PRECO_VENDATextBox";
+            this.pRODUTO_PRECO_VENDATextBox.ReadOnly = true;
             this.pRODUTO_PRECO_VENDATextBox.Size = new System.Drawing.Size(100, 33);
-            this.pRODUTO_PRECO_VENDATextBox.TabIndex = 9;
+            this.pRODUTO_PRECO_VENDATextBox.TabIndex = 2;
             // 
             // bsProduto
             // 
@@ -769,29 +759,28 @@
             this.pRODUTO_DESCRICAOTextBox.Location = new System.Drawing.Point(113, 26);
             this.pRODUTO_DESCRICAOTextBox.MaxLength = 120;
             this.pRODUTO_DESCRICAOTextBox.Name = "pRODUTO_DESCRICAOTextBox";
+            this.pRODUTO_DESCRICAOTextBox.ReadOnly = true;
             this.pRODUTO_DESCRICAOTextBox.Size = new System.Drawing.Size(611, 33);
-            this.pRODUTO_DESCRICAOTextBox.TabIndex = 8;
+            this.pRODUTO_DESCRICAOTextBox.TabIndex = 1;
             // 
             // textPecaQuantidade
             // 
-            this.textPecaQuantidade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOsItem, "OS_ITEM_QUANTIDADE", true));
             this.textPecaQuantidade.Location = new System.Drawing.Point(624, 77);
             this.textPecaQuantidade.Name = "textPecaQuantidade";
             this.textPecaQuantidade.Size = new System.Drawing.Size(100, 33);
-            this.textPecaQuantidade.TabIndex = 7;
+            this.textPecaQuantidade.TabIndex = 4;
+            // 
+            // textPecaDesconto
+            // 
+            this.textPecaDesconto.Location = new System.Drawing.Point(351, 77);
+            this.textPecaDesconto.Name = "textPecaDesconto";
+            this.textPecaDesconto.Size = new System.Drawing.Size(100, 33);
+            this.textPecaDesconto.TabIndex = 3;
             // 
             // bsOsItem
             // 
             this.bsOsItem.DataMember = "OS_ITEM";
             this.bsOsItem.DataSource = this.dsFROGIOS;
-            // 
-            // textPecaDesconto
-            // 
-            this.textPecaDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOsItem, "OS_ITEM_DESCONTO", true));
-            this.textPecaDesconto.Location = new System.Drawing.Point(351, 77);
-            this.textPecaDesconto.Name = "textPecaDesconto";
-            this.textPecaDesconto.Size = new System.Drawing.Size(100, 33);
-            this.textPecaDesconto.TabIndex = 5;
             // 
             // taOsItem
             // 
@@ -809,7 +798,7 @@
             this.buttonPesquisarProduto.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarProduto.Name = "buttonPesquisarProduto";
             this.buttonPesquisarProduto.Size = new System.Drawing.Size(786, 37);
-            this.buttonPesquisarProduto.TabIndex = 1;
+            this.buttonPesquisarProduto.TabIndex = 0;
             this.buttonPesquisarProduto.Text = "Pesquisar Produto";
             this.buttonPesquisarProduto.UseVisualStyleBackColor = true;
             this.buttonPesquisarProduto.Click += new System.EventHandler(this.buttonPesquisarProduto_Click);
@@ -822,10 +811,10 @@
             this.oS_ITEMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.oS_ITEMDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
+            this.colunaProdutoValor,
+            this.colunaProdutoDesconto,
             this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8});
+            this.colunaProdutoTotal});
             this.oS_ITEMDataGridView.DataSource = this.bsOsItem;
             this.oS_ITEMDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oS_ITEMDataGridView.Location = new System.Drawing.Point(0, 220);
@@ -833,8 +822,9 @@
             this.oS_ITEMDataGridView.ReadOnly = true;
             this.oS_ITEMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.oS_ITEMDataGridView.Size = new System.Drawing.Size(786, 134);
-            this.oS_ITEMDataGridView.TabIndex = 0;
+            this.oS_ITEMDataGridView.TabIndex = 6;
             this.oS_ITEMDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oS_ITEMDataGridView_CellDoubleClick);
+            this.oS_ITEMDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.oS_ITEMDataGridView_CellFormatting);
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -842,20 +832,23 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn5
+            // colunaProdutoValor
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "OS_ITEM_VALOR";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Valor";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.colunaProdutoValor.DataPropertyName = "OS_ITEM_VALOR";
+            this.colunaProdutoValor.HeaderText = "Valor";
+            this.colunaProdutoValor.Name = "colunaProdutoValor";
+            this.colunaProdutoValor.ReadOnly = true;
+            this.colunaProdutoValor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn6
+            // colunaProdutoDesconto
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "OS_ITEM_DESCONTO";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Desconto";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.colunaProdutoDesconto.DataPropertyName = "OS_ITEM_DESCONTO";
+            this.colunaProdutoDesconto.HeaderText = "Desconto";
+            this.colunaProdutoDesconto.Name = "colunaProdutoDesconto";
+            this.colunaProdutoDesconto.ReadOnly = true;
+            this.colunaProdutoDesconto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -863,13 +856,15 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Quantidade";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn8
+            // colunaProdutoTotal
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "OS_ITEM_TOTAL";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.colunaProdutoTotal.DataPropertyName = "OS_ITEM_TOTAL";
+            this.colunaProdutoTotal.HeaderText = "Total";
+            this.colunaProdutoTotal.Name = "colunaProdutoTotal";
+            this.colunaProdutoTotal.ReadOnly = true;
+            this.colunaProdutoTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // buttonLancarProduto
             // 
@@ -879,7 +874,7 @@
             this.buttonLancarProduto.Location = new System.Drawing.Point(0, 183);
             this.buttonLancarProduto.Name = "buttonLancarProduto";
             this.buttonLancarProduto.Size = new System.Drawing.Size(786, 37);
-            this.buttonLancarProduto.TabIndex = 3;
+            this.buttonLancarProduto.TabIndex = 5;
             this.buttonLancarProduto.Text = "Lançar produto";
             this.buttonLancarProduto.UseVisualStyleBackColor = true;
             this.buttonLancarProduto.Click += new System.EventHandler(this.buttonLancarProduto_Click);
@@ -902,25 +897,18 @@
             // 
             // textServicoAcrescimo
             // 
-            this.textServicoAcrescimo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOsServico, "OS_SERVICO_ACRESCIMO", true));
             this.textServicoAcrescimo.Location = new System.Drawing.Point(629, 85);
             this.textServicoAcrescimo.Name = "textServicoAcrescimo";
             this.textServicoAcrescimo.Size = new System.Drawing.Size(100, 33);
-            this.textServicoAcrescimo.TabIndex = 7;
+            this.textServicoAcrescimo.TabIndex = 4;
             this.textServicoAcrescimo.TextChanged += new System.EventHandler(this.textServicoAcrescimo_TextChanged);
-            // 
-            // bsOsServico
-            // 
-            this.bsOsServico.DataMember = "OS_SERVICO";
-            this.bsOsServico.DataSource = this.dsFROGIOS;
             // 
             // textServicoDesconto
             // 
-            this.textServicoDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOsServico, "OS_SERVICO_DESCONTO", true));
             this.textServicoDesconto.Location = new System.Drawing.Point(375, 82);
             this.textServicoDesconto.Name = "textServicoDesconto";
             this.textServicoDesconto.Size = new System.Drawing.Size(100, 33);
-            this.textServicoDesconto.TabIndex = 5;
+            this.textServicoDesconto.TabIndex = 3;
             this.textServicoDesconto.TextChanged += new System.EventHandler(this.textServicoDesconto_TextChanged);
             // 
             // sERVICO_VALORTextBox
@@ -928,8 +916,9 @@
             this.sERVICO_VALORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsServico, "SERVICO_VALOR", true));
             this.sERVICO_VALORTextBox.Location = new System.Drawing.Point(112, 82);
             this.sERVICO_VALORTextBox.Name = "sERVICO_VALORTextBox";
+            this.sERVICO_VALORTextBox.ReadOnly = true;
             this.sERVICO_VALORTextBox.Size = new System.Drawing.Size(100, 33);
-            this.sERVICO_VALORTextBox.TabIndex = 3;
+            this.sERVICO_VALORTextBox.TabIndex = 2;
             // 
             // bsServico
             // 
@@ -942,8 +931,14 @@
             this.sERVICO_DESCRICAOTextBox.Location = new System.Drawing.Point(112, 32);
             this.sERVICO_DESCRICAOTextBox.MaxLength = 120;
             this.sERVICO_DESCRICAOTextBox.Name = "sERVICO_DESCRICAOTextBox";
+            this.sERVICO_DESCRICAOTextBox.ReadOnly = true;
             this.sERVICO_DESCRICAOTextBox.Size = new System.Drawing.Size(617, 33);
             this.sERVICO_DESCRICAOTextBox.TabIndex = 1;
+            // 
+            // bsOsServico
+            // 
+            this.bsOsServico.DataMember = "OS_SERVICO";
+            this.bsOsServico.DataSource = this.dsFROGIOS;
             // 
             // taServico
             // 
@@ -960,7 +955,7 @@
             this.oS_SERVICODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.oS_SERVICODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.oS_SERVICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
+            this.colunaServicoDescricao,
             this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
@@ -972,15 +967,17 @@
             this.oS_SERVICODataGridView.ReadOnly = true;
             this.oS_SERVICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.oS_SERVICODataGridView.Size = new System.Drawing.Size(786, 125);
-            this.oS_SERVICODataGridView.TabIndex = 1;
+            this.oS_SERVICODataGridView.TabIndex = 6;
             this.oS_SERVICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oS_SERVICODataGridView_CellDoubleClick);
+            this.oS_SERVICODataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.oS_SERVICODataGridView_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn10
+            // colunaServicoDescricao
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "OS_SERVICO_DESCRICAO";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.colunaServicoDescricao.DataPropertyName = "OS_SERVICO_DESCRICAO";
+            this.colunaServicoDescricao.HeaderText = "Descrição";
+            this.colunaServicoDescricao.Name = "colunaServicoDescricao";
+            this.colunaServicoDescricao.ReadOnly = true;
+            this.colunaServicoDescricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -988,6 +985,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -995,6 +993,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Desconto";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -1002,6 +1001,7 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "Acréscimo";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -1009,6 +1009,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Total";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // buttonPesquisarServico
             // 
@@ -1018,7 +1019,7 @@
             this.buttonPesquisarServico.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarServico.Name = "buttonPesquisarServico";
             this.buttonPesquisarServico.Size = new System.Drawing.Size(786, 37);
-            this.buttonPesquisarServico.TabIndex = 2;
+            this.buttonPesquisarServico.TabIndex = 0;
             this.buttonPesquisarServico.Text = "Pesquisar Serviço";
             this.buttonPesquisarServico.UseVisualStyleBackColor = true;
             this.buttonPesquisarServico.Click += new System.EventHandler(this.buttonPesquisarServico_Click);
@@ -1031,7 +1032,7 @@
             this.buttonLancarServico.Location = new System.Drawing.Point(0, 192);
             this.buttonLancarServico.Name = "buttonLancarServico";
             this.buttonLancarServico.Size = new System.Drawing.Size(786, 37);
-            this.buttonLancarServico.TabIndex = 3;
+            this.buttonLancarServico.TabIndex = 5;
             this.buttonLancarServico.Text = "Lançar Serviço";
             this.buttonLancarServico.UseVisualStyleBackColor = true;
             this.buttonLancarServico.Click += new System.EventHandler(this.buttonLancarServico_Click);
@@ -1084,6 +1085,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.textTroco);
             this.groupBox5.Controls.Add(this.textValorPago);
             this.groupBox5.Controls.Add(this.Troco);
@@ -1092,6 +1094,15 @@
             this.groupBox5.Size = new System.Drawing.Size(232, 207);
             this.groupBox5.TabIndex = 15;
             this.groupBox5.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 25);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Valor pago";
             // 
             // textTroco
             // 
@@ -1175,6 +1186,8 @@
             // oS_FORMA_PAGAMENTOComboBox
             // 
             this.oS_FORMA_PAGAMENTOComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_FORMA_PAGAMENTO", true));
+            this.oS_FORMA_PAGAMENTOComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.oS_FORMA_PAGAMENTOComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.oS_FORMA_PAGAMENTOComboBox.FormattingEnabled = true;
             this.oS_FORMA_PAGAMENTOComboBox.Items.AddRange(new object[] {
             "DINHEIRO",
@@ -1190,11 +1203,11 @@
             // 
             // textTotal
             // 
-            this.textTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL", true));
-            this.textTotal.Enabled = false;
+            this.textTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL", true, System.Windows.Forms.DataSourceUpdateMode.Never, null, "N2"));
             this.textTotal.Font = new System.Drawing.Font("Segoe UI Light", 30F);
             this.textTotal.Location = new System.Drawing.Point(452, 55);
             this.textTotal.Name = "textTotal";
+            this.textTotal.ReadOnly = true;
             this.textTotal.Size = new System.Drawing.Size(279, 61);
             this.textTotal.TabIndex = 7;
             // 
@@ -1256,8 +1269,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.oS_ITEMDataGridView)).EndInit();
             this.groupServico.ResumeLayout(false);
             this.groupServico.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsOsServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsServico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsOsServico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oS_SERVICODataGridView)).EndInit();
             this.tabConclusao.ResumeLayout(false);
             this.panelConclusao.ResumeLayout(false);
@@ -1294,7 +1307,6 @@
         private System.Windows.Forms.TextBox oS_TOTAL_ITEMTextBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label oS_DATALabel1;
-        private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.TextBox oS_PRODUTOTextBox;
         private System.Windows.Forms.RichTextBox oS_DEFEITORichTextBox;
         private System.Windows.Forms.RichTextBox oS_AVULSOSRichTextBox;
@@ -1311,11 +1323,6 @@
         private System.Windows.Forms.Button buttonPesquisarProduto;
         private System.Windows.Forms.Button buttonLancarProduto;
         private System.Windows.Forms.DataGridView oS_ITEMDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.GroupBox groupServico;
         private System.Windows.Forms.BindingSource bsServico;
         private dsFROGIOSTableAdapters.SERVICOTableAdapter taServico;
@@ -1328,11 +1335,6 @@
         private System.Windows.Forms.Button buttonLancarServico;
         private System.Windows.Forms.Button buttonPesquisarServico;
         private System.Windows.Forms.DataGridView oS_SERVICODataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.RichTextBox oS_DIAGNOSTICORichTextBox;
         private System.Windows.Forms.TabPage tabConclusao;
         private System.Windows.Forms.Panel panelConclusao;
@@ -1350,5 +1352,16 @@
         private System.Windows.Forms.DateTimePicker oS_DATA_ENTREGADateTimePicker;
         private System.Windows.Forms.Button buttonAplicar;
         private System.Windows.Forms.ComboBox oS_STATUSComboBox;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaProdutoValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaProdutoDesconto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaProdutoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaServicoDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     }
 }

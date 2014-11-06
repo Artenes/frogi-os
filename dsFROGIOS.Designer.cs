@@ -17002,6 +17002,8 @@ namespace FROGI_OS {
             
             private global::System.Data.DataColumn columnCLIENTE_CELULAR;
             
+            private global::System.Data.DataColumn columnOS_STATUS;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AFAZER_FISICODataTable() {
@@ -17069,6 +17071,14 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OS_STATUSColumn {
+                get {
+                    return this.columnOS_STATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -17104,13 +17114,14 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AFAZER_FISICORow AddAFAZER_FISICORow(string CLIENTE_FISICO_NOME, string CLIENTE_TELEFONE, System.DateTime OS_DATA_ENTREGA, string CLIENTE_CELULAR) {
+            public AFAZER_FISICORow AddAFAZER_FISICORow(string CLIENTE_FISICO_NOME, string CLIENTE_TELEFONE, System.DateTime OS_DATA_ENTREGA, string CLIENTE_CELULAR, string OS_STATUS) {
                 AFAZER_FISICORow rowAFAZER_FISICORow = ((AFAZER_FISICORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLIENTE_FISICO_NOME,
                         CLIENTE_TELEFONE,
                         OS_DATA_ENTREGA,
-                        CLIENTE_CELULAR};
+                        CLIENTE_CELULAR,
+                        OS_STATUS};
                 rowAFAZER_FISICORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAFAZER_FISICORow);
                 return rowAFAZER_FISICORow;
@@ -17137,6 +17148,7 @@ namespace FROGI_OS {
                 this.columnCLIENTE_TELEFONE = base.Columns["CLIENTE_TELEFONE"];
                 this.columnOS_DATA_ENTREGA = base.Columns["OS_DATA_ENTREGA"];
                 this.columnCLIENTE_CELULAR = base.Columns["CLIENTE_CELULAR"];
+                this.columnOS_STATUS = base.Columns["OS_STATUS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17150,10 +17162,13 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnOS_DATA_ENTREGA);
                 this.columnCLIENTE_CELULAR = new global::System.Data.DataColumn("CLIENTE_CELULAR", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCLIENTE_CELULAR);
+                this.columnOS_STATUS = new global::System.Data.DataColumn("OS_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOS_STATUS);
                 this.columnCLIENTE_FISICO_NOME.MaxLength = 60;
                 this.columnCLIENTE_TELEFONE.AllowDBNull = false;
                 this.columnCLIENTE_TELEFONE.MaxLength = 14;
                 this.columnCLIENTE_CELULAR.MaxLength = 14;
+                this.columnOS_STATUS.MaxLength = 14;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17295,6 +17310,8 @@ namespace FROGI_OS {
             
             private global::System.Data.DataColumn columnOS_DATA_ENTREGA;
             
+            private global::System.Data.DataColumn columnOS_STATUS;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public AFAZER_JURIDICODataTable() {
@@ -17362,6 +17379,14 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn OS_STATUSColumn {
+                get {
+                    return this.columnOS_STATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -17397,13 +17422,14 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AFAZER_JURIDICORow AddAFAZER_JURIDICORow(string CLIENTE_JURIDICO_FANTASIA, string CLIENTE_TELEFONE, string CLIENTE_CELULAR, System.DateTime OS_DATA_ENTREGA) {
+            public AFAZER_JURIDICORow AddAFAZER_JURIDICORow(string CLIENTE_JURIDICO_FANTASIA, string CLIENTE_TELEFONE, string CLIENTE_CELULAR, System.DateTime OS_DATA_ENTREGA, string OS_STATUS) {
                 AFAZER_JURIDICORow rowAFAZER_JURIDICORow = ((AFAZER_JURIDICORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CLIENTE_JURIDICO_FANTASIA,
                         CLIENTE_TELEFONE,
                         CLIENTE_CELULAR,
-                        OS_DATA_ENTREGA};
+                        OS_DATA_ENTREGA,
+                        OS_STATUS};
                 rowAFAZER_JURIDICORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowAFAZER_JURIDICORow);
                 return rowAFAZER_JURIDICORow;
@@ -17430,6 +17456,7 @@ namespace FROGI_OS {
                 this.columnCLIENTE_TELEFONE = base.Columns["CLIENTE_TELEFONE"];
                 this.columnCLIENTE_CELULAR = base.Columns["CLIENTE_CELULAR"];
                 this.columnOS_DATA_ENTREGA = base.Columns["OS_DATA_ENTREGA"];
+                this.columnOS_STATUS = base.Columns["OS_STATUS"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17443,11 +17470,14 @@ namespace FROGI_OS {
                 base.Columns.Add(this.columnCLIENTE_CELULAR);
                 this.columnOS_DATA_ENTREGA = new global::System.Data.DataColumn("OS_DATA_ENTREGA", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOS_DATA_ENTREGA);
+                this.columnOS_STATUS = new global::System.Data.DataColumn("OS_STATUS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOS_STATUS);
                 this.columnCLIENTE_JURIDICO_FANTASIA.AllowDBNull = false;
                 this.columnCLIENTE_JURIDICO_FANTASIA.MaxLength = 60;
                 this.columnCLIENTE_TELEFONE.AllowDBNull = false;
                 this.columnCLIENTE_TELEFONE.MaxLength = 14;
                 this.columnCLIENTE_CELULAR.MaxLength = 14;
+                this.columnOS_STATUS.MaxLength = 14;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24780,6 +24810,22 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OS_STATUS {
+                get {
+                    try {
+                        return ((string)(this[this.tableAFAZER_FISICO.OS_STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OS_STATUS\' in table \'AFAZER_FISICO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAFAZER_FISICO.OS_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCLIENTE_FISICO_NOMENull() {
                 return this.IsNull(this.tableAFAZER_FISICO.CLIENTE_FISICO_NOMEColumn);
             }
@@ -24812,6 +24858,18 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCLIENTE_CELULARNull() {
                 this[this.tableAFAZER_FISICO.CLIENTE_CELULARColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOS_STATUSNull() {
+                return this.IsNull(this.tableAFAZER_FISICO.OS_STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOS_STATUSNull() {
+                this[this.tableAFAZER_FISICO.OS_STATUSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -24885,6 +24943,22 @@ namespace FROGI_OS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string OS_STATUS {
+                get {
+                    try {
+                        return ((string)(this[this.tableAFAZER_JURIDICO.OS_STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OS_STATUS\' in table \'AFAZER_JURIDICO\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableAFAZER_JURIDICO.OS_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsCLIENTE_CELULARNull() {
                 return this.IsNull(this.tableAFAZER_JURIDICO.CLIENTE_CELULARColumn);
             }
@@ -24905,6 +24979,18 @@ namespace FROGI_OS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetOS_DATA_ENTREGANull() {
                 this[this.tableAFAZER_JURIDICO.OS_DATA_ENTREGAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsOS_STATUSNull() {
+                return this.IsNull(this.tableAFAZER_JURIDICO.OS_STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetOS_STATUSNull() {
+                this[this.tableAFAZER_JURIDICO.OS_STATUSColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -50172,6 +50258,7 @@ FROM            ITEM_COMPRA INNER JOIN
             tableMapping.ColumnMappings.Add("CLIENTE_TELEFONE", "CLIENTE_TELEFONE");
             tableMapping.ColumnMappings.Add("OS_DATA_ENTREGA", "OS_DATA_ENTREGA");
             tableMapping.ColumnMappings.Add("CLIENTE_CELULAR", "CLIENTE_CELULAR");
+            tableMapping.ColumnMappings.Add("OS_STATUS", "OS_STATUS");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -50188,7 +50275,7 @@ FROM            ITEM_COMPRA INNER JOIN
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CLIENTE_FISICO.CLIENTE_FISICO_NOME, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, OS.OS_DATA_ENTREGA
+            this._commandCollection[0].CommandText = @"SELECT        OS.OS_STATUS, CLIENTE_FISICO.CLIENTE_FISICO_NOME, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, OS.OS_DATA_ENTREGA
 FROM            OS INNER JOIN
                          CLIENTE ON OS.OS_CLIENTE = CLIENTE.CLIENTE_CODIGO INNER JOIN
                          CLIENTE_FISICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_FISICO.CLIENTE_FISICO_CLIENTE
@@ -50366,6 +50453,7 @@ ORDER BY OS.OS_DATA_ENTREGA";
             tableMapping.ColumnMappings.Add("CLIENTE_TELEFONE", "CLIENTE_TELEFONE");
             tableMapping.ColumnMappings.Add("CLIENTE_CELULAR", "CLIENTE_CELULAR");
             tableMapping.ColumnMappings.Add("OS_DATA_ENTREGA", "OS_DATA_ENTREGA");
+            tableMapping.ColumnMappings.Add("OS_STATUS", "OS_STATUS");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -50382,7 +50470,7 @@ ORDER BY OS.OS_DATA_ENTREGA";
             this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, OS.OS_DATA_ENTREGA
+            this._commandCollection[0].CommandText = @"SELECT        OS.OS_STATUS, CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, OS.OS_DATA_ENTREGA
 FROM            OS INNER JOIN
                          CLIENTE ON OS.OS_CLIENTE = CLIENTE.CLIENTE_CODIGO INNER JOIN
                          CLIENTE_JURIDICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_JURIDICO.CLIENTE_JURIDICO_CLIENTE

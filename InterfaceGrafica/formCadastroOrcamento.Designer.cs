@@ -62,7 +62,6 @@
             this.bsFisico = new System.Windows.Forms.BindingSource(this.components);
             this.bsJuridico = new System.Windows.Forms.BindingSource(this.components);
             this.groupData = new System.Windows.Forms.GroupBox();
-            this.buttonImprimir = new System.Windows.Forms.Button();
             this.oRCAMENTO_PRODUTOTextBox = new System.Windows.Forms.TextBox();
             this.oRCAMENTO_DEFEITORichTextBox = new System.Windows.Forms.RichTextBox();
             this.oRCAMENTO_AVULSOSRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -70,10 +69,10 @@
             this.oRCAMENTO_ITEMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRCAMENTO_ITEMDataGridView = new System.Windows.Forms.DataGridView();
             this.oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oRCAMENTOITEMVALORDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProdutoPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProdutoDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oRCAMENTOITEMTOTALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaProdutoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pRODUTO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.pRODUTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pRODUTO_PRECO_VENDATextBox = new System.Windows.Forms.TextBox();
@@ -93,11 +92,11 @@
             this.buttonPesquisarServico = new System.Windows.Forms.Button();
             this.buttonLancarServico = new System.Windows.Forms.Button();
             this.oRCAMENTO_SERVICODataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaServicoDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaServicoValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaServicoDesconto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaServicoAcrescimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaServicoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRCAMENTO_SERVICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.oRCAMENTO_DIAGNOSTICORichTextBox = new System.Windows.Forms.RichTextBox();
             this.buttonLancarOS = new System.Windows.Forms.Button();
@@ -218,7 +217,6 @@
             this.panelGeral.AutoScroll = true;
             this.panelGeral.Controls.Add(this.groupBox4);
             this.panelGeral.Controls.Add(this.groupBox5);
-            this.panelGeral.Controls.Add(this.buttonImprimir);
             this.panelGeral.Controls.Add(this.groupData);
             this.panelGeral.Controls.Add(this.groupBox3);
             this.panelGeral.Size = new System.Drawing.Size(786, 382);
@@ -418,18 +416,18 @@
             // 
             // textTotalBruto
             // 
-            this.textTotalBruto.Enabled = false;
             this.textTotalBruto.Location = new System.Drawing.Point(124, 124);
             this.textTotalBruto.Name = "textTotalBruto";
+            this.textTotalBruto.ReadOnly = true;
             this.textTotalBruto.Size = new System.Drawing.Size(158, 33);
             this.textTotalBruto.TabIndex = 16;
             // 
             // oRCAMENTO_TOTAL_SERVICOTextBox
             // 
             this.oRCAMENTO_TOTAL_SERVICOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL_SERVICO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.oRCAMENTO_TOTAL_SERVICOTextBox.Enabled = false;
             this.oRCAMENTO_TOTAL_SERVICOTextBox.Location = new System.Drawing.Point(124, 71);
             this.oRCAMENTO_TOTAL_SERVICOTextBox.Name = "oRCAMENTO_TOTAL_SERVICOTextBox";
+            this.oRCAMENTO_TOTAL_SERVICOTextBox.ReadOnly = true;
             this.oRCAMENTO_TOTAL_SERVICOTextBox.Size = new System.Drawing.Size(159, 33);
             this.oRCAMENTO_TOTAL_SERVICOTextBox.TabIndex = 15;
             // 
@@ -446,9 +444,9 @@
             // oRCAMENTO_TOTAL_ITEMTextBox
             // 
             this.oRCAMENTO_TOTAL_ITEMTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_TOTAL_ITEM", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.oRCAMENTO_TOTAL_ITEMTextBox.Enabled = false;
             this.oRCAMENTO_TOTAL_ITEMTextBox.Location = new System.Drawing.Point(124, 21);
             this.oRCAMENTO_TOTAL_ITEMTextBox.Name = "oRCAMENTO_TOTAL_ITEMTextBox";
+            this.oRCAMENTO_TOTAL_ITEMTextBox.ReadOnly = true;
             this.oRCAMENTO_TOTAL_ITEMTextBox.Size = new System.Drawing.Size(158, 33);
             this.oRCAMENTO_TOTAL_ITEMTextBox.TabIndex = 14;
             // 
@@ -474,7 +472,7 @@
             this.oRCAMENTO_DATALabel1.AutoSize = true;
             this.oRCAMENTO_DATALabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_DATA", true));
             this.oRCAMENTO_DATALabel1.ForeColor = System.Drawing.Color.Black;
-            this.oRCAMENTO_DATALabel1.Location = new System.Drawing.Point(17, 27);
+            this.oRCAMENTO_DATALabel1.Location = new System.Drawing.Point(17, 69);
             this.oRCAMENTO_DATALabel1.Name = "oRCAMENTO_DATALabel1";
             this.oRCAMENTO_DATALabel1.Size = new System.Drawing.Size(47, 25);
             this.oRCAMENTO_DATALabel1.TabIndex = 17;
@@ -556,20 +554,10 @@
             this.groupData.Controls.Add(this.oRCAMENTO_DATALabel1);
             this.groupData.Location = new System.Drawing.Point(323, 201);
             this.groupData.Name = "groupData";
-            this.groupData.Size = new System.Drawing.Size(435, 60);
+            this.groupData.Size = new System.Drawing.Size(435, 160);
             this.groupData.TabIndex = 20;
             this.groupData.TabStop = false;
             this.groupData.Text = "Data de lançamento";
-            // 
-            // buttonImprimir
-            // 
-            this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonImprimir.Location = new System.Drawing.Point(323, 273);
-            this.buttonImprimir.Name = "buttonImprimir";
-            this.buttonImprimir.Size = new System.Drawing.Size(435, 88);
-            this.buttonImprimir.TabIndex = 21;
-            this.buttonImprimir.Text = "Imprimir orçamento";
-            this.buttonImprimir.UseVisualStyleBackColor = true;
             // 
             // oRCAMENTO_PRODUTOTextBox
             // 
@@ -622,10 +610,10 @@
             this.oRCAMENTO_ITEMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.oRCAMENTO_ITEMDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn,
-            this.oRCAMENTOITEMVALORDataGridViewTextBoxColumn,
-            this.oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn,
+            this.colunaProdutoPreco,
+            this.colunaProdutoDesconto,
             this.oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn,
-            this.oRCAMENTOITEMTOTALDataGridViewTextBoxColumn});
+            this.colunaProdutoTotal});
             this.oRCAMENTO_ITEMDataGridView.DataSource = this.oRCAMENTO_ITEMBindingSource;
             this.oRCAMENTO_ITEMDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oRCAMENTO_ITEMDataGridView.Location = new System.Drawing.Point(0, 220);
@@ -633,8 +621,9 @@
             this.oRCAMENTO_ITEMDataGridView.ReadOnly = true;
             this.oRCAMENTO_ITEMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.oRCAMENTO_ITEMDataGridView.Size = new System.Drawing.Size(786, 162);
-            this.oRCAMENTO_ITEMDataGridView.TabIndex = 0;
+            this.oRCAMENTO_ITEMDataGridView.TabIndex = 6;
             this.oRCAMENTO_ITEMDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oRCAMENTO_ITEMDataGridView_CellDoubleClick);
+            this.oRCAMENTO_ITEMDataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.oRCAMENTO_ITEMDataGridView_CellFormatting);
             // 
             // oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn
             // 
@@ -642,20 +631,23 @@
             this.oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn.HeaderText = "Produto";
             this.oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn.Name = "oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn";
             this.oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn.ReadOnly = true;
+            this.oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // oRCAMENTOITEMVALORDataGridViewTextBoxColumn
+            // colunaProdutoPreco
             // 
-            this.oRCAMENTOITEMVALORDataGridViewTextBoxColumn.DataPropertyName = "ORCAMENTO_ITEM_VALOR";
-            this.oRCAMENTOITEMVALORDataGridViewTextBoxColumn.HeaderText = "Preço";
-            this.oRCAMENTOITEMVALORDataGridViewTextBoxColumn.Name = "oRCAMENTOITEMVALORDataGridViewTextBoxColumn";
-            this.oRCAMENTOITEMVALORDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colunaProdutoPreco.DataPropertyName = "ORCAMENTO_ITEM_VALOR";
+            this.colunaProdutoPreco.HeaderText = "Preço";
+            this.colunaProdutoPreco.Name = "colunaProdutoPreco";
+            this.colunaProdutoPreco.ReadOnly = true;
+            this.colunaProdutoPreco.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn
+            // colunaProdutoDesconto
             // 
-            this.oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn.DataPropertyName = "ORCAMENTO_ITEM_DESCONTO";
-            this.oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn.HeaderText = "Desconto";
-            this.oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn.Name = "oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn";
-            this.oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn.ReadOnly = true;
+            this.colunaProdutoDesconto.DataPropertyName = "ORCAMENTO_ITEM_DESCONTO";
+            this.colunaProdutoDesconto.HeaderText = "Desconto";
+            this.colunaProdutoDesconto.Name = "colunaProdutoDesconto";
+            this.colunaProdutoDesconto.ReadOnly = true;
+            this.colunaProdutoDesconto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn
             // 
@@ -663,23 +655,25 @@
             this.oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn.HeaderText = "Quantidade";
             this.oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn.Name = "oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn";
             this.oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // oRCAMENTOITEMTOTALDataGridViewTextBoxColumn
+            // colunaProdutoTotal
             // 
-            this.oRCAMENTOITEMTOTALDataGridViewTextBoxColumn.DataPropertyName = "ORCAMENTO_ITEM_TOTAL";
-            this.oRCAMENTOITEMTOTALDataGridViewTextBoxColumn.HeaderText = "Total";
-            this.oRCAMENTOITEMTOTALDataGridViewTextBoxColumn.Name = "oRCAMENTOITEMTOTALDataGridViewTextBoxColumn";
-            this.oRCAMENTOITEMTOTALDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colunaProdutoTotal.DataPropertyName = "ORCAMENTO_ITEM_TOTAL";
+            this.colunaProdutoTotal.HeaderText = "Total";
+            this.colunaProdutoTotal.Name = "colunaProdutoTotal";
+            this.colunaProdutoTotal.ReadOnly = true;
+            this.colunaProdutoTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // pRODUTO_DESCRICAOTextBox
             // 
             this.pRODUTO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODUTOBindingSource, "PRODUTO_DESCRICAO", true));
-            this.pRODUTO_DESCRICAOTextBox.Enabled = false;
             this.pRODUTO_DESCRICAOTextBox.Location = new System.Drawing.Point(111, 26);
             this.pRODUTO_DESCRICAOTextBox.MaxLength = 120;
             this.pRODUTO_DESCRICAOTextBox.Name = "pRODUTO_DESCRICAOTextBox";
+            this.pRODUTO_DESCRICAOTextBox.ReadOnly = true;
             this.pRODUTO_DESCRICAOTextBox.Size = new System.Drawing.Size(635, 33);
-            this.pRODUTO_DESCRICAOTextBox.TabIndex = 2;
+            this.pRODUTO_DESCRICAOTextBox.TabIndex = 1;
             // 
             // pRODUTOBindingSource
             // 
@@ -689,25 +683,25 @@
             // pRODUTO_PRECO_VENDATextBox
             // 
             this.pRODUTO_PRECO_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pRODUTOBindingSource, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.pRODUTO_PRECO_VENDATextBox.Enabled = false;
             this.pRODUTO_PRECO_VENDATextBox.Location = new System.Drawing.Point(93, 72);
             this.pRODUTO_PRECO_VENDATextBox.Name = "pRODUTO_PRECO_VENDATextBox";
+            this.pRODUTO_PRECO_VENDATextBox.ReadOnly = true;
             this.pRODUTO_PRECO_VENDATextBox.Size = new System.Drawing.Size(155, 33);
-            this.pRODUTO_PRECO_VENDATextBox.TabIndex = 4;
+            this.pRODUTO_PRECO_VENDATextBox.TabIndex = 2;
             // 
             // textPecaQuantidade
             // 
             this.textPecaQuantidade.Location = new System.Drawing.Point(628, 72);
             this.textPecaQuantidade.Name = "textPecaQuantidade";
             this.textPecaQuantidade.Size = new System.Drawing.Size(100, 33);
-            this.textPecaQuantidade.TabIndex = 5;
+            this.textPecaQuantidade.TabIndex = 4;
             // 
             // textPecaDesconto
             // 
             this.textPecaDesconto.Location = new System.Drawing.Point(356, 72);
             this.textPecaDesconto.Name = "textPecaDesconto";
             this.textPecaDesconto.Size = new System.Drawing.Size(116, 33);
-            this.textPecaDesconto.TabIndex = 6;
+            this.textPecaDesconto.TabIndex = 3;
             // 
             // label10
             // 
@@ -751,7 +745,7 @@
             this.buttonPesquisarProduto.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarProduto.Name = "buttonPesquisarProduto";
             this.buttonPesquisarProduto.Size = new System.Drawing.Size(786, 37);
-            this.buttonPesquisarProduto.TabIndex = 10;
+            this.buttonPesquisarProduto.TabIndex = 0;
             this.buttonPesquisarProduto.Text = "Pesquisar Produto";
             this.buttonPesquisarProduto.UseVisualStyleBackColor = true;
             this.buttonPesquisarProduto.Click += new System.EventHandler(this.buttonPesquisarProduto_Click);
@@ -764,7 +758,7 @@
             this.buttonLancarProduto.Location = new System.Drawing.Point(0, 183);
             this.buttonLancarProduto.Name = "buttonLancarProduto";
             this.buttonLancarProduto.Size = new System.Drawing.Size(786, 37);
-            this.buttonLancarProduto.TabIndex = 11;
+            this.buttonLancarProduto.TabIndex = 5;
             this.buttonLancarProduto.Text = "Lançar Produto";
             this.buttonLancarProduto.UseVisualStyleBackColor = true;
             this.buttonLancarProduto.Click += new System.EventHandler(this.buttonLancarProduto_Click);
@@ -790,7 +784,7 @@
             this.textServicoAcrescimo.Location = new System.Drawing.Point(568, 78);
             this.textServicoAcrescimo.Name = "textServicoAcrescimo";
             this.textServicoAcrescimo.Size = new System.Drawing.Size(142, 33);
-            this.textServicoAcrescimo.TabIndex = 5;
+            this.textServicoAcrescimo.TabIndex = 4;
             this.textServicoAcrescimo.TextChanged += new System.EventHandler(this.textServicoAcrescimo_TextChanged);
             // 
             // textServicoDesconto
@@ -798,7 +792,7 @@
             this.textServicoDesconto.Location = new System.Drawing.Point(331, 78);
             this.textServicoDesconto.Name = "textServicoDesconto";
             this.textServicoDesconto.Size = new System.Drawing.Size(131, 33);
-            this.textServicoDesconto.TabIndex = 4;
+            this.textServicoDesconto.TabIndex = 3;
             this.textServicoDesconto.TextChanged += new System.EventHandler(this.textServicoDesconto_TextChanged);
             // 
             // sERVICO_VALORTextBox
@@ -808,7 +802,7 @@
             this.sERVICO_VALORTextBox.Location = new System.Drawing.Point(74, 78);
             this.sERVICO_VALORTextBox.Name = "sERVICO_VALORTextBox";
             this.sERVICO_VALORTextBox.Size = new System.Drawing.Size(157, 33);
-            this.sERVICO_VALORTextBox.TabIndex = 3;
+            this.sERVICO_VALORTextBox.TabIndex = 2;
             // 
             // sERVICOBindingSource
             // 
@@ -832,7 +826,7 @@
             this.buttonPesquisarServico.Location = new System.Drawing.Point(0, 0);
             this.buttonPesquisarServico.Name = "buttonPesquisarServico";
             this.buttonPesquisarServico.Size = new System.Drawing.Size(786, 37);
-            this.buttonPesquisarServico.TabIndex = 1;
+            this.buttonPesquisarServico.TabIndex = 0;
             this.buttonPesquisarServico.Text = "Pesquisar serviço";
             this.buttonPesquisarServico.UseVisualStyleBackColor = true;
             this.buttonPesquisarServico.Click += new System.EventHandler(this.buttonPesquisarServico_Click);
@@ -845,7 +839,7 @@
             this.buttonLancarServico.Location = new System.Drawing.Point(0, 193);
             this.buttonLancarServico.Name = "buttonLancarServico";
             this.buttonLancarServico.Size = new System.Drawing.Size(786, 37);
-            this.buttonLancarServico.TabIndex = 3;
+            this.buttonLancarServico.TabIndex = 5;
             this.buttonLancarServico.Text = "Lançar Serviço";
             this.buttonLancarServico.UseVisualStyleBackColor = true;
             this.buttonLancarServico.Click += new System.EventHandler(this.buttonLancarServico_Click);
@@ -857,11 +851,11 @@
             this.oRCAMENTO_SERVICODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.oRCAMENTO_SERVICODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.oRCAMENTO_SERVICODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13});
+            this.colunaServicoDescricao,
+            this.colunaServicoValor,
+            this.colunaServicoDesconto,
+            this.colunaServicoAcrescimo,
+            this.colunaServicoTotal});
             this.oRCAMENTO_SERVICODataGridView.DataSource = this.oRCAMENTO_SERVICOBindingSource;
             this.oRCAMENTO_SERVICODataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oRCAMENTO_SERVICODataGridView.Location = new System.Drawing.Point(0, 230);
@@ -869,43 +863,49 @@
             this.oRCAMENTO_SERVICODataGridView.ReadOnly = true;
             this.oRCAMENTO_SERVICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.oRCAMENTO_SERVICODataGridView.Size = new System.Drawing.Size(786, 152);
-            this.oRCAMENTO_SERVICODataGridView.TabIndex = 2;
+            this.oRCAMENTO_SERVICODataGridView.TabIndex = 6;
             this.oRCAMENTO_SERVICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.oRCAMENTO_SERVICODataGridView_CellDoubleClick);
+            this.oRCAMENTO_SERVICODataGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.oRCAMENTO_SERVICODataGridView_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn10
+            // colunaServicoDescricao
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "ORCAMENTO_SERVICO_DESCRICAO";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Descrição";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.colunaServicoDescricao.DataPropertyName = "ORCAMENTO_SERVICO_DESCRICAO";
+            this.colunaServicoDescricao.HeaderText = "Descrição";
+            this.colunaServicoDescricao.Name = "colunaServicoDescricao";
+            this.colunaServicoDescricao.ReadOnly = true;
+            this.colunaServicoDescricao.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn9
+            // colunaServicoValor
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "ORCAMENTO_SERVICO_VALOR";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Valor";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.colunaServicoValor.DataPropertyName = "ORCAMENTO_SERVICO_VALOR";
+            this.colunaServicoValor.HeaderText = "Valor";
+            this.colunaServicoValor.Name = "colunaServicoValor";
+            this.colunaServicoValor.ReadOnly = true;
+            this.colunaServicoValor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn11
+            // colunaServicoDesconto
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "ORCAMENTO_SERVICO_DESCONTO";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Desconto";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.colunaServicoDesconto.DataPropertyName = "ORCAMENTO_SERVICO_DESCONTO";
+            this.colunaServicoDesconto.HeaderText = "Desconto";
+            this.colunaServicoDesconto.Name = "colunaServicoDesconto";
+            this.colunaServicoDesconto.ReadOnly = true;
+            this.colunaServicoDesconto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn12
+            // colunaServicoAcrescimo
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "ORCAMENTO_SERVICO_ACRESCIMO";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Acréscimo";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.colunaServicoAcrescimo.DataPropertyName = "ORCAMENTO_SERVICO_ACRESCIMO";
+            this.colunaServicoAcrescimo.HeaderText = "Acréscimo";
+            this.colunaServicoAcrescimo.Name = "colunaServicoAcrescimo";
+            this.colunaServicoAcrescimo.ReadOnly = true;
+            this.colunaServicoAcrescimo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // dataGridViewTextBoxColumn13
+            // colunaServicoTotal
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "ORCAMENTO_SERVICO_TOTAL";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.colunaServicoTotal.DataPropertyName = "ORCAMENTO_SERVICO_TOTAL";
+            this.colunaServicoTotal.HeaderText = "Total";
+            this.colunaServicoTotal.Name = "colunaServicoTotal";
+            this.colunaServicoTotal.ReadOnly = true;
+            this.colunaServicoTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // oRCAMENTO_SERVICOBindingSource
             // 
@@ -1045,6 +1045,7 @@
             this.oRCAMENTO_DESCONTOTextBox.Size = new System.Drawing.Size(183, 33);
             this.oRCAMENTO_DESCONTOTextBox.TabIndex = 2;
             this.oRCAMENTO_DESCONTOTextBox.TextChanged += new System.EventHandler(this.oRCAMENTO_DESCONTOTextBox_TextChanged);
+            this.oRCAMENTO_DESCONTOTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
             // 
             // oRCAMENTO_ACRESCIMOTextBox
             // 
@@ -1054,6 +1055,7 @@
             this.oRCAMENTO_ACRESCIMOTextBox.Size = new System.Drawing.Size(183, 33);
             this.oRCAMENTO_ACRESCIMOTextBox.TabIndex = 4;
             this.oRCAMENTO_ACRESCIMOTextBox.TextChanged += new System.EventHandler(this.oRCAMENTO_ACRESCIMOTextBox_TextChanged);
+            this.oRCAMENTO_ACRESCIMOTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
             // 
             // labelTotalLiquido
             // 
@@ -1072,6 +1074,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Name = "formCadastroOrcamento";
+            this.Load += new System.EventHandler(this.formCadastroOrcamento_Load);
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
@@ -1140,7 +1143,6 @@
         private System.Windows.Forms.TextBox oRCAMENTO_TOTAL_ITEMTextBox;
         private System.Windows.Forms.Label labelFuncionario;
         private System.Windows.Forms.Label oRCAMENTO_DATALabel1;
-        private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.GroupBox groupData;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label3;
@@ -1177,11 +1179,6 @@
         private System.Windows.Forms.BindingSource oRCAMENTO_SERVICOBindingSource;
         private dsFROGIOSTableAdapters.ORCAMENTO_SERVICOTableAdapter oRCAMENTO_SERVICOTableAdapter;
         private System.Windows.Forms.DataGridView oRCAMENTO_SERVICODataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.RichTextBox oRCAMENTO_DIAGNOSTICORichTextBox;
         private System.Windows.Forms.Button buttonLancarOS;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -1189,12 +1186,17 @@
         private System.Windows.Forms.TextBox oRCAMENTO_ACRESCIMOTextBox;
         private System.Windows.Forms.TextBox oRCAMENTO_DESCONTOTextBox;
         private System.Windows.Forms.Label labelTotalLiquido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMVALORDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMDESCONTODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMTOTALDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel panelDesconto_Acrescimo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaServicoDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaServicoValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaServicoDesconto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaServicoAcrescimo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaServicoTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMDESCRICAODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaProdutoPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaProdutoDesconto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oRCAMENTOITEMQUANTIDADEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaProdutoTotal;
 
 
 

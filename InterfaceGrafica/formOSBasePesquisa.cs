@@ -67,6 +67,8 @@ namespace FROGI_OS.InterfaceGrafica
         private void textValorPesquisa_KeyDown(object sender, KeyEventArgs e) {
             if (e.KeyCode == Keys.Enter) {
                 pesquisar();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
             }
         }
 
@@ -95,5 +97,20 @@ namespace FROGI_OS.InterfaceGrafica
         private void pictureFechar_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData) {
+            if (keyData == (Keys.Control | Keys.N)) {
+                formDialogo dialogo = new formDialogo("Deseja lançar um novo registro?", "", formDialogo.TipoExpressao.Pergunta);
+                if (dialogo.ShowDialog() == DialogResult.Yes) {
+                    novoRegistro();
+                } else {
+                    dialogo.Dispose();
+                }
+                return true;
+            } else {
+                return false;
+            }
+        }
+
     }
 }

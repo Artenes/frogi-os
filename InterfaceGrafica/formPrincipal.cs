@@ -196,6 +196,5 @@ namespace FROGI_OS
             labelUsuarioNome.Text = nome;
             labelTipoUsuario.Text = tipo == 0 ? "Administrador" : "Funcionário";
         }
-
     }
 }

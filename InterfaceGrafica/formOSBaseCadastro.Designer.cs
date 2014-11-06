@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelCabecalho = new System.Windows.Forms.Panel();
             this.labelBase = new System.Windows.Forms.Label();
             this.pictureFechar = new System.Windows.Forms.PictureBox();
@@ -49,6 +50,7 @@
             this.pictureEditar = new System.Windows.Forms.PictureBox();
             this.pictureExcluir = new System.Windows.Forms.PictureBox();
             this.pictureSalvar = new System.Windows.Forms.PictureBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.panelCabecalho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.tabPai.SuspendLayout();
@@ -98,6 +100,7 @@
             this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureFechar.TabIndex = 0;
             this.pictureFechar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureFechar, "Fechar janela [Alt+F4]");
             this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
             // 
             // tabPai
@@ -270,6 +273,7 @@
             this.pictureEditar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureEditar.TabIndex = 13;
             this.pictureEditar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureEditar, "Editar registro [Ctrl+E]");
             this.pictureEditar.Click += new System.EventHandler(this.pictureEditar_Click);
             // 
             // pictureExcluir
@@ -283,6 +287,7 @@
             this.pictureExcluir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureExcluir.TabIndex = 12;
             this.pictureExcluir.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureExcluir, "Excluir registro [Ctrl+D]");
             this.pictureExcluir.Click += new System.EventHandler(this.pictureExcluir_Click);
             // 
             // pictureSalvar
@@ -296,6 +301,7 @@
             this.pictureSalvar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureSalvar.TabIndex = 11;
             this.pictureSalvar.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureSalvar, "Salvar registro [Ctrl+S]");
             this.pictureSalvar.Click += new System.EventHandler(this.pictureSalvar_Click);
             // 
             // formOSBaseCadastro
@@ -354,5 +360,6 @@
         protected System.Windows.Forms.Panel panelCodigo;
         protected System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

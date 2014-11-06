@@ -153,12 +153,14 @@ namespace FROGI_OS.CamadaEnlaceDados
             }
 
             for (int i = 0; i < qtdServicosInseridos; i++) {
-                servicoTmp.OS_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCONTOColumn, DataRowVersion.Current];
-                servicoTmp.OS_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
                 servicoTmp.OS_SERVICO_OS = os.OS_CODIGO;
                 servicoTmp.OS_SERVICO_SERVICO = (int)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_SERVICOColumn, DataRowVersion.Current];
-                servicoTmp.OS_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_TOTALColumn, DataRowVersion.Current];
                 servicoTmp.OS_SERVICO_VALOR = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_VALORColumn, DataRowVersion.Current];
+                servicoTmp.OS_SERVICO_DESCRICAO = (string)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCRICAOColumn, DataRowVersion.Current];
+                servicoTmp.OS_SERVICO_DESCONTO = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_DESCONTOColumn, DataRowVersion.Current];
+                servicoTmp.OS_SERVICO_ACRESCIMO = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_ACRESCIMOColumn, DataRowVersion.Current];
+                servicoTmp.OS_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.OS_SERVICO_TOTALColumn, DataRowVersion.Current];
+                
                 sqlOsServico.inserir(servicoTmp);
             }
 

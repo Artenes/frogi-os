@@ -51,7 +51,7 @@ namespace FROGI_OS {
             funcionarioRow.FUNCIONARIO_CEP = fUNCIONARIO_CEPTextBox.Text;
             funcionarioRow.FUNCIONARIO_FUNCAO = fUNCIONARIO_FUNCAOTextBox.Text;
             funcionarioRow.FUNCIONARIO_SETOR = fUNCIONARIO_SETORTextBox.Text;
-            try { funcionarioRow.FUNCIONARIO_SALARIO = Convert.ToDouble(fUNCIONARIO_SALARIOTextBox.Text); } catch (Exception) { funcionarioRow.FUNCIONARIO_SALARIO = 0; }
+            try { funcionarioRow.FUNCIONARIO_SALARIO = textSalario.Valor; } catch (Exception) { funcionarioRow.FUNCIONARIO_SALARIO = 0; }
             funcionarioRow.FUNCIONARIO_ADMISSAO = fUNCIONARIO_ADMISSAODateTimePicker.Value;
             funcionarioRow.FUNCIONARIO_SENHA = "0";
             return funcionarioRow;
@@ -85,7 +85,7 @@ namespace FROGI_OS {
                 endereco = fUNCIONARIO_ENDERECOTextBox.Text,
                 bairro = fUNCIONARIO_BAIRROTextBox.Text,
                 funcao = fUNCIONARIO_FUNCAOTextBox.Text,
-                salario = fUNCIONARIO_SALARIOTextBox.Text;
+                salario = textSalario.Valor.ToString();
 
             if (!valorValido(nome)) return "Informe o nome do funcionário";
             if (!valorValido(telefone)) return "Informe o telefone do funcionário";
