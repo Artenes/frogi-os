@@ -67,9 +67,10 @@ namespace FROGI_OS.CamadaEnlaceDados
 
             dsFROGIOS.OS_ITEMDataTable itensDeletados = new dsFROGIOS.OS_ITEMDataTable();
             dsFROGIOS.OS_ITEMDataTable itensInseridos = new dsFROGIOS.OS_ITEMDataTable();
+            dsFROGIOS.OS_ITEMDataTable itensAlterados = new dsFROGIOS.OS_ITEMDataTable();
             dsFROGIOS.OS_SERVICODataTable servicosDeletados = new dsFROGIOS.OS_SERVICODataTable();
             dsFROGIOS.OS_SERVICODataTable servicosInseridos = new dsFROGIOS.OS_SERVICODataTable();
-            dsFROGIOS.OS_ITEMDataTable itensAlterados = new dsFROGIOS.OS_ITEMDataTable();
+            dsFROGIOS.OS_SERVICODataTable servicosAlterados = new dsFROGIOS.OS_SERVICODataTable();
 
             int contador = 0;
             foreach (dsFROGIOS.OS_ITEMRow item in itens)
@@ -95,6 +96,10 @@ namespace FROGI_OS.CamadaEnlaceDados
                     servico.OS_SERVICO_CODIGO = contador; contador++;
                     servico.OS_SERVICO_OS = os.OS_CODIGO;
                     servicosInseridos.ImportRow(servico);
+                }
+
+                if (servico.RowState == DataRowState.Modified) {
+                    servicosAlterados.ImportRow(servico);
                 }
             }
             servicosDeletados = (dsFROGIOS.OS_SERVICODataTable)servicos.GetChanges(DataRowState.Deleted);
@@ -164,11 +169,19 @@ namespace FROGI_OS.CamadaEnlaceDados
                 sqlOsServico.inserir(servicoTmp);
             }
 
+            foreach (dsFROGIOS.OS_ITEMRow item in itensAlterados) {
+                sqlOsItem.atualizar(item);
+            }
+
+            foreach (dsFROGIOS.OS_SERVICORow servico in servicosAlterados) {
+                sqlOsServico.atualizar(servico);
+            }
+
             TblOsItem osItemSQL = new TblOsItem();
             for (int i = 0; i < qtdItensAlterados; i++) {
 
-                int quantidadeAtual = (int)itensAlterados.Rows[i][itensAlterados.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
-                int quantidadeOriginal = (int)itensAlterados.Rows[i][itensAlterados.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Original];
+                short quantidadeAtual = (short)itensAlterados.Rows[i][itensAlterados.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Current];
+                short quantidadeOriginal = (short)itensAlterados.Rows[i][itensAlterados.OS_ITEM_QUANTIDADEColumn, DataRowVersion.Original];
                 int codigoProduto = (int)itensAlterados.Rows[i][itensAlterados.OS_ITEM_PRODUTOColumn, DataRowVersion.Current];
                 int diferenca = quantidadeOriginal - quantidadeAtual;
                 dsFROGIOS.OS_ITEMRow item = itensAlterados.Rows[i] as dsFROGIOS.OS_ITEMRow;
@@ -180,9 +193,7 @@ namespace FROGI_OS.CamadaEnlaceDados
                     comando.Parameters.AddWithValue(paramCodigo, codigoProduto);
                     comando.Parameters.AddWithValue(paramEstoque, diferenca);
                     comando.ExecuteNonQuery();
-                }
-                else if (diferenca < 0)
-                {
+                } else if (diferenca < 0) {
                     // subtrair estoque de um produto
                     comando.CommandText = sqlRetirar;
                     comando.Parameters.Clear();

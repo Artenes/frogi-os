@@ -8,30 +8,27 @@ using System.Windows.Forms;
 namespace WindowsFormsApplication2 {
     class Monetario : TextBox {
 
-        public Monetario()
-            : base() {
+        public Monetario() : base() {
             this.TextAlign = HorizontalAlignment.Right;
         }
 
         // String usada para manipular o valor 
-        string str = "";
-        protected override void OnKeyDown(KeyEventArgs e) {
+        private string str = "";
+        private bool teclaNumericaPressionada = false;
 
+        protected override void OnKeyDown(KeyEventArgs e) {
             TextBox txtBox = (TextBox)this;
             Control controle = txtBox;
             str = RetiraVirgula(str);
-
             //captura a tecla precionada
             int KeyCode = e.KeyValue;
-
             //testa pra ve se a tecla foi um numero ou backspace ou delete
-            if (!IsNumeric(KeyCode)) {
-                e.Handled = true;
+            if (!IsNumeric(KeyCode) && !eLetra(KeyCode) || ReadOnly) {
+                teclaNumericaPressionada = true;
                 return;
             } else {
-                e.Handled = true;
+                teclaNumericaPressionada = true;
             }
-
             if (((KeyCode == 8) || (KeyCode == 46)) && (str.Length > 0)) {
                 //apaga o campo caso seja precionado backspace ou delete quando o campo esta maior que 0
                 str = str.Substring(0, str.Length - 1);
@@ -63,12 +60,17 @@ namespace WindowsFormsApplication2 {
             }
         }
 
+        protected override void OnKeyPress(KeyPressEventArgs e) {
+            e.Handled = teclaNumericaPressionada;
+        }
+
         //testa o codigo da tecla pra ver se é numero ou nao
         private bool IsNumeric(int Val) {
             return ((Val >= 48 && Val <= 57) || (Val >= 96 && Val <= 105) || (Val == 8) || (Val == 46));
         }
-        protected override void OnKeyPress(KeyPressEventArgs e) {
-            e.Handled = true;
+
+        private bool eLetra(int tecla) {
+            return (tecla >= 65 && tecla <= 90);
         }
 
         // função para retirar virgula de uma string

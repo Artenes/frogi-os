@@ -67,9 +67,6 @@
             this.bsFisico = new System.Windows.Forms.BindingSource(this.components);
             this.taFuncionario = new FROGI_OS.dsFROGIOSTableAdapters.FUNCIONARIOTableAdapter();
             this.groupTotais = new System.Windows.Forms.GroupBox();
-            this.textTotalBruto = new WindowsFormsApplication2.Monetario();
-            this.textTotalServicos = new WindowsFormsApplication2.Monetario();
-            this.textTotalPecas = new WindowsFormsApplication2.Monetario();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.oS_DATALabel1 = new System.Windows.Forms.Label();
@@ -78,11 +75,11 @@
             this.oS_AVULSOSRichTextBox = new System.Windows.Forms.RichTextBox();
             this.oS_OBSERVACAORichTextBox = new System.Windows.Forms.RichTextBox();
             this.groupProduto = new System.Windows.Forms.GroupBox();
-            this.textProdutoPreco = new WindowsFormsApplication2.Monetario();
+            this.pRODUTO_PRECO_VENDATextBox = new System.Windows.Forms.TextBox();
             this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
-            this.textProdutoDesconto = new WindowsFormsApplication2.Monetario();
             this.pRODUTO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.textPecaQuantidade = new System.Windows.Forms.TextBox();
+            this.textPecaDesconto = new System.Windows.Forms.TextBox();
             this.bsOsItem = new System.Windows.Forms.BindingSource(this.components);
             this.taOsItem = new FROGI_OS.dsFROGIOSTableAdapters.OS_ITEMTableAdapter();
             this.taProduto = new FROGI_OS.dsFROGIOSTableAdapters.PRODUTOTableAdapter();
@@ -95,9 +92,9 @@
             this.colunaProdutoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonLancarProduto = new System.Windows.Forms.Button();
             this.groupServico = new System.Windows.Forms.GroupBox();
-            this.textServicoAcrescimo = new WindowsFormsApplication2.Monetario();
-            this.textServicoDesconto = new WindowsFormsApplication2.Monetario();
-            this.textServicoPreco = new WindowsFormsApplication2.Monetario();
+            this.textServicoAcrescimo = new System.Windows.Forms.TextBox();
+            this.textServicoDesconto = new System.Windows.Forms.TextBox();
+            this.sERVICO_VALORTextBox = new System.Windows.Forms.TextBox();
             this.bsServico = new System.Windows.Forms.BindingSource(this.components);
             this.sERVICO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.bsOsServico = new System.Windows.Forms.BindingSource(this.components);
@@ -114,20 +111,23 @@
             this.oS_DIAGNOSTICORichTextBox = new System.Windows.Forms.RichTextBox();
             this.tabConclusao = new System.Windows.Forms.TabPage();
             this.panelConclusao = new System.Windows.Forms.Panel();
-            this.textTotalLiquido = new WindowsFormsApplication2.Monetario();
             this.oS_DATA_ENTREGADateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textTroco = new WindowsFormsApplication2.Monetario();
-            this.textValorPago = new WindowsFormsApplication2.Monetario();
             this.label4 = new System.Windows.Forms.Label();
+            this.textTroco = new System.Windows.Forms.TextBox();
+            this.textValorPago = new System.Windows.Forms.TextBox();
             this.Troco = new System.Windows.Forms.Label();
             this.groupBoxAcrescimoouDesconto = new System.Windows.Forms.GroupBox();
-            this.textOSDesconto = new WindowsFormsApplication2.Monetario();
-            this.textOSAcrescimo = new WindowsFormsApplication2.Monetario();
             this.buttonAplicar = new System.Windows.Forms.Button();
+            this.oS_DESCONTOTextBox = new System.Windows.Forms.TextBox();
+            this.oS_ACRESCIMOTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.oS_FORMA_PAGAMENTOComboBox = new System.Windows.Forms.ComboBox();
+            this.textTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textTotalPecas = new WindowsFormsApplication2.Monetario();
+            this.textTotalServicos = new WindowsFormsApplication2.Monetario();
+            this.textTotalBruto = new WindowsFormsApplication2.Monetario();
             cLIENTE_FISICO_NOMELabel = new System.Windows.Forms.Label();
             fUNCIONARIO_NOMELabel = new System.Windows.Forms.Label();
             oS_TOTAL_ITEMLabel = new System.Windows.Forms.Label();
@@ -632,41 +632,6 @@
             this.groupTotais.TabStop = false;
             this.groupTotais.Text = "Totais";
             // 
-            // textTotalBruto
-            // 
-            this.textTotalBruto.Location = new System.Drawing.Point(150, 160);
-            this.textTotalBruto.Name = "textTotalBruto";
-            this.textTotalBruto.ReadOnly = true;
-            this.textTotalBruto.Size = new System.Drawing.Size(129, 33);
-            this.textTotalBruto.TabIndex = 10;
-            this.textTotalBruto.Text = "R$ 0,00";
-            this.textTotalBruto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textTotalBruto.Valor = 0D;
-            // 
-            // textTotalServicos
-            // 
-            this.textTotalServicos.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_TOTAL_SERVICO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textTotalServicos.Location = new System.Drawing.Point(150, 97);
-            this.textTotalServicos.Name = "textTotalServicos";
-            this.textTotalServicos.ReadOnly = true;
-            this.textTotalServicos.Size = new System.Drawing.Size(129, 33);
-            this.textTotalServicos.TabIndex = 9;
-            this.textTotalServicos.Text = "R$ 0,00";
-            this.textTotalServicos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textTotalServicos.Valor = 0D;
-            // 
-            // textTotalPecas
-            // 
-            this.textTotalPecas.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_TOTAL_ITEM", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textTotalPecas.Location = new System.Drawing.Point(150, 39);
-            this.textTotalPecas.Name = "textTotalPecas";
-            this.textTotalPecas.ReadOnly = true;
-            this.textTotalPecas.Size = new System.Drawing.Size(129, 33);
-            this.textTotalPecas.TabIndex = 8;
-            this.textTotalPecas.Text = "R$ 0,00";
-            this.textTotalPecas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textTotalPecas.Valor = 0D;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -734,13 +699,13 @@
             // 
             // groupProduto
             // 
-            this.groupProduto.Controls.Add(this.textProdutoPreco);
-            this.groupProduto.Controls.Add(this.textProdutoDesconto);
             this.groupProduto.Controls.Add(pRODUTO_PRECO_VENDALabel);
+            this.groupProduto.Controls.Add(this.pRODUTO_PRECO_VENDATextBox);
             this.groupProduto.Controls.Add(this.pRODUTO_DESCRICAOTextBox);
             this.groupProduto.Controls.Add(oS_ITEM_QUANTIDADELabel);
             this.groupProduto.Controls.Add(this.textPecaQuantidade);
             this.groupProduto.Controls.Add(oS_ITEM_DESCONTOLabel);
+            this.groupProduto.Controls.Add(this.textPecaDesconto);
             this.groupProduto.Controls.Add(oS_ITEM_DESCRICAOLabel);
             this.groupProduto.Location = new System.Drawing.Point(16, 43);
             this.groupProduto.Name = "groupProduto";
@@ -748,32 +713,19 @@
             this.groupProduto.TabIndex = 0;
             this.groupProduto.TabStop = false;
             // 
-            // textProdutoPreco
+            // pRODUTO_PRECO_VENDATextBox
             // 
-            this.textProdutoPreco.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textProdutoPreco.Location = new System.Drawing.Point(113, 77);
-            this.textProdutoPreco.Name = "textProdutoPreco";
-            this.textProdutoPreco.ReadOnly = true;
-            this.textProdutoPreco.Size = new System.Drawing.Size(118, 33);
-            this.textProdutoPreco.TabIndex = 10;
-            this.textProdutoPreco.Text = "R$ 0,00";
-            this.textProdutoPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textProdutoPreco.Valor = 0D;
+            this.pRODUTO_PRECO_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_VENDA", true));
+            this.pRODUTO_PRECO_VENDATextBox.Location = new System.Drawing.Point(113, 77);
+            this.pRODUTO_PRECO_VENDATextBox.Name = "pRODUTO_PRECO_VENDATextBox";
+            this.pRODUTO_PRECO_VENDATextBox.ReadOnly = true;
+            this.pRODUTO_PRECO_VENDATextBox.Size = new System.Drawing.Size(100, 33);
+            this.pRODUTO_PRECO_VENDATextBox.TabIndex = 2;
             // 
             // bsProduto
             // 
             this.bsProduto.DataMember = "PRODUTO";
             this.bsProduto.DataSource = this.dsFROGIOS;
-            // 
-            // textProdutoDesconto
-            // 
-            this.textProdutoDesconto.Location = new System.Drawing.Point(351, 77);
-            this.textProdutoDesconto.Name = "textProdutoDesconto";
-            this.textProdutoDesconto.Size = new System.Drawing.Size(137, 33);
-            this.textProdutoDesconto.TabIndex = 9;
-            this.textProdutoDesconto.Text = "R$ 0,00";
-            this.textProdutoDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textProdutoDesconto.Valor = 0D;
             // 
             // pRODUTO_DESCRICAOTextBox
             // 
@@ -791,6 +743,13 @@
             this.textPecaQuantidade.Name = "textPecaQuantidade";
             this.textPecaQuantidade.Size = new System.Drawing.Size(100, 33);
             this.textPecaQuantidade.TabIndex = 4;
+            // 
+            // textPecaDesconto
+            // 
+            this.textPecaDesconto.Location = new System.Drawing.Point(351, 77);
+            this.textPecaDesconto.Name = "textPecaDesconto";
+            this.textPecaDesconto.Size = new System.Drawing.Size(100, 33);
+            this.textPecaDesconto.TabIndex = 3;
             // 
             // bsOsItem
             // 
@@ -896,12 +855,12 @@
             // 
             // groupServico
             // 
-            this.groupServico.Controls.Add(this.textServicoAcrescimo);
-            this.groupServico.Controls.Add(this.textServicoDesconto);
-            this.groupServico.Controls.Add(this.textServicoPreco);
             this.groupServico.Controls.Add(oS_SERVICO_ACRESCIMOLabel);
+            this.groupServico.Controls.Add(this.textServicoAcrescimo);
             this.groupServico.Controls.Add(oS_SERVICO_DESCONTOLabel);
+            this.groupServico.Controls.Add(this.textServicoDesconto);
             this.groupServico.Controls.Add(sERVICO_VALORLabel);
+            this.groupServico.Controls.Add(this.sERVICO_VALORTextBox);
             this.groupServico.Controls.Add(sERVICO_DESCRICAOLabel);
             this.groupServico.Controls.Add(this.sERVICO_DESCRICAOTextBox);
             this.groupServico.Location = new System.Drawing.Point(16, 43);
@@ -912,37 +871,28 @@
             // 
             // textServicoAcrescimo
             // 
-            this.textServicoAcrescimo.Location = new System.Drawing.Point(629, 82);
+            this.textServicoAcrescimo.Location = new System.Drawing.Point(629, 85);
             this.textServicoAcrescimo.Name = "textServicoAcrescimo";
             this.textServicoAcrescimo.Size = new System.Drawing.Size(100, 33);
-            this.textServicoAcrescimo.TabIndex = 9;
-            this.textServicoAcrescimo.Text = "R$ 0,00";
-            this.textServicoAcrescimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textServicoAcrescimo.Valor = 0D;
+            this.textServicoAcrescimo.TabIndex = 4;
             this.textServicoAcrescimo.TextChanged += new System.EventHandler(this.textServicoAcrescimo_TextChanged);
             // 
             // textServicoDesconto
             // 
             this.textServicoDesconto.Location = new System.Drawing.Point(375, 82);
             this.textServicoDesconto.Name = "textServicoDesconto";
-            this.textServicoDesconto.Size = new System.Drawing.Size(137, 33);
-            this.textServicoDesconto.TabIndex = 8;
-            this.textServicoDesconto.Text = "R$ 0,00";
-            this.textServicoDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textServicoDesconto.Valor = 0D;
+            this.textServicoDesconto.Size = new System.Drawing.Size(100, 33);
+            this.textServicoDesconto.TabIndex = 3;
             this.textServicoDesconto.TextChanged += new System.EventHandler(this.textServicoDesconto_TextChanged);
             // 
-            // textServicoPreco
+            // sERVICO_VALORTextBox
             // 
-            this.textServicoPreco.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsServico, "SERVICO_VALOR", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textServicoPreco.Location = new System.Drawing.Point(112, 82);
-            this.textServicoPreco.Name = "textServicoPreco";
-            this.textServicoPreco.ReadOnly = true;
-            this.textServicoPreco.Size = new System.Drawing.Size(147, 33);
-            this.textServicoPreco.TabIndex = 7;
-            this.textServicoPreco.Text = "R$ 0,00";
-            this.textServicoPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textServicoPreco.Valor = 0D;
+            this.sERVICO_VALORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsServico, "SERVICO_VALOR", true));
+            this.sERVICO_VALORTextBox.Location = new System.Drawing.Point(112, 82);
+            this.sERVICO_VALORTextBox.Name = "sERVICO_VALORTextBox";
+            this.sERVICO_VALORTextBox.ReadOnly = true;
+            this.sERVICO_VALORTextBox.Size = new System.Drawing.Size(100, 33);
+            this.sERVICO_VALORTextBox.TabIndex = 2;
             // 
             // bsServico
             // 
@@ -1085,32 +1035,19 @@
             // panelConclusao
             // 
             this.panelConclusao.AutoScroll = true;
-            this.panelConclusao.Controls.Add(this.textTotalLiquido);
             this.panelConclusao.Controls.Add(oS_DATA_ENTREGALabel);
             this.panelConclusao.Controls.Add(this.oS_DATA_ENTREGADateTimePicker);
             this.panelConclusao.Controls.Add(this.groupBox5);
             this.panelConclusao.Controls.Add(this.groupBoxAcrescimoouDesconto);
             this.panelConclusao.Controls.Add(this.groupBox3);
             this.panelConclusao.Controls.Add(oS_TOTALLabel);
+            this.panelConclusao.Controls.Add(this.textTotal);
             this.panelConclusao.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelConclusao.Location = new System.Drawing.Point(3, 3);
             this.panelConclusao.Margin = new System.Windows.Forms.Padding(0);
             this.panelConclusao.Name = "panelConclusao";
             this.panelConclusao.Size = new System.Drawing.Size(786, 354);
             this.panelConclusao.TabIndex = 0;
-            // 
-            // textTotalLiquido
-            // 
-            this.textTotalLiquido.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_TOTAL", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textTotalLiquido.Font = new System.Drawing.Font("Segoe UI Light", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTotalLiquido.Location = new System.Drawing.Point(452, 55);
-            this.textTotalLiquido.Name = "textTotalLiquido";
-            this.textTotalLiquido.ReadOnly = true;
-            this.textTotalLiquido.Size = new System.Drawing.Size(313, 70);
-            this.textTotalLiquido.TabIndex = 17;
-            this.textTotalLiquido.Text = "R$ 0,00";
-            this.textTotalLiquido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textTotalLiquido.Valor = 0D;
             // 
             // oS_DATA_ENTREGADateTimePicker
             // 
@@ -1122,37 +1059,15 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.textTroco);
             this.groupBox5.Controls.Add(this.textValorPago);
-            this.groupBox5.Controls.Add(this.label4);
             this.groupBox5.Controls.Add(this.Troco);
             this.groupBox5.Location = new System.Drawing.Point(16, 133);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(232, 207);
             this.groupBox5.TabIndex = 15;
             this.groupBox5.TabStop = false;
-            // 
-            // textTroco
-            // 
-            this.textTroco.Location = new System.Drawing.Point(24, 137);
-            this.textTroco.Name = "textTroco";
-            this.textTroco.ReadOnly = true;
-            this.textTroco.Size = new System.Drawing.Size(190, 33);
-            this.textTroco.TabIndex = 14;
-            this.textTroco.Text = "R$ 0,00";
-            this.textTroco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textTroco.Valor = 0D;
-            // 
-            // textValorPago
-            // 
-            this.textValorPago.Location = new System.Drawing.Point(24, 73);
-            this.textValorPago.Name = "textValorPago";
-            this.textValorPago.Size = new System.Drawing.Size(190, 33);
-            this.textValorPago.TabIndex = 13;
-            this.textValorPago.Text = "R$ 0,00";
-            this.textValorPago.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textValorPago.Valor = 0D;
-            this.textValorPago.TextChanged += new System.EventHandler(this.textValorPago_TextChanged);
             // 
             // label4
             // 
@@ -1162,6 +1077,22 @@
             this.label4.Size = new System.Drawing.Size(100, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Valor pago";
+            // 
+            // textTroco
+            // 
+            this.textTroco.Enabled = false;
+            this.textTroco.Location = new System.Drawing.Point(19, 141);
+            this.textTroco.Name = "textTroco";
+            this.textTroco.Size = new System.Drawing.Size(191, 33);
+            this.textTroco.TabIndex = 11;
+            // 
+            // textValorPago
+            // 
+            this.textValorPago.Location = new System.Drawing.Point(19, 67);
+            this.textValorPago.Name = "textValorPago";
+            this.textValorPago.Size = new System.Drawing.Size(191, 33);
+            this.textValorPago.TabIndex = 9;
+            this.textValorPago.TextChanged += new System.EventHandler(this.textValorPago_TextChanged);
             // 
             // Troco
             // 
@@ -1174,9 +1105,9 @@
             // 
             // groupBoxAcrescimoouDesconto
             // 
-            this.groupBoxAcrescimoouDesconto.Controls.Add(this.textOSDesconto);
-            this.groupBoxAcrescimoouDesconto.Controls.Add(this.textOSAcrescimo);
             this.groupBoxAcrescimoouDesconto.Controls.Add(this.buttonAplicar);
+            this.groupBoxAcrescimoouDesconto.Controls.Add(this.oS_DESCONTOTextBox);
+            this.groupBoxAcrescimoouDesconto.Controls.Add(this.oS_ACRESCIMOTextBox);
             this.groupBoxAcrescimoouDesconto.Controls.Add(oS_ACRESCIMOLabel);
             this.groupBoxAcrescimoouDesconto.Controls.Add(oS_DESCONTOLabel);
             this.groupBoxAcrescimoouDesconto.Location = new System.Drawing.Point(254, 133);
@@ -1184,30 +1115,6 @@
             this.groupBoxAcrescimoouDesconto.Size = new System.Drawing.Size(226, 207);
             this.groupBoxAcrescimoouDesconto.TabIndex = 14;
             this.groupBoxAcrescimoouDesconto.TabStop = false;
-            // 
-            // textOSDesconto
-            // 
-            this.textOSDesconto.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_DESCONTO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textOSDesconto.Location = new System.Drawing.Point(19, 112);
-            this.textOSDesconto.Name = "textOSDesconto";
-            this.textOSDesconto.Size = new System.Drawing.Size(195, 33);
-            this.textOSDesconto.TabIndex = 19;
-            this.textOSDesconto.Text = "R$ 0,00";
-            this.textOSDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textOSDesconto.Valor = 0D;
-            this.textOSDesconto.TextChanged += new System.EventHandler(this.oRCAMENTO_DESCONTOTextBox_TextChanged);
-            // 
-            // textOSAcrescimo
-            // 
-            this.textOSAcrescimo.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_ACRESCIMO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textOSAcrescimo.Location = new System.Drawing.Point(19, 48);
-            this.textOSAcrescimo.Name = "textOSAcrescimo";
-            this.textOSAcrescimo.Size = new System.Drawing.Size(195, 33);
-            this.textOSAcrescimo.TabIndex = 18;
-            this.textOSAcrescimo.Text = "R$ 0,00";
-            this.textOSAcrescimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textOSAcrescimo.Valor = 0D;
-            this.textOSAcrescimo.TextChanged += new System.EventHandler(this.oRCAMENTO_ACRESCIMOTextBox_TextChanged);
             // 
             // buttonAplicar
             // 
@@ -1221,6 +1128,24 @@
             this.buttonAplicar.Text = "Aplicar";
             this.buttonAplicar.UseVisualStyleBackColor = true;
             this.buttonAplicar.Click += new System.EventHandler(this.buttonAplicar_Click);
+            // 
+            // oS_DESCONTOTextBox
+            // 
+            this.oS_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_DESCONTO", true));
+            this.oS_DESCONTOTextBox.Location = new System.Drawing.Point(19, 112);
+            this.oS_DESCONTOTextBox.Name = "oS_DESCONTOTextBox";
+            this.oS_DESCONTOTextBox.Size = new System.Drawing.Size(195, 33);
+            this.oS_DESCONTOTextBox.TabIndex = 5;
+            this.oS_DESCONTOTextBox.TextChanged += new System.EventHandler(this.oRCAMENTO_DESCONTOTextBox_TextChanged);
+            // 
+            // oS_ACRESCIMOTextBox
+            // 
+            this.oS_ACRESCIMOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_ACRESCIMO", true));
+            this.oS_ACRESCIMOTextBox.Location = new System.Drawing.Point(19, 45);
+            this.oS_ACRESCIMOTextBox.Name = "oS_ACRESCIMOTextBox";
+            this.oS_ACRESCIMOTextBox.Size = new System.Drawing.Size(195, 33);
+            this.oS_ACRESCIMOTextBox.TabIndex = 3;
+            this.oS_ACRESCIMOTextBox.TextChanged += new System.EventHandler(this.oRCAMENTO_ACRESCIMOTextBox_TextChanged);
             // 
             // groupBox3
             // 
@@ -1250,6 +1175,16 @@
             this.oS_FORMA_PAGAMENTOComboBox.Size = new System.Drawing.Size(288, 33);
             this.oS_FORMA_PAGAMENTOComboBox.TabIndex = 1;
             // 
+            // textTotal
+            // 
+            this.textTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_TOTAL", true, System.Windows.Forms.DataSourceUpdateMode.Never, null, "N2"));
+            this.textTotal.Font = new System.Drawing.Font("Segoe UI Light", 30F);
+            this.textTotal.Location = new System.Drawing.Point(452, 55);
+            this.textTotal.Name = "textTotal";
+            this.textTotal.ReadOnly = true;
+            this.textTotal.Size = new System.Drawing.Size(279, 61);
+            this.textTotal.TabIndex = 7;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1258,6 +1193,35 @@
             this.label2.Size = new System.Drawing.Size(100, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Valor pago";
+            // 
+            // textTotalPecas
+            // 
+            this.textTotalPecas.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_TOTAL_ITEM", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textTotalPecas.Location = new System.Drawing.Point(150, 39);
+            this.textTotalPecas.Name = "textTotalPecas";
+            this.textTotalPecas.Size = new System.Drawing.Size(129, 33);
+            this.textTotalPecas.TabIndex = 8;
+            this.textTotalPecas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textTotalPecas.Valor = 0D;
+            // 
+            // textTotalServicos
+            // 
+            this.textTotalServicos.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsOS, "OS_TOTAL_SERVICO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textTotalServicos.Location = new System.Drawing.Point(150, 97);
+            this.textTotalServicos.Name = "textTotalServicos";
+            this.textTotalServicos.Size = new System.Drawing.Size(129, 33);
+            this.textTotalServicos.TabIndex = 9;
+            this.textTotalServicos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textTotalServicos.Valor = 0D;
+            // 
+            // textTotalBruto
+            // 
+            this.textTotalBruto.Location = new System.Drawing.Point(150, 160);
+            this.textTotalBruto.Name = "textTotalBruto";
+            this.textTotalBruto.Size = new System.Drawing.Size(129, 33);
+            this.textTotalBruto.TabIndex = 10;
+            this.textTotalBruto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textTotalBruto.Valor = 0D;
             // 
             // formCadastroOS
             // 
@@ -1350,9 +1314,11 @@
         private System.Windows.Forms.GroupBox groupProduto;
         private System.Windows.Forms.BindingSource bsOsItem;
         private dsFROGIOSTableAdapters.OS_ITEMTableAdapter taOsItem;
+        private System.Windows.Forms.TextBox textPecaDesconto;
         private System.Windows.Forms.TextBox textPecaQuantidade;
         private System.Windows.Forms.BindingSource bsProduto;
         private dsFROGIOSTableAdapters.PRODUTOTableAdapter taProduto;
+        private System.Windows.Forms.TextBox pRODUTO_PRECO_VENDATextBox;
         private System.Windows.Forms.TextBox pRODUTO_DESCRICAOTextBox;
         private System.Windows.Forms.Button buttonPesquisarProduto;
         private System.Windows.Forms.Button buttonLancarProduto;
@@ -1360,9 +1326,12 @@
         private System.Windows.Forms.GroupBox groupServico;
         private System.Windows.Forms.BindingSource bsServico;
         private dsFROGIOSTableAdapters.SERVICOTableAdapter taServico;
+        private System.Windows.Forms.TextBox sERVICO_VALORTextBox;
         private System.Windows.Forms.TextBox sERVICO_DESCRICAOTextBox;
         private System.Windows.Forms.BindingSource bsOsServico;
         private dsFROGIOSTableAdapters.OS_SERVICOTableAdapter taOsServico;
+        private System.Windows.Forms.TextBox textServicoAcrescimo;
+        private System.Windows.Forms.TextBox textServicoDesconto;
         private System.Windows.Forms.Button buttonLancarServico;
         private System.Windows.Forms.Button buttonPesquisarServico;
         private System.Windows.Forms.DataGridView oS_SERVICODataGridView;
@@ -1370,8 +1339,13 @@
         private System.Windows.Forms.TabPage tabConclusao;
         private System.Windows.Forms.Panel panelConclusao;
         private System.Windows.Forms.ComboBox oS_FORMA_PAGAMENTOComboBox;
+        private System.Windows.Forms.TextBox oS_ACRESCIMOTextBox;
+        private System.Windows.Forms.TextBox oS_DESCONTOTextBox;
+        private System.Windows.Forms.TextBox textTotal;
+        private System.Windows.Forms.TextBox textValorPago;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Troco;
+        private System.Windows.Forms.TextBox textTroco;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBoxAcrescimoouDesconto;
@@ -1392,15 +1366,5 @@
         private WindowsFormsApplication2.Monetario textTotalBruto;
         private WindowsFormsApplication2.Monetario textTotalServicos;
         private WindowsFormsApplication2.Monetario textTotalPecas;
-        private WindowsFormsApplication2.Monetario textProdutoPreco;
-        private WindowsFormsApplication2.Monetario textProdutoDesconto;
-        private WindowsFormsApplication2.Monetario textServicoAcrescimo;
-        private WindowsFormsApplication2.Monetario textServicoDesconto;
-        private WindowsFormsApplication2.Monetario textServicoPreco;
-        private WindowsFormsApplication2.Monetario textTroco;
-        private WindowsFormsApplication2.Monetario textValorPago;
-        private WindowsFormsApplication2.Monetario textTotalLiquido;
-        private WindowsFormsApplication2.Monetario textOSDesconto;
-        private WindowsFormsApplication2.Monetario textOSAcrescimo;
     }
 }

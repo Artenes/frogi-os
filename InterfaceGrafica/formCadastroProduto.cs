@@ -60,9 +60,9 @@ namespace FROGI_OS
             try { produtoRow.PRODUTO_ESTOQUE_MINIMO = Convert.ToInt16(pRODUTO_ESTOQUE_MINIMOTextBox.Text); } catch (Exception) { produtoRow.PRODUTO_ESTOQUE_MINIMO = 0; }
             try { produtoRow.PRODUTO_ESTOQUE_MAXIMO = Convert.ToInt16(pRODUTO_ESTOQUE_MAXIMOTextBox.Text); } catch (Exception) { produtoRow.PRODUTO_ESTOQUE_MAXIMO = 0; }
             try { produtoRow.PRODUTO_ESTOQUE_ATUAL = Convert.ToInt16(pRODUTO_ESTOQUE_ATUALTextBox.Text); } catch (Exception) { produtoRow.PRODUTO_ESTOQUE_ATUAL = 0; }
-            try { produtoRow.PRODUTO_PRECO_COMPRA = Convert.ToDouble(pRODUTO_PRECO_COMPRATextBox.Text); } catch (Exception) { produtoRow.PRODUTO_PRECO_COMPRA = 0; }
-            try { produtoRow.PRODUTO_PRECO_CUSTO = Convert.ToDouble(pRODUTO_PRECO_CUSTOTextBox.Text); } catch (Exception) { produtoRow.PRODUTO_PRECO_CUSTO = 0; }
-            try { produtoRow.PRODUTO_PRECO_VENDA = Convert.ToDouble(pRODUTO_PRECO_VENDATextBox.Text); } catch (Exception) { produtoRow.PRODUTO_PRECO_VENDA = 0; }
+            try { produtoRow.PRODUTO_PRECO_COMPRA = textCompra.Valor; } catch (Exception) { produtoRow.PRODUTO_PRECO_COMPRA = 0; }
+            try { produtoRow.PRODUTO_PRECO_CUSTO = textCusto.Valor; } catch (Exception) { produtoRow.PRODUTO_PRECO_CUSTO = 0; }
+            try { produtoRow.PRODUTO_PRECO_VENDA = textVenda.Valor; } catch (Exception) { produtoRow.PRODUTO_PRECO_VENDA = 0; }
 
             if (dsFROGIOS.MARCA.Rows.Count != 0) produtoRow.PRODUTO_MARCA = ((dsFROGIOS.MARCARow)dsFROGIOS.MARCA.Rows[0]).MARCA_CODIGO;
             if (dsFROGIOS.GRUPO.Rows.Count != 0) produtoRow.PRODUTO_GRUPO = ((dsFROGIOS.GRUPORow)dsFROGIOS.GRUPO.Rows[0]).GRUPO_CODIGO;

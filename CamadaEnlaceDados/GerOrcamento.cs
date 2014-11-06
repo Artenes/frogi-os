@@ -50,8 +50,10 @@ namespace FROGI_OS.CamadaEnlaceDados
 
             dsFROGIOS.ORCAMENTO_ITEMDataTable itensDeletados = new dsFROGIOS.ORCAMENTO_ITEMDataTable();
             dsFROGIOS.ORCAMENTO_ITEMDataTable itensInseridos = new dsFROGIOS.ORCAMENTO_ITEMDataTable();
+            dsFROGIOS.ORCAMENTO_ITEMDataTable itensAlterados = new dsFROGIOS.ORCAMENTO_ITEMDataTable();
             dsFROGIOS.ORCAMENTO_SERVICODataTable servicosDeletados = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
             dsFROGIOS.ORCAMENTO_SERVICODataTable servicosInseridos = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
+            dsFROGIOS.ORCAMENTO_SERVICODataTable servicosAlterados = new dsFROGIOS.ORCAMENTO_SERVICODataTable();
 
             int contador = 0;
             foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in itens) {
@@ -59,6 +61,10 @@ namespace FROGI_OS.CamadaEnlaceDados
                     item.ORCAMENTO_ITEM_CODIGO = contador; contador++;
                     item.ORCAMENTO_ITEM_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                     itensInseridos.ImportRow(item);
+                }
+
+                if (item.RowState == DataRowState.Modified) {
+                    itensAlterados.ImportRow(item);
                 }
             }
             itensDeletados = (dsFROGIOS.ORCAMENTO_ITEMDataTable)itens.GetChanges(DataRowState.Deleted);
@@ -70,6 +76,11 @@ namespace FROGI_OS.CamadaEnlaceDados
                     servico.ORCAMENTO_SERVICO_ORCAMENTO = orcamento.ORCAMENTO_CODIGO;
                     servicosInseridos.ImportRow(servico);
                 }
+
+                if (servico.RowState == DataRowState.Modified) {
+                    servicosAlterados.ImportRow(servico);
+                }
+
             }
             servicosDeletados = (dsFROGIOS.ORCAMENTO_SERVICODataTable)servicos.GetChanges(DataRowState.Deleted);
 
@@ -112,6 +123,15 @@ namespace FROGI_OS.CamadaEnlaceDados
                 servicoTmp.ORCAMENTO_SERVICO_TOTAL = (double)servicosInseridos.Rows[i][servicosInseridos.ORCAMENTO_SERVICO_TOTALColumn, DataRowVersion.Current];
                 orcamentoServicoSQL.inserir(servicoTmp);
             }
+
+            foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in itensAlterados) {
+                orcamentoItemSQL.atualizar(item);
+            }
+
+            foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in servicosAlterados) {
+                orcamentoServicoSQL.atualizar(servico);
+            }
+
         }
 
         public void selecionar(

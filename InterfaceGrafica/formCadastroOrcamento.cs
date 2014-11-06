@@ -20,14 +20,8 @@ namespace FROGI_OS.InterfaceGrafica {
             InitializeComponent();
             orcamentoSQL = new GerOrcamento();
             dsFROGIOS.EnforceConstraints = false;
-            if (eNovo)
-            {
-                oRCAMENTO_TOTAL_ITEMTextBox.Text = "0,0";
-                oRCAMENTO_TOTAL_SERVICOTextBox.Text = "0,0";
-                textTotalBruto.Text = "0,0";
+            if (eNovo) {
                 labelTotalLiquido.Text = "R$0,0";
-                oRCAMENTO_DESCONTOTextBox.Text = "0,0";
-                oRCAMENTO_ACRESCIMOTextBox.Text = "0,0";
                 oRCAMENTO_DATALabel1.Text = DateTime.Now.ToShortDateString();
                 campos(true);
                 buttonLancarOS.Visible = false;
@@ -57,10 +51,10 @@ namespace FROGI_OS.InterfaceGrafica {
             }
             orcamentoRow.ORCAMENTO_CLIENTE = ((dsFROGIOS.CLIENTERow)dsFROGIOS.CLIENTE.Rows[0]).CLIENTE_CODIGO;
             orcamentoRow.ORCAMENTO_FUNCIONARIO = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_CODIGO;
-            orcamentoRow.ORCAMENTO_TOTAL_ITEM = converterParaDouble(oRCAMENTO_TOTAL_ITEMTextBox.Text);
-            orcamentoRow.ORCAMENTO_TOTAL_SERVICO = converterParaDouble(oRCAMENTO_TOTAL_SERVICOTextBox.Text);
-            orcamentoRow.ORCAMENTO_DESCONTO = converterParaDouble(oRCAMENTO_DESCONTOTextBox.Text);
-            orcamentoRow.ORCAMENTO_ACRESCIMO = converterParaDouble(oRCAMENTO_ACRESCIMOTextBox.Text);
+            orcamentoRow.ORCAMENTO_TOTAL_ITEM = textTotalPecas.Valor;
+            orcamentoRow.ORCAMENTO_TOTAL_SERVICO = textTotalServicos.Valor;
+            orcamentoRow.ORCAMENTO_DESCONTO = textOrcamentoDesconto.Valor;
+            orcamentoRow.ORCAMENTO_ACRESCIMO = textOrcamentoAcresicmo.Valor;
             orcamentoRow.ORCAMENTO_OBSERVACAO = oRCAMENTO_OBSERVACAORichTextBox.Text;
             orcamentoRow.ORCAMENTO_TOTAL = converterParaDouble(labelTotalLiquido.Text.Substring(2));
             orcamentoRow.ORCAMENTO_PRODUTO = oRCAMENTO_PRODUTOTextBox.Text;
@@ -75,7 +69,7 @@ namespace FROGI_OS.InterfaceGrafica {
             tabPai.SelectedTab = tabGeral;
             labelTotalLiquido.Text = "R$" + labelTotalLiquido.Text;
             buttonLancarOS.Visible = false;
-            this.ActiveControl = oRCAMENTO_TOTAL_ITEMTextBox;
+            this.ActiveControl = textTotalPecas;
         }
 
         protected override void excluirExecutar() {
@@ -156,8 +150,9 @@ namespace FROGI_OS.InterfaceGrafica {
             formPesquisaProduto produto = new formPesquisaProduto(this, false);
             produto.ShowDialog();
             produto.Dispose();
-            textPecaDesconto.Text = "0,00";
+            textPecaDesconto.Valor = 00;
             textPecaQuantidade.Text = "1";
+            this.itemAtual = null;
         }
 
         /**
@@ -173,9 +168,9 @@ namespace FROGI_OS.InterfaceGrafica {
                 dsFROGIOS.PRODUTORow produto = (dsFROGIOS.PRODUTORow)dsFROGIOS.PRODUTO.Rows[0];
 
                 item.ORCAMENTO_ITEM_PRODUTO = produto.PRODUTO_CODIGO;
-                item.ORCAMENTO_ITEM_VALOR = converterParaDouble(pRODUTO_PRECO_VENDATextBox.Text); //produto.PRODUTO_PRECO_VENDA;
+                item.ORCAMENTO_ITEM_VALOR = produto.PRODUTO_PRECO_VENDA; //produto.PRODUTO_PRECO_VENDA;
                 item.ORCAMENTO_ITEM_DESCRICAO = produto.PRODUTO_DESCRICAO;
-                item.ORCAMENTO_ITEM_DESCONTO = converterParaDouble(textPecaDesconto.Text);
+                item.ORCAMENTO_ITEM_DESCONTO = textPecaDesconto.Valor;
                 item.ORCAMENTO_ITEM_QUANTIDADE = converterParaShort(textPecaQuantidade.Text);
                 
                 //Calculo do total
@@ -211,7 +206,7 @@ namespace FROGI_OS.InterfaceGrafica {
             produto.PRODUTO_PRECO_VENDA = itemAtual.ORCAMENTO_ITEM_VALOR;
             produto.PRODUTO_DESCRICAO = itemAtual.ORCAMENTO_ITEM_DESCRICAO;
             dsFROGIOS.PRODUTO.AddPRODUTORow(produto);
-            textPecaDesconto.Text = itemAtual.ORCAMENTO_ITEM_DESCONTO.ToString("0.00");
+            textPecaDesconto.Valor = itemAtual.ORCAMENTO_ITEM_DESCONTO;
             textPecaQuantidade.Text = itemAtual.ORCAMENTO_ITEM_QUANTIDADE.ToString();
         }
 
@@ -219,8 +214,9 @@ namespace FROGI_OS.InterfaceGrafica {
             formPesquisaServico servico = new formPesquisaServico(this, false);
             servico.ShowDialog();
             servico.Dispose();
-            textServicoAcrescimo.Text = "0,00";
-            textServicoDesconto.Text = "0,00";
+            textServicoAcrescimo.Valor = 00;
+            textServicoDesconto.Valor = 00;
+            this.servicoAtual = null;
         }
 
         private void buttonLancarServico_Click(object sender, EventArgs e) {
@@ -231,8 +227,8 @@ namespace FROGI_OS.InterfaceGrafica {
                 servicoItem.ORCAMENTO_SERVICO_SERVICO = servico.SERVICO_CODIGO;
                 servicoItem.ORCAMENTO_SERVICO_VALOR = servico.SERVICO_VALOR;
                 servicoItem.ORCAMENTO_SERVICO_DESCRICAO = servico.SERVICO_DESCRICAO;
-                servicoItem.ORCAMENTO_SERVICO_DESCONTO = converterParaDouble(textServicoDesconto.Text);
-                servicoItem.ORCAMENTO_SERVICO_ACRESCIMO = converterParaDouble(textServicoAcrescimo.Text);
+                servicoItem.ORCAMENTO_SERVICO_DESCONTO = textServicoDesconto.Valor;
+                servicoItem.ORCAMENTO_SERVICO_ACRESCIMO = textServicoAcrescimo.Valor;
 
                 //calculo do total
                 double
@@ -268,16 +264,16 @@ namespace FROGI_OS.InterfaceGrafica {
             servico.SERVICO_VALOR = servicoAtual.ORCAMENTO_SERVICO_VALOR;
             servico.SERVICO_DESCRICAO = servicoAtual.ORCAMENTO_SERVICO_DESCRICAO;
             dsFROGIOS.SERVICO.AddSERVICORow(servico);
-            textServicoDesconto.Text = servicoAtual.ORCAMENTO_SERVICO_DESCONTO.ToString("0.00");
-            textServicoAcrescimo.Text = servicoAtual.ORCAMENTO_SERVICO_ACRESCIMO.ToString("0.00");
+            textServicoDesconto.Valor = servicoAtual.ORCAMENTO_SERVICO_DESCONTO;
+            textServicoAcrescimo.Valor = servicoAtual.ORCAMENTO_SERVICO_ACRESCIMO;
         }
 
         private void aplicarDescontoAcrescimo() {
 
             double
-               totalBruto = converterParaDouble(textTotalBruto.Text),
-               acrescimo = converterParaDouble(oRCAMENTO_ACRESCIMOTextBox.Text),
-               desconto = converterParaDouble(oRCAMENTO_DESCONTOTextBox.Text);
+               totalBruto = textTotalBruto.Valor,
+               acrescimo = textOrcamentoAcresicmo.Valor,
+               desconto = textOrcamentoDesconto.Valor;
 
             try {
                 if (acrescimo != 0 && acrescimo > 0) {
@@ -327,9 +323,9 @@ namespace FROGI_OS.InterfaceGrafica {
             totalBruto = totalPecasBruto + totalServicosBruto;
             totalLiquido = totalPecasLiquido + totalServicosLiquido;
 
-            oRCAMENTO_TOTAL_ITEMTextBox.Text = totalPecasLiquido.ToString("0.00");
-            oRCAMENTO_TOTAL_SERVICOTextBox.Text = totalServicosLiquido.ToString("0.00");
-            textTotalBruto.Text = totalBruto.ToString("0.00");
+            textTotalPecas.Valor = totalPecasLiquido;
+            textTotalServicos.Valor = totalServicosLiquido;
+            textTotalBruto.Valor = totalBruto;
             labelTotalLiquido.Text = "R$" + totalLiquido.ToString("0.00");
 
             if (aplica) {
@@ -337,15 +333,15 @@ namespace FROGI_OS.InterfaceGrafica {
                 aplicarDescontoAcrescimo();
             } else {
                 panelDesconto_Acrescimo.Visible = false;
-                oRCAMENTO_DESCONTOTextBox.Text = "0,00";
-                oRCAMENTO_ACRESCIMOTextBox.Text = "0,00";
+                textOrcamentoDesconto.Valor = 00;
+                textOrcamentoAcresicmo.Valor = 00;
             }
         }
 
         private void tabPai_SelectedIndexChanged(object sender, EventArgs e) {
             if (((TabControl)sender).SelectedTab == tabGeral) {
                 calcularTotais();
-                this.ActiveControl = oRCAMENTO_TOTAL_ITEMTextBox;
+                this.ActiveControl = textTotalPecas;
             }
         }
 
@@ -365,14 +361,14 @@ namespace FROGI_OS.InterfaceGrafica {
         private void oRCAMENTO_DESCONTOTextBox_TextChanged(object sender, EventArgs e) {
             TextBox text = (TextBox)sender;
             if (text.Focused) {
-                oRCAMENTO_ACRESCIMOTextBox.Text = "0,00";
+                textOrcamentoAcresicmo.Valor = 00;
             }
         }
 
         private void oRCAMENTO_ACRESCIMOTextBox_TextChanged(object sender, EventArgs e) {
             TextBox text = (TextBox)sender;
             if (text.Focused) {
-                oRCAMENTO_DESCONTOTextBox.Text = "0,00";
+                textOrcamentoDesconto.Valor = 00;
             }
         }
 
@@ -463,7 +459,7 @@ namespace FROGI_OS.InterfaceGrafica {
         }
 
         private void formCadastroOrcamento_Load(object sender, EventArgs e) {
-            this.ActiveControl = oRCAMENTO_TOTAL_ITEMTextBox;
+            this.ActiveControl = textTotalPecas;
         }
 
         private void oRCAMENTO_ITEMDataGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {

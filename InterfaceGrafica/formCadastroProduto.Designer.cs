@@ -73,9 +73,6 @@
             this.pRODUTO_ESTOQUE_MINIMOTextBox = new System.Windows.Forms.TextBox();
             this.pRODUTO_ESTOQUE_MAXIMOTextBox = new System.Windows.Forms.TextBox();
             this.pRODUTO_ESTOQUE_ATUALTextBox = new System.Windows.Forms.TextBox();
-            this.pRODUTO_PRECO_COMPRATextBox = new System.Windows.Forms.TextBox();
-            this.pRODUTO_PRECO_CUSTOTextBox = new System.Windows.Forms.TextBox();
-            this.pRODUTO_PRECO_VENDATextBox = new System.Windows.Forms.TextBox();
             this.pRODUTO_DATA_CADASTROLabel1 = new System.Windows.Forms.Label();
             this.mARCA_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
@@ -102,6 +99,9 @@
             this.taGrupo = new FROGI_OS.dsFROGIOSTableAdapters.GRUPOTableAdapter();
             this.taMarca = new FROGI_OS.dsFROGIOSTableAdapters.MARCATableAdapter();
             this.taSecao = new FROGI_OS.dsFROGIOSTableAdapters.SECAOTableAdapter();
+            this.textCompra = new WindowsFormsApplication2.Monetario();
+            this.textCusto = new WindowsFormsApplication2.Monetario();
+            this.textVenda = new WindowsFormsApplication2.Monetario();
             pRODUTO_CODIGOLabel = new System.Windows.Forms.Label();
             pRODUTO_DESCRICAOLabel = new System.Windows.Forms.Label();
             pRODUTO_CARACTERISTICALabel = new System.Windows.Forms.Label();
@@ -329,7 +329,7 @@
             // pRODUTO_PRECO_COMPRALabel
             // 
             pRODUTO_PRECO_COMPRALabel.AutoSize = true;
-            pRODUTO_PRECO_COMPRALabel.Location = new System.Drawing.Point(6, 34);
+            pRODUTO_PRECO_COMPRALabel.Location = new System.Drawing.Point(6, 30);
             pRODUTO_PRECO_COMPRALabel.Name = "pRODUTO_PRECO_COMPRALabel";
             pRODUTO_PRECO_COMPRALabel.Size = new System.Drawing.Size(77, 25);
             pRODUTO_PRECO_COMPRALabel.TabIndex = 34;
@@ -338,7 +338,7 @@
             // pRODUTO_PRECO_CUSTOLabel
             // 
             pRODUTO_PRECO_CUSTOLabel.AutoSize = true;
-            pRODUTO_PRECO_CUSTOLabel.Location = new System.Drawing.Point(6, 73);
+            pRODUTO_PRECO_CUSTOLabel.Location = new System.Drawing.Point(6, 69);
             pRODUTO_PRECO_CUSTOLabel.Name = "pRODUTO_PRECO_CUSTOLabel";
             pRODUTO_PRECO_CUSTOLabel.Size = new System.Drawing.Size(58, 25);
             pRODUTO_PRECO_CUSTOLabel.TabIndex = 36;
@@ -347,7 +347,7 @@
             // pRODUTO_PRECO_VENDALabel
             // 
             pRODUTO_PRECO_VENDALabel.AutoSize = true;
-            pRODUTO_PRECO_VENDALabel.Location = new System.Drawing.Point(6, 112);
+            pRODUTO_PRECO_VENDALabel.Location = new System.Drawing.Point(6, 108);
             pRODUTO_PRECO_VENDALabel.Name = "pRODUTO_PRECO_VENDALabel";
             pRODUTO_PRECO_VENDALabel.Size = new System.Drawing.Size(63, 25);
             pRODUTO_PRECO_VENDALabel.TabIndex = 38;
@@ -564,33 +564,6 @@
             this.pRODUTO_ESTOQUE_ATUALTextBox.Size = new System.Drawing.Size(100, 33);
             this.pRODUTO_ESTOQUE_ATUALTextBox.TabIndex = 6;
             // 
-            // pRODUTO_PRECO_COMPRATextBox
-            // 
-            this.pRODUTO_PRECO_COMPRATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_COMPRA", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.pRODUTO_PRECO_COMPRATextBox.Location = new System.Drawing.Point(96, 31);
-            this.pRODUTO_PRECO_COMPRATextBox.MaxLength = 16;
-            this.pRODUTO_PRECO_COMPRATextBox.Name = "pRODUTO_PRECO_COMPRATextBox";
-            this.pRODUTO_PRECO_COMPRATextBox.Size = new System.Drawing.Size(165, 33);
-            this.pRODUTO_PRECO_COMPRATextBox.TabIndex = 7;
-            // 
-            // pRODUTO_PRECO_CUSTOTextBox
-            // 
-            this.pRODUTO_PRECO_CUSTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_CUSTO", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.pRODUTO_PRECO_CUSTOTextBox.Location = new System.Drawing.Point(96, 70);
-            this.pRODUTO_PRECO_CUSTOTextBox.MaxLength = 16;
-            this.pRODUTO_PRECO_CUSTOTextBox.Name = "pRODUTO_PRECO_CUSTOTextBox";
-            this.pRODUTO_PRECO_CUSTOTextBox.Size = new System.Drawing.Size(164, 33);
-            this.pRODUTO_PRECO_CUSTOTextBox.TabIndex = 8;
-            // 
-            // pRODUTO_PRECO_VENDATextBox
-            // 
-            this.pRODUTO_PRECO_VENDATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.pRODUTO_PRECO_VENDATextBox.Location = new System.Drawing.Point(96, 109);
-            this.pRODUTO_PRECO_VENDATextBox.MaxLength = 16;
-            this.pRODUTO_PRECO_VENDATextBox.Name = "pRODUTO_PRECO_VENDATextBox";
-            this.pRODUTO_PRECO_VENDATextBox.Size = new System.Drawing.Size(165, 33);
-            this.pRODUTO_PRECO_VENDATextBox.TabIndex = 9;
-            // 
             // pRODUTO_DATA_CADASTROLabel1
             // 
             this.pRODUTO_DATA_CADASTROLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_DATA_CADASTRO", true));
@@ -760,12 +733,12 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.textVenda);
+            this.groupBox6.Controls.Add(this.textCusto);
+            this.groupBox6.Controls.Add(this.textCompra);
             this.groupBox6.Controls.Add(pRODUTO_PRECO_COMPRALabel);
-            this.groupBox6.Controls.Add(this.pRODUTO_PRECO_VENDATextBox);
             this.groupBox6.Controls.Add(pRODUTO_PRECO_VENDALabel);
-            this.groupBox6.Controls.Add(this.pRODUTO_PRECO_CUSTOTextBox);
             this.groupBox6.Controls.Add(pRODUTO_PRECO_CUSTOLabel);
-            this.groupBox6.Controls.Add(this.pRODUTO_PRECO_COMPRATextBox);
             this.groupBox6.Location = new System.Drawing.Point(556, 162);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(284, 151);
@@ -855,6 +828,36 @@
             // 
             this.taSecao.ClearBeforeFill = true;
             // 
+            // textCompra
+            // 
+            this.textCompra.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_COMPRA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textCompra.Location = new System.Drawing.Point(89, 25);
+            this.textCompra.Name = "textCompra";
+            this.textCompra.Size = new System.Drawing.Size(150, 33);
+            this.textCompra.TabIndex = 39;
+            this.textCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textCompra.Valor = 0D;
+            // 
+            // textCusto
+            // 
+            this.textCusto.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_CUSTO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textCusto.Location = new System.Drawing.Point(89, 66);
+            this.textCusto.Name = "textCusto";
+            this.textCusto.Size = new System.Drawing.Size(150, 33);
+            this.textCusto.TabIndex = 40;
+            this.textCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textCusto.Valor = 0D;
+            // 
+            // textVenda
+            // 
+            this.textVenda.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textVenda.Location = new System.Drawing.Point(89, 108);
+            this.textVenda.Name = "textVenda";
+            this.textVenda.Size = new System.Drawing.Size(150, 33);
+            this.textVenda.TabIndex = 41;
+            this.textVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textVenda.Valor = 0D;
+            // 
             // formCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -917,9 +920,6 @@
         private System.Windows.Forms.TextBox pRODUTO_ESTOQUE_MINIMOTextBox;
         private System.Windows.Forms.TextBox pRODUTO_ESTOQUE_MAXIMOTextBox;
         private System.Windows.Forms.TextBox pRODUTO_ESTOQUE_ATUALTextBox;
-        private System.Windows.Forms.TextBox pRODUTO_PRECO_COMPRATextBox;
-        private System.Windows.Forms.TextBox pRODUTO_PRECO_CUSTOTextBox;
-        private System.Windows.Forms.TextBox pRODUTO_PRECO_VENDATextBox;
         private System.Windows.Forms.Label pRODUTO_DATA_CADASTROLabel1;
         private dsFROGIOSTableAdapters.MARCATableAdapter taMarca;
         private System.Windows.Forms.BindingSource bsMarca;
@@ -944,6 +944,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox7;
+        private WindowsFormsApplication2.Monetario textVenda;
+        private WindowsFormsApplication2.Monetario textCusto;
+        private WindowsFormsApplication2.Monetario textCompra;
 
 
     }
