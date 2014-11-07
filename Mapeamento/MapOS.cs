@@ -14,7 +14,7 @@ namespace FROGI_OS.Mapeamento
         private const string telefone = "Telefone";
         private const string celular = "Celular";
         private const string funcionarioNome = "Funcionário";
-        private const string data = "Data";
+        //private const string data = "Data";
         private const string status = "Status";
 
         private readonly string colunaCodigo;
@@ -23,7 +23,7 @@ namespace FROGI_OS.Mapeamento
         private readonly string colunaTelefone;
         private readonly string colunaCelular;
         private readonly string colunaFuncionario;
-        private readonly string colunaData;
+        //private readonly string colunaData;
         private readonly string colunaStatus;
 
         private readonly string[] colunasFisico;
@@ -43,7 +43,7 @@ namespace FROGI_OS.Mapeamento
             colunaTelefone = cliente.CLIENTE_TELEFONEColumn.ColumnName;
             colunaCelular = cliente.CLIENTE_CELULARColumn.ColumnName;
             colunaFuncionario = funcionario.FUNCIONARIO_NOMEColumn.ColumnName;
-            colunaData = os.OS_DATAColumn.ColumnName;
+           // colunaData = os.OS_DATAColumn.ColumnName;
             colunaStatus = os.OS_STATUSColumn.ColumnName;
 
             colunasFisico = new string[] { 
@@ -52,7 +52,7 @@ namespace FROGI_OS.Mapeamento
                 telefone,
                 celular,
                 funcionarioNome,
-                data,
+             //   data,
                 status
             };
 
@@ -62,7 +62,7 @@ namespace FROGI_OS.Mapeamento
                 telefone,
                 celular,
                 funcionarioNome,
-                data,
+               // data,
                 status
             };
         }
@@ -83,8 +83,8 @@ namespace FROGI_OS.Mapeamento
                     return colunaCelular;
                 case funcionarioNome:
                     return colunaFuncionario;
-                case data:
-                    return colunaData;
+                //case data:
+                  //  return colunaData;
                 case status:
                     return colunaStatus;
                 default:

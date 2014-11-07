@@ -709,6 +709,7 @@
             // 
             this.oS_DEFEITORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_DEFEITO", true));
             this.oS_DEFEITORichTextBox.Location = new System.Drawing.Point(16, 111);
+            this.oS_DEFEITORichTextBox.MaxLength = 200;
             this.oS_DEFEITORichTextBox.Name = "oS_DEFEITORichTextBox";
             this.oS_DEFEITORichTextBox.Size = new System.Drawing.Size(364, 258);
             this.oS_DEFEITORichTextBox.TabIndex = 3;
@@ -718,6 +719,7 @@
             // 
             this.oS_AVULSOSRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_AVULSOS", true));
             this.oS_AVULSOSRichTextBox.Location = new System.Drawing.Point(391, 111);
+            this.oS_AVULSOSRichTextBox.MaxLength = 200;
             this.oS_AVULSOSRichTextBox.Name = "oS_AVULSOSRichTextBox";
             this.oS_AVULSOSRichTextBox.Size = new System.Drawing.Size(370, 112);
             this.oS_AVULSOSRichTextBox.TabIndex = 5;
@@ -727,6 +729,7 @@
             // 
             this.oS_OBSERVACAORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_OBSERVACAO", true));
             this.oS_OBSERVACAORichTextBox.Location = new System.Drawing.Point(391, 254);
+            this.oS_OBSERVACAORichTextBox.MaxLength = 200;
             this.oS_OBSERVACAORichTextBox.Name = "oS_OBSERVACAORichTextBox";
             this.oS_OBSERVACAORichTextBox.Size = new System.Drawing.Size(370, 115);
             this.oS_OBSERVACAORichTextBox.TabIndex = 7;
@@ -1066,6 +1069,7 @@
             this.oS_DIAGNOSTICORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_DIAGNOSTICO", true));
             this.oS_DIAGNOSTICORichTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oS_DIAGNOSTICORichTextBox.Location = new System.Drawing.Point(0, 22);
+            this.oS_DIAGNOSTICORichTextBox.MaxLength = 200;
             this.oS_DIAGNOSTICORichTextBox.Name = "oS_DIAGNOSTICORichTextBox";
             this.oS_DIAGNOSTICORichTextBox.Size = new System.Drawing.Size(786, 332);
             this.oS_DIAGNOSTICORichTextBox.TabIndex = 1;

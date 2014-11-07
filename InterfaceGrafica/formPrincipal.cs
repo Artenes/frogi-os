@@ -30,9 +30,24 @@ namespace FROGI_OS
             login.ShowDialog(this);
         }
 
+        private void abrirForm(PictureBox icone, formCadastro cadastro) {
+            if (icone != null && (icone.Cursor == Cursors.Hand) && cadastro != null) {
+                this.ActiveControl = icone;
+                cadastro.ShowDialog();
+                cadastro.Dispose();
+            }
+        }
+
+        private void abrirForm(PictureBox icone, formOSBasePesquisa pesquisa) {
+            if (icone != null && (icone.Cursor == Cursors.Hand) && pesquisa != null) {
+                this.ActiveControl = icone;
+                pesquisa.ShowDialog();
+                pesquisa.Dispose();
+            }
+        }
+
         private void pictureClientes_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroCliente(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroCliente(true));
         }
 
         private void pictureUsuarioFoto_Click(object sender, EventArgs e) {
@@ -47,87 +62,52 @@ namespace FROGI_OS
         }
 
         private void pictureMarcas_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroMarca(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroMarca(true));
         }
 
         private void pictureFuncionarios_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroFuncionario(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroFuncionario(true));
         }
 
         private void pictureOrdemServico_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formPesquisaOS os = new formPesquisaOS();
-            os.ShowDialog();
-            os.Dispose();
+            abrirForm(sender as PictureBox, new formPesquisaOS());
         }
 
         private void pictureSecoes_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroSecao(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroSecao(true));
         }
 
         private void pictureServicos_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroServico(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroServico(true));
         }
 
         private void pictureProdutos_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroProduto(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroProduto(true));
         }
 
         private void pictureGrupos_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroGrupo(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroGrupo(true));
         }
 
         private void pictureTipos_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroTipo(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroTipo(true));
         }
 
         private void pictureFornecedores_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroFornecedor(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroFornecedor(true));
         }
 
         private void pictureUsuarios_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formCadastroUsuario(true).ShowDialog();
+            abrirForm(sender as PictureBox, new formCadastroUsuario(true));
         }
 
         private void pictureOrcamentos_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            new formPesquisaOrcamento().ShowDialog();
+            abrirForm(sender as PictureBox, new formPesquisaOrcamento());
         }
 
         private void pictureAgendamentos_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formCadastroAgendamento agendamento = new formCadastroAgendamento(true);
-            agendamento.ShowDialog();
-            agendamento.Dispose();
+            abrirForm(sender as PictureBox, new formCadastroAgendamento(true));
         }
-
-        private void pictureCompras_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
-            dialogo.ShowDialog();
-            dialogo.Dispose();
-            /*formCadastroCompra compra = new formCadastroCompra(true);
-            compra.ShowDialog();
-            compra.Dispose();*/
-        }
-
-        private void pictureAjuda_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formSobre sobre = new formSobre();
-            sobre.ShowDialog();
-            sobre.Dispose();
-        }
-
-        
 
         private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e) {
             formDialogo dialogo = new formDialogo("Quer fechar o programa?", "Tava tão legal com você por aqui...", formDialogo.TipoExpressao.Pergunta);
@@ -142,24 +122,10 @@ namespace FROGI_OS
             labelHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
 
-        private void pictureOpcoes_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
-            dialogo.ShowDialog();
-            dialogo.Dispose();
-        }
-
         private void dateDataServico_ValueChanged(object sender, EventArgs e) {
             DateTime data = (sender as DateTimePicker).Value;
             taAFAZER_FISICO.FillByDate(dsFROGIOS.AFAZER_FISICO, data);
             taAFAZER_JURIDICO.FillByDate(dsFROGIOS.AFAZER_JURIDICO, data);
-        }
-
-        private void pictureRelatorios_Click(object sender, EventArgs e) {
-            this.ActiveControl = (Control)sender;
-            formDialogo dialogo = new formDialogo("Seção não disponível na versão beta", "", formDialogo.TipoExpressao.AvisoTriste);
-            dialogo.ShowDialog();
-            dialogo.Dispose();
         }
 
         private void selecionarDiretorio(TextBox textExibir) {
@@ -195,6 +161,23 @@ namespace FROGI_OS
         public void selecionarUsuario (string nome, int tipo) {
             labelUsuarioNome.Text = nome;
             labelTipoUsuario.Text = tipo == 0 ? "Administrador" : "Funcionário";
+            nivelAcesso(tipo);
         }
+
+        private void pictureAjuda_Click(object sender, EventArgs e) {
+            new formSobre().ShowDialog();
+        }
+
+        public void nivelAcesso(int usuarioTipo) {
+            bool eAdministrador = (usuarioTipo == 0);
+            if (eAdministrador) {
+                pictureFuncionarios.Cursor = Cursors.Hand;
+                pictureUsuarios.Cursor = Cursors.Hand;
+            } else {
+                pictureFuncionarios.Cursor = Cursors.No;
+                pictureUsuarios.Cursor = Cursors.No;
+            }
+        }
+        
     }
 }

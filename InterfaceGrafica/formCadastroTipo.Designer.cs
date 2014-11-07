@@ -135,6 +135,7 @@
             // 
             this.tIPO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsTipo, "TIPO_DESCRICAO", true));
             this.tIPO_DESCRICAOTextBox.Location = new System.Drawing.Point(24, 43);
+            this.tIPO_DESCRICAOTextBox.MaxLength = 60;
             this.tIPO_DESCRICAOTextBox.Name = "tIPO_DESCRICAOTextBox";
             this.tIPO_DESCRICAOTextBox.Size = new System.Drawing.Size(413, 33);
             this.tIPO_DESCRICAOTextBox.TabIndex = 3;

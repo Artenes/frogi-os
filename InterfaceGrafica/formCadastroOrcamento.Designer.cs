@@ -579,6 +579,7 @@
             // 
             this.oRCAMENTO_DEFEITORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_DEFEITO", true));
             this.oRCAMENTO_DEFEITORichTextBox.Location = new System.Drawing.Point(16, 107);
+            this.oRCAMENTO_DEFEITORichTextBox.MaxLength = 200;
             this.oRCAMENTO_DEFEITORichTextBox.Name = "oRCAMENTO_DEFEITORichTextBox";
             this.oRCAMENTO_DEFEITORichTextBox.Size = new System.Drawing.Size(452, 248);
             this.oRCAMENTO_DEFEITORichTextBox.TabIndex = 3;
@@ -588,6 +589,7 @@
             // 
             this.oRCAMENTO_AVULSOSRichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_AVULSOS", true));
             this.oRCAMENTO_AVULSOSRichTextBox.Location = new System.Drawing.Point(474, 107);
+            this.oRCAMENTO_AVULSOSRichTextBox.MaxLength = 200;
             this.oRCAMENTO_AVULSOSRichTextBox.Name = "oRCAMENTO_AVULSOSRichTextBox";
             this.oRCAMENTO_AVULSOSRichTextBox.Size = new System.Drawing.Size(285, 99);
             this.oRCAMENTO_AVULSOSRichTextBox.TabIndex = 5;
@@ -939,6 +941,7 @@
             this.oRCAMENTO_DIAGNOSTICORichTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_DIAGNOSTICO", true));
             this.oRCAMENTO_DIAGNOSTICORichTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.oRCAMENTO_DIAGNOSTICORichTextBox.Location = new System.Drawing.Point(0, 27);
+            this.oRCAMENTO_DIAGNOSTICORichTextBox.MaxLength = 200;
             this.oRCAMENTO_DIAGNOSTICORichTextBox.Name = "oRCAMENTO_DIAGNOSTICORichTextBox";
             this.oRCAMENTO_DIAGNOSTICORichTextBox.Size = new System.Drawing.Size(786, 355);
             this.oRCAMENTO_DIAGNOSTICORichTextBox.TabIndex = 1;

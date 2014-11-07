@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.linkLogOff = new System.Windows.Forms.LinkLabel();
-            this.linkPerfil = new System.Windows.Forms.LinkLabel();
             this.linkSair = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureFechar = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.SuspendLayout();
@@ -45,6 +45,7 @@
             this.linkLogOff.ActiveLinkColor = System.Drawing.Color.Crimson;
             this.linkLogOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.linkLogOff.AutoSize = true;
+            this.linkLogOff.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLogOff.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLogOff.LinkColor = System.Drawing.Color.LavenderBlush;
             this.linkLogOff.Location = new System.Drawing.Point(52, 37);
@@ -55,26 +56,12 @@
             this.linkLogOff.Text = "LogOff";
             this.linkLogOff.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLogOff_LinkClicked);
             // 
-            // linkPerfil
-            // 
-            this.linkPerfil.ActiveLinkColor = System.Drawing.Color.Crimson;
-            this.linkPerfil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkPerfil.AutoSize = true;
-            this.linkPerfil.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkPerfil.LinkColor = System.Drawing.Color.LavenderBlush;
-            this.linkPerfil.Location = new System.Drawing.Point(59, 103);
-            this.linkPerfil.Name = "linkPerfil";
-            this.linkPerfil.Size = new System.Drawing.Size(51, 25);
-            this.linkPerfil.TabIndex = 1;
-            this.linkPerfil.TabStop = true;
-            this.linkPerfil.Text = "Perfil";
-            this.linkPerfil.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkPerfil_LinkClicked);
-            // 
             // linkSair
             // 
             this.linkSair.ActiveLinkColor = System.Drawing.Color.Crimson;
             this.linkSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.linkSair.AutoSize = true;
+            this.linkSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkSair.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkSair.LinkColor = System.Drawing.Color.LavenderBlush;
             this.linkSair.Location = new System.Drawing.Point(65, 160);
@@ -111,15 +98,6 @@
             this.panel3.Size = new System.Drawing.Size(194, 43);
             this.panel3.TabIndex = 4;
             // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel4.BackColor = System.Drawing.Color.Black;
-            this.panel4.Location = new System.Drawing.Point(-10, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(196, 23);
-            this.panel4.TabIndex = 5;
-            // 
             // pictureFechar
             // 
             this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
@@ -131,18 +109,39 @@
             this.pictureFechar.TabStop = false;
             this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(-10, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(196, 23);
+            this.panel4.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Cursor = System.Windows.Forms.Cursors.No;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Light", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Underline | System.Drawing.FontStyle.Strikeout))));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(61, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Perfil";
+            // 
             // formMenuPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(2)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(172, 235);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.linkSair);
-            this.Controls.Add(this.linkPerfil);
             this.Controls.Add(this.linkLogOff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formMenuPopUp";
@@ -158,12 +157,12 @@
         #endregion
 
         private System.Windows.Forms.LinkLabel linkLogOff;
-        private System.Windows.Forms.LinkLabel linkPerfil;
         private System.Windows.Forms.LinkLabel linkSair;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureFechar;
+        private System.Windows.Forms.Label label1;
     }
 }

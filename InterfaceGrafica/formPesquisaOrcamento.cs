@@ -155,6 +155,18 @@ namespace FROGI_OS.InterfaceGrafica {
                 selecionarOrcamento();
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void dateFiltro_ValueChanged(object sender, EventArgs e) {
+            if (eFisico()) {
+                tablessPai.SelectedTab = tabFisico;
+                dsFROGIOS.PESQUISA_ORCAMENTO_FISICO.Clear();
+                taPesquisaOrcamentoFisico.selecionarPorData(dsFROGIOS.PESQUISA_ORCAMENTO_FISICO, dateFiltro.Value);
+            } else {
+                tablessPai.SelectedTab = tabJuridico;
+                dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO.Clear();
+                taPesquisaOrcamentoJuridico.selecionarPorData(dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO, dateFiltro.Value);
+            }
         } 
 
     }

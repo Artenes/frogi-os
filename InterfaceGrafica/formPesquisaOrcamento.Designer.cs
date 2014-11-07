@@ -29,13 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
-            this.bsPesquisaFisico = new System.Windows.Forms.BindingSource(this.components);
-            this.taPesquisaOrcamentoFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOrcamentoFisico();
-            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.pESQUISA_ORCAMENTO_FISICODataGridView = new System.Windows.Forms.DataGridView();
-            this.bsPesquisaJuridico = new System.Windows.Forms.BindingSource(this.components);
-            this.taPesquisaOrcamentoJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOrcamentoJuridico();
             this.pESQUISA_ORCAMENTO_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,29 +37,48 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPesquisaFisico = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsPesquisaJuridico = new System.Windows.Forms.BindingSource(this.components);
+            this.taPesquisaOrcamentoFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOrcamentoFisico();
+            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
+            this.taPesquisaOrcamentoJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOrcamentoJuridico();
+            this.dateFiltro = new System.Windows.Forms.DateTimePicker();
             this.panelCabecalho.SuspendLayout();
             this.panelRodape.SuspendLayout();
             this.panelCentro.SuspendLayout();
             this.tablessPai.SuspendLayout();
             this.tabFisico.SuspendLayout();
             this.tabJuridico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaFisico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_ORCAMENTO_FISICODataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaJuridico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_ORCAMENTO_JURIDICODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaFisico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaJuridico)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panelCabecalho
+            // 
+            this.panelCabecalho.Controls.Add(this.dateFiltro);
+            this.panelCabecalho.Size = new System.Drawing.Size(784, 136);
+            this.panelCabecalho.Controls.SetChildIndex(this.labelPesquisa, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.comboCampoPesquisa, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.label1, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.textValorPesquisa, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.comboTipoCliente, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.buttonPesquisar, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.dateFiltro, 0);
             // 
             // labelPesquisa
             // 
             this.labelPesquisa.Font = new System.Drawing.Font("Segoe UI Light", 20F);
-            this.labelPesquisa.Location = new System.Drawing.Point(12, 37);
+            this.labelPesquisa.Location = new System.Drawing.Point(12, 55);
             this.labelPesquisa.Size = new System.Drawing.Size(145, 37);
             this.labelPesquisa.Text = "Orçamento";
             // 
@@ -73,66 +86,28 @@
             // 
             this.comboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.comboTipoCliente_SelectedIndexChanged);
             // 
+            // panelCentro
+            // 
+            this.panelCentro.Location = new System.Drawing.Point(0, 136);
+            this.panelCentro.Size = new System.Drawing.Size(784, 355);
+            // 
             // buttonNovoRegistro
             // 
             this.buttonNovoRegistro.Text = "Novo orçamento";
+            // 
+            // tablessPai
+            // 
+            this.tablessPai.Size = new System.Drawing.Size(784, 355);
             // 
             // tabFisico
             // 
             this.tabFisico.AutoScroll = true;
             this.tabFisico.Controls.Add(this.pESQUISA_ORCAMENTO_FISICODataGridView);
+            this.tabFisico.Size = new System.Drawing.Size(776, 317);
             // 
             // tabJuridico
             // 
             this.tabJuridico.Controls.Add(this.pESQUISA_ORCAMENTO_JURIDICODataGridView);
-            // 
-            // dsFROGIOS
-            // 
-            this.dsFROGIOS.DataSetName = "dsFROGIOS";
-            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsPesquisaFisico
-            // 
-            this.bsPesquisaFisico.DataMember = "PESQUISA_ORCAMENTO_FISICO";
-            this.bsPesquisaFisico.DataSource = this.dsFROGIOS;
-            // 
-            // taPesquisaOrcamentoFisico
-            // 
-            this.taPesquisaOrcamentoFisico.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CATEGORIATableAdapter = null;
-            this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
-            this.tableAdapterManager.CLIENTE_JURIDICOTableAdapter = null;
-            this.tableAdapterManager.CLIENTETableAdapter = null;
-            this.tableAdapterManager.COMPRATableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.EMPRESATableAdapter = null;
-            this.tableAdapterManager.FORNECEDOR_FISICOTableAdapter = null;
-            this.tableAdapterManager.FORNECEDOR_JURIDICOTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORTableAdapter = null;
-            this.tableAdapterManager.FUNCIONARIOTableAdapter = null;
-            this.tableAdapterManager.GRUPOTableAdapter = null;
-            this.tableAdapterManager.ITEM_COMPRATableAdapter = null;
-            this.tableAdapterManager.MARCATableAdapter = null;
-            this.tableAdapterManager.ORCAMENTO_ITEMTableAdapter = null;
-            this.tableAdapterManager.ORCAMENTO_SERVICOTableAdapter = null;
-            this.tableAdapterManager.ORCAMENTOTableAdapter = null;
-            this.tableAdapterManager.OS_ITEMTableAdapter = null;
-            this.tableAdapterManager.OS_SERVICOTableAdapter = null;
-            this.tableAdapterManager.OSTableAdapter = null;
-            this.tableAdapterManager.PERMISSAOTableAdapter = null;
-            this.tableAdapterManager.PRODUTOTableAdapter = null;
-            this.tableAdapterManager.SECAOTableAdapter = null;
-            this.tableAdapterManager.SERVICO_TIPOTableAdapter = null;
-            this.tableAdapterManager.SERVICOTableAdapter = null;
-            this.tableAdapterManager.TIPOTableAdapter = null;
-            this.tableAdapterManager.UFTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USUARIOTableAdapter = null;
             // 
             // pESQUISA_ORCAMENTO_FISICODataGridView
             // 
@@ -154,19 +129,10 @@
             this.pESQUISA_ORCAMENTO_FISICODataGridView.Name = "pESQUISA_ORCAMENTO_FISICODataGridView";
             this.pESQUISA_ORCAMENTO_FISICODataGridView.ReadOnly = true;
             this.pESQUISA_ORCAMENTO_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pESQUISA_ORCAMENTO_FISICODataGridView.Size = new System.Drawing.Size(770, 347);
+            this.pESQUISA_ORCAMENTO_FISICODataGridView.Size = new System.Drawing.Size(770, 311);
             this.pESQUISA_ORCAMENTO_FISICODataGridView.TabIndex = 4;
             this.pESQUISA_ORCAMENTO_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
             this.pESQUISA_ORCAMENTO_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
-            // 
-            // bsPesquisaJuridico
-            // 
-            this.bsPesquisaJuridico.DataMember = "PESQUISA_ORCAMENTO_JURIDICO";
-            this.bsPesquisaJuridico.DataSource = this.dsFROGIOS;
-            // 
-            // taPesquisaOrcamentoJuridico
-            // 
-            this.taPesquisaOrcamentoJuridico.ClearBeforeFill = true;
             // 
             // pESQUISA_ORCAMENTO_JURIDICODataGridView
             // 
@@ -241,6 +207,16 @@
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // bsPesquisaFisico
+            // 
+            this.bsPesquisaFisico.DataMember = "PESQUISA_ORCAMENTO_FISICO";
+            this.bsPesquisaFisico.DataSource = this.dsFROGIOS;
+            // 
+            // dsFROGIOS
+            // 
+            this.dsFROGIOS.DataSetName = "dsFROGIOS";
+            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ORCAMENTO_CODIGO";
@@ -289,6 +265,61 @@
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // bsPesquisaJuridico
+            // 
+            this.bsPesquisaJuridico.DataMember = "PESQUISA_ORCAMENTO_JURIDICO";
+            this.bsPesquisaJuridico.DataSource = this.dsFROGIOS;
+            // 
+            // taPesquisaOrcamentoFisico
+            // 
+            this.taPesquisaOrcamentoFisico.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CATEGORIATableAdapter = null;
+            this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
+            this.tableAdapterManager.CLIENTE_JURIDICOTableAdapter = null;
+            this.tableAdapterManager.CLIENTETableAdapter = null;
+            this.tableAdapterManager.COMPRATableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.EMPRESATableAdapter = null;
+            this.tableAdapterManager.FORNECEDOR_FISICOTableAdapter = null;
+            this.tableAdapterManager.FORNECEDOR_JURIDICOTableAdapter = null;
+            this.tableAdapterManager.FORNECEDORTableAdapter = null;
+            this.tableAdapterManager.FUNCIONARIOTableAdapter = null;
+            this.tableAdapterManager.GRUPOTableAdapter = null;
+            this.tableAdapterManager.ITEM_COMPRATableAdapter = null;
+            this.tableAdapterManager.MARCATableAdapter = null;
+            this.tableAdapterManager.ORCAMENTO_ITEMTableAdapter = null;
+            this.tableAdapterManager.ORCAMENTO_SERVICOTableAdapter = null;
+            this.tableAdapterManager.ORCAMENTOTableAdapter = null;
+            this.tableAdapterManager.OS_ITEMTableAdapter = null;
+            this.tableAdapterManager.OS_SERVICOTableAdapter = null;
+            this.tableAdapterManager.OSTableAdapter = null;
+            this.tableAdapterManager.PERMISSAOTableAdapter = null;
+            this.tableAdapterManager.PRODUTOTableAdapter = null;
+            this.tableAdapterManager.SECAOTableAdapter = null;
+            this.tableAdapterManager.SERVICO_TIPOTableAdapter = null;
+            this.tableAdapterManager.SERVICOTableAdapter = null;
+            this.tableAdapterManager.TIPOTableAdapter = null;
+            this.tableAdapterManager.UFTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOTableAdapter = null;
+            // 
+            // taPesquisaOrcamentoJuridico
+            // 
+            this.taPesquisaOrcamentoJuridico.ClearBeforeFill = true;
+            // 
+            // dateFiltro
+            // 
+            this.dateFiltro.Location = new System.Drawing.Point(197, 87);
+            this.dateFiltro.Name = "dateFiltro";
+            this.dateFiltro.Size = new System.Drawing.Size(507, 33);
+            this.dateFiltro.TabIndex = 4;
+            this.dateFiltro.ValueChanged += new System.EventHandler(this.dateFiltro_ValueChanged);
+            // 
             // formPesquisaOrcamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -303,11 +334,11 @@
             this.tablessPai.ResumeLayout(false);
             this.tabFisico.ResumeLayout(false);
             this.tabJuridico.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaFisico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_ORCAMENTO_FISICODataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaJuridico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_ORCAMENTO_JURIDICODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaFisico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsPesquisaJuridico)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -334,5 +365,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DateTimePicker dateFiltro;
     }
 }

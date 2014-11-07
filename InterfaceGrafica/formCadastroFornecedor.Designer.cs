@@ -101,6 +101,7 @@
             this.fORNECEDOR_JURIDICOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textObservacoesJuridico = new System.Windows.Forms.TextBox();
             this.fORNECEDOR_JURIDICO_FANTASIATextBox = new System.Windows.Forms.TextBox();
             this.fORNECEDOR_JURIDICO_RAZ_SOCTextBox = new System.Windows.Forms.TextBox();
             this.fORNECEDOR_JURIDICO_IEMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -112,7 +113,6 @@
             this.uFTableAdapter = new FROGI_OS.dsFROGIOSTableAdapters.UFTableAdapter();
             this.fORNECEDOR_CODIGOLabel1 = new System.Windows.Forms.Label();
             this.comboTipo = new System.Windows.Forms.ComboBox();
-            this.textObservacoesJuridico = new System.Windows.Forms.TextBox();
             fORNECEDOR_FISICO_NOMELabel = new System.Windows.Forms.Label();
             fORNECEDOR_FISICO_CPFLabel = new System.Windows.Forms.Label();
             fORNECEDOR_FISICO_RGLabel = new System.Windows.Forms.Label();
@@ -144,6 +144,7 @@
             label9 = new System.Windows.Forms.Label();
             fORNECEDOR_OBSERVACOESLabel1 = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             this.tablessPai.SuspendLayout();
@@ -167,6 +168,7 @@
             // panelCabecalho
             // 
             this.panelCabecalho.Controls.Add(this.comboTipo);
+            this.panelCabecalho.Controls.SetChildIndex(this.pictureFechar, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.labelCadastro, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.comboTipo, 0);
             // 
@@ -445,6 +447,15 @@
             label9.Size = new System.Drawing.Size(91, 25);
             label9.TabIndex = 12;
             label9.Text = "Perímetro";
+            // 
+            // fORNECEDOR_OBSERVACOESLabel1
+            // 
+            fORNECEDOR_OBSERVACOESLabel1.AutoSize = true;
+            fORNECEDOR_OBSERVACOESLabel1.Location = new System.Drawing.Point(16, 194);
+            fORNECEDOR_OBSERVACOESLabel1.Name = "fORNECEDOR_OBSERVACOESLabel1";
+            fORNECEDOR_OBSERVACOESLabel1.Size = new System.Drawing.Size(114, 25);
+            fORNECEDOR_OBSERVACOESLabel1.TabIndex = 16;
+            fORNECEDOR_OBSERVACOESLabel1.Text = "Observações";
             // 
             // tablessPai
             // 
@@ -891,6 +902,7 @@
             // 
             this.fORNECEDOR_JURIDICO_REPRETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDOR_JURIDICOBindingSource, "FORNECEDOR_JURIDICO_REPRE", true));
             this.fORNECEDOR_JURIDICO_REPRETextBox.Location = new System.Drawing.Point(116, 32);
+            this.fORNECEDOR_JURIDICO_REPRETextBox.MaxLength = 60;
             this.fORNECEDOR_JURIDICO_REPRETextBox.Name = "fORNECEDOR_JURIDICO_REPRETextBox";
             this.fORNECEDOR_JURIDICO_REPRETextBox.Size = new System.Drawing.Size(396, 33);
             this.fORNECEDOR_JURIDICO_REPRETextBox.TabIndex = 18;
@@ -927,6 +939,15 @@
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Empresarial";
+            // 
+            // textObservacoesJuridico
+            // 
+            this.textObservacoesJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_OBSERVACOES", true));
+            this.textObservacoesJuridico.Location = new System.Drawing.Point(176, 191);
+            this.textObservacoesJuridico.MaxLength = 120;
+            this.textObservacoesJuridico.Name = "textObservacoesJuridico";
+            this.textObservacoesJuridico.Size = new System.Drawing.Size(447, 33);
+            this.textObservacoesJuridico.TabIndex = 17;
             // 
             // fORNECEDOR_JURIDICO_FANTASIATextBox
             // 
@@ -1038,24 +1059,6 @@
             this.comboTipo.TabIndex = 3;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
-            // fORNECEDOR_OBSERVACOESLabel1
-            // 
-            fORNECEDOR_OBSERVACOESLabel1.AutoSize = true;
-            fORNECEDOR_OBSERVACOESLabel1.Location = new System.Drawing.Point(16, 194);
-            fORNECEDOR_OBSERVACOESLabel1.Name = "fORNECEDOR_OBSERVACOESLabel1";
-            fORNECEDOR_OBSERVACOESLabel1.Size = new System.Drawing.Size(114, 25);
-            fORNECEDOR_OBSERVACOESLabel1.TabIndex = 16;
-            fORNECEDOR_OBSERVACOESLabel1.Text = "Observações";
-            // 
-            // textObservacoesJuridico
-            // 
-            this.textObservacoesJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_OBSERVACOES", true));
-            this.textObservacoesJuridico.Location = new System.Drawing.Point(176, 191);
-            this.textObservacoesJuridico.MaxLength = 120;
-            this.textObservacoesJuridico.Name = "textObservacoesJuridico";
-            this.textObservacoesJuridico.Size = new System.Drawing.Size(447, 33);
-            this.textObservacoesJuridico.TabIndex = 17;
-            // 
             // formCadastroFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1065,6 +1068,7 @@
             this.Text = "formFornecedorCadastro";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);

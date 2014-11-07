@@ -48632,7 +48632,7 @@ FROM            PRODUTO INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[2];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        OS.OS_CODIGO, CLIENTE_FISICO.CLIENTE_FISICO_NOME, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, FUNCIONARIO.FUNCIONARIO_NOME, 
@@ -48643,6 +48643,23 @@ FROM            OS INNER JOIN
                          CLIENTE_JURIDICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_JURIDICO.CLIENTE_JURIDICO_CLIENTE INNER JOIN
                          CLIENTE_FISICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_FISICO.CLIENTE_FISICO_CLIENTE";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        OS.OS_CODIGO, CLIENTE_FISICO.CLIENTE_FISICO_NOME, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, FUNCIONARIO.FUNCIONARIO_NOME, 
+                         OS.OS_DATA, OS.OS_STATUS
+FROM            OS INNER JOIN
+                         FUNCIONARIO ON OS.OS_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO INNER JOIN
+                         CLIENTE ON OS.OS_CLIENTE = CLIENTE.CLIENTE_CODIGO INNER JOIN
+                         CLIENTE_FISICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_FISICO.CLIENTE_FISICO_CLIENTE
+WHERE        (OS.OS_DATA >= @DATA)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@DATA";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -48664,6 +48681,32 @@ FROM            OS INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsFROGIOS.PESQUISA_OS_FISICODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_OS_FISICODataTable dataTable = new dsFROGIOS.PESQUISA_OS_FISICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int selecionarPorData(dsFROGIOS.PESQUISA_OS_FISICODataTable dataTable, System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsFROGIOS.PESQUISA_OS_FISICODataTable GetDataBy(System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
             dsFROGIOS.PESQUISA_OS_FISICODataTable dataTable = new dsFROGIOS.PESQUISA_OS_FISICODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -48811,7 +48854,7 @@ FROM            OS INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[2];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        OS.OS_CODIGO, CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, 
@@ -48821,6 +48864,23 @@ FROM            CLIENTE INNER JOIN
                          OS ON CLIENTE.CLIENTE_CODIGO = OS.OS_CLIENTE INNER JOIN
                          FUNCIONARIO ON OS.OS_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        OS.OS_CODIGO, CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, 
+                         FUNCIONARIO.FUNCIONARIO_NOME, OS.OS_DATA, OS.OS_STATUS
+FROM            CLIENTE INNER JOIN
+                         CLIENTE_JURIDICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_JURIDICO.CLIENTE_JURIDICO_CLIENTE INNER JOIN
+                         OS ON CLIENTE.CLIENTE_CODIGO = OS.OS_CLIENTE INNER JOIN
+                         FUNCIONARIO ON OS.OS_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO
+WHERE        (OS.OS_DATA >= @DATA)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@DATA";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "OS_DATA";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -48842,6 +48902,32 @@ FROM            CLIENTE INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsFROGIOS.PESQUISA_OS_JURIDICODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_OS_JURIDICODataTable dataTable = new dsFROGIOS.PESQUISA_OS_JURIDICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int selecionarPorData(dsFROGIOS.PESQUISA_OS_JURIDICODataTable dataTable, System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsFROGIOS.PESQUISA_OS_JURIDICODataTable GetDataBy(System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
             dsFROGIOS.PESQUISA_OS_JURIDICODataTable dataTable = new dsFROGIOS.PESQUISA_OS_JURIDICODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -48988,7 +49074,7 @@ FROM            CLIENTE INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[2];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        ORCAMENTO.ORCAMENTO_CODIGO, CLIENTE_FISICO.CLIENTE_FISICO_NOME, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, 
@@ -48998,6 +49084,23 @@ FROM            CLIENTE INNER JOIN
                          ORCAMENTO ON CLIENTE.CLIENTE_CODIGO = ORCAMENTO.ORCAMENTO_CLIENTE INNER JOIN
                          FUNCIONARIO ON ORCAMENTO.ORCAMENTO_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ORCAMENTO.ORCAMENTO_CODIGO, CLIENTE_FISICO.CLIENTE_FISICO_NOME, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, 
+                         FUNCIONARIO.FUNCIONARIO_NOME, ORCAMENTO.ORCAMENTO_DATA
+FROM            CLIENTE INNER JOIN
+                         CLIENTE_FISICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_FISICO.CLIENTE_FISICO_CLIENTE INNER JOIN
+                         ORCAMENTO ON CLIENTE.CLIENTE_CODIGO = ORCAMENTO.ORCAMENTO_CLIENTE INNER JOIN
+                         FUNCIONARIO ON ORCAMENTO.ORCAMENTO_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO
+WHERE        (ORCAMENTO.ORCAMENTO_DATA >= @DATA)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@DATA";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "ORCAMENTO_DATA";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -49019,6 +49122,32 @@ FROM            CLIENTE INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable dataTable = new dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int selecionarPorData(dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable dataTable, System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable GetDataBy(System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
             dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable dataTable = new dsFROGIOS.PESQUISA_ORCAMENTO_FISICODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -49165,7 +49294,7 @@ FROM            CLIENTE INNER JOIN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[1];
+            this._commandCollection = new global::FirebirdSql.Data.FirebirdClient.FbCommand[2];
             this._commandCollection[0] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        ORCAMENTO.ORCAMENTO_CODIGO, CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, 
@@ -49175,6 +49304,23 @@ FROM            CLIENTE INNER JOIN
                          ORCAMENTO ON CLIENTE.CLIENTE_CODIGO = ORCAMENTO.ORCAMENTO_CLIENTE INNER JOIN
                          FUNCIONARIO ON ORCAMENTO.ORCAMENTO_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        ORCAMENTO.ORCAMENTO_CODIGO, CLIENTE_JURIDICO.CLIENTE_JURIDICO_FANTASIA, CLIENTE.CLIENTE_TELEFONE, CLIENTE.CLIENTE_CELULAR, 
+                         FUNCIONARIO.FUNCIONARIO_NOME, ORCAMENTO.ORCAMENTO_DATA
+FROM            CLIENTE INNER JOIN
+                         CLIENTE_JURIDICO ON CLIENTE.CLIENTE_CODIGO = CLIENTE_JURIDICO.CLIENTE_JURIDICO_CLIENTE INNER JOIN
+                         ORCAMENTO ON CLIENTE.CLIENTE_CODIGO = ORCAMENTO.ORCAMENTO_CLIENTE INNER JOIN
+                         FUNCIONARIO ON ORCAMENTO.ORCAMENTO_FUNCIONARIO = FUNCIONARIO.FUNCIONARIO_CODIGO
+WHERE        (ORCAMENTO.ORCAMENTO_DATA >= @DATA)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
+            param.ParameterName = "@DATA";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.Size = 4;
+            param.IsNullable = true;
+            param.SourceColumn = "ORCAMENTO_DATA";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -49196,6 +49342,32 @@ FROM            CLIENTE INNER JOIN
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable dataTable = new dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int selecionarPorData(dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable dataTable, System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable GetDataBy(System.DateTime DATA) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(DATA));
             dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable dataTable = new dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

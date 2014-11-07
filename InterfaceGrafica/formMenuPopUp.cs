@@ -35,11 +35,6 @@ namespace FROGI_OS.InterfaceGrafica
             this.Close();
         }
 
-        private void linkPerfil_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            new formPerfil().ShowDialog();
-            this.Dispose();
-        }
-
         private void linkSair_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             this.Owner.Close();
             this.Close();

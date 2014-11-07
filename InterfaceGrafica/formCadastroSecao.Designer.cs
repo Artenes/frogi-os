@@ -142,6 +142,7 @@
             // 
             this.sECAO_DESCRICAOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsSecao, "SECAO_DESCRICAO", true));
             this.sECAO_DESCRICAOTextBox.Location = new System.Drawing.Point(113, 26);
+            this.sECAO_DESCRICAOTextBox.MaxLength = 60;
             this.sECAO_DESCRICAOTextBox.Name = "sECAO_DESCRICAOTextBox";
             this.sECAO_DESCRICAOTextBox.Size = new System.Drawing.Size(532, 33);
             this.sECAO_DESCRICAOTextBox.TabIndex = 0;

@@ -15,7 +15,7 @@ namespace FROGI_OS.Mapeamento
         private const string telefone = "Telefone";
         private const string celular = "Celular";
         private const string funcionarioNome = "Funcionário";
-        private const string data = "Data";
+        //private const string data = "Data";
 
         private readonly string colunaCodigo;
         private readonly string colunaNome;
@@ -23,7 +23,7 @@ namespace FROGI_OS.Mapeamento
         private readonly string colunaTelefone;
         private readonly string colunaCelular;
         private readonly string colunaFuncionario;
-        private readonly string colunaData;
+        //private readonly string colunaData;
 
         private readonly string[] colunasFisico;
         private readonly string[] colunasJuridico;
@@ -40,15 +40,15 @@ namespace FROGI_OS.Mapeamento
             colunaTelefone = cliente.CLIENTE_TELEFONEColumn.ColumnName;
             colunaCelular = cliente.CLIENTE_CELULARColumn.ColumnName;
             colunaFuncionario = funcionario.FUNCIONARIO_NOMEColumn.ColumnName;
-            colunaData = orcamento.ORCAMENTO_DATAColumn.ColumnName;
+          //  colunaData = orcamento.ORCAMENTO_DATAColumn.ColumnName;
 
             colunasFisico = new string[] { 
                 codigo,
                 nome,
                 telefone,
                 celular,
-                funcionarioNome,
-                data
+                funcionarioNome
+                //data
             };
 
             colunasJuridico = new string[] { 
@@ -56,8 +56,8 @@ namespace FROGI_OS.Mapeamento
                 fantasia,
                 telefone,
                 celular,
-                funcionarioNome,
-                data
+                funcionarioNome
+                //data
             };
         }
 
@@ -77,8 +77,8 @@ namespace FROGI_OS.Mapeamento
                     return colunaCelular;
                 case funcionarioNome:
                     return colunaFuncionario;
-                case data:
-                    return colunaData;
+                //case data:
+                  //  return colunaData;
                 default:
                     return null;
             }

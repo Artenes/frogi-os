@@ -35,6 +35,10 @@
             this.taPesquisaOSFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOSFisico();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.pESQUISA_OS_FISICODataGridView = new System.Windows.Forms.DataGridView();
+            this.bsJuridico = new System.Windows.Forms.BindingSource(this.components);
+            this.taPesquisaOSJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOSJuridico();
+            this.pESQUISA_OS_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
+            this.dateFiltro = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +46,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsJuridico = new System.Windows.Forms.BindingSource(this.components);
-            this.taPesquisaOSJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaOSJuridico();
-            this.pESQUISA_OS_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,7 +68,9 @@
             // 
             // panelCabecalho
             // 
+            this.panelCabecalho.Controls.Add(this.dateFiltro);
             this.panelCabecalho.Controls.Add(this.comboStatus);
+            this.panelCabecalho.Size = new System.Drawing.Size(784, 131);
             this.panelCabecalho.Controls.SetChildIndex(this.labelPesquisa, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.comboCampoPesquisa, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.label1, 0);
@@ -75,9 +78,11 @@
             this.panelCabecalho.Controls.SetChildIndex(this.comboTipoCliente, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.buttonPesquisar, 0);
             this.panelCabecalho.Controls.SetChildIndex(this.comboStatus, 0);
+            this.panelCabecalho.Controls.SetChildIndex(this.dateFiltro, 0);
             // 
             // labelPesquisa
             // 
+            this.labelPesquisa.Location = new System.Drawing.Point(12, 36);
             this.labelPesquisa.Size = new System.Drawing.Size(73, 54);
             this.labelPesquisa.Text = "OS";
             // 
@@ -85,19 +90,30 @@
             // 
             this.comboTipoCliente.SelectedIndexChanged += new System.EventHandler(this.comboTipoCliente_SelectedIndexChanged);
             // 
+            // panelCentro
+            // 
+            this.panelCentro.Location = new System.Drawing.Point(0, 131);
+            this.panelCentro.Size = new System.Drawing.Size(784, 360);
+            // 
             // buttonNovoRegistro
             // 
             this.buttonNovoRegistro.Text = "Lançar OS";
+            // 
+            // tablessPai
+            // 
+            this.tablessPai.Size = new System.Drawing.Size(784, 360);
             // 
             // tabFisico
             // 
             this.tabFisico.AutoScroll = true;
             this.tabFisico.Controls.Add(this.pESQUISA_OS_FISICODataGridView);
+            this.tabFisico.Size = new System.Drawing.Size(776, 322);
             // 
             // tabJuridico
             // 
             this.tabJuridico.AutoScroll = true;
             this.tabJuridico.Controls.Add(this.pESQUISA_OS_JURIDICODataGridView);
+            this.tabJuridico.Size = new System.Drawing.Size(776, 322);
             // 
             // comboStatus
             // 
@@ -186,59 +202,10 @@
             this.pESQUISA_OS_FISICODataGridView.Name = "pESQUISA_OS_FISICODataGridView";
             this.pESQUISA_OS_FISICODataGridView.ReadOnly = true;
             this.pESQUISA_OS_FISICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pESQUISA_OS_FISICODataGridView.Size = new System.Drawing.Size(770, 347);
+            this.pESQUISA_OS_FISICODataGridView.Size = new System.Drawing.Size(770, 316);
             this.pESQUISA_OS_FISICODataGridView.TabIndex = 4;
             this.pESQUISA_OS_FISICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
             this.pESQUISA_OS_FISICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "OS_CODIGO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CLIENTE_FISICO_NOME";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "CLIENTE_TELEFONE";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Telefone";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CLIENTE_CELULAR";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Celular";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "FUNCIONARIO_NOME";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Funcionário";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "OS_DATA";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Data";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "OS_STATUS";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // bsJuridico
             // 
@@ -270,10 +237,74 @@
             this.pESQUISA_OS_JURIDICODataGridView.Name = "pESQUISA_OS_JURIDICODataGridView";
             this.pESQUISA_OS_JURIDICODataGridView.ReadOnly = true;
             this.pESQUISA_OS_JURIDICODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.pESQUISA_OS_JURIDICODataGridView.Size = new System.Drawing.Size(770, 347);
+            this.pESQUISA_OS_JURIDICODataGridView.Size = new System.Drawing.Size(770, 316);
             this.pESQUISA_OS_JURIDICODataGridView.TabIndex = 5;
             this.pESQUISA_OS_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._CellDoubleClick);
             this.pESQUISA_OS_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this._KeyDown);
+            // 
+            // dateFiltro
+            // 
+            this.dateFiltro.Location = new System.Drawing.Point(197, 81);
+            this.dateFiltro.Name = "dateFiltro";
+            this.dateFiltro.Size = new System.Drawing.Size(394, 33);
+            this.dateFiltro.TabIndex = 4;
+            this.dateFiltro.ValueChanged += new System.EventHandler(this.dateFiltro_ValueChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "OS_CODIGO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CLIENTE_FISICO_NOME";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CLIENTE_TELEFONE";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Telefone";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CLIENTE_CELULAR";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Celular";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "FUNCIONARIO_NOME";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Funcionário";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "OS_DATA";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Data";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "OS_STATUS";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -281,6 +312,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Código";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -288,6 +320,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Fantasia";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -295,6 +328,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "Telefone";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn14
             // 
@@ -302,6 +336,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Celular";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -309,6 +344,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "Funcionário";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -316,6 +352,7 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "Data";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -323,6 +360,7 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Status";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // formPesquisaOS
             // 
@@ -355,6 +393,10 @@
         private dsFROGIOSTableAdapters.taPesquisaOSFisico taPesquisaOSFisico;
         private dsFROGIOSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView pESQUISA_OS_FISICODataGridView;
+        private System.Windows.Forms.BindingSource bsJuridico;
+        private dsFROGIOSTableAdapters.taPesquisaOSJuridico taPesquisaOSJuridico;
+        private System.Windows.Forms.DataGridView pESQUISA_OS_JURIDICODataGridView;
+        private System.Windows.Forms.DateTimePicker dateFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -362,9 +404,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.BindingSource bsJuridico;
-        private dsFROGIOSTableAdapters.taPesquisaOSJuridico taPesquisaOSJuridico;
-        private System.Windows.Forms.DataGridView pESQUISA_OS_JURIDICODataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;

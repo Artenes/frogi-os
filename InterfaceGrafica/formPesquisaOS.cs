@@ -213,5 +213,17 @@ namespace FROGI_OS.InterfaceGrafica
             }
         }
 
+        private void dateFiltro_ValueChanged(object sender, EventArgs e) {
+            if (eFisico()) {
+                tablessPai.SelectedTab = tabFisico;
+                dsFROGIOS.PESQUISA_OS_FISICO.Clear();
+                taPesquisaOSFisico.selecionarPorData(dsFROGIOS.PESQUISA_OS_FISICO, dateFiltro.Value);
+            } else {
+                tablessPai.SelectedTab = tabJuridico;
+                dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO.Clear();
+                taPesquisaOSJuridico.selecionarPorData(dsFROGIOS.PESQUISA_OS_JURIDICO, dateFiltro.Value);
+            }
+        }
+
     }
 }

@@ -88,7 +88,7 @@
             // gRUPO_DESCONTOLabel
             // 
             gRUPO_DESCONTOLabel.AutoSize = true;
-            gRUPO_DESCONTOLabel.Location = new System.Drawing.Point(15, 81);
+            gRUPO_DESCONTOLabel.Location = new System.Drawing.Point(6, 115);
             gRUPO_DESCONTOLabel.Name = "gRUPO_DESCONTOLabel";
             gRUPO_DESCONTOLabel.Size = new System.Drawing.Size(88, 25);
             gRUPO_DESCONTOLabel.TabIndex = 4;
@@ -165,7 +165,7 @@
             // gRUPO_DESCONTOTextBox
             // 
             this.gRUPO_DESCONTOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsGrupo, "GRUPO_DESCONTO", true));
-            this.gRUPO_DESCONTOTextBox.Location = new System.Drawing.Point(109, 78);
+            this.gRUPO_DESCONTOTextBox.Location = new System.Drawing.Point(109, 115);
             this.gRUPO_DESCONTOTextBox.MaxLength = 18;
             this.gRUPO_DESCONTOTextBox.Name = "gRUPO_DESCONTOTextBox";
             this.gRUPO_DESCONTOTextBox.Size = new System.Drawing.Size(214, 33);
@@ -176,12 +176,12 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.gRUPO_DESCRICAOTextBox);
-            this.groupBox1.Controls.Add(gRUPO_DESCRICAOLabel);
-            this.groupBox1.Controls.Add(this.gRUPO_DESCONTOTextBox);
             this.groupBox1.Controls.Add(gRUPO_DESCONTOLabel);
+            this.groupBox1.Controls.Add(this.gRUPO_DESCONTOTextBox);
+            this.groupBox1.Controls.Add(gRUPO_DESCRICAOLabel);
             this.groupBox1.Location = new System.Drawing.Point(17, 90);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(563, 87);
+            this.groupBox1.Size = new System.Drawing.Size(563, 90);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
