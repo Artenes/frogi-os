@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPesquisaTipo));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsTipo = new System.Windows.Forms.BindingSource(this.components);
             this.taTipo = new FROGI_OS.dsFROGIOSTableAdapters.TIPOTableAdapter();
@@ -145,8 +146,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 557);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPesquisaTipo";
-            this.Text = "formPesquisaTipo";
+            this.Text = "Tipos";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             this.panelCentral.ResumeLayout(false);

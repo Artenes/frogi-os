@@ -54,6 +54,7 @@
             System.Windows.Forms.Label gRUPO_DESCRICAOLabel;
             System.Windows.Forms.Label sECAO_DESCRICAOLabel;
             System.Windows.Forms.Label fORNECEDOR_JURIDICO_FANTASIALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroProduto));
             this.pRODUTO_CODIGOLabel1 = new System.Windows.Forms.Label();
             this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
@@ -90,6 +91,9 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textVenda = new WindowsFormsApplication2.Monetario();
+            this.textCusto = new WindowsFormsApplication2.Monetario();
+            this.textCompra = new WindowsFormsApplication2.Monetario();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.taProduto = new FROGI_OS.dsFROGIOSTableAdapters.PRODUTOTableAdapter();
@@ -99,9 +103,6 @@
             this.taGrupo = new FROGI_OS.dsFROGIOSTableAdapters.GRUPOTableAdapter();
             this.taMarca = new FROGI_OS.dsFROGIOSTableAdapters.MARCATableAdapter();
             this.taSecao = new FROGI_OS.dsFROGIOSTableAdapters.SECAOTableAdapter();
-            this.textCompra = new WindowsFormsApplication2.Monetario();
-            this.textCusto = new WindowsFormsApplication2.Monetario();
-            this.textVenda = new WindowsFormsApplication2.Monetario();
             pRODUTO_CODIGOLabel = new System.Windows.Forms.Label();
             pRODUTO_DESCRICAOLabel = new System.Windows.Forms.Label();
             pRODUTO_CARACTERISTICALabel = new System.Windows.Forms.Label();
@@ -746,6 +747,39 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Preço";
             // 
+            // textVenda
+            // 
+            this.textVenda.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textVenda.Location = new System.Drawing.Point(89, 108);
+            this.textVenda.Name = "textVenda";
+            this.textVenda.Size = new System.Drawing.Size(150, 33);
+            this.textVenda.TabIndex = 41;
+            this.textVenda.Text = "R$ 0,00";
+            this.textVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textVenda.Valor = 0D;
+            // 
+            // textCusto
+            // 
+            this.textCusto.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_CUSTO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textCusto.Location = new System.Drawing.Point(89, 66);
+            this.textCusto.Name = "textCusto";
+            this.textCusto.Size = new System.Drawing.Size(150, 33);
+            this.textCusto.TabIndex = 40;
+            this.textCusto.Text = "R$ 0,00";
+            this.textCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textCusto.Valor = 0D;
+            // 
+            // textCompra
+            // 
+            this.textCompra.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_COMPRA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textCompra.Location = new System.Drawing.Point(89, 25);
+            this.textCompra.Name = "textCompra";
+            this.textCompra.Size = new System.Drawing.Size(150, 33);
+            this.textCompra.TabIndex = 39;
+            this.textCompra.Text = "R$ 0,00";
+            this.textCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textCompra.Valor = 0D;
+            // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(2678, 91);
@@ -828,36 +862,6 @@
             // 
             this.taSecao.ClearBeforeFill = true;
             // 
-            // textCompra
-            // 
-            this.textCompra.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_COMPRA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textCompra.Location = new System.Drawing.Point(89, 25);
-            this.textCompra.Name = "textCompra";
-            this.textCompra.Size = new System.Drawing.Size(150, 33);
-            this.textCompra.TabIndex = 39;
-            this.textCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textCompra.Valor = 0D;
-            // 
-            // textCusto
-            // 
-            this.textCusto.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_CUSTO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textCusto.Location = new System.Drawing.Point(89, 66);
-            this.textCusto.Name = "textCusto";
-            this.textCusto.Size = new System.Drawing.Size(150, 33);
-            this.textCusto.TabIndex = 40;
-            this.textCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textCusto.Valor = 0D;
-            // 
-            // textVenda
-            // 
-            this.textVenda.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsProduto, "PRODUTO_PRECO_VENDA", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textVenda.Location = new System.Drawing.Point(89, 108);
-            this.textVenda.Name = "textVenda";
-            this.textVenda.Size = new System.Drawing.Size(150, 33);
-            this.textVenda.TabIndex = 41;
-            this.textVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textVenda.Valor = 0D;
-            // 
             // formCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -865,7 +869,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroProduto";
+            this.Text = "Produtos";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();

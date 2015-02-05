@@ -331,6 +331,16 @@ namespace FROGI_OS.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon FrogiOS_Icone1 {
+            get {
+                object obj = ResourceManager.GetObject("FrogiOS_Icone1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap FrogiOS_Logo {

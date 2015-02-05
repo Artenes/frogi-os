@@ -262,9 +262,15 @@ namespace FROGI_OS.CamadaEnlaceDados
             //FK é CASACE DELETE
         }
 
-        public void gerarOrdemServico(dsFROGIOS.ORCAMENTORow orcamento, dsFROGIOS.ORCAMENTO_ITEMDataTable itens, dsFROGIOS.ORCAMENTO_SERVICODataTable servicos) {
-            GerOs os = new GerOs();
+        public Int32 pegarMaiorCodigo() {
+            FbCommand comando = new FbCommand();
+            String sql = "SELECT MAX(ORCAMENTO_CODIGO) FROM ORCAMENTO";
 
+            comando.CommandText = sql;
+            comando.Connection = Conexao.getConexao;
+            comando.Transaction = Conexao.getTransacao;
+
+            return (((Int32)comando.ExecuteScalar()) + 1);
         }
 
     }

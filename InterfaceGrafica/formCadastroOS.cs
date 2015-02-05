@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FROGI_OS.CamadaEnlaceDados;
+using FROGI_OS.Relatorios;
 
 namespace FROGI_OS.InterfaceGrafica
 {
@@ -105,6 +106,7 @@ namespace FROGI_OS.InterfaceGrafica
             if (dsFROGIOS.CLIENTE.Rows.Count == 0) return "Informe o cliente para a ordem de serviço";
             if (dsFROGIOS.FUNCIONARIO.Rows.Count == 0) return "Informe o funcionário responsável pela ordem de serviço";
             if (oS_STATUSComboBox.SelectedItem == null) return "Informe o status da ordem de serviço";
+            if (this.dsFROGIOS.OS_ITEM.Rows.Count == 0 && this.dsFROGIOS.OS_SERVICO.Rows.Count == 0) return "Adicione ao menos uma peça ou serviço na ordem de serviço";
 
             return base.validarCampos();
         }
@@ -485,6 +487,93 @@ namespace FROGI_OS.InterfaceGrafica
                 e.Value = ((double)e.Value).ToString("0.00");
             }
         }
-        
+
+        private void imprimirOS() {
+            String mensagem = this.validarCampos();
+            if (!String.IsNullOrEmpty(mensagem))
+            {
+                formDialogo dialogo = new formDialogo("Antes de imprimir a ordem de serviço...", mensagem, formDialogo.TipoExpressao.AvisoTriste);
+                dialogo.ShowDialog();
+                dialogo.Dispose();
+            }
+            else
+            {
+                dsFROGIOS.CLIENTERow cliente = this.dsFROGIOS.CLIENTE.Rows[0] as dsFROGIOS.CLIENTERow;
+                dsFROGIOS.OSRow os;
+                try
+                {
+                    os = this.dsFROGIOS.OS.Rows[0] as dsFROGIOS.OSRow;
+                }
+                catch (Exception)
+                {
+                    os = null;
+                }
+                List<RelatorioItens> itens = new List<RelatorioItens>();
+                String nomeCliente = this.labelCliente.Text;
+                String enderecoCliente = cliente.CLIENTE_ENDERECO + ", " + cliente.CLIENTE_BAIRRO;
+                String foneCliente = String.IsNullOrEmpty(cliente.CLIENTE_TELEFONE) ? cliente.CLIENTE_CELULAR : cliente.CLIENTE_TELEFONE;
+                Int32 codigoCliente = cliente.CLIENTE_CODIGO;
+                Int32 codigoOs;
+                if (os == null)
+                {
+                    Conexao.abrir();
+                    codigoOs = this.osSQL.pegarMaiorCodigo();
+                    Conexao.fechar();
+                }
+                else
+                {
+                    codigoOs = os.OS_CODIGO;
+                }
+                DateTime data = os == null ? DateTime.Now : os.OS_DATA;
+                Double total;
+                try
+                {
+                    total = Convert.ToDouble(this.textTotalLiquido.Text.Replace("R$", ""));
+                }
+                catch (Exception)
+                {
+                    total = 0.00;
+                }
+                DateTime dataEntrega = this.oS_DATA_ENTREGADateTimePicker.Value;
+
+                foreach (dsFROGIOS.OS_ITEMRow item in dsFROGIOS.OS_ITEM.Rows)
+                {
+                    itens.Add(new RelatorioItens(
+                        item.OS_ITEM_DESCRICAO,
+                        item.OS_ITEM_VALOR,
+                        item.OS_ITEM_TOTAL
+                        ));
+                }
+
+                foreach (dsFROGIOS.OS_SERVICORow servico in dsFROGIOS.OS_SERVICO.Rows)
+                {
+                    itens.Add(new RelatorioItens(
+                        servico.OS_SERVICO_DESCRICAO,
+                        servico.OS_SERVICO_VALOR,
+                        servico.OS_SERVICO_TOTAL
+                        ));
+                }
+
+                formComprovanteOS comprovante = new formComprovanteOS(new RelatorioOrdemServico(
+                    nomeCliente,
+                    enderecoCliente,
+                    foneCliente,
+                    codigoOs,
+                    codigoCliente,
+                    total,
+                    itens,
+                    data,
+                    dataEntrega
+                    ));
+                comprovante.ShowDialog();
+                comprovante.Dispose();
+            }
+        }
+
+        private void buttonImprimirOS_Click(object sender, EventArgs e)
+        {
+            this.imprimirOS();
+        }
+
     }
 }

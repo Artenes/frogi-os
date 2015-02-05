@@ -51,6 +51,7 @@
             System.Windows.Forms.Label oS_TOTALLabel;
             System.Windows.Forms.Label oS_DATA_ENTREGALabel;
             System.Windows.Forms.Label label3;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroOS));
             this.groupStatus = new System.Windows.Forms.GroupBox();
             this.oS_STATUSComboBox = new System.Windows.Forms.ComboBox();
             this.bsOS = new System.Windows.Forms.BindingSource(this.components);
@@ -72,6 +73,7 @@
             this.textTotalPecas = new WindowsFormsApplication2.Monetario();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonImprimirOS = new System.Windows.Forms.Button();
             this.oS_DATALabel1 = new System.Windows.Forms.Label();
             this.oS_PRODUTOTextBox = new System.Windows.Forms.TextBox();
             this.oS_DEFEITORichTextBox = new System.Windows.Forms.RichTextBox();
@@ -678,6 +680,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonImprimirOS);
             this.groupBox2.Controls.Add(this.oS_DATALabel1);
             this.groupBox2.Location = new System.Drawing.Point(334, 223);
             this.groupBox2.Name = "groupBox2";
@@ -686,11 +689,24 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data de lançamento";
             // 
+            // buttonImprimirOS
+            // 
+            this.buttonImprimirOS.AutoSize = true;
+            this.buttonImprimirOS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimirOS.Font = new System.Drawing.Font("Segoe UI Light", 15F);
+            this.buttonImprimirOS.Location = new System.Drawing.Point(21, 85);
+            this.buttonImprimirOS.Name = "buttonImprimirOS";
+            this.buttonImprimirOS.Size = new System.Drawing.Size(372, 103);
+            this.buttonImprimirOS.TabIndex = 18;
+            this.buttonImprimirOS.Text = "Imprimir Ordem de Serviço";
+            this.buttonImprimirOS.UseVisualStyleBackColor = true;
+            this.buttonImprimirOS.Click += new System.EventHandler(this.buttonImprimirOS_Click);
+            // 
             // oS_DATALabel1
             // 
             this.oS_DATALabel1.AutoSize = true;
             this.oS_DATALabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOS, "OS_DATA", true));
-            this.oS_DATALabel1.Location = new System.Drawing.Point(17, 100);
+            this.oS_DATALabel1.Location = new System.Drawing.Point(16, 39);
             this.oS_DATALabel1.Name = "oS_DATALabel1";
             this.oS_DATALabel1.Size = new System.Drawing.Size(49, 25);
             this.oS_DATALabel1.TabIndex = 1;
@@ -1268,8 +1284,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroOS";
-            this.Text = "formCadastroOS";
+            this.Text = "Ordens de Serviço";
             this.Load += new System.EventHandler(this.formCadastroOS_Load);
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
@@ -1406,5 +1423,6 @@
         private WindowsFormsApplication2.Monetario textTotalLiquido;
         private WindowsFormsApplication2.Monetario textOSDesconto;
         private WindowsFormsApplication2.Monetario textOSAcrescimo;
+        private System.Windows.Forms.Button buttonImprimirOS;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPesquisaMarca));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
             this.taMarca = new FROGI_OS.dsFROGIOSTableAdapters.MARCATableAdapter();
@@ -141,8 +142,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPesquisaMarca";
-            this.Text = "formPesquisaMarca";
+            this.Text = "Marcas";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             this.panelCentral.ResumeLayout(false);

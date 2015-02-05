@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mARCA_CODIGOLabel;
             System.Windows.Forms.Label mARCA_DESCRICAOLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroMarca));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsMarca = new System.Windows.Forms.BindingSource(this.components);
             this.taMarca = new FROGI_OS.dsFROGIOSTableAdapters.MARCATableAdapter();
@@ -41,6 +42,7 @@
             mARCA_CODIGOLabel = new System.Windows.Forms.Label();
             mARCA_DESCRICAOLabel = new System.Windows.Forms.Label();
             this.panelCabecalho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panelCodigo.SuspendLayout();
             this.panelCentro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
@@ -62,6 +64,25 @@
             // 
             this.panelCentro.Controls.Add(this.groupBox1);
             // 
+            // mARCA_CODIGOLabel
+            // 
+            mARCA_CODIGOLabel.AutoSize = true;
+            mARCA_CODIGOLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            mARCA_CODIGOLabel.Location = new System.Drawing.Point(18, 8);
+            mARCA_CODIGOLabel.Name = "mARCA_CODIGOLabel";
+            mARCA_CODIGOLabel.Size = new System.Drawing.Size(72, 25);
+            mARCA_CODIGOLabel.TabIndex = 0;
+            mARCA_CODIGOLabel.Text = "Código";
+            // 
+            // mARCA_DESCRICAOLabel
+            // 
+            mARCA_DESCRICAOLabel.AutoSize = true;
+            mARCA_DESCRICAOLabel.Location = new System.Drawing.Point(15, 32);
+            mARCA_DESCRICAOLabel.Name = "mARCA_DESCRICAOLabel";
+            mARCA_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
+            mARCA_DESCRICAOLabel.TabIndex = 2;
+            mARCA_DESCRICAOLabel.Text = "Descrição";
+            // 
             // dsFROGIOS
             // 
             this.dsFROGIOS.DataSetName = "dsFROGIOS";
@@ -78,6 +99,7 @@
             // 
             // tableAdapterManager
             // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
@@ -108,16 +130,6 @@
             this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.USUARIOTableAdapter = null;
             // 
-            // mARCA_CODIGOLabel
-            // 
-            mARCA_CODIGOLabel.AutoSize = true;
-            mARCA_CODIGOLabel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            mARCA_CODIGOLabel.Location = new System.Drawing.Point(18, 8);
-            mARCA_CODIGOLabel.Name = "mARCA_CODIGOLabel";
-            mARCA_CODIGOLabel.Size = new System.Drawing.Size(72, 25);
-            mARCA_CODIGOLabel.TabIndex = 0;
-            mARCA_CODIGOLabel.Text = "Código";
-            // 
             // mARCA_CODIGOLabel1
             // 
             this.mARCA_CODIGOLabel1.AutoSize = true;
@@ -128,15 +140,6 @@
             this.mARCA_CODIGOLabel1.Size = new System.Drawing.Size(68, 25);
             this.mARCA_CODIGOLabel1.TabIndex = 1;
             this.mARCA_CODIGOLabel1.Text = "codigo";
-            // 
-            // mARCA_DESCRICAOLabel
-            // 
-            mARCA_DESCRICAOLabel.AutoSize = true;
-            mARCA_DESCRICAOLabel.Location = new System.Drawing.Point(15, 32);
-            mARCA_DESCRICAOLabel.Name = "mARCA_DESCRICAOLabel";
-            mARCA_DESCRICAOLabel.Size = new System.Drawing.Size(88, 25);
-            mARCA_DESCRICAOLabel.TabIndex = 2;
-            mARCA_DESCRICAOLabel.Text = "Descrição";
             // 
             // mARCA_DESCRICAOTextBox
             // 
@@ -157,15 +160,17 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
-            // formMarcaCadastro
+            // formCadastroMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
-            this.Name = "formMarcaCadastro";
-            this.Text = "formMarcaCadastro";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "formCadastroMarca";
+            this.Text = "Marcas";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panelCodigo.ResumeLayout(false);
             this.panelCodigo.PerformLayout();
             this.panelCentro.ResumeLayout(false);

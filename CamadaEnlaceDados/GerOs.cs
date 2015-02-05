@@ -338,5 +338,17 @@ namespace FROGI_OS.CamadaEnlaceDados
             return comando.ExecuteReader();
         }
 
+        public Int32 pegarMaiorCodigo()
+        {
+            FbCommand comando = new FbCommand();
+            String sql = "SELECT MAX(OS_CODIGO) FROM OS";
+
+            comando.CommandText = sql;
+            comando.Connection = Conexao.getConexao;
+            comando.Transaction = Conexao.getTransacao;
+
+            return (((Int32)comando.ExecuteScalar()) + 1);
+        }
+
     }
 }

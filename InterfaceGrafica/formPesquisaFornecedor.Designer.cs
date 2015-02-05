@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPesquisaFornecedor));
             this.comboTipo = new System.Windows.Forms.ComboBox();
             this.tablessPai = new FROGI_OS.TablessControl();
             this.tabFisico = new System.Windows.Forms.TabPage();
@@ -45,10 +46,6 @@
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.tabJuridico = new System.Windows.Forms.TabPage();
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView = new System.Windows.Forms.DataGridView();
-            this.bsFornecedorJuridico = new System.Windows.Forms.BindingSource(this.components);
-            this.taPesquisaFornecedorFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorFisico();
-            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
-            this.taPesquisaFornecedorJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorJuridico();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +54,10 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsFornecedorJuridico = new System.Windows.Forms.BindingSource(this.components);
+            this.taPesquisaFornecedorFisico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorFisico();
+            this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
+            this.taPesquisaFornecedorJuridico = new FROGI_OS.dsFROGIOSTableAdapters.taPesquisaFornecedorJuridico();
             this.panelCabecalho.SuspendLayout();
             this.panelCentral.SuspendLayout();
             this.tablessPai.SuspendLayout();
@@ -283,53 +284,6 @@
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.pESQUISA_FORNECEDOR_JURIDICODataGridView_CellDoubleClick);
             this.pESQUISA_FORNECEDOR_JURIDICODataGridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.pESQUISA_FORNECEDOR_JURIDICODataGridView_KeyDown);
             // 
-            // bsFornecedorJuridico
-            // 
-            this.bsFornecedorJuridico.DataMember = "PESQUISA_FORNECEDOR_JURIDICO";
-            this.bsFornecedorJuridico.DataSource = this.dsFROGIOS;
-            // 
-            // taPesquisaFornecedorFisico
-            // 
-            this.taPesquisaFornecedorFisico.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CATEGORIATableAdapter = null;
-            this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
-            this.tableAdapterManager.CLIENTE_JURIDICOTableAdapter = null;
-            this.tableAdapterManager.CLIENTETableAdapter = null;
-            this.tableAdapterManager.COMPRATableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.EMPRESATableAdapter = null;
-            this.tableAdapterManager.FORNECEDOR_FISICOTableAdapter = null;
-            this.tableAdapterManager.FORNECEDOR_JURIDICOTableAdapter = null;
-            this.tableAdapterManager.FORNECEDORTableAdapter = null;
-            this.tableAdapterManager.FUNCIONARIOTableAdapter = null;
-            this.tableAdapterManager.GRUPOTableAdapter = null;
-            this.tableAdapterManager.ITEM_COMPRATableAdapter = null;
-            this.tableAdapterManager.MARCATableAdapter = null;
-            this.tableAdapterManager.ORCAMENTO_ITEMTableAdapter = null;
-            this.tableAdapterManager.ORCAMENTO_SERVICOTableAdapter = null;
-            this.tableAdapterManager.ORCAMENTOTableAdapter = null;
-            this.tableAdapterManager.OS_ITEMTableAdapter = null;
-            this.tableAdapterManager.OS_SERVICOTableAdapter = null;
-            this.tableAdapterManager.OSTableAdapter = null;
-            this.tableAdapterManager.PERMISSAOTableAdapter = null;
-            this.tableAdapterManager.PRODUTOTableAdapter = null;
-            this.tableAdapterManager.SECAOTableAdapter = null;
-            this.tableAdapterManager.SERVICO_TIPOTableAdapter = null;
-            this.tableAdapterManager.SERVICOTableAdapter = null;
-            this.tableAdapterManager.TIPOTableAdapter = null;
-            this.tableAdapterManager.UFTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USUARIOTableAdapter = null;
-            // 
-            // taPesquisaFornecedorJuridico
-            // 
-            this.taPesquisaFornecedorJuridico.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "FORNECEDOR_CODIGO";
@@ -394,13 +348,61 @@
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // bsFornecedorJuridico
+            // 
+            this.bsFornecedorJuridico.DataMember = "PESQUISA_FORNECEDOR_JURIDICO";
+            this.bsFornecedorJuridico.DataSource = this.dsFROGIOS;
+            // 
+            // taPesquisaFornecedorFisico
+            // 
+            this.taPesquisaFornecedorFisico.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AGENDAMENTOTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CATEGORIATableAdapter = null;
+            this.tableAdapterManager.CLIENTE_FISICOTableAdapter = null;
+            this.tableAdapterManager.CLIENTE_JURIDICOTableAdapter = null;
+            this.tableAdapterManager.CLIENTETableAdapter = null;
+            this.tableAdapterManager.COMPRATableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.EMPRESATableAdapter = null;
+            this.tableAdapterManager.FORNECEDOR_FISICOTableAdapter = null;
+            this.tableAdapterManager.FORNECEDOR_JURIDICOTableAdapter = null;
+            this.tableAdapterManager.FORNECEDORTableAdapter = null;
+            this.tableAdapterManager.FUNCIONARIOTableAdapter = null;
+            this.tableAdapterManager.GRUPOTableAdapter = null;
+            this.tableAdapterManager.ITEM_COMPRATableAdapter = null;
+            this.tableAdapterManager.MARCATableAdapter = null;
+            this.tableAdapterManager.ORCAMENTO_ITEMTableAdapter = null;
+            this.tableAdapterManager.ORCAMENTO_SERVICOTableAdapter = null;
+            this.tableAdapterManager.ORCAMENTOTableAdapter = null;
+            this.tableAdapterManager.OS_ITEMTableAdapter = null;
+            this.tableAdapterManager.OS_SERVICOTableAdapter = null;
+            this.tableAdapterManager.OSTableAdapter = null;
+            this.tableAdapterManager.PERMISSAOTableAdapter = null;
+            this.tableAdapterManager.PRODUTOTableAdapter = null;
+            this.tableAdapterManager.SECAOTableAdapter = null;
+            this.tableAdapterManager.SERVICO_TIPOTableAdapter = null;
+            this.tableAdapterManager.SERVICOTableAdapter = null;
+            this.tableAdapterManager.TIPOTableAdapter = null;
+            this.tableAdapterManager.UFTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USUARIOTableAdapter = null;
+            // 
+            // taPesquisaFornecedorJuridico
+            // 
+            this.taPesquisaFornecedorJuridico.ClearBeforeFill = true;
+            // 
             // formPesquisaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPesquisaFornecedor";
-            this.Text = "formPesquisaFornecedor";
+            this.Text = "Fornecedores";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             this.panelCentral.ResumeLayout(false);

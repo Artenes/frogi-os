@@ -46,6 +46,7 @@
             System.Windows.Forms.Label oRCAMENTO_DIAGNOSTICOLabel;
             System.Windows.Forms.Label oRCAMENTO_DESCONTOLabel;
             System.Windows.Forms.Label oRCAMENTO_ACRESCIMOLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroOrcamento));
             this.bsOrcamento = new System.Windows.Forms.BindingSource(this.components);
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.labelFuncionario = new System.Windows.Forms.Label();
@@ -62,6 +63,7 @@
             this.bsFisico = new System.Windows.Forms.BindingSource(this.components);
             this.bsJuridico = new System.Windows.Forms.BindingSource(this.components);
             this.groupData = new System.Windows.Forms.GroupBox();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             this.oRCAMENTO_PRODUTOTextBox = new System.Windows.Forms.TextBox();
             this.oRCAMENTO_DEFEITORichTextBox = new System.Windows.Forms.RichTextBox();
             this.oRCAMENTO_AVULSOSRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -446,7 +448,7 @@
             this.oRCAMENTO_DATALabel1.AutoSize = true;
             this.oRCAMENTO_DATALabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsOrcamento, "ORCAMENTO_DATA", true));
             this.oRCAMENTO_DATALabel1.ForeColor = System.Drawing.Color.Black;
-            this.oRCAMENTO_DATALabel1.Location = new System.Drawing.Point(17, 69);
+            this.oRCAMENTO_DATALabel1.Location = new System.Drawing.Point(17, 32);
             this.oRCAMENTO_DATALabel1.Name = "oRCAMENTO_DATALabel1";
             this.oRCAMENTO_DATALabel1.Size = new System.Drawing.Size(47, 25);
             this.oRCAMENTO_DATALabel1.TabIndex = 17;
@@ -558,6 +560,7 @@
             // 
             // groupData
             // 
+            this.groupData.Controls.Add(this.buttonImprimir);
             this.groupData.Controls.Add(this.oRCAMENTO_DATALabel1);
             this.groupData.Location = new System.Drawing.Point(323, 201);
             this.groupData.Name = "groupData";
@@ -565,6 +568,18 @@
             this.groupData.TabIndex = 20;
             this.groupData.TabStop = false;
             this.groupData.Text = "Data de lançamento";
+            // 
+            // buttonImprimir
+            // 
+            this.buttonImprimir.AutoSize = true;
+            this.buttonImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimir.Location = new System.Drawing.Point(19, 68);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(409, 81);
+            this.buttonImprimir.TabIndex = 26;
+            this.buttonImprimir.Text = "Imprimir orçamento";
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // oRCAMENTO_PRODUTOTextBox
             // 
@@ -1102,7 +1117,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 600);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroOrcamento";
+            this.Text = "Orçamentos";
             this.Load += new System.EventHandler(this.formCadastroOrcamento_Load);
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
@@ -1226,6 +1243,7 @@
         private WindowsFormsApplication2.Monetario textServicoDesconto;
         private WindowsFormsApplication2.Monetario textServicoValor;
         private WindowsFormsApplication2.Monetario textProdutoPreco;
+        private System.Windows.Forms.Button buttonImprimir;
 
 
 

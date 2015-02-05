@@ -67,6 +67,7 @@
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroCliente));
             this.tablessPai = new FROGI_OS.TablessControl();
             this.tabFisico = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -77,6 +78,9 @@
             this.cLIENTE_FISICO_PAITextBox = new System.Windows.Forms.TextBox();
             this.cLIENTE_FISICO_MAETextBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.textLimiteAtual = new WindowsFormsApplication2.Monetario();
+            this.textLimite = new WindowsFormsApplication2.Monetario();
+            this.textSalario = new WindowsFormsApplication2.Monetario();
             this.cLIENTE_FISICO_PROFISSAOTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.uF_DESCRICAOComboBox = new System.Windows.Forms.ComboBox();
@@ -127,9 +131,6 @@
             this.cLIENTE_DATA_CADASTROLabel1 = new System.Windows.Forms.Label();
             this.taUF = new FROGI_OS.dsFROGIOSTableAdapters.UFTableAdapter();
             this.taJuridico = new FROGI_OS.dsFROGIOSTableAdapters.CLIENTE_JURIDICOTableAdapter();
-            this.textSalario = new WindowsFormsApplication2.Monetario();
-            this.textLimite = new WindowsFormsApplication2.Monetario();
-            this.textLimiteAtual = new WindowsFormsApplication2.Monetario();
             cLIENTE_FISICO_CPFLabel = new System.Windows.Forms.Label();
             cLIENTE_FISICO_RGLabel = new System.Windows.Forms.Label();
             cLIENTE_FISICO_NASCIMENTOLabel = new System.Windows.Forms.Label();
@@ -671,6 +672,39 @@
             this.groupBox4.TabIndex = 15;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Profissional";
+            // 
+            // textLimiteAtual
+            // 
+            this.textLimiteAtual.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFisico, "CLIENTE_FISICO_LIMITE_ATUAL", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textLimiteAtual.Location = new System.Drawing.Point(325, 141);
+            this.textLimiteAtual.Name = "textLimiteAtual";
+            this.textLimiteAtual.Size = new System.Drawing.Size(152, 33);
+            this.textLimiteAtual.TabIndex = 19;
+            this.textLimiteAtual.Text = "R$ 0,00";
+            this.textLimiteAtual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textLimiteAtual.Valor = 0D;
+            // 
+            // textLimite
+            // 
+            this.textLimite.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFisico, "CLIENTE_FISICO_LIMITE", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textLimite.Location = new System.Drawing.Point(26, 141);
+            this.textLimite.Name = "textLimite";
+            this.textLimite.Size = new System.Drawing.Size(144, 33);
+            this.textLimite.TabIndex = 18;
+            this.textLimite.Text = "R$ 0,00";
+            this.textLimite.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textLimite.Valor = 0D;
+            // 
+            // textSalario
+            // 
+            this.textSalario.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFisico, "CLIENTE_FISICO_SALARIO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textSalario.Location = new System.Drawing.Point(146, 68);
+            this.textSalario.Name = "textSalario";
+            this.textSalario.Size = new System.Drawing.Size(216, 33);
+            this.textSalario.TabIndex = 17;
+            this.textSalario.Text = "R$ 0,00";
+            this.textSalario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textSalario.Valor = 0D;
             // 
             // cLIENTE_FISICO_PROFISSAOTextBox
             // 
@@ -1251,42 +1285,14 @@
             // 
             this.taJuridico.ClearBeforeFill = true;
             // 
-            // textSalario
-            // 
-            this.textSalario.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFisico, "CLIENTE_FISICO_SALARIO", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textSalario.Location = new System.Drawing.Point(146, 68);
-            this.textSalario.Name = "textSalario";
-            this.textSalario.Size = new System.Drawing.Size(216, 33);
-            this.textSalario.TabIndex = 17;
-            this.textSalario.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textSalario.Valor = 0D;
-            // 
-            // textLimite
-            // 
-            this.textLimite.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFisico, "CLIENTE_FISICO_LIMITE", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textLimite.Location = new System.Drawing.Point(26, 141);
-            this.textLimite.Name = "textLimite";
-            this.textLimite.Size = new System.Drawing.Size(144, 33);
-            this.textLimite.TabIndex = 18;
-            this.textLimite.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textLimite.Valor = 0D;
-            // 
-            // textLimiteAtual
-            // 
-            this.textLimiteAtual.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsFisico, "CLIENTE_FISICO_LIMITE_ATUAL", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textLimiteAtual.Location = new System.Drawing.Point(325, 141);
-            this.textLimiteAtual.Name = "textLimiteAtual";
-            this.textLimiteAtual.Size = new System.Drawing.Size(152, 33);
-            this.textLimiteAtual.TabIndex = 19;
-            this.textLimiteAtual.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textLimiteAtual.Valor = 0D;
-            // 
             // formCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroCliente";
+            this.Text = "Clientes";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();

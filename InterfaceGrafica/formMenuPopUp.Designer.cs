@@ -146,7 +146,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formMenuPopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "formMenuPopUp";
+            this.Text = "Menu";
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.ResumeLayout(false);

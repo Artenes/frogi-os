@@ -59,6 +59,7 @@
             System.Windows.Forms.Label label8;
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label fORNECEDOR_OBSERVACOESLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroFornecedor));
             this.tablessPai = new FROGI_OS.TablessControl();
             this.tabFisico = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -1064,8 +1065,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroFornecedor";
-            this.Text = "formFornecedorCadastro";
+            this.Text = "Fornecedores";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();

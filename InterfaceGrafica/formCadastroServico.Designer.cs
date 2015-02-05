@@ -32,6 +32,7 @@
             System.Windows.Forms.Label sERVICO_CODIGOLabel;
             System.Windows.Forms.Label sERVICO_DESCRICAOLabel;
             System.Windows.Forms.Label sERVICO_VALORLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroServico));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsServico = new System.Windows.Forms.BindingSource(this.components);
             this.taServico = new FROGI_OS.dsFROGIOSTableAdapters.SERVICOTableAdapter();
@@ -40,13 +41,13 @@
             this.sERVICO_CODIGOLabel1 = new System.Windows.Forms.Label();
             this.sERVICO_DESCRICAOTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textValor = new WindowsFormsApplication2.Monetario();
             this.bsTipo = new System.Windows.Forms.BindingSource(this.components);
             this.tIPODataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonAdicionarTipo = new System.Windows.Forms.Button();
-            this.textValor = new WindowsFormsApplication2.Monetario();
             sERVICO_CODIGOLabel = new System.Windows.Forms.Label();
             sERVICO_DESCRICAOLabel = new System.Windows.Forms.Label();
             sERVICO_VALORLabel = new System.Windows.Forms.Label();
@@ -189,6 +190,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // textValor
+            // 
+            this.textValor.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsServico, "SERVICO_VALOR", true, System.Windows.Forms.DataSourceUpdateMode.Never));
+            this.textValor.Location = new System.Drawing.Point(110, 72);
+            this.textValor.Name = "textValor";
+            this.textValor.Size = new System.Drawing.Size(204, 33);
+            this.textValor.TabIndex = 5;
+            this.textValor.Text = "R$ 0,00";
+            this.textValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textValor.Valor = 0D;
+            // 
             // bsTipo
             // 
             this.bsTipo.DataMember = "TIPO";
@@ -249,23 +261,14 @@
             this.buttonAdicionarTipo.UseVisualStyleBackColor = true;
             this.buttonAdicionarTipo.Click += new System.EventHandler(this.buttonAdicionarTipo_Click);
             // 
-            // textValor
-            // 
-            this.textValor.DataBindings.Add(new System.Windows.Forms.Binding("Valor", this.bsServico, "SERVICO_VALOR", true, System.Windows.Forms.DataSourceUpdateMode.Never));
-            this.textValor.Location = new System.Drawing.Point(110, 72);
-            this.textValor.Name = "textValor";
-            this.textValor.Size = new System.Drawing.Size(204, 33);
-            this.textValor.TabIndex = 5;
-            this.textValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textValor.Valor = 0D;
-            // 
             // formCadastroServico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroServico";
-            this.Text = "formServicoCadastro";
+            this.Text = "Serviços";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();

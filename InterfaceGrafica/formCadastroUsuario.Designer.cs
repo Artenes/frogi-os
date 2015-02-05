@@ -33,6 +33,7 @@
             System.Windows.Forms.Label uSUARIO_NOMELabel;
             System.Windows.Forms.Label uSUARIO_SENHALabel;
             System.Windows.Forms.Label uSUARIO_DATA_CADASTROLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroUsuario));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsUsuario = new System.Windows.Forms.BindingSource(this.components);
             this.taUsuario = new FROGI_OS.dsFROGIOSTableAdapters.USUARIOTableAdapter();
@@ -240,8 +241,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroUsuario";
-            this.Text = "formUsuarioCadastro";
+            this.Text = "Usuários";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();

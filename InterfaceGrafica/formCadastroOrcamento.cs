@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FROGI_OS.CamadaEnlaceDados;
+using FROGI_OS.Relatorios;
 
 namespace FROGI_OS.InterfaceGrafica {
     public partial class formCadastroOrcamento : formOSBaseCadastro {
@@ -15,6 +16,7 @@ namespace FROGI_OS.InterfaceGrafica {
         private GerOrcamento orcamentoSQL;
         private dsFROGIOS.ORCAMENTO_ITEMRow itemAtual;
         private dsFROGIOS.ORCAMENTO_SERVICORow servicoAtual;
+        private Boolean eFisico = true;
 
         public formCadastroOrcamento(bool eNovo) : base (eNovo) {
             InitializeComponent();
@@ -87,16 +89,22 @@ namespace FROGI_OS.InterfaceGrafica {
 
             if (dsFROGIOS.CLIENTE.Rows.Count == 0) return "Informe o cliente que quer o orçamento";
             if (dsFROGIOS.FUNCIONARIO.Rows.Count == 0) return "Informe o funcionário responsável pelo orçamento";
+            if (dsFROGIOS.ORCAMENTO_ITEM.Rows.Count == 0 && dsFROGIOS.ORCAMENTO_SERVICO.Rows.Count == 0) return "Adicione ao menos uma peça ou serviço no orçamento";
 
             return base.validarCampos();
         }
 
+        /**
+         * Este método irá preencher os campos do formulário com dados existentes no banco de dados. 
+         */
         public override void selecionar(int codigo) {
             orcamentoSQL.selecionar(codigo,dsFROGIOS.ORCAMENTO, dsFROGIOS.ORCAMENTO_ITEM, dsFROGIOS.ORCAMENTO_SERVICO, dsFROGIOS.CLIENTE, dsFROGIOS.CLIENTE_FISICO, dsFROGIOS.CLIENTE_JURIDICO, dsFROGIOS.FUNCIONARIO);
             if (dsFROGIOS.CLIENTE_FISICO.Rows.Count != 0) {
                 labelCliente.Text = ((dsFROGIOS.CLIENTE_FISICORow)dsFROGIOS.CLIENTE_FISICO.Rows[0]).CLIENTE_FISICO_NOME;
+                this.eFisico = true;
             } else {
                 labelCliente.Text = ((dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO.Rows[0]).CLIENTE_JURIDICO_FANTASIA;
+                this.eFisico = false;
             }
             labelFuncionario.Text = ((dsFROGIOS.FUNCIONARIORow)dsFROGIOS.FUNCIONARIO.Rows[0]).FUNCIONARIO_NOME;
             calcularTotais();
@@ -112,6 +120,7 @@ namespace FROGI_OS.InterfaceGrafica {
                 labelCliente.Text = ((dsFROGIOS.CLIENTE_JURIDICORow)dsFROGIOS.CLIENTE_JURIDICO.Rows[0]).CLIENTE_JURIDICO_FANTASIA;
             }
             cliente = null;
+            this.eFisico = eFisico;
         }
 
         public void selecionarFuncionario(int codigo) {
@@ -484,6 +493,85 @@ namespace FROGI_OS.InterfaceGrafica {
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void imprimirOrcamento() {
+
+            String mensagem = this.validarCampos();
+            if (!String.IsNullOrEmpty(mensagem)) {
+                formDialogo dialogo = new formDialogo("Antes de imprimir o orçamento...", mensagem, formDialogo.TipoExpressao.AvisoTriste);
+                dialogo.ShowDialog();
+                dialogo.Dispose();
+            }
+            else {
+                dsFROGIOS.CLIENTERow cliente = this.dsFROGIOS.CLIENTE.Rows[0] as dsFROGIOS.CLIENTERow;
+                dsFROGIOS.ORCAMENTORow orcamento;
+                try {
+                    orcamento = this.dsFROGIOS.ORCAMENTO.Rows[0] as dsFROGIOS.ORCAMENTORow;
+                }
+                catch (Exception) {
+                    orcamento = null;
+                }
+                List<RelatorioItens> itens = new List<RelatorioItens>();
+                String nomeCliente = this.labelCliente.Text;
+                String enderecoCliente = cliente.CLIENTE_ENDERECO + ", " + cliente.CLIENTE_BAIRRO;
+                String foneCliente = String.IsNullOrEmpty(cliente.CLIENTE_TELEFONE) ? cliente.CLIENTE_CELULAR : cliente.CLIENTE_TELEFONE;
+                Int32 codigoCliente = cliente.CLIENTE_CODIGO;
+                Int32 codigoOrcamento;
+                if (orcamento == null) {
+                    Conexao.abrir();
+                    codigoOrcamento = this.orcamentoSQL.pegarMaiorCodigo();
+                    Conexao.fechar();
+                } else { 
+                    codigoOrcamento = orcamento.ORCAMENTO_CODIGO;
+                }
+                DateTime data = orcamento == null ? DateTime.Now : orcamento.ORCAMENTO_DATA;
+                Double total;
+                try
+                {
+                    total = Convert.ToDouble(this.labelTotalLiquido.Text.Replace("R$", ""));
+                }
+                catch (Exception)
+                {
+                    total = 0.00;
+                }
+
+                foreach (dsFROGIOS.ORCAMENTO_ITEMRow item in dsFROGIOS.ORCAMENTO_ITEM.Rows)
+                {
+                    itens.Add(new RelatorioItens(
+                        item.ORCAMENTO_ITEM_DESCRICAO,
+                        item.ORCAMENTO_ITEM_VALOR,
+                        item.ORCAMENTO_ITEM_TOTAL
+                        ));
+                }
+
+                foreach (dsFROGIOS.ORCAMENTO_SERVICORow servico in dsFROGIOS.ORCAMENTO_SERVICO.Rows)
+                {
+                    itens.Add(new RelatorioItens(
+                        servico.ORCAMENTO_SERVICO_DESCRICAO,
+                        servico.ORCAMENTO_SERVICO_VALOR,
+                        servico.ORCAMENTO_SERVICO_TOTAL
+                        ));
+                }
+
+                formComprovanteOrcamento comprovante = new formComprovanteOrcamento(new RelatorioOrcamento(
+                    nomeCliente,
+                    enderecoCliente,
+                    foneCliente,
+                    codigoOrcamento,
+                    codigoCliente,
+                    total,
+                    itens,
+                    data
+                    ));
+                comprovante.ShowDialog();
+                comprovante.Dispose();
+            }
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            imprimirOrcamento();
         }
 
     }

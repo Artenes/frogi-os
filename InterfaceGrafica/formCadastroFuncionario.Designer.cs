@@ -45,6 +45,7 @@
             System.Windows.Forms.Label fUNCIONARIO_SALARIOLabel;
             System.Windows.Forms.Label fUNCIONARIO_ADMISSAOLabel;
             System.Windows.Forms.Label fUNCIONARIO_DATA_CADASTROLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroFuncionario));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsFuncionario = new System.Windows.Forms.BindingSource(this.components);
             this.taFuncionario = new FROGI_OS.dsFROGIOSTableAdapters.FUNCIONARIOTableAdapter();
@@ -547,7 +548,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroFuncionario";
+            this.Text = "Funcionários";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();

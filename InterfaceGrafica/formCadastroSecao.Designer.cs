@@ -30,6 +30,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label sECAO_CODIGOLabel;
             System.Windows.Forms.Label sECAO_DESCRICAOLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCadastroSecao));
             this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.bsSecao = new System.Windows.Forms.BindingSource(this.components);
             this.taSecao = new FROGI_OS.dsFROGIOSTableAdapters.SECAOTableAdapter();
@@ -162,8 +163,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroSecao";
-            this.Text = "formSecaoCadastro";
+            this.Text = "Seções";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
