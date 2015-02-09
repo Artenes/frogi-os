@@ -871,6 +871,7 @@
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroProduto";
+            this.ShowInTaskbar = false;
             this.Text = "Produtos";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

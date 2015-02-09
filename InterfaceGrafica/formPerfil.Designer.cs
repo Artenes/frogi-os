@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureFechar = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureFoto = new System.Windows.Forms.PictureBox();
             this.buttonEscolherFoto = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureSalvar = new System.Windows.Forms.PictureBox();
-            this.pictureFechar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureSalvar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -52,6 +52,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(804, 64);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureFechar
+            // 
+            this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
+            this.pictureFechar.Location = new System.Drawing.Point(742, 9);
+            this.pictureFechar.Name = "pictureFechar";
+            this.pictureFechar.Size = new System.Drawing.Size(50, 51);
+            this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureFechar.TabIndex = 1;
+            this.pictureFechar.TabStop = false;
+            this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
             // 
             // label1
             // 
@@ -110,18 +122,6 @@
             this.pictureSalvar.TabStop = false;
             this.pictureSalvar.Click += new System.EventHandler(this.pictureSalvar_Click);
             // 
-            // pictureFechar
-            // 
-            this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
-            this.pictureFechar.Location = new System.Drawing.Point(742, 9);
-            this.pictureFechar.Name = "pictureFechar";
-            this.pictureFechar.Size = new System.Drawing.Size(50, 51);
-            this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureFechar.TabIndex = 1;
-            this.pictureFechar.TabStop = false;
-            this.pictureFechar.Click += new System.EventHandler(this.pictureFechar_Click);
-            // 
             // formPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -134,14 +134,15 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formPerfil";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formPerfil";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureFoto)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureSalvar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

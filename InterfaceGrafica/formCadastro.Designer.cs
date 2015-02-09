@@ -211,6 +211,7 @@
             this.Controls.Add(this.panelCabecalho);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formCadastro";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formClienteCadastro";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCadastro_FormClosing);

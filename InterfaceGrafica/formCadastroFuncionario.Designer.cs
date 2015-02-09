@@ -373,7 +373,7 @@
             // 
             this.fUNCIONARIO_TELEFONEMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFuncionario, "FUNCIONARIO_TELEFONE", true));
             this.fUNCIONARIO_TELEFONEMaskedTextBox.Location = new System.Drawing.Point(127, 33);
-            this.fUNCIONARIO_TELEFONEMaskedTextBox.Mask = "(##)####-####";
+            this.fUNCIONARIO_TELEFONEMaskedTextBox.Mask = "(##)#####-####";
             this.fUNCIONARIO_TELEFONEMaskedTextBox.Name = "fUNCIONARIO_TELEFONEMaskedTextBox";
             this.fUNCIONARIO_TELEFONEMaskedTextBox.Size = new System.Drawing.Size(169, 33);
             this.fUNCIONARIO_TELEFONEMaskedTextBox.TabIndex = 2;
@@ -550,6 +550,7 @@
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroFuncionario";
+            this.ShowInTaskbar = false;
             this.Text = "Funcionários";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

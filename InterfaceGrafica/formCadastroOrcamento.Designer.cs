@@ -1119,6 +1119,7 @@
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroOrcamento";
+            this.ShowInTaskbar = false;
             this.Text = "Orçamentos";
             this.Load += new System.EventHandler(this.formCadastroOrcamento_Load);
             this.panelCabecalho.ResumeLayout(false);

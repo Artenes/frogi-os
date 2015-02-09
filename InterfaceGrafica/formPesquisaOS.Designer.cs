@@ -370,6 +370,7 @@
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPesquisaOS";
+            this.ShowInTaskbar = false;
             this.Text = "Ordens de Serviço";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

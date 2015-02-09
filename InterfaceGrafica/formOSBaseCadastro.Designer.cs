@@ -315,6 +315,7 @@
             this.Controls.Add(this.panelRodape);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formOSBaseCadastro";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formCadastroOrcamento";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formOSBase_FormClosing);

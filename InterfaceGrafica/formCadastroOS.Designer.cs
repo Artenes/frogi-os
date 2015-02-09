@@ -1286,6 +1286,7 @@
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroOS";
+            this.ShowInTaskbar = false;
             this.Text = "Ordens de Serviço";
             this.Load += new System.EventHandler(this.formCadastroOS_Load);
             this.panelCabecalho.ResumeLayout(false);

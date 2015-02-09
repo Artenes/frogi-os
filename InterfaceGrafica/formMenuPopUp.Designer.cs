@@ -145,6 +145,7 @@
             this.Controls.Add(this.linkLogOff);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formMenuPopUp";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Menu";
             this.panel3.ResumeLayout(false);

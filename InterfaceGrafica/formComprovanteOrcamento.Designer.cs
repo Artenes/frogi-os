@@ -70,6 +70,7 @@
             this.Controls.Add(this.reportViewer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "formComprovanteOrcamento";
+            this.ShowInTaskbar = false;
             this.Text = "Orçamento";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formComprovanteOrcamento_Load);

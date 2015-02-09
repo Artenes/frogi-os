@@ -124,11 +124,11 @@
             this.cLIENTE_JURIDICO_FANTASIATextBox = new System.Windows.Forms.TextBox();
             this.cLIENTE_JURIDICO_IEMaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.comboTipo = new System.Windows.Forms.ComboBox();
+            this.cLIENTE_CODIGOLabel1 = new System.Windows.Forms.Label();
+            this.cLIENTE_DATA_CADASTROLabel1 = new System.Windows.Forms.Label();
             this.taFisico = new FROGI_OS.dsFROGIOSTableAdapters.CLIENTE_FISICOTableAdapter();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
             this.taCliente = new FROGI_OS.dsFROGIOSTableAdapters.CLIENTETableAdapter();
-            this.cLIENTE_CODIGOLabel1 = new System.Windows.Forms.Label();
-            this.cLIENTE_DATA_CADASTROLabel1 = new System.Windows.Forms.Label();
             this.taUF = new FROGI_OS.dsFROGIOSTableAdapters.UFTableAdapter();
             this.taJuridico = new FROGI_OS.dsFROGIOSTableAdapters.CLIENTE_JURIDICOTableAdapter();
             cLIENTE_FISICO_CPFLabel = new System.Windows.Forms.Label();
@@ -858,7 +858,7 @@
             // 
             this.cLIENTE_TELEFONEMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_TELEFONE", true));
             this.cLIENTE_TELEFONEMaskedTextBox.Location = new System.Drawing.Point(94, 23);
-            this.cLIENTE_TELEFONEMaskedTextBox.Mask = "(##)####-####";
+            this.cLIENTE_TELEFONEMaskedTextBox.Mask = "(##)#####-####";
             this.cLIENTE_TELEFONEMaskedTextBox.Name = "cLIENTE_TELEFONEMaskedTextBox";
             this.cLIENTE_TELEFONEMaskedTextBox.Size = new System.Drawing.Size(180, 33);
             this.cLIENTE_TELEFONEMaskedTextBox.TabIndex = 6;
@@ -867,7 +867,7 @@
             // 
             this.cLIENTE_CELULARMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_CELULAR", true));
             this.cLIENTE_CELULARMaskedTextBox.Location = new System.Drawing.Point(94, 62);
-            this.cLIENTE_CELULARMaskedTextBox.Mask = "(##)####-####";
+            this.cLIENTE_CELULARMaskedTextBox.Mask = "(##)#####-####";
             this.cLIENTE_CELULARMaskedTextBox.Name = "cLIENTE_CELULARMaskedTextBox";
             this.cLIENTE_CELULARMaskedTextBox.Size = new System.Drawing.Size(180, 33);
             this.cLIENTE_CELULARMaskedTextBox.TabIndex = 7;
@@ -1106,7 +1106,7 @@
             // 
             this.textTelefoneJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_TELEFONE", true));
             this.textTelefoneJuridico.Location = new System.Drawing.Point(94, 23);
-            this.textTelefoneJuridico.Mask = "(##)####-####";
+            this.textTelefoneJuridico.Mask = "(##)#####-####";
             this.textTelefoneJuridico.Name = "textTelefoneJuridico";
             this.textTelefoneJuridico.Size = new System.Drawing.Size(180, 33);
             this.textTelefoneJuridico.TabIndex = 27;
@@ -1115,7 +1115,7 @@
             // 
             this.textCelularJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_CELULAR", true));
             this.textCelularJuridico.Location = new System.Drawing.Point(94, 62);
-            this.textCelularJuridico.Mask = "(##)####-####";
+            this.textCelularJuridico.Mask = "(##)#####-####";
             this.textCelularJuridico.Name = "textCelularJuridico";
             this.textCelularJuridico.Size = new System.Drawing.Size(180, 33);
             this.textCelularJuridico.TabIndex = 28;
@@ -1214,6 +1214,28 @@
             this.comboTipo.TabIndex = 100;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
             // 
+            // cLIENTE_CODIGOLabel1
+            // 
+            this.cLIENTE_CODIGOLabel1.AutoSize = true;
+            this.cLIENTE_CODIGOLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_CODIGO", true));
+            this.cLIENTE_CODIGOLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cLIENTE_CODIGOLabel1.Location = new System.Drawing.Point(88, 8);
+            this.cLIENTE_CODIGOLabel1.Name = "cLIENTE_CODIGOLabel1";
+            this.cLIENTE_CODIGOLabel1.Size = new System.Drawing.Size(68, 25);
+            this.cLIENTE_CODIGOLabel1.TabIndex = 27;
+            this.cLIENTE_CODIGOLabel1.Text = "código";
+            // 
+            // cLIENTE_DATA_CADASTROLabel1
+            // 
+            this.cLIENTE_DATA_CADASTROLabel1.AutoSize = true;
+            this.cLIENTE_DATA_CADASTROLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_DATA_CADASTRO", true));
+            this.cLIENTE_DATA_CADASTROLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cLIENTE_DATA_CADASTROLabel1.Location = new System.Drawing.Point(88, 37);
+            this.cLIENTE_DATA_CADASTROLabel1.Name = "cLIENTE_DATA_CADASTROLabel1";
+            this.cLIENTE_DATA_CADASTROLabel1.Size = new System.Drawing.Size(47, 25);
+            this.cLIENTE_DATA_CADASTROLabel1.TabIndex = 45;
+            this.cLIENTE_DATA_CADASTROLabel1.Text = "data";
+            // 
             // taFisico
             // 
             this.taFisico.ClearBeforeFill = true;
@@ -1255,28 +1277,6 @@
             // 
             this.taCliente.ClearBeforeFill = true;
             // 
-            // cLIENTE_CODIGOLabel1
-            // 
-            this.cLIENTE_CODIGOLabel1.AutoSize = true;
-            this.cLIENTE_CODIGOLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_CODIGO", true));
-            this.cLIENTE_CODIGOLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cLIENTE_CODIGOLabel1.Location = new System.Drawing.Point(88, 8);
-            this.cLIENTE_CODIGOLabel1.Name = "cLIENTE_CODIGOLabel1";
-            this.cLIENTE_CODIGOLabel1.Size = new System.Drawing.Size(68, 25);
-            this.cLIENTE_CODIGOLabel1.TabIndex = 27;
-            this.cLIENTE_CODIGOLabel1.Text = "código";
-            // 
-            // cLIENTE_DATA_CADASTROLabel1
-            // 
-            this.cLIENTE_DATA_CADASTROLabel1.AutoSize = true;
-            this.cLIENTE_DATA_CADASTROLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCliente, "CLIENTE_DATA_CADASTRO", true));
-            this.cLIENTE_DATA_CADASTROLabel1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cLIENTE_DATA_CADASTROLabel1.Location = new System.Drawing.Point(88, 37);
-            this.cLIENTE_DATA_CADASTROLabel1.Name = "cLIENTE_DATA_CADASTROLabel1";
-            this.cLIENTE_DATA_CADASTROLabel1.Size = new System.Drawing.Size(47, 25);
-            this.cLIENTE_DATA_CADASTROLabel1.TabIndex = 45;
-            this.cLIENTE_DATA_CADASTROLabel1.Text = "data";
-            // 
             // taUF
             // 
             this.taUF.ClearBeforeFill = true;
@@ -1292,6 +1292,7 @@
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroCliente";
+            this.ShowInTaskbar = false;
             this.Text = "Clientes";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

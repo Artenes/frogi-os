@@ -46,6 +46,8 @@
             this.tabGeral = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cOMPRA_NOTA_FISCALTextBox = new System.Windows.Forms.TextBox();
+            this.bsCompra = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
             this.cOMPRA_FORNECEDORTextBox = new System.Windows.Forms.TextBox();
             this.cOMPRA_FUNCIONARIOTextBox = new System.Windows.Forms.TextBox();
             this.tabProduto = new System.Windows.Forms.TabPage();
@@ -54,10 +56,17 @@
             this.buttonPesquisarProduto = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textProdutoDescricao = new System.Windows.Forms.TextBox();
+            this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
             this.textProdutoPreco = new System.Windows.Forms.TextBox();
             this.textProdutoQuantidade = new System.Windows.Forms.TextBox();
             this.textProdutoDesconto = new System.Windows.Forms.TextBox();
             this.pESQUISA_PRODUTO_ITEMDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsProdutoItem = new System.Windows.Forms.BindingSource(this.components);
             this.tabConclusao = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textTotalBruto = new System.Windows.Forms.TextBox();
@@ -66,15 +75,6 @@
             this.cOMPRA_TOTALTextBox = new System.Windows.Forms.TextBox();
             this.cOMPRA_ACRESCIMOTextBox = new System.Windows.Forms.TextBox();
             this.cOMPRA_CODIGOLabel1 = new System.Windows.Forms.Label();
-            this.bsCompra = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFROGIOS = new FROGI_OS.dsFROGIOS();
-            this.bsProduto = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsProdutoItem = new System.Windows.Forms.BindingSource(this.components);
             this.bsItemCompra = new System.Windows.Forms.BindingSource(this.components);
             this.taCompra = new FROGI_OS.dsFROGIOSTableAdapters.COMPRATableAdapter();
             this.tableAdapterManager = new FROGI_OS.dsFROGIOSTableAdapters.TableAdapterManager();
@@ -101,15 +101,15 @@
             this.tabPai.SuspendLayout();
             this.tabGeral.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.tabProduto.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTO_ITEMDataGridView)).BeginInit();
-            this.tabConclusao.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).BeginInit();
+            this.tabProduto.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTO_ITEMDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).BeginInit();
+            this.tabConclusao.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsItemCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -293,6 +293,16 @@
             this.cOMPRA_NOTA_FISCALTextBox.Size = new System.Drawing.Size(264, 33);
             this.cOMPRA_NOTA_FISCALTextBox.TabIndex = 2;
             // 
+            // bsCompra
+            // 
+            this.bsCompra.DataMember = "COMPRA";
+            this.bsCompra.DataSource = this.dsFROGIOS;
+            // 
+            // dsFROGIOS
+            // 
+            this.dsFROGIOS.DataSetName = "dsFROGIOS";
+            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cOMPRA_FORNECEDORTextBox
             // 
             this.cOMPRA_FORNECEDORTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsCompra, "COMPRA_FORNECEDOR", true));
@@ -384,6 +394,11 @@
             this.textProdutoDescricao.Size = new System.Drawing.Size(774, 33);
             this.textProdutoDescricao.TabIndex = 4;
             // 
+            // bsProduto
+            // 
+            this.bsProduto.DataMember = "PRODUTO";
+            this.bsProduto.DataSource = this.dsFROGIOS;
+            // 
             // textProdutoPreco
             // 
             this.textProdutoPreco.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProduto, "PRODUTO_PRECO_COMPRA", true));
@@ -425,6 +440,46 @@
             this.pESQUISA_PRODUTO_ITEMDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.pESQUISA_PRODUTO_ITEMDataGridView.Size = new System.Drawing.Size(952, 239);
             this.pESQUISA_PRODUTO_ITEMDataGridView.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PRODUTO_DESCRICAO";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Produto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "PRODUTO_PRECO_COMPRA";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Preço";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ITEM_COMPRA_DESCONTO";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Desconto";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ITEM_COMPRA_QUANTIDADE";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Quantidade";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ITEM_COMPRA_PRECO_TOTAL";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Total";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // bsProdutoItem
+            // 
+            this.bsProdutoItem.DataMember = "PESQUISA_PRODUTO_ITEM";
+            this.bsProdutoItem.DataSource = this.dsFROGIOS;
             // 
             // tabConclusao
             // 
@@ -505,61 +560,6 @@
             this.cOMPRA_CODIGOLabel1.TabIndex = 1;
             this.cOMPRA_CODIGOLabel1.Text = "código";
             // 
-            // bsCompra
-            // 
-            this.bsCompra.DataMember = "COMPRA";
-            this.bsCompra.DataSource = this.dsFROGIOS;
-            // 
-            // dsFROGIOS
-            // 
-            this.dsFROGIOS.DataSetName = "dsFROGIOS";
-            this.dsFROGIOS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsProduto
-            // 
-            this.bsProduto.DataMember = "PRODUTO";
-            this.bsProduto.DataSource = this.dsFROGIOS;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PRODUTO_DESCRICAO";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Produto";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "PRODUTO_PRECO_COMPRA";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Preço";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ITEM_COMPRA_DESCONTO";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Desconto";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ITEM_COMPRA_QUANTIDADE";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Quantidade";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ITEM_COMPRA_PRECO_TOTAL";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Total";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // bsProdutoItem
-            // 
-            this.bsProdutoItem.DataMember = "PESQUISA_PRODUTO_ITEM";
-            this.bsProdutoItem.DataSource = this.dsFROGIOS;
-            // 
             // bsItemCompra
             // 
             this.bsItemCompra.DataMember = "ITEM_COMPRA";
@@ -620,6 +620,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Name = "formCadastroCompra";
+            this.ShowInTaskbar = false;
             this.Text = "formCadastroCompra";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();
@@ -631,18 +632,18 @@
             this.tabGeral.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
             this.tabProduto.ResumeLayout(false);
             this.tabProduto.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pESQUISA_PRODUTO_ITEMDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).EndInit();
             this.tabConclusao.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsCompra)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFROGIOS)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProdutoItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItemCompra)).EndInit();
             this.ResumeLayout(false);
 

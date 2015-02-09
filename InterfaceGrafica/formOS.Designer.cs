@@ -35,6 +35,7 @@
             this.buttonStatus = new System.Windows.Forms.Button();
             this.labelStatus = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.pictureFechar = new System.Windows.Forms.PictureBox();
             this.labelTotalParcial = new System.Windows.Forms.Label();
             this.labelTotalPecas = new System.Windows.Forms.Label();
             this.labelTotalServicos = new System.Windows.Forms.Label();
@@ -98,12 +99,11 @@
             this.label17 = new System.Windows.Forms.Label();
             this.textProduto = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.pictureFechar = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataServicos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPecas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -186,6 +186,17 @@
             this.label14.Size = new System.Drawing.Size(124, 54);
             this.label14.TabIndex = 15;
             this.label14.Text = "Status";
+            // 
+            // pictureFechar
+            // 
+            this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
+            this.pictureFechar.Location = new System.Drawing.Point(1274, 24);
+            this.pictureFechar.Name = "pictureFechar";
+            this.pictureFechar.Size = new System.Drawing.Size(64, 64);
+            this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureFechar.TabIndex = 12;
+            this.pictureFechar.TabStop = false;
             // 
             // labelTotalParcial
             // 
@@ -877,17 +888,6 @@
             this.label18.TabIndex = 32;
             this.label18.Text = "Produto a ser concertado";
             // 
-            // pictureFechar
-            // 
-            this.pictureFechar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureFechar.Image = global::FROGI_OS.Properties.Resources.icone_fechar;
-            this.pictureFechar.Location = new System.Drawing.Point(1274, 24);
-            this.pictureFechar.Name = "pictureFechar";
-            this.pictureFechar.Size = new System.Drawing.Size(64, 64);
-            this.pictureFechar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureFechar.TabIndex = 12;
-            this.pictureFechar.TabStop = false;
-            // 
             // formOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -898,16 +898,17 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formOS";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataServicos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPecas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureFechar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -145,6 +145,7 @@
             this.ClientSize = new System.Drawing.Size(966, 516);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formPesquisaSecao";
+            this.ShowInTaskbar = false;
             this.Text = "Seções";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

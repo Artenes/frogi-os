@@ -444,6 +444,9 @@
     <Compile Include="CamadaAcessoDados\TblClienteFisico.cs" />
     <Compile Include="CamadaAcessoDados\TblCliente.cs" />
     <Compile Include="CamadaAcessoDados\TblUF.cs" />
+    <EmbeddedResource Include="InterfaceGrafica\formAjuda.resx">
+      <DependentUpon>formAjuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formCadastroAdministrador.resx">
       <DependentUpon>formCadastroAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -470,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formNotaFiscal.resx">
       <DependentUpon>formNotaFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceGrafica\formOpcoes.resx">
+      <DependentUpon>formOpcoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InterfaceGrafica\formOSBaseCadastro.resx">
       <DependentUpon>formOSBaseCadastro.cs</DependentUpon>

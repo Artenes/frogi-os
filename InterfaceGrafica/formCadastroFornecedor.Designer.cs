@@ -510,7 +510,7 @@
             // 
             this.fORNECEDOR_TELEFONEMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_TELEFONE", true));
             this.fORNECEDOR_TELEFONEMaskedTextBox.Location = new System.Drawing.Point(112, 28);
-            this.fORNECEDOR_TELEFONEMaskedTextBox.Mask = "(##)####-####";
+            this.fORNECEDOR_TELEFONEMaskedTextBox.Mask = "(##)#####-####";
             this.fORNECEDOR_TELEFONEMaskedTextBox.Name = "fORNECEDOR_TELEFONEMaskedTextBox";
             this.fORNECEDOR_TELEFONEMaskedTextBox.Size = new System.Drawing.Size(162, 33);
             this.fORNECEDOR_TELEFONEMaskedTextBox.TabIndex = 10;
@@ -538,7 +538,7 @@
             // 
             this.fORNECEDOR_CELULARMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CELULAR", true));
             this.fORNECEDOR_CELULARMaskedTextBox.Location = new System.Drawing.Point(112, 67);
-            this.fORNECEDOR_CELULARMaskedTextBox.Mask = "(##)####-####";
+            this.fORNECEDOR_CELULARMaskedTextBox.Mask = "(##)#####-####";
             this.fORNECEDOR_CELULARMaskedTextBox.Name = "fORNECEDOR_CELULARMaskedTextBox";
             this.fORNECEDOR_CELULARMaskedTextBox.Size = new System.Drawing.Size(162, 33);
             this.fORNECEDOR_CELULARMaskedTextBox.TabIndex = 11;
@@ -751,7 +751,7 @@
             // 
             this.textTelefoneJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_TELEFONE", true));
             this.textTelefoneJuridico.Location = new System.Drawing.Point(112, 28);
-            this.textTelefoneJuridico.Mask = "(##)####-####";
+            this.textTelefoneJuridico.Mask = "(##)#####-####";
             this.textTelefoneJuridico.Name = "textTelefoneJuridico";
             this.textTelefoneJuridico.Size = new System.Drawing.Size(162, 33);
             this.textTelefoneJuridico.TabIndex = 26;
@@ -769,7 +769,7 @@
             // 
             this.textCelularJuridico.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsFornecedor, "FORNECEDOR_CELULAR", true));
             this.textCelularJuridico.Location = new System.Drawing.Point(112, 67);
-            this.textCelularJuridico.Mask = "(##)####-####";
+            this.textCelularJuridico.Mask = "(##)#####-####";
             this.textCelularJuridico.Name = "textCelularJuridico";
             this.textCelularJuridico.Size = new System.Drawing.Size(162, 33);
             this.textCelularJuridico.TabIndex = 27;
@@ -917,7 +917,7 @@
             // 
             this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.fORNECEDOR_JURIDICOBindingSource, "FORNECEDOR_JURIDICO_CONTATO", true));
             this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.Location = new System.Drawing.Point(116, 68);
-            this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.Mask = "(##)####-####";
+            this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.Mask = "(##)#####-####";
             this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.Name = "fORNECEDOR_JURIDICO_CONTATOMaskedTextBox";
             this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.Size = new System.Drawing.Size(162, 33);
             this.fORNECEDOR_JURIDICO_CONTATOMaskedTextBox.TabIndex = 19;
@@ -1067,6 +1067,7 @@
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroFornecedor";
+            this.ShowInTaskbar = false;
             this.Text = "Fornecedores";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

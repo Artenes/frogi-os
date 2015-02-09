@@ -167,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "formCadastroMarca";
+            this.ShowInTaskbar = false;
             this.Text = "Marcas";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

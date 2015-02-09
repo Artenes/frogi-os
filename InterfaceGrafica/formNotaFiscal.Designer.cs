@@ -121,6 +121,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "formNotaFiscal";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formNotaFiscal";
             this.panelCabecalho.ResumeLayout(false);

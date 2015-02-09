@@ -151,6 +151,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 491);
             this.Name = "formPesquisaCompra";
+            this.ShowInTaskbar = false;
             this.Text = "formPesquisaCompra";
             this.panelCabecalho.ResumeLayout(false);
             this.panelCabecalho.PerformLayout();

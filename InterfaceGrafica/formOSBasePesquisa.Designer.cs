@@ -225,6 +225,7 @@
             this.Controls.Add(this.panelCabecalho);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formOSBasePesquisa";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formOSBasePesquisa";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formOSBasePesquisa_FormClosing);
