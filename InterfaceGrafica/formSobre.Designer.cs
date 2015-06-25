@@ -70,7 +70,7 @@
             this.label1.Size = new System.Drawing.Size(439, 180);
             this.label1.TabIndex = 2;
             this.label1.Text = "Frogi - Sistema Integrado de Gestão Empresarial\r\nMódulo de Ordem de Serviço (OS)\r" +
-    "\nVersão Beta\r\nFones:\r\n(93) 98119-8067\r\n(93) 99105-9802";
+    "\nVersão Beta\r\nFones:\r\n(93) 99165-9518\r\n(93) 99114-8077";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureFechar

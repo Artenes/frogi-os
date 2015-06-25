@@ -138,8 +138,8 @@
             // 
             // tablePai
             // 
-            this.tablePai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(4)))), ((int)(((byte)(42)))));
             resources.ApplyResources(this.tablePai, "tablePai");
+            this.tablePai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(4)))), ((int)(((byte)(42)))));
             this.tablePai.Controls.Add(this.flowCentro, 0, 1);
             this.tablePai.Controls.Add(this.panelCabecalho, 0, 0);
             this.tablePai.Name = "tablePai";

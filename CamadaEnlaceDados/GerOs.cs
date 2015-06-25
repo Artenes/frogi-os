@@ -338,7 +338,7 @@ namespace FROGI_OS.CamadaEnlaceDados
             return comando.ExecuteReader();
         }
 
-        public Int32 pegarMaiorCodigo()
+        public int pegarMaiorCodigo()
         {
             FbCommand comando = new FbCommand();
             String sql = "SELECT MAX(OS_CODIGO) FROM OS";
@@ -347,7 +347,12 @@ namespace FROGI_OS.CamadaEnlaceDados
             comando.Connection = Conexao.getConexao;
             comando.Transaction = Conexao.getTransacao;
 
-            return (((Int32)comando.ExecuteScalar()) + 1);
+            int maiorCodigo = -2;
+            try {
+                maiorCodigo = (int) comando.ExecuteScalar();
+            } catch (InvalidCastException) {}
+            
+            return maiorCodigo + 1;
         }
 
     }

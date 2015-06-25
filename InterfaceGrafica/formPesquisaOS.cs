@@ -150,7 +150,7 @@ namespace FROGI_OS.InterfaceGrafica
                 else
                 {
                     indice = pESQUISA_OS_JURIDICODataGridView.CurrentRow.Index;
-                    codigo = (int)pESQUISA_OS_JURIDICODataGridView.CurrentRow.Index;
+                    codigo = (int)pESQUISA_OS_JURIDICODataGridView[0, indice].Value;
                 }
 
                 Conexao.abrir();

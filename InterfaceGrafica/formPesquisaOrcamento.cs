@@ -119,7 +119,7 @@ namespace FROGI_OS.InterfaceGrafica {
                     codigo = (int)pESQUISA_ORCAMENTO_FISICODataGridView[0, indice].Value;
                 } else {
                     indice = pESQUISA_ORCAMENTO_JURIDICODataGridView.CurrentRow.Index;
-                    codigo = (int)pESQUISA_ORCAMENTO_JURIDICODataGridView.CurrentRow.Index;
+                    codigo = (int)pESQUISA_ORCAMENTO_JURIDICODataGridView[0, indice].Value;
                 }
 
                 Conexao.abrir();
@@ -167,7 +167,6 @@ namespace FROGI_OS.InterfaceGrafica {
                 dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO.Clear();
                 taPesquisaOrcamentoJuridico.selecionarPorData(dsFROGIOS.PESQUISA_ORCAMENTO_JURIDICO, dateFiltro.Value);
             }
-        } 
-
+        }
     }
 }

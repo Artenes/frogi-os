@@ -21,7 +21,5 @@ namespace FROGI_OS.InterfaceGrafica
         {
             this.Close();
         }
-
-        
     }
 }
