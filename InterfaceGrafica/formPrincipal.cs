@@ -26,8 +26,8 @@ namespace FROGI_OS
             labelData.Text = DateTime.Now.ToShortDateString();
             this.ActiveControl = pictureClientes;
             textDiretorioNotas.Text = Properties.Settings.Default.diretorioNotas;
-            formLogin login = new formLogin();
-            login.ShowDialog(this);
+            //formLogin login = new formLogin();
+            //login.ShowDialog(this);
         }
 
         private void abrirForm(PictureBox icone, formCadastro cadastro) {
